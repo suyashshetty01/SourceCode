@@ -1,0 +1,61 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"9:48:44 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:48:44 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"9:48:44 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"9:48:44 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:48:44 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"9:48:44 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:48:44 AM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:02:08 PM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"2:02:08 PM"}
+{"level":"info","message":"OriginalRequest { api_reference_number: 'ARN-1HDAYKRK-W5O1-LYCQ-G8LV-SMWSHFP8ZIP1',\n  search_reference_number: 'SRN-VDZPZIS0-DMYB-JE3L-ZRHF-1J0MGK40RAQP',\n  execution_async: 'no',\n  insurer_id: 30,\n  method_type: 'Verification',\n  pg_url: 'http://qa.policyboss.com/transaction-status/232483',\n  pg_get: {},\n  pg_post: \n   { mihpayid: '403993715518969165',\n     mode: 'CC',\n     status: 'success',\n     unmappedstatus: 'captured',\n     key: 'gtKFFx',\n     txnid: '33c77cfe9772ed750a2e',\n     amount: '10218.80',\n     cardCategory: 'domestic',\n     discount: '0.00',\n     net_amount_debit: '10218.8',\n     addedon: '2019-02-07 15:06:42',\n     productinfo: 'kotak',\n     firstname: 'POLICY',\n     lastname: 'TEST',\n     address1: '',\n     address2: '',\n     city: '',\n     state: '',\n     country: '',\n     zipcode: '',\n     email: 'POLICYBOSSTESTING@GMAIL.COM',\n     phone: '9874645645',\n     udf1: '',\n     udf2: '',\n     udf3: '',\n     udf4: '',\n     udf5: '',\n     udf6: '',\n     udf7: '',\n     udf8: '',\n     udf9: '',\n     udf10: '',\n     hash: '8463521ea7a09dbfd5ddf5e52d46807aa2dc408c5ffeca9d2898a232deb4cf7c19f47b4494527d413ab294fa5a1f03c6410cb2c9bf6784898c5ee7d7e1e37279',\n     field1: '942855',\n     field2: '736592',\n     field3: '20190207',\n     field4: 'MC',\n     field5: '718466773344',\n     field6: '00',\n     field7: '0',\n     field8: '3DS',\n     field9: ' Verification of Secure Hash Failed: E700 -- Approved -- Transaction Successful -- Unable to be determined--E000',\n     payment_source: 'payu',\n     PG_TYPE: 'AXISPG',\n     bank_ref_num: '942855',\n     bankcode: 'CC',\n     error: 'E000',\n     error_Message: 'No Error',\n     name_on_card: 'TEST',\n     cardnum: '512345XXXXXX2346',\n     cardhash: 'This field is no longer supported in postback params.',\n     issuing_bank: 'HDFC',\n     card_type: 'MAST' },\n  pg_redirect_mode: 'POST',\n  secret_key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  client_key: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9' }","timestamp":"2:02:08 PM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"2:02:08 PM"}
+{"level":"info","message":"Motor::product_api_pre::Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor::product_api_pre::Finish","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Start Motor vehicle_manf_year","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Finish Motor vehicle_manf_year 2018","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Start Motor vehicle_age_year","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Finish Motor vehicle_age_year 3","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Start Motor pre_policy_start_date","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2022-12-19","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Start","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Finish 2018-02-08","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"2:02:09 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2022-12-19","timestamp":"2:02:09 PM"}
+{"level":"info","message":"UserDataPolicyDataUpdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"2:02:09 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"2:47:30 PM"}
+{"level":"info","message":"OriginalRequest { api_reference_number: 'ARN-1HDAYKRK-W5O1-LYCQ-G8LV-SMWSHFP8ZIP1',\n  search_reference_number: 'SRN-VDZPZIS0-DMYB-JE3L-ZRHF-1J0MGK40RAQP',\n  execution_async: 'no',\n  insurer_id: 30,\n  method_type: 'Verification',\n  pg_url: 'http://qa.policyboss.com/transaction-status/232483',\n  pg_get: {},\n  pg_post: \n   { mihpayid: '403993715518969165',\n     mode: 'CC',\n     status: 'success',\n     unmappedstatus: 'captured',\n     key: 'gtKFFx',\n     txnid: '33c77cfe9772ed750a2e',\n     amount: '10218.80',\n     cardCategory: 'domestic',\n     discount: '0.00',\n     net_amount_debit: '10218.8',\n     addedon: '2019-02-07 15:06:42',\n     productinfo: 'kotak',\n     firstname: 'POLICY',\n     lastname: 'TEST',\n     address1: '',\n     address2: '',\n     city: '',\n     state: '',\n     country: '',\n     zipcode: '',\n     email: 'POLICYBOSSTESTING@GMAIL.COM',\n     phone: '9874645645',\n     udf1: '',\n     udf2: '',\n     udf3: '',\n     udf4: '',\n     udf5: '',\n     udf6: '',\n     udf7: '',\n     udf8: '',\n     udf9: '',\n     udf10: '',\n     hash: '8463521ea7a09dbfd5ddf5e52d46807aa2dc408c5ffeca9d2898a232deb4cf7c19f47b4494527d413ab294fa5a1f03c6410cb2c9bf6784898c5ee7d7e1e37279',\n     field1: '942855',\n     field2: '736592',\n     field3: '20190207',\n     field4: 'MC',\n     field5: '718466773344',\n     field6: '00',\n     field7: '0',\n     field8: '3DS',\n     field9: ' Verification of Secure Hash Failed: E700 -- Approved -- Transaction Successful -- Unable to be determined--E000',\n     payment_source: 'payu',\n     PG_TYPE: 'AXISPG',\n     bank_ref_num: '942855',\n     bankcode: 'CC',\n     error: 'E000',\n     error_Message: 'No Error',\n     name_on_card: 'TEST',\n     cardnum: '512345XXXXXX2346',\n     cardhash: 'This field is no longer supported in postback params.',\n     issuing_bank: 'HDFC',\n     card_type: 'MAST' },\n  pg_redirect_mode: 'POST',\n  secret_key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  client_key: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9' }","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor::product_api_pre::Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor::product_api_pre::Finish","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Start Motor vehicle_manf_year","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Finish Motor vehicle_manf_year 2018","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Start Motor vehicle_age_year","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Finish Motor vehicle_age_year 3","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Start Motor pre_policy_start_date","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2021-12-20","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2022-12-19","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Start","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Finish 2018-02-08","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"2:47:30 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2022-12-19","timestamp":"2:47:30 PM"}
+{"level":"info","message":"UserDataPolicyDataUpdate null { n: 1, nModified: 0, ok: 1 }","timestamp":"2:47:30 PM"}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Policyboss - Transaction Details</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="loader" style="display: none;">
+			<img src="https://www.policyboss.com/website/Images/travel/quote-loader.gif">
+	</div>
+	<div class="logo"><img src="https://www.policyboss.com/website/Images/PolicyBoss-Logo.jpg"></div>
+	<div class="container">
+		<div class="title">Wallet Available Balance : &#8377; <label id="balance"></label></div>
+	<form name="myForm" method="post" action="" style="align-content: center;">
+		<p>Transaction Details</p>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Customer Name :
+				</label><br>
+				<input type="text" id="username" autocomplete="off" name="username" placeholder="Customer Name" required readonly>
+			</div>
+			<div class="col-md-6">
+				<label> 
+					CRN :
+				</label><br>
+				<input type="text" id="crn" autocomplete="off" name="crn" placeholder="CRN" required readonly>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Product Name :
+				</label><br>
+				<input type="text" id="product" autocomplete="off" name="product" placeholder="Product Name" required readonly>
+			</div>
+			<div class="col-md-6">
+				<label>
+					Premium Amount :
+				</label><br>
+				<input type="text" id="amount" autocomplete="off" name="amount" placeholder="Premium Amount" required readonly>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Total Daily Limit Amount:
+				</label><br>
+				<input type="text" id="daily_limit" autocomplete="off" name="daily_limit" placeholder="Daily Limit Amount" required readonly>
+			</div>
+			<div class="col-md-6">
+				<label>
+					Total Daily Transfer Amount:
+				</label><br>
+				<input type="text" id="trf_amount" autocomplete="off" name="trf_amount" placeholder="Total Transfer Amount" required readonly>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Available Daily Amount:
+				</label><br>
+				<input type="text" id="available_daily_limit" autocomplete="off" name="available_daily_limit" placeholder="Available Daily Amount" required readonly>
+			</div>
+			<div class="col-md-6 OTPDiv">
+				<label>
+					OTP:
+				</label><br>
+				<input type="numeric" id="otp" onkeyup="forceNumeric(event)" autocomplete="off" name="otp" maxlength="4" placeholder="OTP" required>
+				<a><span class="span_otp_err" style="color:red;display:none;margin-right: 20px;"></span><span style="display:none;" class="resend" onclick="resendOTP()"></span></a>
+				<br>
+				<span class="txt_otp_number"></span>
+			</div>
+		</div>
+		<div class="row button">
+			<div class="col-md-6">
+				<button type="button" class="cancel">CANCEL</button>
+			</div>
+			<div class="col-md-6 proceed" style="display:none">
+				<button type="button" class="submit">PROCEED</button>
+			</div>
+		</div>
+	</form>
+		<div class="error_message_popup" style="display:none">
+			<div class="error_popup_container">
+				<div class="error_popup_section">
+					<span class="error_msg"></span>
+					<button class="ok_btn">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+var Const_Session = null;
+var udid;
+var allowOTP = true;
+var user_data_response;
+var session_response = null;
+var const_transaction_status = ['VERIFICATION_EXCEPTION','PG_RETURNED','TRANS_FAIL','TRANS_SUCCESS_WO_POLICY','TRANS_SUCCESS_WITH_POLICY','ALREADY_CLOSED','TRANS_PAYPASS'];
+document.addEventListener('contextmenu', event => event.preventDefault());
+allowOTP ? $(".OTPDiv").show() :  $(".OTPDiv").hide();
+$('.submit').click(function () {
+    $(this).addClass('active');
+	if (allowOTP) {
+		var err = 0;
+		var otp = $("#otp").val();
+		if (otp === "" || otp === null || otp === undefined) {
+			err++;
+			$("#otp").addClass("error_border");
+			$(".span_otp_err").show().text("Please enter OTP");
+			$(".resend").show().text("Re-send");
+		}
+		if (err === 0) {
+			verifyOTP();
+		}
+	} else {
+		$("#loader").show();
+		submitForm();
+	}
+});
+$('.cancel').click(function () {
+    $(this).addClass('active');
+    cancelForm(udid);
+});
+$('.ok_btn').click(function () {
+	$('.error_message_popup').hide();
+});
+var url = "/get_session";
+$.get(url, function (res) {	
+	if (res && res.session_id) {
+		Const_Session = res;
+		udid = getUrlVars()['udid'];
+		$.ajax({
+		type: "GET",
+		url: GetUrl() + "/wallets/get_session_data/" + Const_Session.session_id,
+		success: function (session_res) {
+			//console.log(JSON.stringify(session_res));
+			if (session_res['msg'] === "success" && session_res.hasOwnProperty('session_data') && session_res.session_data) {
+					session_response = session_res.session_data;
+					var session_ss_id = session_response.user.ss_id ? session_response.user.ss_id : 0;
+					$.ajax({
+						type: "GET",
+						url: GetUrl() + '/wallets/agent_wallet_allow/' + session_ss_id, 
+						success: function (res) {
+							if (res['is_allow_wallet'] === "yes") {
+								$.ajax({
+									type: "GET",
+									url: GetUrl() + "/user_datas/view/" + udid,
+									success: function (res) {
+										//console.log(JSON.stringify(res));
+										if (res.length > 0) {
+											user_data_response = res[0];
+											if (const_transaction_status.indexOf(user_data_response['Last_Status']) > -1) {
+												console.log("Transaction Already Closed");
+												$('.error_message_popup').show();
+												$('.error_msg').html("<p style='text-align:center;font-weight:700'>Transaction Already Closed</p>");
+											} else {
+												if (user_data_response['Last_Status'] === "SEARCH") {
+													$('.error_message_popup').show();
+													$('.error_msg').html("<p style='text-align:center;font-weight:700'>No transaction available</p>");
+												} else {
+													if (user_data_response.hasOwnProperty('Proposal_Request_Core') && user_data_response.Proposal_Request_Core.hasOwnProperty('ss_id')
+													&& parseInt(user_data_response.Proposal_Request_Core.ss_id) === parseInt(session_response.user.ss_id)) {
+														getBalanceDetails(Const_Session, user_data_response);
+													} else {
+														console.log("Invalid SS_ID");
+														$('.error_message_popup').show();
+														$('.error_msg').html("<p style='text-align:center;font-weight:700'>Invalid SS_ID</p>");
+													}
+												}	
+											}
+										} else {
+											$('.error_message_popup').show();
+											$('.error_msg').html("<p style='text-align:center;font-weight:700'>No data available</p>");
+										}
+									},
+									error: function (result) {
+										console.log(result);
+									}
+								});
+							} else {
+								$('.error_message_popup').show();
+								$('.error_msg').html("<p style='text-align:center;font-weight:700'>You are not eligible for Wallet Payment</p>");			
+							}
+							},
+							error: function (err) {
+							console.log(err);
+						}
+					});
+				} else {
+					$('.error_message_popup').show();
+					$('.error_msg').html("<p style='text-align:center;font-weight:700'>Session Expired.Not Authorized</p>");
+				}
+			},
+			error: function (result) {
+				console.log(result);
+			}
+		});
+	} else {
+		console.log("Session Timeout");
+		$('.error_message_popup').show();
+		$('.error_msg').html("<p style='text-align:center;font-weight:700'>Session Timeout</p>");
+	}
+});
+var getUrlVars = function () {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+};
+function GetUrl() {
+    var url = window.location.href;
+    var newurl;
+    if (url.includes("request_file")) {
+        newurl = "http://localhost:3000";
+    } else if (url.includes("qa.")) {
+        newurl = url.includes('https') ? "https://qa-horizon.policyboss.com:3443" : "http://qa-horizon.policyboss.com:3000";
+    } else if (url.includes("www.") || url.includes("cloudfront") || url.includes("origin-cdnh") || url.includes("policyboss")) {
+        newurl = url.includes('https') ? "https://horizon.policyboss.com:5443" : "http://horizon.policyboss.com:5000";
+    }
+    return newurl;
+}
+</script>
+</html>

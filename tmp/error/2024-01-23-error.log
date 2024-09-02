@@ -1,0 +1,685 @@
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"8:55:45 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:55:49 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"8:55:49 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:55:49 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:56:02 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"8:56:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:56:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:56:19 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"8:57:18 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"8:57:22 AM"}
+{"level":"warn","message":"uncaughtException { Error: socket hang up\n    at createHangUpError (_http_client.js:254:15)\n    at Socket.socketOnEnd (_http_client.js:346:23)\n    at emitNone (events.js:91:20)\n    at Socket.emit (events.js:185:7)\n    at endReadableNT (_stream_readable.js:974:12)\n    at _combinedTickCallback (internal/process/next_tick.js:74:11)\n    at process._tickCallback (internal/process/next_tick.js:98:9)\n  code: 'ECONNRESET',\n  request: \n   ClientRequest {\n     domain: null,\n     _events: {},\n     _eventsCount: 0,\n     _maxListeners: undefined,\n     href: 'http://localhost:3000/endorsements/godigit_online_endorsement',\n     options: \n      { host: 'localhost',\n        port: '3000',\n        path: '/endorsements/godigit_online_endorsement',\n        href: 'http://localhost:3000/endorsements/godigit_online_endorsement',\n        method: 'POST',\n        headers: [Object],\n        data: '{\"ticket_id\":\"CAEN7295\",\"crn\":\"1060957\",\"insurer_id\":\"44\",\"product_id\":\"1\",\"policy_number\":\"D600354417\",\"category\":\"Endorsement\",\"subcategory\":\"Contact Number\",\"updated_qt_data\":{\"mobile\":\"7349218787\"}}' },\n     _httpRequest: \n      Writable {\n        _writableState: [Object],\n        writable: true,\n        domain: null,\n        _events: [Object],\n        _eventsCount: 2,\n        _maxListeners: undefined,\n        _options: [Object],\n        _ended: true,\n        _ending: true,\n        _redirectCount: 0,\n        _redirects: [],\n        _requestBodyLength: 202,\n        _requestBodyBuffers: [Object],\n        _onNativeResponse: [Function],\n        _currentRequest: [Object],\n        _currentUrl: 'http://localhost:3000/endorsements/godigit_online_endorsement' } } }","timestamp":"9:00:27 AM"}
+{"level":"warn","message":"uncaughtException { Error: socket hang up\n    at createHangUpError (_http_client.js:254:15)\n    at Socket.socketCloseListener (_http_client.js:286:23)\n    at emitOne (events.js:101:20)\n    at Socket.emit (events.js:188:7)\n    at TCP._handle.close [as _onclose] (net.js:498:12)\n  code: 'ECONNRESET',\n  request: \n   ClientRequest {\n     domain: null,\n     _events: {},\n     _eventsCount: 0,\n     _maxListeners: undefined,\n     href: 'http://localhost:3000/endorsements/godigit_online_endorsement',\n     options: \n      { host: 'localhost',\n        port: '3000',\n        path: '/endorsements/godigit_online_endorsement',\n        href: 'http://localhost:3000/endorsements/godigit_online_endorsement',\n        method: 'POST',\n        headers: [Object],\n        data: '{\"ticket_id\":\"CAEN7295\",\"crn\":\"1060957\",\"insurer_id\":\"44\",\"product_id\":\"1\",\"policy_number\":\"D600354417\",\"category\":\"Endorsement\",\"subcategory\":\"Contact Number\",\"updated_qt_data\":{\"mobile\":\"7349218787\"}}' },\n     _httpRequest: \n      Writable {\n        _writableState: [Object],\n        writable: true,\n        domain: null,\n        _events: [Object],\n        _eventsCount: 2,\n        _maxListeners: undefined,\n        _options: [Object],\n        _ended: true,\n        _ending: true,\n        _redirectCount: 0,\n        _redirects: [],\n        _requestBodyLength: 202,\n        _requestBodyBuffers: [Object],\n        _onNativeResponse: [Function],\n        _currentRequest: [Object],\n        _currentUrl: 'http://localhost:3000/endorsements/godigit_online_endorsement' } } }","timestamp":"9:00:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:56 AM"}
+{"level":"error","message":"(node:912) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"9:40:56 AM"}
+{"level":"error","message":"(node:912) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"9:40:56 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:57 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:57 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:57 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:57 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:40:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:41:16 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"9:41:16 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:41:16 AM"}
+{"level":"error","message":"(node:912) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"9:41:16 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:41:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:43:02 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:43:26 AM"}
+{"level":"error","message":"(node:912) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"9:44:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:46:44 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:46:48 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:48:56 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:49:07 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:50:31 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"9:50:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:50:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:50:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:51:12 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:51:12 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:53:41 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"9:53:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:53:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:53:44 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:54:23 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:54:23 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"9:56:41 AM"}
+{"level":"error","message":"(node:27496) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"9:56:41 AM"}
+{"level":"error","message":"(node:27496) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"9:56:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:57:01 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"9:57:01 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:57:01 AM"}
+{"level":"error","message":"(node:27496) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"9:57:01 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:57:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"9:57:37 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"9:57:37 AM"}
+{"level":"error","message":"(node:27496) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"9:58:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:01:37 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:01:37 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:06:41 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:06:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:06:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:06:46 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:07:37 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:07:37 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:11:52 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:11:52 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:11:52 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:11:55 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:12:48 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:12:48 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:16:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:16:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:16:50 AM"}
+{"level":"error","message":"(node:27496) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 5): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"10:16:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:16:56 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:16:56 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:16:56 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:16:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:17:20 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:17:20 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:17:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:17:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:17:52 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:17:52 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:18:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:18:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:18:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:18:50 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:19:20 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:19:20 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:20:02 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:20:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:20:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:20:05 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:20:21 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:20:21 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:21:03 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:21:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:21:22 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:21:22 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:22:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:22:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:23:24 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:23:24 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:23:46 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:23:46 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:23:46 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:23:49 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:24:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:24:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:24:34 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:24:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:25:26 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:25:26 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:25:54 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:25:54 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:25:54 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:25:56 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:26:27 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:26:27 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:26:36 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:26:36 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:28:43 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:28:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:28:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:28:45 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:31:29 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:31:29 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:33:04 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:33:04 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:33:04 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:33:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:33:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:33:40 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:33:40 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:33:40 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:33:44 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:34:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:34:11 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:34:26 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:34:26 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:34:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:34:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:35:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:35:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:35:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:35:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:35:36 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:36:10 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:36:10 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:36:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:36:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:37:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:37:31 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:38:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:38:25 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:38:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:38:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:38:29 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:38:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:38:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:39:22 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:39:22 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:39:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:39:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:40:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:40:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:40:33 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:40:33 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:40:33 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:40:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:41:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:41:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:41:41 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:41:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:42:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:42:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:43:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"10:43:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:43:32 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:43:32 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:43:32 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:43:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:44:19 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:44:19 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:44:19 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:44:21 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:44:56 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:44:56 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:47:57 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:47:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:47:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:48:00 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:48:53 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:48:53 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:49:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:50:23 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:50:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:50:59 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:50:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:51:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:51:37 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:51:37 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:52:57 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:52:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:52:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:53:00 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:53:26 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:53:26 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:55:59 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:55:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:55:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:56:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:57:04 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:57:04 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:58:02 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"10:58:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:58:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:58:05 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:58:52 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:58:52 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:32:17 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:32:17 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:32:17 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:32:19 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:21 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:22 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:22 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:35:22 AM"}
+{"level":"error","message":"(node:10300) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"11:35:22 AM"}
+{"level":"error","message":"(node:10300) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"11:35:22 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:35:43 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:35:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:35:43 AM"}
+{"level":"error","message":"(node:10300) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"11:35:44 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:35:46 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:36:29 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"11:36:29 AM"}
+{"level":"error","message":"(node:10300) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"11:36:55 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:44:21 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:44:21 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:44:21 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:44:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:45:20 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"11:45:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:47:23 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:47:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:47:23 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:27 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"11:48:28 AM"}
+{"level":"error","message":"(node:20420) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"11:48:29 AM"}
+{"level":"error","message":"(node:20420) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"11:48:29 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:48:35 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:48:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:48:35 AM"}
+{"level":"error","message":"(node:20420) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"11:48:35 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:48:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:49:47 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"11:49:47 AM"}
+{"level":"error","message":"(node:20420) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"11:49:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:51:37 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:51:37 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:51:37 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:51:42 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:52:43 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"11:52:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:58:39 AM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"11:58:39 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:58:39 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:58:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:59:31 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"11:59:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:02:19 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"12:02:20 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:02:20 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:02:22 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:03:04 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"12:03:04 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:06:09 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"12:06:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:06:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:06:12 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:06:46 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"12:06:46 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:35:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:35:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:35:21 PM"}
+{"level":"error","message":"(node:20420) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 5): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"1:35:22 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:35:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:35:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:36:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:36:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:36:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:36:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:37:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:37:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:37:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:37:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:38:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:38:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:39:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:39:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:40:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:40:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:41:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:41:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:42:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:42:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:43:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:43:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:44:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:44:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://10.0.1.31:4200/ ::1 string","timestamp":"1:44:44 PM"}
+{"level":"error","message":"LOG REFERER YTD http://10.0.1.31:4200/ ::1 string","timestamp":"1:44:44 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:45:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:45:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:46:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:46:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:47:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:47:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:48:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:48:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:49:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:49:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:50:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:50:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:51:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:51:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:52:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:52:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:53:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:53:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:54:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:54:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:55:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:55:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:56:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:56:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:57:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:57:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:58:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:58:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:59:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"1:59:31 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"2:05:39 PM"}
+{"level":"error","message":"(node:5328) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"2:05:40 PM"}
+{"level":"error","message":"(node:5328) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"2:05:40 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:06:03 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:06:05 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"2:06:05 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:06:05 PM"}
+{"level":"error","message":"(node:5328) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"2:06:05 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:06:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:06:37 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:06:37 PM"}
+{"level":"error","message":"(node:5328) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"2:06:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:09:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:10:05 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:10:05 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:12:42 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"2:12:42 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:12:42 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:12:46 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:13:17 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:13:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:16:00 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"2:16:00 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:16:00 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:16:04 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:16:41 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:16:41 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:17:54 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"2:17:54 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:17:54 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:18:02 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:18:33 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"2:18:33 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:39:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:39:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:39:10 PM"}
+{"level":"error","message":"(node:5328) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 5): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"2:39:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:39:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:39:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:40:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:40:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:40:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:40:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:41:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:41:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:41:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:41:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:42:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:42:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:42:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:42:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:43:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:43:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:43:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:43:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:44:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:44:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:44:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:44:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:45:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:45:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:45:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:45:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:46:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:46:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:47:11 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:47:11 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:48:12 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:48:12 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:49:13 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:49:13 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:49:58 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:49:58 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:50:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:50:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:50:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:50:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:51:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:51:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:52:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:52:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:53:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:53:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:54:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:54:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:55:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:55:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:56:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:56:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:57:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:57:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:58:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:58:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:59:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://127.0.0.1:5500/ ::1 string","timestamp":"2:59:31 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"5:13:44 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:13:46 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:13:46 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:13:46 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:13:55 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:14:27 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"5:14:27 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:22:08 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:24:59 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:38:32 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:42:40 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:46:31 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:46:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:46:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:50:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:51:23 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:52:21 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:52:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:52:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:52:24 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:53:24 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:54:09 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:54:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:54:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:55:37 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:55:37 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:55:37 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:55:53 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:56:44 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"5:56:48 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"5:58:34 PM"}
+{"level":"error","message":"(node:20376) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"5:58:34 PM"}
+{"level":"error","message":"(node:20376) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"5:58:34 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:58:48 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"5:58:48 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:58:48 PM"}
+{"level":"error","message":"(node:20376) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 3): MongoError: E11000 duplicate key error collection: lm-api-qa.user_details index: Ticket_Id_1 dup key: { : null }","timestamp":"5:58:48 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:58:54 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:59:44 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"5:59:51 PM"}
+{"level":"error","message":"(node:20376) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 4): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"6:00:08 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:09:31 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:09:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:09:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:13 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:30:13 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:14 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:20 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:30:20 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:20 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:28 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:31 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:30:38 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:31:08 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:31:28 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:31:53 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:32:12 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:32:30 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:32:30 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:32:30 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:32:51 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:32:59 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:08 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:18 PM"}
+{"level":"error","message":"(node:20376) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 5): MongoError: E11000 duplicate key error collection: lm-api-qa.identitycounters index: field_1_groupingField_1_model_1 dup key: { : \"Email_Event_Id\", : null, : \"Email_Event\" }","timestamp":"6:33:20 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"6:33:20 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:32 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:36 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:33:36 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:36 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:45 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:33:57 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:34:04 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:34:16 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"6:34:16 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:34:21 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:34:27 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:34:27 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:34:27 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:35:04 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:35:27 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:35:41 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:35:59 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"6:35:59 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:36:04 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:36:06 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:36:06 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:36:06 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:38:05 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:38:05 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:38:05 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:38:08 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:40:31 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"6:56:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:56:13 PM"}
+{"level":"error","message":"{ Category: 'Endorsement' }","timestamp":"6:56:13 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:56:13 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:56:26 PM"}
+{"level":"error","message":"{ Category: 'Endorsement',\n  Product: 1,\n  Insurer_Id: 44,\n  SubCategory: 'Nominee Name' }","timestamp":"6:56:26 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"7:00:57 PM"}

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl" xmlns:ns2="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl/types/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Body>
+        <ns1:calculateMotorPremiumSig>
+            <pUserId>bajajwebservice@policyboss.com</pUserId><!---->
+            <pPassword>newpas12</pPassword><!--newpas12-->
+            <pVehicleCode>38152243</pVehicleCode><!--vehicle code 38160851-->
+            <pCity>MUMBAI</pCity><!--RTO City-->
+            <pWeoMotPolicyIn_inout>
+                <ns2:vehicleTypeCode>21</ns2:vehicleTypeCode>
+                <ns2:vehicleSubtype>DLX</ns2:vehicleSubtype><!--UNIQ -->
+                <ns2:elecAccTotal>0</ns2:elecAccTotal>
+                <ns2:addLoadingOn></ns2:addLoadingOn>
+                <ns2:nonElecAccTotal>0</ns2:nonElecAccTotal>
+                <ns2:polType>3</ns2:polType><!--new 1 ,renewal from other 3 ,renewal from bajaj 2-->
+                <ns2:registrationNo>MH-01-PA-1234</ns2:registrationNo>
+                <ns2:partnerType>P</ns2:partnerType><!--P- private I for institutution-->
+                <ns2:ncb>25</ns2:ncb>
+                <ns2:prvClaimStatus>0</ns2:prvClaimStatus>
+                <ns2:registrationDate>24-AUG-2015</ns2:registrationDate><!--format dd-MMM-yyyy 25-AUG-2016-->
+                <ns2:miscVehType>0</ns2:miscVehType>
+                <ns2:fuel>P</ns2:fuel><!--sample value P for petrol-->
+                <ns2:chassisNo>TESTCHASIS123</ns2:chassisNo>
+                <ns2:contractId></ns2:contractId>
+                <ns2:yearManf>2015</ns2:yearManf><!--2016-->
+                <ns2:spDiscRate></ns2:spDiscRate>
+                <ns2:cubicCapacity>125</ns2:cubicCapacity><!--796-->
+                <ns2:regiLocOther>MUMBAI</ns2:regiLocOther>
+                <ns2:addLoading>0</ns2:addLoading>
+                <ns2:vehicleSubtypeCode>2</ns2:vehicleSubtypeCode><!--51 -->
+                <ns2:prvPolicyRef></ns2:prvPolicyRef><!--Required in case of Renew  OG-13-1902-1801-00000001-->
+                <ns2:vehicleMake>YAMAHA</ns2:vehicleMake><!--MARUTI-->
+                <ns2:autoMembership></ns2:autoMembership><!---->
+                <ns2:termStartDate>24-AUG-2017</ns2:termStartDate>
+                <ns2:carryingCapacity>2</ns2:carryingCapacity><!--5-->
+                <ns2:termEndDate>23-AUG-2018</ns2:termEndDate>
+                <ns2:hypo></ns2:hypo>
+                <ns2:branchCode>9906</ns2:branchCode><!--9906 1901 for mumbai-->
+                <ns2:prvNcb>20</ns2:prvNcb>
+                <ns2:vehicleMakeCode>213</ns2:vehicleMakeCode><!--110-->
+                <ns2:vehicleIdv>0</ns2:vehicleIdv><!--so far-->
+                <ns2:prvInsCompany>6</ns2:prvInsCompany>
+                <ns2:engineNo>TESTENGINE123</ns2:engineNo>
+                <ns2:product4digitCode>1802</ns2:product4digitCode>
+                <ns2:color></ns2:color>
+                <ns2:vehicleModel>ENTICER</ns2:vehicleModel><!--value for taken sample 800-->
+                <ns2:vehicleType>Two Wheeler</ns2:vehicleType>
+                <ns2:prvExpiryDate>23-AUG-2017</ns2:prvExpiryDate>
+                <ns2:tpFinType></ns2:tpFinType>
+                <ns2:deptCode>18</ns2:deptCode><!-- not sure might change on live -->
+                <ns2:vehicleModelCode>6</ns2:vehicleModelCode><!--value for taken sample 2-->
+                <ns2:registrationLocation>MUMBAI</ns2:registrationLocation><!-- not provided any value-->
+                <ns2:zone>A</ns2:zone><!-- should be from database-->
+            </pWeoMotPolicyIn_inout>
+            <accessoriesList_inout>
+                <!--Zero or more repetitions:-->
+                <ns2:WeoMotAccessoriesUser >
+                    <accModel></accModel><!-- -->
+                    <accTypeCode></accTypeCode>
+                    <accCategoryCode></accCategoryCode>
+                    <accCount></accCount>
+                    <contractId></contractId>
+                    <accIev></accIev>
+                    <accMake></accMake>
+                </ns2:WeoMotAccessoriesUser>
+            </accessoriesList_inout>
+            <paddoncoverList_inout>
+                <!--Zero or more repetitions:-->
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>VOLEX</paramDesc>
+                    <paramRef>VOLEX</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>PA</paramDesc>
+                    <paramRef>PA</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>CNG</paramDesc>
+                    <paramRef>CNG</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>LLO</paramDesc>
+                    <paramRef>LLO</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>ELECACC</paramDesc>
+                    <paramRef>ELECACC</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>NELECACC</paramDesc>
+                    <paramRef>NELECACC</paramRef>
+                </ns2:WeoMotGenParamUser>
+            </paddoncoverList_inout>
+            <motExtraCover>
+                <ns2:sideCarValue>0</ns2:sideCarValue>
+                <ns2:covernoteNo></ns2:covernoteNo>
+                <ns2:noOfTrailers>0</ns2:noOfTrailers>
+                <ns2:subImdcode></ns2:subImdcode><!--not available-->
+                <ns2:covernoteDate></ns2:covernoteDate>
+                <ns2:cngValue>0</ns2:cngValue>
+                <ns2:fibreGlassValue>0</ns2:fibreGlassValue>
+                <ns2:voluntaryExcess>0</ns2:voluntaryExcess>
+                <ns2:totalTrailerValue>0</ns2:totalTrailerValue>
+                <ns2:extraField1></ns2:extraField1><!--411001-->
+                <ns2:sumInsuredTotalNamedPa>0</ns2:sumInsuredTotalNamedPa><!--doubt what value to be assigned?-->
+                <ns2:geogExtn></ns2:geogExtn>
+                <ns2:noOfPersonsLlo>0</ns2:noOfPersonsLlo>
+                <ns2:noOfEmployeesLle>0</ns2:noOfEmployeesLle>
+                <ns2:extraField2></ns2:extraField2>
+                <ns2:extraField3></ns2:extraField3>
+                <ns2:sumInsuredPa>0</ns2:sumInsuredPa>
+                <ns2:noOfPersonsPa>2</ns2:noOfPersonsPa>
+            </motExtraCover>
+            <pQuestList_inout>
+                <!--Zero or more repetitions:-->
+                <WeoBjazMotQuestionaryUser>
+                    <questionRef></questionRef>
+                    <contractId></contractId>
+                    <questionVal></questionVal>
+                </WeoBjazMotQuestionaryUser>
+            </pQuestList_inout>
+            <pDetariffObj_inout>
+                <ns2:driverQualificationCode></ns2:driverQualificationCode>
+                <ns2:vehPurchaseType></ns2:vehPurchaseType>
+                <ns2:extCol25></ns2:extCol25>
+                <ns2:extCol26></ns2:extCol26>
+                <ns2:tacMakeCode></ns2:tacMakeCode>
+                <ns2:extCol23></ns2:extCol23>
+                <ns2:extCol24></ns2:extCol24>
+                <ns2:extCol29></ns2:extCol29>
+                <ns2:extCol27></ns2:extCol27>
+                <ns2:extCol28></ns2:extCol28>
+                <ns2:extCol33></ns2:extCol33>
+                <ns2:extCol32></ns2:extCol32>
+                <ns2:extCol31></ns2:extCol31>
+                <ns2:extCol30></ns2:extCol30>
+                <ns2:registrationAuth></ns2:registrationAuth>
+                <ns2:extCol12></ns2:extCol12>
+                <ns2:extCol13></ns2:extCol13>
+                <ns2:extCol14></ns2:extCol14>
+                <ns2:extCol15></ns2:extCol15>
+                <ns2:extCol16></ns2:extCol16>
+                <ns2:extCol17></ns2:extCol17>
+                <ns2:extCol18></ns2:extCol18>
+                <ns2:extCol19></ns2:extCol19>
+                <ns2:otherGoodsFrequency></ns2:otherGoodsFrequency>
+                <ns2:extCol20></ns2:extCol20>
+                <ns2:extCol22></ns2:extCol22>
+                <ns2:incurredClmExpCode></ns2:incurredClmExpCode>
+                <ns2:extCol21></ns2:extCol21>
+                <ns2:clmHistCode></ns2:clmHistCode>
+                <ns2:roadType></ns2:roadType>
+                <ns2:bodyType></ns2:bodyType>
+                <ns2:monthOfMfg></ns2:monthOfMfg>
+                <ns2:natureOfGoods></ns2:natureOfGoods>
+                <ns2:extCol9></ns2:extCol9>
+                <ns2:extCol8></ns2:extCol8>
+                <ns2:extCol7></ns2:extCol7>
+                <ns2:extCol6></ns2:extCol6>
+                <ns2:vehPurchaseDate></ns2:vehPurchaseDate>
+                <ns2:extCol5></ns2:extCol5>
+                <ns2:extCol4></ns2:extCol4>
+                <ns2:vehDrivenBy></ns2:vehDrivenBy>
+                <ns2:extCol3></ns2:extCol3>
+                <ns2:extCol2></ns2:extCol2>
+                <ns2:extCol1></ns2:extCol1>
+                <ns2:goodsTransType></ns2:goodsTransType>
+                <ns2:permitType></ns2:permitType>
+                <ns2:extCol38></ns2:extCol38>
+                <ns2:extCol39></ns2:extCol39>
+                <ns2:extCol34></ns2:extCol34>
+                <ns2:extCol35></ns2:extCol35>
+                <ns2:extCol36></ns2:extCol36>
+                <ns2:extCol10></ns2:extCol10>
+                <ns2:extCol37></ns2:extCol37>
+                <ns2:extCol11></ns2:extCol11>
+                <ns2:extCol40></ns2:extCol40>
+                <ns2:driverExperience></ns2:driverExperience>                
+            </pDetariffObj_inout>
+            <premiumDetailsOut_out/>
+            <premiumSummeryList_out/>
+            <pError_out/>
+            <pErrorCode_out></pErrorCode_out>
+            <pTransactionId_inout></pTransactionId_inout>
+            <pTransactionType></pTransactionType>
+            <pContactNo></pContactNo>
+        </ns1:calculateMotorPremiumSig>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

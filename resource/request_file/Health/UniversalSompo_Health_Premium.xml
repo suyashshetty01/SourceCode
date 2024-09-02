@@ -1,0 +1,160 @@
+<Root>
+  <Authentication>
+    <WACode>___insurer_integration_agent_code___</WACode>
+    <WAAppCode>___insurer_integration_location_code___</WAAppCode>
+    <WAUserID>___insurer_integration_service_user___</WAUserID>
+    <WAUserPwd>___insurer_integration_service_password___</WAUserPwd>
+    <WAType>0</WAType>
+  </Authentication>
+  <Customer>
+    <CustomerType>___health_insurance_type_2___</CustomerType>
+    <CustomerName>___first_name___</CustomerName> 
+    <DOB>___birth_date___</DOB>
+    <Gender>___gender___</Gender> 
+    <MobileNo>___mobile___</MobileNo>
+    <Emailid>___email___</Emailid>
+    <ProductName>Complete HealthCare Insurance</ProductName>
+    <PosPolicyNo></PosPolicyNo>
+    <ProductCode>2825</ProductCode>
+  </Customer>
+  <Product Name="Complete HealthCare Insurance">
+    <GeneralProposal Name="General Proposal">
+      <GeneralProposalGroup Name="General Proposal Group">
+        <GeneralProposalInformation Name="General Proposal Information">
+          <PolicyType Name="Policy Type" Value="___health_insurance_type_2___" />
+          <FamilyComposition Name="Floater Option" Value="___get_member_type___" />
+          <PlanType Name="Plan Type" Value="___Plan_Name___" />
+          <ProposalDate Name="Proposal Date" Value="___current_date___" />
+          <PolicyDuration Name="Policy Duration" Value="___policy_tenure___" />
+          <PolicyNumberChar Name="PolicyNumberChar" Value="" />
+          <PolicyEffectiveDate Name="Policy Effective Date">
+            <Fromdate Name="From Date" Value="___policy_start_date___" />
+            <Todate Name="To Date" Value="___policy_end_date___" />
+            <Fromhour Name="From Hour" Value="00:01" />
+            <Tohour Name="To Hour" Value="23:59" />
+          </PolicyEffectiveDate>
+        </GeneralProposalInformation>
+      </GeneralProposalGroup>
+      
+    </GeneralProposal>
+    <PremiumCalculation Name="Premium Calculation">
+      <NetPremium Name="Net Premium" Value="" />
+      <ServiceTax Name="Service Tax" Value="" />
+      <StampDuty2 Name="Stamp Duty" Value="" />
+      <TotalPremium Name="Total Premium" Value="" />
+      <CGST Name="CGST" Value="" />
+      <SGST Name="SGST" Value="" />
+      <UGST Name="UGST" Value="" />
+      <IGST Name="IGST" Value="" />
+    </PremiumCalculation>
+    <Risks Name="Risks">
+      <Risk Type="Group" Name="Risks">
+        <RisksData Type="GroupData">
+          <InsuredDetails Name="Insured Details">
+            <InsuredDetailsGroup Type="Group" Name="Insured Details">
+                 <!--InsurersDetail_Start-->
+              <InsuredDetailsGroupData Type="GroupData">
+                <InsuredType Name="InsuredType" Value="___member_array_insured_type___" />
+                <FirstName Name="First Name" Value="___member_array_first_name___" />
+                <LastName Name="Last Name" Value="___member_array_last_name___" />
+                <DOB Name="Date of Birth" Value="___member_array_birth_date___" />
+                <Gender Name="Gender" Value="___member_array_gender___" />
+                <Relationship Name="Relationship" Value="___member_array_relation___" />
+                <Occupation Name="Occupation" Value="___member_array_occupation___" />
+                <NomineeName Name="NomineeName" Value="___nominee_first_name___" />
+                <NomineeRelationship Name="Nominee Relationship" Value="___nominee_relation___" />
+                <HealthIndicators Name="HealthIndicators">
+                  <PED Name="Pre/Existing Disease" Value="N" />
+                  <PEDDeclared Name="Pre/Existing Disease Declared" Value="N" />
+                  <BloodSugarLevel Name="BloodSugarLevel" Value="78" />
+                  <BloodPressureSystolic Name="BloodPressureSystolic" Value="100" />
+                  <BloodPressureDiastolic Name="BloodPressureDiastolic" Value="70" />
+                  <CholesterolLevel Name="CholesterolLevel" Value="160" />
+                  <BodyMassIndex Name="BodyMassIndex" Value="22" />
+                  <TobaccoAndAlcohol Name="TobaccoAndAlcohol" Value="N" />
+                  <CoMorbidity Name="CoMorbidity" Value="N" />
+                </HealthIndicators>
+                <CoverDetails Name="CoverDetails">
+                  <Covers Name="Covers" Type="Group">
+                    <CoverData Type="GroupData">
+                      <Applicable Name="Applicable" Value="True" />
+                      <CoverSI Name="Cover Sum Insured" Value="___health_insurance_si___" />
+                      <CoverRate Name="Cover Rate" Value="" />
+                      <CoverPremium Name="Cover Preimum" Value="" />
+                      <CoverGroups Name="CoverGroups" Value="Basic Insurance Cover" />
+                    </CoverData>
+                  </Covers>
+                </CoverDetails>
+              </InsuredDetailsGroupData>
+               <!--InsurersDetail_End-->
+            </InsuredDetailsGroup>
+          </InsuredDetails>
+          <OtherLoadings Name="OtherLoadings">
+            <OtherLoadingGroup Type="Group" Name="Other Loading Group">
+              <OtherLoadingGroupData Type="GroupData">
+                <LoadingAmount Name="Loading Amount" Value="" />
+                <LoadingRate Name="Loading Rate" Value="" />
+                <SumInsured Name="SumInsured" Value="" />
+                <Rate Name="Rate" Value="" />
+                <Premium Name="Premium" Value="" />
+                <Applicable Name="Applicable" Value="True" />
+                <Description Name="Description" Value="" />
+              </OtherLoadingGroupData>
+            </OtherLoadingGroup>
+          </OtherLoadings>
+          <OtherDiscounts Name="OtherDiscounts">
+            <OtherDiscountGroup Type="Group" Name="Other Discount Group">
+              <OtherDiscountGroupData Type="GroupData">
+                <DiscountAmount Name="Discount Amount" Value="" />
+                <DiscountRate Name="Discount Rate" Value="" />
+                <SumInsured Name="SumInsured" Value="" />
+                <Rate Name="Rate" Value="" />
+                <Premium Name="Premium" Value="" />
+                <Applicable Name="Applicable" Value="True" />
+                <Description Name="Description" Value="E-sale Discount" />
+              </OtherDiscountGroupData>
+              <OtherDiscountGroupData Type="GroupData">
+                <DiscountAmount Name="Discount Amount" Value="" />
+                <DiscountRate Name="Discount Rate" Value="" />
+                <SumInsured Name="SumInsured" Value="" />
+                <Rate Name="Rate" Value="0" />
+                <Premium Name="Premium" Value="0" />
+                <Applicable Name="Applicable" Value="True" />
+                <Description Name="Description" Value="Life Style Discount" />
+              </OtherDiscountGroupData>
+              <OtherDiscountGroupData Type="GroupData">
+                <DiscountAmount Name="Discount Amount" Value="" />
+                <DiscountRate Name="Discount Rate" Value="" />
+                <SumInsured Name="SumInsured" Value="___health_insurance_si___"/>
+                <Rate Name="Rate" Value="" />
+                <Premium Name="Premium" Value="" />
+                <Applicable Name="Applicable" Value="True" />
+                <Description Name="Description" Value="Policy Duration Discount" />
+              </OtherDiscountGroupData>
+            </OtherDiscountGroup>
+          </OtherDiscounts>
+        </RisksData>
+      </Risk>
+    </Risks>
+  </Product>
+  <PaymentDetails>
+    <PaymentEntry>
+      <PaymentId />
+      <MICRCheque />
+      <InstrumentDate />
+      <DraweeBankName />
+      <HOUSEBANKNAME />
+      <AmountPaid />
+      <PaymentType />
+      <PaymentMode />
+      <InstrumentNo />
+      <Status />
+      <DepositSlipNo />
+      <PayerType />
+    </PaymentEntry>
+  </PaymentDetails>
+  <Errors>
+    <ErrorCode>0</ErrorCode>
+    <ErrDescription>NULL</ErrDescription>
+  </Errors>
+</Root>

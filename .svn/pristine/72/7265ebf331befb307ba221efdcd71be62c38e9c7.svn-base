@@ -1,0 +1,157 @@
+  <!DOCTYPE HTML>
+
+<html>
+    
+<head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untitled</title>
+  <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff;
+        font-size:14px;
+    }
+
+    .wrapper{
+        margin: 0px auto;
+        padding:20px;
+        text-align: center;
+    }
+
+    .txt-pgh p{
+        font-size:14px;
+        text-align: left;
+    }
+
+    .txt-pgh p span{
+        font-weight: 600;
+        color: #373737
+    }
+
+    .txt-name{
+        font-weight: 600;
+        color: #b91834;
+    }
+
+    .box-quote{
+        border: solid 1px #4d62b5;
+        color:#4d62b5;
+        font-size:16px;
+        font-weight: 600;
+        text-align: center;
+        padding:10px;
+    }
+
+    .tbl-cr-detail{
+        background:#dddddd;
+        padding:1px;
+        font-size:14px;
+    }
+
+    .tbl-cr-detail table{
+        background: #fff;
+        border-left: solid 1px #4d62b5;
+        border-top: solid 1px #4d62b5;
+         font-size:12px;
+    }
+
+    .tbl-cr-detail table td,.tbl-cr-detail table th{
+        background: #fff;
+        border-right: solid 1px #4d62b5;
+        border-bottom: solid 1px #4d62b5;
+        text-align: left;
+        padding:5px;
+    }
+
+    .tbl-cr-detail table td span{
+       font-weight: 600;
+       text-transform: uppercase;
+    }
+
+    .tbl-cr-detail table th{
+        text-align: center !important;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+      .quotes_row {
+	   display: grid;
+        grid-template-columns: 1fr auto 1fr;
+          border:1px solid #dadada;
+          align-items: center;
+        margin-top: 20px;     
+      }
+      .ins_img{
+          border-right: 1px solid #dadada;
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          vertical-align: middle
+      }
+      
+      .ins_img img{width:100px;}
+      
+      
+      .idv{text-align: left;padding: 20px; font-size: 12px;}
+      .idv div:first-child{padding-bottom: 10px;}
+      
+      .premium {color: #b81733;font-size: 12px;}
+      .buybtn {
+          max-width: 200px;
+          background: #f85e66;
+          color: #fff;
+          padding: 7px 5px; 
+          margin: 0px auto;
+          font-size: 12px;
+          
+}
+      .btnWrap{padding: 0px 10px;text-align: center;}
+      .userPanel{display: grid;grid-template-columns: 100px 1fr; align-items: center}
+      .usrInfo {text-align: left}
+      .usr_title {color: #b81733;font-weight: bold;font-size: 18px;}
+      .usrInfo {font-weight: 600;font-size:14px;color: #373737}
+      .usrIcon {text-align: right}
+      .mobile_no {color: #4fb4e9;font-size: 15px;}
+      .usrIcon  img{width:100px;height: 100px;}
+      
+      
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper sharePopup" id="exportpdf" style="width: 80%">  
+        <div class="txt-pgh">
+            <p>Dear&nbsp;<span class="txt-name">___contact_name___</span>,</p>
+            <p>Please find below our best quotations for health insurance.</p>
+        </div>
+        <div class="tbl-cr-detail">
+            <table width="100%" cellpadding="0" cellspacing="0" border="1">
+                <tr>
+                    <td>CRN: <span>___crn___</span></td>
+                    <td>Policy Tenure (in years): <span>___policy_tenure___</span></td>
+                </tr>
+            </table>
+        </div>
+		<div>
+		___share_div___
+		</div>
+             
+        <div class="txt-pgh">
+            <p>Note: The above Quotations are subject to verification by respective insurers</p>
+            <p><span>Please feel free to contact me for more details and renewal.</span></p>
+        </div>
+            <hr>
+        <div class="userPanel">
+            <div class="usrIcon"><img src="https://www.policyboss.com/Images/icon.png"></div>
+            <div class="usrInfo">
+                <div class="usr_title">___agent_name___</div>
+                <div class="info">LANDMARK POSP</div>
+                <div class="mobile_no">___agent_mobile___</div>
+                <div class="info">___agent_email___</div>
+            </div>
+        </div>
+    </div>
+	
+	</body>
+
+</html>

@@ -1,0 +1,77 @@
+{
+    "person": [
+        {
+            "individual": {
+                "title": "___title___"
+            },
+            "identificationDocuments": [
+                {
+                    "documentType": "AADHAR_CARD",
+                    "documentId": "___adhar_Id___"
+                },
+                {
+                    "documentType": "PAN_CARD",
+                    "documentId": "___pan_Id___"
+                }
+            ],
+            "communications": [
+                {
+                    "isPrefferedCommunication": true,
+                    "communicationType": "MOBILE",
+                    "communicationId": "___mobileId___"
+                },
+                {
+                    "isPrefferedCommunication": true,
+                    "communicationType": "EMAIL",
+                    "communicationId": "___emailId___"
+                }
+            ],
+            "address": [
+                {
+                    "addressType": "___addressType_1___",
+                    "street": "___street_pr___",
+                    "streetNumber": "___streetno_pr___"
+                },
+                {
+                    "addressType": "___addressType_2___",
+                    "street": "___street_sr___",
+                    "streetNumber": "___streetno_sr___",
+                    "district": "___district_sr___",
+                    "city": "___city_sr___",
+                    "country": "IN",
+                    "pincode": "___pincode_sr___"
+                },
+                {
+                    "addressType": "___addressType_3___",
+                    "street": "___street_hq___",
+                    "streetNumber": "___streetno_hq___"
+                },
+                {
+                    "addressType": "___addressType_4___",
+                    "street": "___street_reg___",
+                    "streetNumber": "___street_no_reg___",
+                    "district": "___district_reg___",
+                    "city": "___city_reg___",
+                    "country": "IN",
+                    "pincode": "___pincode_reg___"
+                },
+                {
+                    "addressType": "___addressType_5___",
+                    "street": "___street_br___",
+                    "streetNumber": "___street_no_br___",
+                    "district": "___district_br___",
+                    "city": "___city_br___",
+                    "country": "IN",
+                    "pincode": "___pincode_br___"
+                }
+            ]
+        }
+    ],
+    "nominee": {
+        "firstName": "___firstName___",
+        "lastName": "___lastName___",
+        "dateOfBirth": "___dateOfBirth___",
+        "relation": "___relation___"
+    },
+    "financer": "___financer___"
+}

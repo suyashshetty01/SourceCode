@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><wsdl:definitions name="BizTalkServiceInstance" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+    <wsdl:documentation>
+        <CreationInfo Created="2018-07-16 13:19:13Z"/>
+    </wsdl:documentation>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://tempuri.org/Imports"/>
+    </wsdl:types>
+    <wsdl:message name="Service1_Operation1_InputMessage">
+        <wsdl:part name="part"/>
+    </wsdl:message>
+    <wsdl:message name="Service1_Operation1_OutputMessage">
+        <wsdl:part name="part"/>
+    </wsdl:message>
+    <wsdl:portType name="Service1">
+        <wsdl:documentation/>
+        <wsdl:operation name="Operation1">
+            <wsdl:documentation/>
+            <wsdl:input message="tns:Service1_Operation1_InputMessage"/>
+            <wsdl:output message="tns:Service1_Operation1_OutputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:service name="BizTalkServiceInstance"/>
+</wsdl:definitions>

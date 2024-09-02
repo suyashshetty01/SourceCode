@@ -1,0 +1,184 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Uid>895021</Uid>
+    <VendorCode>webagg</VendorCode>
+    <VendorUserId>webagg</VendorUserId>
+    <PolicyHeader>
+        <PolicyStartDate>07/06/2017 00:00:00</PolicyStartDate>
+        <PolicyEndDate>06/06/2018 00:00:00</PolicyEndDate>
+        <AgentCode>60000272</AgentCode>
+        <BranchCode>14</BranchCode>
+        <MajorClass>MOT</MajorClass>
+        <ContractType>FPV</ContractType>
+        <METHOD>ENQ</METHOD>
+        <PolicyIssueType>I</PolicyIssueType>
+        <PolicyNo></PolicyNo>
+        <ClientID />
+        <ReceiptNo />
+    </PolicyHeader>
+    <Client>
+        <ClientType>I</ClientType>
+        <CreationType>C</CreationType>
+        <Salutation>MR</Salutation>
+        <FirstName>Ajit</FirstName>
+        <LastName>Kumar</LastName>
+        <DOB>13/11/1993 00:00:00</DOB>
+        <Gender>M</Gender>
+        <MaritalStatus>S</MaritalStatus>
+        <Occupation>SVCM</Occupation>
+        <GSTIN />
+        <AadharNo />
+        <CKYCNo />
+        <EIANo />
+        <Address1>
+            <AddrLine1>thane</AddrLine1>
+            <AddrLine2>West</AddrLine2>
+            <AddrLine3 />
+            <Landmark />
+            <Pincode>400605</Pincode>
+            <City>Thane</City>
+            <State>Maharashtra</State>
+            <Country />
+            <AddressType>R</AddressType>
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo>9820098200</MobileNo>
+            <EmailAddr>abc@gmail.com</EmailAddr>
+        </Address1>
+        <Address2>
+            <AddrLine1 />
+            <AddrLine2 />
+            <AddrLine3 />
+            <Landmark />
+            <Pincode />
+            <City />
+            <State />
+            <Country />
+            <AddressType>B</AddressType>
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo>9820098200</MobileNo>
+            <EmailAddr>abc@gmail.com</EmailAddr>
+        </Address2>
+    </Client>
+    <Receipt>
+        <UniqueTranKey />
+        <CheckType />
+        <BSBCode />
+        <TransactionDate />
+        <ReceiptType />
+        <Amount />
+        <TCSAmount />
+        <TranRefNo />
+        <TranRefNoDate />
+    </Receipt>
+    <Risk>
+        <RiskType>FPV</RiskType>
+        <Zone>A</Zone>
+        <Cover>CO</Cover>
+        <Vehicle>
+            <TypeOfVehicle />
+            <VehicleClass>FPV</VehicleClass>
+            <RTOCode>MH03</RTOCode>
+            <Make>MARUTI</Make>
+            <ModelCode>MA0281</ModelCode>
+            <RegistrationNo>MH03GH1234</RegistrationNo>
+            <RegistrationDate>07/06/2016</RegistrationDate>
+            <ManufacturingYear>2016</ManufacturingYear>
+            <FuelType>P</FuelType>
+            <CNGOrLPG>
+                <InbuiltKit>N</InbuiltKit>
+                <IVDOfCNGOrLPG>0</IVDOfCNGOrLPG>
+            </CNGOrLPG>
+            <BodyType>SOLO</BodyType>
+            <EngineNo>TESTENGINEE123</EngineNo>
+            <ChassiNo>TESTCHASSIS876</ChassiNo>
+            <CubicCapacity>1197</CubicCapacity>
+            <SeatingCapacity>5</SeatingCapacity>
+            <IDV>0</IDV>
+            <GrossWeigh />
+            <CarriageCapacityFlag />
+            <TrailerTowedBy></TrailerTowedBy>
+            <TrailerRegNo></TrailerRegNo>
+            <NoOfTrailer></NoOfTrailer>
+            <TrailerValLimPaxIDVDays />
+        </Vehicle>
+        <InterestParty>
+            <Code />
+            <BankName />
+        </InterestParty>
+        <AdditionalBenefit>
+            <ElectricalAccessoriesValues></ElectricalAccessoriesValues>
+            <NonElectricalAccessoriesValues></NonElectricalAccessoriesValues>
+            <FibreGlassTank />
+            <GeographicalArea />
+            <PACoverForUnnamedPassengers />
+            <LegalLiabilitytoPaidDriver />
+            <LegalLiabilityForOtherEmployees />
+            <LegalLiabilityForNonFarePayingPassengers />
+            <UseForHandicap />
+            <AntiThiefDevice></AntiThiefDevice>
+            <NCB>20</NCB>
+            <RestrictedTPPD></RestrictedTPPD>
+            <PrivateCommercialUsage />
+            <IMT23 />
+            <CPAReq>Y</CPAReq>
+            <CPA>
+                <CPANomName>Legal Hair</CPANomName>
+                <CPANomAge>21</CPANomAge>
+                <CPANomAgeDet>Y</CPANomAgeDet>
+                <CPANomPerc>100</CPANomPerc>
+                <CPARelation>SPOU</CPARelation>
+                <CPAAppointeeName />
+                <CPAAppointeRel />
+            </CPA>
+            <NPAReq>N</NPAReq>
+            <NPA>
+                <NPAName />
+                <NPALimit />
+                <NPANomName />
+                <NPANomAge />
+                <NPANomAgeDet />
+                <NPARel />
+                <NPAAppinteeName />
+                <NPAAppinteeRel />
+            </NPA>
+        </AdditionalBenefit>
+        <AddonReq>Y</AddonReq>
+        <Addon>
+            <CoverCode>PLAN2</CoverCode>
+        </Addon>
+        <PreviousInsDtls>
+            <UsedCar>N</UsedCar>
+            <UsedCarList>
+                <PurchaseDate />
+                <InspectionRptNo />
+                <InspectionDt />
+            </UsedCarList>
+            <RollOver>Y</RollOver>
+            <RollOverList>
+                <PolicyNo>abc123</PolicyNo>
+                <InsuredName>Bajaj Allianz General Insurance Co. Ltd.</InsuredName>
+                <PreviousPolExpDt>06/06/2017 00:00:00</PreviousPolExpDt>
+                <ClientCode>40012604</ClientCode>
+                <Address1>def</Address1>
+                <Address2>def</Address2>
+                <Address3>def</Address3>
+                <Address4>def</Address4>
+                <Address5>def</Address5>
+                <PinCode>400053</PinCode>
+                <InspectionRptNo />
+                <InspectionDt />
+                <NCBDeclartion>Y</NCBDeclartion>
+                <ClaimInExpiringPolicy>N</ClaimInExpiringPolicy>
+                <NCBInExpiringPolicy>0</NCBInExpiringPolicy>
+            </RollOverList>
+            <NewVehicle>N</NewVehicle>
+            <NewVehicleList>
+                <InspectionRptNo />
+                <InspectionDt />
+            </NewVehicleList>
+        </PreviousInsDtls>
+    </Risk>
+</Root>

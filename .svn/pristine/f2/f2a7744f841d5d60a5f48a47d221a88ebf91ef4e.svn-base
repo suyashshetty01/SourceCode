@@ -1,0 +1,418 @@
+<html>
+
+<head>
+	<title>Travel - Input</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+	<script src="./js/custom.js"></script>
+	<script src="./js/travel_input.js"></script>
+	<script src="./js/handle_Url.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/product_travel.css">
+	<link rel="stylesheet" href="./css/mobile_version.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="SubFOSPopup" id="OTP">
+		<div class="SubFOSScreen">
+			<div class="FOSHeader centerAlign">
+				<div class="details-head">
+					<h4>Hey,
+						<span id="namemodal"></span>
+					</h4>
+				</div>
+			</div>
+			<div class="MainContentBlog centerAlign">
+				<h6>Kindly confirm the OTP sent on your mobile / email</h6>
+				<p>Enter your OTP</p>
+				<div class="otp_txtbx">
+					<input inputmode="numeric" id="txtotp" name="txtotp" placeholder="Enter OTP"
+						class="number-only valid" autocomplete="off" aria-invalid="false">
+				</div>
+				<span id="otpverify" style="font-size: 10pt;color: red;">Please Enter OTP.</span>
+				<span id="otpError" style="font-size: 10pt;color: red;">Please Enter Valid OTP.</span>
+				<span class="closeotppopup">
+					<div id='closeotppopup'>Edit Mobile No / Email Id</div>
+				</span>
+				<div class="verifybx">
+					<button class="verify" onclick="verifyOTP()">Verify</button>
+				</div>
+				<div class="verifybx">
+					<button class="resend" onclick="resendOTP()">Re-send</button>
+				</div>
+				<label id="lblerrormsg" class="Err"></label>
+			</div>
+		</div>
+	</div>
+	<div class="SubFOSPopup PremInitiVerify" style="display: none;">
+		<div class="SubFOSScreen">
+			<div class="FOSHeader">
+				<div class="details-head validationMsg">
+					
+				</div>
+			</div>
+			<div class="sub_row closeValidPopup"><span class="sub_btn">OK</span></div>
+		</div>
+	</div>
+	<!-- Sales Dashboard -->
+	<div class="dashboard_section" id="Dashboard" style="display:none;">
+		<div class="sticky_btn">
+			<div class="plus_quote">
+				<img src="images/add.png" onclick="showInput();">
+			</div>
+			<div class="refresh_quote">
+				<span onclick="Reload();">
+					<img src="images/refresh.png">
+				</span>
+			</div>
+		</div>
+
+		<div class="beta_dashboard">
+			<div class="betagrid_section">
+				<div class="headerTitle Activeboard" id="Quote_tab" onclick="quoteClick()">QUOTE</div>
+				<div class="headerTitle" id="Application_tab" onclick="applicationClick()">APPLICATION</div>
+				<div class="headerTitle" id="Complete_tab" onclick="completeClick()">COMPLETED</div>
+			</div>
+			<div class="addquotebox grab">
+				<div class="ad_quote" onclick="showInput()">
+					<img src="images/file.png">Add Quote
+				</div>
+			</div>
+			<div class="betaappli_div">
+				<div class="beta_appli_grid" id="quoteId">
+				</div>
+				<div class="betaquote_div" id="applicationId">
+				</div>
+				<div class="betaquote_div" id="completeId">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-wrap desktop_view">
+		<!--Header Wrap-->
+		<div class="header">
+			<div class="header_wrap">
+				<div class="logo"><img src="images/policylogo.png" width=150px;></div>
+				<div class="nav_links">
+					<div><a href="/Motor/car_insurance" title="Car Insurance">Car Beta</a></div>
+					<div><a href="/Motor/two_wheeler_insurance" title="Bike Insurance">Bike Beta</a></div>
+					<div><a href="/commercial-vehicle-insurance/commercial-vehicle-insurance.html"
+							title="Commercial Vehicle Insurance">CV Boss</a></div>
+					<div><a href="/health-insurance" title="Health Insurance">Health Boss</a></div>
+					<div class="onlyAgent"><a href="/term-insurance" title="Term Insurance">Term Boss</a></div>
+					<div class="activeNav"><a href="/Travel_Web/travel_input.html" title="Travel Insurance">Travel
+							Boss</a>
+					</div>
+					<div class="Link div" id="plusMore">More +
+						<span class="child_menu">
+							<span><a href="/cyber-insurance" title="Cyber Insurance">Cyber Boss</a></span>
+							<span><a href="/car-insurance" title="Car Insurance">Car Boss</a></span>
+							<span><a href="/twowheeler-insurance" title="Bike Insurance">Bike Boss</a></span>
+							<!-- <span><a href="/Health" title="Health Insurance">Health Alfa</a></span> -->
+						</span>
+					</div>
+					<div class="login"><a href="/Sales/Login"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+						<div class="Agent_name"><a></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Quote Wrap-->
+		<div class="quote_container" id="input_desk">
+			<div class="bbox_container">
+				<div class="image_container"><img src="images/ins_logo/travel.png"></div>
+				<div class="form_container">
+					<div class="form_wrap">
+						<h1 class="ins_heading">TRAVEL INSURANCE</h1>
+						<h4 class="ins_advt_line">compare &amp; buy affordable travel insurance plans at lowest rates
+						</h4>
+						<div class="row_wrap">
+							<div class="buttn_box" id="trip_type">
+								<div class="radio_box">
+									<div class="block_head">Type of Trip &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+									<label class="container trip">Single Trip &nbsp; &nbsp; &nbsp;
+										<input type="radio" id="SINGLE" class="trip_type" name="type" value="SINGLE">
+										<span class="checkmark"></span> </label>
+									<label class="container trip">Multi-City Trip
+										<input type="radio" id="MULTI" class="trip_type" name="type" value="MULTI">
+										<span class="checkmark"></span> </label>
+								</div>
+							</div>
+						</div>
+						<div class="row_wrap">
+							<div class="buttn_box skip_css">
+								<div class="block_head">Region of Travel</div>
+								<div class="rt_wrap hideOnMultiTrip">
+									<div class="region hideOnMultiTrip hideForVFS" id="Asia">Asia</div>
+									<div class="region hideOnMultiTrip hideForVFS" id="Africa">Africa</div>
+									<div class="region hideOnMultiTrip" id="Europe">Europe</div>
+								</div>
+								<div class="rt_wrap">
+									<div class="region hideForVFS" id="WorldWide">WorldWide(WW)</div>
+									<div class="region hideForVFS" id="WWExUSCanada">WorldWide Excl. US/Canada</div>
+								</div>
+							</div>
+						</div>
+						<div id="dvGeographicalAreaId" class="ErrorClass"></div>
+						<div class="row_wrap">
+							<div class="inp_field  one_col">
+								<div class="one_fold"> <span class="input"><input type="text" id="travel_start_date"
+											maxlength="10" name="travel_start_date" placeholder="Start Date"
+											class="datepickr start"></span> </div>
+								<div class="one_fold dvEndPeriod">
+									<!--<span class="label">Pincode</span>--><span class="input " id="onDyn">
+										<input type="text" id="travel_end_date" maxlength="10" name="travel_end_date"
+											placeholder="End Duration" class="datepickr end" disabled>
+									</span>
+								</div>
+								<div class="one_fold dvMaxTripPeriod">
+									<span class="input" id="onDyn">
+										<select class='dayRange' id="maxTripPeriod" name="maxTripPeriod">
+											<option selected disabled>Max Trip Days </option>
+											<option value='30'>0-30</option>
+											<option value='45'>30-45</option>
+											<option value='60'>45-60</option>
+											<option value='90'>60-90</option>
+										</select>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="row_wrap">
+							<div class="inp_field  one_col">
+								<div class="addmemsection"> <span>Add Member</span>
+									<span class="custombtn">
+										<span class="subt member" memberType='Adult' operation='minus'>-</span>
+										<span class="btnTxt adult_count">Adult [ 1 ]</span> <span class="plus member"
+											memberType='Adult' operation='plus'>+</span>
+									</span>
+									<span class="custombtn">
+										<span class="subt member" memberType='Child' operation='minus'>-</span>
+										<span class="btnTxt child_count">Child [ 0 ]</span> <span class="plus member"
+											memberType='Child' operation='plus'>+</span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="row_wrap">
+							<div class="buttn_box  skip_css">
+								<div class="block_head">Add Insured Members Birth Date</div>
+								<div class="memberbox_group">
+									<div class="input_row">
+										<span class='membox M1DOB'>
+											<input type='text' id="Member_1_DOB" maxlength="10"
+												placeholder='Eldest Adult-DOB' class="datepickr M_1_DOB">
+											<!-- <span class='close'><i class='fa fa-remove'></i></span> -->
+										</span>
+									</div>
+									<!--<div class="addbtn"><span>Add Member</span></div> -->
+								</div>
+							</div>
+						</div>
+						<div class="row_wrap">
+							<div class="inp_field two_col"> <span class="input"><input type="text"
+										placeholder="Full Name" id='name' class="inpErr"></span> </div>
+							<div class="inp_field two_col"> <span class="input"><input type="tel" placeholder="Mobile"
+										id='mobile' class="inpErr"
+										onkeypress="if (this.value.length == 10) return false;"
+										autocomplete="nope"></span> </div>
+						</div>
+						<div class="row_wrap">
+							<div class="inp_field one_col"> <span class="input"><input type="email"
+										placeholder="Email Id" id='email' class="inpErr"></span> </div>
+						</div>
+						<div class="instruction" style="color:#2196f3; font-weight: bold;">
+							*quote is applicable only for residents of India & journey starting from India
+						</div>
+						<div class="sub_row"> <span class="sub_btn" onclick="validateForm()">SUBMIT</span> </div>
+						<div class="instruction">By clicking on "SUBMIT", You agree to our <b>Privacy
+								Policy</b> &amp; <b>Terms of Use</b></div>
+					</div>
+					<div class="toll_row"> <span>Need Help? Call Us at <span
+								class="toll_txt">1800-419-4199</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MOBILE VIEW Start-->
+	<div class="main-wrap mobile_view">
+		<!--Header Wrap-->
+		<div class="header">
+			<div class="header_wrap">
+				<div class="logo">
+					<img src="images/policylogo.png" width=150px;>
+					<div class="mobicon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				</div>
+				<div class="nav_links" id="navLink">
+					<a href="javascript:void(0)" class="closeNavbtn">&times;</a>
+					<div class="Link"><a href="/Motor/car_insurance" title="Car Insurance">Car Beta</a></div>
+					<div class="Link"><a href="/Motor/two_wheeler_insurance" title="Bike Insurance">Bike Beta</a></div>
+					<div class="Link"><a href="/commercial-vehicle-insurance/commercial-vehicle-insurance.html"
+							title="Commercial Vehicle Insurance">CV Boss</a></div>
+					<div class="Link"><a href="/health-insurance" title="Health Insurance">Health Boss</a></div>
+					<div class="Link onlyAgent"><a href="/term-insurance" title="Term Insurance">Term Boss</a></div>
+					<div class="Link activeNav"><a href="/Travel_Web/travel_input.html" title="Travel Insurance">Travel
+							Boss</a></div>
+					<div class="Link"><a href="/cyber-insurance" title="Cyber Insurance">Cyber Boss</a></div>
+					<div class="Link"><a href="/car-insurance" title="Car Insurance">Car Boss</a></div>
+					<div class="Link"><a href="/twowheeler-insurance" title="Bike Insurance">Bike Boss</a></div>
+					<!-- <div class="Link"><a href="/Health" title="Health Insurance">Health Alfa</a></div> -->
+
+				</div>
+			</div>
+		</div>
+		<!--Mobile View-->
+		<div class="quote_container_mb" id="input_mb">
+			<div class="bbox_container_mb">
+				<div class="image_container_mb"><img src="images/ins_logo/travel.png"></div>
+
+				<div class="container_mb" style="margin-top: -6px;">
+					<div class="form_mb">
+						<h1 class="ins_heading_mb">TRAVEL INSURANCE</h1>
+						<div class="inp_field  one_col_mb">
+							<span class="input_mb">
+								<span class="input_mb"><label>Type of Trip</label></span></span>
+						</div>
+						<div class="row_wrap_mb">
+							<div class="inpErr inp_field  one_col_mb" id='trip_type_mb'>
+								<span class="input_mb Travel_grid">
+									<div>
+										<label class="container" style="font-size:13px;padding-left:20px">Single Trip
+											<input id='trip_SINGLE_mb' type="radio" name="up" class="trip_type"
+												value='SINGLE'>
+											<span class="checkmark margin">
+											</span>
+										</label>
+									</div>
+									<div>
+										<label class="container" style="font-size:13px;padding-left:20px">Multi-City
+											Trip
+											<input id='trip_MULTI_mb' type="radio" name="up" class="trip_type"
+												value='MULTI'>
+											<span class="checkmark margin">
+											</span>
+										</label>
+									</div>
+								</span>
+							</div>
+						</div>
+						<div class="inp_field  one_col_mb">
+							<span class="input_mb">
+								<span class="input_mb"><label>Region of Travel</label></span></span>
+						</div>
+						<div class="row_wrap_mb">
+							<div class="inp_field  one_col_mb">
+								<span class="input_mb"> <span class="input_mb">
+										<select class="inpErr" id='region_mb' style='width:99%'>
+											<option selected disabled>Select Region</option>
+											<option class="hideForVFS hideOnMultiTrip" value="Asia">Asia</option>
+											<option class="hideForVFS hideOnMultiTrip" value="Africa">Africa</option>
+											<option class="hideOnMultiTrip" value="Europe">Europe</option>
+											<option class="hideForVFS" value="WorldWide">WorldWide</option>
+											<option class="hideForVFS" value="WWExUSCanada">WorldWide Excl. Us/Canada
+											</option>
+										</select>
+									</span></span>
+							</div>
+						</div>
+
+						<div class="row_wrap_mb">
+							<div class="inp_field one_col_mb Travel_grid">
+								<div>
+									<span class="datepickr start inpErr"><input type="text" placeholder="Start Date"
+											id="start_dt_mb"></span>
+								</div>
+								<div class="dvEndPeriod">
+									<span class="datepickr end inpErr"><input type="text" placeholder="Return Date"
+											id="end_dt_mb" disabled></span>
+								</div>
+								<div class="dvMaxTripPeriod" style="margin: -1px 0px -3px -1px">
+									<select class='dayRange inpErr' id="maxTripPeriod_mb" name="maxTripPeriod"
+										style='width: 98%;margin-left: 3px;border-left: 1px solid #c9c9c9;'>
+										<option selected disabled>Max Trip Days </option>
+										<option value='30'>0-30</option>
+										<option value='45'>30-45</option>
+										<option value='60'>45-60</option>
+										<option value='90'>60-90</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row_wrap_mb">
+							<div class="inp_field  one_col_mb">
+								<div class="addmemsection"> <span>Add Member</span>
+									<span class="custombtn">
+										<span class="subt member" memberType='Adult' operation='minus'>-</span>
+										<span class="btnTxt adult_count">Adult [ 1 ]</span> <span class="plus member"
+											memberType='Adult' operation='plus'>+</span>
+									</span>
+									<span class="custombtn">
+										<span class="subt member" memberType='Child' operation='minus'>-</span>
+										<span class="btnTxt child_count">Child [ 0 ]</span> <span class="plus member"
+											memberType='Child' operation='plus'>+</span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="row_wrap">
+							<div class="buttn_box  skip_css">
+								<div class="block_head">Add Insured Members Birth Date</div>
+								<div class="memberbox_group">
+									<div class="input_row_mb">
+										<span class='membox M1DOB_mb' style="width: 47.33%">
+											<input type='text' id="Member_1_DOB_mb" maxlength="10"
+												placeholder='Eldest Adult-DOB' class="datepickr M_1_DOB_mb inpErr">
+											<!-- <span class='close'><i class='fa fa-remove'></i></span> -->
+										</span>
+									</div>
+									<!--<div class="addbtn"><span>Add Member</span></div> -->
+								</div>
+							</div>
+						</div>
+
+						<div id="Member"></div>
+						<div class="row_wrap_mb">
+							<div class="inp_field one_col_mb">
+								<span class="input_mb"><input type="text" id='name_mb' placeholder="Full Name"
+										class="inpErr" minlength="3" autocomplete='off' autocorrect="false"></span>
+							</div>
+						</div>
+						<div class="row_wrap_mb">
+							<div class="inp_field one_col_mb">
+								<span class="input_mb"><input type="text" id='email_mb' placeholder="Email Id"
+										class="inpErr" minlength="3" autocomplete='off'></span>
+							</div>
+						</div>
+						<div class="row_wrap_mb">
+							<div class="inp_field one_col_mb">
+								<span class="input_mb"><input type="tel" id='mobile_mb' placeholder="Mobile"
+										class="inpErr" minlength="10" maxlength="10" inputmode="numeric"></span>
+							</div>
+						</div>
+						<div class="instruction" style="color:#2196f3; font-weight: bold;">
+							*quote is applicable only for residents of India & journey starting from India
+						</div>
+						<div class="sub_row_mb">
+							<span class="sub_btn_mb" onclick="validateFormMb()">SUBMIT</span>
+						</div>
+						<div class="instruction">
+							By clicking on "SUBMIT", You agree to our <b>Privacy Policy</b> &amp; <b>Terms of Use</b>
+						</div>
+					</div>
+					<div class="toll_mb">
+						<span>Need Help? Call Us at <span class="toll_txt_mb">1800-419-4199</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+</head>
+<form style="padding-top: 30px;" id="uploadForm">
+    <input type="hidden" placeholder="visitor_id" id="visitor_id" name="visitor_id" value="12345">
+   <!-- <button type="button" onclick="check();">Check</button> -->
+    <button type="button" onclick="get_check1();">policyboss get session (_)</button>
+    <button type="button" onclick="get_check2();">policyboss get session (-)</button>
+</form>
+
+<body>
+    <script>
+        let visitorObj = {
+            "visitor_id": "12345","productname":"website"
+        }
+        $.ajax({
+            url: "/set-session",
+			type: "POST",
+			crossDomain: true,
+			data: visitorObj,
+			dataType: "json",
+            success: function (data) {
+                console.log('save app visitor:', data);
+            },
+            error: function (e) {
+                console.log("save app visitor error :", e);
+            }
+        });
+		
+		
+		$.get('/get-session', function (res) {
+            console.log(res);
+        });
+		
+		
+        /*function check() {
+            let obj = {};
+            $('#uploadForm').ajaxSubmit({
+                data: obj,
+                error: function (xhr) {
+                    console.log(xhr);
+                },
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+            //});
+        }*/
+        function get_check1() {
+            $.get('https://www.policyboss.com/get_session', function (res) {
+                console.log(res);
+            });
+        }
+
+        function get_check2() {
+            $.get('https://www.policyboss.com/get-session', function (res) {
+                console.log(res);
+            });
+        }
+    </script>
+</body>
+
+</html>

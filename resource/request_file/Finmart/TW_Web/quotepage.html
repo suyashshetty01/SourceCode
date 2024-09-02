@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MOTOR INSURANCE</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style-finmart.css" rel="stylesheet" type="text/css" />
+    <link href="css/responsive-finmart.css" rel="stylesheet" type="text/css" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css">
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/ion-rangeSlider.css">
+    <link rel="stylesheet" href="css/ion-rangeSlider-skinFlat.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <style>
+        /* Absolute Center Spinner */
+        .loading {
+            /*position: fixed;*/
+            position: absolute;
+            z-index: 999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+            /* Transparent Overlay */
+            .loading:before {
+                content: '';
+                display: block;
+                /*position: fixed;*/
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.3);
+            }
+
+            /* :not(:required) hides these rules from IE9 and below */
+            .loading:not(:required) {
+                /* hide "loading..." text */
+                font: 0/0 a;
+                color: transparent;
+                text-shadow: none;
+                background-color: transparent;
+                border: 0;
+            }
+
+                .loading:not(:required):after {
+                    content: '';
+                    display: block;
+                    font-size: 7px;
+                    width: 1em;
+                    height: 1em;
+                    margin-top: -0.5em;
+                    text-align: right;
+                    margin-left: 4em;
+                    -webkit-animation: spinner 1500ms infinite linear;
+                    -moz-animation: spinner 1500ms infinite linear;
+                    -ms-animation: spinner 1500ms infinite linear;
+                    -o-animation: spinner 1500ms infinite linear;
+                    animation: spinner 1500ms infinite linear;
+                    border-radius: 0.5em;
+                    -webkit-box-shadow: rgba(0, 0, 0, 0.30) 1.5em 0 0 0, rgba(0, 0, 0, 0.30) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.30) 0 1.5em 0 0, rgba(0, 0, 0, 0.30) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.30) -1.5em 0 0 0, rgba(0, 0, 0, 0.30) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.30) 0 -1.5em 0 0, rgba(0, 0, 0, 0.30) 1.1em -1.1em 0 0;
+                    box-shadow: rgba(0, 0, 0, 0.30) 1.5em 0 0 0, rgba(0, 0, 0, 0.30) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.30) 0 1.5em 0 0, rgba(0, 0, 0, 0.30) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.30) -1.5em 0 0 0, rgba(0, 0, 0, 0.30) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.30) 0 -1.5em 0 0, rgba(0, 0, 0, 0.30) 1.1em -1.1em 0 0;
+                }
+
+        /* Animation */
+
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .policyboss-motor > a {
+            outline: none !important;
+            border: 1px solid #aeaeae;
+            margin-top: 12px;
+            text-transform: uppercase;
+            background-color: #fff;
+            color: #aeaeae;
+            border-radius: 0;
+            padding: 3px 8px 2px 8px;
+            margin-right: 5px;
+            font-size: 13px;
+            width: auto;
+        }
+
+            .policyboss-motor > a.active {
+                background: #fff;
+                color: #009ee3;
+                border: 2px solid #009ee3;
+                text-shadow: none;
+                box-shadow: none;
+            }
+
+        .occupation-sec-style {
+            position: absolute;
+            z-index: 1;
+            margin: -6px 0 1px 2px;
+            color: #636363;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <img src="images/menu-icon.png" alt="" />
+        </div>
+        <div class="header-middle">BIKE INSURANCE</div>
+        <div class="header-right">
+            <img src="images/home-icon.png" class="img-responsive" />
+        </div>
+    </header>
+    <div class="wrapper" style="top:48px;">
+        <!-- Tab Attribute -->
+        <ul id="myTab" class="nav nav-tab pad col-xs-12">
+            <li class="col-xs-4 pad"><a href="#Property" class="ripple-effect" data-toggle="tab">INPUT</a></li>
+            <li class="active col-xs-4 pad"><a href="#Appl" data-toggle="tab">QUOTE</a></li>
+            <li class="col-xs-4 pad"><a href="#CoAppl" class="ripple-effect" data-toggle="tab">APPLY</a></li>
+        </ul>
+    </div><!-- ./wrapper -->
+    <!-- <div style="margin-top:60px;"></div> -->
+    <section class="container-fluid pad" style="margin-top:65px;">
+        <!-- Tab Contents panel 1 start-->
+        <div id="myTabContent" class="tab-content">
+            <!-- Tab Contents panel 2 start-->
+            <div class="tab-pane fade active in" id="Appl">
+                <div class="col-xs-12 pad-2 top-summary-new">
+                    <div class="summary">
+                        <div class="col-xs-2 pad-1 summary-top">
+                            <img src="images/two-wheeler-icon.png" class="img-responsive" />
+                        </div>
+                        <div class="col-xs-8 pad text-center">
+                            <h6 class="makemodelname"></h6>
+                            <p id="VehicleDetails"></p>
+                            <p>CRN:<span id="CRN" class="CRN"></span></p>
+                        </div>
+                        <div class="col-xs-2 pad text-right summary-edit-section-img">
+                            <img src="images/edit-icon.png"  onclick="OnEdit();" id="EditInfo" href="" class="img-responsive" />
+                        </div>
+                    </div>
+                    <!-- <div class="col-xs-12 pad summary-details" > -->
+                    <!-- <div class="col-xs-4 pad-1"> -->
+                    <!-- <p>FUEL TYPE</p> -->
+                    <!-- <h5 id="FuelNameDetails"></h5> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-xs-4 pad-1"> -->
+                    <!-- <p>VARIANT</p> -->
+                    <!-- <h5 id="VariantDetails">LXI</h5> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-xs-4 pad-1"> -->
+                    <!-- <p>CRN NUMBER</p> -->
+                    <!-- <h5 id="CRN" class="CRN">464695</h5> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+                <div class="clearfix"></div>
+                <!-- result policyboss text start -->
+                <div class="col-xs-10 pad-2" style="display:block;">
+                    <div class="rupeeboss">
+                        <p><span class="insurer_count"></span> Results from www.policyboss.com</p>
+                    </div>
+                </div>
+                <div class="col-xs-2 text-right top-motor-share" style="display:block;">
+                    <a href="#" class="main-floater-top-up-icon" onclick="Quote_share();">
+                        <img src="images/share-icon-white.png" class="img-responsive" />
+                    </a>
+                </div>
+                <!-- result policyboss text close -->
+                <div class="clearfix"></div>
+                <div class="col-xs-12 pad-2 top">
+                    <div class="vehicle-registration">
+                        <div class="switch-outer">
+                            <span style="padding:17px;">
+                                WITH ADD-ON
+                            </span>
+                            <label class="switch" style="pointer-events:auto;margin-bottom:3px;">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                            <span class="active" style="padding:17px;">
+                                WITHOUT ADD-ON
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- list table start-->
+                <div class="loading">Loading&#8230;</div>
+                <div id="listtable" class="top-register col-xs-12 pad-2">
+                    <div class="listtable quoteboxparent">
+                        <div class="col-xs-12 quote-with-addon quoteboxmain hidden" id="divQuitList___Insurer_ID___" insurerid="___Insurer_ID___" premium="___Premium_Breakup_final_premium___" idv="___LM_Custom_Request_vehicle_expected_idv___" fair_price="___fair_price___">
+                            <!-- <div class=" d-flex p-2 quotechild">                            -->
+                            <div class="col-xs-3 pad-1 quote-with-addon-img">
+                                <img id="Img____Insurer_ID___" src="http://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/___Insurer_Logo_Name___" class="img-responsive" />
+                            </div>
+                            <div class="col-xs-3 pad-1 quote-with-addon-idv">
+                                <div class="loan-amt">
+                                    <p>IDV</p>
+                                    <h6><a href="#">___LM_Custom_Request_vehicle_expected_idv___</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 pad-1 quote-with-addon-premium premium_div">
+                                <div class="loan-premium-motor PremiumBreakup Premium">
+                                    <p>PREMIUM</p>
+                                    <a href="#" class="PremiumBreakup PB____Insurer_ID___"
+                                       basicowndamage="___Premium_Breakup_own_damage_od_basic___"
+                                       premium="___Premium_Breakup_own_damage_od_final_premium___" nonelectricalaccessoriespremium="___Premium_Breakup_own_damage_od_non_elect_access___" electricalacessoriespremium="___Premium_Breakup_own_damage_od_elect_access___"
+                                       oddiscount="___Premium_Breakup_own_damage_od_disc___" oddiscountper="___Premium_Rate_own_damage_od_disc___" bifuelkitpremium="___Premium_Breakup_own_damage_od_cng_lpg___" antitheftdiscount="___Premium_Breakup_own_damage_od_disc_anti_theft___"
+                                       voluntarydeductions="___Premium_Breakup_own_damage_od_disc_vol_deduct___" automobileassociationmembershippremium="___Premium_Breakup_own_damage_od_disc_aai___"
+                                       agediscount="0.0" professiondiscount="0.0" underwriterloading="___Premium_Breakup_own_damage_od_loading___" totalodpremium="___Premium_Breakup_own_damage_od_final_premium___"
+                                       thirdpartyliablitypremium="___Premium_Breakup_liability_tp_basic___" personalaccidentcoverforunammedpassenger="___Premium_Breakup_liability_tp_cover_unnamed_passenger_pa___" personalaccidentcoverfornamedpassenger="___Premium_Breakup_liability_tp_cover_named_passenger_pa___"
+                                       personalaccidentcoverforownerdriver="___Premium_Breakup_liability_tp_cover_owner_driver_pa___" personalaccidentcoverforpaiddriver="___Premium_Breakup_liability_tp_cover_paid_driver_pa___" legalliabilitypremiumforpaiddriver="___Premium_Breakup_liability_tp_cover_paid_driver_ll___"
+                                       bifuelkitliabilitypremium="___Premium_Breakup_liability_tp_cng_lpg___" totalliabilitypremium="___Premium_Breakup_liability_tp_final_premium___" totalpremium="___Premium_Breakup_net_premium___"
+                                       servicetax="___Premium_Breakup_service_tax___" netpayablepayablepremium="___Premium_Breakup_final_premium___" insurername="___Insurer_Insurer_Name___" quoteid="___mi_quote_id___"
+                                       noclaimbonus="___Premium_Breakup_own_damage_od_disc_ncb___" noclaimbonuspercentage="___Premium_Rate_own_damage_od_disc_ncb___" servicelogid="___Plan_List_0_Service_Log_Id___" fair_price="___fair_price___"
+                                       idv="___LM_Custom_Request_vehicle_expected_idv___" addonpremium="___Premium_Breakup_addon_addon_final_premium___" addonname="___Premium_Breakup_addon_AddonName___" insurerid="___Insurer_Id___"></a>
+                                    <h6 class="PremiumBreakup1 PB1____Insurer_ID___" style="color:white;padding-top: 7px;" onclick="vehicleinfo();">
+                                        <i class="fa fa-rupee premium" aria-hidden="true"></i> ___Premium_Breakup_final_premium___</a>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 pad-1 quote-with-addon-buy">
+                                <div class="buy-now-motor">
+                                    <a class="ripple-effect btn btn-default premium_btn Premium quote-buynow" href="/___proposal_url___/___client_id___/___Service_Log_Unique_Id___/AgentType/IsCustomer" onclick="return redirect(this)"><img src="images/cart-icon.png" class="img-responsive" /> <span class="buy-homeloan">BUY</span></a>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <div class="col-xs-12 pad quote-without-addon  addon-selectedMobile">
+                                <div style="display:grid;grid-template-columns:1fr 1fr;margin:8px;text-align:center;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- list table close-->
+                <div class="clearfix"></div>
+                <div class="additional-info">
+                    <!-- <div class="col-xs-12 pad ripple-effect"> -->
+                        <!-- <div class="pull-right right-pad"><i class="fa fa-angle-down" aria-hidden="true"></i></div> -->
+                        <!-- <a style="border: none;" data-toggle="modal" data-target="#myModal"> -->
+                            <!-- <p>ADDITIONAL INFORMATION & OPTIONS</p> -->
+                        <!-- </a> -->
+                    <!-- </div> -->
+					 <div class="footer_btn d-flex">
+					<div class="flex-fill" id="cov_more">COVER MORE</div>
+					<div class="flex-fill" id="addons">ADDONS</div>
+            </div>
+                </div>
+                <div id="VehicleModal" class="modal animated bounceIn in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog compare-popup popuptop travel-popup">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="header_div">Premium Breakup</div>
+                                <a href="#" data-dismiss="modal" class="nooutline popclosepos cross-w" style="float:right;padding-right: 10px;color:#484747"> &#10006; </a>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <!-- Own Damage , Liability -->
+
+                                <div class="PremiumDetails" style="">
+                                    <div id="list">
+                                        <div class="">
+                                            <!-- table -->
+                                            <table class="table border-table-td" style="width:100%;">
+                                                <tr class="addonsList">
+                                                    <td class="border-table-td text-center" style="background:#00476f; padding: 6px !important; color:#fff;">ADDON PREMIUM</td>
+                                                </tr>
+                                                <tr class="addonsList">
+                                                    <td>
+                                                        <div class="insurance-cover" id="Addons">
+                                                            <div class="col-xs-1 pad text-center add-on-cover-icon">
+                                                                <div class="checkbox">
+                                                                    <input type="checkbox" checked style="height:19px;margin-left: -2px;" id="___Common_Addon___">
+                                                                    <span class="box"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-11 pad" for="___Common_Addon___"><p>___Common_Addon_Name___ ( ___addon_range___ )</p></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="addonsList">
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <h5>Total Addons Premium</h5>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <h5 id="AddOnPremium"></h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="table border-table-td" style="width:100%;">
+                                                <tr>
+                                                    <td class="border-table-td text-center" style="background:#00476f; padding: 6px !important; color:#fff;">OWN DAMAGE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p id="lblBasicOwnDamage">Basic OD Premium</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="sBasicOwnDamage"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td" id="EAPremium">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Elec. Accessories</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="ElectricalAcessoriesPremium"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td" id="NEAPremium">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Non Elec. Accessories</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="NonElectricalAccessoriesPremiumNEA"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td" id="NEAPremium">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Bi Fuel Kit</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="BiFuelKitPremium"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td" id="odDiscount">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Special Discount</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="ODDiscount"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>No Claim Bonus</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="NoClaimBonus"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Vol. Deductible</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="VoluntaryDeductions"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Automobile Association Membership</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="AutomobileAssociationMembershipPremium"></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <h5>Total OD Premium</h5>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <h5 id="TotalODPremium"></h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="table border-table-td" style="width:100%;">
+                                                <tr>
+                                                    <td class="border-table-td text-center" style="background:#00476f; padding: 6px !important; color:#fff;">LIABILITY</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>Basic OD Premium</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="ThirdPartyLiablityPremium">10,000</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>PA to Owner Driver</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="PersonalAccidentCoverForOwnerDriver">50</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <p>LL to Paid Driver</p>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <p id="LegalLiabilityPremiumForPaidDriver">50</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border-table-td">
+                                                        <div class="col-xs-8 pad border-div-td">
+                                                            <h5>Total Liability Premium</h5>
+                                                        </div>
+                                                        <div class="col-xs-4 text-center pad">
+                                                            <h5 id="TotalLiabilityPremium">2110</h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!-- total start -->
+                                            <div class="text-center" style="display:grid;grid-template-columns:1fr 1fr 1fr;text-transform:uppercase;font-size:11px;">
+
+                                                <div class="">
+                                                    <p>Net Premium</p>
+                                                    <h6><i class="fa fa-rupee" aria-hidden="true"></i> <span id="TotalPremium"></span></h6>
+                                                </div>
+                                                <div class="">
+                                                    <p>Service Tax / GST</p>
+                                                    <h6><i class="fa fa-rupee" aria-hidden="true"></i> <span id="ServiceTax"></span></h6>
+                                                </div>
+                                                <div>
+                                                    <p>Total Premium</p>
+                                                    <h6><i class="fa fa-rupee" aria-hidden="true"></i>  <span id="NetPayablePayablePremium" class="txt24black txtblue"></span></h6>
+                                                </div>
+                                            </div>
+
+                                            <!-- total start -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- total start -->
+            </div><!-- Tab Contents panel 2 close-->
+            <div class="clearfix top-type-info-new"></div>
+        </div>
+        <input id="VehicleInsuranceSubtype" name="VehicleInsuranceSubtype" type="hidden" value="">
+    </section><!-- /.content -->
+    
+    <!-- Modal -->
+    <div class="modal fade coveradd" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:999999;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <h4 class="modal-title">CUSTOMISE</h4>
+                </div>
+                <div class="modal-body" style="padding:5px 5px 10px 5px;width:100%;">
+                    <div class="col-xs-12 pad">
+                        <form action="" class="">
+                            <div class="form-group">
+                                <div class="col-xs-6 pad">
+                                    <div class="form-control height-box">
+                                        <input id="ElectricalAccessories" type="text" class="form-input-new">
+                                        <span class="highlight"></span><span class="bar"></span>
+                                        <label class="form-label-new">ELEC ACCESSORIES</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 pad">
+                                    <div class="form-control height-box">
+                                        <input id="NonElectricalAccessories" type="text" class="form-input-new">
+                                        <span class="highlight"></span><span class="bar"></span>
+                                        <label class="form-label-new">NON-ELEC ACCESSORIES</label>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div><!--End form group-->
+                            <div class="form-group">
+                                <div class="col-xs-6 pad">
+                                    <div class="form-control height-box">
+									 <span class="selectbox-highlight">VOLUNTARY DEDUCTIBLE</span>
+									 <select id="VoluntaryDeduction" class="form-control height-box-dropdown" style="padding: 6px 0px;">
+											<option value="0">VOLUNTARY DEDUCTIBLE</option>
+											<option value="500">500</option>
+											<option value="750">750</option>
+											<option value="1000">1000</option>
+											<option value="1500">1500</option>
+											<option value="3000">3000</option>
+									</select>
+                                        
+                                        <span class="highlight"></span><span class="bar"></span>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 pad">
+                                    <div class="form-control height-box">
+                                        <input id="ExpectedIDV" type="number" class="form-input-new">
+                                        <input id="expected_idv" type="hidden">
+                                        <span class="highlight"></span><span class="bar"></span>
+                                        <label class="form-label-new">IDV</label>
+                                    </div>
+                                </div>
+                            </div><!--End form group-->
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <div class="col-xs-6 form-padding">
+                                    <div class="form-control height-box motor-occupation top-register">
+                                        <span class="occupation-sec-style-modal-motor">Personal Accident Cover For Owner Driver</span>
+                                        <a class="btn btn-default" id="CKAY" onclick="CheckOwnerDriverPersonalAccidentCover('Yes');">YES</a>
+                                        <a class="btn btn-default active" id="CKAN" onclick="CheckOwnerDriverPersonalAccidentCover('No');">NO</a>
+                                        <input type="hidden" id="OwnerDriverPersonalAccidentCover" value="">
+                                        <input type="hidden" id="ODPAC" " value="0">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 form-padding">
+                                    <div class="form-control height-box motor-occupation top-register">
+                                        <span class="occupation-sec-style-modal-motor">ANTI-THEFT DEVICE</span>
+                                        <a class="btn btn-default" id="ATY" onclick="CheckAntitheft('Yes');">YES</a>
+                                        <a class="btn btn-default active" id="ATN" onclick="CheckAntitheft(0);">NO</a>
+                                        <input type="hidden" id="IsAntiTheftDevice" value="">
+                                    </div>
+                                </div>
+                            </div><!--End form group-->
+                            <div class="form-group">
+                            </div><!--End form group-->
+                            <div class="col-xs-12 pad" style="display:none">
+                                <div class="text-center add-on-cover-head">ADD ON COVERS</div>
+                                <div id="selectall" class="chkAddons select_all addon_row">
+                                    <input type="checkbox" id="SelectAllAddons" class="chk-col-indigo checkedInsurerFilter selection_box" />
+                                    <label style="font-size: 14px" for="SelectAllAddons">Select All</label><br>
+                                </div>
+                                <div class="insurance-cover" id="Addons">
+                                    <div class="col-xs-1 pad text-center add-on-cover-icon">
+                                        <div class="checkbox">
+                                            <input type="checkbox" style="height:19px;margin-left: -2px;" id="___Common_Addon___">
+                                            <span class="box"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-11 pad" for="___Common_Addon___"><p>___Common_Addon_Name___ ( ___addon_range___ )</p></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer text-center bottom-pad">
+                    <button type="button" onclick="cover_filter();" class="btn btn-submit ripple-effect">APPLY NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- close Modal -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/ion-rangeSlider.js"></script>
+    <script>
+        var fromval = $("#txttenure").val();
+        if ($("#txttenure").val() == 0) {
+            fromval = 1;
+            $("#txttenure").val('0');
+        }
+        else {
+            fromval = $("#txttenure").val();
+
+        }
+        var $range1 = $("#range1"),
+       $update1 = $("#txttenure");
+
+        $range1.ionRangeSlider({
+            type: "single",
+            min: 10,
+            from: fromval,
+            max: 50,
+            step: 5,
+            grid: true,
+            grid_snap: true
+        });
+        $range1.on("change", function () {
+            //debugger
+            var $this = $(this),
+                value = $this.prop("value").split(";");
+            $("#txttenure").addClass('used');
+            document.getElementById("txttenure").value = value[0];
+        });
+        var slider1 = $range1.data("ionRangeSlider");
+        $update1.on("change", function () {
+            slider1.update({
+                from: $("#txttenure").val().slice(0, -5)
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('select.form-control').css({
+                'font-size': '13px', 'padding-top': '8px', 'border-bottom': '1px solid #aaabab', 'background': 'url(images/dropdown-img.png) transparent right no-repeat', 'background-position': 'bottom right', 'color': '#636363'
+            });
+
+            $('.selectbox-highlight').hide();
+            $('select').on('change', function () {
+                //debugger;
+                var ThisValue = $('option:selected', this).html();
+
+                if (ThisValue == "FUEL TYPE" || ThisValue == "CNG / LPG KIT" || ThisValue == "MFG YEAR" || ThisValue == "MFG MONTH" || ThisValue == "PRESENT INSURER" || ThisValue == "VARIANT" || ThisValue == "TITLE" || ThisValue == "STATE" || ThisValue == "CITY" || ThisValue == "COUNTRY" || ThisValue == "RELATION") {
+                    $(this).prev('.selectbox-highlight').hide();
+                }
+                else {
+                    $(this).prev('.selectbox-highlight').show();
+                }
+            });
+
+            var windowWidth = $(window).width();
+
+            if (windowWidth < 1920) {
+                $('select.form-control').on('change', function () {
+
+                    var ThisValue = $('option:selected', this).html();
+                    if (ThisValue == "FUEL TYPE" || ThisValue == "CNG / LPG KIT" || ThisValue == "MFG YEAR" || ThisValue == "MFG MONTH" || ThisValue == "PRESENT INSURER" || ThisValue == "VARIANT" || ThisValue == "TITLE" || ThisValue == "STATE" || ThisValue == "CITY" || ThisValue == "COUNTRY" || ThisValue == "RELATION") {
+                        $(this).css({
+                            'font-size': '13px', 'padding-top': '8px', 'border-bottom': '1px solid #aaabab', 'background': 'url(images/dropdown-img.png) transparent right no-repeat', 'background-position': 'bottom right', 'color': '#636363'
+                        });
+                    }
+
+                    else {
+                        $(this).css({
+                            'font-size': '15px', 'padding-top': '20px', 'border-bottom': '1px solid #009ee3', 'background': 'url(images/dropdown-img-hover.png) transparent right no-repeat', 'background-position': 'bottom right', 'color': '#242425'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        $(window, document, undefined).ready(function () {
+
+            $('input').blur(function () {
+                var $this = $(this);
+                if ($this.val())
+                    $this.addClass('used');
+                else
+                    $this.removeClass('used');
+            });
+
+            var $ripples = $('.ripples');
+
+            $ripples.on('click.Ripples', function (e) {
+
+                var $this = $(this);
+                var $offset = $this.parent().offset();
+                var $circle = $this.find('.ripplesCircle');
+
+                var x = e.pageX - $offset.left;
+                var y = e.pageY - $offset.top;
+
+                $circle.css({
+                    top: y + 'px',
+                    left: x + 'px'
+                });
+
+                $this.addClass('is-active');
+
+            });
+
+            $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
+                $(this).removeClass('is-active');
+            });
+
+            $('.motor-occupation > a').on('click', function () {
+                $('.motor-occupation > a').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.policyboss-motor > a').on('click', function () {
+                $('.policyboss-motor > a').removeClass('active');
+                $(this).addClass('active');
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.switch input').on('change', function () {
+      
+                var ischecked = $(this).is(':checked');
+                if (ischecked == true) {
+                    $(this).parent().siblings().last().toggleClass('active');
+                    $(this).parent().siblings().first().toggleClass('active');
+
+                } else {
+                    $(this).parent().siblings().last().toggleClass('active');
+                    $(this).parent().siblings().first().toggleClass('active');
+                }
+                AllAddons(ischecked);
+            });
+
+        });
+    </script>
+    <script>
+        function toggleChevron(e) {
+            $(e.target)
+                .prev('.panel-heading')
+                .find("i.indicator")
+                .toggleClass('glyphicon-triangle-bottom glyphicon-triangle-top');
+        }
+        $('#accordion').on('shown.bs.collapse', toggleChevron);
+        $('#accordion').on('hidden.bs.collapse', toggleChevron);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".hasclear").keyup(function () {
+                var t = $(this);
+                t.next('span').toggle(Boolean(t.val()));
+            });
+
+            $(".clearer").hide($(this).prev('input').val());
+
+            $(".clearer").click(function () {
+                $(this).prev('input').val('');
+                $(this).hide();
+                $(this).next('span').removeClass('active');
+                $("#datepicker1").next().next().next().css("background", "#ccc");
+            });
+
+            var flag = 0;
+            $("input[type=text],input[type=number],input[type=email],input[type=tel]").focus(function () {
+                flag = 1;
+            });
+
+            $("input[type=text],input[type=number],input[type=email],input[type=tel]").blur(function () {
+                //alert("hello");
+                if (flag == 1) {
+                    if ($(this).val() != "") { $(this).next().next().css("background", "#009ee3"); }
+
+                    else { $(this).next().next().css("background", "#ccc"); }
+                    flag = 0;
+                }
+            });
+
+
+            // Ripple-effect animation
+            (function ($) {
+                $(".ripple-effect").click(function (e) {
+                    var rippler = $(this);
+
+                    // create .ink element if it doesn't exist
+                    if (rippler.find(".ink").length == 0) {
+                        rippler.append("<span class='ink'></span>");
+                    }
+
+                    var ink = rippler.find(".ink");
+
+                    // prevent quick double clicks
+                    ink.removeClass("animate");
+
+                    // set .ink diametr
+                    if (!ink.height() && !ink.width()) {
+                        var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+                        ink.css({ height: d, width: d });
+                    }
+
+                    // get click coordinates
+                    var x = e.pageX - rippler.offset().left - ink.width() / 2;
+                    var y = e.pageY - rippler.offset().top - ink.height() / 2;
+
+                    // set .ink position and add class .animate
+                    ink.css({
+                        top: y + 'px',
+                        left: x + 'px'
+                    }).addClass("animate");
+                })
+            })(jQuery);
+
+        });
+    </script>
+    <script>
+        $('.date-img-activity').on('click', function () {
+            var thisVal = $(this).val();
+            if (thisVal == "") {
+                return false;
+            }
+            else {
+                $(this).siblings('span').addClass('active');
+            }
+        });
+        $('span').on('click', function () {
+            $(this).siblings('input').trigger('click');
+        });
+
+        $('.time-img-activity').on('click', function () {
+
+            $(this).siblings('span').addClass('active');
+        });
+
+        function vehicleinfo() {
+            $('#VehicleModal').show();
+        }
+        $('.popclosepos').click(function (e) {
+            $('#VehicleModal').hide();
+        })
+    </script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on("load", function () {
+
+                $("#listtable .listtable").mCustomScrollbar({
+                    setHeight: 300,
+                    theme: "minimal-dark"
+                });
+
+                $("#list .tablenew").mCustomScrollbar({
+                    setHeight: 300,
+                    theme: "minimal-dark"
+                });
+
+                $("#myModal .modal-body").mCustomScrollbar({
+                    setHeight: 370,
+                    theme: "minimal-dark"
+                });
+
+                //$("#accordion .panel-body").mCustomScrollbar({
+                //	setHeight:300,
+                //	theme:"dark-3"
+                //});
+
+                //$("#myTab .tab-pane").mCustomScrollbar({
+                //	setHeight:180,
+                //	theme:"inset-2-dark"
+                //});
+
+            });
+        })(jQuery);
+    </script>
+    <script src="js/moment-with-locales.min.js"></script>
+    <script src="js/bootstrap-material-datetimepicker.js"></script>
+    <script src="js/quotevalidation.js"></script>
+</body>
+</html>

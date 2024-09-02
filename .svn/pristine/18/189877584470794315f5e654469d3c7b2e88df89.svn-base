@@ -1,0 +1,74 @@
+{
+	"ClientCreation": {
+		"salutation": "___salutation___",
+		"firstName": "___first_name___",
+		"middleName": "",
+		"lastName": "___last_name___",
+		"dateofBirth": "___member_1_birth_date___",
+		"gender": "___gender___",
+		"educationalQualification": "",
+		"pinCode": "___permanent_pincode___",
+		"uidNo": "",
+		"UIDAcknowledgementNo": "",
+		"maritalStatus": "___marital___",
+		"nationality": "Indian",
+		"occupation": "",
+		"primaryEmailID": "___email___",
+		"contactMobileNo": "___mobile___",
+		"AnnualIncome": "___annual_income___",
+		"homeAddressLine1": "___district___",
+		"homePinCode": "___permanent_pincode___",
+		"GSTRegistrationStatus": "Consumers"
+	},
+	"PolicyCreationRequest": {
+		"Quotation_Number": "",
+		"Product_Code": "4218",
+		"Plan_Code": "4218",
+		"SumInsured_Type": "Individual",
+		"Policy_Tanure": "___policy_tenure___",
+		"Member_Type_Code": "M042",
+		"intermediaryCode": "1600283", 
+		"AutoRenewal": "1",
+		"leadID": "LEAD-3301",                 
+		"Source_Name": "5nance",
+		"SPID": "",
+		"TCN": "",
+		"CRTNO": "",
+		"RefCode1": "",
+		"RefCode2": "",
+		"Employee_Number": "",
+		"enumIsEmployeeDiscount": "",
+		"QuoteDate": "___get_quote_date___",
+		"IsPayment": "",
+		"PolicyproductComponents": [{
+			"PlanCode": "4218",
+			"SchemeCode": "4218100001"
+		}]
+	},
+	"MemObj": {
+		"Member": [{
+			"MemberNo": "1",
+			"Salutation": "___salutation___",
+			"First_Name": "___first_name___",
+			"Middle_Name": "",
+			"Last_Name": "___last_name___",
+			"Gender": "___gender___",
+			"Marital_Status": "___marital___",
+			"DateOfBirth": "___member_1_birth_date___",
+			"Relation_Code": "R001",
+			"height": "___height___",
+			"weight": "___weight___",
+			"AnnualIncome": "___annual_income___",
+			"NatureOfDuty": "ACCOUNTANT",
+			"MemberproductComponents": [{
+				"PlanCode": "4218",
+				"SumInsured": "___cancer_care_si___",
+				"Coversdesc": []
+			}],
+			"Nominee_First_Name": "___nominee_first_name___",
+			"Nominee_Last_Name": "___nominee_last_name___",
+			"Nominee_Relationship_Code": "R009"
+		}]
+	}
+
+}

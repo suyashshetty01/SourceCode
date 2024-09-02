@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Two Wheeler</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity= "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        .errorTxt{font-size: 9pt;color: red;}
+    </style>
+    <body>
+        <div class="Popup_thank">
+            <div class="popup">
+                <span class="close" style="display: none;">x</span>
+                <img class="loader" src="Image/loading.gif" style="height: 90%;">
+                <h1 class="loader_text" style="display: none;"></h1>
+            </div>
+        </div>
+        <div class="logo">
+		<a class="redirectIcon" style="display:none">
+			 <img src="Image/dashboard-icon.png" id="menu1" alt=""
+			 style="padding:1px;margin:11px;width:40px;color: white;" onclick="redirectDashboard();" />
+			</a>
+            <img src="Image/PB_logo.png" align="right">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="margin: auto;">
+                    <h1>TW EXPRESS 2.0</h1>
+                    <img src="Image/Bike.png" width="100%">
+                </div>
+                <div class="col-md-6">
+                    <!-- <div style="display: none; text-align: center; margin-bottom: 20px;background-color: #264a96;"> -->
+                        <!-- <img src="Image/edelweiss-tokio.png"> -->
+                    <!-- </div> -->
+					<!-- <div style="display: none; text-align: center; margin-bottom: 20px;border: 1px solid #e5f2f9;background-color: #e5f2f9;"> -->
+						<!-- <img src="Image/SBI.png"> -->
+					<!-- </div> -->
+					<label for="Premium">Premium Range</label>
+                    <div class="row radioBtn"> 
+                        <div class="col-md-3">
+                            <label>
+                                <input type="radio" name="Premium" class="75CC" required checked />
+                                <div class="button">CC < 75<hr><span>&#8377; 482</span></div>
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <label>
+                                <input type="radio" name="Premium" class="150CC" required />
+                                <div class="button">75 - 150 cc<hr><span>&#8377; 752</span></div>
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <label>
+                                <input type="radio" name="Premium" class="350CC" required />
+                                <div class="button">150 - 350 cc<hr><span>&#8377; 1,193</span></div>
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <label>
+                                <input type="radio" name="Premium" class="3000CC" required />
+                                <div class="button">CC > 350<hr><span>&#8377; 2,323</span></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="VDetails">
+                        <div class="row">
+                            <div class="col-md-12">
+								<div class="box">
+									<label for="registrationNo">Vehicle Registration No.</label>
+									<div>
+										<input id="registrationNo" class="inputIsu" type="text" required maxlength="2" style="text-transform: uppercase;" onkeyup="forceText(event)">
+									</div>
+									<div>
+										<input id="Reg2" class="inputIsu" type="text" pattern="/^-?\d+\.?\d*$/" maxlength="2" onKeyPress="if (this.value.length == 2) return false;" required style="text-transform: uppercase;">
+									</div>
+									<div>
+										<input id="Reg3" class="inputIsu" type="text" required minlength="2" maxlength="3" style="text-transform: uppercase;">
+									</div>
+									<div>
+										<input id="Reg4" class="inputIsu" type="number" required pattern="/^-?\d+\.?\d*$/" maxlength="4" onKeyPress="if (this.value.length == 4) return false;" onkeyup="forceNumeric(event)">
+									</div>
+
+								</div> 
+								
+                                <span class="errorTxt" id="errRegistrationNo" style="display: none;"></span>
+								<div id="check" style='text-align:center;padding:15px;'>
+									<button id="btn_check" onclick='validate()'>Check</button>
+								</div>
+                                <!--<input type="text" name="registrationNo" id="registrationNo" required>
+                                <script type="text/javascript">
+                                        $('input[name="registrationNo"]').mask('SS 00 SS 0000');
+                                </script>-->
+
+
+                            </div>
+							<div class="insurer-tab col-md-12 insurers" style="display: none; height: 60px;">
+								<!-- <div class="insurer-sbi ins_img cbox" style="text-align: center; height:60px;"> -->
+									<!-- <img class="insurer-sbi" style="width:150px; border: 1px solid #e5f2f9;background-color: #e5f2f9;" src="Image/SBI.png"> -->
+								<!-- </div> -->
+								<!-- <div class="insurer-edelweiss" style="text-align: center;height:60px;"> -->
+									<!-- <img class="insurer-edelweiss ins_img cbox" style="width:150px; padding-top:10px; border: 1px solid #e5f2f9;background-color: #e5f2f9;" src="Image/edelweiss-tokio.png"> -->
+								<!-- </div> -->
+								<!-- <input type="hidden" class="selected_insurerID" value=""> -->
+							</div>
+							<span class="errorTxt" id="errInsurerID" style="display: none;margin-left:15px;"></span>
+							<div class="col-md-12" style = 'display:flex'>
+								
+								<div class="col-md-6">
+									<input class="toggleSwitch" type="checkbox" id="ttpd" />
+									<label  class="switchLabel" for="tppd"></label>
+									<label for="ttpd">TPPD</label>
+								</div>
+								<div class="col-md-6">
+									<input class="toggleSwitch" type="checkbox" id="cpa" />
+									<label  class="switchLabel" for="cpa"></label>
+									<label for="cpa">CPA</label>
+								</div>
+							</div>
+                            <div  style= "display:none;" class="col-md-6 edelweiss_make">
+                                <input autocomplete="off" type="text" name="" class="makePopup" id="vehMake" style="text-transform: uppercase;" readonly="" required>
+                                <label class="makeLabel" for="vehMake">Make</label>
+                                <span class="errorTxt" id="errMake" style="display: none;"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+						     <div class="col-md-6">
+                                <input type="text" name="" id="name" style="text-transform: uppercase;" onkeyup="forceText(event)" required>
+                                <label for="name">Name</label>
+                                <span class="errorTxt" id="errName" style="display: none;"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="" id="mobile" required  pattern="[6-9]{1}[0-9]{9}" onKeyPress="if (this.value.length == 10)
+                                            return false;">
+                                <label for="mobile">Mobile</label>
+                                <span class="errorTxt" id="errMobile" style="display: none;"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="Email" name="" id="email" required>
+                                <label for="email">Email</label>
+                                <span class="errorTxt" id="errEmail" style="display: none;"></span>
+                            </div>
+							<div class="col-md-6 cpa_show" style="display: none;">
+                                <input type="text" name="" id="nominee_name" style="text-transform: uppercase;" required>
+                                <label for="nominee_name">Nominee Name</label>
+                                <span class="errorTxt" id="errNom_name"></span>
+                            </div>
+							<div class="col-md-6 cpa_show" style="display: none;">
+								<select id="nominee_age">
+								<option value="" disabled selected></option></select>
+                                <label for="nominee_age">Nominee Age</label>
+                                <span class="errorTxt" id="errNom_age" ></span>
+                            </div>
+							<div class="col-md-6 cpa_show" style="display: none;">
+                                <select id="nominee_relation">
+								 <option value="" disabled selected></option>
+								    <option value="Parent">Parent</option>
+									<option value="Child">Child</option>
+								</select>
+                                <label for="nominee_relation">Nominee Relation</label>
+                                <span class="errorTxt" id="errNom_rel"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea id="address" style="text-transform: uppercase;" minlength="10" maxlength="100" required></textarea>
+                                <label for="address">Address (Min 10, Max 100, Special (- , . /) Character Only)</label>
+                                <span class="errorTxt" id="errAddress" style="display: none;"></span>
+                            </div>
+                        </div>
+						
+                        <div style="text-align: center;" onclick="calculateQuote();">
+                            <button><p>Premium <span id="amount">&#8377; 569</span></p><span id="pay">PAY</span></button>
+                            <input class="totalamount" type="hidden" value="569">
+							<input class="netamount" type="hidden" value="482">
+                            <input class="gstamount" type="hidden" value="86.759999">
+                            <input class="cubiccapacity" type="hidden" value="75">
+                        </div>
+                        <input type="hidden" class="channel_type" >
+						<input type="hidden" class="visitor_id" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Make_section">
+            <div class="Make_wrap">
+              <div class="popHeader">
+                <span class="closePop" onclick="closePop();">&#x2716;</span>
+                <div class="searchBox">
+                  <div class="search_Icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;
+                  </div>
+                  <span class="srch">
+                    <input type="text" onkeyup="mySearch(event.target.value)" id="mySearch" placeholder="Search..." />
+                  </span>
+                </div>
+              </div>
+              <div class="make-content">
+                <div class="makeDv">
+                  <p class="vehicleDetails makeSpan" id="vehicleName"></p>
+                  <div class="makegrid"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+		<input type="hidden" class="selected_insurerID" value="">
+        <script type="text/javascript">
+		var siteURL = window.location.href;
+		var premiumData;
+		var rtoList;
+		var insurerUW;
+        var vehicleMake;
+        var makeNameUW = {
+                "BAJAJ":"BAJAJ",
+                "BMW":"BMW",
+                "HARLEY DAVIDSON":"HARLEY DAVIDSON",
+                "HERO HONDA":"HERO HONDA",
+                "HERO":"HERO",
+                "HERO MOTOCORP":"HERO MOTOCORP",
+                "HONDA MOTORS":"HONDA",
+                "KAWASAKI":"KAWASAKI",
+                "KINETIC":"KINETIC",
+                "KTM":"KTM",
+                "LML":"LML",
+                "MAHINDRA":"MAHINDRA",
+                "ROYAL ENFIELD":"ROYAL ENFIELD",
+                "SUZUKI":"SUZUKI",
+                "TVS":"TVS",
+                "VIBGYOR":"VIBGYOR",
+                "YAMAHA":"YAMAHA",
+                "GLOBAL":"GLOBAL AUTOMOBILES",
+                "DUCATI":"DUCATI",
+                "JAWA":"JAWA",
+                "BENELLI":"BENELLI",
+                "APRILIA":"APRILIA"
+            }
+            $(document).ready(function () {
+                if(window.location.href.includes('ss_id') && parseInt(getUrlVars()['ss_id']) > 0) {
+                    save_app_visitor();
+                    save_channel_type(getUrlVars()['ss_id']);
+                }
+                var url = "/standalone_payments/uw_guideline/46";
+                <!-- $.get(GetUrl() + url, function (res) { -->
+                    <!-- //console.log(res); -->
+                    <!-- if (res.Status && res.Status == "Success"){ -->
+                        <!-- insurerUW = JSON.parse(res.Msg); -->
+                    <!-- } else { -->
+                        <!-- $('.Popup_thank').fadeIn(); -->
+                        <!-- $('.loader').fadeOut(); -->
+                        <!-- $('.close').fadeIn(); -->
+                        <!-- $('.loader_text').fadeIn(); -->
+                        <!-- $('.loader_text').html('Something went wrong. UW Service'); -->
+                    <!-- } -->
+                <!-- }); -->
+				rtoList = [		"AP09", "AP12", "AP13", "AP14", "GA01", "GA02", "GA03", "GA04", "GA05", "GA06", "GA07", "GA08", "GA09", "GA10", "GA11", "GA12",
+												"MH01", "MH02", "MH03", "MH04", "MH05", "MH12", "MH43", "WB02", "UP32", "GJ01", "GJ05", "GJ06", "GJ27", "GJ28",
+												"UP36", "WB01", "WB04", "WB07", "WB06", "WB05", "WB08", "WB09", "DL01", "DL02", "DL03", "DL04",
+												"DL05", "DL06", "DL07", "DL08", "DL09", "DL10", "DL11", "DL12", "DL13", "DL17", "WB03", "WB10", "TS14"]
+												
+				$(".inputIsu").keyup(function () {
+					if (this.value.length == this.maxLength) {
+						var $next = $(this).closest('div').next().find('.inputIsu');
+						if ($next.length)
+							$next.focus();
+						else
+							$(this).blur();
+					}
+				});
+                $('input').focus(function () {
+                    var element = $(this).next();
+                    var id = $(this).attr('id');
+                    var type = $(this).attr('type');
+                    if (type == 'radio') {
+                        var cc = {
+                            "482": "75",
+                            "752": "150",
+                            "1193": "350",
+                            "2323": "3000"
+                        }
+                        var txt = $(this).parent('label').find('span').text();
+                        var netAmount = txt.split(' ');
+                        netAmount = (netAmount[1]).replace(',', '');
+                        var gstAmount = parseFloat(parseInt(netAmount) * 0.18);
+                        $('.netamount').val(netAmount);
+                        $('.gstamount').val(gstAmount);
+                        $('.cubiccapacity').val(cc[netAmount]);
+						var totalAmount = (parseInt(netAmount)+Math.ceil(gstAmount));
+						$('.totalamount').val(totalAmount);
+						$('#amount').html('&#8377;'+' '+ totalAmount);
+                    } else {
+                        element.css({"top": "-15px", "color": "#757575", "font-size": "10px"});
+                    }
+                    if (id == 'registrationNo') {
+                        var label = $(this).parents('.box').find('label');
+                        label.css({"top": "-15px", "color": "#757575", "font-size": "10px"});
+                    }
+                })
+                $('input').blur(function () {
+                    if (!$('input[name="registrationNo"]').val()) {
+                        $(this).attr("Placeholder", "");
+                    }
+                    if (!$(this).val()) {
+                        var element = $(this).next();
+                        element.css({"top": "3px", "color": "gray", "font-size": "14px"});
+                    }
+                })
+                $('textarea').focus(function () {
+                    var element = $(this).next();
+                    element.css({"top": "-15px", "color": "#757575", "font-size": "10px"});
+                });
+                $('textarea').blur(function () {
+                    if (!$(this).val()) {
+                        var element = $(this).next();
+                        element.css({"top": "3px", "color": "gray", "font-size": "14px"});
+                    }
+                });
+				$('select').click(function () {
+                    var element = $(this).next();
+                    element.css({"top": "-15px", "color": "#757575", "font-size": "10px"});
+                });
+                $('select').blur(function () {
+                    if (!$(this).val()) {
+                        var element = $(this).next();
+                        element.css({"top": "3px", "color": "gray", "font-size": "14px"});
+                    }
+                });
+				//var $select = $(".nominee_age");
+				for (var i = 18; i <= 100; i++) {
+					$("#nominee_age").append($('<option></option>').val(i).html(i))
+				}
+				$("#cpa").change(function (e) {
+				if($('#cpa').is(":checked")){
+				$('.cpa_show').show();
+				}else{
+				$('.cpa_show').hide();
+				}
+				
+				});
+
+                $(".makegrid").empty();
+                for (var i in vehicleMake) {
+                    $(".makegrid").append(
+                    "<div class='center-align makeView'  onclick='makeselect(" +
+                    JSON.stringify(vehicleMake[i]) +
+                    ");' id='make1_" +
+                    vehicleMake[i]["Make_Name"] +
+                    "' make=" +
+                    vehicleMake[i]["Make_Name"] +
+                    ">" +
+                    "<div class='Logodiv'>" +
+                    "<img src='http://origin-cdnh.policyboss.com/fmweb/TW_Quick/logo/" +
+                    vehicleMake[i]["logo"] +
+                    ".png' width='100%'>" +
+                    "</div>" +
+                    "<div class='logoName'> <span id='" +
+                    vehicleMake[i]["Make_Name"] +
+                    "'>" +
+                    vehicleMake[i]["Make_Name"] +
+                    "</span>" +
+                    "</div>" +
+                    "</div>"
+                    );
+                }
+                $(".makePopup").click(function () {
+                    $('#errRegistrationNo').html("").hide();
+                    if($("#registrationNo").val() == "" || $("#Reg2").val() == "" || $("#Reg3").val() == "" || $("#Reg4").val() == "") {
+                        var validationMsg = "Please Enter Registration Number";
+                        $('#errRegistrationNo').html(validationMsg).show();
+                        $('#vehMake').val("");
+                    } else {
+                        var x = $(".makePopup").position();
+                        $(".Make_section").css("top", x.top);
+                        $(".Make_section").slideDown(500, function () {
+                        $(".Make_section").slideDown(500);
+                        });
+                        $("#mySearch").val("");
+                        $('.makeView').show();
+                    }
+                });
+                $(".close").click(function () {
+                    $('.Popup_thank').fadeOut();
+                });
+				if(window.location.href.includes('ss_id') && parseInt(getUrlVars()['ss_id']) > 0) {
+					$('.redirectIcon').show();
+				}
+				$('.selected_insurerID').val('');
+            });
+
+            function calculateQuote() {
+                var err = 0;
+                $("#errRegistrationNo, #errMake, #errName, #errMobile, #errEmail, #errAddress, #errInsurerID").hide().html("");
+                var namePattern = new RegExp('^[a-zA-Z ]+$');
+                var mobilePattern = new RegExp('^[6-9]{1}[0-9]{9}$');
+                var emailPattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                var addressPattern = new RegExp('^[a-zA-Z0-9-,.\/\n ]+$');
+                var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+                var Number_Pattern = new RegExp('^[0-9]*$');
+                var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+				if ($(".selected_insurerID").val() === null || $(".selected_insurerID").val() === "" || $(".selected_insurerID").val() === undefined) {
+                    err++;
+                    $('#errInsurerID').show();
+                    $('#errInsurerID').text("Please Select Insurer");
+                } 
+                if ($("#registrationNo").val() == "" || $("#registrationNo").val().length != 2 || (Text_Pattern.test($("#registrationNo").val()) == false)) {
+                    err++;
+                    RegNoblockError('registrationNo');
+                } else {
+                    $("#registrationNo").removeClass('errorTxt');
+                    $("#registrationNo").css({"border-bottom": "1px solid #c3c3c3"});
+                }
+
+                if ($("#Reg2").val() == "" || ($("#Reg2").val().length != 2 && $("#registrationNo").val().toUpperCase() != "DL") || (AlphaNum_Pattern.test($("#Reg2").val()) == false)) {
+                    err++;
+                    RegNoblockError('Reg2');
+                } else if (Text_Pattern.test($("#Reg2").val()) == true && $("#registrationNo").val().toUpperCase() != "DL") {
+                    err++;
+                    RegNoblockError('Reg2');
+                } else {
+                    $("#Reg2").removeClass('errorTxt');
+                    $("#Reg2").css({"border-bottom": "1px solid #c3c3c3"});
+                }
+
+                //for DL
+                if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+                    if ($("#registrationNo").val().toUpperCase() == "DL" && ($("#Reg2").val().length < 2 || $("#Reg2").val().length == 2)) {
+                        $("#Reg2").removeClass('errorTxt');
+                        $("#Reg2").css({"border-bottom": "1px solid #c3c3c3"});
+                        $('#errRegistrationNo').html("").hide();
+                        if ($("#Reg2").val() == "") {
+                            err++;
+                            RegNoblockError('Reg2');
+                        }
+                    } else if ($("#registrationNo").val().toUpperCase() != "DL" && Number_Pattern.test($("#Reg2").val()) == false) {
+                        err++;
+                        RegNoblockError('Reg2');
+                    }
+                }
+                if ($("#Reg3").val() == "" || $("#Reg3").val() == null || $("#Reg3").val() == undefined) {
+                    err++;
+                    RegNoblockError('Reg3');
+                } else if ($("#Reg3").val() != "" && ($("#Reg3").val().length < 2 || $("#Reg3").val().length > 3 || (AlphaNum_Pattern.test($("#Reg3").val()) == false))) {
+                    //for Reg3
+					if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+						if (AlphaNum_Pattern.test($("#Reg3").val()) && ($("#Reg3").val().length < 2 || $("#Reg3").val().length == 2)) {
+							$("#Reg3").removeClass('errorTxt');
+							$("#Reg3").css({"border-bottom": "1px solid #c3c3c3"});
+							$('#errRegistrationNo').html("").hide();
+							if ($("#Reg3").val() == "") {
+								err++;
+								RegNoblockError('Reg3');
+							}
+						} else if (AlphaNum_Pattern.test($("#Reg3").val()) == false) {
+							err++;
+							RegNoblockError('Reg3');
+						}
+					}
+                } else {
+                    $("#Reg3").removeClass('errorTxt');
+                    $("#Reg3").css({"border-bottom": "1px solid #c3c3c3"});
+                }
+				 //for Reg3
+					if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+						if (AlphaNum_Pattern.test($("#Reg3").val()) && ($("#Reg3").val().length < 2 || $("#Reg3").val().length == 2)) {
+							$("#Reg3").removeClass('errorTxt');
+							$("#Reg3").css({"border-bottom": "1px solid #c3c3c3"});
+							$('#errRegistrationNo').html("").hide();
+							if ($("#Reg3").val() == "") {
+								err++;
+								RegNoblockError('Reg3');
+							}
+						} else if (AlphaNum_Pattern.test($("#Reg3").val()) == false) {
+							err++;
+							RegNoblockError('Reg3');
+						}
+					}
+				
+				if ($("#Reg4").val() == "" || $("#Reg4").val().length != 4 || (Number_Pattern.test($("#Reg4").val()) == false)) {
+                    err++;
+                    RegNoblockError('Reg4');
+                } else {
+                    $("#Reg4").removeClass('errorTxt');
+                    $("#Reg4").css({"border-bottom": "1px solid #c3c3c3"});
+                }
+
+                if ($("#name").val() === null || $("#name").val() === "" || $("#name").val() === undefined) {
+                    err++;
+                    $('#errName').show();
+                    $('#errName').text("Please Enter Full Name");
+                } else if ($("#name").val() !== '') {
+                    if (!namePattern.test($("#name").val())) {
+                        err++;
+                        $('#errName').show();
+                        $('#errName').text("Please Enter Full Name");
+                    } else {
+                        var namearray = $("#name").val().split(" ");
+                        if (namearray[1] === "" || namearray[0] === "" || namearray[1] === undefined) {
+                            err++;
+                            $('#errName').show();
+                            $('#errName').text("Please Enter Full Name");
+                        }
+                    }
+                }
+
+                if ($("#mobile").val() === null || $("#mobile").val() === "" || $("#mobile").val() === undefined) {
+                    err++;
+                    $('#errMobile').show();
+                    $('#errMobile').html("Please Enter Mobile Number");
+                } else if (!mobilePattern.test($("#mobile").val())) {
+                    err++;
+                    $('#errMobile').show();
+                    $('#errMobile').html("Please Enter Valid Mobile Number");
+                }
+
+                if ($("#email").val() !== '' && $("#email").val() !== null && $("#email").val() !== undefined) {
+                    if (!emailPattern.test($("#email").val())) {
+                        err++;
+                        $('#errEmail').show();
+                        $('#errEmail').html("Please Enter Valid Email ID");
+                    }
+                } else {
+                    err++;
+                    $('#errEmail').show();
+                    $('#errEmail').html("Please Enter Email ID");
+                }
+				
+                if ($("#address").val() === null || $("#address").val() === "" || $("#address").val() === undefined) {
+                    err++;
+                    $('#errAddress').show();
+                    $('#errAddress').html("Please Enter Address");
+                    ;
+                } else if ($("#address").val() !== '') {
+                    if (!addressPattern.test($("#address").val())) {
+                        err++;
+                        $('#errAddress').show();
+                        $('#errAddress').html("Special Character Allowed (- , . \ /) Only");
+                    } else {
+                        /*
+						var addrarray = $("#address").val().split(" ");
+                        if (addrarray[1] === "" || addrarray[2] === "" || addrarray[0] === "" || addrarray[1] === undefined|| addrarray[2] === undefined) {
+                            err++;
+                            $('#errAddress').show();
+                            $('#errAddress').html("Please Enter Valid Address");
+                        }*/
+						if($("#address").val().length < 10){
+						    err++;
+                            $('#errAddress').show();
+                            $('#errAddress').html("Enter Address Is "+$("#address").val().length+" Character Require Atleast 10 Character");
+						}
+						if($("#address").val().length > 100){
+						    err++;
+                            $('#errAddress').show();
+                            $('#errAddress').html("Enter Address Is "+$("#address").val().length+" Character Maximum 100 Character Allowed");
+						}
+                    }
+                }
+				if($('#cpa').is(":checked")){
+				
+				  if ($("#nominee_name").val() === null || $("#nominee_name").val() === "" || $("#nominee_name").val() === undefined) {
+                    err++;
+                    $('#errNom_name').show();
+                    $('#errNom_name').text("Please Enter Nominee Full Name");
+                } else if ($("#nominee_name").val() !== '') {
+					$('#errNom_name').hide();
+                    if (!namePattern.test($("#nominee_name").val())) {
+                        err++;
+                        $('#errNom_name').show();
+                        $('#errNom_name').text("Please Enter Nominee Full Name");
+                    } else {
+                        var namearray = $("#nominee_name").val().split(" ");
+                        if (namearray[1] === "" || namearray[0] === "" || namearray[1] === undefined) {
+                            err++;
+                            $('#errNom_name').show();
+                            $('#errNom_name').text("Please Enter Nominee Full Name");
+                        }
+                    }
+                }
+				$('#errNom_age').hide();
+				if ($("#nominee_age").val() === null || $("#nominee_age").val() === "" || $("#nominee_age").val() === undefined) {
+                    err++;
+                    $('#errNom_age').show();
+                    $('#errNom_age').text("Please select Nominee age");
+                }
+				$('#errNom_rel').hide();
+				if ($("#nominee_relation").val() === null || $("#nominee_relation").val() === "" || $("#nominee_relation").val() === undefined) {
+                    err++;
+                    $('#errNom_rel').show();
+                    $('#errNom_rel').text("Please select Nominee relation");
+                }
+				}
+
+
+                if (err == 0) {
+                    var edelweissUW = true;
+                    var sbigeneralUW = true;
+					$('.loader_text').html('');
+					$('.close').fadeOut();
+					$('.loader').fadeIn();
+                    $('.Popup_thank').fadeIn();
+                    var Registration_Number = ($('#registrationNo').val()).toUpperCase() +'-'+ ($('#Reg2').val()).toUpperCase() +'-'+ ($('#Reg3').val()).toUpperCase() +'-'+ ($('#Reg4').val()).toUpperCase();
+                    var rtoCode = Registration_Number.split('-');
+					rtoCode = rtoCode[0]+rtoCode[1];
+                    if (edelweissUW || sbigeneralUW){
+						response_handler(premiumData)
+					}
+					else{
+						$('.loader').fadeOut();
+						$('.close').fadeIn();
+						$('.loader_text').fadeIn();
+                        if ($('.selected_insurerID').val() == 17){
+                            $('.loader_text').html('RTO Declined!');
+                        } else {
+                            $('.loader_text').html('UW Guideline! '+ $('#vehMake').val()+ '|'+$('.cubiccapacity').val()+'|'+rtoCode);
+                        }
+						
+					}
+				}
+            }
+
+            function RegNoblockError(id) {
+                $("#" + id).addClass('errorTxt');
+                $("#" + id).css({"border-bottom": "red solid 1px"});
+                var validationMsg = "Please Enter Valid Registration Number";
+                $('#errRegistrationNo').html(validationMsg).show();
+                return false;
+            }
+            function forceText(e) {
+                e.target.value = e.target.value.replace(/[^a-zA-Z ]+/g, '');
+                return false;
+            }
+            function forceNumeric(e) {
+                e.target.value = e.target.value.replace(/[^\d]/g, '');
+                return false;
+            }
+            function post(path, params, method) {
+                if (method.toString().toLowerCase() == 'get' && jQuery.isEmptyObject(params)) {
+                    window.location.href = path;
+                } else {
+                    method = method || "post"; // Set method to post by default if not specified.
+
+                    // The rest of this code assumes you are not using a library.
+                    // It can be made less wordy if you use one.
+                    var form = document.createElement("form");
+                    form.setAttribute("method", method);
+                    form.setAttribute("action", path);
+
+                    for (var key in params) {
+                        if (params.hasOwnProperty(key)) {
+                            var hiddenField = document.createElement("input");
+                            hiddenField.setAttribute("type", "hidden");
+                            hiddenField.setAttribute("name", key);
+                            hiddenField.setAttribute("value", params[key]);
+                            form.appendChild(hiddenField);
+                        }
+                    }
+
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            }
+            var getUrlVars = function () {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            function Horizon_Method_Convert(method_action, data, type) {
+                var obj_horizon_method = {
+                    'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                    "data": {
+                        request_json: JSON.stringify(data),
+                        method_name: method_action,
+                        client_id: "2"
+                    }
+                };
+                return obj_horizon_method;
+            }
+            function GeteditUrl() {
+                var url = window.location.href;
+                //alert(url.includes("health"));
+                var newurl;
+                //newurl = "http://qa.policyboss.com";
+                if (url.includes("request_file")) {
+                    newurl = "http://localhost:50115";
+                } else if (url.includes("qa")) {
+                    newurl = "http://qa.policyboss.com";
+                } else if (url.includes("www") || url.includes("cloudfront")) {
+                    newurl = "https://www.policyboss.com";
+                }
+                return newurl;
+            }
+            function GetUrl() {
+                var url = window.location.href;
+                var newurl;
+                //newurl = "http://qa.policyboss.com";
+                if (url.includes("request_file")) {
+                    // newurl = "http://qa-horizon.policyboss.com:3000";
+                    newurl = "http://localhost:3000";
+                } else if (url.includes("qa")) {
+                    newurl = "http://qa-horizon.policyboss.com:3000";
+                } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                    newurl = "http://horizon.policyboss.com:5000";
+                } else {
+                    newurl = "http://localhost:3000";
+                }
+                return newurl;
+            }
+			
+function reg_no_format(Registration_Num) {
+    try {
+        if ([9, 10, 11].indexOf(Registration_Num.length) > -1) {
+            var lastfour = Registration_Num.substr(Registration_Num.length - 4);
+            var lastdigit = lastfour.match(/\d/g);
+            lastdigit = lastdigit.join("");
+            if (lastdigit.toString().length < 4) {
+                var lastdigitnumber = lastdigit - 0;
+                var lastdigitpadzero = pad(lastdigitnumber, 4);
+                Registration_Num = Registration_Num.replace(lastdigit, lastdigitpadzero);
+            }
+            if (Registration_Num.length === 11) {
+                Registration_Num = Registration_Num.substring(0, 2) + '-' + Registration_Num.substring(2, 4) + '-' + Registration_Num.substring(4, 7) + '-' + Registration_Num.substring(7, 11);
+            }
+            if (Registration_Num.length === 10) {
+                Registration_Num = Registration_Num.substring(0, 2) + '-' + Registration_Num.substring(2, 4) + '-' + Registration_Num.substring(4, 6) + '-' + Registration_Num.substring(6, 10);
+            }
+            if (Registration_Num.length === 9) {
+                Registration_Num = Registration_Num.substring(0, 2) + '-' + Registration_Num.substring(2, 4) + '-' + Registration_Num.substring(4, 5) + '-' + Registration_Num.substring(5, 9);
+            }
+        }
+    } catch (e) {
+        console.error('Exception', 'reg_no_format', e.stack);
+    }
+    return Registration_Num;
+}
+			
+		function redirectDashboard () {
+			var ss_id, fba_id, ip_address, app_version, mac_address, mobile_no;
+			ss_id = getUrlVars()['ss_id'] ? getUrlVars()['ss_id'] : '0',
+			fba_id =  getUrlVars()['fba_id'] ? getUrlVars()['fba_id'] : '0',
+			sub_fba_id =  getUrlVars()['sub_fba_id'] ? getUrlVars()['sub_fba_id'] : '0',
+			ip_address = getUrlVars()['ip_address'] ? getUrlVars()['ip_address'] : '',
+			mac_address = getUrlVars()['mac_address'] ? getUrlVars()['mac_address'] : '',
+			app_version = getUrlVars()['app_version'] ? getUrlVars()['app_version'] : '2.0',
+			mobile_no = getUrlVars()['mobile_no'] ? getUrlVars()['mobile_no'] : 9999999999,
+			product_id = getUrlVars()['product_id'] ? getUrlVars()['product_id'] : 10,
+			window.location.href = "./quote_list.html?ss_id=" + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile_no+ '&product_id=' + product_id;
+		}
+        function makeselect(make) {
+            $(".Make_section").hide();
+            $("#mySearch").val("");
+            makename = make.Make_Name;
+            $(".makeSpan").text(makename);
+            $("#vehMake").val(makename);
+            var element = $('#vehMake').next();
+			element.css({"top": "-15px", "color": "#757575", "font-size": "10px"});
+        }
+        function closePop() {
+            $(".Make_section").slideUp(500, function () {
+                $(".Make_section").hide();
+            });
+        }
+        function mySearch(val) {
+            var value = val;
+            value = value.toLowerCase();
+            $(".makegrid *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                $(".Logodiv").css("display", "block");
+                $(".Logodiv img").css("display", "block");
+            });
+        }
+        function save_channel_type(ss_id){
+            var url = "/posps/dsas/view/"+ss_id;
+                $.get(GetUrl() + url, function (res) {
+                    //console.log(res);
+                    if (res && res.status && res.status == "SUCCESS"){
+                        $(".channel_type").val(res.channel +'_'+res.user_type); 
+                    } 
+                });
+        }
+        function save_app_visitor() {
+            var siteURL = window.location.href;
+            siteURL = decodeURI(siteURL);
+            $.get('https://api.ipify.org?format=json', function (data) {
+                var current_ip_address = data.ip;
+                let visitorObj = {
+                    app_type: "Finmart_TWExpress",
+                    IP_Address: current_ip_address,
+                    query_string: siteURL.split("?")[1],
+                    ss_id: getUrlVars()['ss_id'],
+                    fba_id: getUrlVars()['fba_id'] != "" && getUrlVars()['fba_id'] != undefined && getUrlVars()['fba_id'] != null ? getUrlVars()['fba_id'] : "",
+                    customer_name: getUrlVars()['hd_customer_name'] != "" && getUrlVars()['hd_customer_name'] !== undefined && getUrlVars()['hd_customer_name'] !== null ? decodeURI(getUrlVars()['hd_customer_name']) : "",
+                    mobile: getUrlVars()['hd_mobile'] != "" && getUrlVars()['hd_mobile'] != undefined && getUrlVars()['hd_mobile'] != null ? getUrlVars()['hd_mobile'] : "",
+                    email: getUrlVars()['hd_email'] != "" && getUrlVars()['hd_email'] != undefined && getUrlVars()['hd_email'] != null ? getUrlVars()['hd_email'] : "",
+                    registration_no: getUrlVars()['hd_registration_no'] != "" && getUrlVars()['hd_registration_no'] != undefined && getUrlVars()['hd_registration_no'] != null ? getUrlVars()['hd_registration_no'] : ""
+                }
+                console.log(visitorObj);
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(visitorObj),
+                    url: GetUrl() + "/postservicecall/app_visitor/save_data",
+                    contentType: "application/json;charset=utf-8",
+					dataType: "json",
+                    success: function (data) {
+                        console.log("Inserted",  data);
+						if (data && data.Status && data.Status == "Success"){
+							$(".visitor_id").val(data.visitor_Id); 
+						} 
+						
+                    },
+                    error: function (e) {
+                        console.log("App Visitor Error: ", e);
+                    }
+                });
+            });
+        }
+		function validate() {
+			var err = 0;
+			var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+			var Number_Pattern = new RegExp('^[0-9]*$');
+			var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+			if ($("#registrationNo").val() == "" || $("#registrationNo").val().length != 2 || (Text_Pattern.test($("#registrationNo").val()) == false)) {
+				err++;
+				RegNoblockError('registrationNo');
+			} else {
+				$("#registrationNo").removeClass('errorTxt');
+				$("#registrationNo").css({
+					"border-bottom": "1px solid #c3c3c3"
+				});
+			}
+
+			if ($("#Reg2").val() == "" || ($("#Reg2").val().length != 2 && $("#registrationNo").val().toUpperCase() != "DL") || (AlphaNum_Pattern.test($("#Reg2").val()) == false)) {
+				err++;
+				RegNoblockError('Reg2');
+			} else if (Text_Pattern.test($("#Reg2").val()) == true && $("#registrationNo").val().toUpperCase() != "DL") {
+				err++;
+				RegNoblockError('Reg2');
+			} else {
+				$("#Reg2").removeClass('errorTxt');
+				$("#Reg2").css({
+					"border-bottom": "1px solid #c3c3c3"
+				});
+			}
+
+			//for DL
+			if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+				if ($("#registrationNo").val().toUpperCase() == "DL" && ($("#Reg2").val().length < 2 || $("#Reg2").val().length == 2)) {
+					$("#Reg2").removeClass('errorTxt');
+					$("#Reg2").css({
+						"border-bottom": "1px solid #c3c3c3"
+					});
+					$('#errRegistrationNo').html("").hide();
+					if ($("#Reg2").val() == "") {
+						err++;
+						RegNoblockError('Reg2');
+					}
+				} else if ($("#registrationNo").val().toUpperCase() != "DL" && Number_Pattern.test($("#Reg2").val()) == false) {
+					err++;
+					RegNoblockError('Reg2');
+				}
+			}
+			if ($("#Reg3").val() == "" || $("#Reg3").val() == null || $("#Reg3").val() == undefined) {
+				err++;
+				RegNoblockError('Reg3');
+			} else if ($("#Reg3").val() != "" && ($("#Reg3").val().length < 2 || $("#Reg3").val().length > 3 || (AlphaNum_Pattern.test($("#Reg3").val()) == false))) {
+				//for Reg3
+				if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+					if (AlphaNum_Pattern.test($("#Reg3").val()) && ($("#Reg3").val().length < 2 || $("#Reg3").val().length == 2)) {
+						$("#Reg3").removeClass('errorTxt');
+						$("#Reg3").css({
+							"border-bottom": "1px solid #c3c3c3"
+						});
+						$('#errRegistrationNo').html("").hide();
+						if ($("#Reg3").val() == "") {
+							err++;
+							RegNoblockError('Reg3');
+						}
+					} else if (AlphaNum_Pattern.test($("#Reg3").val()) == false) {
+						err++;
+						RegNoblockError('Reg3');
+					}
+				}
+			} else {
+				$("#Reg3").removeClass('errorTxt');
+				$("#Reg3").css({
+					"border-bottom": "1px solid #c3c3c3"
+				});
+			}
+			//for Reg3
+			if ($("#registrationNo").val() != "" && $("#registrationNo").val() != null && $("#registrationNo").val() != undefined) {
+				if (AlphaNum_Pattern.test($("#Reg3").val()) && ($("#Reg3").val().length < 2 || $("#Reg3").val().length == 2)) {
+					$("#Reg3").removeClass('errorTxt');
+					$("#Reg3").css({
+						"border-bottom": "1px solid #c3c3c3"
+					});
+					$('#errRegistrationNo').html("").hide();
+					if ($("#Reg3").val() == "") {
+						err++;
+						RegNoblockError('Reg3');
+					}
+				} else if (AlphaNum_Pattern.test($("#Reg3").val()) == false) {
+					err++;
+					RegNoblockError('Reg3');
+				}
+			}
+
+			if ($("#Reg4").val() == "" || $("#Reg4").val().length != 4 || (Number_Pattern.test($("#Reg4").val()) == false)) {
+				err++;
+				RegNoblockError('Reg4');
+			} else {
+				$("#Reg4").removeClass('errorTxt');
+				$("#Reg4").css({
+					"border-bottom": "1px solid #c3c3c3"
+				});
+			}
+			if (err === 0) {
+				check_vehicle_eligibility();
+			}
+
+		}
+		function selectInsurer(id){
+				$('.ins').css('background-color', 'white');
+				$('#'+id).css('background-color', '#42abe7');
+				$('.selected_insurerID').val(id);
+				$('.edelweiss_make').hide();
+				$('#vehMake').val("");
+				
+		}
+		
+		function response_handler(quotes) {
+			try {
+			quotes = quotes.Data;
+				for (var i = 0; i < quotes.Response.length; i++) {
+					if (quotes.Response[i].Error_Code === "") {
+						var Service_Unique_Id, final_premium, tax, net_premium, insurer_id;
+						if (quotes.Response[i].Insurer_Id == $('.selected_insurerID').val()) {
+							insurer_avail = true;
+							Service_Unique_Id = quotes.Response[i].Service_Log_Unique_Id;
+							final_premium = quotes.Response[i].Premium_Breakup.final_premium;
+							tax = quotes.Response[i].Premium_Breakup.service_tax;
+							net_premium = quotes.Response[i].Premium_Breakup.net_premium;
+							insurer_id = quotes.Response[i].Insurer_Id;
+						}
+					}
+				}
+				if (insurer_avail === true) {
+					var proposalData = quotes.Summary.Request_Core;
+					var full_add = $('#address').val();
+					full_add = full_add.slice(0, 45);
+					var ind_add = full_add.length / 3;
+					var customer_name = ($('#name').val()).toUpperCase();
+					var arr_name = customer_name.split(" ");
+					var request = {
+						aadhar: "",
+						agent_source: proposalData.agent_source,
+						ui_source: proposalData.ui_source,
+						utm_source : "quick_tw_journey",
+						api_reference_number: Service_Unique_Id,
+						app_version: proposalData.app_version,
+						birth_date: "2002-06-12",
+						breakin_location_code: "0",
+						channel: "DIRECT",
+						chassis_number: proposalData.chassis_number ? proposalData.chassis_number: 'dsa4d464a6ds4654as6',
+						client_id: "2",
+						client_key: "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+						client_name: "PolicyBoss",
+						communication_address_1: full_add.slice(0, ind_add),
+						communication_address_2: full_add.slice(ind_add, ind_add * 2),
+						communication_address_3: full_add.slice(ind_add * 2, full_add.length),
+						communication_city: "MUMBAI",
+						communication_city_code: "3000000400",
+						communication_district_code: "",
+						communication_locality_code: "5000051510",
+						communication_locality_code_text: "Santacruz(East)",
+						communication_pincode: "400055",
+						payment_code: "", // "payment_code":$("#code").val(),
+						communication_state: "MAHARASHTRA",
+						communication_state_code: "2000000015",
+						company_name: "",
+						crn: quotes.Summary.PB_CRN,
+						electrical_accessory: "0",
+						email:	$("#email").val(), //$("#email").val() ? $("#email").val():"policybosstesting@gmail.com",
+						engine_number: proposalData.engine_number ? proposalData.engine_number : 'sda45a4d65a4',
+						erp_qt: "",
+						erp_source: "FRESH-TW",
+						erp_uid: "",
+						execution_async: "yes",
+						external_bifuel_type: "",
+						external_bifuel_value: "0",
+						visitor_id: (proposalData.visitor_id) ? proposalData.visitor_id : 0,
+						fba_id: (proposalData.fba_id) ? proposalData.fba_id : 0,
+						final_premium: final_premium,
+						financial_agreement_type: "0",
+						financial_agreement_type_text: "Select Financier Type",
+						financial_institute_city: "",
+						financial_institute_code: "",
+						financial_institute_name: "",
+						first_name: arr_name[0],
+						gender: "M",
+						geo_lat: "0",
+						geo_long: "0",
+						gst_no: "",
+						idv_by_crn: "yes",
+						insurer_id: insurer_id,
+						ip_city_state: "",
+						ip_address: "",
+						is_aai_member: "no",
+						is_antitheft_fit: "no",
+						is_breakin: "no",
+						is_claim_exists: "yes",
+						is_customer_paid: "yes",
+						is_external_bifuel: "",
+						is_financed: "no",
+						is_having_valid_dl: "no",
+						is_inspection_done: "no",
+						is_llpd: "no",
+						is_mobile: "no",
+						is_mobile_verified: "yes",
+						is_opted_standalone_cpa: "yes",
+						is_oslc: "no",
+						is_pa_od: "no",
+						is_policy_exist: "yes",
+						is_posp: "no",
+						is_reg_addr_comm_addr_same: "yes",
+						is_valid_pucc: "no",
+						is_whatsapp_allow: "0",
+						last_name: arr_name.length > 1 ? arr_name[arr_name.length - 1] : "",
+						lm_agent_id: "",
+						lm_agent_mobile: "",
+						lm_agent_name: "",
+						marital: "Married",
+						marital_text: "Married",
+						mac_address: "",
+						method_type: "Proposal",
+						middle_name: arr_name.length > 2 ? arr_name[1] : "",
+						mobile: $("#mobile").val(),
+						net_premium: net_premium,
+						nominee_birth_date: "2003-06-11 ",
+						nominee_name: "TEST TEST",
+						nominee_relation: "Sister",
+						nominee_relation_text: "Sister",
+						non_electrical_accessory: "0",
+						occupation: "Student",
+						occupation_text: "Student",
+						oslc_si: "0",
+						pa_owner_driver_si: "0",
+						pa_paid_driver_si: "0",
+						pan: "",
+						permanent_address_1: full_add.slice(0, ind_add),
+						permanent_address_2: full_add.slice(ind_add, ind_add * 2),
+						permanent_address_3: full_add.slice(ind_add * 2, full_add.length),
+						permanent_city: "MUMBAI",
+						permanent_city_code: "3000000400",
+						permanent_district_code: "",
+						permanent_locality_code: "5000051510",
+						permanent_locality_code_text: "Santacruz(East)",
+						permanent_pincode: "400055",
+						permanent_state: "MAHARASHTRA",
+						permanent_state_code: "2000000015",
+						policy_expiry_date: proposalData.policy_expiry_date,
+						policy_od_tenure: "0",
+						policy_tenure: "1",
+						policy_tp_tenure: "1",
+						posp_aadhar: "0",
+						posp_agent_city: "0",
+						posp_category: "PolicyBoss",
+						posp_email_id: "0",
+						posp_erp_id: "0",
+						posp_fba_id: "0",
+						posp_first_name: "0",
+						posp_gender: "0",
+						posp_last_name: "0",
+						posp_last_status: "0",
+						posp_middle_name: "0",
+						posp_mobile_no: "0",
+						posp_pan_no: "0",
+						posp_posp_category: "0",
+						posp_posp_id: "0",
+						posp_reporting_agent_name: "POLICY BOSS WEBSITE",
+						posp_reporting_agent_uid: "508389",
+						posp_reporting_email_id: "0",
+						posp_reporting_mobile_number: "0",
+						posp_sm_posp_id: "0",
+						posp_sm_posp_name: "0",
+						posp_sources: "0",
+						posp_ss_id: "0",
+						prev_insurer_id: "1",
+						previous_policy_number: "65S4F65SF4564",
+						product_id: "10",
+						proposal_url:
+								siteURL.indexOf("https") == 0 || siteURL.includes("origin-cdnh")
+								? "http://policyboss.com/car-insurance/buynow/2/" +
+								Service_Unique_Id +
+								"/NonPOSP/0"
+								: "http://qa.policyboss.com/car-insurance/buynow/2/" +
+								Service_Unique_Id +
+								"/NonPOSP/0",
+						pucc_end_date: "",
+						pucc_number: "",
+						registration_no: proposalData.registration_no,
+						registration_no_1: proposalData.registration_no_1,
+						registration_no_2: proposalData.registration_no_2,
+						registration_no_3: proposalData.registration_no.split("-")[2],
+						registration_no_4: proposalData.registration_no.split("-")[3],
+						rto_full: proposalData.rto_full,
+						rto_id: proposalData.rto_id,
+						rto_text:
+								proposalData.registration_no_1 +
+								" - " +
+								proposalData.registration_no_2 +
+								" " +
+								proposalData.rto_full.split("|")[1].split("-")[0],
+						salutation: "MR",
+						salutation_text: "MR",
+						search_reference_number: quotes.Summary.Request_Unique_Id,
+						secret_key: "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+						ss_id: proposalData.ss_id ? proposalData.ss_id : 0,
+						sub_fba_id: proposalData.sub_fba_id ? proposalData.sub_fba_id : 0,
+						subchannel: "DIRECT",
+						tax: tax,
+						tp_end_date: "",
+						tp_policy_number: "",
+						tp_start_date: "",
+						udid: proposalData.udid,
+						undefined: "formPOST",
+						vehicle_color: "BLACK",
+						vehicle_expected_idv: "0",
+						vehicle_full: proposalData.vehicle_full,
+						vehicle_id: proposalData.vehicle_id,
+						vehicle_insurance_subtype: "0CH_1TP",
+						vehicle_insurance_type: "renew",
+						vehicle_make_name: proposalData.vehicle_make_name,
+						vehicle_manf_date: proposalData.vehicle_manf_date,
+						vehicle_ncb_current: "0",
+						vehicle_registration_date: proposalData.vehicle_registration_date,
+						vehicle_registration_type: "individual",
+						vehicle_text:
+								proposalData.vehicle_full.split("|")[0] +
+								", " +
+								proposalData.vehicle_full.split("|")[1] +
+								", " +
+								proposalData.vehicle_full.split("|")[2],
+						whatsapp_mobile: "",
+					};
+					if (
+							proposalData &&
+							proposalData["is_fastlane_rto"] &&
+							proposalData["is_fastlane_rto"] === "yes"
+							) {
+						request["is_fastlane_rto"] = "yes";
+					} else {
+						request["is_fastlane_rto"] = "no";
+					}
+					console.log('proposal-request');
+					console.log(request);
+					update_user_data(request)
+					
+				}
+			} catch (ex) {
+				$('.loader').fadeOut();
+				$('.close').fadeIn();
+				$('.loader_text').fadeIn();
+				console.log(ex.stack);
+				$('.loader_text').html('Error Proposal Request');
+			}
+		}
+		
+		function update_user_data(obj) {
+				var request = obj;
+				var obj1 = request;
+				obj1["secret_key"] = request.secret_key;
+				obj1["client_key"] = request.client_key;
+				obj1["data_type"] = "proposal";
+				var SaveDataURL = "/quote/save_user_data";
+				$.ajax({
+					type: "POST",
+					data: JSON.stringify(obj1),
+					url: GetUrl() + "/quote/save_user_data",
+					dataType: "json",
+					contentType: "application/json;charset=utf-8",
+					success: function (response) {
+						var res = response;
+						if (res.Msg == "Data saved") {
+							$.ajax({
+								type: "POST",
+								url: GetUrl() + "/quote/proposal_initiate",
+								data: JSON.stringify(request),
+								contentType: "application/json;charset=utf-8",
+								dataType: "json",
+								success: function (response) {
+									console.log(response);
+									if (response.hasOwnProperty("Status") && response.Status != null && response.Status != "" && response.Status == "VALIDATION") {
+										var EMsg = response.Msg;
+											$('.loader').fadeOut();
+											$('.close').fadeIn();
+											$('.loader_text').fadeIn();
+											$('.loader_text').html(EMsg);
+									} else if (response.hasOwnProperty("Error") && response.Error.Error_Action === "UI_VALIDATION") {
+										var EMsg = response.Error.Error_Desc;
+											$('.loader').fadeOut();
+											$('.close').fadeIn();
+											$('.loader_text').fadeIn();
+											$('.loader_text').html(EMsg);
+									} else {
+										var proposal_id;
+										var arn = response.Service_Log_Unique_Id;
+										if (response.Proposal_Id) {
+											proposal_id = response.Proposal_Id;
+										} else {
+											proposal_id = 0;
+										}
+										var res = {};
+										console.log("proposal_initate response", response);
+										if (response.hasOwnProperty("Service_Log_Unique_Id") && response.hasOwnProperty("User_Data_Id") && arn.includes("-")) {
+											var SaveDataURL = "/user_datas/view/"+response.User_Data_Id;
+											$.ajax({
+												type: "GET",
+												url: GetUrl() + SaveDataURL,
+												dataType: "json",
+												success: function (response) {
+																console.log(response);
+																if (response.length > 0 && response[0].hasOwnProperty("Payment_Request") && response[0].Payment_Request.hasOwnProperty("pg_data")) {
+																	post(response[0].Payment_Request.pg_url, response[0].Payment_Request.pg_data, response[0].Payment_Request.pg_redirect_mode);
+																} else {
+																		var EMsg = 'Technical Issue ! Cannot Initiate Proposal !';
+																		$('.loader').fadeOut();
+																		$('.close').fadeIn();
+																		$('.loader_text').fadeIn();
+																		$('.loader_text').html(EMsg);
+																}
+															},
+															error: function (request, status, errorThorwn) {
+																var EMsg = "Technical Issue ! Cannot Initiate Proposal !";
+																$('.loader').fadeOut();
+																$('.close').fadeIn();
+																$('.loader_text').fadeIn();
+																$('.loader_text').html(EMsg);
+															},
+														});		
+										} else {
+											var EMsg = "Technical Issue ! Cannot Initiate Proposal !";
+											$('.loader').fadeOut();
+											$('.close').fadeIn();
+											$('.loader_text').fadeIn();
+											$('.loader_text').html(EMsg);
+										}
+									}
+								},
+								error: function (request, status, errorThorwn) {
+									var EMsg = "Technical Issue ! Cannot Initiate Proposal !";
+									$('.loader').fadeOut();
+									$('.close').fadeIn();
+									$('.loader_text').fadeIn();
+									$('.loader_text').html(EMsg);
+								},
+							});
+						}
+					},
+					error: function (data) {
+									var EMsg = "Technical Issue ! Cannot Initiate Proposal !";
+									$('.loader').fadeOut();
+									$('.close').fadeIn();
+									$('.loader_text').fadeIn();
+									$('.loader_text').html(EMsg);
+						
+					},
+				});
+			}
+		
+		function check_vehicle_eligibility() {
+			$('.loader_text').html('');
+			$('.close').fadeOut();
+			$('.loader').fadeIn();
+            $('.Popup_thank').fadeIn();
+			$('#errRegistrationNo').html("").hide();
+			$(".insurers").hide();
+			var data1 = {
+				"product_id": "10",
+				"registration_number": ($('#registrationNo').val()).toUpperCase() + ($('#Reg2').val()).toUpperCase() + ($('#Reg3').val()).toUpperCase() +($('#Reg4').val()).toUpperCase(),
+				"cubic_capacity": $('.cubiccapacity').val(),
+				"ss_id": getUrlVars()['ss_id'] ? getUrlVars()['ss_id'] : '0',
+				"fba_id":	getUrlVars()['fba_id'] ? getUrlVars()['fba_id'] : '0',
+				"app_version": getUrlVars()['app_version'] ? getUrlVars()['app_version'] : '2.0',
+				"visitor_id":$('.visitor_id').val()
+			}
+			$.ajax({
+				type: "POST",
+				data: JSON.stringify(data1),
+                url: GetUrl() + "/quote/vehicle_info_eligibility",
+                contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (data) {
+					console.log("vehicle_info_eligibility_2", data);
+					if (data.Status == 'Success') {
+					premiumData = data;
+					$(".insurers").empty().show().css('display','flex');
+					$("#check").hide();
+					
+						data.Msg.forEach((res, i) => {
+							$(".insurers").append(
+								`<div id = 'ins_${res.Insurer_Id}' class="ins_img cbox" style="text-align: center; height:60px;">
+			<img id="${res.Insurer_Id}" class="ins" onclick="selectInsurer(event.target.id);" style="border: 1px solid #e5f2f9;background-color: white;" src='https://www.policyboss.com/Images/insurer_logo/${res.Insurer_Logo_Name}'></div>`);
+						})
+						$('.Popup_thank').fadeOut();
+					} else {
+						$('.loader').fadeOut();
+						$('.close').fadeIn();
+						$('.loader_text').fadeIn();
+						if(data.Msg === Object){
+							$('.loader_text').html("Error ! Premium !");
+						} else {
+							$('.loader_text').html(data.Msg);
+						}
+					}
+				},
+				error: function (result) {
+					console.log(result)
+				}
+			});
+		}
+		
+        </script>
+    </body>
+</html>

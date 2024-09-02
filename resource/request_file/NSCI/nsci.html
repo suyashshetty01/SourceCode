@@ -1,0 +1,699 @@
+﻿<html>
+    <head>
+        <style>
+        </style>
+        <title>NSCI GMC</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://raw.githubusercontent.com/ReactiveRaven/jqBootstrapValidation/1.3.6/jqBootstrapValidation.js"></script>
+
+        <link href="http://horizon.policyboss.com:5000/adminpanel/css/materialize.css" rel="stylesheet" />
+        
+        <!--<link href="http://horizon.policyboss.com:5000/adminpanel/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />-->
+        <link rel="stylesheet" href="http://t00rk.github.io/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+
+        <script src="http://horizon.policyboss.com:5000/adminpanel/plugins/momentjs/moment.js"></script>
+        
+        <!--<script src="http://horizon.policyboss.com:5000/adminpanel/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>-->
+<script type="text/javascript" src="http://t00rk.github.io/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+        <script type="text/javascript">
+            function OpenSection() {
+                for (var k = 2; k <= 6; k++) {
+                    $('#member_' + k + '_section').hide();
+                }
+                var val = $("input[name='plan_option']:checked").val();
+                var member_cnt = val.split('M_')[0];
+                if (member_cnt > 1) {
+                    for (var k = 2; k <= member_cnt; k++) {
+                        $('#member_' + k + '_section').show();
+                    }
+                }
+                SetPremium();
+            }
+            $("#sum_insured").change(function () {
+                SetPremium();
+            });
+
+            function SetPremium() {
+                var val1 = $("input[name='plan_option']:checked").val();
+                var val2 = GetIndex();
+                var PremiumText = $("#" + val1 + "_" + val2).text();
+                //alert($(PremiumText).replace(",",""));
+                $("#premium").val(PremiumText.replace(/,/g, ''));
+                alert($("#premium").val());
+            }
+            function GetIndex() {
+                var Val = $("#sum_insured").val();
+                var Index;
+                switch (Val) {
+                    case "500000": Index = 1; break;
+                    case "1000000": Index = 2; break;
+                    case "1500000": Index = 3; break;
+                    case "2000000": Index = 4; break;
+                    case "2500000": Index = 5; break;
+                    case "3000000": Index = 6; break;
+                }
+                return Index;
+            }
+
+            function Validate() {
+                if ($("#mobile_no").val().length != 10) {
+                    alert("Enter Valid Mobile");
+                    return false;
+                }
+            }
+
+            $(document).ready(function () {
+                $(".U45").hide();
+                $(".A45").hide();
+                $(".MyTable").hide();
+            });
+
+        </script>
+    </head>
+    <body>    
+        <br/>
+        <form id="frmnsci" name="frmnsci" class="form-horizontal" action="/action_page.php">
+            <img width="100%"src="nsci.jpg" />
+            <div class="panel panel-default">
+                <div class="panel-heading">Primary Member Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_1_name">Member 1 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_1_name" class="form-control" id="member_1_name" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="membership_no">Membership No:</label>
+                        <div class="col-sm-10"> 
+                            <input type="text" name="membership_no" class="form-control" id="membership_no" placeholder="Enter Membership No">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_1_dob">Member 1 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_1_dob" name="member_1_dob" type="text" class="form-control  floating-label" placeholder="Member 1 BirthDate">
+
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="mobile_no">Mobile:</label>
+                        <div class="col-sm-10"> 
+                            <input type="number" maxlength="10" class="form-control" id="mobile_no" name="mobile_no" placeholder="Enter Mobile">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_1_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10"> 
+                            <input type="text" class="form-control" id="member_1_nominee_name" name="member_1_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_1_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_1_nominee_relation" name="member_1_nominee_relation" >
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="sum_insured">Sum Insured</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="sum_insured" name="sum_insured">
+                                <option value="">Sum Insured</option>
+                                <option value="500000">500000</option>
+								<option value="1000000">1000000</option>
+								<option value="1500000">1500000</option>
+								<option value="2000000">2000000</option>
+								<option value="2500000">2500000</option>
+								<option value="3000000">3000000</option>                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default MyTable">                
+                <div class="panel-body table-responsive">
+                    <table class="table">
+                        <tr class="U45"><td colspan="8" style="text-align:center">Policy Inception Rates - Primary Member Less Than 45 years of Age</td></tr>
+                        <tr class="U45">
+                            <td>Select</td>
+                            <td>No. Of Lives</td>
+                            <td>500000</td>
+                            <td>1000000</td>
+                            <td>1500000</td>
+                            <td>2000000</td>
+                            <td>2500000</td>
+                            <td>3000000</td>
+                        </tr>
+                        <tr class="U45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="1M_45U" onclick="OpenSection(this)" checked></td>
+                            <td>1</td>
+                            <td id="1M_45U_1">13,747</td>
+                            <td id="1M_45U_2">18,550</td>
+                            <td id="1M_45U_3">25,040</td>
+                            <td id="1M_45U_4">32,568</td>
+                            <td id="1M_45U_5">46,138</td>
+                            <td id="1M_45U_6">59,354</td>
+                        </tr>
+                        <tr class="U45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="2M_45U" onclick="OpenSection(this)"></td>
+                            <td>1+1</td>
+                            <td id="2M_45U_1">20,768</td>
+                            <td id="2M_45U_2">28,037</td>
+                            <td id="2M_45U_3">37,878</td>
+                            <td id="2M_45U_4">49,206</td>
+                            <td id="2M_45U_5">72,334</td>
+                            <td id="2M_45U_6">1,01,952</td>
+                        </tr>
+                        <tr class="U45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="4M_45U" onclick="OpenSection(this)"></td>
+                            <td>1+3</td>
+                            <td id="4M_45U_1">30,562</td>
+                            <td id="4M_45U_2">51,566</td>
+                            <td id="4M_45U_3">69,620</td>
+                            <td id="4M_45U_4">90,447</td>
+                            <td id="4M_45U_5">1,13,044</td>
+                            <td id="4M_45U_6">1,41,364</td>
+                        </tr>
+                        <tr class="A45"><td colspan="8" style="text-align:center">Policy Inception Rates - Primary Member More Than 45 years of Age</td></tr>
+                        <tr class="A45">
+                            <td>Select</td>
+                            <td>No. Of Lives</td>
+                            <td>500000</td>
+                            <td>1000000</td>
+                            <td>1500000</td>
+                            <td>2000000</td>
+                            <td>2500000</td>
+                            <td>3000000</td>
+                        </tr>
+                        <tr class="A45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="1M_45A" onclick="OpenSection(this)"></td>
+                            <td>1</td>
+                            <td id="1M_45A_1">21,594</td>
+                            <td id="1M_45A_2">54,162</td>
+                            <td id="1M_45A_3">62,658</td>
+                            <td id="1M_45A_4">81,420</td>
+                            <td id="1M_45A_5">1,10,212</td>
+                            <td id="1M_45A_6">1,58,946</td>
+                        </tr>
+                        <tr class="A45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="2M_45A" onclick="OpenSection(this)"></td>
+                            <td>1+1</td>
+                            <td id="2M_45A_1">37,276</td>
+                            <td id="2M_45A_2">80,535</td>
+                            <td id="2M_45A_3">99,474</td>
+                            <td id="2M_45A_4">1,17,587</td>
+                            <td id="2M_45A_5">1,58,238</td>
+                            <td id="2M_45A_6">2,40,189</td>
+                        </tr>
+                        <tr class="A45">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="4M_45A" onclick="OpenSection(this)"></td>
+                            <td>1+3</td>
+                            <td id="4M_45A_1">49,300</td>
+                            <td id="4M_45A_2">1,28,856</td>
+                            <td id="4M_45A_3">1,73,897</td>
+                            <td id="4M_45A_4">2,03,491</td>
+                            <td id="4M_45A_5">2,40,189</td>
+                            <td id="4M_45A_6">3,35,592</td>
+                        </tr>
+                        <tr class="F5"><td colspan="8" style="text-align:center">Policy Inception Rates For Family Size 1 + 5 </td></tr>
+                        <tr class="F5">
+                            <td>Select</td>
+                            <td>No. Of Lives</td>
+                            <td>500000</td>
+                            <td>1000000</td>
+                            <td>1500000</td>
+                            <td>2000000</td>
+                            <td>2500000</td>
+                            <td>3000000</td>
+                        </tr>
+                        <tr class="F5">
+                            <td><input style="opacity:1; left:50px" type="radio" name="plan_option" value="6M_45A" onclick="OpenSection(this)"></td>
+                            <td>1+5</td>
+                            <td id="6M_45A_1">1,09,563</td>
+                            <td id="6M_45A_2">2,05,438</td>
+                            <td id="6M_45A_3">2,92,628</td>
+                            <td id="6M_45A_4">3,65,776</td>
+                            <td id="6M_45A_5">4,09,094</td>
+                            <td id="6M_45A_6">4,50,005</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="member_2_section" class="panel panel-default"  style="display:none">
+                <div class="panel-heading"> Member 2 Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_2_name">Member 2 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_2_name" class="form-control" id="member_2_name" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_2_dob">Member 2 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_2_dob" name="member_2_dob" type="text" class="form-control  floating-label" placeholder="Member 2 BirthDate">
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_2_relation">Relation with Member 1:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_2_relation" name="member_2_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_2_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10"> 
+                            <input type="text" class="form-control" id="member_2_nominee_name" name="member_2_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_2_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_2_nominee_relation" name="member_2_nominee_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div id="member_3_section" class="panel panel-default"  style="display:none">
+                <div class="panel-heading"> Member 3 Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_3_name">Member 3 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_3_name" class="form-control" id="member_3_name" placeholder="Enter Name">
+                        </div>
+                    </div>                        
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_3_dob">Member 3 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_3_dob" name="member_3_dob" type="text" class="form-control  floating-label" placeholder="Member 3 BirthDate">
+                        </div>
+                    </div>  
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_3_relation">Relation with Member 1:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_3_relation"  name="member_3_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_3_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="member_3_nominee_name" name="member_3_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_3_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_3_nominee_relation" name="member_3_nominee_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+            <div id="member_4_section" class="panel panel-default"  style="display:none">
+                <div class="panel-heading"> Member 4 Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_4_name">Member 4 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_4_name" class="form-control" id="member_4_name" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_4_dob">Member 4 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_4_dob" name="member_4_dob" type="text" class="form-control  floating-label" placeholder="Member 4 BirthDate">
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_4_relation">Relation with Member 1:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_4_relation"  name="member_4_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_4_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="member_4_nominee_name" name="member_4_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_4_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_4_nominee_relation" name="member_4_nominee_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+            <div id="member_5_section" class="panel panel-default"  style="display:none">
+                <div class="panel-heading"> Member 5 Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_5_name">Member 5 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_5_name" class="form-control" id="member_5_name" placeholder="Enter Name">
+                        </div>
+                    </div>    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_5_dob">Member 5 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_5_dob" name="member_5_dob" type="text" class="form-control  floating-label" placeholder="Member 5 BirthDate">
+                        </div>
+                    </div>    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_5_relation">Relation with Member 1:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_5_relation"   name="member_5_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_5_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="member_5_nominee_name" name="member_5_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_5_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_5_nominee_relation" name="member_4_nominee_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+            <div id="member_6_section" class="panel panel-default"  style="display:none">
+                <div class="panel-heading"> Member 6 Details</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_6_name">Member 6 Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="member_6_name" class="form-control" id="member_6_name" placeholder="Enter Name">
+                        </div>
+                    </div>                                                                                   
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_6_dob">Member 6 BirthDate</label>
+                        <div class="col-sm-10"> 
+                            <input id="member_6_dob" name="member_6_dob" type="text" class="form-control  floating-label" placeholder="Member 6 BirthDate">
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_6_relation">Relation with Member 1:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_6_relation"   name="member_6_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_6_nominee_name">Nominee Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="member_6_nominee_name" name="member_6_nominee_name" placeholder="Enter Nominee Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="member_6_nominee_relation">Nominee Relation</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="member_6_nominee_relation" name="member_4_nominee_relation">
+                                <option value="">Relation</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Son">Son</option>
+                                <option value="Daughter">Daughter</option>
+                                <option value="Father">Father</option>
+                                <option value="Mother">Mother</option>
+                                <option value="Father in Law">Father in Law</option>
+                                <option value="Mother in Law">Mother in Law</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-default" id="btnContinue" type="button">Continue</button>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">DECLARATION</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--<p>I, ________________________________________________________________________________________ [NSCI Membership No:_________________], currently residing at _________________________________________________________________, do hereby confirm and declare as under:</p>-->
+                            <p>I, ___member_1_name___ [NSCI Membership No: ___membership_no___ ], currently residing at _________________________________________________________________, do hereby confirm and declare as under:</p>
+                            <p>1) That I am aware that the existing Group Mediclaim Policy, taken out by National Sports Club of India (NSCI), from National Insurance Company Limited (Insurer), for the benefit of the enrolled members, is due to expire on the midnight of 2nd November, 2018;</p>
+                            <p>2) That office of NSCI is using all its good efforts to renew the Group Mediclaim Policy with the existing Insurer for the benefit of its members, for the period 2018-2019 and has mandated duly licensed insurance broker/s, to facilitate the renewal of the said Group Mediclaim Policy;</p>
+                            <p>3) That I have been fully explained the terms and conditions of the proposed Group Mediclaim Policy (from the Insurer) and have understood the said terms and conditions;</p>
+                            <p>4) That I have also been made aware that the renewal of the said Group Mediclaim Plocy shall happen/go through only if the proposed members to be covered under the Group Mediclaim Policy collectively remit a minimum of INR Nine Crores (excluding applicable GST) of premium to the said Insurer (as per quotation received from the said Insurer) and that the said Insurer has agreed to start the Group Mediclaim Policy from such date when it receives the above said minimum premium with the condition that the premium to be received by Insurer on or before 18th November, 2018;</p>
+                            <p>5) That the Group Mediclaim Policy shall be effective on or from the date the said premium amount is received by the Insurer. In order to clarify if the premium amount is received on 5th November, 2018, the Group Mediclaim Policy shall be effective from the said date and not from 3rd November, 2018. Accordingly, my cover and cover for other enrolled members shall begin from said date and not prior. In case of any uncalled for event from the expiry date of the current Group Mediclaim Policy and the effective start date of the renewed/fresh Group Mediclaim Policy, no claim of any nature whatsoever shall be payable by the Insurer, NSCI and/or the brokers;</p>
+                            <p>6) That I have been also made aware by NSCI that in the event to be enrolled members collectively are unable to remit the above said minimum premium amount, the proposed Group Mediclaim Policy shall not be issued/renewed by the Insurer and in such an event I shall not raise any concern/grievance/claim against the Insurer, NSCI and/or the insurance brokers.</p>
+                            <p>7) I am signing this declaration after having read and understood its contents.</p>
+                            <p>Place: Mumbai</p>
+                            <p>Date:</p>
+                            <p>Signature		:________________________________</p>
+                            <p>Name of the Member	: ___member_1_name___ | PAN: ____________________</p>
+                            <p>NSCI Membership No	: ___membership_no___</p>
+                            <p>Address			: ________________________________</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="otp_entered">Enter OTP:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="otp_entered" class="form-control" id="otp_entered" placeholder="Enter OTP">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="ack" name="ack" value="" />
+            <input type="hidden" id="premium" name="premium" />
+        </form>
+        <script>
+            $.fn.serializeObject = function () {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function () {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            $(function () {
+                $('#member_1_dob').bootstrapMaterialDatePicker({
+                    time: false, clearButton: true, format: 'DD-MM-YYYY',
+                    //minDate: moment(),
+                    maxDate: moment().subtract(18, 'years'), // Current day
+                    defaultDate: moment().subtract(30, 'years'),
+                    onSelect: function () {
+                        myfunction();
+                    }
+                }).on('change', function (e, date) {
+                    $(".MyTable").show();
+                    var arr = $("#member_1_dob").val().split('-');
+                    var Days = (((new Date(Date.now())).getTime()) - ((new Date(arr[1] + "-" + arr[0] + "-" + arr[2])).getTime())) / (1000 * 60 * 60 * 24);
+                    var age = (Days) / 365;
+                    $('[name="plan_option"]').removeAttr('checked');
+                    if (age < 45) {
+                        $(".U45").show();
+                        $(".A45").hide();
+                        $("input[name=plan_option][value=1M_45U]").attr('checked', 'checked');
+                    } else {
+                        $(".U45").hide();
+                        $(".A45").show();
+                        $("input[name=plan_option][value=1M_45A]").attr('checked', 'checked');
+                    }
+                    OpenSection();
+                });
+
+                $('#member_2_dob,#member_3_dob,#member_4_dob,#member_5_dob,#member_6_dob').bootstrapMaterialDatePicker
+                ({                            
+                    clearButton: true,
+                    time: false,
+                    maxDate: new Date()
+                });
+                $('#btnContinue').on('click', function (e) {
+                    e.preventDefault();
+                    var odata = {};
+                    var formData = $('#frmnsci').serializeObject();
+                    var is_valid = false;
+                    for (var k in formData) {
+                        if ($("#" + k).is(":visible") && formData[k] == "") {
+                            is_valid = false;
+                            alert("Please enter " + k);
+                            break;
+                        } else {
+                            is_valid = true;
+                            odata[k] = formData[k];
+                        }
+                    }
+
+                    console.log(formData);
+
+                    if (is_valid == true) {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://horizon.policyboss.com:5000/report/nsci_lead_start',
+                            data: formData,
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.status == "success") {
+                                    $('#myModal').modal('show');
+                                    $("#ack").val(data.ack);
+                                }
+                            },
+                            error: function (data) {
+                                alert("Cannot Proceed Now. Please Try Again!");
+                            }
+                        });
+                    }
+                    return false;
+                });
+                $('#frmnsci').on('submit', function (e) {
+                    e.preventDefault();
+                    var odata = {};
+                    var formData = $('#frmnsci').serializeObject();
+                    for (var k in formData) {
+                        if ($("#" + k).is(":visible") && formData[k] == "") {
+                            alert("Please enter " + k);
+                            return false;
+                        } else {
+                            odata[k] = formData[k];
+                        }
+                    }
+                    console.log(formData);
+
+                    if ($("#otp_entered").val() !== '') {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://horizon.policyboss.com:5000/report/nsci_lead_save',
+                            data: formData,
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.status == "success") {
+                                    $('#myModal').modal('hide');
+                                    alert('Thank you for enrollment. Acknowledge Number - ' + data.ack);
+                                } else {
+                                    alert("Please entered correct OTP");
+                                }
+                            },
+                            error: function (data) {
+                                alert("Cannot Proceed Now. Please Try Again!");
+                            }
+                        });
+                    } else {
+                        alert("Please enter OTP");
+                    }
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>

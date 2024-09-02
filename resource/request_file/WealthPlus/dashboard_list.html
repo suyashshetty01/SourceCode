@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link href="css/dashboard.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+    </style>
+
+</head>
+<body style="font-family:Open Sans;">
+    <div class="Maindiv">
+        <div class="head">
+            <ul class="navigation qlist">
+                <li class="Active"><a href="#">QUOTE</a></li>
+                <li><a href="#">APPLICATIONS</a></li>
+                <li><a href="#">COMPLETE</a></li>
+            </ul>
+        </div>
+		<div class="loader" id="loader_id"style="position:absolute;margin: 10% auto;width: 100%;" >Fetching......</div>
+		<div class="loader" id="Norecord" style="display:none;position:absolute;margin: 10% auto;width: 100%;">No Records found</div>
+        <div class="container-fluid healthmaindiv">
+            <div class="menuBox">
+                <div id="CallFuncId"><a href="#" class="CallFuncClass">CALL</a></div>
+                <div id="SmsFuncId"><a href="#" class="SmsFuncClass">SMS</a></div>
+            </div>
+            <div class="sticky_btn">
+                <div class="plus_quote">
+                    <img src="images/pl.png" onclick="AddQuote();">
+                </div>
+                <div class="refresh_quote">
+                    <span onclick="Reload();">
+                        <img src="images/refresh.png">
+                    </span>
+                </div>
+            </div>
+            <div class="searchbar">
+                <div class="grab">
+                    <span class="ad_quote" onclick="AddQuote();">
+                        <img src="images/file.png">
+                        Add Quote
+                    </span>
+                </div>
+                <div>
+                    <input type="text" id="myInput" placeholder="CRN or Name"><i onclick="myFunction();" class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+            <div class="quoteListMain">
+            </div>
+			<div class="app_mainlist">
+            </div>
+			<div class="sell_mainlist">
+            </div>
+           
+        </div>
+       
+    </div>
+	<script src=js/jquery-2.2.4.min.js></script>
+   <script>
+    var geo_lat, geo_long, ss_id, fba_id,sub_fba_id=0, ip_address, app_version, mac_address, mobile_no;
+	var siteURL = "";
+	var pageIndex = 1;
+    var pageCount;
+    var iScrollPos = 0;
+	var quoteSearch_url,appSearch_url,sellSearch_url;
+	
+   $(document).ready(function () {
+   stringparam();
+   GetQuoteList();
+   
+     $('ul.qlist li').click(function (e) {
+			$('#Norecord').hide();
+            $('ul.qlist li').removeClass("Active");
+            $(this).addClass("Active");
+            //debugger;
+            if ($('li.Active').text() == 'APPLICATIONS') {
+                $(".app_mainlist").empty();
+                GetApplication();
+
+                $(".quoteListMain").hide();
+                $(".app_mainlist").show();
+                $(".sell_mainlist").hide();
+            } else if ($('li.Active').text() == 'QUOTE') {
+                $(".quoteListMain").empty();
+                GetQuoteList();
+                $(".quoteListMain").show();
+                $(".app_mainlist").hide();
+                $(".sell_mainlist").hide();
+            }
+            else if ($('li.Active').text() == 'COMPLETE') {
+                $(".sell_mainlist").empty();
+                GetSellList();
+                $(".quoteListMain").hide();
+                $(".app_mainlist").hide();
+                $(".sell_mainlist").show();
+            }
+
+        });
+});
+
+var getUrlVars = function () {
+
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+ function activeTab() {
+
+        var activetab;
+        if ($('li.Active').text() == 'QUOTE') {
+            activetab = "SEARCH"
+        } else if ($('li.Active').text() == 'APPLICATIONS') {
+            activetab = "APPLICATION"
+        } else if ($('li.Active').text() == 'COMPLETE') {
+            activetab = "SELL"
+        }
+
+        return activetab
+    }
+
+function stringparam() {
+    ss_id = getUrlVars()["ss_id"];
+    fba_id = getUrlVars()["fba_id"];
+    ip_address = getUrlVars()["ip_address"];
+    app_version = getUrlVars()["app_version"];
+    mac_address = getUrlVars()["mac_address"];
+    if (getUrlVars()["mobile_no"] == "" || getUrlVars()["mobile_no"] == undefined) {
+        mobile_no = 0;
+    } else {
+        mobile_no = getUrlVars()["mobile_no"];
+    } 
+    if (fba_id == "" || fba_id == undefined || fba_id == "0" || ip_address == '' || ip_address == '0' || ip_address == undefined || app_version == "" || app_version == "0" || app_version == undefined || ss_id == "" || ss_id == undefined || ss_id == "0") {
+
+        $(".motor_maindiv").hide();
+        $(".warningmsg").show();
+    } else if (app_version == 'FinPeace' && (mobile_no == "" || mobile_no == null || mobile_no == 0)) {
+        $(".motor_maindiv").hide();
+        $(".warningmsg").show();
+    } else {
+
+        $(".motor_maindiv").show();
+        $(".warningmsg").hide();
+    }
+}
+    function GetUrl() {
+        var url = window.location.href;
+        var newurl;
+        if (url.includes("Horizon_v1")) {
+            newurl = "http://localhost:3000";
+        } else if (url.includes("qa")) {
+            newurl = "http://qa-horizon.policyboss.com:3000";
+        } else if (url.includes("www") || url.includes("cloudfront")) {
+            newurl = "http://horizon.policyboss.com:5000";
+        }
+        return newurl;
+    }
+	function Horizon_Method_Convert(method_action, data, type) {
+    var obj_horizon_method = {
+        'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+        "data": {
+            request_json: JSON.stringify(data),
+            method_name: method_action,
+            client_id: "2"
+        }
+    };
+    return obj_horizon_method;
+}
+    // Redirect to main page
+    function AddQuote() {
+        window.location.href = './wealthplus.html?ss_id=' + ss_id + '&fba_id=' + fba_id +'&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile_no;
+    }
+	
+	function Reload() {
+        location.reload(true)
+    };
+	 function GetQuoteList() {
+		
+		if(quoteSearch_url == "" || quoteSearch_url == undefined ){
+        quoteSearch_url = GetUrl() + "/user_datas/quicklist/5/SEARCH/" + ss_id + "/" + fba_id +"/" + pageIndex + "/" + mobile_no+ "/"+ sub_fba_id ;
+		}
+        $.ajax({
+            type: "GET",
+			data : siteURL.indexOf('https') == 0 ?  { 'method_name': quoteSearch_url } : "",
+			url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : quoteSearch_url,
+            dataType: "json",
+            success: function (data) {
+				$('.quoteListMain').empty();
+                console.log(data);
+				if(data.length >0){
+                for (var i in data) {
+
+                         $(".quoteListMain").append(" <div class='quoteList_container'><div srn='"+ data[i].SRN +"' class='quoteDiv' id='quote_list_id_'" + data[i].CRN + ">"
+														+ "<div class='ApplicantName'>" + data[i].Customer_Name
+														+ "<div>CRN:<span class='crn_span'>" + data[i].CRN + "<span></div></div>"
+															+ "<div class='si_amt text-center'>"
+															+ "<div class='title'>PREMIUM AMOUNT</div> <div class='desc'>" + data[i].Sum_Insured + "</div>"
+														+ "</div>"
+														+ "<div class='quote_date text-center'>"
+							+ "<div class='title'>QUOTE DATE</div><div class='desc'>" + data[i].Quote_Date_Mobile + "</div> "
+						+ "</div>"
+											
+					+ "</div> </div>");
+                }
+				$('#Norecord').hide();
+                $('#loader_id').hide();
+				}else{  $('#loader_id').hide(); $('#Norecord').show();}
+				
+            },
+            error: function (result) {
+                //alert("city Error");
+            }
+        });
+
+    }
+   
+      // Get Application Data
+    function GetApplication() {
+        var const_insurerlogo = {
+          
+			"46" : "edelweiss.png"
+			
+        };
+		if(appSearch_url == "" || appSearch_url == undefined ){
+		appSearch_url = GetUrl() + "/user_datas/quicklist/5/APPLICATION/" + ss_id + "/" + fba_id +"/" + pageIndex + "/" + mobile_no+ "/"+ sub_fba_id ;
+		}
+        
+		
+        $.ajax({
+            type: "GET",
+			data : siteURL.indexOf('https') == 0 ?  { 'method_name': appSearch_url } : "",
+			url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : appSearch_url,
+            dataType: "json",
+            success: function (data) {
+				$('.app_mainlist').empty();
+                console.log(data);
+				if(data.length >0){
+                for (var i in data) {
+                    $(".app_mainlist").append("<div class='app_quoteDiv' arn='"+data[i].ARN+"' slid='"+data[i].SL_ID+"' udid='"+data[i].udid+"' id='app_quote_id'" + data[i].CRN + ">"
+                                                    + "<div class='ins_logo'>"
+                                                            + "<img src='./images/InsurerLogo/" + const_insurerlogo[data[i].Insurer['Insurer_ID']] + "' class='img-responsive'>"
+                                                    + "</div>"
+                                                    + "<div class='content_container'>"
+                                                        + "<div class='con parta'>"
+                                                            + "<div class='uname'>" + data[i].Customer_Name
+                                                            + "</div>"
+                                                            
+                                                        + "</div>"
+                                                        + "<div class='con partb'>"
+                                                            + "<div class='app_num'>"
+                                                                    + "<div class='title'>CRN</div>"
+                                                                        + "<div class='num'>" + data[i].CRN + "</div>"
+                                                            + "</div>"
+                                                            + "<div class='app_status'>"
+                                                                + "<div class='title'>APP STATUS</div>"
+                                                                + "<div class='progress'>"
+                                                                    + "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:" + data[i].Progress + "%'>"
+                                                                    + data[i].Progress
+                                                                    + "</div>"
+                                                                + "</div>"
+                                                            + "</div>"
+                                                        + "</div>"
+                                                        + "<div class='con partc'>"
+                                                            + "<div class='SUM_a'>"
+                                                                + "<div class='title'>PREMIUM AMOUNT"
+																+"</div>"
+                                                                        + data[i].Sum_Insured
+                                                                + "</div>"
+                                                            + "<div class='a_date'>"
+                                                                + "<div class='title'>APP DATE</div>"
+                                                                + data[i].Quote_Date_Mobile
+                                                            + "</div>"
+                                                        + "</div>"
+                                                        + "<input type='hidden' id='hd_app_SRN' value='" + data[i].SRN + "'/>"
+                                                        + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>"
+                                                    + "</div>"
+                                                + "</div>");
+                   
+					
+					
+                  
+
+                }
+				}else{ $('#Norecord').show();}
+            },
+            error: function (result) {
+                console.log(result)
+            }
+        });
+
+    }
+	
+	function GetSellList() {
+
+     var const_insurerlogo = {
+			"46" : "edelweiss.png"	
+        };
+	if(sellSearch_url == "" || sellSearch_url == undefined ){
+    sellSearch_url = GetUrl()+"/user_datas/quicklist/5/SELL/" + ss_id + "/" + fba_id +"/" + pageIndex + "/" + mobile_no+ "/"+ sub_fba_id ;
+	}
+    $.ajax({
+        type: "GET",
+		data : siteURL.indexOf('https') == 0 ?  { 'method_name': sellSearch_url } : "",
+		url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : sellSearch_url,
+        dataType: "json",
+        success: function (data) {
+			 $('.sell_mainlist').empty();
+            console.log(data);
+			if(data.length > 0){
+            for (var i in data) {
+                $(".sell_mainlist").append("<div class='sell_quoteDiv' status='" + data[i].Last_Status + "' id='selldiv_id' CRN='" + data[i].CRN + "' SRN='" + data[i].SRN + "'>" + "<div class='ins_logo'>" + "<img src='http://di8vsggi846z0.cloudfront.net/fmweb/Images/insurer_logo_fm/" + const_insurerlogo[data[i].Insurer] + "' class='img-responsive'>" + "</div>" + "<div class='content_container'>" + "<div class='con parta'>"
+                + "<div class='uname'>" + data[i].Customer_Name + "</div>"
+                + "<div class='menu'  id='info_" + data[i].SRN + "'><i class='fa fa-info-circle'  aria-hidden='true' style='padding:10px 0px;font-size:20px'></i>"
+                + "</div>" + "</div>" + "<div class='con partb'>" + "<div class='app_num'>"
+                + "<div class='title'>APP NUMBER</div>" + "<div class='num'>" + data[i].CRN + "</div>" + "</div>"
+                + "<div class='app_status'>" + "<div class='title'>APP STATUS</div>" + "<div class='progress'>"
+                + "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:"
+                + data[i].Progress + "%'>" + data[i].Progress + "</div>" + "</div>" + "</div>"
+                + "</div>"
+                + "<div class='con1 partc'>"
+                  + "<div class='SUM_a'>"
+                      + "<div class='title'>IDV</div>"
+                          + data[i].Sum_Insured
+                      + "</div>"
+                  + "<div class='a_date'>"
+                      + "<div class='title'>APP DATE</div>"
+                      + data[i].Quote_Date_Mobile
+                  + "</div>"
+                  + "<div class='downloadpolicy' id='div_downloadPolicy_" + i + "'>"
+                     + "<div class='dwn_policy' pdflink='" + data[i].policy_url + "' id='download_policy'><i class='fa fa-download' aria-hidden='true'></i></div>"
+                  + "</div>"
+                  + "</div>"
+
+                + "<input type='hidden' id='hd_app_SRN' value='" + data[i].SRN + "'/>" + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>" + "</div>" + "</div>");
+
+             
+
+            }
+			}else{ $('#Norecord').show();}
+			
+        },
+        error: function (result) {
+            console.log(result)
+        }
+    });
+
+
+}
+
+function myFunction() {
+    var searchOption = "CRN";//$("#SearchQuote").val();
+    var input = document.getElementById("myInput").value;
+    var valuelength;
+    valuelength = document.getElementById("myInput").value.length;
+	var isSearchCheck = false;
+    if ((searchOption == "CRN" && valuelength == "6") || (searchOption == "Name" && valuelength >= 3)) {
+        isSearchCheck = true;
+    }
+
+    if (valuelength == 0) {
+        Reset();
+    }
+    else {
+        if (isSearchCheck) {
+            var type = activeTab();
+			
+            switch (type) {
+
+                case 'SEARCH':
+                    quoteSearch_url =  GetUrl() + "/user_datas/search/5/" + type + "/" + ss_id + "/" + fba_id + "/" + searchOption + "/" + input + "/" + mobile_no;
+                    GetQuoteList();
+                    break;
+                case 'APPLICATION':
+                    appSearch_url = GetUrl() +"/user_datas/search/5/" + type + "/" + ss_id + "/" + fba_id + "/" + searchOption + "/" + input + "/" + mobile_no;
+                    GetApplication();
+                    break;
+                case 'SELL':
+                    sellSearch_url = GetUrl() +"/user_datas/search/5/" + type + "/" + ss_id + "/" + fba_id + "/" + searchOption + "/" + input + "/" + mobile_no;
+                    GetSellList();
+                    break;
+            }
+        }
+    }
+}
+
+   </script>
+</body>
+</html>

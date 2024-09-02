@@ -1,0 +1,18 @@
+[
+  {
+    "action": "talk",
+    "text": "Welcome to Landmark Mr. ___pospcustomer_name___ , Please wait while we connect your POSP agent Mr. ___pospagent_name___"
+  },
+  {
+    "action": "connect",
+    "eventUrl": ["http://qa-horizon.policyboss.com:3000/quote/nexmo_event"],
+    "timeout": "45",
+    "from": "___pospcustomer_mobile___",
+     "endpoint": [
+      {
+        "type": "phone",
+        "number": "___pospagent_mobile___"
+      }
+    ]
+  }
+]

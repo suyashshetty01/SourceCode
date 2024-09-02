@@ -1,0 +1,153 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <calculatePremium xmlns="http://ws.uiic.com/">
+            <application xmlns="">___insurer_integration_agent_code___</application>
+            <userid xmlns="">___insurer_integration_service_user___</userid>
+            <password xmlns="">___insurer_integration_service_password___</password>
+            <proposalXml xmlns=""><![CDATA[<ROOT>
+    <HEADER>
+        <BIFUELKITODPREMIUM></BIFUELKITODPREMIUM>
+        <BIFUELKITTPPREMIUM></BIFUELKITTPPREMIUM>
+        <CUR_BONUS_MALUS_PERCENT>___vehicle_ncb_current___</CUR_BONUS_MALUS_PERCENT>
+        <CUR_DEALER_GROSS_PREM></CUR_DEALER_GROSS_PREM>
+        <CUR_DEALER_NET_OD_PREM></CUR_DEALER_NET_OD_PREM>
+        <CUR_DEALER_NET_TP_PREM></CUR_DEALER_NET_TP_PREM>
+        <CUR_DEALER_SERVICE_TAX></CUR_DEALER_SERVICE_TAX>
+        <CUR_LD_PERSONAL_EFFECT>5000</CUR_LD_PERSONAL_EFFECT>
+        <DAT_AA_EXPIRY_DATE>02/2050</DAT_AA_EXPIRY_DATE>
+        <DAT_DATE_OF_EXPIRY_OF_POLICY>___policy_end_date___</DAT_DATE_OF_EXPIRY_OF_POLICY>
+        <DAT_DATE_OF_ISSUE_OF_POLICY>___policy_start_date___</DAT_DATE_OF_ISSUE_OF_POLICY>
+        <DAT_DATE_OF_REGISTRATION>___vehicle_registration_date___</DAT_DATE_OF_REGISTRATION>
+        <DAT_DRIVING_LICENSE_EXP_DATE></DAT_DRIVING_LICENSE_EXP_DATE>
+        <DAT_HOURS_EFFECTIVE_FROM>0:00:00</DAT_HOURS_EFFECTIVE_FROM>
+        <DAT_PREV_POLICY_EXPIRY_DATE>___policy_expiry_date___</DAT_PREV_POLICY_EXPIRY_DATE>
+        <DAT_PROPOSAL_DATE>___current_date___</DAT_PROPOSAL_DATE>
+        <DAT_UTR_DATE></DAT_UTR_DATE>
+        <ELECTRICALACCESSORIESPREM></ELECTRICALACCESSORIESPREM>
+        <MEM_ADDRESS_OF_INSURED>Sri Krishna,Flat No.1,Door No.34/38,3rd Main Road,Raja Annamalaipuram,Chennai</MEM_ADDRESS_OF_INSURED>
+        <NOCLAIMBONUSDISCOUNT></NOCLAIMBONUSDISCOUNT>
+        <NONELECTRICALACCESSORIESPREM></NONELECTRICALACCESSORIESPREM>
+        <NUM_AGREEMENT_NAME_1></NUM_AGREEMENT_NAME_1>
+        <NUM_AGREEMENT_NAME_2></NUM_AGREEMENT_NAME_2>
+        <NUM_BUSINESS_CODE>___vehicle_insurance_type___</NUM_BUSINESS_CODE>
+        <NUM_CLIENT_TYPE>___vehicle_registration_type___</NUM_CLIENT_TYPE>
+        <NUM_COMPULSORY_EXCESS_AMOUNT></NUM_COMPULSORY_EXCESS_AMOUNT>
+        <NUM_CUBIC_CAPACITY>___dbmaster_insurer_vehicle_cubiccapacity___</NUM_CUBIC_CAPACITY>
+        <NUM_DAYS_COVER_FOR_COURTESY></NUM_DAYS_COVER_FOR_COURTESY>
+        <NUM_FINANCIER_NAME_1></NUM_FINANCIER_NAME_1>
+        <NUM_FINANCIER_NAME_2></NUM_FINANCIER_NAME_2>
+        <NUM_GEOGRAPHICAL_EXTN_PREM></NUM_GEOGRAPHICAL_EXTN_PREM>
+        <NUM_IEV_BASE_VALUE>___vehicle_expected_idv___</NUM_IEV_BASE_VALUE>
+        <NUM_IEV_CNG_VALUE>___bifuel_cng___</NUM_IEV_CNG_VALUE>
+        <NUM_IEV_ELEC_ACC_VALUE>___electrical_accessory___</NUM_IEV_ELEC_ACC_VALUE>
+        <NUM_IEV_FIBRE_TANK_VALUE></NUM_IEV_FIBRE_TANK_VALUE>
+        <NUM_IEV_LPG_VALUE>___bifuel_lpg___</NUM_IEV_LPG_VALUE>
+        <NUM_IEV_NON_ELEC_ACC_VALUE>___non_electrical_accessory___</NUM_IEV_NON_ELEC_ACC_VALUE>
+        <NUM_IEV_SIDECAR_VALUE></NUM_IEV_SIDECAR_VALUE>
+        <NUM_IMPOSED_EXCESS_AMOUNT></NUM_IMPOSED_EXCESS_AMOUNT>
+        <NUM_LD_CLEANER_CONDUCTOR>___pa_paid_driver_si___</NUM_LD_CLEANER_CONDUCTOR>
+        <NUM_LL1>___is_llpd___</NUM_LL1>
+        <NUM_LL2></NUM_LL2>
+        <NUM_LL3></NUM_LL3>
+        <NUM_MONTH_OF_MANUFACTURE>___vehicle_manf_date_1___</NUM_MONTH_OF_MANUFACTURE>
+        <NUM_NO_OF_NAMED_DRIVERS>1</NUM_NO_OF_NAMED_DRIVERS>
+        <NUM_PAID_UP_CAPITAL></NUM_PAID_UP_CAPITAL>
+        <NUM_PA_NAME1_AMOUNT></NUM_PA_NAME1_AMOUNT>
+        <NUM_PA_NAME2_AMOUNT></NUM_PA_NAME2_AMOUNT>
+        <NUM_PA_NAMED_AMOUNT></NUM_PA_NAMED_AMOUNT>
+        <NUM_PA_NAMED_NUMBER>0</NUM_PA_NAMED_NUMBER>
+        <NUM_PA_UNNAMED_AMOUNT>___pa_unnamed_passenger_si___</NUM_PA_UNNAMED_AMOUNT>
+        <NUM_PA_UNNAMED_NUMBER>___dbmaster_insurer_vehicle_seatingcapacity___</NUM_PA_UNNAMED_NUMBER>
+        <NUM_PIN_CODE>627001</NUM_PIN_CODE>
+        <NUM_POLICY_NUMBER></NUM_POLICY_NUMBER>
+        <NUM_POLICY_TYPE>PackagePolicy</NUM_POLICY_TYPE>
+        <NUM_PREVIOUS_IDV></NUM_PREVIOUS_IDV><!--doubt-->
+        <NUM_RGSTRD_SEATING_CAPACITY>___dbmaster_insurer_vehicle_seatingcapacity___</NUM_RGSTRD_SEATING_CAPACITY>
+        <NUM_SPECIAL_DISCOUNT_RATE>60</NUM_SPECIAL_DISCOUNT_RATE>
+        <NUM_TPPD_AMOUNT>___tppd_amount___</NUM_TPPD_AMOUNT>
+        <NUM_UTR_PAYMENT_AMOUNT></NUM_UTR_PAYMENT_AMOUNT>
+        <NUM_VOLUNTARY_EXCESS_AMOUNT>___voluntary_deductible___</NUM_VOLUNTARY_EXCESS_AMOUNT>
+        <NUM_YEAR_OF_MANUFACTURE>___vehicle_manf_year___</NUM_YEAR_OF_MANUFACTURE>
+        <ODDiscount></ODDiscount>
+        <PAODPremium></PAODPremium>
+        <TXT_AA_DISC_PREM></TXT_AA_DISC_PREM>
+        <TXT_AA_FLAG>N</TXT_AA_FLAG><!--___is_aai_member___-->
+        <TXT_AA_MEMBERSHIP_NAME></TXT_AA_MEMBERSHIP_NAME>
+        <TXT_AA_MEMBERSHIP_NUMBER></TXT_AA_MEMBERSHIP_NUMBER>
+        <TXT_BANK_CODE></TXT_BANK_CODE>
+        <TXT_BANK_NAME></TXT_BANK_NAME>
+        <TXT_CHASSIS_NUMBER>hdfg345345345345345</TXT_CHASSIS_NUMBER>
+        <TXT_DOB>01/01/1992</TXT_DOB>
+        <TXT_DRIVING_LICENSE_NO></TXT_DRIVING_LICENSE_NO>
+        <TXT_ELEC_DESC></TXT_ELEC_DESC>
+        <TXT_EMAIL_ADDRESS></TXT_EMAIL_ADDRESS>
+        <TXT_ENGINE_NUMBER>dsf234234234</TXT_ENGINE_NUMBER>
+        <TXT_FINANCIER_BRANCH_ADDRESS1>NA</TXT_FINANCIER_BRANCH_ADDRESS1><!--doubt-->
+        <TXT_FINANCIER_BRANCH_ADDRESS2></TXT_FINANCIER_BRANCH_ADDRESS2>
+        <TXT_FIN_ACCOUNT_CODE_1></TXT_FIN_ACCOUNT_CODE_1>
+        <TXT_FIN_ACCOUNT_CODE_2></TXT_FIN_ACCOUNT_CODE_2>
+        <TXT_FIN_BRANCH_NAME_1></TXT_FIN_BRANCH_NAME_1>
+        <TXT_FIN_BRANCH_NAME_2></TXT_FIN_BRANCH_NAME_2>
+        <TXT_FUEL>___dbmaster_insurer_vehicle_fueltype___</TXT_FUEL>
+        <TXT_GENDER></TXT_GENDER>
+        <TXT_GEOG_AREA_EXTN_COUNTRY>NoExtn</TXT_GEOG_AREA_EXTN_COUNTRY>
+        <TXT_GSTIN_NUMBER></TXT_GSTIN_NUMBER>
+        <TXT_LICENSE_ISSUING_AUTHORITY></TXT_LICENSE_ISSUING_AUTHORITY>
+        <TXT_MEDICLE_COVER_LIMIT>Option 1</TXT_MEDICLE_COVER_LIMIT>
+        <TXT_MEMBERSHIP_CODE></TXT_MEMBERSHIP_CODE>
+        <TXT_MERCHANT_ID></TXT_MERCHANT_ID>
+        <TXT_MOBILE>9999999999</TXT_MOBILE>
+        <TXT_NAMED_PA_NOMINEE1></TXT_NAMED_PA_NOMINEE1>
+        <TXT_NAMED_PA_NOMINEE2></TXT_NAMED_PA_NOMINEE2>
+        <TXT_NAME_OF_INSURED>___first_name___ ___last_name___</TXT_NAME_OF_INSURED>
+        <TXT_NAME_OF_MANUFACTURER>___dbmaster_insurer_vehicle_make_name___</TXT_NAME_OF_MANUFACTURER>
+        <TXT_NAME_OF_NOMINEE>Test Test</TXT_NAME_OF_NOMINEE>
+        <TXT_NON_ELEC_DESC></TXT_NON_ELEC_DESC>
+        <TXT_OCCUPATION>___occupation___</TXT_OCCUPATION>
+        <TXT_OEM_DEALER_CODE>BRC0000115</TXT_OEM_DEALER_CODE><!--doubt-->
+        <TXT_OEM_TRANSACTION_ID>___timestamp___</TXT_OEM_TRANSACTION_ID><!--unique id-->
+        <TXT_OTHER_MAKE>___dbmaster_insurer_vehicle_model_name___</TXT_OTHER_MAKE><!--model-->
+        <TXT_PAN_NO>___pan___</TXT_PAN_NO>
+        <TXT_PA_NAME1></TXT_PA_NAME1>
+        <TXT_PA_NAME2></TXT_PA_NAME2>
+        <TXT_PREVIOUS_INSURER>___dbmaster_previousinsurer_code___</TXT_PREVIOUS_INSURER><!--___dbmaster_insurername___-->
+        <TXT_PREV_INSURER_CODE>___dbmaster_previousinsurer_code___</TXT_PREV_INSURER_CODE><!--___dbmaster_previousinsurer_code___-->
+        <TXT_REGISTRATION_NUMBER_1>___registration_no_1___</TXT_REGISTRATION_NUMBER_1>
+        <TXT_REGISTRATION_NUMBER_2>___registration_no_2___</TXT_REGISTRATION_NUMBER_2>
+        <TXT_REGISTRATION_NUMBER_3>___registration_no_3___</TXT_REGISTRATION_NUMBER_3>
+        <TXT_REGISTRATION_NUMBER_4>___registration_no_4___</TXT_REGISTRATION_NUMBER_4>
+        <TXT_RELATION_WITH_NOMINEE>Father</TXT_RELATION_WITH_NOMINEE><!--___nominee_relation___-->
+        <TXT_RTA_DESC>___dbmaster_insurer_rto_city_name___</TXT_RTA_DESC>
+        <TXT_TELEPHONE></TXT_TELEPHONE>
+        <TXT_TITLE>Mr</TXT_TITLE>
+        <TXT_TRANSACTION_ID></TXT_TRANSACTION_ID>
+        <TXT_TYPE_BODY>___dbmaster_insurer_vehicle_insurer_bodytype___</TXT_TYPE_BODY>
+        <TXT_UTR_NUMBER></TXT_UTR_NUMBER>
+        <TXT_VAHICLE_COLOR></TXT_VAHICLE_COLOR>
+        <TXT_VARIANT>___dbmaster_insurer_vehicle_variant_name___</TXT_VARIANT><!--variant-->
+        <TXT_VEHICLE_ZONE>___dbmaster_insurer_rto_zone_code___</TXT_VEHICLE_ZONE>
+        <YN_ANTI_THEFT>___is_antitheft_fit_2___</YN_ANTI_THEFT>
+        <YN_CLAIM>___is_claim_exists___</YN_CLAIM>
+        <YN_COMMERCIAL_FOR_PRIVATE>0</YN_COMMERCIAL_FOR_PRIVATE>
+        <YN_COMPULSORY_PA_DTLS>-1</YN_COMPULSORY_PA_DTLS>
+        <YN_COURTESY_CAR>0</YN_COURTESY_CAR>
+        <YN_DELETION_OF_IMT26></YN_DELETION_OF_IMT26>
+        <YN_DRIVING_TUTION>0</YN_DRIVING_TUTION>
+        <YN_FOREIGN_EMBASSY></YN_FOREIGN_EMBASSY>
+        <YN_HANDICAPPED></YN_HANDICAPPED>
+        <YN_IMT32></YN_IMT32>
+        <YN_INBUILT_CNG>___is_cng___</YN_INBUILT_CNG>
+        <YN_INBUILT_LPG>___is_lpg___</YN_INBUILT_LPG>
+        <YN_LIMITED_TO_OWN_PREMISES></YN_LIMITED_TO_OWN_PREMISES>
+        <YN_MEDICLE_EXPENSE>___addon_medical_expense_cover___</YN_MEDICLE_EXPENSE>
+        <YN_NIL_DEPR_WITHOUT_EXCESS>___addon_zero_dep_cover___</YN_NIL_DEPR_WITHOUT_EXCESS>
+        <YN_PERSONAL_EFFECT>___addon_personal_belonging_loss_cover___</YN_PERSONAL_EFFECT>
+        <YN_RTI_APPLICABLE>___addon_invoice_price_cover___</YN_RTI_APPLICABLE>
+	<TXT_CPA_COVER_PERIOD>___policy_od_tenure___</TXT_CPA_COVER_PERIOD>
+    </HEADER>
+</ROOT>]]></proposalXml>
+            <productCode xmlns="">___product_id_2___</productCode>
+            <subproductCode xmlns="">___product_id_3___</subproductCode>
+        </calculatePremium>
+    </Body>
+</Envelope>

@@ -1,0 +1,17 @@
+{
+	"PlanCode": "___plan_code___",
+	"SubProductCode": "___sub_product_code___",
+	"SumInsured": "___health_insurance_si___",
+	"NoOfAdult": "___adult_count___",
+	"NoOfChildren": "___child_count___",
+	"AgeOfEldestMember": "___elder_member_age___",
+	"GSTToState": "___gst_state___",
+	"DealId": "___insurer_integration_agent_code___",
+	"Tenure": "___policy_tenure___",
+	"InsuredDetails": [<!--InsurersDetail_Start-->
+        {
+            "DateOfBirth": "___member_array_birth_date___"
+	}
+        <!--InsurersDetail_End-->],
+	"CorrelationId": "___correlationCode___"
+}

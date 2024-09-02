@@ -1,0 +1,47 @@
+[
+    {
+        "Insurer_ID" : 6,
+        "Is_Active" : 0,
+        "Agent_Code" : "",
+        "Location_Code" : "",
+        "Service_User" : "",
+        "Service_Password" : "",
+        "Payment_Gateway_URL" : "https://sandbox.citruspay.com/6p9gr7hbrp",
+        "Name" : "ICICI::Car",
+        "Lib_Class" : "FutureGeneraliCar",
+        "Plan_List" : [ 
+            {
+                "Plan_Id" : 7,
+                "Plan_Name" : "Basic",
+                "Plan_Addon_List" : {
+                    "addon_zero_dep_cover" : "no",
+                    "addon_road_assist_cover" : "no",
+                    "addon_ncb_protection_cover" : "no",
+                    "addon_engine_protector_cover" : "no",
+                    "addon_invoice_price_cover" : "no",
+                    "addon_key_lock_cover" : "no"
+                },
+                "Is_Active" : true
+            }
+        ],
+        "Method_List" : [ 
+            {
+                "Method_Name" : "IffcoTokio_Car_Premium",
+                "Method_Action" : "CreatePolicy",
+                "Method_Request_File" : "IffcoTokio_Car_Premium.xml",
+                "Method_Calling_Type" : "SOAP",
+                "WSDL_URL" : null,
+                "Service_URL" : "https://cldilbizapp01.cloudapp.net/ILESB/Motor.svc/Partners/Premium/PvtCar",
+                "Service_File" : null,
+                "Checkpoint_URL" : null,
+                "Service_User" : "",
+                "Service_Password" : "",
+                "Is_Active" : 1,
+                "Method_Type" : "Premium",
+                "Product_Id" : 1,
+                "Insurer_Id" : 7
+            }
+        ]
+    }
+   
+]

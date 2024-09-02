@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+   <head>
+      <title>Travel Insurance</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="jscript/Travel_Quote.js"></script>
+      <script type="text/javascript" src="jscript/handle_Url.js"></script>
+   </head>
+   
+   <body>
+      <div id="loader">
+         <img src="images/quote-loader.gif">
+      </div>
+      <div class="mainContainer">
+         <div class="container">
+            <div class="topBox">
+               <img src="images/io-mail.png">&nbsp;<a href="#">customercare@policyboss.com</a>&nbsp;&nbsp;&nbsp;
+               <img src="images/io-call.png">&nbsp;<a href="#">1800-419-419-9(Toll Free)</a>
+            </div>
+         </div>
+         <div class="mainBox">
+            <div class="container">
+               <header>
+                  <div class="logo"><a href="#"><img src="images/logo150.png"></a></div>
+               </header>
+			    <div class="topmenuResultBox crn">
+					<div class="row">
+						<div class="col-4">CRN : <strong id="pb_crn"></strong></div>
+						<div class="col-4">Insurers : <strong id="ins_count">0</strong></div>
+						<div class="col-4">Plan : <strong id="plan_count">0</strong></div>
+					</div>
+				</div>
+               <section class="resultMainBox">
+                  <div class="topmenuResultBox">
+                     <div class="row">
+                        <div class="col-3">
+                           <div class="userBox">
+                              <select>
+                                 <option>Schengen Countries</option>
+                              </select>
+                              <label>Destinations</label>
+                           </div>
+                        </div>
+                        <div class="col-3">
+                           <div class="userBox">
+						  <input id="members" type="text" value="1 member(s)" readonly/>
+                              <label>Travellers<span class="disnone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/io-edit.png"></span></label>
+                           </div>
+                        </div>
+                        <div class="col-3">
+                           <div class="userBox">
+                              <input id="trip_date" type="text" value="Start - End" readonly/>
+                              <label>Trip Dates<span class="disnone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/io-edit.png"></span></label>
+                           </div>
+                        </div>
+                        <div class="col-3">
+                           <div class="userBox">
+                              <select id="si_filter"></select>
+                              <label>Medical Cover<span class="disnone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/io-up.png"></span></label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="resultBox">
+                     <ul id='QuoteWrapper'> </ul>
+                  </div>
+               </section>
+            </div>
+         </div>
+         <footer class="footer">
+            <div class="container">
+               <div align="center">&copy;2021. PolicyBoss.com </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

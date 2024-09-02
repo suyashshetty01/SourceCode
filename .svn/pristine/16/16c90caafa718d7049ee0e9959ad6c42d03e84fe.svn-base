@@ -1,0 +1,120 @@
+var ss_id, udid, crn, merchant_id, premiumAmount = 0;
+$(document).ready(function () {
+    $('.submit').click(function () {
+        $(this).addClass('active');
+        submitForm();
+    });
+    getBalanceDetails();
+});
+function getBalanceDetails() {
+    ss_id = getUrlVars()["ss_id"];
+    udid = getUrlVars()["User_Data_Id"];
+
+    $.ajax({
+        type: "GET",
+        url: GetUrl() + '/wallets/rzp_getAccountDetail/' + ss_id,
+        success: function (response) {
+            res = response.replace("<pre>", "");
+            res = res.replace("</pre>", "");
+            res = JSON.parse(res);
+            console.log(res);
+            if (res.hasOwnProperty('wallet_amount')) {
+                console.log(res.wallet_amount);
+                $("#balance").text(res.wallet_amount);
+                merchant_id = res.Merchant_Id;
+
+                crn = getUrlVars()["crn"];
+                var customerName = getUrlVars()["customer_name"];
+                premiumAmount = getUrlVars()["premium_amount"];
+
+                if (getUrlVars()["product_id"] === "1") {
+                    productName = "Car";
+                } else if (getUrlVars()["product_id"] === "10") {
+                    productName = "Bike";
+                } else if (getUrlVars()["product_id"] === "12") {
+                    productName = "CV";
+                } else {
+                    productName = "Health";
+                }
+                $("#username").val(customerName);
+                $("#crn").val(crn);
+                $("#product").val(productName);
+                $("#amount").val(premiumAmount);
+
+            } else {
+                console.log('Not enough balance');
+            }
+        },
+        error: function (result) {
+            console.log(result);
+        }
+    });
+}
+
+var getUrlVars = function () {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+};
+function GetUrl() {
+    var url = window.location.href;
+    var newurl;
+    if (url.includes("request_file")) {
+        newurl = "http://localhost:3000";
+    } else if (url.includes("qa.")) {
+        newurl = "http://qa-horizon.policyboss.com:3000";
+    } else if (url.includes("www.") || url.includes("cloudfront") || url.includes("origin-cdnh")) {
+        newurl = "https://horizon.policyboss.com:5443";
+    }
+    return newurl;
+}
+function submitForm() {
+    $.ajax({
+        type: "GET",
+        url: GetUrl() + "/wallets/rzp_order/" + udid + "/" + ss_id + "/" + premiumAmount,
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            if (res['Msg'] !== "Fail") {
+                submitPayment(res.Customer_Id, res.Response.id, res.Response.amount, res.User_Data_Id);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+        }
+    });
+}
+function submitPayment(cust_id, order_id, amount, udid) {
+    $.ajax({
+        type: "GET",
+        url: GetUrl() + '/wallets/rzp_payment/' + cust_id + '/' + order_id + '/' + amount + '/' + udid,
+        success: function (res) {
+            console.log(JSON.stringify(res));
+            if (res.pg_post['status'] !== "Fail") {
+                var form = $('<form action="' + res.pg_url + '" method="post" style="display:none;">' +
+                        '<input type="text" name="status" value="' + res.pg_post.status + '" />' +
+                        '<input type="text" name="amount" value="' + res.pg_post.amount + '" />' +
+                        '<input type="text" name="order_id" value="' + res.pg_post.razorpay_order_id + '" />' +
+                        '<input type="text" name="txnid" value="' + res.pg_post.razorpay_payment_id + '" />' +
+                        '<input type="text" name="hash" value="' + res.pg_post.razorpay_signature + '" />' +
+                        '</form>');
+                $('body').append(form);
+            } else {
+                var form = $('<form action="' + res.pg_url + '" method="post" style="display:none;">' +
+                        '<input type="text" name="status" value="' + res.pg_post.status + '" />' +
+                        '<input type="text" name="amount" value="' + res.pg_post.amount + '" />' +
+                        '<input type="text" name="txnid" value="' + res.pg_post.txn_id + '" />' +
+                        '</form>');
+                $('body').append(form);
+            }
+            form.submit();
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}

@@ -1,0 +1,41 @@
+<html>
+   <body>
+      <table width='600' border='0' cellspacing='0' cellpadding='0' style='border:1px solid #000000'>
+         <tr>
+            <td height='90' bgcolor='#000000'>
+               <table width='98%' border='0' align='center' cellpadding='0' cellspacing='0'>
+                  <tr>
+                     <td width='78%' style='line-height: 20px; color: #FFFFFF;font-family: Arial, Helvetica, sans-serif; font-size: 12px;padding-left:5px;'>
+                        Dear ___ContactName___,<br />                       
+                        You have opted the following policy for Term insurance<br />
+                        <span style='color: #FFFE97;font-family: Arial, Helvetica, sans-serif; font-size: 12px'>Insurer : </span>___InsurerName___<br />
+                        <span style='color: #FFFE97;font-family: Arial, Helvetica, sans-serif; font-size: 12px'>Premium : </span>Rs.___NetPremium___
+                     </td>
+                     <td width='22%'><img src='https://www.policyboss.com/Images/logo_email_quote.gif' width='127' height='57' />
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                  <tr>
+                     <td style='padding:5px; line-height:25px;font-family: Arial, Helvetica, sans-serif; font-size: 12px;'>                   
+                        Please click on the link below to complete the payment process alternately you can also copy paste the link in the address bar of your browser and proceed to payment.<br />
+                        <a href='___payLink___' target='_blank'>___payLink___</a><br /><br />
+                        In case of any queries you can call on our toll free number 1800-419-419-1 and we shall be obliged to assist you.
+                     </td>
+                  </tr>
+                  <tr>
+                     <td style='background-color:#EEEEEE; height:30px; color:#000000;font-family: Arial, Helvetica, sans-serif; font-size: 12px; text-align:center;'>
+                        You can also login to our website by using your Customer Reference No.: ___crn___
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+      <div><br/><br/>Thanks & Regards,<br/><br/>Customer Support Team,<br/>Policyboss.com<br/>A Landmark Insurance Initiative</div>
+   </body>
+</html>

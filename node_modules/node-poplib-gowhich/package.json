@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "node-poplib-gowhich",
+        "scope": null,
+        "escapedName": "node-poplib-gowhich",
+        "name": "node-poplib-gowhich",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\code\\nodejs1\\HorizonAPI\\SourceCode"
+    ]
+  ],
+  "_from": "node-poplib-gowhich@latest",
+  "_id": "node-poplib-gowhich@1.0.2",
+  "_inCache": true,
+  "_location": "/node-poplib-gowhich",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "name": "durban",
+    "email": "zhangdapeng89@126.com"
+  },
+  "_npmVersion": "2.10.1",
+  "_phantomChildren": {
+    "encoding": "0.1.12",
+    "mime": "1.3.4",
+    "uue": "3.1.0"
+  },
+  "_requested": {
+    "raw": "node-poplib-gowhich",
+    "scope": null,
+    "escapedName": "node-poplib-gowhich",
+    "name": "node-poplib-gowhich",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-poplib-gowhich/-/node-poplib-gowhich-1.0.2.tgz",
+  "_shasum": "38b3b69bfb36ae6b06c0d9f58efdba48402805a0",
+  "_shrinkwrap": null,
+  "_spec": "node-poplib-gowhich",
+  "_where": "D:\\code\\nodejs1\\HorizonAPI\\SourceCode",
+  "author": {
+    "name": "Durban",
+    "email": "zhangdapeng89@126.com",
+    "url": "http://www.gowhich.com"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangda89/node-poplib/issues"
+  },
+  "dependencies": {
+    "mailparser": "^0.5.1"
+  },
+  "description": "POP3 client library for Node.js",
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.17",
+    "mocha-lcov-reporter": "0.0.2",
+    "nodemailer": "^1.4.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dist": {
+    "shasum": "38b3b69bfb36ae6b06c0d9f58efdba48402805a0",
+    "tarball": "https://registry.npmjs.org/node-poplib-gowhich/-/node-poplib-gowhich-1.0.2.tgz"
+  },
+  "gitHead": "589bd30cf94688806fa8dfe3bd9867b55b687275",
+  "homepage": "https://github.com/zhangda89/node-poplib#readme",
+  "keywords": [
+    "POP3",
+    "Lib",
+    "pop3"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "maintainers": [
+    {
+      "name": "durban",
+      "email": "zhangdapeng89@126.com"
+    }
+  ],
+  "name": "node-poplib-gowhich",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangda89/node-poplib.git"
+  },
+  "scripts": {
+    "test": "istanbul cover ./node_modules/.bin/_mocha",
+    "test-coveralls": "istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
+    "test-on-travis": "istanbul cover ./node_modules/.bin/_mocha --report lcovonly",
+    "upload-to-coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "version": "1.0.2"
+}

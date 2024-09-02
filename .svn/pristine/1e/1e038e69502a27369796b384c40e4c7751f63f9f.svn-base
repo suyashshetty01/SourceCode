@@ -1,0 +1,619 @@
+/* Author: Dipali Revanwar
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var config = require('config');
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+var kyc_detail = require('../models/kyc_detail');
+var kyc_history = require('../models/kyc_history');
+var moment = require('moment');
+module.exports.controller = function (app) {
+    app.post('/kyc_details/hdfc_fetch_kyc_details', function (req, res) {
+        try {
+            let req_txt = {
+                "mobile": (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                "name": "",
+                "kyc_id": "",
+                "dob": (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                "ckyc_number": "",
+                "pan": (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                "aadhaar_uid": (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : (req.body.aadhar.substr(req.body.aadhar.length - 4)), //"last 4 digits of aadhar",
+                "agent_id": "",
+                "gc_cust_id": "",
+                "eia_number": "",
+                "email_address": "",
+                "redirect_url": ""
+            };
+            let args = {
+                data: JSON.stringify(req_txt),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "token": ""
+                }
+            };
+            let args1 = {
+                headers: {
+                    "api_key": "8d399be8-0b6f-4a"
+                }
+            };
+            let KYC_Status = "PENDING";
+            let kyc_id = 0;
+            let token = null;
+            var Client = require('node-rest-client').Client;
+            var client = new Client();
+            client.get("https://ctrln-uat.hdfcergo.com/e-kyc/tgt/generate-token", args1, function (data1, response1) {
+                if (data1) {
+                    if (data1.hasOwnProperty("success") && data1.success === true) {
+                        if (data1.hasOwnProperty("data") && data1.data.hasOwnProperty("token") && data1.data.token !== "" && data1.data.token !== null) {
+                            token = data1.data.token;
+                            try {
+                                if (token) {
+                                    args.headers.token = token;
+                                    var client1 = new Client();
+                                    client1.get("https://ctrln-uat.hdfcergo.com/e-kyc/primary/kyc-verified", args, function (data, response) {
+                                        if (data) {
+                                            if (data.hasOwnProperty("success") && data.success === true && data.hasOwnProperty("data") && data.data.hasOwnProperty("iskycVerified")) {
+                                                if (data.data.iskycVerified === 1) {
+                                                    kyc_id = (data.data.hasOwnProperty("kyc_id")) ? data.data.kyc_id : "";
+                                                    KYC_Status = "SUCCESS";
+                                                } else if (data.data.iskycVerified === 0) {
+                                                    kyc_id = (data.data.hasOwnProperty("redirect_link")) ? data.data.redirect_link : "";
+                                                    KYC_Status = "FAIL";
+                                                } else {
+                                                    KYC_Status = "FAIL";
+                                                }
+                                            } else {
+                                                KYC_Status = "FAIL";
+                                            }
+
+                                            try {
+                                                let queryObj = {
+                                                    'Insurer_Id': req.body.insurer_id,
+                                                    'Request_Core': req_txt,
+                                                    'Response_Core': data,
+                                                    'Search_Type': (req.body.search_type === undefined || req.body.search_type === "" || req.body.search_type === null) ? "" : req.body.search_type,
+                                                    'KYC_Number': kyc_id,
+                                                    'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                    'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                    'Aadhar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                    'KYC_Status': KYC_Status,
+                                                    'API_Status': "completed",
+                                                    'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                    'Created_On': new Date(),
+                                                    'Modified_On': new Date()
+                                                };
+                                                var kyc_detail1 = new kyc_detail(queryObj);
+                                                kyc_detail1.save(queryObj, function (err, users) {
+                                                    if (err) {
+                                                        res.json({"Insurer": "HDFC", "Msg": err, "Status": "FAIL"});
+                                                    } else {
+                                                        //res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                                    }
+                                                });
+                                                let queryObj1 = {
+                                                    'CRN': (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn,
+                                                    'Proposal_Id': "0",
+                                                    'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                    'Aadhaar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                    'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                    'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                    'Email': (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                                                    'Insurer_Id': req.body.insurer_id,
+                                                    'KYC_Request_Core': req_txt,
+                                                    'KYC_Response_Core': data,
+                                                    'Status': "completed",
+                                                    'Created_On': new Date(),
+                                                    'Modified_On': new Date()
+                                                };
+                                                var kyc_history1 = new kyc_history(queryObj1);
+                                                kyc_history1.save(queryObj1, function (err, users) {
+                                                    if (err) {
+                                                        res.json({"Insurer": "HDFC", "Msg": err, "Status": "FAIL"});
+                                                    } else {
+                                                        //res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                                    }
+                                                });
+                                            } catch (e) {
+                                                res.json({"Insurer": "HDFC", "Msg": e.stack, "Status": "FAIL"});
+                                            }
+                                            res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                        } else {
+                                            res.json({"Insurer": "HDFC", "Msg": "KYC fetch services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                                        }
+                                    });
+                                } else {
+                                    res.json({"Insurer": "HDFC", "Msg": "Could Not Generate Token. Please try again later.", "Status": "FAIL"});
+                                }
+                            } catch (e2) {
+                                res.json({"Insurer": "HDFC", "Msg": e2.stack, "Status": "FAIL"});
+                            }
+                        } else {
+                            res.json({"Insurer": "HDFC", "Msg": "KYC-Token not generated. Please try again later.", "Status": "FAIL"});
+                        }
+                    } else {
+                        res.json({"Insurer": "HDFC", "Msg": "KYC-Token generation services was not successful. Please try again later.", "Status": "FAIL"});
+                    }
+                } else {
+                    res.json({"Insurer": "HDFC", "Msg": "KYC-Token generation services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                }
+            });
+        } catch (e1) {
+            res.json({"Insurer": "HDFC", "Msg": e1.stack, "Status": "FAIL"});
+        }
+    });
+
+    app.post('/kyc_details/hdfc_verify_kyc_details', function (req, res) {
+        try {
+            var user_kyc_no = (req.body.user_kyc_no === undefined || req.body.user_kyc_no === "" || req.body.user_kyc_no === null) ? "" : req.body.user_kyc_no;
+            var user_name = null;
+            if (req.body.middle_name === undefined || req.body.middle_name === "" || req.body.middle_name === null) {
+                user_name = ((req.body.first_name === undefined || req.body.first_name === "" || req.body.first_name === null) ? "" : req.body.first_name) + " " +
+                        ((req.body.last_name === undefined || req.body.last_name === "" || req.body.last_name === null) ? "" : req.body.last_name);
+            } else {
+                user_name = ((req.body.first_name === undefined || req.body.first_name === "" || req.body.first_name === null) ? "" : req.body.first_name) + " " +
+                        ((req.body.middle_name === undefined || req.body.middle_name === "" || req.body.middle_name === null) ? "" : req.body.middle_name) + " " +
+                        ((req.body.last_name === undefined || req.body.last_name === "" || req.body.last_name === null) ? "" : req.body.last_name);
+            }
+            let req_txt = {
+                "mobile": (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                "name": user_name,
+                "kyc_id": user_kyc_no,
+                "dob": (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                "ckyc_number": user_kyc_no,
+                "pan": (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                "aadhaar_uid": (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : (req.body.aadhar.substr(req.body.aadhar.length - 4)), //"last 4 digits of aadhar",
+                "agent_id": "",
+                "gc_cust_id": "",
+                "eia_number": "",
+                "email_address": (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                "redirect_url": ""
+            };
+            let args = {headers: {"token": ""}};
+            let args1 = {
+                headers: {
+                    "api_key": "8d399be8-0b6f-4a"
+                }
+            };
+            let KYC_Status = "PENDING";
+            let token = null;
+            var Client = require('node-rest-client').Client;
+            var client = new Client();
+            client.get("https://ctrln-uat.hdfcergo.com/e-kyc/tgt/generate-token", args1, function (data1, response1) {
+                if (data1) {
+                    if (data1.hasOwnProperty("success") && data1.success === true) {
+                        if (data1.hasOwnProperty("data") && data1.data.hasOwnProperty("token") && data1.data.token !== "" && data1.data.token !== null) {
+                            token = data1.data.token;
+                            try {
+                                if (token) {
+                                    args.headers.token = token;
+                                    var client1 = new Client();
+                                    client1.get("https://ctrln-uat.hdfcergo.com/e-kyc/primary/kyc-status/" + user_kyc_no, args, function (data, response) {
+                                        if (data) {
+                                            if (data.hasOwnProperty("success") && data.success === true && data.hasOwnProperty("data") && data.data.hasOwnProperty("iskycVerified")) {
+                                                if (data.data.iskycVerified === 1) {
+                                                    KYC_Status = "SUCCESS";
+                                                } else if (data.data.iskycVerified === 0) {
+                                                    KYC_Status = "FAIL";
+                                                } else {
+                                                    KYC_Status = "FAIL";
+                                                }
+                                            } else {
+                                                KYC_Status = "FAIL";
+                                            }
+
+                                            try {
+                                                //data.data.Msg.kyc_id = user_kyc_no;
+                                                let queryObj = {
+                                                    'Insurer_Id': req.body.insurer_id,
+                                                    'Request_Core': req_txt,
+                                                    'Response_Core': data,
+                                                    'Search_Type': (req.body.search_type === undefined || req.body.search_type === "" || req.body.search_type === null) ? "" : req.body.search_type,
+                                                    'KYC_Number': user_kyc_no,
+                                                    'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                    'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                    'Aadhar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                    'KYC_Status': KYC_Status,
+                                                    'API_Status': "completed",
+                                                    'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                    'Created_On': new Date(),
+                                                    'Modified_On': new Date()
+                                                };
+                                                var kyc_detail1 = new kyc_detail(queryObj);
+                                                kyc_detail1.save(queryObj, function (err, users) {
+                                                    if (err) {
+                                                        res.json({"Insurer": "HDFC", "Msg": err, "Status": "FAIL"});
+                                                    } else {
+                                                        //res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                                    }
+                                                });
+                                                let queryObj1 = {
+                                                    'CRN': (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn,
+                                                    'Proposal_Id': "0",
+                                                    'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                    'Aadhaar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                    'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                    'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                    'Email': (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                                                    'Insurer_Id': req.body.insurer_id,
+                                                    'KYC_Request_Core': req_txt,
+                                                    'KYC_Response_Core': data,
+                                                    'Status': "completed",
+                                                    'Created_On': new Date(),
+                                                    'Modified_On': new Date()
+                                                };
+                                                var kyc_history1 = new kyc_history(queryObj1);
+                                                kyc_history1.save(queryObj1, function (err, users) {
+                                                    if (err) {
+                                                        res.json({"Insurer": "HDFC", "Msg": err, "Status": "FAIL"});
+                                                    } else {
+                                                        //res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                                    }
+                                                });
+                                            } catch (e) {
+                                                res.json({"Insurer": "HDFC", "Msg": e.stack, "Status": "FAIL"});
+                                            }
+                                            res.json({"Insurer": "HDFC", "Msg": data.data, "Status": KYC_Status});
+                                        } else {
+                                            res.json({"Insurer": "HDFC", "Msg": "KYC verify services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                                        }
+                                    });
+                                } else {
+                                    res.json({"Insurer": "HDFC", "Msg": "Could Not Generate Token. Please try again later.", "Status": "FAIL"});
+                                }
+                            } catch (e2) {
+                                res.json({"Insurer": "HDFC", "Msg": e2.stack, "Status": "FAIL"});
+                            }
+                        } else {
+                            res.json({"Insurer": "HDFC", "Msg": "KYC-Token not generated. Please try again later.", "Status": "FAIL"});
+                        }
+                    } else {
+                        res.json({"Insurer": "HDFC", "Msg": "KYC-Token generation services was not successful. Please try again later.", "Status": "FAIL"});
+                    }
+                } else {
+                    res.json({"Insurer": "HDFC", "Msg": "KYC-Token generation services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                }
+            });
+        } catch (e1) {
+            res.json({"Insurer": "HDFC", "Msg": e1.stack, "Status": "FAIL"});
+        }
+    });
+
+    app.post('/kyc_details/edelweiss_fetch_kyc_details', function (req, res) {
+        try {
+            let req_txt = {
+                "VISoF_Program_Name": "PB-LIBPL", //"EGI",
+                "VISoF_KYC_Req_No": (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn.toString(),
+                "ProposerType": "I", //I or C
+                "Source": "LIBPL", //"PP",
+                "FirstName": (req.body.first_name === undefined || req.body.first_name === "" || req.body.first_name === null) ? "" : req.body.first_name,
+                "MiddleName": (req.body.middle_name === undefined || req.body.middle_name === "" || req.body.middle_name === null) ? "" : req.body.middle_name,
+                "LastName": (req.body.last_name === undefined || req.body.last_name === "" || req.body.last_name === null) ? "" : req.body.last_name,
+                "DOB_DOI": (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : (moment(req.body.dob).format("DD/MM/YYYY")), //"31/10/2000",
+                //"DOB_DOI": (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob, //"31/10/2000",
+                "MobileNo": (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                "ZIPCODE": (req.body.pincode === undefined || req.body.pincode === "" || req.body.pincode === null) ? "" : req.body.pincode,
+                "Email": (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                "ProposerPAN": (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan, //"AQNPY8223A",
+                "ProposerAadhaarNumber": (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar, //"",
+                "ProposerCKYCNo": ""
+            };
+            let args = {
+                data: JSON.stringify(req_txt),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*",
+                    "Authorization": "",
+                    "X-Api-Key": "vmX0qzSwUy5i4dyKa0MhuaQhQ6PECsp3FqZvwRX8"
+                }
+            };
+            let args1 = {
+                headers: {
+                    "Authorization": 'Basic ' + new Buffer('2r9a4a9lpvj2lp5bqbo0jhcp0l' + ':' + '1q0fbp68juvm8f221f9ckh9j7i3ktq2hkibfk88q460pvccsfmqs').toString('base64'),
+                    //"Authorization": "Basic MnI5YTRhOWxwdmoybHA1YnFibzBqaGNwMGw6MXEwZmJwNjhqdXZtOGYyMjFmOWNraDlqN2kza3RxMmhraWJmazg4cTQ2MHB2Y2NzZm1xcw==",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "*/*"
+                }
+            };
+            let KYC_Status = "PENDING";
+            let kyc_id = 0;
+            let token = null;
+            var Client = require('node-rest-client').Client;
+            var client = new Client();
+            client.post("https://devapi.edelweissinsurance.com/oauth2/token", args1, function (data1, response1) {
+                if (data1) {
+                    if (data1.hasOwnProperty("access_token") && data1.access_token !== "" && data1.access_token !== null) {
+                        token = data1.access_token;
+                        try {
+                            if (token) {
+                                args.headers.Authorization = token;
+                                var client1 = new Client();
+                                client1.post("https://devapi.edelweissinsurance.com/signzy/e-kyc", args, function (data, response) {
+                                    if (data) {
+                                        let LM_Data = {
+                                            'KYC_Obj': {
+                                                'kyc_id': ''
+                                            },
+                                            'LM_Obj': {
+                                                'iskycVerified': '',
+                                                'redirect_link': '',
+                                                'status': ''
+                                            },
+                                            'Edelweiss_Obj': {
+                                                'data': ''
+                                            },
+                                            'tmp_Obj': ''
+                                        };
+                                        if (data.hasOwnProperty("message") && data.message !== "") {
+                                            //data.data = data.message;
+                                            KYC_Status = "FAIL";
+                                            LM_Data.Edelweiss_Obj.data = data.message;
+                                            LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                        } else {
+                                            if (data.hasOwnProperty("success") && data.success === true && data.hasOwnProperty("data") && data.data) {
+                                                if (data.data.hasOwnProperty("KYC_Status") && (data.data.KYC_Status === '1' || data.data.KYC_Status === 1)) {
+                                                    if ((data.data.hasOwnProperty("VISoF_KYC_Req_No") && data.data.VISoF_KYC_Req_No !== "") && (data.data.hasOwnProperty("IC_KYC_No") && data.data.IC_KYC_No !== "")) {
+                                                        kyc_id = data.data.VISoF_KYC_Req_No + "|" + data.data.IC_KYC_No;
+                                                        //data.Msg.kyc_id = kyc_id;
+                                                        KYC_Status = "SUCCESS";
+                                                        LM_Data.KYC_Obj.kyc_id = kyc_id;
+                                                        LM_Data.tmp_Obj = LM_Data.KYC_Obj;
+                                                    } else {
+                                                        //data.data.Msg = data;
+                                                        KYC_Status = "FAIL";
+                                                        LM_Data.Edelweiss_Obj.data = data;
+                                                        LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                                    }
+                                                } else {
+                                                    //data.data.Msg.iskycVerified = data.data.KYC_Status;
+                                                    //data.data.Msg.status = data.data.KYC_Remark;
+                                                    //data.data.Msg.redirect_link = data.data.IC_KYC_REG_URL;
+                                                    KYC_Status = "FAIL";
+                                                    LM_Data.LM_Obj.iskycVerified = data.data.KYC_Status;
+                                                    LM_Data.LM_Obj.status = data.data.KYC_Remark;
+                                                    LM_Data.LM_Obj.redirect_link = data.data.IC_KYC_REG_URL;
+                                                    LM_Data.tmp_Obj = LM_Data.LM_Obj;
+                                                }
+                                            } else {
+                                                //data.data = data.message;
+                                                KYC_Status = "FAIL";
+                                                LM_Data.Edelweiss_Obj.data = data.message;
+                                                LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                            }
+                                        }
+
+                                        try {
+                                            let queryObj = {
+                                                'Insurer_Id': req.body.insurer_id,
+                                                'Request_Core': req_txt,
+                                                'Response_Core': data,
+                                                'Search_Type': (req.body.search_type === undefined || req.body.search_type === "" || req.body.search_type === null) ? "" : req.body.search_type,
+                                                'KYC_Number': kyc_id,
+                                                'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                'Aadhar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                'KYC_Status': KYC_Status,
+                                                'API_Status': "completed",
+                                                'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                'Created_On': new Date(),
+                                                'Modified_On': new Date()
+                                            };
+                                            var kyc_detail1 = new kyc_detail(queryObj);
+                                            kyc_detail1.save(queryObj, function (err, users) {
+                                                if (err) {
+                                                    res.json({"Insurer": "Edelweiss", "Msg": err, "Status": "FAIL"});
+                                                } else {
+                                                    //res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                                }
+                                            });
+                                            let queryObj1 = {
+                                                'CRN': (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn,
+                                                'Proposal_Id': "",
+                                                'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                'Aadhaar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                'Email': (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                                                'Insurer_Id': req.body.insurer_id,
+                                                'KYC_Request_Core': req_txt,
+                                                'KYC_Response_Core': data,
+                                                'Status': "completed",
+                                                'Created_On': new Date(),
+                                                'Modified_On': new Date()
+                                            };
+                                            var kyc_history1 = new kyc_history(queryObj1);
+                                            kyc_history1.save(queryObj1, function (err, users) {
+                                                if (err) {
+                                                    res.json({"Insurer": "Edelweiss", "Msg": err, "Status": "FAIL"});
+                                                } else {
+                                                    //res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                                }
+                                            });
+                                        } catch (e) {
+                                            res.json({"Insurer": "Edelweiss", "Msg": e.stack, "Status": "FAIL"});
+                                        }
+                                        res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                    } else {
+                                        res.json({"Insurer": "Edelweiss", "Msg": "KYC fetch services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                                    }
+                                });
+                            } else {
+                                res.json({"Insurer": "Edelweiss", "Msg": "Could Not Generate Token. Please try again later.", "Status": "FAIL"});
+                            }
+                        } catch (e2) {
+                            res.json({"Insurer": "Edelweiss", "Msg": e2.stack, "Status": "FAIL"});
+                        }
+                    } else {
+                        res.json({"Insurer": "Edelweiss", "Msg": "KYC-Token not generated. Please try again later.", "Status": "FAIL"});
+                    }
+                } else {
+                    res.json({"Insurer": "Edelweiss", "Msg": "KYC-Token generation services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                }
+            });
+        } catch (e1) {
+            res.json({"Insurer": "Edelweiss", "Msg": e1.stack, "Status": "FAIL"});
+        }
+    });
+
+    app.post('/kyc_details/edelweiss_verify_kyc_details', function (req, res) {
+        try {
+            var user_kyc_no = (req.body.user_kyc_no === undefined || req.body.user_kyc_no === "" || req.body.user_kyc_no === null) ? "" : req.body.user_kyc_no;
+            req.body.crn = 13201;//
+            user_kyc_no = 'EGI-00000113';//
+            let req_txt = {
+                "VISoF_KYC_Req_No": (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn.toString(),
+                "IC_KYC_No": (req.body.user_kyc_no === undefined || req.body.user_kyc_no === "" || req.body.user_kyc_no === null) ? "" : req.body.user_kyc_no
+            };
+            let args = {
+                data: JSON.stringify(req_txt),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "*/*",
+                    "Authorization": "",
+                    "X-Api-Key": "vmX0qzSwUy5i4dyKa0MhuaQhQ6PECsp3FqZvwRX8"
+                }
+            };
+            let args1 = {
+                headers: {
+                    "Authorization": 'Basic ' + new Buffer('2r9a4a9lpvj2lp5bqbo0jhcp0l' + ':' + '1q0fbp68juvm8f221f9ckh9j7i3ktq2hkibfk88q460pvccsfmqs').toString('base64'),
+                    //"Authorization": "Basic MnI5YTRhOWxwdmoybHA1YnFibzBqaGNwMGw6MXEwZmJwNjhqdXZtOGYyMjFmOWNraDlqN2kza3RxMmhraWJmazg4cTQ2MHB2Y2NzZm1xcw==",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "*/*"
+                }
+            };
+            let KYC_Status = "PENDING";
+            let kyc_id = 0;
+            let token = null;
+            var Client = require('node-rest-client').Client;
+            var client = new Client();
+            client.post("https://devapi.edelweissinsurance.com/oauth2/token", args1, function (data1, response1) {
+                if (data1) {
+                    if (data1.hasOwnProperty("access_token") && data1.access_token !== "" && data1.access_token !== null) {
+                        token = data1.access_token;
+                        try {
+                            if (token) {
+                                args.headers.Authorization = token;
+                                var client1 = new Client();
+                                client1.get("https://devapi.edelweissinsurance.com/signzy/e-kyc-enquiry", args, function (data, response) {
+                                    if (data) {
+                                        let LM_Data = {
+                                            'KYC_Obj': {
+                                                'kyc_id': ''
+                                            },
+                                            'LM_Obj': {
+                                                'iskycVerified': '',
+                                                'redirect_link': '',
+                                                'status': ''
+                                            },
+                                            'Edelweiss_Obj': {
+                                                'data': ''
+                                            },
+                                            'tmp_Obj': ''
+                                        };
+                                        if (data.hasOwnProperty("message") && data.message !== "") {
+                                            KYC_Status = "FAIL";
+                                            LM_Data.Edelweiss_Obj.data = data.message;
+                                            LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                        } else {
+                                            if (data.hasOwnProperty("success") && data.success === true && data.hasOwnProperty("data") && data.data) {
+                                                if (data.data.hasOwnProperty("KYC_Status") && (data.data.KYC_Status === '1' || data.data.KYC_Status === 1)) {
+                                                    if ((data.data.hasOwnProperty("VISoF_KYC_Req_No") && data.data.VISoF_KYC_Req_No !== "") && (data.data.hasOwnProperty("IC_KYC_No") && data.data.IC_KYC_No !== "")) {
+                                                        kyc_id = data.data.VISoF_KYC_Req_No + "|" + data.data.IC_KYC_No;
+                                                        KYC_Status = "SUCCESS";
+                                                        LM_Data.KYC_Obj.kyc_id = kyc_id;
+                                                        LM_Data.tmp_Obj = LM_Data.KYC_Obj;
+                                                    } else {
+                                                        KYC_Status = "FAIL";
+                                                        LM_Data.Edelweiss_Obj.data = data;
+                                                        LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                                    }
+                                                } else {
+                                                    KYC_Status = "FAIL";
+                                                    LM_Data.LM_Obj.iskycVerified = data.data.KYC_Status;
+                                                    LM_Data.LM_Obj.status = data.data.KYC_Remark;
+                                                    LM_Data.LM_Obj.redirect_link = data.data.IC_KYC_REG_URL;
+                                                    LM_Data.tmp_Obj = LM_Data.LM_Obj;
+                                                }
+                                            } else {
+                                                KYC_Status = "FAIL";
+                                                LM_Data.Edelweiss_Obj.data = data.message;
+                                                LM_Data.tmp_Obj = LM_Data.Edelweiss_Obj.data;
+                                            }
+                                        }
+
+                                        try {
+                                            let queryObj = {
+                                                'Insurer_Id': req.body.insurer_id,
+                                                'Request_Core': req_txt,
+                                                'Response_Core': data,
+                                                'Search_Type': (req.body.search_type === undefined || req.body.search_type === "" || req.body.search_type === null) ? "" : req.body.search_type,
+                                                'KYC_Number': user_kyc_no,
+                                                'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                'Aadhar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                'KYC_Status': KYC_Status,
+                                                'API_Status': "completed",
+                                                'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                'Created_On': new Date(),
+                                                'Modified_On': new Date()
+                                            };
+                                            var kyc_detail1 = new kyc_detail(queryObj);
+                                            kyc_detail1.save(queryObj, function (err, users) {
+                                                if (err) {
+                                                    res.json({"Insurer": "Edelweiss", "Msg": err, "Status": "FAIL"});
+                                                } else {
+                                                    //res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                                }
+                                            });
+                                            let queryObj1 = {
+                                                'CRN': (req.body.crn === undefined || req.body.crn === "" || req.body.crn === null) ? "" : req.body.crn,
+                                                'Proposal_Id': "",
+                                                'PAN': (req.body.pan === undefined || req.body.pan === "" || req.body.pan === null) ? "" : req.body.pan,
+                                                'Aadhaar': (req.body.aadhar === undefined || req.body.aadhar === "" || req.body.aadhar === null) ? "" : req.body.aadhar,
+                                                'DOB': (req.body.dob === undefined || req.body.dob === "" || req.body.dob === null) ? "" : req.body.dob,
+                                                'Mobile': (req.body.mobile === undefined || req.body.mobile === "" || req.body.mobile === null) ? "" : req.body.mobile,
+                                                'Email': (req.body.email === undefined || req.body.email === "" || req.body.email === null) ? "" : req.body.email,
+                                                'Insurer_Id': req.body.insurer_id,
+                                                'KYC_Request_Core': req_txt,
+                                                'KYC_Response_Core': data,
+                                                'Status': "completed",
+                                                'Created_On': new Date(),
+                                                'Modified_On': new Date()
+                                            };
+                                            var kyc_history1 = new kyc_history(queryObj1);
+                                            kyc_history1.save(queryObj1, function (err, users) {
+                                                if (err) {
+                                                    res.json({"Insurer": "Edelweiss", "Msg": err, "Status": "FAIL"});
+                                                } else {
+                                                    //res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                                }
+                                            });
+                                        } catch (e) {
+                                            res.json({"Insurer": "Edelweiss", "Msg": e.stack, "Status": "FAIL"});
+                                        }
+                                        res.json({"Insurer": "Edelweiss", "Msg": LM_Data.tmp_Obj, "Status": KYC_Status});
+                                    } else {
+                                        res.json({"Insurer": "Edelweiss", "Msg": "KYC verify services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                                    }
+                                });
+                            } else {
+                                res.json({"Insurer": "Edelweiss", "Msg": "Could Not Generate Token. Please try again later.", "Status": "FAIL"});
+                            }
+                        } catch (e2) {
+                            res.json({"Insurer": "Edelweiss", "Msg": e2.stack, "Status": "FAIL"});
+                        }
+                    } else {
+                        res.json({"Insurer": "Edelweiss", "Msg": "KYC-Token not generated. Please try again later.", "Status": "FAIL"});
+                    }
+                } else {
+                    res.json({"Insurer": "Edelweiss", "Msg": "KYC-Token generation services failed due to technical issue. Please try again later.", "Status": "FAIL"});
+                }
+            });
+        } catch (e1) {
+            res.json({"Insurer": "Edelweiss", "Msg": e1.stack, "Status": "FAIL"});
+        }
+    });
+};

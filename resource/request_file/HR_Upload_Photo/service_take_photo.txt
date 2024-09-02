@@ -1,0 +1,38 @@
+router.post('/take_photo', function (req, res) {
+     req.body = JSON.parse(JSON.stringify(req.body));
+       var path = 'tmp/TakePhoto/UID_';
+        var objRequestCore = req.body;
+        var uid = objRequestCore.uid;
+        var img1 = decodeURIComponent(objRequestCore.img1);
+        try{
+            fs.mkdirSync(path+uid);
+            console.log(uid+' - Folder Created');
+            
+            var data = img1.replace(/^data:image\/\w+;base64,/, "");
+            if(data === ""){
+                res.json({'msg': 'Something Went Wrong'});
+            }
+            else {
+                var buf = new Buffer(data, 'base64');
+                fs.writeFile(path+uid+'/photo'+'.png', buf);
+            }
+            res.json({'msg': 'Success'});
+        }
+        catch(err){
+            if(err.code === 'EEXIST'){
+                console.log(uid+' - Folder Already Exist');
+            var data = img1.replace(/^data:image\/\w+;base64,/, "");
+            if(data === ""){
+                res.json({'msg': 'Something Went Wrong'});
+                }
+            else {
+                var buf = new Buffer(data, 'base64');
+                fs.writeFile(path+uid+'/photo'+' - new.png', buf);
+                }
+            res.json({'msg': 'Success'});
+            }
+                else{
+                    console.log(err);
+                }
+        }
+    });

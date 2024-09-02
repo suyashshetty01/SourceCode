@@ -1,0 +1,191 @@
+/* Author: Roshani Prajapati
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+var config = require('config');
+var moment = require('moment');
+var lazy_pay_log = require('../models/lazy_pay_log');
+const bodyParser = require('body-parser');
+const crypto = require('crypto');
+let Client = require('node-rest-client').Client;
+let client = new Client();
+module.exports.controller = function (app) {
+    app.post('/lazy_pay_log/check_eligibility', function (req, res) {
+        var gender = req.body.gender === "M" ? "male" : req.body.gender === "F" ? "female" : "other";
+        var request_page = req.body.request_page === "quote" ? "quote" : "proposal";
+        if (request_page === "quote") {
+            var line1 = req.body.city;
+            var line2 = req.body.state;
+            var pincode = req.body.pincode.toString();
+        } else {
+            var line1 = req.body.permanent_address_1 + " " + req.body.permanent_address_2 + " " + req.body.permanent_address_3;
+            var line2 = req.body.city_name + "," + req.body.state_name;
+            var pincode = req.body.permanent_pincode;
+        }
+        lazy_pay_log.find({"PAN_Card": req.body.pan, "Request_Page": request_page}, function (err, get_res) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (get_res.length === 0) {
+                    var db_arg = {
+                        'PB_CRN': parseInt(req.body.crn),
+                        'User_Data_Id': parseInt(req.body.udid),
+                        'Customer Name': req.body.contact_name,
+                        "Customer_Mobile": parseInt(req.body.mobile),
+                        "PAN_Card": req.body.pan,
+                        "Date_of_Birth": req.body.birth_date,
+                        "Request_Page": request_page,
+                        "Status": "",
+                        "LazyPay_Request": "",
+                        "LazyPay_Response": "",
+                        "Created_On": new Date(),
+                        "Modified_On": ""
+                    };
+
+                    const str_content = req.body.mobile.toString() + req.body.final_premium.toString() + "INR";//<mobile+amount+currency>
+//                    const key = (config.environment.name !== 'Production' ? "898816000f6073d5789e67356a713862d5ffdcf7" : ""); //old
+                    const key = (config.environment.name !== 'Production' ? "73017b15be7d5954adb1182c59caa8b49c84f9d8" : ""); //new
+
+                    const hash = crypto.createHmac('sha1', key)
+                            .update(str_content)
+                            .digest('hex');
+                    console.log('LazyPay signature : ', hash);
+                    args = {
+                        headers: {
+                            "Content-Type": "application/json",
+//                            "accessKey": (config.environment.name !== 'Production' ? "BI2HN64L6JLMSY0NYFJ3" : ""), //old
+                            "accessKey": (config.environment.name !== 'Production' ? "P6K6A03MS039NA5MHSOK" : ""), //new
+                            "signature": hash
+                        },
+                        data: {
+                            "userDetails": {
+                                "firstName": req.body.first_name,
+                                "middleName": req.body.middle_name,
+                                "lastName": req.body.last_name,
+                                "mobile": req.body.mobile.toString(),
+                                "pan": req.body.pan,
+                                "dob": req.body.birth_date,
+                                "gender": gender,
+                                "email": req.body.email,
+                                "address": {
+                                    "line1": line1,
+                                    "line2": line2,
+                                    "pincode": pincode
+                                }
+                            },
+                            "amount": {
+                                "value": req.body.final_premium.toString(),
+                                "currency": "INR"
+                            },
+                            "cbpConsent": {
+                                "value": true,
+                                "consentTime": moment().utc().format("YYYY-MM-DD HH:mm:ss")
+                            }
+                        }
+                    };
+                    let url = (config.environment.name !== 'Production' ? "https://sboxapi.lazypay.in" : "https://api.lazypay.in") + "/api/lazypay/cof/v0/eligibility";
+                    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+                    db_arg.LazyPay_Request = JSON.stringify(args.data); // store request
+                    client.post(url, args, function (data) {
+                        if (data) {
+                            if (data.hasOwnProperty('status') && (data['status'] === 400 || data['status'] === 404 || data['status'] === 500)) {
+                                console.error('LazyPay - ', JSON.stringify(data));
+                                res.json({'Response': data});
+                            } else {
+                                if (data.hasOwnProperty('isEligible') && data['isEligible'] === true) {
+                                    db_arg.Status = "Success";
+                                } else {
+                                    db_arg.Status = "Fail";
+                                }
+                                db_arg.LazyPay_Response = JSON.stringify(data);
+                                let add_lazy_pay_log = new lazy_pay_log(db_arg);
+                                add_lazy_pay_log.save(function (err, res1) {
+                                    if (err) {
+                                        console.log("Failed");
+                                    } else {
+                                        console.log("Inserted Sucessfully");
+                                    }
+                                });
+                                res.json({'Response': data});
+                            }
+                        }
+                    });
+                } else {
+                    var db_response = get_res;
+                    if (db_response.length > 0) {
+                        if (db_response[0].hasOwnProperty('_doc') && db_response[0]['_doc']['LazyPay_Response']) {
+                            res.json({'Response': JSON.parse(db_response[0]['_doc']['LazyPay_Response'])});
+                        }
+                    }
+                }
+            }
+        });
+    });
+    app.post('/lazy_pay_log/pg_initiate', function (req, res) {
+        var request = req.body.request;
+        var gender = request.gender === "M" ? "male" : request.gender === "F" ? "female" : "other";
+        var merchantTxnId = new Date().getTime().toString();
+        var com_address = request.permanent_address_1 + " " + request.permanent_address_2 + " " + request.permanent_address_3;
+        const str_content = request.mobile.toString() + request.final_premium.toString() + "INR";//<mobile+amount+currency>
+//        const key = (config.environment.name !== 'Production' ? "898816000f6073d5789e67356a713862d5ffdcf7" : ""); //old
+        const key = (config.environment.name !== 'Production' ? "73017b15be7d5954adb1182c59caa8b49c84f9d8" : ""); //new
+
+        const hash = crypto.createHmac('sha1', key)
+                .update(str_content)
+                .digest('hex');
+        console.log('LazyPay signature : ', hash);
+        args = {
+            headers: {
+                "Content-Type": "application/json",
+//                "accessKey": (config.environment.name !== 'Production' ? "BI2HN64L6JLMSY0NYFJ3" : ""), //old
+                "accessKey": (config.environment.name !== 'Production' ? "P6K6A03MS039NA5MHSOK" : ""), //new
+                "signature": hash
+            },
+            data: {
+                "userDetails": {
+                    "address": {
+                        "line1": com_address,
+                        "line2": request.city_name + "," + request.state_name,
+                        "pincode": request.permanent_pincode.toString()
+                    },
+                    "dob": request.birth_date,
+                    "email": request.email,
+                    "firstName": request.first_name,
+                    "gender": gender,
+                    "lastName": request.last_name,
+                    "maritalStatus": request.marital.toLowerCase(),
+                    "middleName": request.middle_name,
+                    "mobile": request.mobile.toString(),
+                    "pan": request.pan,
+                    "employmentType": req.body.occupation,
+                    "fatherName": request.father_name
+                },
+                "amount": {
+                    "value": request.final_premium.toString(),
+                    "currency": "INR"
+                },
+                "cbpConsent": {
+                    "value": true,
+                    "consentTime": moment().utc().format("YYYY-MM-DD HH:mm:ss")
+                },
+                "customParams": {
+                    "settleWith": "ICICI",
+                    "productType": "Insurance"
+                },
+                "merchantTxnId": merchantTxnId,
+                "backUrl": req.body.return_url,
+                "notifyUrl": req.body.return_url
+            }
+        };
+        let Client = require('node-rest-client').Client;
+        let client = new Client();
+        let url = (config.environment.name !== 'Production' ? "https://sboxapi.lazypay.in" : "https://api.lazypay.in") + "/api/lazypay/cof/v0/initiate";
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        client.post(url, args, function (data) {
+            if (data) {
+                res.json({'Request': args, 'Response': data});
+            }
+        });
+    });
+};

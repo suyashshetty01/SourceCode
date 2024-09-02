@@ -1,0 +1,22 @@
+{
+    "CorrelationId": "___dbmaster_insurer_transaction_identifier___",
+    "BreakInType": "Break-in Policy lapse",
+    "BreakInDays": ___breakin_days___,
+    "CustomerName": "___first_name___ ___last_name___",
+    "CustomerAddress": "___communication_address_1___ ___communication_address_2___ ___communication_address_3___",
+    "State": "___communication_state___",
+    "City": "___communication_city___",
+    "MobileNumber": ___mobile___,
+    "TypeVehicle": "PRIVATE CAR",
+    "VehicleMake": "___dbmaster_insurer_vehicle_make_name___",
+    "VehicleModel": "___dbmaster_insurer_vehicle_model_name___",
+    "ManufactureYear": "___vehicle_manf_year___",
+    "RegistrationNo": "___registration_no_1______registration_no_2______registration_no_3______registration_no_4___",	
+    "EngineNo": "___engine_number___",
+    "ChassisNo": "___chassis_number___",
+    "SubLocation": "___communication_city___",
+    "DistributorInterID": "200497280658",
+    "DistributorName": "ASHISH HATIA",
+    "InspectionType": "Rollover",
+    "DealId": "___insurer_integration_account_code___"
+}

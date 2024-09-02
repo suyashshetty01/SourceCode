@@ -1,0 +1,42 @@
+{
+    "Member_Details": [
+        <!--InsurersDetail_Start-->
+        {
+        "Member_Name": "___member_array_name___",
+        "Sum_Insured": "___member_array_si___"
+    }
+    <!--InsurersDetail_End-->
+    ],
+    "Premium": "___final_premium___",
+    "goGreen": "1",
+    "Health_Return": "0.00",
+    "PolicyNumber": "___policy_number___",
+    "ReceiptObj": [{
+        "Company_Code": "ABC1",
+        "System_Code": "1S",
+        "Office_Location": "1S",
+        "Mode_of_Entry": "Direct",
+        "CD_Ac_No": "",
+        "Expiry_Date": "",
+        "Payer_Type": "Proposer",
+        "Payer_Code": "",
+        "Payment_By ": "",
+        "Payment_By_Name": "___proposer_name___",
+        "Payment_By_Relationship": "",
+        "Collection_Amount": "___final_premium___",
+        "Collection_Rcvd_Date": "___renewal_get_quote_date___",
+        "Collection_Mode": "Online Collections",
+        "Remarks": "",
+        "Instrument_Number": "",
+        "Instrument_Date": "___renewal_get_quote_date___",
+        "Bank_Name": "HDFC Pay-U Massmarket",
+        "Branch_Name": "NULL",
+        "MICR_No": "",
+        "Bank_Location ": "",
+        "Cheque_Type": "",
+        "IFSC_Code ": "",
+        "Receipt_Type": "",
+        "Deposit_Type": " ",
+        "Deposit_Bank": ""
+    }]
+}

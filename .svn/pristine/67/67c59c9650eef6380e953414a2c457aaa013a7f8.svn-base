@@ -1,0 +1,55 @@
+<env:Envelope
+	xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<env:Header/>
+	<env:Body>
+		<typ:createPolicyHol_GenResponseElement
+			xmlns:typ="http://iims.services/types/">
+			<typ:userId xsi:nil="true"/>
+			<typ:roleId xsi:nil="true"/>
+			<typ:PRetErr xsi:nil="true"/>
+			<typ:PRetCode>0</typ:PRetCode>
+			<typ:userroleId xsi:nil="true"/>
+			<typ:userCode xsi:nil="true"/>
+			<typ:rolecode xsi:nil="true"/>
+			<typ:stakeCode xsi:nil="true"/>
+			<typ:branchcode xsi:nil="true"/>
+			<typ:startDate xsi:nil="true"/>
+			<typ:stakeName xsi:nil="true"/>
+			<typ:title xsi:nil="true"/>
+			<typ:typeOfOrg xsi:nil="true"/>
+			<typ:address xsi:nil="true"/>
+			<typ:panNo xsi:nil="true"/>
+			<typ:firstName xsi:nil="true"/>
+			<typ:partyCode>PO01272286</typ:partyCode>
+			<typ:company xsi:nil="true"/>
+			<typ:sex xsi:nil="true"/>
+			<typ:address2 xsi:nil="true"/>
+			<typ:EMailid2 xsi:nil="true"/>
+			<typ:partyStakeCode xsi:nil="true"/>
+			<typ:partyType xsi:nil="true"/>
+			<typ:regNo xsi:nil="true"/>
+			<typ:midName xsi:nil="true"/>
+			<typ:city xsi:nil="true"/>
+			<typ:regDate xsi:nil="true"/>
+			<typ:phNo3 xsi:nil="true"/>
+			<typ:contactType xsi:nil="true"/>
+			<typ:businessName xsi:nil="true"/>
+			<typ:status xsi:nil="true"/>
+			<typ:EMailid1 xsi:nil="true"/>
+			<typ:clientType xsi:nil="true"/>
+			<typ:birthDate xsi:nil="true"/>
+			<typ:lastName xsi:nil="true"/>
+			<typ:sector xsi:nil="true"/>
+			<typ:country xsi:nil="true"/>
+			<typ:pinCode xsi:nil="true"/>
+			<typ:prospectId xsi:nil="true"/>
+			<typ:state xsi:nil="true"/>
+			<typ:address3 xsi:nil="true"/>
+			<typ:phNo1 xsi:nil="true"/>
+			<typ:phNo2 xsi:nil="true"/>
+			<typ:businessAddress xsi:nil="true"/>
+			<typ:partyName xsi:nil="true"/>
+		</typ:createPolicyHol_GenResponseElement>
+	</env:Body>
+</env:Envelope>

@@ -1,0 +1,149 @@
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>   
+   <div class="ovl">
+
+                            <div class="dynamic_fileup" id="uploadFile">
+                                <input type="file" id="filePicker" class="filecls">
+                                <input type="hidden" id="hdfilePicker" />
+                                <input type="hidden" id="hdfile_ext" />
+
+                                <div id="EruploadFile" class="ErrorMsg" style="display:none;"></div>
+                            </div>
+                            <div class="wrapelm_box textCenter">
+							
+                                <input type="button" class="submitbtn" id="btn_Submit" onclick="UploadFileData();" value="UploadFile">
+
+                            </div>
+							<div class="empdata">
+							<table id="tlbempdata" border='1'>
+							</table>
+							</div>
+                    </div>
+    <script  type="text/javascript">
+       
+        var filePicker = "";
+        var extension = "";
+        function FileUpload() {
+        if ($('input.chkfileupload').is(':checked')) {
+            $("dynamic_fileup").css('display', 'flex')
+            $('#uploadFile').css( 'display','flex' );
+            $('#uploadFile').css({ 'width': '100%', 'margin': '0px auto' });
+
+        }
+        else {
+            $('#uploadFile').hide();
+        }
+    }
+
+   function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+
+        function UploadFileData() {
+          if($('#hdfilePicker').val() != "" && $('#hdfile_ext').val() != ""){
+		  var objdata = {             
+                "file": $('#hdfilePicker').val(),
+                "file_ext": $('#hdfile_ext').val()
+            };
+            //console.log('Limit file size: '+limit);
+            //console.log(JSON.stringify(objdata));
+            
+            var obj_horizon_data = Horizon_Method_Convert("reports/uploadFile", objdata, "POST");
+			
+            $.ajax({
+                type: "POST",
+				data: objdata,
+				url : "http://localhost:3000/report/uploadFile",
+                //data: JSON.stringify(obj_horizon_data['data']),
+                //url: obj_horizon_data['url'],
+                //contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+				debugger;
+                    console.log(response);
+
+                    if (response["Status"] == "Success") {
+					
+					EmpData();
+
+                    } else {
+                        alert('File Uploading failed');
+                    }
+                }
+            });
+		  }else{
+		  alert('Please select file');
+		  }
+            
+
+        }
+      
+	  function EmpData(){
+	   //var obj_horizon_data = Horizon_Method_Convert("reports/get_emp_details", objdata, "GET");
+		$.ajax({
+                type: "GET",
+				
+				url : "http://localhost:3000/report/get_emp_details",
+                //data: JSON.stringify(obj_horizon_data['data']),
+                //url: obj_horizon_data['url'],
+                //contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+				debugger;
+                    console.log(response);
+					for(var i in response){
+					$('#tlbempdata').append('<tr><td>'+response[i]['UID']+'<td>'
+											+'<td>'+response[i]['Name']+'<td>'
+											+'<td>'+response[i]['Branch']+'<td>'
+											+'</tr>'
+					
+					)
+					}
+                    
+                }
+            });
+	  }
+
+        var file_extention = {
+            "application/pdf": "pdf",
+            "text/plain": "txt",
+            "image/png": "png",
+            "image/jpeg": "jpg",
+			
+        }
+        var handleFileSelect = function (evt) {
+		
+            var files = evt.target.files;
+            var file = files[0];
+
+            var file_id = evt.target.id;
+            var i = evt.target.id.split('_')[1];
+            $('#hdfile_ext').val(files[0]['name'].split('.')[1]);
+            if (files && file) {
+                var reader = new FileReader();
+
+                reader.onload = function (readerEvt) {
+                    var binaryString = readerEvt.target.result;
+                    $('#hdfilePicker').val(encodeURIComponent(btoa(binaryString)));
+                };
+
+                reader.readAsBinaryString(file);
+            }
+        };
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+        } else {
+            alert('The File APIs are not fully supported in this browser.');
+        }
+		
+    </script> 
+    
+    

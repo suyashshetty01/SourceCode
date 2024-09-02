@@ -1,0 +1,21 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <getPolicyDocumentForPortal xmlns="http://stub.unotechsoft.com/wsdl/GetDocumentForPortalService/" xmlns:ns2="http://schemas.datacontract.org/2004/07/GCCustomerPortalBL" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/DbUtility" xmlns:ns5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns6="http://schemas.datacontract.org/2004/07/System.Text">
+            <source>TATA-AIG</source>
+            <medium>POLICYBOSS</medium>
+            <campaign>POLICYBOSS</campaign>
+            <strLVAuthToken/>
+            <objServiceResult>
+                <ns2:UserData>
+                    <ns2:CustomerId></ns2:CustomerId>
+                    <ns2:ProductCode></ns2:ProductCode>
+                    <ns2:ProposalDate>___policy_start_date___</ns2:ProposalDate>
+                    <ns2:ProposalNumber>___proposal_no___</ns2:ProposalNumber>
+                    <ns2:ReportTypeCode>4</ns2:ReportTypeCode>
+                    <ns2:UserId>___insurer_integration_location_code___</ns2:UserId>
+                    <ns2:UserRole>Broker Corporate</ns2:UserRole>
+                </ns2:UserData>
+            </objServiceResult>
+        </getPolicyDocumentForPortal>
+    </soap:Body>
+</soap:Envelope>

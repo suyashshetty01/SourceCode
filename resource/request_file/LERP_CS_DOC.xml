@@ -1,0 +1,11 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <ChqSubDocUpload xmlns="http://tempuri.org/">            
+            <FileBytes>___policy_binary_data___</FileBytes>            
+            <FileName>___policy_file_name___</FileName>            
+            <CSNO>___erp_cs___</CSNO>            
+            <DocType>2</DocType>            
+            <EntryBy>___posp_reporting_agent_uid___</EntryBy>
+        </ChqSubDocUpload>
+    </Body>
+</Envelope>

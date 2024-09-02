@@ -1,0 +1,9 @@
+<GPROPOSALREQUEST>
+   <quoteId>___insurer_customer_identifier___</quoteId>
+   <premium>___final_premium_verified___</premium>
+   <emailId>___email___</emailId>
+   <authenticationDetails>
+      <apiKey>___insurer_integration_service_password___</apiKey>
+      <agentId>___insurer_integration_service_user___</agentId>
+   </authenticationDetails>
+</GPROPOSALREQUEST>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CALCULATEPREMIUMREQUEST>
+    <authenticationDetails>
+        <agentId>AG026676</agentId><!--AG026676-->
+        <apikey>310ZQmv/bYJMYrWQ1iYa7s43084=</apikey><!--310ZQmv/bYJMYrWQ1iYa7s43084=-->
+    </authenticationDetails>
+    <process>calculatePremium</process><!--calculate premium-->
+    <clientCode>OZ103736</clientCode><!--OZ103736-->
+    <isNewUser>Yes</isNewUser>
+    <isproductcheck>No</isproductcheck>
+    <istranscheck>No</istranscheck>
+    <partner>AG026676</partner><!--AG026676-->
+    <dop_dd>30</dop_dd><!--13 format dd-->
+    <dop_mm>06</dop_mm><!--06 format mm-->
+    <dop_yy>15</dop_yy><!--16 format yy-->
+    <premium>0.0</premium>
+    <proposerDetails>
+        <addressOne></addressOne>
+        <addressTwo></addressTwo>
+        <contactAddress1></contactAddress1>
+        <contactAddress2></contactAddress2>
+        <contactCity>NAGPUR</contactCity>
+        <contactPincode>400070</contactPincode>
+        <dateOfBirth>07/12/1981</dateOfBirth><!--format is dd-MM-yyyy-->
+        <dob_dd>07</dob_dd>
+        <dob_mm>12</dob_mm>
+        <dob_yy>81</dob_yy>
+        <guardianAge></guardianAge>
+        <guardianName></guardianName>
+        <nomineeAge>30</nomineeAge>
+        <nomineeName>Sudhir</nomineeName>
+        <occupation>Student</occupation>
+        <regCity>NAGPUR</regCity>
+        <regPinCode></regPinCode>
+        <relationshipWithNominee>Cousin</relationshipWithNominee>
+        <relationshipwithGuardian></relationshipwithGuardian>
+        <sameAdressReg>No</sameAdressReg>
+        <strPhoneNo>22322232</strPhoneNo>
+        <strStdCode>022</strStdCode>
+        <userName>ravi.sehare@rupeeboss.com</userName>
+        <strEmail>ravi.sehare@rupeeboss.com</strEmail>
+        <strFirstName>JP4IFQNU0X</strFirstName>
+        <strLastName>7VHV1TO8KC</strLastName>
+        <strMobileNo>9999999999</strMobileNo>
+        <strTitle>Mr</strTitle>
+    </proposerDetails>
+    <reqType>XML</reqType>
+    <respType>XML</respType>
+    <vehicleDetails>
+        <accidentCoverForPaidDriver></accidentCoverForPaidDriver><!--  default value 0 -->
+        <addonValue>0</addonValue>
+        <automobileAssociationMembership></automobileAssociationMembership><!--No-->
+        <averageMonthlyMileageRun>2000</averageMonthlyMileageRun>
+        <carRegisteredCity>NAGPUR</carRegisteredCity>
+        <chassisNumber>72VC72VC</chassisNumber>
+        <claimAmountReceived>0</claimAmountReceived><!-- 0-->
+        <claimsMadeInPreviousPolicy>no</claimsMadeInPreviousPolicy><!--No-->
+        <claimsReported>0</claimsReported>
+        <ncbprevious>1</ncbprevious>
+        <companyNameForCar></companyNameForCar>
+        <cover_dri_othr_car_ass>No</cover_dri_othr_car_ass>
+        <cover_elec_acc>No</cover_elec_acc>
+        <cover_non_elec_acc>No</cover_non_elec_acc>
+        <depreciationWaiver>off</depreciationWaiver>
+        <drivingExperience>2</drivingExperience>
+        <electricalAccessories>
+            <electronicAccessoriesDetails>
+                <makeModel>72VC</makeModel>
+                <nameOfElectronicAccessories>72VC</nameOfElectronicAccessories>
+                <value></value>
+            </electronicAccessoriesDetails>
+        </electricalAccessories>
+        <engineCapacityAmount>2497 CC</engineCapacityAmount>
+        <engineNumber>72VC72VC</engineNumber>
+        <engineprotector>off</engineprotector>
+        <fibreGlass>No</fibreGlass>
+        <financierName></financierName>
+        <fuelType>Petrol</fuelType><!--Petrol-->
+        <hdnDepreciation>false</hdnDepreciation><!-- -->
+        <hdnInvoicePrice>false</hdnInvoicePrice>
+        <hdnKeyReplacement>false</hdnKeyReplacement>
+        <hdnLossOfBaggage>off</hdnLossOfBaggage>
+        <hdnNCBProtector>false</hdnNCBProtector>
+        <hdnProtector>false</hdnProtector>
+        <hdnRoadTax>false</hdnRoadTax>
+        <hdnSpareCar>false</hdnSpareCar>
+        <hdnWindShield>false</hdnWindShield><!-- -->
+        <idv>3357685</idv><!--  4389000  IDV from dastabase ??/-->
+        <invoicePrice>off</invoicePrice>
+        <isBiFuelKit></isBiFuelKit><!-- externally or internally -->
+        <isBiFuelKitYes></isBiFuelKitYes><!--inbuilt or ADD On(externally)-->
+        <isCarFinanced></isCarFinanced>
+        <isCarFinancedValue></isCarFinancedValue>;<!--fiannce value??-->
+        <isCarOwnershipChanged>No</isCarOwnershipChanged>
+        <isPreviousPolicyHolder>True</isPreviousPolicyHolder><!--  -->
+        <keyreplacement>off</keyreplacement>
+        <legalliabilityToPaidDriver>no</legalliabilityToPaidDriver>
+        <modified_idv_value>3357685</modified_idv_value><!-- 4389000  from database-->
+        <modify_your_idv>0</modify_your_idv>
+        <ncbcurrent>2</ncbcurrent><!---->
+        <ncbprotector>off</ncbprotector>
+        <noClaimBonusPercent>1</noClaimBonusPercent><!---->
+        <ncbcureent>2</ncbcureent><!---->
+        <nonElectricalAccesories>
+            <nonelectronicAccessoriesDetails>
+                <makeModel>72VC</makeModel>
+                <nameOfElectronicAccessories>72VC</nameOfElectronicAccessories>
+                <value></value>
+            </nonelectronicAccessoriesDetails>
+        </nonElectricalAccesories>
+        <original_idv>3357685</original_idv><!--4389000  IDV from data base-->
+        <personalAccidentCoverForUnnamedPassengers></personalAccidentCoverForUnnamedPassengers><!--default value 0 hard coded 100000-->
+        <policyED>29/06/2018</policyED><!--date format dd/mm/yyyy 12/06/2018-->
+        <policySD>30/06/2017</policySD><!--date format dd/mm/yyyy 13/06/2017-->
+        <previousInsurerName>Bajaj Allianz General Insurance Co. Ltd.</previousInsurerName><!--from data base-->
+        <previousPolicyExpiryDate>29/06/2017</previousPolicyExpiryDate><!--12/06/2017 date format dd/mm/yyyy-->
+        <ppe_dd>29/06/2017</ppe_dd><!--12 date format dd-->
+        <ppe_mm>29/06/2017</ppe_mm><!--06 date format mm-->
+        <ppe_yy>29/06/2017</ppe_yy><!--17 date format yy-->
+        <previousPolicyType>Comprehensive</previousPolicyType>
+        <previousinsurersCorrectAddress></previousinsurersCorrectAddress>
+        <previuosPolicyNumber>TEST123</previuosPolicyNumber>
+        <ProductName>RolloverCar</ProductName>
+        <region>West Region</region>
+        <registrationchargesRoadtax>off</registrationchargesRoadtax>
+        <spareCar>off</spareCar>
+        <totalIdv>3357685</totalIdv><!--4389000  IDV from data-->
+        <valueOfLossOfBaggage>0</valueOfLossOfBaggage>
+        <valueofelectricalaccessories></valueofelectricalaccessories>
+        <valueofnonelectricalaccessories></valueofnonelectricalaccessories>
+        <vehicleManufacturerName>BMW</vehicleManufacturerName><!--BMW-->
+        <vehicleModelCode>CMH383</vehicleModelCode><!--CMH383-->
+        <vehicleMostlyDrivenOn>Highways</vehicleMostlyDrivenOn>
+        <vehicleRegisteredInTheNameOf>individual</vehicleRegisteredInTheNameOf><!--Individual-->
+        <vehicleSubLine>privatePassengerCar</vehicleSubLine><!-- for two wheeler???-->
+        <vehicleregDate>30/06/2015</vehicleregDate><!--13/06/2016date format dd/mm/yyyy-->
+        <voluntarydeductible></voluntarydeductible>
+        <windShieldGlass>off</windShieldGlass>
+        <yearOfManufacture>2015</yearOfManufacture><!--format yyyy-->
+    </vehicleDetails>
+</CALCULATEPREMIUMREQUEST>

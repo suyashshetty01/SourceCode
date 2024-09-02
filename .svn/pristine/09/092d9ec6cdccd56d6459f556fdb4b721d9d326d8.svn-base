@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HDFC Life POS Product</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="Scripts/jquery.min.js"></script>
+        <script src="Scripts/jquery-ui.min.js"></script>
+		<style>
+            .header{
+                width:100%;
+                box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+            }
+            img{
+                padding:8px 50px;
+            }
+            .mainContetnt{
+                width:90%;
+                margin:0px auto;
+                padding:10px;
+                text-align:left;
+                border: 3px solid skyblue;
+            }
+            .mainContetnt1{
+                width:90%;
+                margin:0px auto;
+                padding:10px;
+                text-align:center;
+                border: 3px solid skyblue;
+                background-color: skyblue;
+            }
+            .mainContetnt input{
+                width:280px;
+                border-radius:6px;
+                border:2px solid gray;
+                padding:7px;
+            }
+            .cntbtn{
+                display:inline-block;
+                width:150px;
+                border:2px solid #c0c0c0;
+                border-radius:6px;
+                padding:10px 10px;
+                box-shadow:0 0 10px rgba(0,0,0,0.6);
+                margin-top:30px;
+                font-weight:bold;
+                background:#fff;
+                position: absolute;
+                border: 3px solid skyblue;
+                left: 30%;
+            }
+            .srchIcon{
+                font-size:18px;
+                margin-left: -26px;
+                background: #c1c1c1;
+                padding: 4px 4px 7px 4px;
+            }
+            .ui-autocomplete {
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+                width: 22%;
+                margin: 0px auto;
+                left: 0px !important;
+            }
+
+            .ui-menu .ui-menu-item {
+                margin: 10px;
+                padding: 0;
+                width: 100%;
+                font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+                font-size: 1.2em;
+            }
+            @media only screen and (max-width: 768px) {
+                .mainContetnt input{
+                    width: 90%;
+                    border-radius:6px;
+                    border:2px solid gray;
+                    padding:7px;
+                }
+                .ui-autocomplete {
+                    background-color: white;
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+                    width: 90%;
+                    margin: 0px auto;
+                    left: 0px !important;
+                }
+
+            }
+            .ui-helper-hidden-accessible { display:none;}
+            .Error {
+                border: 1px solid red !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="mainContetnt1">
+                <h3>HDFC Life POS Product</h3>
+            </div>
+            <div class="mainContetnt">
+                <!-- <h3>HDFC Life POS Product</h3> -->
+                <!-- <h5>- - - - - - - - - - - - - - - - - - - - - - - - - - -</h5> -->
+                <p>Kindly use following credential to issue HDFC Life POSP Product</p>
+                <span>URL : <a class="redirect"></a></span></br></br>
+                <span>Username : <span class="uname"></span></span></br></br>
+                <span>Password : hdfcsl</span></br>
+                <button class="cntbtn" onclick="clickFunction()">&nbsp;&nbsp; Continue</button>
+            </div>
+        </div>
+    </body>
+    <script>
+		var siteURL = "";
+        var hdfc_quote = "N/A";
+        var url = "";
+		var redirectUrl = "";
+		var ss_id = 0;
+		var fba_id = 0;
+		var v = 0;
+		var siteURL = "";
+		var sub_fba_id = 0;
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                if (hashes[i].includes("?"))
+                {
+                    hashes1 = hashes[i].split('?');
+                    for (var k in hashes1) {
+                        hashes.push(hashes1[k]);
+                    }
+                }
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+        $(document).ready(function () {
+			siteURL = window.location.href;
+            hdfc_quote = getUrlVars()["hdfc_quote"] ? getUrlVars()["hdfc_quote"] : "N/A";
+			ss_id = getUrlVars()["ss_id"] ? getUrlVars()["ss_id"] : 0;
+			fba_id = getUrlVars()["fba_id"] ? getUrlVars()["fba_id"] : 0;
+			v = getUrlVars()["v"] ? getUrlVars()["v"] : 0;
+			sub_fba_id = getUrlVars()["sub_fba_id"] ? getUrlVars()["sub_fba_id"] : 0;
+            $('.uname').text(hdfc_quote);
+			if (ss_id !== 0){
+				var data1 = {
+					"ss_id":ss_id,
+					"fba_id":fba_id,
+					"sub_fba_id":sub_fba_id,
+					"hdfc_quote":hdfc_quote,
+					"product_id":3
+				}
+				var obj_horizon_data = Horizon_Method_Convert("/product_share/product_share_url", data1, "POST");
+				$.ajax({
+					type: "POST",
+					data: siteURL.indexOf('https://') === 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(data1),
+					url: siteURL.indexOf('https://') === 0 ? obj_horizon_data['url'] : GetUrl() + "/product_share/product_share_url",
+					contentType: "application/json;charset=utf-8",				
+                    dataType: "json",
+					success: function (data) {
+						//debugger;
+						console.log(data);
+						if(data.hasOwnProperty('Status') && data.Status === "Success" && data.hasOwnProperty('URL') && data.URL !== ""){
+							redirectUrl = data.URL;
+							$('.redirect').text(redirectUrl);
+							$('.redirect').attr('href', redirectUrl);
+						} else {
+							$('.redirect').text('N/A');
+							alert("Cannot Proceed Now. Please Try Again!");
+						}
+						//location.replace("https://pos.hdfclife.com/login");
+					},
+					error: function (data) {
+						$('.redirect').text('N/A');
+						alert("Cannot Proceed Now. Please Try Again!");
+						console.log(data);
+					}
+				});
+			}	
+		});
+		function clickFunction() {
+            if (redirectUrl !== ""){
+				location.replace(redirectUrl);
+			} else {
+				alert("Cannot Proceed Now. Please Try Again!");
+			}
+        }
+
+        function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            newurl = "http://qa.policyboss.com";
+            if (url.includes("request_file") || url.includes("file")) {
+                //newurl = "http://qa-horizon.policyboss.com:3000";
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("cloudfront") || url.includes("origin")) {
+                newurl = "https://horizon.policyboss.com:5443";
+            }
+            return newurl;
+        }
+		function Horizon_Method_Convert(method_action, data, type) {
+		var obj_horizon_method = {
+			'url': (type === "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+			"data": {
+				request_json: JSON.stringify(data),
+				method_name: method_action,
+				client_id: "2"
+				}
+			};
+			return obj_horizon_method;
+		}
+		
+	function GeteditUrl() {
+		var url = window.location.href;
+		var newurl;
+		//newurl = "http://qa.policyboss.com";
+		if (url.includes("request_file")) {
+			newurl = "http://localhost:4200";
+		} else if (url.includes("qa")) {
+			newurl = "http://qa.policyboss.com";
+		} else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+			newurl = "https://www.policyboss.com";
+		}
+		return newurl;
+	}
+    </script>
+</html>

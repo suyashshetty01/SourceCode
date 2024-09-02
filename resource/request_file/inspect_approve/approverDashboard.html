@@ -1,0 +1,1237 @@
+<html>
+<title>Inspection Approver Dashboard</title>
+<head>
+
+<link rel="stylesheet" href="Style/lmdesign/csstyle/bootstrap.min.css" />
+<link rel="stylesheet" href="Style/lmdesign/csstyle/bootstrap-material-datetimepicker.css" />
+<link rel="stylesheet" href="Style/lmdesign/csstyle/bootstrap-material-design.min.css" />
+<link href="Style/lmdesign/csstyle/pbstyle.min.css" rel="stylesheet">
+<link href="Style/lmdesign/csstyle/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="Style/lmdesign/csstyle/html5tooltips.1.4.2.min.css" rel="stylesheet" type="text/css" />
+<link href="Style/lmdesign/csstyle/creative.min.css" rel="stylesheet">
+<link href="Style/lmdesign/csstyle/insurance.min.css" rel="stylesheet">
+<link href="Style/lmdesign/csstyle/animate.css" rel="stylesheet">
+<link href="Style/lmdesign/csstyle/jquery-ui.css" rel="stylesheet">
+<link href="Style/lmdesign/csstyle/Index_pbstyle.min.css" rel="stylesheet" />
+<link href="Style/lmdesign/csstyle/font-awesome.min.css" rel="stylesheet" />
+<link href="Style/lmdesign/csstyle/alert.mob.css" rel="stylesheet" />
+<link href="Style/lmdesign/csstyle/footerlinkstyle.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="Scripts/lmdesign/jscript/jquery-1.10.2.js"></script>
+<script src="Scripts/lmdesign/jscript/jquery-ui.js"></script>
+<script src="Scripts/lmdesign/jscript/jquery.easing.min.js"></script>
+<script src="Scripts/lmdesign/jscript/scrollreveal.min.js"></script>
+<script src="Scripts/lmdesign/jscript/jquery.magnific-popup.min.js"></script>
+<script src="Scripts/lmdesign/jscript/wow.js"></script>
+<script src="Scripts/lmdesign/jscript/bootstrap.min.js"></script>
+<script src="Scripts/lmdesign/jscript/insurance.min.js"></script>
+<script src="Scripts/lmdesign/jscript/material.min.js"></script>
+<script src="Scripts/lmdesign/jscript/moment-with-locales.min.js"></script>
+<script src="Scripts/lmdesign/jscript/bootstrap-material-datetimepicker.js"></script>
+<script src="Scripts/lmdesign/alert.mob.js"></script>
+<link href="Style/lmdesign/csstyle/Index_pbstyle.min.css" rel="stylesheet" />
+<link href="Style/lmdesign/Quote_Page/custom.css" rel="stylesheet" />
+
+<style>
+    *, *:after, *:before {
+        box-sizing: border-box;
+    }
+    /*.togglegroup button{ }
+
+    .togglegroup button:first-child{
+        box-sizing:border-box !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+    .togglegroup button:last-child{
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        margin-left: -4px !important;
+    }*/
+    .select {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 100% !important;
+        color: #757575;
+        vertical-align: middle;
+        font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+        font-size: 16px;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+        .select .placeholder {
+            position: relative;
+            display: block;
+            background-color: #fff;
+            z-index: 1;
+            padding: 8px;
+            border-radius: 2px;
+            border-bottom: solid 2px #c0c0c0;
+            cursor: pointer;
+            font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+            font-size: 16px;
+        }
+            .select .placeholder:hover {
+                background: #fff;
+            }
+            .select .placeholder:after {
+                position: absolute;
+                right: 1em;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                font-family: 'FontAwesome';
+                content: '\f078';
+                z-index: 10;
+            }
+        .select.is-open .placeholder:after {
+            content: '\f077';
+        }
+        .select.is-open ul {
+            display: block;
+        }
+        .select.select--white .placeholder {
+            background: #fff;
+            color: #999;
+        }
+            .select.select--white .placeholder:hover {
+                background: #fafafa;
+            }
+        .select ul {
+            display: none;
+            position: absolute;
+            overflow: hidden;
+            overflow-y: auto;
+            width: 100%;
+            background: #fff;
+            border-radius: 2px;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            margin: 5px 0 0 0;
+            padding: 0;
+            z-index: 100;
+            max-height: 120px;
+        }
+            .select ul li {
+                display: block;
+                text-align: left;
+                padding: 0.8em 1em 0.8em 1em;
+                color: #999;
+                cursor: pointer;
+            }
+                .select ul li:hover {
+                    background: #4ebbf0;
+                    color: #fff;
+                }
+    #f1_container {
+        position: relative;
+        margin: 10px auto;
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+        z-index: 1;
+        border: 2px solid #9d9d9d;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        /* border-radius: 100%; */
+        overflow: hidden;
+    }
+
+    #f1_container {
+        perspective: 1000;
+    }
+
+    #f1_card {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 1.0s linear;
+    }
+
+    #f1_container:hover #f1_card {
+        transform: rotateY(180deg);
+    }
+
+    .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+        .face.back {
+            display: block;
+            transform: rotateY(180deg);
+            box-sizing: border-box;
+            padding: 10px;
+            color: #000;
+            text-align: center;
+            background-color: #fff;
+        }
+
+
+    #homeHeading {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    body {
+        background: #1C2855;
+        overflow-x: hidden;
+    }
+    .frame-bike {
+        margin: 0px auto;
+        padding: 0px;
+        width: 100%;
+        margin-top: 190px;
+        position: relative;
+        z-index: -999;
+    }
+    #bike {
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s;
+    }
+    .roadLamp {
+        animation-name: bgscroll;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    #bike {
+        -webkit-animation-timing-function: ease-in-out;
+        -moz-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation: paper-plane-soaring 1s forwards infinite;
+        -moz-animation: paper-plane-soaring 1s forwards infinite;
+        animation: paper-plane-soaring 1s forwards infinite;
+    }
+    .wheel {
+        width: 71px;
+        height: 71px;
+        margin: 35px auto;
+        display: block;
+        position: absolute;
+    }
+    .wheel {
+        -webkit-animation: rotate 1s linear infinite;
+        -moz-animation: rotate 1s linear infinite;
+        animation: rotate 1s linear infinite;
+    }
+    .carwheel {
+        width: 50px;
+        height: 50px;
+        margin: 55px auto;
+        display: block;
+        position: absolute;
+    }
+    .carwheel {
+        -webkit-animation: rotate 1s linear infinite;
+        -moz-animation: rotate 1s linear infinite;
+        animation: rotate 1s linear infinite;
+    }
+    .carleft {
+        margin-left: 238px;
+        margin-bottom: 10px;
+    }
+    .carright {
+        margin-left: 35px;
+        margin-bottom: 10px;
+    }
+    .car {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        background: none;
+        top: -10px !important;
+    }
+    @@keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes bgscroll {
+        0% {
+            -webkit-transform: translateX(0px);
+            -moz-transform: translateX(0px);
+            transform: translateX(0px);
+        }
+
+        100% {
+            -webkit-transform: translateX(-500px);
+            -moz-transform: translateX(-500px);
+            transform: translateX(-500px);
+        }
+    }
+
+    #bike {
+        -webkit-animation-name: cloud-movement;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-direction: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 5s;
+        -moz-animation-name: cloud-movement;
+        -moz-animation-timing-function: linear;
+        -moz-animation-direction: forwards;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-duration: 5s;
+        animation-name: cloud-movement;
+        animation-timing-function: linear;
+        animation-direction: forwards;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+    }
+
+    @@-webkit-keyframes cloud-movement {
+        0% {
+            -webkit-transform: translateX(0px);
+            -moz-transform: translateX(0px);
+            transform: translateX(0px);
+        }
+
+        100% {
+            -webkit-transform: translateX(1600px);
+            -moz-transform: translateX(1600px);
+            transform: translateX(1600px);
+        }
+    }
+
+    .left1 {
+        margin-left: 150px;
+        margin-bottom: 10px;
+    }
+
+    .bik {
+        position: absolute;
+        z-index: 999;
+    }
+
+    .intro-section {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        background: none;
+        top: 0px;
+    }
+
+    .delinfo {
+        z-index: 999999;
+    }
+
+    .ErrorClass {
+        border: red solid 1px;
+        border-radius: 5px;
+    }
+
+    .validationclass {
+        text-align: center;
+        color: red;
+        padding: 5px;
+    }
+
+    .ErrorText {
+        color: red;
+    }
+
+    .deldetail {
+        padding: 20px 0px;
+        margin-top: 100px;
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none !important;
+    }
+
+    .ui-menu .ui-menu-item {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .Unselected {
+        color: rgb(189, 189, 189);
+    }
+
+    .form-group .checkbox label, .form-group .radio label, .form-group label {
+        color: rgb(28, 40, 85) !important;
+    }
+
+    .Unselected {
+        color: rgb(28, 40, 85) !important;
+    }
+
+    .ErrorMsg {
+        position: absolute;
+        top: 56px;
+        font-size: 13px;
+        color: #fc2c2c;
+        padding-top: 10px;
+        animation: my-animation 0.3s ease; /*animation: anim 1s ease-in-out;*/
+    }
+    .btn-UnSelected {
+        background: #26418b !important;
+        color: #fff !important;
+    }
+
+    .btn-flat {
+        border: solid 1px #4a91c4;
+        padding: 10px 30px;
+        background: #4a91c4;
+        color: #fff;
+    }
+    .form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label, .form-group.label-static label.control-label {
+        top: -35px !important;
+    }
+    .fixedHeight {
+        max-height: 150px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+    }
+    #ui-id-2 {
+        max-height: 150px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+    }
+    .btn {
+        border: none !important;
+        border-radius: 10px !important;
+    }
+    .btnError {
+        border: solid 1px #e51b21 !important;
+    }
+    .dtp div.dtp-picker {
+        padding: 0px !important;
+    }
+    /*Individual form Company*/
+    .btngrp {
+        position: relative;
+        vertical-align: middle;
+    }
+        /*.btngrp #lblVehRegTypeInd {  border: 1px solid #1c2955 !important;  color: black; background-color: white; border-radius: 5px 0px 0px 5px !important;}
+    .btngrp #lblVehRegTypeCom {  border: 1px solid #1c2955 !important;  color: black; background-color: white; border-radius: 0px 5px 5px 0px !important;}*/
+        .btngrp .lblFirst {
+            padding: 8px 16px;
+            text-transform: initial;
+            border: 1px solid #1c2955 !important;
+            color: black;
+            background-color: white;
+            border-radius: 5px 0px 0px 5px !important;
+        }
+
+        .btngrp .lbl {
+            padding: 8px 16px;
+            text-transform: initial;
+            border: 1px solid #1c2955 !important;
+            color: black;
+            background-color: white;
+            border-radius: 0px 0px 0px 0px !important;
+        }
+
+        .btngrp .lblLast {
+            padding: 8px 16px;
+            text-transform: initial;
+            border: 1px solid #1c2955 !important;
+            color: black;
+            background-color: white;
+            border-radius: 0px 5px 5px 0px !important;
+        }
+
+    .btngrpSelected {
+        color: #fdf9f9 !important;
+        background-color: #1c2955 !important;
+    }
+
+    div .soc-link {
+        background-color: #d2d7c6;
+        font-size: 0 !important;
+        line-height: none !important;
+    }
+
+    .soc-link {
+        text-align: center;
+        padding: 5px;
+        list-style: none;
+        position: relative;
+        margin-bottom: 0px !important;
+    }
+
+        .soc-link li {
+            display: inline-block;
+            padding: 5px !important;
+        }
+
+            .soc-link li img {
+                width: 32px;
+            }
+
+    .affix {
+        top: 0 !important;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+
+        .affix + .quoteList_container {
+            padding-top: 70px !important;
+        }
+
+    .sticky_btn {
+        display: grid;
+        grid-row-gap: 10px;
+        grid-template-columns: 1fr;
+        position: fixed;
+        right: 3%;
+        bottom: 18% !important;
+        z-index: 10;
+    }
+
+    .srch_by {
+        padding-top: 20px;
+        text-align: center !important;
+    }
+
+        .srch_by select {
+            width: 118px;
+            border-bottom: 1px solid #c0c0c0;
+        }
+
+    .con1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid #eee;
+    }
+
+    .a_date {
+        text-align: center;
+    }
+
+    .dwn_policy {
+        text-align: center;
+        float: right;
+    }
+
+        .dwn_policy i {
+            color: #1c2955;
+            padding: 5px;
+            font-size: 22px;
+        }
+
+    .download {
+        float: right;
+        margin: 8px;
+    }
+    .progress .progress-bar {
+        background: rgb(28, 41, 85) !important;
+    }
+    .quoteTabData {
+        width: 18%;
+        padding: 10px;
+        color: #999;
+    }
+    .fieldName {
+        color: #999;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    .Datacolor {
+        color: #333;
+        font-size: 13px;
+    }
+    .title{font-size: 12px; color:#333;}
+    .con.parta{grid-template-columns: 1fr 30px !important;text-align: center}
+    .con.partb {
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .con.partc {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .Car_insurer_container {
+        height: 500px;
+        margin: 0 auto;
+        background: #fff;
+    }
+    .header_Maindiv {
+        position: fixed;
+        font-weight: bold;
+        background: #fff;
+        width: 82%;
+        height: 57px;
+        border-bottom: 1px solid #eee;
+    }
+    .quote_list_Div {
+        height: 409px;
+        margin-top: 58px;
+    }
+    .PaginationDiv {
+        height: 33px;
+    }
+    .pagination {
+        display: inline-block;
+        margin-left: 32%;
+    }
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 0px 15px;
+            margin-top: -15px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+    .current {
+        background-color: rgb(28, 41, 85);
+        color: #fff;
+        border: 1px solid rgb(28, 41, 85);
+    }
+.pagination a:hover:not(.active) {background-color: #ddd;}
+    #tbl_quote_list tr {
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #eee;
+    }
+    .inputIsu { color:#000000 !important; border-radius:10px !important; }
+    ::placeholder{
+        color:#c3bec0 !important;
+    }
+      .list-tilel-box {
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+    }
+       .list-tilel-box h3 {
+        font-size: 13px;
+        color: #616161 !important;
+        margin: 0;
+        font-weight: normal !important;
+        line-height: 24px;
+        position: relative;
+        text-align: left !important;
+    }
+
+        .list-tilel-box h3 span {
+            color: #1C2855 !important;
+            font-weight: bold !important;
+        }
+        .grab{
+              cursor: pointer;
+        }
+</Style>
+
+<script type="text/javascript">
+var pageIndex = 1;
+var ProductID = 1;
+var Supportagentid = '@Session["agent_id"]' != ''? '@Session["agent_id"]' : 0;
+var fbaid = '@Session["fba_id"]' != "" ? '@Session["fba_id"]' : null;
+var client_id = '@Session["client_id"]' != "" ? '@Session["client_id"]' : 2;
+console.log("Supportagentid : ",Supportagentid);
+console.log("fbaid : ",fbaid);
+console.log("client_id : ",client_id);
+
+	function Redirect() {
+		$("#SearchQuote").val(0);
+		//$('#next_page').show();
+		$("#SearchQuoteInput").hide();
+		pageIndex=1;	
+		RedirectSelect = "SEARCH";
+		GetQuoteList();
+		$(".allData").hide();
+		$(".healthmaindiv").show();
+		$(".quote_list_Div").scrollTop(top) + "px"
+		$(".appquote_list").hide();
+		$(".sellquote_list").hide();
+		$(".all_data").css({ "background-color": "#fff", "color": "#1c2955" });
+		$(".quote_li").css({ "background-color": "#1c2955", "color": "#fff" });
+		$(".applctn_li").css({ "background-color": "#fff", "color": "#1c2955" });
+		$(".sell_li").css({ "background-color": "#fff", "color": "#1c2955" });
+	}
+
+	function Horizon_Method_Convert(method_action, data, type) {
+		var obj_horizon_method = {
+		//'url': (type == "POST") ? "https://localhost:50111/TwoWheelerInsurance/call_horizon_post" : "https://localhost:50111/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+			'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+			"data": {
+				request_json: JSON.stringify(data),
+				method_name: method_action,
+				client_id: "2"
+			}
+		};
+		return obj_horizon_method;
+	}
+
+	function GetUrl(){
+		var url = window.location.href;
+		var newurl;
+		//newurl = "http://qa.policyboss.com";
+		if (url.includes("Desktop")) {
+			newurl = "http://localhost:3000";
+			//newurl = "http://qa-horizon.policyboss.com:3000";
+		} else if (url.includes("qa")) {
+			newurl = "http://qa-horizon.policyboss.com:3000";
+		} else if (url.includes("www") || url.includes("cloudfront")) {
+			newurl = "http://horizon.policyboss.com:5000";
+		}
+		return newurl;
+	};
+
+	function Next_previous(type){
+		var RedirectSelect = "SEARCH";
+		if(type=="Next")
+		{
+			pageIndex++;
+			if (RedirectSelect == 'SEARCH' && quote_cnt == 6){
+				GetQuoteList();
+			} else{
+				$.alert('No more record');
+			}
+		}
+		if(type=="Previous")
+		{
+			if(pageIndex > 1){
+				pageIndex--;
+				if (RedirectSelect == 'SEARCH'){
+					GetQuoteList();
+				}
+			}
+			else{
+				$.alert('No more record');
+			}
+		}
+	}
+
+	function GetQuoteList() {
+		var obj_horizon_data = Horizon_Method_Convert("/user_datas/inspectionlist/"+ ProductID +"/" + Supportagentid + "/" + fbaid + "/"+ pageIndex,'',"GET");
+		$.ajax({
+			type: "GET",
+			url: obj_horizon_data['url'],
+			//url: GetUrl() + '/user_datas/inspectionlist/1/1/1/'+ pageIndex,
+			dataType: "json",
+			success: function (data) {
+				console.log("GetQuoteList() data :- ",JSON.stringify(data));
+				console.log(data.length);
+				quote_cnt=data.length;
+				if(quote_cnt >0){
+					$("#tbl_quote_list").empty();
+				}
+
+				for (var i in data) {
+				if(data[i].Last_Status == "INSPECTION_APPROVED" || data[i].Last_Status == "INSPECTION_REJECTED")
+				{
+					$('#tbl_quote_list').append('<tr id="tr_lst" srn="' + data[i].SRN + '">' +
+						'<td class="quoteTabData"><div class="ApplicantName">' +data[i].Customer_Name + '</div>' +
+						'<div class="ApplicantName fieldName">CRN:<span class="crn_span Datacolor">' + data[i].CRN + '</div></td>' +
+						'<td class="quoteTabData"><div class="ApplicantName fieldName">QUOTE DATE</div><div class="desc quote_date Datacolor">' + data[i].Quote_Date + '</div></td>' +
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">Status</div><div class="desc quote_date Datacolor">Complete</div></td>'+
+						'</tr>'
+					)
+				} else {
+					$('#tbl_quote_list').append('<tr id="tr_lst" srn="' + data[i].SRN + '">' +
+						'<td class="quoteTabData"><div class="ApplicantName">' +data[i].Customer_Name + '</div>' +
+						'<div class="ApplicantName fieldName">CRN:<span class="crn_span Datacolor">' + data[i].CRN + '</div></td>' +
+						'<td class="quoteTabData"><div class="ApplicantName fieldName">QUOTE DATE</div><div class="desc quote_date Datacolor">' + data[i].Quote_Date + '</div></td>' +
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">Status</div><div class="desc quote_date Datacolor">Complete</div></td>'+
+						'<td class="quoteTabData" ><div class="info"  ><img class="grab" src="http://www.policyboss.com/Images/lmdesign/ico-details.png" id="info'+[i]+'"  title="Vehicle Details"></div></td>' +
+						'</tr>'
+					)
+				}
+					$(".ApplicantName,.si_amt,.quote_date").click(function (e) {
+						var SRN = $(this).parent().parent().attr('srn');
+						var udid = $(this).parent().parent().attr('udid');
+
+						//window.location.href = '/TwoWheelerInsurance/NewQuotePage?SRN=' + SRN + '&client_id=2';
+						if (ProductID == 10)
+						{
+							 var _redirectUrl = '@Url.Action("NewQuotePage", "TwoWheelerInsurance", new { SID = "_srn_", ClientID = "_client_id_" })';
+							const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+							const parsedUrl = parseResult.documentElement.textContent;
+							window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+							//window.location.href = "/TwoWheelerInsurance/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+						}
+						else
+						{
+							var _redirectUrl = '@Url.Action("NewQuotePage", "CarInsuranceIndia", new { SID = "_srn_", ClientID = "_client_id_" })';
+							const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+							const parsedUrl = parseResult.documentElement.textContent;
+							window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+							//window.location.href = "/CarInsuranceIndia/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+						}
+					});
+					$('#info'+[i]).click(function(e){					   
+						var SRN = $(this).parent().parent().parent().attr('srn');
+						SRN=SRN.split('_')[0];
+						vehicleinfo(SRN);
+					});
+				}
+				//quote_cnt <20?  $('#next_page').hide():  $('#next_page').show();
+			},
+			error: function (result) {
+				alert("Error : "+JSON.stringify(result));
+			}
+		});
+	}
+
+var RTOCode = "MH-02";
+
+	function vehicleinfo(SRN){
+		var data1 = { 
+				"search_reference_number": SRN
+				//"secret_key" : "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				//"client_key" : "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9" 
+			};
+		var obj_horizon_data = Horizon_Method_Convert("/quote/premium_summary", data1, "POST");
+		$.ajax({
+			type:"POST",
+			data: JSON.stringify(obj_horizon_data['data']),
+			//data: JSON.stringify(data1),
+			url: obj_horizon_data['url'],
+			//url: GetUrl() + '/quote/premium_summary',
+			contentType: "application/json;charset=utf-8",
+			dataType: "json",
+			
+			success: function (response) {
+				//alert(JSON.stringify(response));
+				console.log("vehicleinfo(SRN) : ",JSON.stringify(response));
+				var vehicle = response.Master.Vehicle;
+				var request = response.Request;
+				var rto = response.Master.Rto;
+				var CRN = request.crn;
+				$("#crn").text(CRN);
+				if (request.registration_no != "") {
+					var RegNo = request.registration_no.replace(new RegExp('-', 'gi'), "");
+					$("#RegistrationNo").text(RegNo);
+
+					if ((RegNo.indexOf("AA1234") > -1) || (RegNo.indexOf("ZZ9999") > -1)) {
+						$("#RegistrationNo").text(RTOCode); $("#divRegistrationNoDetails").hide();
+					}
+					else {
+						$("#divRegistrationNoDetails").show();
+						$("#RegistrationNoDetails").text(RegNo);
+					}              
+				}
+				if(vehicle != "" && vehicle != null){
+					$("#VehicleNameDetails").text(vehicle.Description + " (" + vehicle.Vehicle_ID + ")");
+					$("#FuelNameDetails").text(vehicle.Fuel_Name);
+					if (request.external_bifuel_type == "cng") {
+						$("#FuelNameDetails").text(vehicle.Fuel_Name + "(" + "EXTERNAL FITTED CNG" + ")");
+					}
+					if (request.external_bifuel_type == "lpg") {
+						$("#FuelNameDetails").text(vehicle.Fuel_Name + "(" + "EXTERNAL FITTED LPG" + ")");
+					}
+				}
+
+				if (request.external_bifuel_value > 0) { $("#ExternalBifuelVal").html(request.external_bifuel_value); }
+				else { $("#divExternalBifuelVal").hide(); }
+				
+				if(rto != "" && rto != null){
+					$("#RTODetails").text(rto.RTO_City + ", " + rto.State_Name + " (" + response.Master.Rto.VehicleCity_Id + ")");
+				}
+				var Name = "";
+				if (request.first_name != "" && checkTextWithSpace(request.first_name)) {
+					Name = request.first_name + " ";
+					if (request.middle_name != "" && checkTextWithSpace(request.middle_name)) {
+						Name = Name + request.middle_name + " ";
+					}
+					if (request.last_name != "" && checkTextWithSpace(request.last_name)) {
+						Name = Name + request.last_name;
+					}
+				}
+				else { $("#divNameDetails").hide(); }
+				$("#NameDetails").text(Name);
+				if (request.mobile != "" && request.mobile != null) {
+					$("#MobileDetails").text(request.mobile);
+					if (request.mobile == "9999999999") {
+						$("#MobileDetails").text("NA");
+					}
+				} else { $("#divMobileDetails").hide(); }
+				if (request.email != "" && request.email != null) {
+					$("#EmailDetails").text(request.email);
+					if ((request.email).indexOf('@@testpb.com') > 1) {
+						$("#EmailDetails").text("NA");
+					}
+				} else { $("#divEmailDetails").hide(); }
+
+				if (request.vehicle_insurance_type == "new") { $("#RegistrationTypeDetails").text("New"); }
+				else { $("#RegistrationTypeDetails").text("Renew"); }
+
+				//For TP Plan Implementation
+				VehInsSubType = request.vehicle_insurance_subtype;
+				$("#VehicleInsuranceSubtype").val(VehInsSubType);
+				console.log("VehInsSubType: ", VehInsSubType);
+
+				$("#RegistrationSubTypeDetails").html(ShowVehInsSubType(VehInsSubType));
+
+				if (request.vehicle_registration_date != "" || request.vehicle_registration_date != null) { $("#RegistrationDate").html(request.vehicle_registration_date); }
+				else { $("#divRegistrationDate").hide(); }
+
+				if (request.vehicle_manf_date != "" || request.vehicle_manf_date != null) { $("#ManufactureDateval").html(request.vehicle_manf_date); }
+				else { $("#divManufactureDateval").hide(); }
+
+				if (request.policy_expiry_date != "" && request.policy_expiry_date != null) { $("#PolicyExpiryDateval").html(request.policy_expiry_date); }
+				else { $("#divPolicyExpiryDateval").hide(); }
+
+				if ((request.vehicle_ncb_current != "" || request.vehicle_ncb_current != null) && request.vehicle_ncb_current != 0) { $("#PrevNCB").html(request.vehicle_ncb_current + "%"); }
+				else { $("#divPrevNCB").hide(); }
+
+				if (request.is_claim_exists != "no") { $("#ClaimYesNo").html("Yes"); $("#divPrevNCB").hide(); }
+				if (request.is_claim_exists != "yes") { $("#ClaimYesNo").html("No"); $("#divPrevNCB").show(); }
+
+				if (request.vehicle_registration_type == "corporate") { $("#VehicleInsType").html("Company"); }
+				else { $("#VehicleInsType").html("Individual"); }
+
+				var PrevInsName = GetPrevIns(request.prev_insurer_id);
+				if (request.prev_insurer_id != "" && request.prev_insurer_id != null) { $("#PrevInsurer").html(PrevInsName); }
+				else { $("#divPrevInsurer").hide(); }
+				$('#VehicleModal').show();
+			},
+			error: function (response) { 
+				alert('Error in fetching summary');
+			}
+		});
+	}
+
+	function GetPrevIns(InsId) {
+		var InsText = "";
+		switch (InsId) {
+			case 1: InsText = "Bajaj Allianz"; break;
+			case 2: InsText = "Bharti Axa"; break;
+			case 3: InsText = "Cholamandalam MS"; break;
+			case 4: InsText = "Future Generali"; break;
+			case 5: InsText = "HDFC ERGO"; break;
+			case 6: InsText = "ICICI Lombard"; break;
+			case 7: InsText = "IFFCO Tokio"; break;
+			case 8: InsText = "National Insurance"; break;
+			case 9: InsText = "Reliance General"; break;
+			case 10: InsText = "Royal Sundaram"; break;
+			case 11: InsText = "Tata AIG"; break;
+			case 12: InsText = "New India Assurance"; break;
+			case 13: InsText = "Oriental Insurance"; break;
+			case 14: InsText = "United India"; break;
+			case 15: InsText = "L&amp;T General"; break;
+			case 16: InsText = "Raheja QBE"; break;
+			case 17: InsText = "SBI General"; break;
+			case 18: InsText = "Shriram General"; break;
+			case 19: InsText = "Universal Sompo"; break;
+			case 30: InsText = "Kotak Mahindra"; break;
+			case 33: InsText = "Liberty Videocon"; break;
+			case 35: InsText = "Magma HDI"; break;
+			case 44: InsText = "Go Digit"; break;
+			case 45: InsText = "Acko General"; break;
+			case 46: InsText = "Edelweiss"; break;
+		}
+		return InsText;
+	}
+
+	function checkTextWithSpace(input) {
+		var pattern = new RegExp('^[a-zA-Z ]+$');
+		if (pattern.test(input) == false) { return false; }
+		else { return true; }
+	}
+
+	function ShowVehInsSubType(VISTCode) {
+		var InsText = "";
+		switch (VISTCode) {
+			case '0CH_1TP': InsText = "T.P. Only For 1 Yr"; break;
+			case '0CH_3TP': InsText = "T.P. Only For 3 Yrs"; break;
+			case '0CH_5TP': InsText = "T.P. Only For 5 Yrs"; break;
+			case '1CH_0TP': InsText = "Comprehensive For 1 Yr"; break;
+			case '3CH_0TP': InsText = "Comprehensive For 3 Yrs"; break;
+			case '5CH_0TP': InsText = "Comprehensive For 5 Yrs"; break;
+			case '1CH_2TP': InsText = "Comprehensive For 1 Yr + T.P. For 2 Yrs"; break;
+			case '1CH_4TP': InsText = "Comprehensive For 1 Yr + T.P. For 4 Yrs"; break;
+
+			case '1CH_1TP': InsText = "O.D. For 1 Yr + T.P. For 1 Yr"; break;
+			case '2CH_0TP': InsText = "O.D. + T.P. For 2 Yrs"; break;
+			case '3CH_0TP': InsText = "O.D. + T.P. For 3 Yrs"; break;
+
+			case '1CH_4TP': InsText = "O.D. For 1 Yr + T.P. For 4 Yrs"; break;
+			case '5CH_0TP': InsText = "O.D. For 5 Yrs"; break;
+		}
+		return InsText;
+	}
+
+	function vehicleInspectionDivs(){
+		var inspectValue = document.getElementById("inspectionStatus").value;
+		if(inspectValue == "Approve"){
+			document.getElementById("divVehicleInsRemark").style.display = "none";
+			//document.getElementById("VehicleInsRemarkErrMsg").style.display = "none";
+		}
+		if(inspectValue == "Reject"){
+			document.getElementById("divVehicleInsRemark").style.display = "block";
+			//document.getElementById("VehicleInsRemarkErrMsg").style.display = "block";
+		}
+		if(inspectValue == "Reinspect"){
+			document.getElementById("divVehicleInsRemark").style.display = "none";
+			//document.getElementById("VehicleInsRemarkErrMsg").style.display = "none";
+		}
+	}
+	
+	function updateVehicleInspectionForReject(){
+		if(document.getElementById("VehicleInsRemark").value == null || document.getElementById("VehicleInsRemark").value == ""){
+			alert("Please enter inspection remark");
+		}
+		else{
+			alert(document.getElementById("VehicleInsRemark").value);
+			//send mail to customer & agent, also enter the remarks
+			alert("Inspection FAILED");
+			var crn = $("#crn").text();
+			//alert("crn : "+crn);
+			var inspectValue = document.getElementById("inspectionStatus").value;
+			var data1 = {
+				"crn": crn,
+				"inspectValue": inspectValue,
+				"remarks": document.getElementById("VehicleInsRemark").value
+			};
+			modifyUpdateVehicleInspection(data1);
+		}
+	}
+	
+	function modifyUpdateVehicleInspection(data1){
+		var obj_horizon_data = Horizon_Method_Convert("/quote/update_inspection_status", data1, "POST");
+		$.ajax({
+			type:"POST",
+			data: JSON.stringify(obj_horizon_data['data']),
+			//data: JSON.stringify(data1),
+			url: obj_horizon_data['url'],
+			//url: GetUrl() + '/quote/update_inspection_status',
+			contentType: "application/json;charset=utf-8",
+			dataType: "json",
+			
+			success: function (response) {
+				console.log("Approving Response : ",JSON.stringify(response));
+				alert(JSON.stringify(response));
+			},
+			error: function (response) { 
+				alert('Error in Approving Status');
+			}
+		});
+	}
+	
+	function updateVehicleInspection(){
+		var crn = $("#crn").text();
+		//alert("crn : "+crn);
+		var inspectValue = document.getElementById("inspectionStatus").value;
+		if(inspectValue == "Select"){
+			document.getElementById("divVehicleInsRemark").style.display = "none";
+			alert("Please select status to update");
+		}
+		if(inspectValue == "Approve"){
+			alert("Inspection APPROVED");
+			var data1 = {
+				"crn": crn,
+				"inspectValue": inspectValue
+			};
+			modifyUpdateVehicleInspection(data1);
+		}
+		if(inspectValue == "Reject"){
+			updateVehicleInspectionForReject();
+			//alert("Inspection FAILED");
+		}
+		if(inspectValue == "Reinspect"){
+			alert("REINSPECTION required");
+			//send new self inspection link to customer to upload photos
+			var data1 = {
+				"crn": crn,
+				"inspectValue": inspectValue
+			};
+			modifyUpdateVehicleInspection(data1);
+		}
+	}
+</script>
+
+</head>
+<body onload="Redirect()">
+<div style="width:100%; top:0px;">
+    <section id="intro">
+        <div id="VehicleModal" class="modal animated bounceIn in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; padding-left: 17px;">
+            <div class="modal-dialog compare-popup popuptop travel-popup">
+                <div class="modal-content" style="height: 100%; background: #fff!important;">
+                    <div class="modal-header" style="background-color: #1C2855;margin-top: 50px;height: 40px;padding: 10px;">
+                        <div style="color:#fff;display:inline;font-size:18px;">Your Details</div>
+                        <a href="approverDashboard.html" data-dismiss="modal" class="nooutline popclosepos cross-w" style="float: right;padding-right: 10px;"> X </a>
+                    </div>
+                    <div class="modal-body" style="padding: 10px !important;">
+                        <div class="row" style="margin-right: 0px !important; margin-left: 0px !important;">
+							<div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">CRN : <span style="color:#c78217;" id="crn"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Name : <span style="color:#c78217;" id="VehicleNameDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Fuel Name : <span style="color:#c78217;" id="FuelNameDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divExternalBifuelVal">
+                                <h3 style="padding-bottom: 0px !important;">Bi-fuel CNG/LPG Kit Value : <span style="color:#c78217;" id="ExternalBifuelVal"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">RTO : <span style="color:#c78217;" id="RTODetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divNameDetails">
+                                <h3 style="padding-bottom: 0px !important;">Name : <span style="color:#c78217;" id="NameDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divMobileDetails">
+                                <h3 style="padding-bottom: 0px !important;">Mobile : <span style="color:#c78217;" id="MobileDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divEmailDetails">
+                                <h3 style="padding-bottom: 0px !important;">Email : <span style="color:#c78217;" id="EmailDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divRegistrationNoDetails">
+                                <h3 style="padding-bottom: 0px !important;">Registration Number : <span style="color:#c78217;" id="RegistrationNoDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Type : <span style="color:#c78217;" id="RegistrationTypeDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Sub-Type : <span style="color:#c78217;" id="RegistrationSubTypeDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divRegistrationDate">
+                                <h3 style="padding-bottom: 0px !important;">Registration Date : <span style="color:#c78217;" id="RegistrationDate"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divManufactureDateval">
+                                <h3 style="padding-bottom: 0px !important;">Manufacturing Date : <span style="color:#c78217;" id="ManufactureDateval"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPolicyExpiryDateval">
+                                <h3 style="padding-bottom: 0px !important;">Previous Policy Expiry Date : <span style="color:#c78217;" id="PolicyExpiryDateval"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divClaimYesNo">
+                                <h3 style="padding-bottom: 0px !important;">Claimed In The Past Year : <span style="color:#c78217;" id="ClaimYesNo"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPrevNCB">
+                                <h3 style="padding-bottom: 0px !important;">Previous No Claim Bonus (NCB) : <span style="color:#c78217;" id="PrevNCB"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divVehicleInsType">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Registration Type : <span style="color:#c78217;" id="VehicleInsType"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;display:none;" id="divVehicleClass">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Class : <span style="color:#c78217;" id="VehicleClass"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPrevInsurer">
+                                <h3 style="padding-bottom: 0px !important;">Previous Insurer Name : <span style="color:#c78217;" id="PrevInsurer"></span></h3>
+                            </div>
+							<div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divUpdateStatus">
+                                <h3 style="padding-bottom: 0px !important;">Update Status : 
+								<span style="color:#c78217;border: 2px solid #1C2855;" id="updateStatus">
+								<select id="inspectionStatus" onchange="vehicleInspectionDivs()">
+								  <option id="Select" value="Select">select status to update</option>
+								  <option id="Approve" value="Approve">Approve</option>
+								  <option id="Reject" value="Reject">Reject</option>
+								  <option id="Reinspect" value="Reinspect">Reinspect</option>
+								</select>
+								</span></h3>
+                            </div>
+							<div class="nooutline list-tilel-box" style="border-bottom:none !important; display:none;" id="divVehicleInsRemark">
+                                <h3 style="padding-bottom: 0px !important;">Inspection Remark : <input type="text" id="VehicleInsRemark" name="VehicleInsRemark" placeholder="Enter inspection remark" /></h3>
+								<!--<br/><div id="VehicleInsRemarkErrMsg" style="color:red; display:none;">Please enter inspection remark</div>-->
+                            </div>
+							<div class="nooutline list-tilel-box" style="border-bottom:none !important;text-align:center;margin-top:20px;">
+                                <button id="remarkSubmitButton" name="remarkSubmitButton" onclick="updateVehicleInspection()" style="background:#1C2855;color:#fff;">Submit</button>
+                            </div>
+                        </div>
+                        <div style="border-bottom:1px solid #e2d9d9; margin-bottom:5px;margin-top: 10px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		<div class="intro-section " data-type="background" data-speed="7">
+                <div class="Car_insurer_main_cls">
+					<div class="row Car_insurer_container">
+						<div class="col-md-12 col-sm-12" data-spy="affix" data-offset-top="17">
+							<div class="header_Maindiv">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<div class="addquot_div">
+										<div class="grab">
+											<span class="ad_quote">
+												Inspection Data
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-9 Btn_div">
+									<ul style="float:right" class="grab">
+										<li id="previous_page" style="border-top-left-radius:5px;border-bottom-left-radius:5px;width:75px;height:40px" onclick="Next_previous('Previous');" name="Previous">Previous</li>
+										<li id="next_page" style="border-top-right-radius:5px;border-bottom-right-radius:5px;width:50px;height:40px" onclick="Next_previous('Next');">Next</li>
+										</ul>
+								</div>
+							</div>
+						</div>
+						<div class="quote_list_Div">
+							<div class="container-fluid healthmaindiv">
+								<div class="menuBox" style="display:none;">
+									<div id="CallFuncId">
+										<a href="#" class="CallFuncClass">CALL</a>
+									</div>
+									<div id="SmsFuncId">
+										<a href="#" class="SmsFuncClass">SMS</a>
+									</div>
+								</div>
+								
+								<div class="quoteList_container quoteList">
+									<table style="width:100%;" id="tbl_quote_list">
+										<tr class="quoteTR" id="tr_lst" style="display:none;">
+											<td class="quoteTabData">
+												<div class="ApplicantName">Preeti Patil</div>
+												<div class="ApplicantName fieldName">CRN:<span class="crn_span Datacolor">234578</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Vehicle Name</div>
+												<div class="Datacolor desc quote_date">Honda City</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">RTO Name</div>
+												<div class="desc quote_date Datacolor">Mumbai-Andheri</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Vehicle Number</div>
+												<div class="desc quote_date Datacolor">01/04/2019</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">QUOTE DATE</div>
+												<div class="desc quote_date Datacolor">20/10/2019</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Status</div>
+												<div class="desc quote_date Datacolor">Complete</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+
+						</div>
+						<div class="PaginationDiv">
+							<div class="pagination" id="pagin">
+								<a href="#">Previous</a>
+								<a href="#" class="current">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">Next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+        </div>
+    </section>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2474 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var config = require('config');
+var mongoose = require('mongoose');
+var Base = require('../libs/Base');
+var moment = require('moment');
+var Posps = require('../models/posp');
+var Sms_log = require('../models/sms_log');
+var sleep = require('system-sleep');
+var mongojs = require('mongojs');
+var myDb = mongojs(config.db.connection + ':27017/' + config.db.name);
+var path = require('path');
+var appRoot = path.dirname(path.dirname(require.main.filename));
+var fs = require("fs");
+mongoose.connect(config.db.connection + ':27017/' + config.db.name, {useMongoClient: true}); // connect to our database
+
+var User_Data = require('../models/user_data');
+var Proposal = require('../models/proposal');
+module.exports.controller = function (app) {
+
+    /*app.get('/user_datas', function (req, res) {
+     User_Data.find(function (err, user_datas) {
+     if (err)
+     res.send(err);
+     
+     res.json(user_datas);
+     });
+     });*/
+    app.get('/user_datas/ssid_by_crn/:PB_CRN', function (req, res) {
+        if (parseInt(req.params.PB_CRN)) {
+            User_Data.findOne({PB_CRN: parseInt(req.params.PB_CRN)}, function (err, dbUserData) {
+                if (err) {
+
+                } else {
+                    if (dbUserData) {
+                        res.send(dbUserData._doc['Premium_Request']['ss_id'].toString());
+                    } else {
+                        res.send('Invalid CRN');
+                    }
+                }
+            });
+        } else {
+            res.send('Invalid CRN');
+        }
+    });
+    app.get('/user_datas/detail_by_crn/:PB_CRN', function (req, res) {
+        if (parseInt(req.params.PB_CRN)) {
+            User_Data.findOne({PB_CRN: parseInt(req.params.PB_CRN)}, null, {sort: {User_Data_Id: -1}}, function (err, dbUserData) {
+                if (err) {
+
+                } else {
+                    if (dbUserData) {
+                        res.json(dbUserData);
+                    } else {
+                        res.send('Invalid CRN');
+                    }
+                }
+            });
+        } else {
+            res.send('Invalid CRN');
+        }
+    });
+    app.get('/user_datas/CRN/:PB_CRN', function (req, res) {
+        if (parseInt(req.params.PB_CRN)) {
+            User_Data.findOne({PB_CRN: parseInt(req.params.PB_CRN)}, null, {sort: {User_Data_Id: -1}}, function (err, dbUserData) {
+                if (err) {
+
+                } else {
+                    if (dbUserData) {
+                        //var QuotePageURL = config.environment.portalurl + '/CarInsuranceIndia/QuotePageNew?SID=' + dbUserData['_doc']['Request_Unique_Id'] + '&ClientID=3';
+                        //dbUserData['_doc']['Premium_Request']['QUOTE_URL'] = QuotePageURL;
+                        var obj_whitelabel = {
+                            "electrical_accessory": "0",
+                            "external_bifuel_type": "",
+                            "external_bifuel_value": 0,
+                            "is_aai_member": "no",
+                            "is_antitheft_fit": "no",
+                            "is_claim_exists": "no",
+                            "is_external_bifuel": "no",
+                            "is_llpd": "yes",
+                            "non_electrical_accessory": "0",
+                            "pa_named_passenger_si": "0",
+                            "pa_owner_driver_si": "",
+                            "pa_paid_driver_si": "0",
+                            "pa_unnamed_passenger_si": "50000",
+                            "policy_expiry_date": "2019-03-28",
+                            "prev_insurer_id": 11,
+                            "product_id": 1,
+                            "rto_id": 210,
+                            "vehicle_expected_idv": 0,
+                            "vehicle_id": 3270,
+                            "vehicle_insurance_subtype": "1CH_0TP",
+                            "vehicle_insurance_type": "renew",
+                            "vehicle_manf_date": "2017-03-01",
+                            "vehicle_ncb_current": "20",
+                            "vehicle_registration_date": "2017-03-30",
+                            "vehicle_registration_type": "individual",
+                            "voluntary_deductible": 0,
+                            "udid": 576970,
+                            "ss_id": 0,
+                            "fba_id": 0,
+                            "sub_fba_id": 0
+                        };
+
+
+                        var content_html = '<!DOCTYPE html><html><head><title>CRN Details #' + req.params.PB_CRN + '</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>';
+                        content_html += '<div class="report" ><span  style="font-family:\'Google Sans\' ,tahoma;font-size:14px;">CRN Details #' + req.params.PB_CRN + '</span>\n\
+					 <br>\n\
+				<table style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3;-webkit-box-shadow: 1px 1px 3px 2px #d3d3d3;  box-shadow:         1px 1px 3px 2px #d3d3d3;" border="0" cellpadding="3" cellspacing="0" width="95%"  >';
+                        content_html += '<tr>';
+                        content_html += '<th style="font-size:12px;font-family:\'Google Sans\' ,tahoma;background-color: orange">Key</th>';
+                        content_html += '<th style="font-size:12px;font-family:\'Google Sans\' ,tahoma;background-color: orange">Value</th>';
+                        content_html += '</tr>';
+
+
+                        for (var k in dbUserData['_doc']['Premium_Request']) {
+                            if (obj_whitelabel.hasOwnProperty(k)) {
+                                content_html += '<tr>';
+                                content_html += '<td style="font-size:12px;font-family:\'Google Sans\' ,tahoma;background-color:white;" align="center">' + k.toString().replace(/_/g, ' ').toTitleCase() + '</td>';
+                                content_html += '<td style="font-size:12px;font-family:\'Google Sans\' ,tahoma;background-color:white;" align="center">' + dbUserData['_doc']['Premium_Request'][k] + '</td>';
+                                content_html += '</tr>';
+                            }
+                        }
+                        content_html += '</table></div></body></html>';
+                        res.send(content_html);
+                    } else {
+                        res.send('Invalid CRN');
+                    }
+                }
+            });
+        } else {
+            res.send('Invalid CRN');
+        }
+    });
+    app.get('/user_datas/make_model_list', function (req, res) {
+        var agg = [
+            {$group: {
+                    _id: {Make_Name: "$Make_Name", Model_Name: "$Model_Name"}
+                }},
+            {$project: {_id: 0, Make_Name: "$_id.Make_Name", Model_Name: "$_id.Model_Name"}},
+            {$sort: {'Make_Name': 1}}
+        ];
+
+        User_Data.aggregate(agg, function (err, user_datas) {
+            if (err)
+                res.send(err);
+
+            res.json(user_datas);
+        });
+    });
+    app.post('/user_datas/list', function (req, res) {
+
+        User_Data.find({
+            $or: [
+                {'Make_Name': new RegExp(req.body['q'], 'i')},
+                {'Model_Name': new RegExp(req.body['q'], 'i')},
+                {'Variant_Name': new RegExp(req.body['q'], 'i')},
+                {'Fuel_Name': new RegExp(req.body['q'], 'i')}
+            ],
+            $and: [{'Product_Id_New': parseInt(req.body['product_id'])}]
+        }, function (err, user_datas) {
+            if (err)
+                res.send(err);
+//
+//            var listresponse = [];
+//            for (var k in user_datas) {
+//                listresponse.push({'id': user_datas[k]['User_Data_ID'], 'label': user_datas[k]['Make_Name'] + ' ' + user_datas[k]['Model_Name'] + ' ' + user_datas[k]['Variant_Name'] + '( Fuel: ' + user_datas[k]['Fuel_Name'] + ', CC:' + user_datas[k]['Cubic_Capacity'] + ' )'})
+//            }
+
+            res.json(user_datas);
+        });
+//        User_Data.find({$text: {$search: req.query['query']}}, {score: {$meta: "textScore"}}).sort({score: {$meta: 'textScore'}}).exec(function (err, user_datas) {
+//            if (err)
+//                res.send(err);
+//
+//            var listresponse = [];
+//            for (var k in user_datas) {
+//                listresponse.push({'id': user_datas[k]['User_Data_ID'], 'label': user_datas[k]['Make_Name'] + ' ' + user_datas[k]['Model_Name'] + ' ' + user_datas[k]['Variant_Name'] + '( Fuel: ' + user_datas[k]['Fuel_Name'] + ', CC:' + user_datas[k]['Cubic_Capacity'] + ' )'})
+//            }
+//
+//            res.json(listresponse);
+//        });
+    });
+
+    app.get('/user_datas/make1/:product_id', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var from = 0, to = 0;
+        if (product_id === 1) {
+            from = 0;
+            to = 50000;
+        } else {
+            from = 50000;
+            to = 100000;
+        }
+        User_Data.find().distinct('Make_Name', {}, function (err, user_datas) {
+            if (err)
+                res.send(err);
+
+            res.json(user_datas);
+        });
+    });
+    app.get('/user_datas/make/:product_id', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var from = 0, to = 0;
+        if (product_id === 1) {
+            from = 0;
+            to = 50000;
+        } else {
+            from = 50000;
+            to = 100000;
+        }
+        ;
+        var agg = [
+            {"$match": {"User_Data_ID": {"$gte": from, "$lte": to}}},
+            {$group: {
+                    _id: {Make_Name: "$Make_Name"},
+                    User_DataCount: {$sum: 1}
+                }},
+            {$project: {_id: 0, Make_Name: "$_id.Make_Name", User_DataCount: 1}},
+            {$sort: {'Make_Name': 1}}
+        ];
+
+        User_Data.aggregate(agg, function (err, user_datas) {
+            if (err)
+                res.send(err);
+
+            res.json(user_datas);
+        });
+
+    });
+    app.get('/user_datas/model/:make_name', function (req, res) {
+        var make_name = req.params.make_name;
+        User_Data.find().distinct('Model_Name', {'Make_Name': make_name}, function (err, user_datas) {
+            if (err)
+                res.send(err);
+
+            res.json(user_datas);
+        });
+//        User_Data.distinct('Model_Name', {'Make_Name': make_name}, function (err, user_datas) {
+//            if (err)
+//                res.send(err);
+//
+//            res.json(user_datas);
+//        });
+    });
+    app.get('/user_datas/variant/:make_name/:model_name', function (req, res) {
+        var make_name = req.params.make_name;
+        var model_name = req.params.model_name;
+        User_Data.find({'Make_Name': make_name, 'Model_Name': model_name}).sort({'Variant_Name': 'asc'}).exec(function (err, user_datas) {
+            if (err)
+                res.send(err);
+
+            res.json(user_datas);
+        });
+    });
+    app.post('/user_datas', LoadSession, function (req, res) {
+        try {
+            var objBase = new Base();
+            //var objPost = req.body;
+            //objPost = JSON.parse(JSON.stringify(objPost));
+            //console.error('user_datas', 'post', objPost);
+            var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+            var optionPaginate = {
+                select: 'User_Data_Id Request_Unique_Id Service_Log_Unique_Id PB_CRN ERP_CS ERP_CS_RESPONSE ERP_ENTRY ERP_CS_DOC Last_Status Insurer_Id Status_History Product_Id Client_Id Report_Summary Premium_Request Payment_Request Payment_Response Transaction_Data Transaction_Status Erp_Qt_Request_Core Is_Active Created_On Modified_On Verification_Request Pdf_Request Insurer_Transaction_Identifier Disposition_Status Disposition_SubStatus Erp_Cs_Err lead_assigned_uid lead_assigned_name Lead_Call_Back_Time',
+                sort: {'Modified_On': 'desc'},
+                //populate: null,
+                lean: true,
+                page: 1,
+                limit: 10
+            };
+
+            if (obj_pagination) {
+                optionPaginate['page'] = obj_pagination.paginate.page;
+                optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+
+            }
+            var filter = obj_pagination.filter;
+
+            if (typeof req.body['page_action'] !== 'undefined') {
+                if (req.obj_session.user.role_detail.role.indexOf('ProductAdmin') > -1) {
+                    filter['Product_Id'] = {$in: req.obj_session.user.role_detail.product};
+                }
+                if (req.body['page_action'] === 'all_transaction') {
+
+                }
+                if (req.body['page_action'] === 'ch_all_transaction') {
+                    var arr_ch_ssid = [];
+                    var arr_ch_list = [];
+                    if (req.obj_session.hasOwnProperty('users_assigned')) {
+                        arr_ch_ssid = req.obj_session.users_assigned.Team.CSE;
+                    }
+                    arr_ch_ssid.push(req.obj_session.user.ss_id);
+                    arr_ch_list = req.obj_session.user.role_detail.channel_transaction;
+                    filter['$or'] = [
+                        {'Premium_Request.channel': {$in: arr_ch_list}},
+                        {'Premium_Request.ss_id': {$in: arr_ch_ssid}}
+                    ];
+                    //filter['Premium_Request.channel'] = req.obj_session.user.role_detail.channel;
+                }
+                if (req.body['page_action'] === 'my_transaction') {
+                    var arr_ssid = [];
+                    if (req.obj_session.hasOwnProperty('users_assigned')) {
+                        var combine_arr = req.obj_session.users_assigned.Team.POSP.join(',') + ',' + req.obj_session.users_assigned.Team.DSA.join(',') + ',' + req.obj_session.users_assigned.Team.CSE.join(',');
+                        arr_ssid = combine_arr.split(',').filter(Number).map(Number);
+                    }
+
+                    if ([114536, 113035, 114611, 114825, 114826, 114827, 114828, 114815, 110317].indexOf(req.obj_session.user.uid) > -1) {
+                        filter['Is_Last'] = 'yes';
+                        filter['$or'] = [
+                            {'Premium_Request.ss_id': req.obj_session.user.ss_id},
+                            {'lead_assigned_ssid': req.obj_session.user.ss_id}
+                        ];
+                        if (arr_ssid.length > 0) {
+                            arr_ssid.push(req.obj_session.user.ss_id);
+                            filter['$or'] = [
+                                {'Premium_Request.ss_id': {$in: arr_ssid}},
+                                {'lead_assigned_ssid': req.obj_session.user.ss_id}
+                            ];
+                        }
+                    } else {
+                        filter['Premium_Request.ss_id'] = req.obj_session.user.ss_id;
+                        if (arr_ssid.length > 0) {
+                            arr_ssid.push(req.obj_session.user.ss_id);
+                            filter['Premium_Request.ss_id'] = {$in: arr_ssid};
+                        }
+                    }
+
+                }
+            }
+
+
+            if (req.body['Col_Name'] !== '' && req.body['txtCol_Val'] !== '') {
+                var arr_number_field = ['Premium_Request.posp_reporting_agent_uid', 'Premium_Request.posp_mobile_no', 'Premium_Request.posp_fba_id', 'Premium_Request.posp_erp_id', 'Premium_Request.ss_id', 'Proposal_Request.mobile'];
+                var search_val = (arr_number_field.indexOf(req.body['Col_Name']) > -1) ? (req.body['txtCol_Val'] - 0) : req.body['txtCol_Val'];
+                filter[req.body['Col_Name']] = search_val;
+            }
+            if (req.body['Product_Id'] !== '') {
+                if (req.body['Product_Id'] === 'HospiCash') {
+                    filter['Product_Id'] = 2;
+                    filter['Premium_Request.is_hospi'] = 'yes';
+                } else {
+                    filter['Product_Id'] = req.body['Product_Id'] - 0;
+                }
+            }
+            if (typeof req.body['Insurer_Id'] !== 'undefined' && req.body['Insurer_Id'] !== '') {
+                filter['Insurer_Id'] = req.body['Insurer_Id'] - 0;
+            }
+            if (typeof req.body['Disposition_Status'] !== 'undefined' && req.body['Disposition_Status'] !== '') {
+                filter['Disposition_Status'] = req.body['Disposition_Status'];
+                if (filter["Disposition_Status"] === 'PENDING') {
+                    filter["Disposition_Status"] = {$exists: false};
+                }
+                if (filter["Disposition_Status"] === 'DISPOSED') {
+                    filter["Disposition_Status"] = {$exists: true};
+                }
+            }
+            if (typeof req.body['Disposition_SubStatus'] !== 'undefined' && req.body['Disposition_SubStatus'] !== '') {
+                filter['Disposition_SubStatus'] = (req.body['Disposition_SubStatus'].split(',').length == 1) ? req.body['Disposition_SubStatus'] : {$in: req.body['Disposition_SubStatus'].split(',')};
+            }
+
+            if (typeof req.body['utm_source'] !== 'undefined' && req.body['utm_source'] !== '') {
+                filter['Premium_Request.utm_source'] = req.body['utm_source'];
+            }
+            if (typeof req.body['expiry_identifier'] !== 'undefined' && req.body['expiry_identifier'] !== '') {
+                let expiry_start = null;
+                let expiry_end = null;
+                if (req.body['expiry_identifier'] === 'EXPIRED_3') {
+                    expiry_start = moment().add(-3, 'days').utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().add(-1, 'days').utcOffset("+05:30").endOf('Day');
+                }
+                if (req.body['expiry_identifier'] === 'TODAY') {
+                    expiry_start = moment().utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().utcOffset("+05:30").endOf('Day');
+                }
+                if (req.body['expiry_identifier'] === 'TOMORROW') {
+                    expiry_start = moment().add(1, 'days').utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().add(1, 'days').utcOffset("+05:30").endOf('Day');
+                }
+                if (req.body['expiry_identifier'] === 'NEXT_2_7') {
+                    expiry_start = moment().add(2, 'days').utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().add(7, 'days').utcOffset("+05:30").endOf('Day');
+                }
+                if (req.body['expiry_identifier'] === 'NEXT_8_15') {
+                    expiry_start = moment().add(8, 'days').utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().add(15, 'days').utcOffset("+05:30").endOf('Day');
+                }
+                if (req.body['expiry_identifier'] === 'NEXT_16_30') {
+                    expiry_start = moment().add(16, 'days').utcOffset("+05:30").startOf('Day');
+                    expiry_end = moment().add(30, 'days').utcOffset("+05:30").endOf('Day');
+                }
+                filter['Premium_Request.policy_expiry_date'] = {'$gte': expiry_start.format("YYYY-MM-DD"), '$lte': expiry_end.format("YYYY-MM-DD")};
+            }
+
+
+
+
+            if (req.body['Source'] !== '') {
+                if (req.body['Source'] === 'direct') {
+                    filter['Premium_Request.ss_id'] = 0;
+                }
+                if (req.body['Source'] === 'pbss') {
+                    filter['Premium_Request.ss_id'] = {'$gt': 0};
+                    filter['Premium_Request.posp_sources'] = 0;
+                }
+                if (req.body['Source'] === 'fmdc') {
+                    filter['Premium_Request.posp_sources'] = 1;
+                }
+                if (req.body['Source'] === 'fmsm') {
+                    filter['Premium_Request.posp_sources'] = 2;
+                }
+            }
+            if (req.body['Group_Status'] !== '') {
+                var ObjSummaryStatus = {
+                    'SEARCH': ['SEARCH', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'LINK_SENT': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'PAYMENT_PENDING': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION'],
+                    'POLICY_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'FAIL': ['TRANS_FAIL'],
+                    'SELL': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+                };
+                filter['Last_Status'] = {
+                    $in: ObjSummaryStatus[req.body['Group_Status']]
+                };
+            }
+            if (req.body['App_Version'] !== '') {
+                if (req.body['App_Version'] === 'PolicyBoss.com') {
+                    filter['Premium_Request.app_version'] = 'PolicyBoss.com';
+                }
+                if (req.body['App_Version'] === 'FinPeace') {
+                    filter['Premium_Request.app_version'] = 'FinPeace';
+                }
+                if (req.body['App_Version'] === 'FinmartApp') {
+                    filter['Premium_Request.app_version'] = {"$ne": "PolicyBoss.com"};
+                }
+            }
+            if (req.body['Renewal'] === 'yes') {
+                filter['Proposal_Request_Core.renewal_crn_udid'] = {"$exists": true};
+            }
+            if (req.body['Policy_Status'] === 'yes') {
+                filter['Last_Status'] = 'TRANS_SUCCESS_WITH_POLICY';
+            }
+            if (req.body['Policy_Status'] === 'no') {
+                filter['Last_Status'] = 'TRANS_SUCCESS_WO_POLICY';
+            }
+            if (req.body['CS_Status'] === 'yes') {
+                filter['ERP_CS'] = new RegExp('CS', 'i');
+            }
+            if (req.body['CS_Status'] === 'no') {
+                filter['ERP_CS'] = {$in: ['PENDING', 'INPROGRESS', 'VALIDATION', 'EXCEPTION', 'TRYAGAIN', 'DUPLICATE']};
+            }
+
+            if (req.body['Col_Transaction_Status'] !== '') {
+                var cs_status = ['CS_PENDING', 'CS_INPROGRESS', 'CS_VALIDATION', 'CS_EXCEPTION', 'CS_TRYAGAIN', 'CS_DUPLICATE'];
+                if (req.body['Col_Transaction_Status'] === 'TRANS_WO_CS') {
+                    filter['Last_Status'] = {
+                        $in: ["TRANS_SUCCESS_WO_POLICY", "TRANS_SUCCESS_WITH_POLICY"]
+                    };
+                    filter['ERP_CS'] = "PENDING";
+                } else if (cs_status.indexOf(req.body['Col_Transaction_Status']) > -1) {
+                    filter['ERP_CS'] = req.body['Col_Transaction_Status'].replace('CS_', '');
+
+                } else if (req.body['Col_Transaction_Status'] === 'TRANS_WO_CS_DOC') {
+                    filter['Last_Status'] = {
+                        $in: ["TRANS_SUCCESS_WO_POLICY", "TRANS_SUCCESS_WITH_POLICY"]
+                    };
+                    filter['ERP_CS'] = {"$nin": [null, ""]};
+                    filter['ERP_CS_DOC'] = {"$nin": ['SUCCESS', 'Success']};
+                } else {
+                    filter['Last_Status'] = req.body['Col_Transaction_Status'];
+                }
+            }
+            if (req.body['transaction_start_date'] !== '' && req.body['transaction_end_date'] !== '') {
+                var arrFrom = req.body['transaction_start_date'].split('-');
+                var dateFrom = new Date(arrFrom[0] - 0, arrFrom[1] - 0 - 1, arrFrom[2] - 0);
+
+                var arrTo = req.body['transaction_end_date'].split('-');
+                var dateTo = new Date(arrTo[0] - 0, arrTo[1] - 0 - 1, arrTo[2] - 0);
+                dateTo.setDate(dateTo.getDate() + 1);
+                filter['Modified_On'] = {"$gte": dateFrom, "$lte": dateTo};
+            }
+
+            if (req.body['PB_CRN'] !== "") {
+                filter['PB_CRN'] = req.body['PB_CRN'] - 0;
+            } else if (req.body['registration_number'] !== "") {
+                filter['Erp_Qt_Request_Core.___registration_no___'] = req.body['registration_number'];
+            }
+
+            for (let k in req.body) {
+                if (k.indexOf('Erp_Qt_Request_Core') > -1 && req.body[k] !== '') {
+                    if (k === 'Erp_Qt_Request_Core.___final_premium___') {
+                        var min_fp = req.body[k].split('_')[0];
+                        var max_fp = req.body[k].split('_')[1];
+                        filter[k] = {"$gte": min_fp, "$lte": max_fp};
+                    } else {
+                        filter[k] = req.body[k];
+                    }
+                }
+            }
+
+            if (req.body['Erp_Qt_Request_Core.___voluntary_deductible___'] === "yes") {
+                filter['Erp_Qt_Request_Core.___voluntary_deductible___'] = {'$exists': true, '$ne': '0'};
+            }
+
+
+            console.error('HorizonSaleSearch', filter, req.body);
+            User_Data.paginate(filter, optionPaginate).then(function (user_datas) {
+                //console.error('UserDataSearch', filter, optionPaginate, user_datas);
+                res.json(user_datas);
+            });
+        } catch (e) {
+            console.error('userdata', 'error', e);
+            res.json(e);
+        }
+    });
+    app.post('/user_datas/save', function (req, res) {
+        var objUserData = {};
+        var base = new Base();
+        for (var key in req.body) {
+            if (req.body[key].indexOf('{') === 0) {
+                objUserData[key] = JSON.parse(req.body[key]);
+            } else {
+                objUserData[key] = (isNaN(req.body[key])) ? req.body[key].toString() : req.body[key] - 0;
+            }
+        }
+        console.log('UserData', objUserData);
+        //res.json(objUserData);
+        if (true) {
+
+            // get the current date
+            var currentDate = new Date();
+            if (req.body.User_Data_Id) {
+                //objUserData.Modified_On = currentDate;
+                User_Data.update({'User_Data_Id': objUserData.User_Data_Id}, objUserData, function (err, numAffected) {
+                    console.log('UserDataUpdated', err, numAffected);
+                    res.json({'Msg': 'Data saved', 'Id': objUserData.User_Data_Id});
+                });
+            }
+        }
+    });
+    app.post('/user_datas/proposals/search_by_pgdata', function (req, res) {
+        try {
+            var pg_post = req.body['pg_post'];
+            var pg_get = req.body['pg_get'];
+            var pg_url = req.body['pg_url'];
+            var pg_redirect_mode = req.body['pg_redirect_mode'];
+            let ud_cond = null;
+            let match_type = 'exact';
+            let Insurer_Transaction_Identifier = '';
+            if (pg_redirect_mode === 'GET') {
+                if (pg_get.hasOwnProperty('PolicyNo') && pg_get.hasOwnProperty('Msg') && pg_get.hasOwnProperty('ProposalNo')) {//hdfc
+                    insurer_id = 5;
+                    if (pg_get.hasOwnProperty('BrkProposalNo')) {
+                        Insurer_Transaction_Identifier = pg_get['BrkProposalNo'];
+                    } else {
+                        Insurer_Transaction_Identifier = pg_get['ProposalNo'];
+                    }
+                }
+                if (pg_get.hasOwnProperty('policyId') && pg_get.hasOwnProperty('quoteId') && pg_get.hasOwnProperty('status')) {//acko
+                    insurer_id = 45;
+                    Insurer_Transaction_Identifier = pg_get['quoteId'];
+                }
+                if (pg_get.hasOwnProperty('Output') && (pg_get['Output'].toString().toLowerCase().indexOf('|ccavenue|r') > -1 || pg_get['Output'].toString().toLowerCase().indexOf('|payu|r') > -1)) {//reliance
+                    insurer_id = 9;
+                    let arr_pg = pg_get['Output'].split('|');
+                    Insurer_Transaction_Identifier = arr_pg[5];
+                }
+                if (pg_get.hasOwnProperty('ITGIResponse')) {//iffco
+                    insurer_id = 7;
+                    let arr_pg = pg_get['ITGIResponse'].split('|');
+                    Insurer_Transaction_Identifier = arr_pg[5];
+                }
+                if (pg_get.hasOwnProperty('MSG') && pg_get['MSG'].indexOf('SOMPOGINS') > -1) {//universalsompo
+                    insurer_id = 19;
+                    let arr_pg = pg_get['MSG'].split('|');
+                    Insurer_Transaction_Identifier = arr_pg[1];
+                }
+                if (pg_get.hasOwnProperty('productID') && pg_get.hasOwnProperty('orderNo')) {//bharti
+                    insurer_id = 2;
+                    Insurer_Transaction_Identifier = pg_get['orderNo'];
+                    match_type = 'like';
+                }
+                if (pg_get.hasOwnProperty('response')) {//tataaig
+                    insurer_id = 11;
+                    let data = pg_get['response'];
+                    let buff = new Buffer(data, 'base64');
+                    let text = buff.toString('ascii');
+                    let decoded_response = JSON.parse(text);
+                    console.error('DEBUG', 'pgdata_by_proposal', decoded_response, data);
+                    /*
+                     * {
+                     "status": "1",
+                     "data": {
+                     "proposalno": "P/N/3122/0000055931",
+                     "policyno": "064001/0173549536/000000/00",
+                     "rnd_str": "UdAMHnBgjWlvc5jARqxxPpKWv",
+                     "productname": "Two Wheeler",
+                     "productcode": "3122",
+                     "uw_ref": "",
+                     "status": "1",
+                     "message": "",
+                     "is_SAOD": false,
+                     "errocde": ""
+                     }
+                     }
+                     */
+
+                    Insurer_Transaction_Identifier = decoded_response['data']['proposalno'];
+                }
+
+            }
+            if (pg_redirect_mode === 'POST') {
+                if (pg_post.hasOwnProperty('TransactionId') && pg_post.hasOwnProperty('ProposalId') && pg_post.hasOwnProperty('ApplicationNo')) {//apollo
+                    Insurer_Transaction_Identifier = pg_post['ApplicationNo'];
+                    insurer_id = 21;
+                }
+                if (pg_post.hasOwnProperty('pgRespCode') && pg_post.hasOwnProperty('QuoteId') && pg_post.hasOwnProperty('SourceTxnId')) {//Aditya
+                    Insurer_Transaction_Identifier = pg_post['QuoteId'];
+                    insurer_id = 42;
+                }
+            }
+            if (Insurer_Transaction_Identifier !== '') {
+                var today = moment().utcOffset("+05:30").startOf('Day');
+
+                var T_MIN_3_DAY = moment(today).add(-5, 'days').format("YYYY-MM-DD");
+                var today_str = moment(today).format("YYYY-MM-DD");
+                var arrFrom = T_MIN_3_DAY.split('-');
+                var dateFrom = new Date(arrFrom[0] - 0, arrFrom[1] - 0 - 1, arrFrom[2] - 0);
+
+                var arrTo = today_str.split('-');
+                var dateTo = new Date(arrTo[0] - 0, arrTo[1] - 0 - 1, arrTo[2] - 0);
+                dateTo.setDate(dateTo.getDate() + 1);
+
+                ud_cond = {
+                    'Proposal_Request': {$exists: true},
+                    'Modified_On': {"$gte": dateFrom, "$lte": dateTo},
+                    'Insurer_Id': insurer_id,
+                    'Insurer_Transaction_Identifier': Insurer_Transaction_Identifier.toString()
+                };
+                if (match_type === 'like') {
+                    ud_cond['Insurer_Transaction_Identifier'] = new RegExp(Insurer_Transaction_Identifier, 'i');
+                }
+                Proposal.findOne(ud_cond, function (err, dbProposal) {
+                    if (err)
+                        res.send(err);
+
+                    if (dbProposal) {
+                        res.json(dbProposal._doc);
+                    } else {
+                        res.json({});
+                    }
+                });
+            } else {
+                res.json({});
+            }
+        } catch (e) {
+            console.error('Exception', 'PG_BY_PROPOSAL', e.stack, req.get, req.body);
+            res.send(e.stack);
+        }
+    });
+    app.get('/user_datas/view/:User_Data_Id', function (req, res) {
+        var User_Data_Id = req.params.User_Data_Id - 0;
+
+        User_Data.find({'User_Data_Id': User_Data_Id}, function (err, user_data) {
+            if (err)
+                res.send(err);
+
+            res.json(user_data);
+        });
+    });
+    app.get('/user_datas/proposal/view/:Proposal_Id', function (req, res) {
+        var Proposal_Id = req.params.Proposal_Id - 0;
+        Proposal.findOne({'Proposal_Id': Proposal_Id}, function (err, dbProposal) {
+            if (err)
+                res.send(err);
+
+            res.json(dbProposal._doc);
+        });
+    });
+    app.get('/user_datas/quicklist/:Product_Id/:Type/:Ss_Id/:Fba_Id/:Page/:Mobile/:Sub_Fba_Id?', function (req, res) {
+        try {
+            var Product_Id = req.params.Product_Id - 0;
+            var Fba_Id = req.params.Fba_Id - 0;
+            var Type = req.params.Type;
+            var Ss_Id = req.params.Ss_Id - 0;
+            var Page = req.params.Page - 0;
+            var Skip = 0;
+            var Limit = 10;
+            var status_grp = "";
+            var Mobile = (req.params.hasOwnProperty('Mobile')) ? req.params.Mobile : 0;
+            var Sub_Fba_Id = (req.params.hasOwnProperty('Sub_Fba_Id')) ? req.params.Sub_Fba_Id - 0 : 0;
+            if (Ss_Id && Type && Page) {
+                var Condition = {
+                    "Product_Id": Product_Id
+                            //"Last_Status": ""
+                };
+                //agent condition
+                if (Ss_Id) { //10859
+                    if (Ss_Id === 10859 && Product_Id === 2) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 5417) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 7844 || Ss_Id === 8048 || Ss_Id === 12311) {
+                        Condition['Premium_Request.posp_sources'] = 1;
+                    } else if (Ss_Id === 8304) {
+                        Condition['Premium_Request.posp_sources'] = 2;
+                    } else if (Type === 'INSPECTION' && Ss_Id === 487) {
+                    } else {
+                        if (Ss_Id === 5) {
+                            Condition['Premium_Request.fba_id'] = Fba_Id;
+                        } else if (Ss_Id !== 5) {
+                            Condition['Premium_Request.ss_id'] = Ss_Id;
+                            if (Sub_Fba_Id > 0) {
+                                Condition['Premium_Request.sub_fba_id'] = Sub_Fba_Id;
+                            }
+                        }
+                    }
+                }
+
+                if (Mobile > 0) {
+                    Condition['Premium_Request.mobile'] = Mobile;
+                }
+
+                if (Product_Id === 22) { //hospicash 
+                    Condition['Premium_Request.is_hospi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 23) //Group health Insurance 
+                {
+                    Condition['Premium_Request.is_ghi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 42) //Shortteam Policy
+                {
+                    Condition['Premium_Request.is_short_term_policy'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 35) //TW Express
+                {
+                    Condition['Premium_Request.ui_source'] = "quick_tw_journey";
+                    Condition['Product_Id'] = 10;
+                } else {
+
+                }
+                //type condition
+                var ObjSummaryStatus = {
+                    'SEARCH': ['SEARCH', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'LINK_SENT': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'PAYMENT_PENDING': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION'],
+                    'POLICY_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'FAIL': ['TRANS_FAIL'],
+                    'SELL': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+                };
+                var ObjSummaryCondition = {
+                    'QUOTE': ['SEARCH', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY'],
+                    'APPLICATION': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'BUY_NOW_AGENT', 'PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL', 'PROPOSAL_SAVE_AGENT'],
+                    'COMPLETE': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY', 'VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'INSPECTION': ['INSPECTION_SCHEDULED', 'INSPECTION_APPROVED', 'INSPECTION_REJECTED', 'INSPECTION_EXCEPTION', 'INSPECTION_REINSPECTION', 'INSPECTION_SUBMITTED'],
+                    'INSPECTION_SUBMITTED': ['INSPECTION_SUBMITTED'],
+                    'PENDING_PAYMENT': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL'],
+                    'SENDLINK': ['PROPOSAL_LINK_SENT'],
+                    'PROPOSALSUBMIT': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION']
+                };
+                if (Type === 'SEARCH') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['QUOTE']};
+                }
+                if (Type === 'APPLICATION') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['APPLICATION']};
+                }
+                if (Type === 'SELL') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['COMPLETE']};
+                }
+                if (Type === 'INSPECTION' && Ss_Id !== 487) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION']};
+                }
+                if (Type === 'INSPECTION' && Ss_Id === 487) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION_SUBMITTED']};
+                }
+                if (Type === 'PENDING_PAYMENT') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['PENDING_PAYMENT']};
+                }
+                if (Type === 'SENDLINK') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['SENDLINK']};
+                }
+                if (Type === 'PROPOSALSUBMIT') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['PROPOSALSUBMIT']};
+                }
+                var pageCount = 0;
+                console.log(Condition);
+                User_Data.find(Condition).count(function (e, count) {
+                    console.log(count);
+                    pageCount = count;
+                });
+                //page is 
+                if (Page > 1) {
+                    Skip = Limit * (Page - 1);
+                }
+                //console.error('UDBG', Ss_Id, Page, Skip, Limit);
+                User_Data.find(Condition).sort({
+                    Modified_On: -1
+                }).select(['Product_Id', 'PB_CRN', 'Request_Unique_Id', 'Report_Summary', 'Premium_Request', 'Premium_Summary', 'Proposal_Request', 'Last_Status', 'Created_On', 'Modified_On', 'Client_Id', 'Transaction_Data', 'Erp_Qt_Request_Core', 'Status_History', 'Insurer_Id', 'User_Data_Id', 'Transaction_Data', 'ERP_CS', 'Service_Log_Unique_Id', 'Proposal_History', 'Premium_List', 'Preferred_Plan_Data']).skip(Skip).limit(Limit).exec(function (err, dbUsers) {
+                    //console.error('UDBG', err, dbUsers);
+                    try {
+                        if (!err) {
+                            var arr_User_Data = [];
+                            for (var k in dbUsers) {
+                                try {
+                                    var user = dbUsers[k]._doc;
+                                    var dt = (new Date(user.Modified_On)).toLocaleString();
+                                    var Quote_Date = dt;
+                                    dt = dt.split(',');
+                                    var Quote_Date_Mobile = dt[0];
+                                    Quote_Date_Mobile = moment(Quote_Date).format("DD/MM/YYYY");
+                                    //Quote_Date_Mobile = dt;
+                                    var customer = 'NO NAME';
+                                    var mobile = user['Premium_Request'].hasOwnProperty('mobile') ? user['Premium_Request']['mobile'] : "";
+
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('first_name')) {
+                                        customer = user['Proposal_Request']['first_name'] + ' ' + user['Proposal_Request']['last_name'];
+                                    } else {
+                                        if (user.Product_Id === 2 || user.Product_Id === 17 || user.Product_Id === 18 || user.Product_Id === 4) {
+                                            customer = user['Premium_Request'].hasOwnProperty('contact_name') ? user['Premium_Request']['contact_name'] : "";
+                                        } else {
+                                            customer = user['Premium_Request']['first_name'] + ' ' + user['Premium_Request']['last_name'];
+                                        }
+                                    }
+
+                                    if (hasNumber(customer)) {
+                                        customer = 'NO NAME';
+                                    }
+
+
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('mobile')) {
+                                        mobile = user['Proposal_Request']['mobile'];
+                                    }
+
+                                    if (mobile) {
+                                        mobile = mobile - 0;
+                                    }
+
+
+
+                                    if (Ss_Id === 5417) {
+                                        customer = customer + '(MO#' + mobile + ')';
+                                    }
+
+                                    var contact_name = customer.toString().toTitleCase();
+                                    var Sum_Insured = 0;
+                                    if (user.Product_Id === 1 || user.Product_Id === 10) {
+                                        Sum_Insured = user['Premium_Request']['vehicle_expected_idv'];
+                                    }
+                                    if (user.Product_Id === 2) {
+                                        Sum_Insured = user['Premium_Request']['is_hospi'] === "yes" ? user['Premium_Request']['per_day_si'] : user['Premium_Request']['health_insurance_si'];
+                                    }
+                                    if (user.Product_Id === 5) {
+                                        Sum_Insured = user['Premium_Request']['investment_amount'] + '/' + user['Premium_Request']['frequency'];
+                                    }
+                                    if (user.Product_Id === 17) {
+                                        Sum_Insured = user['Premium_Request'].hasOwnProperty('corona_insurance_si') ? user['Premium_Request']['corona_insurance_si'] : "";
+                                    }
+                                    if (user.Product_Id === 18) {
+                                        Sum_Insured = user['Premium_Request'].hasOwnProperty('cs_insurance_si') ? user['Premium_Request']['cs_insurance_si'] : "";
+                                    }
+                                    var Progress = 0;
+                                    status_grp = user['Last_Status'];
+                                    var Progress = 0;
+                                    var Color_code = "";
+                                    if (ObjSummaryStatus['LINK_SENT'].indexOf(status_grp) > -1) {
+                                        Progress = 50;
+                                        Color_code = "#a50ae9";
+                                    }
+                                    if (ObjSummaryStatus['FAIL'].indexOf(status_grp) > -1) {
+                                        Progress = 70;
+                                        Color_code = "#ff8d28";
+                                    }
+                                    if (ObjSummaryStatus['PAYMENT_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 80;
+                                        Color_code = "#263fb8";
+                                    }
+                                    if (ObjSummaryStatus['POLICY_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 90;
+                                        Color_code = "#00811f";
+                                    }
+                                    if (ObjSummaryStatus['SELL'].indexOf(status_grp) > -1) {
+                                        Progress = 100;
+                                        Color_code = "green";
+                                    }
+
+                                    var objUD = {
+                                        'Customer_Name': contact_name,
+                                        'Customer_Mobile': mobile,
+                                        'Sum_Insured': Sum_Insured,
+                                        'CRN': user['PB_CRN'],
+                                        'Quote_Date': Quote_Date,
+                                        'Quote_Date_Mobile': Quote_Date_Mobile,
+                                        'Created_On': user.Modified_On,
+                                        'SRN': user['Request_Unique_Id'] + '_' + user['User_Data_Id'],
+                                        'SRN_Core': user['Request_Unique_Id'],
+                                        'udid': user['User_Data_Id'],
+                                        'Last_Status': user['Last_Status'],
+                                        'Application_Date': '',
+                                        'Insurer': '',
+                                        'Progress': Progress,
+                                        'Premium': 0,
+                                        'ERP_CS': user['ERP_CS'],
+                                        'Color_code': Color_code,
+                                        'Registration_no': user['Premium_Request']['registration_no'],
+                                        'PageCount': Math.round(pageCount / 10),
+                                        'Vehicle_Name': "",
+                                        'RTO': ""
+                                    };
+
+//                                    if (user.Product_Id == 10 || user.Product_Id == 1) {
+//                                        if (Type == 'SEARCH' || Type == 'ALL') {
+//                                            var args = {
+//                                                data: {
+//                                                    "search_reference_number": user['Request_Unique_Id'],
+//                                                    "udid": user['User_Data_Id'],
+//                                                    "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+//                                                    "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+//                                                },
+//                                                headers: {
+//                                                    "Content-Type": "application/json"
+//                                                }
+//                                            };
+//                                            var url_api = config.environment.weburl + '/quote/premium_summary';
+//                                            //execute_post(url_api, args);
+//                                            var Client = require('node-rest-client').Client;
+//                                            var client = new Client();
+//                                            client.post(url_api, args, function (data, response) {
+//
+//                                                objUD['Vehicle_Name'] = data['Master']['Vehicle']['Description'];
+//                                                objUD['RTO'] = data['Master']['Rto']['RTO_City'];
+//                                            });
+//                                            sleep(500);
+//                                        } else {
+//                                            objUD['Vehicle_Name'] = user['Premium_Summary']['Master']['Vehicle']['Description'];
+//                                            objUD['RTO'] = user['Premium_Summary']['Master']['Rto']['RTO_City'];
+//                                        }
+//                                    }
+
+                                    if (Type === 'SEARCH' || Type === 'ALL') {
+                                        var args = {
+                                            data: {
+                                                "search_reference_number": user['Request_Unique_Id'],
+                                                "udid": user['User_Data_Id'],
+                                                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                                                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+                                            },
+                                            headers: {
+                                                "Content-Type": "application/json"
+                                            }
+                                        };
+                                        var url_api = config.environment.weburl + '/quote/premium_summary';
+                                        //execute_post(url_api, args);
+                                        var Client = require('node-rest-client').Client;
+                                        var client = new Client();
+                                        client.post(url_api, args, function (data, response) {
+
+                                            objUD['Vehicle_Name'] = data['Master']['Vehicle']['Description'];
+                                            objUD['RTO'] = data['Master']['Rto']['RTO_City'];
+                                        });
+                                        sleep(500);
+                                    }
+                                    if (Type !== 'SEARCH') {
+                                        var Application_Date = '';
+                                        objUD['Insurer'] = user['Insurer_Id'];
+                                        for (var k in user.Status_History) {
+                                            if (user.Status_History[k]['Status'] === 'PROPOSAL_LINK_SENT') {
+                                                var dt = (new Date(user.Status_History[k]['StatusOn'])).toLocaleString();
+                                                dt = dt.split(',');
+                                                Application_Date = dt[0];
+                                                Application_Date = moment(Quote_Date).format("DD/MM/YYYY");
+                                                break;
+                                            }
+                                        }
+                                        objUD['Application_Date'] = Application_Date;
+                                    }
+
+                                    if (Type === 'APPLICATION' && user.Product_Id === 2) {
+                                        objUD['ARN'] = user.Service_Log_Unique_Id;
+                                        objUD['SL_ID'] = user.Proposal_History[0]['Form_Data']['slid'];
+                                        //objUD['ARN'] = user.Erp_Qt_Request_Core['___api_reference_number___'];;
+                                        //objUD['SL_ID'] = user.Erp_Qt_Request_Core['___slid___'];;
+                                    } else if (Type === 'APPLICATION' && (user.Product_Id === 1 || user.Product_Id === 10)) {
+                                        for (var k in user.Premium_List['Response']) {
+                                            if (user.Service_Log_Unique_Id === user.Premium_List['Response'][k]['Service_Log_Unique_Id_Core']) {
+                                                objUD['ARN'] = user.Premium_List['Response'][k]['Service_Log_Unique_Id_Core'];
+                                                objUD['SL_ID'] = user.Premium_List['Response'][k]['Service_Log_Id'];
+                                            }
+                                        }
+                                    } else if (Type === 'APPLICATION' && user.Product_Id === 5) {
+                                        for (var k in user.Premium_List['Response']) {
+                                            objUD['Insurer'] = user.Premium_List['Response'][k]['Insurer'];
+
+                                        }
+                                    }
+                                    if (user.Product_Id === 2) {
+                                        objUD['Premium_Request'] = user['Premium_Request'];
+                                        if (user.hasOwnProperty("Preferred_Plan_Data")) {
+                                            objUD['Preferred_Plan'] = user['Preferred_Plan_Data'];
+                                        }
+                                    }
+                                    if (user.Product_Id !== 17) {
+                                        if (Type === 'SELL' && Ss_Id !== 5417 && Ss_Id !== 7844 && Ss_Id !== 8048 && Ss_Id !== 8304 && Ss_Id !== 10859)
+                                        {
+                                            objUD['policy_url'] = user['Transaction_Data']['policy_url'];
+                                        }
+                                    }
+                                    arr_User_Data.push(objUD);
+                                } catch (e) {
+                                    console.error('UDBG', e);
+                                }
+                            }
+                            res.json(arr_User_Data);
+                        } else {
+                            console.error('Exception', 'QuickListDBError', err);
+                            res.send(err);
+
+                        }
+                    } catch (e1) {
+                        console.error('Exception', 'QuickList1', e1);
+                    }
+                });
+            } else {
+                res.json({'msg': 'ss_id is empty'});
+            }
+        } catch (e) {
+            console.error('Exception', 'QuickList', e);
+        }
+    });
+
+    app.get('/user_datas/smslist/:Product_Id/:Ss_Id/:Fba_Id/:Page', function (req, res) {
+
+        var Product_Id = req.params.Product_Id - 0;
+        var Fba_Id = req.params.Fba_Id - 0;
+        var Ss_Id = req.params.Ss_Id - 0;
+        var Page = req.params.Page - 0;
+        var Mobile_No;
+        var Skip = 0;
+        var Limit = 20;
+
+        if (Ss_Id && Fba_Id && Page) {
+
+            var Condition = {
+                "Ss_Id": Ss_Id,
+                "Fba_Id": Fba_Id.toString()
+            };
+            Posps.find(Condition).select('Mobile_No').exec(function (err, Posps) {
+                if (err) {
+                    console.error(err);
+                    res.json(err);
+                } else {
+                    console.error('SMS', 'Posps', Posps);
+                    if (Posps) {
+                        Mobile_No = Posps[0]['_doc']['Mobile_No'] - 0;
+                        if (Mobile_No > 0) {
+                            if (Page > 1) {
+                                Skip = Limit * (Page - 1);
+                            }
+                            Sms_log.find({"To": Mobile_No}).sort({Created_On: -1}).skip(Skip).limit(Limit).exec(function (err, smslog) {
+                                if (err) {
+                                    console.error(err);
+                                } else {
+                                    var sms_Data = [];
+                                    for (var i in smslog)
+                                    {
+                                        try {
+                                            console.log(smslog[i]['_doc']['Content']);
+                                            sms_Data.push(smslog[i]['_doc']['Content']);
+
+                                        } catch (e) {
+                                            console.error('SMS_LOG', e);
+                                        }
+                                    }
+                                    res.json(sms_Data);
+                                }
+                            });
+                        } else {
+                            res.json({'Status': 'Error', 'Details': 'Mobile number missing'});
+                        }
+                    } else {
+                        res.json({'Status': 'Error', 'Details': 'No Record Found'});
+                    }
+                }
+            });
+
+        } else {
+            res.json({'msg': 'ss_id is empty'});
+        }
+    });
+    app.get('/user_datas/inspectionlist/:Product_Id/:Ss_Id/:Fba_Id/:Page', function (req, res) {
+        try {
+            var Product_Id = req.params.Product_Id - 0;
+            var Fba_Id = req.params.Fba_Id - 0;
+            var Ss_Id = req.params.Ss_Id - 0;
+            var Page = req.params.Page - 0;
+            var Skip = 0;
+            var Limit = 20;
+
+            if (Ss_Id && Page) {
+                var Condition = {
+                    "Product_Id": Product_Id,
+                    "Last_Status": ""
+                };
+                //agent condition
+                Ss_Id = 0;
+                if (Ss_Id) {
+                    if (Ss_Id === 5417) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else {
+                        if (Ss_Id === 5) {
+                            Condition['Premium_Request.fba_id'] = Fba_Id;
+                        } else if (Ss_Id !== 5) {
+                            Condition['Premium_Request.ss_id'] = Ss_Id;
+                        }
+                    }
+                }
+
+                var ObjSummaryCondition = {
+                    'QUOTE': ['INSPECTION_SCHEDULED', 'INSPECTION_APPROVED', 'INSPECTION_REJECTED', 'INSPECTION_EXCEPTION']
+                };
+                Condition['Last_Status'] = {$in: ObjSummaryCondition['QUOTE']};
+
+                if (Page > 1) {
+                    Skip = Limit * (Page - 1);
+                }
+                //console.error('UDBG', Ss_Id, Page, Skip, Limit);
+                User_Data.find(Condition).sort({
+                    Modified_On: -1
+                }).select(['Product_Id', 'PB_CRN', 'Request_Unique_Id', 'Report_Summary', 'Premium_Request', 'Proposal_Request', 'Last_Status', 'Created_On', 'Modified_On', 'Client_Id', 'Transaction_Data', 'Erp_Qt_Request_Core', 'Status_History', 'Insurer_Id', 'User_Data_Id', 'Transaction_Data', 'ERP_CS']).skip(Skip).limit(Limit).exec(function (err, dbUsers) {
+                    //console.error('UDBG', err, dbUsers);
+                    try {
+                        if (!err) {
+                            var arr_User_Data = [];
+                            for (var k in dbUsers) {
+                                try {
+                                    var user = dbUsers[k]._doc;
+                                    var dt = (new Date(user.Modified_On)).toLocaleString();
+                                    /* dt = dt.split(',');
+                                     var Quote_Date = dt[0];
+                                     Quote_Date = moment(Quote_Date).format("DD/MM/YYYY");*/
+                                    Quote_Date = dt;
+                                    var customer = 'NO NAME';
+                                    var mobile = user['Premium_Request']['mobile'];
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('first_name')) {
+                                        customer = user['Proposal_Request']['first_name'] + ' ' + user['Proposal_Request']['last_name'];
+                                    } else {
+                                        customer = user['Premium_Request']['first_name'] + ' ' + user['Premium_Request']['last_name'];
+                                    }
+
+                                    if (hasNumber(customer)) {
+                                        customer = 'NO NAME';
+                                    }
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('mobile')) {
+                                        mobile = user['Proposal_Request']['mobile'];
+                                    }
+
+                                    if (mobile) {
+                                        mobile = mobile - 0;
+                                    }
+
+                                    if (Ss_Id === 5417) {
+                                        customer = customer + '(MO#' + mobile + ')';
+                                    }
+
+                                    var contact_name = customer.toString().toTitleCase();
+                                    var Sum_Insured = 0;
+                                    if (user.Product_Id === 1 || user.Product_Id === 10) {
+                                        Sum_Insured = user['Premium_Request']['vehicle_expected_idv'];
+                                    }
+                                    if (user.Product_Id === 2) {
+                                        Sum_Insured = user['Premium_Request']['health_insurance_si'];
+                                    }
+
+                                    status_grp = user['Last_Status'];
+                                    var objUD = {
+                                        'Customer_Name': contact_name,
+                                        'Customer_Mobile': mobile,
+                                        'Sum_Insured': Sum_Insured,
+                                        'CRN': user['PB_CRN'],
+                                        'Quote_Date': Quote_Date,
+                                        'Created_On': user.Modified_On,
+                                        'SRN': user['Request_Unique_Id'] + '_' + user['User_Data_Id'],
+                                        'SRN_Core': user['Request_Unique_Id'],
+                                        'udid': user['User_Data_Id'],
+                                        'Last_Status': user['Last_Status'],
+                                        'Application_Date': '',
+                                        'Insurer': '',
+                                        'Premium': 0,
+                                        'ERP_CS': user['ERP_CS']
+                                    };
+                                    arr_User_Data.push(objUD);
+                                } catch (e) {
+                                    console.error('inspectionlist : UDBG', e);
+                                }
+                            }
+                            res.json(arr_User_Data);
+                        } else {
+                            console.error('Exception', 'inspectionlist', err);
+                            res.send(err);
+                        }
+                    } catch (e1) {
+                        console.error('Exception', 'inspectionlist', e1);
+                    }
+                });
+            } else {
+                res.json({'msg': 'inspectionlist : ss_id is empty'});
+            }
+        } catch (e) {
+            console.error('Exception', 'inspectionlist', e);
+        }
+    });
+    app.post('/admin_inspection_list', LoadSession, function (req, res) {
+        try {
+            var objBase = new Base();
+            var obj_pagination = objBase.jqdt_paginate_process(req.body);
+            var optionPaginate = {
+                select: 'Product_Id PB_CRN Request_Unique_Id Report_Summary Premium_Request Premium_Summary Proposal_Request Last_Status Created_On Modified_On Client_Id Transaction_Data Erp_Qt_Request_Core Status_History Insurer_Id User_Data_Id Transaction_Data ERP_CS Service_Log_Unique_Id Proposal_History Premium_List',
+                sort: {'Modified_On': -1},
+                lean: true,
+                page: 1,
+                limit: 10
+            };
+            if (obj_pagination) {
+                optionPaginate['page'] = obj_pagination.paginate.page;
+                optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+            }
+            var filter = obj_pagination.filter;
+
+            var Product_Id = req.body.ProductID - 0;
+            var Fba_Id = req.body.fbaid - 0;
+            var Type = req.body.Type;
+            var Ss_Id = req.body.ss_id - 0;
+            //var Mobile = (req.params.hasOwnProperty('Mobile')) ? req.params.Mobile : 0;
+            var Sub_Fba_Id = req.body.sub_fba_id;
+            if (Ss_Id && Type) {
+                var Condition = {
+                    "Product_Id": Product_Id
+                            //"Last_Status": ""
+                };
+
+                //agent condition
+                if (Ss_Id) { //10859
+                    if (Ss_Id === 10859 && Product_Id === 2) {
+                        //Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 5417) {
+                        //Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 7844 || Ss_Id === 8048 || Ss_Id === 12311) {
+                        Condition['Premium_Request.posp_sources'] = 1;
+                    } else if (Ss_Id === 8304) {
+                        Condition['Premium_Request.posp_sources'] = 2;
+                    } else if (Type === 'INSPECTION' && (Ss_Id === 822)) {
+                    } else {
+                        if (Ss_Id === 5) {
+                            Condition['Premium_Request.fba_id'] = Fba_Id;
+                        } else if (Ss_Id !== 5) {
+                            //Condition['Premium_Request.ss_id'] = Ss_Id;
+                            if (Sub_Fba_Id > 0) {
+                                Condition['Premium_Request.sub_fba_id'] = Sub_Fba_Id;
+                            }
+                        }
+                    }
+                }
+
+                if (Product_Id === 22) { //hospicash 
+                    Condition['Premium_Request.is_hospi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 23) //Group health Insurance 
+                {
+                    Condition['Premium_Request.is_ghi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 42) //Shortteam Policy
+                {
+                    Condition['Premium_Request.is_short_term_policy'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else {
+
+                }
+                if (req.obj_session.user.role_detail.role.indexOf('SuperAdmin') > -1) {
+                } else if (req.obj_session.user.role_detail.role.indexOf('ChannelHead') > -1) {
+                    var arr_ch_ssid = [];
+                    if (req.obj_session.hasOwnProperty('users_assigned')) {
+                        arr_ch_ssid = req.obj_session.users_assigned.Team.CSE;
+                    }
+                    arr_ch_ssid.push(req.obj_session.user.ss_id);
+                    channel = req.obj_session.user.role_detail.channel;
+                    filter['$or'] = [
+                        {'channel': channel},
+                        {'ss_id': {$in: arr_ch_ssid}}
+                    ];
+                } else {
+                    var arr_ssid = [];
+                    if (req.obj_session.hasOwnProperty('users_assigned')) {
+                        var combine_arr = req.obj_session.users_assigned.Team.POSP.join(',') + ',' + req.obj_session.users_assigned.Team.DSA.join(',') + ',' + req.obj_session.users_assigned.Team.CSE.join(',');
+                        arr_ssid = combine_arr.split(',').filter(Number).map(Number);
+
+                    }
+                    arr_ssid.push(req.obj_session.user.ss_id);
+                    filter['ss_id'] = {$in: arr_ssid};
+                }
+                //type condition
+                var ObjSummaryStatus = {
+                    'SEARCH': ['SEARCH', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'LINK_SENT': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'PAYMENT_PENDING': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION'],
+                    'POLICY_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'FAIL': ['TRANS_FAIL'],
+                    'SELL': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+                };
+                var ObjSummaryCondition = {
+                    'QUOTE': ['SEARCH', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY'],
+                    'APPLICATION': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'BUY_NOW_AGENT', 'PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL', 'PROPOSAL_SAVE_AGENT'],
+                    'COMPLETE': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY', 'VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'INSPECTION': ['INSPECTION_SCHEDULED', 'INSPECTION_APPROVED', 'INSPECTION_REJECTED', 'INSPECTION_EXCEPTION', 'INSPECTION_REINSPECTION', 'INSPECTION_SUBMITTED'],
+                    'INSPECTION_SUBMITTED': ['INSPECTION_SUBMITTED'],
+                    'PENDING_PAYMENT': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL'],
+                    'SENDLINK': ['PROPOSAL_LINK_SENT'],
+                    'PROPOSALSUBMIT': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION']
+                };
+                if (Type === 'SEARCH') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['QUOTE']};
+                }
+                if (Type === 'APPLICATION') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['APPLICATION']};
+                }
+                if (Type === 'SELL') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['COMPLETE']};
+                }
+                if (Type === 'INSPECTION' && (Ss_Id !== 822)) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION']};
+                }
+
+                if (Type === 'INSPECTION' && (Ss_Id === 822)) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION_SUBMITTED']};
+                }
+                if (Type === 'PENDING_PAYMENT') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['PENDING_PAYMENT']};
+                }
+                if (Type === 'SENDLINK') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['SENDLINK']};
+                }
+                if (Type === 'PROPOSALSUBMIT') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['PROPOSALSUBMIT']};
+                }
+
+                if (req.body.crn !== "" && req.body.crn !== undefined) {
+                    Condition['PB_CRN'] = parseInt(req.body.crn);
+                }
+                if (req.body.mobile !== undefined && req.body.mobile > 0) {
+                    Condition['Premium_Request.mobile'] = req.body.mobile;
+                }
+                if (req.body.regNo !== "" && req.body.regNo !== undefined) {
+                    Condition['Premium_Request.registration_no'] = req.body.regNo;
+                }
+                if (req.body.email !== "" && req.body.email !== undefined) {
+                    Condition['Premium_Request.email'] = req.body.email;
+                }
+
+
+                User_Data.paginate(Condition, optionPaginate).then(function (dbUsers) {
+                    try {
+                        res.json(dbUsers);
+                    } catch (e1) {
+                        console.error('Exception', 'QuickList1', e1);
+                    }
+                });
+            } else {
+                res.json({'msg': 'ss_id is empty'});
+            }
+        } catch (e) {
+            console.error('Exception', 'QuickList', e);
+        }
+    });
+    app.get('/user_datas/search/:Product_Id/:Type/:Ss_Id/:Fba_Id/:Searched_By/:Searched_Value/:Mobile', function (req, res) {
+        try {
+            var Product_Id = req.params.Product_Id - 0;
+            var Search_Key = req.params.Searched_By;
+            var Search_Val = req.params.Searched_Value;
+            var Fba_Id = req.params.Fba_Id - 0;
+            var Ss_Id = req.params.Ss_Id - 0;
+            var Mobile = (req.params.hasOwnProperty('Mobile')) ? req.params.Mobile : 0;
+            var Type = req.params.Type;
+
+            if (Search_Key || Search_Val) {
+                var Condition = {};
+                //agent condition
+                if (Search_Key === 'Name') {
+                    if (Search_Val !== '' || Search_Val !== null)
+                    {
+                        var customer_name = Search_Val.split(' ');
+                        var first_name = customer_name[0];
+                        var last_name = customer_name[customer_name.length - 1];
+                        var middle_name = '';
+                        var serch_str = '{"Premium_Request.first_name": first_name}';
+                        last_name = new RegExp(last_name, 'i');
+                        if (customer_name.length > 2) {
+                            middle_name = customer_name[1];
+                            middle_name = new RegExp(middle_name, 'i');
+                        }
+                        first_name = new RegExp(first_name, 'i');
+                        if (customer_name.length > 2) {
+                            Condition = {
+                                $and: [
+                                    {
+                                        $or: [
+                                            {"Premium_Request.first_name": first_name},
+                                            {"Premium_Request.middle_name": middle_name},
+                                            {"Premium_Request.last_name": last_name}
+                                        ]
+                                    },
+                                    {
+                                        // "Premium_Request.ss_id": Ss_Id,
+                                        "Product_Id": Product_Id
+                                    }
+                                ]
+                            };
+                        } else
+                        {
+                            Condition = {
+                                $and: [
+                                    {
+                                        $or: [
+                                            {"Premium_Request.first_name": first_name},
+                                            {"Premium_Request.last_name": last_name}
+                                        ]
+                                    },
+                                    {
+                                        // "Premium_Request.ss_id": Ss_Id,
+                                        "Product_Id": Product_Id
+                                    }
+                                ]
+                            };
+                        }
+                    }
+                } else if (Search_Key === 'CRN') {
+                    Condition['PB_CRN'] = Search_Val - 0;
+                    Condition['Product_Id'] = Product_Id;
+                } else if (Search_Key === 'Reg_No') {
+                    Condition['Premium_Request.registration_no'] = Search_Val;
+                } else if (Search_Key === 'Mobile_No') {
+                    Condition['Premium_Request.mobile'] = Search_Val;
+                } else if (Search_Key === 'Email') {
+                    Condition['Premium_Request.email'] = Search_Val;
+                }
+
+                if (Ss_Id) { //10859
+                    if (Ss_Id === 10859 && Product_Id === 2) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 5417) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else if (Ss_Id === 7844 || Ss_Id === 8048 || Ss_Id === 12311) {
+                        Condition['Premium_Request.posp_sources'] = {$in: [1, "1"]};
+                    } else if (Ss_Id === 8304) {
+                        Condition['Premium_Request.posp_sources'] = {$in: [2, "2"]};
+                    } else if (Type === 'INSPECTION' && Ss_Id === 487) {
+                    } else {
+                        if (Ss_Id === 5) {
+                            Condition['Premium_Request.fba_id'] = Fba_Id;
+                        } else if (Ss_Id !== 5) {
+                            Condition['Premium_Request.ss_id'] = Ss_Id;
+                        }
+                    }
+                }
+
+                if (Mobile > 0) {
+                    Condition['Premium_Request.mobile'] = Mobile;
+                }
+                //console.log(Condition);
+                var ObjSummaryStatus = {
+                    'SEARCH': ['SEARCH', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'LINK_SENT': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'PAYMENT_PENDING': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION'],
+                    'POLICY_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'FAIL': ['TRANS_FAIL'],
+                    'SELL': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+                };
+                var ObjSummaryCondition = {
+                    'QUOTE': ['SEARCH', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY'],
+                    'APPLICATION': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'BUY_NOW_AGENT', 'PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL'],
+                    'COMPLETE': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY', 'VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'INSPECTION': ['INSPECTION_SCHEDULED', 'INSPECTION_APPROVED', 'INSPECTION_REJECTED', 'INSPECTION_EXCEPTION', 'INSPECTION_REINSPECTION', 'INSPECTION_SUBMITTED'],
+                    'INSPECTION_SUBMITTED': ['INSPECTION_SUBMITTED']
+                };
+
+                if (Type === 'SEARCH') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['QUOTE']};
+                }
+                if (Type === 'APPLICATION') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['APPLICATION']};
+                }
+                if (Type === 'SELL') {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['COMPLETE']};
+                }
+                if (Type === 'INSPECTION' && Ss_Id !== 487) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION']};
+                }
+                if (Type === 'INSPECTION' && Ss_Id === 487) {
+                    Condition['Last_Status'] = {$in: ObjSummaryCondition['INSPECTION_SUBMITTED']};
+                }
+                if (Product_Id === 22) { //hospicash 
+                    Condition['Premium_Request.is_hospi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 23) //Group health Insurance 
+                {
+                    Condition['Premium_Request.is_ghi'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else if (Product_Id === 42) //Shortteam Policy
+                {
+                    Condition['Premium_Request.is_short_term_policy'] = "yes";
+                    Condition['Product_Id'] = 2;
+                } else {
+
+                }
+                console.log(Condition);
+                //console.error('UDBG', Ss_Id, Page, Skip, Limit);//"Premium_Request.first_name":Name
+                User_Data.find(Condition).exec(function (err, dbUsers) {
+                    //console.error('UDBG', err, dbUsers);
+                    try {
+                        if (!err) {
+                            var arr_User_Data = [];
+                            for (var k in dbUsers) {
+                                try {
+                                    var user = dbUsers[k];
+                                    var dt = (new Date(user.Modified_On)).toLocaleString();
+                                    /*dt = dt.split(',');
+                                     var Quote_Date = dt[0];
+                                     Quote_Date = moment(Quote_Date).format("DD/MM/YYYY");*/
+                                    var Quote_Date = dt;
+                                    var contact_name = user['Premium_Request'].hasOwnProperty('first_name') ? (user['Premium_Request']['first_name'] + ' ' + user['Premium_Request']['last_name']) : user['Premium_Request']['contact_name'];
+                                    contact_name = contact_name.toString().toTitleCase();
+                                    var Sum_Insured = 0;
+                                    var Quote_Date_Mobile = dt[0];
+                                    Quote_Date_Mobile = moment(Quote_Date).format("DD/MM/YYYY");
+                                    if (user.Product_Id === 1 || user.Product_Id === 10) {
+                                        Sum_Insured = user['Premium_Request']['vehicle_expected_idv'];
+                                    }
+                                    if (user.Product_Id === 2) {
+                                        Sum_Insured = user['Premium_Request']['health_insurance_si'];
+                                    }
+                                    if (user.Product_Id === 5) {
+                                        Sum_Insured = user['Premium_Request']['investment_amount'] + '/' + user['Premium_Request']['frequency'];
+                                    }
+//                                    for (var k in ObjSummaryStatus) {
+//                                        if (ObjSummaryStatus[k].indexOf(user['Last_Status'])>=0) {
+//                                            status_grp = k;
+//                                            break;
+//                                        }
+//                                    }
+                                    status_grp = user['Last_Status'];
+                                    var Progress = 0;
+                                    var Color_code = "";
+                                    if (ObjSummaryStatus['LINK_SENT'].indexOf(status_grp) > -1) {
+                                        Progress = 50;
+                                        Color_code = "red";
+                                    }
+                                    if (ObjSummaryStatus['FAIL'].indexOf(status_grp) > -1) {
+                                        Progress = 70;
+                                        Color_code = "blue";
+                                    }
+                                    if (ObjSummaryStatus['PAYMENT_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 80;
+                                        Color_code = "yellow";
+                                    }
+                                    if (ObjSummaryStatus['POLICY_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 90;
+                                        Color_code = "pink";
+                                    }
+                                    if (ObjSummaryStatus['SELL'].indexOf(status_grp) > -1) {
+                                        Progress = 100;
+                                        Color_code = "green";
+                                    }
+                                    var objUD = {
+                                        'Customer_Name': contact_name,
+                                        'Customer_Mobile': user['Premium_Request']['mobile'],
+                                        'Sum_Insured': Sum_Insured,
+                                        'CRN': user['PB_CRN'],
+                                        'Quote_Date': Quote_Date,
+                                        'Quote_Date_Mobile': Quote_Date_Mobile,
+                                        'Created_On': user.Modified_On,
+                                        'SRN': user['Request_Unique_Id'] + '_' + user['User_Data_Id'],
+                                        'SRN_Core': user['Request_Unique_Id'],
+                                        'Last_Status': user['Last_Status'],
+                                        'Application_Date': '',
+                                        'Insurer': '',
+                                        'Progress': Progress,
+                                        'Premium': 0,
+                                        'User_Data_Id': user['User_Data_Id'],
+                                        'ERP_CS': user['ERP_CS'],
+                                        'Color_code': Color_code
+                                    };
+                                    if (Type === 'SEARCH' || Type === 'ALL') {
+                                        var args = {
+                                            data: {
+                                                "search_reference_number": user['Request_Unique_Id'],
+                                                "udid": user['User_Data_Id'],
+                                                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                                                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+                                            },
+                                            headers: {
+                                                "Content-Type": "application/json"
+                                            }
+                                        };
+                                        var url_api = config.environment.weburl + '/quote/premium_summary';
+                                        //execute_post(url_api, args);
+                                        var Client = require('node-rest-client').Client;
+                                        var client = new Client();
+                                        client.post(url_api, args, function (data, response) {
+
+                                            objUD['Vehicle_Name'] = data['Master']['Vehicle']['Description'];
+                                            objUD['RTO'] = data['Master']['Rto']['RTO_City'];
+                                        });
+                                        sleep(500);
+                                    }
+                                    if (Type !== 'SEARCH') {
+                                        var Application_Date = '';
+                                        objUD['Insurer'] = user['Insurer_Id'];
+                                        for (var k in user.Status_History) {
+                                            if (user.Status_History[k]['Status'] === 'PROPOSAL_LINK_SENT') {
+                                                var dt = (new Date(user.Status_History[k]['StatusOn'])).toLocaleString();
+                                                dt = dt.split(',');
+                                                Application_Date = dt[0];
+                                                Application_Date = moment(Quote_Date).format("DD/MM/YYYY");
+                                                break;
+                                            }
+                                        }
+                                        objUD['Application_Date'] = Application_Date;
+                                    }
+                                    if (Type === 'APPLICATION' && user.Product_Id === 5) {
+                                        for (var k in user.Premium_List['Response']) {
+                                            objUD['Insurer'] = user.Premium_List['Response'][k]['Insurer'];
+
+                                        }
+                                    }
+                                    if (Type === 'SELL')
+                                    {
+                                        objUD['policy_url'] = user['Transaction_Data']['policy_url'];
+                                    }
+                                    arr_User_Data.push(objUD);
+                                } catch (e) {
+                                    console.error('UDBG', e);
+                                }
+                            }
+                            res.json(arr_User_Data);
+                        } else {
+                            console.error('Exception', 'searchcrnDBError', err);
+                            res.send(err);
+
+                        }
+                    } catch (e1) {
+                        console.error('Exception', 'searchcrn1', e1);
+                    }
+                });
+            } else {
+                res.json({'msg': 'ss_id is empty'});
+            }
+        } catch (e) {
+            console.error('Exception', 'searchcrn', e);
+        }
+    });
+
+    app.get('/user_datas/search1/:Product_Id/:Ss_Id/:Fba_Id/:Searched_By/:Searched_Value/:Mobile', function (req, res) {
+        try {
+            var Product_Id = req.params.Product_Id - 0;
+            var Search_Key = req.params.Searched_By;
+            var Search_Val = req.params.Searched_Value;
+            var Fba_Id = req.params.Fba_Id - 0;
+            var Ss_Id = req.params.Ss_Id - 0;
+            var Mobile = (req.params.hasOwnProperty('Mobile')) ? req.params.Mobile : 0;
+            var Type = req.params.Type;
+
+
+            if (Search_Key || Search_Val) {
+                var Condition = {};
+                //agent condition
+                if (Search_Key === 'Name') {
+                    if (Search_Val !== '' || Search_Val !== null)
+                    {
+                        var customer_name = Search_Val.split(' ');
+                        var first_name = customer_name[0];
+                        var last_name = customer_name[customer_name.length - 1];
+                        var middle_name = '';
+                        var serch_str = '{"Premium_Request.first_name": first_name}';
+                        last_name = new RegExp(last_name, 'i');
+                        if (customer_name.length > 2) {
+                            middle_name = customer_name[1];
+                            middle_name = new RegExp(middle_name, 'i');
+                        }
+                        first_name = new RegExp(first_name, 'i');
+                        if (customer_name.length > 2) {
+                            Condition = {
+                                $and: [
+                                    {
+                                        $or: [
+                                            {"Premium_Request.first_name": first_name},
+                                            {"Premium_Request.middle_name": middle_name},
+                                            {"Premium_Request.last_name": last_name}
+                                        ]
+                                    },
+                                    {
+                                        // "Premium_Request.ss_id": Ss_Id,
+                                        "Product_Id": Product_Id
+                                    }
+                                ]
+                            };
+                        } else
+                        {
+                            Condition = {
+                                $and: [
+                                    {
+                                        $or: [
+                                            {"Premium_Request.first_name": first_name},
+                                            {"Premium_Request.last_name": last_name}
+                                        ]
+                                    },
+                                    {
+                                        // "Premium_Request.ss_id": Ss_Id,
+                                        "Product_Id": Product_Id
+                                    }
+                                ]
+                            };
+                        }
+                    }
+                } else if (Search_Key === 'CRN') {
+                    Condition['PB_CRN'] = Search_Val - 0;
+                    Condition['Product_Id'] = Product_Id;
+                } else if (Search_Key === 'Registration_no') {
+                    Condition['Premium_Request.registration_no'] = Search_Val;
+                }
+
+                if (Ss_Id) {
+                    if (Ss_Id === 5417) {
+                        Condition['Premium_Request.ss_id'] = 0;
+                    } else {
+                        if (Ss_Id === 5) {
+                            Condition['Premium_Request.fba_id'] = Fba_Id;
+                        } else if (Ss_Id !== 5) {
+                            Condition['Premium_Request.ss_id'] = Ss_Id;
+                        }
+                    }
+                }
+
+                if (Mobile > 0) {
+                    Condition['Premium_Request.mobile'] = Mobile;
+                }
+                //console.log(Condition);
+                var ObjSummaryStatus = {
+                    'SEARCH': ['SEARCH', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'LINK_SENT': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY', 'BUY_NOW_AGENT'],
+                    'PAYMENT_PENDING': ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION'],
+                    'POLICY_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS'],
+                    'FAIL': ['TRANS_FAIL'],
+                    'SELL': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+                };
+                var ObjSummaryCondition = {
+                    'QUOTE': ['SEARCH', 'ADDON_PROPOSAL_CUSTOMER_APPLY', 'ADDON_QUOTE_APPLY', 'ADDON_PROPOSAL_AGENT_APPLY'],
+                    'APPLICATION': ['PROPOSAL_LINK_SENT', 'BUY_NOW_CUSTOMER', 'BUY_NOW_AGENT', 'PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'TRANS_FAIL'],
+                    'COMPLETE': ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY', 'VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS']
+                };
+
+//                if (Type == 'SEARCH') {
+//                    Condition['Last_Status'] = {$in: ObjSummaryCondition['QUOTE']};
+//                }
+//                if (Type == 'APPLICATION') {
+//                    Condition['Last_Status'] = {$in: ObjSummaryCondition['APPLICATION']};
+//                }
+//                if (Type == 'SELL') {
+//                    Condition['Last_Status'] = {$in: ObjSummaryCondition['COMPLETE']};
+//                }
+                //console.error('UDBG', Ss_Id, Page, Skip, Limit);//"Premium_Request.first_name":Name
+                console.log(Condition);
+                User_Data.find(Condition).exec(function (err, dbUsers) {
+                    //console.error('UDBG', err, dbUsers);
+                    try {
+                        if (!err) {
+                            var arr_User_Data = [];
+                            for (var k in dbUsers) {
+                                try {
+
+                                    var user = dbUsers[k]._doc;
+                                    var dt = (new Date(user.Modified_On)).toLocaleString();
+                                    var Quote_Date = dt;
+                                    var Sum_Insured = 0;
+                                    var Quote_Date_Mobile = dt[0];
+                                    Quote_Date_Mobile = moment(Quote_Date).format("DD/MM/YYYY");
+                                    var customer = 'NO NAME';
+                                    var mobile = user['Premium_Request']['mobile'];
+
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('first_name')) {
+                                        customer = user['Proposal_Request']['first_name'] + ' ' + user['Proposal_Request']['last_name'];
+                                    } else {
+                                        if (user.Product_Id === 2) {
+                                            customer = user['Premium_Request']['contact_name'];
+                                        } else {
+                                            customer = user['Premium_Request']['first_name'] + ' ' + user['Premium_Request']['last_name'];
+                                        }
+                                    }
+
+                                    if (hasNumber(customer)) {
+                                        customer = 'NO NAME';
+                                    }
+
+
+
+                                    if (user.hasOwnProperty('Proposal_Request') && user['Proposal_Request'] && user['Proposal_Request'].hasOwnProperty('mobile')) {
+                                        mobile = user['Proposal_Request']['mobile'];
+                                    }
+
+                                    if (mobile) {
+                                        mobile = mobile - 0;
+                                    }
+
+
+
+                                    if (Ss_Id === 5417) {
+                                        customer = customer + '(MO#' + mobile + ')';
+                                    }
+
+                                    var contact_name = customer.toString().toTitleCase();
+                                    var Sum_Insured = 0;
+                                    if (user.Product_Id === 1 || user.Product_Id === 10) {
+                                        Sum_Insured = user['Premium_Request']['vehicle_expected_idv'];
+                                    }
+                                    if (user.Product_Id === 2) {
+                                        Sum_Insured = user['Premium_Request']['health_insurance_si'];
+                                    }
+                                    status_grp = user['Last_Status'];
+                                    var Status = "";
+                                    if (ObjSummaryCondition['QUOTE'].indexOf(status_grp) > -1) {
+                                        Status = "QUOTE";
+                                    }
+                                    if (ObjSummaryCondition['APPLICATION'].indexOf(status_grp) > -1) {
+                                        Status = "APPLICATION";
+                                    }
+                                    if (ObjSummaryCondition['COMPLETE'].indexOf(status_grp) > -1) {
+                                        Status = "COMPLETE";
+                                    }
+
+
+                                    var Progress = 0;
+                                    if (ObjSummaryStatus['LINK_SENT'].indexOf(status_grp) > -1) {
+                                        Progress = 50;
+                                    }
+                                    if (ObjSummaryStatus['FAIL'].indexOf(status_grp) > -1) {
+                                        Progress = 70;
+                                    }
+                                    if (ObjSummaryStatus['PAYMENT_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 80;
+                                    }
+                                    if (ObjSummaryStatus['POLICY_PENDING'].indexOf(status_grp) > -1) {
+                                        Progress = 90;
+                                    }
+                                    if (ObjSummaryStatus['SELL'].indexOf(status_grp) > -1) {
+                                        Progress = 100;
+                                    }
+                                    var objUD = {
+                                        'Customer_Name': contact_name,
+                                        'Customer_Mobile': user['Premium_Request']['mobile'],
+                                        'Sum_Insured': Sum_Insured,
+                                        'CRN': user['PB_CRN'],
+                                        'Quote_Date': Quote_Date,
+                                        'Quote_Date_Mobile': Quote_Date_Mobile,
+                                        'Created_On': user.Modified_On,
+                                        'SRN': user['Request_Unique_Id'] + '_' + user['User_Data_Id'],
+                                        'SRN_Core': user['Request_Unique_Id'],
+                                        'Last_Status': user['Last_Status'],
+                                        'Application_Date': '',
+                                        'Insurer': '',
+                                        'Progress': Progress,
+                                        'Premium': 0,
+                                        'User_Data_Id': user['User_Data_Id'],
+                                        'Status': Status
+                                    };
+                                    if (Type !== 'SEARCH') {
+                                        var Application_Date = '';
+                                        objUD['Insurer'] = user['Insurer_Id'];
+                                        for (var k in user.Status_History) {
+                                            if (user.Status_History[k]['Status'] === 'PROPOSAL_LINK_SENT') {
+                                                var dt = (new Date(user.Status_History[k]['StatusOn'])).toLocaleString();
+                                                dt = dt.split(',');
+                                                Application_Date = dt[0];
+                                                Application_Date = moment(Quote_Date).format("DD/MM/YYYY");
+                                                break;
+                                            }
+                                        }
+                                        objUD['Application_Date'] = Application_Date;
+                                    }
+                                    if (Type === 'SELL')
+                                    {
+                                        objUD['policy_url'] = user['Transaction_Data']['policy_url'];
+                                    }
+                                    arr_User_Data.push(objUD);
+                                } catch (e) {
+                                    console.error('UDBG', e);
+                                }
+                            }
+                            res.json(arr_User_Data);
+                        } else {
+                            console.error('Exception', 'searchcrnDBError', err);
+                            res.send(err);
+
+                        }
+                    } catch (e1) {
+                        console.error('Exception', 'searchcrn1', e1);
+                    }
+                });
+            } else {
+                res.json({'msg': 'ss_id is empty'});
+            }
+        } catch (e) {
+            console.error('Exception', 'searchcrn', e);
+        }
+    });
+
+
+    app.get('/user_datas/getAgentDetails/:abc', function (req, res) {
+        try {
+            var Condition = {};
+            var ObjSummaryStatus = {
+                'PAYMENT_PENDING': ['VERIFICATION_EXCEPTION', 'TRANS_MANUAL_PAYPASS', 'TRANS_PAYPASS', 'TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']
+            };
+            Condition['Last_Status'] = {$nin: ObjSummaryStatus['PAYMENT_PENDING']};
+            Condition['Premium_Request.vehicle_insurance_type'] = 'renew';
+            Condition['Premium_Request.ss_id'] = {"$gt": 0};
+            var dateFrom = "2019-06-16";
+            Condition['Premium_Request.policy_expiry_date'] = {"$gt": dateFrom};
+            // db.getCollection('user_datas').aggregate( [ { $match: { 
+            //Last_Status:{$in:['PROPOSAL_SUBMIT','PROPOSAL_EXCEPTION','PROPOSAL_LINK_SENT','TRANS_FAIL']},
+            //'Premium_Request.policy_expiry_date':{"$gt":'2018-06-16'},'Premium_Request.vehicle_insurance_type' : 'renew'}},
+            //{ $group :{ _id : {ss_id: "$Premium_Request.ss_id",Product_name :"$Product_Id",
+            //ss_id:"$Premium_Request.ss_id"},
+            //total : { $sum : 1 }} } ] )
+            var agg = [
+                {$match: {
+                        Last_Status: {$in: ['PROPOSAL_SUBMIT', 'PROPOSAL_EXCEPTION', 'PROPOSAL_LINK_SENT', 'TRANS_FAIL']},
+                        'Premium_Request.policy_expiry_date': {"$gt": '2018-06-16'}, 'Premium_Request.vehicle_insurance_type': 'renew', 'Premium_Request.ss_id': {"$gt": 0}}},
+                {$group: {_id: {ss_id: "$Premium_Request.ss_id", Product_name: "$Product_Id", Email_Id: "$Premium_Request.posp_email_id", Mobile_No: "$Premium_Request.posp_mobile_no"},
+                        total: {$sum: 1}}}
+            ];
+
+            User_Data.aggregate(agg, function (err, rtos) {
+                if (err)
+                    res.send(err);
+                res.json(rtos);
+            });
+
+
+        } catch (e) {
+            console.error('Exception getAgentDetails', e);
+        }
+    });
+
+    app.get('/user_datas/getRMDetails/:ss_id', function (req, res) {
+        try {
+            var Condition = {};
+        } catch (e) {
+            console.error('Exception getRMDetails', e);
+        }
+
+    });
+
+    app.get('/user_datas/RM_report/:uid/:user', function (req, res) {
+        console.error('RM_report');
+        var UID = req.params.uid - 0;
+        var SwitchUser_type = req.params.user;
+        var cond_ud = {'Premium_Request.posp_reporting_agent_uid': UID};
+        var user_data = require('../models/user_data');
+        var obj_schema = {
+            'source': '',
+            'ss_id': 'ss_id',
+            'fba_id': 'posp_fba_id',
+            'name': '',
+            'email': 'posp_email_id',
+            'mobile': 'posp_mobile_no',
+            'car_count': '',
+            'tw_count': '',
+            'health_count': ''
+        };
+
+        var objSwitchUserType = {
+            'DC-POSP': ['DC-POSP'],
+            'DC-NON-POSP': ['DC-NON-POSP'],
+            'SM-POSP': ['SM-POSP'],
+            'SM-NON-POSP': ['SM-NON-POSP'],
+            'SM-FOS': ['SM-FOS'],
+            'RBS': ['RBS'],
+            'PB-SS': ['PB-SS'],
+            'GS-All': ['GS-FOS', 'GS-POSP', 'GS-NON-POSP', 'GS-FBA'],
+            'DC-All': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+            'SM-All': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA']
+        };
+        var obj_result = {};
+        user_data.find(cond_ud).exec(function (err, dbUsers) {
+            if (!err) {
+                console.error('RM_report', dbUsers.length);
+                for (var k in dbUsers) {
+                    try {
+                        var user = dbUsers[k]._doc;
+                        var user_type = get_search_source(user);
+
+                        if (objSwitchUserType[SwitchUser_type].indexOf(user_type) > -1)
+                        {
+                            if (user['Premium_Request'].hasOwnProperty('ss_id') && (user['Premium_Request']['ss_id'] - 0) > 0) {
+
+                                var email = user['Premium_Request']['posp_email_id'];
+                                var ss_id = (user['Premium_Request']['ss_id'] - 0);
+                                var fba_id = (user['Premium_Request']['posp_fba_id'] - 0);
+                                var agent_id = ss_id;
+                                if (ss_id === 5) {
+                                    agent_id = fba_id;
+                                }
+                                if (obj_result.hasOwnProperty(agent_id) === false) {
+                                    obj_result[agent_id] = {};
+                                    for (var k in obj_schema) {
+                                        obj_result[agent_id][k] = '';
+                                        if (obj_schema[k] !== '') {
+                                            obj_result[agent_id][k] = user['Premium_Request'][obj_schema[k]];
+                                        } else {
+                                            obj_result[agent_id][k] = 0;
+                                        }
+                                    }
+                                    obj_result[agent_id]['name'] = user['Premium_Request']['posp_first_name'] + ' ' + user['Premium_Request']['posp_last_name'];
+                                    obj_result[agent_id]['source'] = get_search_source(user);
+
+                                }
+                                if (user['Product_Id'] === 1) {
+                                    obj_result[agent_id]['car_count']++;
+                                }
+                                if (user['Product_Id'] === 10) {
+                                    obj_result[agent_id]['tw_count']++;
+                                }
+                                if (user['Product_Id'] === 2) {
+                                    obj_result[agent_id]['health_count']++;
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.error('RM_report', 'loop_err', e);
+                    }
+                }
+                //res.json(obj_result);
+                var html_report = arrayobjectToHtml(obj_result);
+                console.log(html_report);
+                res.send(html_report);
+
+            }
+        });
+
+    });
+
+    app.get('/user_datas/sms_campaign', function (req, res) {
+        var today = moment().utcOffset("+05:30").startOf('Day');
+
+        var daybefore = (req.query.hasOwnProperty('daybefore')) ? req.query['daybefore'] - 0 : 5;
+
+        var startday = 0 - daybefore;
+        var endday = (0 - daybefore) + 1;
+
+        var from_date = moment(today).add(startday, 'days').format("YYYY-MM-D");
+        var to_date = moment(today).add(endday, 'days').format("YYYY-MM-D");
+
+
+        User_Data.find({
+            "Premium_Request.utm_campaign": {$in: ['SMS_CAM_BIke', 'sms_cam_ci']},
+            "Modified_On": {"$gte": from_date, "$lte": to_date}
+        }).select(['User_Data_Id', 'Request_Unique_Id', 'PB_CRN', 'Last_Status', 'ERP_CS', 'ERP_CS_DOC', "Proposal_Request_Core.registration_no", "Premium_Request.mobile"]).exec(function (err, dbUsers) {
+            if (err) {
+                res.send(err);
+            }
+            try {
+                if (!err) {
+                    var current = moment().utcOffset("+05:30").startOf('Day');
+                    var current_date = moment(current).format("YYYYMMD");
+                    for (let k in dbUsers) {
+                        let user = dbUsers[k]._doc;
+                        let url_send = 'https://chatbot.hellotars.com/conv/B1g5HF?crn=' + user["PB_CRN"];
+                        var Client = require('node-rest-client').Client;
+                        var client = new Client();
+                        client.get('https://api-ssl.bitly.com/v3/shorten?access_token=' + config.environment.bitly_access_token + '&longUrl=' + url_send, function (data, response) {
+                            console.log(data);
+                            if (data && data.status_code === 200) {
+                                let request_short_url = data.data.url;
+                                var SmsLog = require('../models/sms_log');
+                                var objSmsLog = new SmsLog();
+                                let customer_msg = 'Hi, Thanks for visiting PolicyBoss.com. As a policy we don’t call and disturb you. In case you need any assistance in helping you decide on the right insurance, you can schedule a call back by clicking ' + request_short_url;
+                                if (user.hasOwnProperty("Premium_Request") && user["Premium_Request"]["mobile"] !== "") {
+                                    objSmsLog.send_sms(user["Premium_Request"]["mobile"], customer_msg, 'CAMPAIGN_LOG', user["PB_CRN"]);
+                                    let data = "CRN- " + user["PB_CRN"] + ",Mobile- " + user["Premium_Request"]["mobile"] + ",Bitly- " + request_short_url;
+
+                                    let file_path = appRoot + "/tmp/log/sms_campaign_" + current_date + ".log";
+                                    fs.appendFile(file_path, data + "\r\n", function (err) {
+                                        if (err) {
+                                            return console.log(err);
+                                        }
+                                        console.log("The file was saved!");
+                                    });
+
+                                    res.json({"Status": "Success", "Msg": "SMS sent successfully"});
+                                }
+                            }
+                        });
+                    }
+                }
+            } catch (ex) {
+                console.error(ex);
+                res.json({"Status": "Fail", "Msg": ex});
+            }
+
+        });
+    });
+    app.get('/user_datas/rbmark/sms/:udid', function (req, res) {
+        var User_Data = require('../models/user_data');
+        User_Data.findOne({Product_Id: 10, User_Data_Id: parseInt(req.params.udid), Last_Status: {$in: ["TRANS_SUCCESS_WO_POLICY", "TRANS_SUCCESS_WITH_POLICY"]}}, function (err, dbUserData) {
+            if (err) {
+                console.log(err);
+            } else {
+                if (dbUserData) {
+                    var prm_request = dbUserData['_doc']['Premium_Request'];
+                    var prop_request = dbUserData['_doc']['Proposal_Request'];
+                    if (prm_request.channel === "DC" || prm_request.channel === "DIRECT") {
+                        var pincode = parseInt(prop_request.permanent_pincode);
+                        var allow_pincode = allowPincode(pincode);
+                        if (allow_pincode === 'yes') {
+                            var send_url = "https://www.rupeeboss.com/icici?FBAId=" + ((prm_request.channel === "DC") ? prm_request.posp_fba_id : 0) + "&type=" + ((prm_request.channel === "DC") ? 'Finmart' : 'PBDirect') + "&tid=" + dbUserData['_doc']['PB_CRN'];
+                            var customer_name = capitalize(dbUserData['_doc']['Proposal_Request_Core'].first_name + ' ' + dbUserData['_doc']['Proposal_Request_Core'].last_name);
+                            var Client = require('node-rest-client').Client;
+                            var client = new Client();
+                            client.get('https://api-ssl.bitly.com/v3/shorten?access_token=c9c248f950c3dd01467ccb9e49b0ecf5cb054d44&longUrl=' + encodeURIComponent(send_url), function (data, response) {
+                                console.log('Bitly-', data);
+                                if (data && data.status_code === 200) {
+                                    let request_short_url = data.data.url;
+                                    if (prm_request.channel === "DIRECT") {
+                                        let customer_msg = 'Dear ' + customer_name + ',\n Get a Free Credit card now through ICICI Bank. Apply now by clicking on the following link. \n Link - ' + request_short_url;
+                                        var SmsLog = require('../models/sms_log');
+                                        var objSmsLog = new SmsLog();
+                                        var customer_no = dbUserData['_doc']['Proposal_Request_Core']['mobile'];
+                                        if (req.query.hasOwnProperty('dbg') && req.query['dbg'] === 'yes') {
+                                            customer_no = '7666020532';
+                                        }
+                                        objSmsLog.send_sms(customer_no, customer_msg, 'CAMPAIGN_LOG', dbUserData['_doc']["PB_CRN"], 'RB');
+                                        res.json({"Status": "Success", "Msg": "SMS sent successfully"});
+                                    }
+                                    if (prm_request.channel === "DC") {
+                                        let fba_name = capitalize(prm_request.posp_first_name + ' ' + prm_request.posp_last_name);
+                                        let customer_msg = 'Dear ' + fba_name + ',\n Your customer ' + customer_name + ' can get a Free Credit card now through ICICI Bank. Every successful application you can earn Rs 500/-. Send this link to the customer.\n Link - ' + request_short_url;
+                                        var SmsLog = require('../models/sms_log');
+                                        var objSmsLog = new SmsLog();
+                                        if (req.query.hasOwnProperty('dbg') && req.query['dbg'] === 'yes') {
+                                            prm_request.posp_mobile_no = '7666020532';
+                                        }
+                                        objSmsLog.send_sms(prm_request.posp_mobile_no, customer_msg, 'CAMPAIGN_LOG', dbUserData['_doc']["PB_CRN"], 'RB');
+                                        res.json({"Status": "Success", "Msg": "SMS sent successfully"});
+                                    }
+                                } else {
+                                    res.json({"Status": "Fail", "Msg": "BITLY_ISSUE"});
+                                }
+                            });
+                        } else {
+                            res.json({"Status": "Fail", "Msg": "NOT_ALLOWED"});
+                        }
+                    } else {
+                        res.json({"Status": "Fail", "Msg": "NOT_ALLOWED"});
+                    }
+                } else {
+                    res.json({"Status": "Fail", "Msg": "NO_DATA"});
+                }
+            }
+        });
+    });
+    app.get('/user_datas/sync_policy_aws/:udid', function (req, res) {
+        try {
+            if (config.environment.name.toString() !== 'Production') {
+                return res.send('NOT_ALLOWED_ON_NON_PRODUCTION');
+            }
+            let udid = parseInt(req.params.udid);
+
+            if (req.query['dbg'] === 'yes') {
+                return res.json(req.query);
+            }
+            if (udid === 0) {
+                return res.send('ZERO_UDID');
+            }
+            let cond_ud = {
+                'User_Data_Id': udid,
+                "Last_Status": 'TRANS_SUCCESS_WITH_POLICY'
+            };
+            User_Data.findOne(cond_ud, function (err, dbUser) {
+                let err_msg = '';
+                if (!err && dbUser) {
+                    try {
+                        let user = dbUser._doc;
+                        if (user.Transaction_Data && user.Transaction_Data.policy_url) {
+                            let pdf_file_name = user.Transaction_Data.policy_url;
+                            pdf_file_name = pdf_file_name.split('/');
+                            pdf_file_name = pdf_file_name[pdf_file_name.length - 1];
+                            let pdf_sys_loc = appRoot + "/tmp/pdf/" + pdf_file_name;
+                            if (fs.existsSync(pdf_sys_loc) && pdf_sys_loc.indexOf('.pdf') > -1) {
+                                let stats = fs.statSync(pdf_sys_loc);
+                                let fileSizeInBytes = stats.size;
+                                let fileSizeInKb = (fileSizeInBytes / 1024).toFixed(2);
+                                if (fileSizeInKb > 10) {
+                                    let obj_summary = {
+                                        'push_on': (new Date()).toLocaleString(),
+                                        'transact_on': (new Date(user.Modified_On)).toLocaleString(),
+                                        'udid': udid,
+                                        'status': null,
+                                        'file_s3': pdf_file_name,
+                                        'res': null,
+                                        'err': null
+                                    };
+                                    fs.readFile(pdf_sys_loc, (err, filedata) => {
+                                        if (true || req.query['op'] === 'execute') {
+                                            let AWS = require('aws-sdk');
+                                            let s3 = new AWS.S3({
+                                                accessKeyId: config.aws.access_key,
+                                                secretAccessKey: config.aws.secret_key
+                                            });
+                                            let params = {
+                                                Bucket: 'horizon-policy-01012020/pdf', // pass your bucket name
+                                                Key: pdf_file_name, // file will be saved as testBucket/contacts.csv
+                                                Body: filedata
+                                            };
+                                            s3.upload(params, function (s3Err, s3data_response) {
+                                                if (s3Err) {
+                                                    obj_summary.status = 'ERR';
+                                                    obj_summary.err = s3Err;
+                                                } else {
+                                                    obj_summary.status = 'INFO';
+                                                    obj_summary.res = s3data_response;
+                                                }
+                                                var today_str = moment().utcOffset("+05:30").format("YYYYMMD");
+                                                fs.appendFile(appRoot + "/tmp/log/aws_push_" + today_str + ".log", JSON.stringify(obj_summary) + "\r\n", function (err) {
+                                                    if (err) {
+                                                        return console.log(err);
+                                                    }
+                                                    console.log("The file was saved!");
+                                                });
+                                                res.json(obj_summary);
+                                            });
+                                        } else {
+                                            res.json(obj_summary);
+                                        }
+                                    });
+                                } else {
+                                    err_msg = 'policy_less_than_10KB';
+                                }
+                            } else {
+                                err_msg = 'invalid_policy';
+                            }
+                        } else {
+                            err_msg = 'invalid_td_data';
+                        }
+                    } catch (e) {
+                        err_msg = '<pre>' + e.stack + '</pre>';
+                    }
+                } else {
+                    err_msg = 'invalid_ud_data';
+                }
+
+                if (err_msg !== '') {
+                    let obj_summary = {
+                        'push_on': (new Date()).toLocaleString(),
+                        'transact_on': (new Date(user.Modified_On)).toLocaleString(),
+                        'udid': udid,
+                        'status': 'ERR',
+                        'file_s3': '',
+                        'res': null,
+                        'err': err_msg
+                    };
+                    var today_str = moment().utcOffset("+05:30").format("YYYYMMD");
+                    fs.appendFile(appRoot + "/tmp/log/aws_push_" + today_str + ".log", JSON.stringify(obj_summary) + "\r\n", function (err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                        console.log("The file was saved!");
+                    });
+                    res.send(err_msg);
+                }
+            });
+        } catch (e) {
+            res.send('<pre>' + e.stack + '</pre>');
+        }
+    });
+    function get_search_source(user) {
+        var client_key_val = '';
+        try {
+            client_key_val = 'PB-Direct';
+            var agent_id = 0;
+            var fba_id = 0;
+            var posp_sources = 0;
+
+            if (user['Premium_Request'].hasOwnProperty('ss_id') && (user['Premium_Request']['ss_id'] - 0) > 0) {
+                posp_sources = user['Premium_Request']['posp_sources'] - 0;
+                var ss_id = (user['Premium_Request']['ss_id'] - 0);
+                fba_id = (user['Premium_Request']['posp_fba_id'] - 0);
+                if (posp_sources === 1) {
+                    if (user['Premium_Request'].hasOwnProperty('posp_erp_id') && (user['Premium_Request']['posp_erp_id'] - 0) > 0) { //posp_erp_id
+                        client_key_val = 'DC-POSP';
+                        if ([8279, 6328, 9627, 6425].indexOf(ss_id) > -1) {
+                            client_key_val = 'FINPEACE';
+                        }
+                    } else if (ss_id !== 5) {
+                        client_key_val = 'DC-NON-POSP';
+                    } else if (ss_id === 5) {
+                        client_key_val = 'DC-FBA';
+                    }
+                } else if (posp_sources === 2) {
+                    if (user['Premium_Request'].hasOwnProperty('posp_erp_id') && (user['Premium_Request']['posp_erp_id'] - 0) > 0) { //posp_erp_id
+                        client_key_val = 'SM-POSP';
+                    } else if (ss_id === 5) {
+                        client_key_val = 'SM-FBA';
+                    } else {
+                        client_key_val = 'SM-NON-POSP';
+                    }
+                } else if (posp_sources === 8) {
+                    if (user['Premium_Request'].hasOwnProperty('posp_erp_id') && (user['Premium_Request']['posp_erp_id'] - 0) > 0) { //posp_erp_id
+                        client_key_val = 'GS-POSP';
+                    } else if (ss_id === 5) {
+                        client_key_val = 'GS-FBA';
+                    } else {
+                        client_key_val = 'GS-NON-POSP';
+                    }
+                } else if (posp_sources === 11) {
+                    if (user['Premium_Request'].hasOwnProperty('posp_erp_id') && (user['Premium_Request']['posp_erp_id'] - 0) > 0) { //posp_erp_id
+                        client_key_val = 'EM-POSP';
+                    } else if (ss_id === 5) {
+                        client_key_val = 'EM-FBA';
+                    } else {
+                        client_key_val = 'EM-NON-POSP';
+                    }
+                } else {
+                    if (user['Premium_Request']['posp_category'] === 'FOS') {
+                        client_key_val = 'SM-FOS';
+                    } else if (user['Premium_Request']['posp_category'] === 'GS-FOS') {
+                        client_key_val = 'GS-FOS';
+                    } else if (user['Premium_Request']['posp_category'] === 'DC-FOS') {
+                        client_key_val = 'DC-FOS';
+                    } else if (user['Premium_Request']['posp_category'] === 'EM-FOS') {
+                        client_key_val = 'EM-FOS';
+                    } else if (user['Premium_Request']['posp_category'] === 'RBS') {
+                        client_key_val = 'RBS';
+                    } else if (user['Premium_Request']['posp_category'] === 'MISP') {
+                        client_key_val = 'MISP';
+                    } else {
+                        client_key_val = 'PB-SS';
+                    }
+                }
+            } else if (user['Premium_Request']['user_source'] === 'tars') {
+                client_key_val = 'BOT';
+            }
+        } catch (e) {
+            console.error('');
+        }
+        return client_key_val;
+    }
+    function arrayobjectToHtml(objSummary) {
+        var msg = '<!DOCTYPE html><html><head><title>Report</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>';
+
+        msg += '<div class="report" ><span  style="font-family:\'Google Sans\' ,tahoma;font-size:14px;">Report</span><table style="-moz-box-shadow: 1px 1px 3px 2px #d3d3d3;-webkit-box-shadow: 1px 1px 3px 2px #d3d3d3;  box-shadow:         1px 1px 3px 2px #d3d3d3;" border="0" cellpadding="3" cellspacing="0" width="95%"  >';
+        var row_inc = 0;
+        for (var k in objSummary) {
+            if (row_inc === 0) {
+                msg += '<tr>';
+                for (var k_head in objSummary[k]) {
+                    msg += '<th style="font-size:12px;font-family:\'Google Sans\' ,tahoma;background-color: #d7df01; text-align:center " >' + k_head + '</th>';
+                }
+                msg += '</tr>';
+            }
+            msg += '<tr>';
+            for (var k_row in objSummary[k]) {
+                msg += '<td style="font-size:12px;font-family:\'Google Sans\' ,tahoma;" align="center">' + objSummary[k][k_row] + '</td>';
+
+            }
+            msg += '</tr>';
+            row_inc++;
+        }
+        msg += '</table></div>';
+        return msg;
+    }
+    function sortObject(preObj) {
+        var newO = {};
+        Object.keys(preObj).sort(function (a, b) {
+            return preObj[b] - preObj[a];
+        }).map(key => newO[key] = preObj[key]);
+        return newO;
+    }
+
+    app.get('/user_datas/pospFirstSale/:ssid', function (req, res) {
+        var ss_id = parseInt(req.params['ssid']);//2964
+        User_Data.findOne({"Premium_Request.ss_id": ss_id, "Premium_Request.is_posp": "yes", "Erp_Qt_Request_Core.___erp_is_posp___": 'POSP', Last_Status: {$in: ['TRANS_SUCCESS_WO_POLICY', 'TRANS_SUCCESS_WITH_POLICY']}}, function (err, user_datas) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (user_datas) {
+                    var dataObj = user_datas['_doc'];
+                    var result = {
+                        'First_Sale_Date': ''
+                    };
+                    var sale_date = dataObj['Modified_On'];
+                    sale_date = sale_date.getFullYear() + "-" + (sale_date.getMonth() + 1) + "-" + sale_date.getDate();
+                    console.log(sale_date);
+                    result['First_Sale_Date'] = sale_date;
+                    //result['Last_Status'] = dataObj['Last_Status'];
+                    //result['Policy_Status'] = dataObj['Last_Status'];
+                    res.send(result['First_Sale_Date']);
+                } else {
+                    res.send('NA');
+                }
+            }
+        });
+    });
+};
+function LoadSession(req, res, next) {
+    try {
+        var objRequestCore = req.body;
+        if (req.method === "GET") {
+            objRequestCore = req.query;
+        }
+        objRequestCore = JSON.parse(JSON.stringify(objRequestCore));
+        if (objRequestCore.hasOwnProperty('session_id') && objRequestCore['session_id'] !== '') {
+            var Session = require('../models/session');
+            Session.findOne({"_id": objRequestCore['session_id']}, function (err, dbSession) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    if (dbSession) {
+                        dbSession = dbSession._doc;
+                        var obj_session = JSON.parse(dbSession['session']);
+                        req.obj_session = obj_session;
+                        return next();
+                    } else {
+                        return res.status(401).json({'Msg': 'Session Expired.Not Authorized'});
+                    }
+                }
+            });
+        } else {
+            return next();
+        }
+    } catch (e) {
+        console.error('Exception', 'GetReportingAssignedAgent', e);
+        return next();
+
+    }
+}
+
+function hasNumber(myString) {
+    return /\d/.test(myString);
+}
+var capitalize = function (str) {
+    var strArr = str.split(' ');
+    var newArr = [];
+    for (var i = 0; i < strArr.length; i++) {
+        newArr.push(strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1).toLowerCase());
+    }
+
+    return newArr.join(' ');
+};
+function allowPincode(lm_pincode) {
+    var pincodeArr = [];
+    try {
+        var content = fs.readFileSync(appRoot + "/resource/request_file/RB_SMS_Campaign/allow_pincodes.json");
+        pincodeArr = JSON.parse(content);
+        var result = pincodeArr.indexOf(lm_pincode);
+        return (result > -1 ? 'yes' : 'no');
+    } catch (err) {
+        console.log(err);
+    }
+}

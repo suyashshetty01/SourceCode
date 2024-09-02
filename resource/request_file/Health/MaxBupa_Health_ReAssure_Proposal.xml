@@ -1,0 +1,288 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://ngcomplexq.ops.newgen.com/schema/Ngcomplex/request">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <req:ComplexReq>
+            <Option>CREATE_SP_NB_TPD</Option>
+            <Username>System</Username>
+            <Password>9kbXBdSqUi7LH2BSXYnhfQ==</Password>
+            <InputFile>
+                <![CDATA[
+                <OnlineSalesDataSets>
+                   <OnlineSalesDataSet>
+                    <!--InsurersDetail_Start-->
+                      <OnlineSalesDataTable>
+                         <Insured_Occupation />
+                         <Insured_OccupationGA />
+                         <RowCount>___member_count___</RowCount>
+                         <CCS_APPLICATION_NUMBER>___customer_id___</CCS_APPLICATION_NUMBER>
+                         <CCS_CONTACT_CODE>Null</CCS_CONTACT_CODE>
+                         <MB_WEB_UW_COMPLETE_DATE />
+                         <CCS_PROPOSER_TITLE>___salutation___</CCS_PROPOSER_TITLE>
+                         <FIRST_NAME>___first_name___</FIRST_NAME>
+                         <MIDDLE_NAME>___middle_name___</MIDDLE_NAME>
+                         <LAST_NAME>___last_name___</LAST_NAME>
+                         <GENDER>___proposer_gender___</GENDER>
+                         <DOB>___birth_date___</DOB>
+                         <NATIONALITY>Indian</NATIONALITY>
+                         <MARITAL_STATUS>___marital___</MARITAL_STATUS>
+                         <EMAIL_ID>___email___</EMAIL_ID>
+                         <PAN_NUMBER>___pan___</PAN_NUMBER>
+                         <MOBILE>___mobile___</MOBILE>
+                         <ALTERNATE_NUMBER />
+                         <AADHAR_NUMBER />
+                         <MOTHER_NAME />
+                         <IS_SI_CCAVENUE />
+                         <SI_REF_NUMBER />
+                         <SI_TYPE></SI_TYPE>
+                         <LANDLINE_NUMBER></LANDLINE_NUMBER>
+                         <EDUCATIONAL_QUALIFICATION></EDUCATIONAL_QUALIFICATION>
+                         <OCCUPATION>___occupation___</OCCUPATION>
+                         <OCCUPATION_OTHERS />
+                         <CCS_CAMPAIGN_CODE>820</CCS_CAMPAIGN_CODE>
+                         <CHANNEL>TPD</CHANNEL>
+                         <CCS_INSURED_COUNT>___member_count___</CCS_INSURED_COUNT>
+                         <PREMIUM_AMOUNT>___final_premium___</PREMIUM_AMOUNT>
+                         <PREMIUM_PAID_BY>___first_name___ ___middle_name___ ___last_name___</PREMIUM_PAID_BY>
+                         <RELATIONSHIP_WITH_PROPOSER>___member_array_relation___</RELATIONSHIP_WITH_PROPOSER>
+                         <MBR_PA_COVER />
+                         <MBR_PA_OCCUPATION />
+                         <CUST_ENHANCED_LOYALTY>NO</CUST_ENHANCED_LOYALTY>
+                         <CUST_ENHANCED_GEO_SCOPE>NO</CUST_ENHANCED_GEO_SCOPE>
+                         <DOUBLE_SI>NO</DOUBLE_SI>
+                         <HC_CONCENT />
+                         <PREMIUM_PAYMENT_MODE>Single</PREMIUM_PAYMENT_MODE>
+                         <CURRENT_PERMANENT_ADDRESS>0</CURRENT_PERMANENT_ADDRESS>
+                         <PERMANENT_ADDRESS>1</PERMANENT_ADDRESS>
+                         <CURRENT_ADDRESS>0</CURRENT_ADDRESS>
+                         <PERMANENT_ADDRESS_LINE1>___permanent_address_1___</PERMANENT_ADDRESS_LINE1>
+                         <PERMANENT_ADDRESS_LINE2>___permanent_address_2___</PERMANENT_ADDRESS_LINE2>
+                         <PERMANENT_ADDRESS_LINE3>___permanent_address_3___</PERMANENT_ADDRESS_LINE3>
+                         <PERMANENT_CITY>___city___</PERMANENT_CITY>
+                         <CCS_PERMANENT_DISTRICT />
+                         <PERMANENT_STATE>___state___</PERMANENT_STATE>
+                         <PERMANENT_PINCODE>___permanent_pincode___</PERMANENT_PINCODE>
+                         <CURRENT_ADDRESS_LINE1>___permanent_address_1___</CURRENT_ADDRESS_LINE1>
+                         <CURRENT_ADDRESS_LINE2>___permanent_address_2___</CURRENT_ADDRESS_LINE2>
+                         <CURRENT_ADDRESS_LINE3>___permanent_address_3___</CURRENT_ADDRESS_LINE3>
+                         <CURRENT_CITY>___city___</CURRENT_CITY>
+                         <CCS_CURRENT_DISTRICT />
+                         <CURRENT_STATE>___state___</CURRENT_STATE>
+                         <CURRENT_PINCODE>___permanent_pincode___</CURRENT_PINCODE>
+                         <COMMUNICATION_ADDRESS_LINE1>___permanent_address_1___</COMMUNICATION_ADDRESS_LINE1>
+                         <COMMUNICATION_ADDRESS_LINE2>___permanent_address_2___</COMMUNICATION_ADDRESS_LINE2>
+                         <COMMUNICATION_ADDRESS_LINE3>___permanent_address_3___</COMMUNICATION_ADDRESS_LINE3>
+                         <COMMUNICATION_CITY>___city___</COMMUNICATION_CITY>
+                         <CCS_COMMUNICATION_DISTRICT />
+                         <COMMUNICATION_STATE>___state___</COMMUNICATION_STATE>
+                         <COMMUNICATION_PINCODE>___permanent_pincode___</COMMUNICATION_PINCODE>
+                         <MB_RURAL_FLAG>Null</MB_RURAL_FLAG>
+                         <MB_GROSS_ANNUAL_INCOME>___annual_income___</MB_GROSS_ANNUAL_INCOME>
+                         <LEAD_ID>Null</LEAD_ID>
+                         <PEP_QUESTION_1>___proposer_pep___</PEP_QUESTION_1>
+                         <PROCESS_MASTER></PROCESS_MASTER>
+                         <LEAD_STAGE />
+                         <LEAD_STATUS />
+                         <TELESALES_ASSIGNED_TO />
+                         <DST_ASSIGNED_TO />
+                         <CCS_FOLLOW_UP_DATE />
+                         <CCS_LOGGED />
+                         <CCS_LOGGED_DATE />
+                         <CCS_FOLLOW_UP_TIME />
+                         <CCS_TEAM />
+                         <CCS_SELF_EMP />
+                         <MEDICAL_TEST_NEEDED />
+                         <MEDICAL_SCHEDULED_DATE />
+                         <BANK_NAME_PD />
+                         <BANK_BRANCH />
+                         <BANK_CITY_PD />
+                         <ACCOUNT_NUMBER />
+                         <BRANCH />
+                         <BRANCH_IFSC />
+                         <ACCOUNT_TYPE />
+                         <MEDICAL_SCHEDULED_TIME_TXT />
+                         <CCS_POL_RNWD />
+                         <CCS_SMS_NOTIF />
+                         <CCS_SAL_DESG />
+                         <CCS_FAMILY_PH_NAME />
+                         <CCS_PH_ADDRESS_LINE_1 />
+                         <CCS_PH_ADDRESS_LINE_2 />
+                         <CCS_PH_ADDRESS_LINE_3 />
+                         <CCS_PH_CITY />
+                         <CCS_PH_STATE />
+                         <CCS_PH_PINCODE />
+                         <CCS_EXS_INSURED_DT />
+                         <F1 />
+                         <BANK_BRANCH_NAME>Online Payment</BANK_BRANCH_NAME>
+                         <F2 />
+                         <CASH>Null</CASH>
+                         <CHEQUE>Null</CHEQUE>
+                         <CHEQUE_NUMBER>___customer_id___</CHEQUE_NUMBER>
+                         <AMOUNT>___final_premium___</AMOUNT>
+                         <CCS_PAYMENT_DATE>___policy_received_date___</CCS_PAYMENT_DATE>
+                         <CCS_CASH_CHEQUE />
+                         <NOMINEE_NAME>___nominee_name___</NOMINEE_NAME>
+                         <NOMINEE_DOB>___nominee_birth_date___</NOMINEE_DOB>
+                         <NOMINEE_APPOINTEE_NAME />
+                         <NOMINEE_RELATIONSHIP>___nominee_relation___</NOMINEE_RELATIONSHIP>
+                         <NOMINEE_ADDRESS>___nominee_address___</NOMINEE_ADDRESS>
+                         <NOMINEE_CONTACT_NUMBER></NOMINEE_CONTACT_NUMBER>
+                         <CCS_PLAN_ID>___planCode___</CCS_PLAN_ID>
+                         <PAYMENT_RECEIVED_FLAG>1</PAYMENT_RECEIVED_FLAG>
+                         <_CCS_APP_FLAG>Null</_CCS_APP_FLAG>
+                         <CCS_APP_FLAG_NUMERIC>Null</CCS_APP_FLAG_NUMERIC>
+                         <DISCOUNT_FOR></DISCOUNT_FOR>
+                         <PA_Cover>0</PA_Cover>
+                         <PA_OCCUPATION />
+                         <CI_COVER>0</CI_COVER>
+                         <IS_EXISTING_POLICY>NO</IS_EXISTING_POLICY>
+                         <EXISTING_POLICY1 />
+                         <EXISTING_POLICY2 />
+                         <ENHANCED_NO_CLAIM_BONUS>NO</ENHANCED_NO_CLAIM_BONUS>
+                         <ENHANCED_REFILL_BENEFIT>NO</ENHANCED_REFILL_BENEFIT>
+                         <WEB_INSURED_ID>___member_array_id___</WEB_INSURED_ID>
+                         <INSURED_TITLE>___member_array_salutation___</INSURED_TITLE>
+                         <INSURED_FIRST_NAME>___member_array_first_name___</INSURED_FIRST_NAME>
+                         <INSURED_MIDDLE_NAME>___member_array_middle_name___</INSURED_MIDDLE_NAME>
+                         <INSURED_LAST_NAME>___member_array_last_name___</INSURED_LAST_NAME>
+                         <INSURED_GENDER>___member_array_gender_3___</INSURED_GENDER>
+                         <INSURED_HEIGHT>___member_array_height___</INSURED_HEIGHT>
+                         <INSURED_WEIGHT>___member_array_weight___</INSURED_WEIGHT>
+                         <INSURED_DATE_OF_BIRTH>___member_array_birth_date___</INSURED_DATE_OF_BIRTH>
+                         <INSURED_WAISTLINE></INSURED_WAISTLINE>
+                         <INSURED_OCCUPATION />
+                         <INSURED_OCCUPATION2 />
+                         <INSURED_RELATIONSHIP_PROPOSER>___member_array_relation___</INSURED_RELATIONSHIP_PROPOSER>
+                         <INSURED_HEIGHT_INCH></INSURED_HEIGHT_INCH>
+                         <INSURED_HEIGHT_FEET></INSURED_HEIGHT_FEET>
+                         <INSURED_MOBILE_NO></INSURED_MOBILE_NO>
+                         <EDUCATIONAL_QUALIFICATION_x005F_x0020__x005F_x0028_Insured_x005F_x0029_>None</EDUCATIONAL_QUALIFICATION_x005F_x0020__x005F_x0028_Insured_x005F_x0029_>
+                         <MB_PEP_QUESTION_1>___member_array_pep___</MB_PEP_QUESTION_1>
+                         <MB_PAST_PROPOSALS>___member_array_question_37_details___</MB_PAST_PROPOSALS>
+                         <SOCIAL_SECTOR />
+                         <CHECKUP>0</CHECKUP>
+                         <BMI>___member_array_bmi___</BMI>
+                         <INSURED_Q1>___member_array_question_31_details___</INSURED_Q1>
+                         <INSURED_Q2>___member_array_question_32_details___</INSURED_Q2>
+                         <INSURED_Q3>___member_array_question_33_details___</INSURED_Q3>
+                         <INSURED_Q4>___member_array_question_34_details___</INSURED_Q4>
+                         <INSURED_Q5>___member_array_question_35_details___</INSURED_Q5>
+                         <INSURED_Q6>___member_array_question_36_details___</INSURED_Q6>
+                         <INSURED_Q7>___member_array_question_37_details___</INSURED_Q7>
+                         <INSURED_QSECTION_E />
+                        <INSURED_TOBACCO_QUESTION>___member_array_question_39_main___</INSURED_TOBACCO_QUESTION>
+                        <INSURED_TOBACCO_QUANTITY>___member_array_question_39_details___</INSURED_TOBACCO_QUANTITY>
+                        <IS_DAILY_DRINKER>___member_array_question_41_details___</IS_DAILY_DRINKER>
+                        <INSURED_ALCOHOL_QUESTION>___member_array_question_40_main___</INSURED_ALCOHOL_QUESTION>
+                        <INSURED_BEER_QUANTITY>___member_array_question_40_details___</INSURED_BEER_QUANTITY>
+                        <INSURED_CIGARETTES_QUESTION>___member_array_question_38_main___</INSURED_CIGARETTES_QUESTION>
+                        <INSURED_CIGARETTES_QUANTITY>___member_array_question_38_details___</INSURED_CIGARETTES_QUANTITY>
+                    <!--___member_array_aqblock_Start-->
+                        <ADDITIONAL_MEDICAL_DETAILS>
+                            <ADDITIONAL_MEDICAL_DETAIL>
+                               <QUESTION></QUESTION>
+                               <INSURED_DIAGNOSIS_DETAILS>___member_array_additionalQue_1_subQue_1___</INSURED_DIAGNOSIS_DETAILS>
+                               <INSURED_DIAGNOSIS_ONSET>___member_array_additionalQue_1_subQue_2___</INSURED_DIAGNOSIS_ONSET>
+                               <INSURED_DURATION_CONDITION />
+                               <INSURED_MEDICATION>___member_array_additionalQue_1_subQue_3___</INSURED_MEDICATION>
+                               <INSURED_DOSAGE>___member_array_additionalQue_1_subQue_7___</INSURED_DOSAGE>
+                               <INSURED_TREATMENT_OUTCOME>___member_array_additionalQue_1_subQue_4___</INSURED_TREATMENT_OUTCOME>
+                               <INSURED_DOCTOR_DETAILS>___member_array_additionalQue_1_subQue_5___</INSURED_DOCTOR_DETAILS>
+                               <INSURED_DOCUMENT_ATTACHED>0</INSURED_DOCUMENT_ATTACHED>
+                               <HBA1C_LEVEL>___member_array_additionalQue_1_subQue_8___</HBA1C_LEVEL>
+                               <BP_DYSTOLIC>___member_array_additionalQue_1_subQue_10___</BP_DYSTOLIC>
+                               <BP_SYSTOLIC>___member_array_additionalQue_1_subQue_9___</BP_SYSTOLIC>
+                            </ADDITIONAL_MEDICAL_DETAIL>
+                        <!--___member_array_block2_Start-->
+                            <ADDITIONAL_MEDICAL_DETAIL>
+                               <QUESTION></QUESTION>
+                               <INSURED_DIAGNOSIS_DETAILS>___member_array_additionalQue_2_subQue_1___</INSURED_DIAGNOSIS_DETAILS>
+                               <INSURED_DIAGNOSIS_ONSET>___member_array_additionalQue_2_subQue_2___</INSURED_DIAGNOSIS_ONSET>
+                               <INSURED_DURATION_CONDITION />
+                               <INSURED_MEDICATION>___member_array_additionalQue_2_subQue_3___</INSURED_MEDICATION>
+                               <INSURED_DOSAGE>___member_array_additionalQue_2_subQue_7___</INSURED_DOSAGE>
+                               <INSURED_TREATMENT_OUTCOME>___member_array_additionalQue_2_subQue_4___</INSURED_TREATMENT_OUTCOME>
+                               <INSURED_DOCTOR_DETAILS>___member_array_additionalQue_2_subQue_5___</INSURED_DOCTOR_DETAILS>
+                               <INSURED_DOCUMENT_ATTACHED>0</INSURED_DOCUMENT_ATTACHED>
+                               <HBA1C_LEVEL>___member_array_additionalQue_2_subQue_8___</HBA1C_LEVEL>
+                               <BP_DYSTOLIC>___member_array_additionalQue_2_subQue_10___</BP_DYSTOLIC>
+                               <BP_SYSTOLIC>___member_array_additionalQue_2_subQue_9___</BP_SYSTOLIC>
+                            </ADDITIONAL_MEDICAL_DETAIL>
+                        <!--___member_array_block2_End-->
+                         </ADDITIONAL_MEDICAL_DETAILS>
+                     <!--___member_array_aqblock_End-->
+                         <NAME>___member_array_first_name___ ___member_array_middle_name___ ___member_array_last_name___</NAME>
+                         <AGE_PROOF />
+                         <RESIDENCE_PROOF />
+                         <ID_PROOF />
+                         <ID_PROOF_COMMENTS />
+                         <RESIDENCE_PROOF_COMMENTS />
+                         <AGE_PROOF_COMMENTS />
+                         <CLAIM_DETAILS />
+                         <CCS_SUM_INSURED />
+                         <INSURED_FROM />
+                         <INSURED_TO />
+                         <Mb_Sales_Branch>NOC</Mb_Sales_Branch>
+                         <Agent_Assigned_To>BR00330027</Agent_Assigned_To>
+                         <NB_BRANCH>Null</NB_BRANCH>
+                         <NB_BRANCH_CODE>Null</NB_BRANCH_CODE>
+                         <CCS_INSURED_FLAG>NOC</CCS_INSURED_FLAG>
+                         <CCS_INSURED_FLAG_NUMERIC>NOC</CCS_INSURED_FLAG_NUMERIC>
+                         <Policy_Term>___policy_tenure___</Policy_Term>
+                         <Bill_Cycle>___policy_tenure___</Bill_Cycle>
+                         <Tier></Tier>
+                         <HCB>0</HCB>
+                         <mb_ecs_flag>0</mb_ecs_flag>
+                         <mb_cost_sharing>NO</mb_cost_sharing>
+                         <mb_email_id_notification />
+                         <mb_nationality>Indian</mb_nationality>
+                         <STP_Flag>___stp_flag___</STP_Flag>
+                         <Policy_Number />
+                         <Transaction_Number>_</Transaction_Number>
+                         <Cumulative_Amount>___final_premium___</Cumulative_Amount>
+                         <LOYALTY_OPTION>SI</LOYALTY_OPTION>
+                         <HARD_COPY_REQUIRED>___hard_copy___</HARD_COPY_REQUIRED>
+                         <EPOLICY_CONSENT>___hard_copy___</EPOLICY_CONSENT>
+                         <IS_EIA_Account>___has_eia___</IS_EIA_Account>
+                         <EIA_Number>___eia_number___</EIA_Number>
+                         <IR_Name>___ir_name___</IR_Name>
+                         <ELDER_CUST_CORR_CADDR1 />
+                         <ELDER_CUST_CORR_CADDR2 />
+                         <ELDER_CUST_CORR_CADDR3 />
+                         <ELDER_CUST_CORR_CPIN_CODE />
+                         <ELDER_CUST_CORR_CSTATE_CODE />
+                         <ELDER_CUST_CORR_CCITY_CODE />
+                         <ELDER_CUST_CORR_CDIST_CODE />
+                         <ELDER_CUST_CORR_ADDR1 />
+                         <ELDER_CUST_CORR_ADDR2 />
+                         <ELDER_CUST_CORR_ADDR3 />
+                         <ELDER_CUST_CORR_PIN_CODE />
+                         <ELDER_CUST_CORR_STATE_CODE />
+                         <ELDER_CUST_CORR_CITY_CODE />
+                         <ELDER_CUST_CORR_DIST_CODE />
+                         <ELDER_CUST_OTHER_ADDR1 />
+                         <ELDER_CUST_OTHER_ADDR2 />
+                         <ELDER_CUST_OTHER_ADDR3 />
+                         <ELDER_CUST_OTHER_PIN_CODE />
+                         <ELDER_CUST_OTHER_STATE_CODE />
+                         <ELDER_CUST_OTHER_CITY_CODE />
+                         <ELDER_CUST_OTHER_DIST_CODE />
+                         <ELDER_COMM_ADDRESS_IS />
+                         <WHATSAPP_COMMUNICATION_FLAG>___is_whatsapp_allow___</WHATSAPP_COMMUNICATION_FLAG>
+                         <ADULTS_COVERED>___adult_count___</ADULTS_COVERED>
+                         <CHILD_COVERED>___child_count___</CHILD_COVERED>
+                         <SAFEGAURD>NO</SAFEGAURD>
+                         <COMMUNICATION_ACKNOWLEDGEMENT>___is_whatsapp_allow___</COMMUNICATION_ACKNOWLEDGEMENT>
+                         <MD_PRACTIONARY_ID>___member_array_practitnr_id___</MD_PRACTIONARY_ID>
+                         <COUNCIL_NAME>___member_array_council_name___</COUNCIL_NAME>
+                         <WORKPLACE_ADDRESS>___member_array_work_addrs___</WORKPLACE_ADDRESS>
+                         <MEDICALPRACT_DISCOUNT>___member_array_has_practitnr_discnt___</MEDICALPRACT_DISCOUNT>
+                      </OnlineSalesDataTable>
+                   <!--InsurersDetail_End--> 
+                   </OnlineSalesDataSet>
+                </OnlineSalesDataSets>
+               ]]>
+            </InputFile>
+            <nextSeedValue></nextSeedValue>
+        </req:ComplexReq>
+    </soapenv:Body>
+</soapenv:Envelope>

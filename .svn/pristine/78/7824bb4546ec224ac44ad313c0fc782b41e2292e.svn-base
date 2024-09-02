@@ -1,0 +1,18 @@
+{
+    "objVehicleDetails": {
+            "MakeModelVarient": "___dbmaster_insurer_vehicle_make_name___|___dbmaster_insurer_vehicle_model_name___|___dbmaster_insurer_vehicle_variant_name___|___dbmaster_insurer_vehicle_cubiccapacity___CC",
+            "RtoLocation": "___reg_no_1______reg_no_2___",
+            "RegistrationDate": "___vehicle_registration_date___",
+            "ManufacturingYear": "___vehicle_manf_year___",
+            "ManufacturingMonth": "___vehicleManfMonth___"
+    },
+    "objPolicy": {
+            "UserName": "___insurer_integration_service_user___",
+            "ProductCode": "___product_code___",
+            "TraceID": "___trace_id___",
+            "PolicyStartDate": "___policy_start_date___",
+            "SessionID": "",
+            "TPSourceName": "___insurer_integration_service_password___",
+            "BusinessTypeID": "___businessTypeId___"
+    }
+}

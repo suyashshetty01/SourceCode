@@ -1,0 +1,146 @@
+body{margin:0;padding:0;font-family: arial;font-size: 13px; }
+.header{
+    background-color: #009fe3;
+    padding: 12px;
+    color: white;
+}
+.header i{color: white;padding-right: 15px;}
+.title i{color: white;font-size: 18px;margin-top: -3px;}
+#Details{
+	box-shadow: 0px 0px 2px gray;
+	margin: 2px 8px;
+}
+.title{
+    background-color: #01395a;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+}
+.info{
+	display: none;
+	padding: 7px;
+	border: 1px solid #01395a;
+}
+.color{color: gray !important;}
+.info label{font-size: 11px;position: absolute;top: 3px;left: 2px;}
+.row label{top: 15px;}
+.grid{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-gap: 13px;
+    color: gray;
+    grid-row-gap: 2px;
+}
+.grid div{
+    padding: 0px 2px;
+    margin-top: 10px;
+    height: 25px;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+i{color: gray;}
+input[type="text"],input[type="number"],input[type="email"]{
+    width: 85%;
+    border: none;
+    font-size: 11px;
+    float: left;
+    padding: 4px 2px;
+}
+.txt{top: -10px !important;}
+.row .txt{top: 0px !important;}
+input[type="checkbox"]{vertical-align: middle;}
+input:focus,select:focus{outline: none;}
+select{
+	width: 97%;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin: 5px;
+}
+.row{
+	display: grid;
+	margin: 0px auto;
+	grid-gap: 5px;
+	color: gray;
+}
+.row div{
+	padding: 10px 2px 5px;
+	position: relative;
+	border-bottom: 1px solid gray;
+}
+.grid input[type="radio"]{width: auto;display: none;}
+.grid .account{width: 80%;margin: auto;margin-top: -10px;}
+.grid .account .saving,.grid .account .current{
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin: 3px auto;
+    padding: 2px;
+    text-align: center;
+    height: auto;
+    margin-top: -15px;
+}
+.account input[type="radio"]:checked + div.saving{
+  border: 2px solid #0180b7;
+  color: #0180b7;
+}
+.account input[type="radio"]:checked + div.current{
+  border: 2px solid #0180b7;
+  color: #0180b7;
+}
+.grid .gender{width: 80%;margin: auto;margin-top: -10px;}
+.grid .gender .male,.grid .gender .female{
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin: 0px auto;
+    padding: 2px;
+    text-align: center;
+    height: auto;
+    margin-top: -15px;
+}
+.gender input[type="radio"]:checked + div.male{
+  border: 2px solid #0180b7;
+  color: #0180b7;
+}
+.gender input[type="radio"]:checked + div.female{
+  border: 2px solid #0180b7;
+  color: #0180b7;
+}
+.threeColGrid{display: grid;grid-template-columns: 80% 20%;padding: 0px 2px 5px !important;border-bottom: 1px solid #009fe3;}
+input[type="date"]{width: 90%;border: none;position: relative;background-color: white;}
+
+.info p{margin: 2px 16px;font-size: 11px;text-align: center;color: gray;}
+.button{margin: 5px 8px;text-align: center;font-size: 14px;cursor: pointer;background-color: #009fe3;}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;width: 100%;
+}
+ 
+ /*.label{position: relative !important;top: 0px !important;left: 0px !important;}
+/* Checkbox */
+.cbox{display:block;position:relative;top: 5px !important;padding: 5px 5px 5px 25px;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-weight: normal;}
+.cbox input[type="checkbox"]{position:absolute;opacity:0;cursor:pointer;}
+.tick{
+    position:absolute;
+    left: 2px;
+    height:15px;
+    width:15px;
+    background-color:#fff;
+    border: 1px solid #f44336;
+    }
+.cbox:hover input[type="checkbox"] ~ .tick{background-color:#fff;}
+.cbox input[type="checkbox"]:checked ~ .tick{background-color:#fff;}
+.tick:after{content:"";position:absolute;display:none;}
+.cbox input[type="checkbox"]:checked ~ .tick:after{display:block;}
+.cbox .tick:after{top: 4px;left: 4px;width: 7px;height: 7px;background: #f44336;}
+
+.cbox label{border: none;font-size: 13px;top:0px;}
+.material-icons{font-size: 20px !important;}
+#fileInput{display: none;} 
+.place {position: relative !important;}
+

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Health Advisory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body class="quotePage">
+    <div id="loader">
+        <img src="images/quote-loader.gif">
+    </div>
+    <div id="input-loader" style="display:none;">
+        <img style="left: 50%;" src="images/input-loader.gif">
+    </div>
+    <div class="heading">
+        <img src="Images/PB_Logo.png" style="margin-bottom: 5px;"><br>
+        <h7 style="color: rgb(0, 159, 227);font-size:18px;padding-top: 10px;">CRN:
+            <b id="crn" style="color: #535353;"></b>
+        </h7>
+        <h5>
+            Nice! <b id="fname"></b> check these out!<br>
+            Latest plans with offerings Post COVID
+        </h5>
+    </div>
+    <div class="container">
+        <div class="optionRow">
+            <p class="backbutton">
+                <a href="advisory_input.html" target="_self">Back</a>
+            </p>
+            <h6 id="callBack">Schedule a Callback</h6>
+        </div>
+        <div class="dropdown">
+            <div class="" style="text-align: right;">
+                <div style="position: relative;margin-left: 3px;">
+                    <Label style="font-family: Roboto-Medium">Select Features That Matter :</label>
+                    <input type="text" name="" id="benifits" placeholder="Select Features Important to you">
+                    <div class="dropdownlist">
+                        <input type="checkbox" name="selectAllChk" id="selectAllChk">
+                        <span>Select All</span>
+                        <hr>
+                        <div class="list">
+                            <input type="checkbox" name="benifits" value="Room Rent Limit">
+                            <span>Room Rent Limit
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Co-payment">
+                            <span>Co-Pay (Your Contribution in Claim)
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Pre-Existing Diseases">
+                            <span>Pre-Existing Diseases Waiting Period</span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="No Claim Bonus">
+                            <span>No Claim Bonus
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Restoration Benefit">
+                            <span>Restoration Benefit
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Pre-Hospitalization Expenses">
+                            <span>Pre-Hospitalisation Benefit</span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Post Hospitalization Expenses">
+                            <span>Post-Hospitalisation Benefit</span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Free Health Checkup">
+                            <span>Free Health Check Up
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="Medical Screening">
+                            <span>Medical Screening
+                            </span>
+                            <br>
+                            <input type="checkbox" name="benifits" value="ICU Daily Rent Limit">
+                            <span>ICU Daily Rent Limit
+                            </span>
+                            <br>
+                        </div>
+                        <div class="btnrow">
+                            <div style="text-align:center;">
+                                <button id="applybtn" onclick="get_filter_benefits()">Apply</button>
+                                <button class="cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1" id="icons_bar">
+                <div class="iconColumn">
+                    <div class="space"></div>
+                    <div class="d-flex align-items-center justify-content-center  RoomRent">
+                        <span>
+                            <img src="Images/day_care.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center co-Payment">
+                        <span>
+                            <img src="Images/copayment.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center Pre-existing">
+                        <span>
+                            <img src="Images/waiting_period.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center NoClaim">
+                        <span>
+                            <img src="Images/icon.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center Restoration">
+                        <span>
+                            <img src="Images/hospi_cash.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center Pre-Hospital">
+                        <span>
+                            <img src="Images/pre.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center Post-Hospital">
+                        <span>
+                            <img src="Images/post.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center FreeHealth">
+                        <span>
+                            <img src="Images/domiciliary.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center ICUDailyRent">
+                        <span>
+                            <img src="Images/ICU_Daily_Rent.png">
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center MedicalScreening">
+                        <span>
+                            <img src="Images/hospital.png">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="compareButton">COMPARE WITH</div>
+    <div class="popup">
+        <div class="displayBox">
+            <div id="selectOption">
+                <div class="prefered_plans">
+                </div>
+                <span style="margin-left:12%;color:red;display:none" id="selectErr">Please select one plan</span>
+                <div style="text-align:center">
+                    <button id="Proceed" onclick="update_prefered_plan()">Proceed</button>
+                    <button class="okBtn">Cancel</button>
+                </div>
+            </div>
+            <div id="Msg">
+                <P style="text-align: right;margin:0;" class="closeIcon">
+                    <i class="fa fa-close"></i>
+                </P>
+                <p>Thank you for showing your interest, our customer care representative will contact you.</p>
+                <div class="button okBtn">OK</div>
+            </div>
+        </div>
+    </div>
+    <div class="ComparePopup">
+        <div class="displayBox">
+            <div>
+                <P style="text-align: right;margin: 0;" class="closeIcon">
+                    <i class="fa fa-close"></i>
+                </P>
+                <p>
+                    <strong>Select Other Plan:</strong>
+                </p>
+                <select id="compare_plan">
+                </select>
+                <div class="button okBtn" id="compareOk">OK</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var srn;
+        var StatusCount = 0;
+        var response = [];
+        var filter_response = [];
+        var final_plans = [];
+        var summary = [];
+        var is_existing = 'no';
+        var get_advisory_data = [];
+        var existing_insurer, existing_plan;
+        $(document).ready(function () {
+            srn = getUrlVars()["SID"];
+            if (srn !== undefined) {
+                get_health_score(srn);
+            }
+
+            $('.compareButton').click(function () {
+                $('.ComparePopup').show();
+            });
+            $('#callBack').click(function () {
+                $('.popup').show();
+                $('#selectOption').show();
+                $('.dropdownlist').hide();
+            });
+            $('.okBtn').click(function () {
+                $('.popup').hide();
+                $('.ComparePopup').hide();
+                $('#selectOption').show();
+                $('#Msg').hide();
+            });
+            $('.closeIcon').click(function () {
+                $('.popup').hide();
+                $('.ComparePopup').hide();
+                $('#Msg').hide();
+                $('#selectOption').show();
+            });
+            $('#benifits').click(function () {
+                $('.dropdownlist').show();
+            });
+            $('#applybtn,.cancel').click(function () {
+                $('.dropdownlist').hide();
+            });
+            $("#selectAllChk").change(function () {
+                var checked = $(this).is(':checked');
+                if(checked){
+                    $("input[name=benifits]").each(function(){
+                        $(this).prop("checked",true);
+                    });
+                } else {
+                    $("input[name=benifits]").each(function(){
+                        $(this).prop("checked",false);
+                    });
+                }
+            });
+            $("input[name=benifits]").click(function(){
+                if($("input[name=benifits]").length == $("input[name=benifits]:checked").length) {
+                    $("#selectAllChk").prop("checked", true);
+                } else {
+                    $("#selectAllChk").prop("checked", false);
+                }
+            });
+            $('#compareOk').click(function () {
+                var position = +$("#compare_plan").val();
+                if (position) {
+                    var plan_details = final_plans[position].Benefits[0];
+                    $('.row > :nth-child(3)').after($('#' + plan_details.Insurer_Id + '_' + plan_details.Plan_Code));
+                }
+            });
+        });
+
+        function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa.")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("https:") || url.includes("origin-cdnh")) {
+                newurl = "https://horizon.policyboss.com:5443";
+            }
+            return newurl;
+        }
+
+        var getUrlVars = function () {
+            var vars = [],
+                hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+
+        function get_health_score(ref_no) {
+            //console.log(ref_no);
+            var obj = {
+                "search_reference_number": ref_no,
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+            };
+            $.ajax({
+                type: "POST",
+                data: JSON.stringify(obj),
+                url: GetUrl() + "/quote/premium_list_db",
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    if (data !== null && data.Msg !== "Not Authorized") {
+                        response = data['Response_1'];
+                        // console.log('Response', response);
+                        summary = data.Summary;
+                        $("#crn").text(summary['Request_Core'].crn);
+                        $("#fname").text(summary['Request_Core'].first_name+", ");
+                        StatusCount++;
+                        var CreateTime = new Date(summary.Created_On);
+                        var CurrentTime = new Date();
+                        var DateDiff = Date.parse(CurrentTime) - Date.parse(CreateTime);
+                        // console.log(DateDiff);
+                        var is_complete = false;
+                        if (StatusCount > 1 || summary['Status'] === "complete") {
+                            // console.log("Advisory_Response: ", data);
+                            is_complete = true;
+                            //$("#loader").hide();
+                        }
+                        if (is_complete === false) {
+                            setTimeout(() => {
+                                get_health_score(ref_no);
+                            }, 3000);
+                        } else {
+                            if (response.length > 0) {
+                                existing_insurer = summary['Request_Core'].existing_insurer_id;
+                                existing_plan = summary['Request_Core'].existing_plan_id;
+                                for (let x = 0; x < response.length; x++) {
+                                    if (response[x].Insurer_Id === existing_insurer && response[x].Plan_Id === existing_plan) {
+                                        is_existing = 'yes';
+                                    } else {
+                                        is_existing = 'no';
+                                    }
+                                    $.ajax({
+                                        type: "GET",
+                                        dataType: "json",
+                                        url: GetUrl() + '/getFinalAdvisory/' + response[x].Insurer_Id + '/' + response[x].Plan_Id + '/' + response[x].Sum_Insured + '/' + is_existing,
+                                        success: function (data) {
+                                            if (data !== null && !data.hasOwnProperty('Msg')) {
+                                                get_advisory_data.push(data);
+                                            }
+                                        },
+                                        error: function (result) {
+
+                                        }
+                                    });
+                                }
+                                setTimeout(() => {
+                                    if (get_advisory_data.length > 0) {
+                                        // console.log('get_advisory_data', get_advisory_data);
+                                        var top_plans = {};
+                                        get_advisory_data.forEach((res, i) => {
+                                            if (top_plans.hasOwnProperty(res.Insurer_Id) && res.Is_Existing === 'yes') {
+                                                top_plans[res.Insurer_Id] = res;
+                                            } else if (top_plans.hasOwnProperty(res.Insurer_Id)) {
+                                                if (top_plans[res.Insurer_Id].Final_Advisory < res.Final_Advisory) {
+                                                    top_plans[res.Insurer_Id] = res;
+                                                }
+                                            } else {
+                                                top_plans[res.Insurer_Id] = res;
+                                            }
+                                        });
+                                        // console.log('object', Object.values(top_plans));
+                                        final_plans = Object.values(top_plans);
+
+                                        final_plans.sort((a, b) => parseFloat(b.Final_Advisory) - parseFloat(a.Final_Advisory));
+
+                                        var plan_index = final_plans.findIndex(i => i.Is_Existing === 'yes');
+                                        if (plan_index > -1) {
+                                            final_plans.unshift(final_plans.splice(plan_index, 1)[0]); //existing plan to 1st position
+                                        }
+                                        final_plans = final_plans.slice(0, 5);
+                                        // console.log('final_plans', final_plans);
+                                    }
+                                    handle_quotes(final_plans);
+                                }, 2000);
+
+                            }
+                        }
+                    } else {
+                        console.log("Quotes not available");
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function get_filter_benefits() {
+            filter_response = [];
+            var checkedItemsAsString = $('input[name="benifits"]:checked').map(function () {
+                return $(this).val().toString();
+            }).get().join(", ");
+            if (checkedItemsAsString !== "") {
+                response.forEach((res, i) => {
+                    if (res.Insurer_Id === existing_insurer && res.Plan_Id === existing_plan) {
+                        is_existing = 'yes';
+                    } else {
+                        is_existing = 'no';
+                    }
+                    var filter_req = {
+                        "insurer_id": res.Insurer_Id,
+                        "plan_id": res.Plan_Id,
+                        "health_si": res.Sum_Insured,
+                        "is_existing": is_existing,
+                        "filter_benefits": checkedItemsAsString
+                    }
+                    $("#loader").show();
+                    $.ajax({
+                        type: "POST",
+                        data: JSON.stringify(filter_req),
+                        // url: GetUrl() + "/getFilterFinalAdvisory",
+                        url: GetUrl() + "/postservicecall/getFilterFinalAdvisory",
+                        contentType: "application/json;charset=utf-8",
+                        success: function (data) {
+                            if (data !== null && !data.hasOwnProperty('Msg')) {
+                                filter_response.push(data);
+                            } 
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+                setTimeout(() => {
+                    if (filter_response.length > 0) {
+                        //console.log('filter_response', filter_response);
+                        var filter_top_plans = {};
+                        filter_response.forEach((res, i) => {
+                            if (filter_top_plans.hasOwnProperty(res.Insurer_Id) && res.Is_Existing === 'yes') {
+                                filter_top_plans[res.Insurer_Id] = res;
+                            } else if (filter_top_plans.hasOwnProperty(res.Insurer_Id)) {
+                                if (filter_top_plans[res.Insurer_Id].Final_Advisory < res.Final_Advisory) {
+                                    filter_top_plans[res.Insurer_Id] = res;
+                                }
+                            } else {
+                                filter_top_plans[res.Insurer_Id] = res;
+                            }
+                        });
+                        //console.log('Filter object', Object.values(filter_top_plans));
+                        final_plans = Object.values(filter_top_plans);
+
+                        final_plans.sort((a, b) => parseFloat(b.Final_Advisory) - parseFloat(a.Final_Advisory));
+
+                        var plan_index = final_plans.findIndex(i => i.Is_Existing === 'yes');
+                        if (plan_index > -1) {
+                            final_plans.unshift(final_plans.splice(plan_index, 1)[0]); //existing plan to 1st position
+                        }
+                        final_plans = final_plans.slice(0, 5);
+                        //console.log('filter_final_plans', final_plans);
+                    }
+                    handle_quotes(final_plans);
+                }, 2000);
+            }
+        }
+
+        function rupee_format(x) {
+            if (x) {
+                x = Math.round(Number(x));
+                x = x.toString();
+                var lastThree = x.substring(x.length - 3);
+                var otherNumbers = x.substring(0, x.length - 3);
+                if (otherNumbers != '')
+                    lastThree = ',' + lastThree;
+                return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            }
+            else {
+                return 0;
+            }
+        }
+
+        function update_prefered_plan() {
+            var position = +$("input:radio[name=plans]:checked").attr("data-position");
+            if (isNaN(position)) {
+                $('#selectErr').show();
+            } else {
+                $('#selectErr').hide();
+                $("#input-loader").show();
+                var plan_details = final_plans[position].Benefits[0];
+                var Preferred_Data = {
+                    'User_Data_Id': summary.Request_Core.udid,
+                    'Plan_Name': plan_details.Plan_Name,
+                    'Plan_Id': +plan_details.Plan_Code,
+                    'Insurer_Id': +plan_details.Insurer_Id,
+                    'Insurer_Name': plan_details.Insurer_Name,
+                    "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+                    "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW"
+                };
+
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(Preferred_Data),
+                    // url: GetUrl() + "/erp_health_journey",
+                    url: GetUrl() + "/postservicecall/erp_health_journey",
+                    contentType: "application/json;charset=utf-8",
+                    success: function (data) {
+                        $('#selectOption').hide();
+                        $('#Msg').show();
+                        $("#input-loader").hide();
+                        // console.log("Prefered_plan_update", data);
+                    },
+                    error: function (error) {
+                        $("#input-loader").hide();
+                        $('.popup').hide();
+                        console.log(error);
+                    }
+                });
+            }
+        }
+        function handle_quotes(final_plans) {
+            $("#loader").hide();
+            if (final_plans !== null && final_plans.length > 0) {
+                $(".row").children().not(':first').remove();
+                $('.prefered_plans').empty();
+                $('#compare_plan').empty();
+                final_plans.forEach((res, i) => {
+                    var ins_details = response.find(x => x.Insurer_Id === res.Insurer_Id && x.Plan_Id === res.Plan_Id);
+                    final_plans[i]['Premium'] = parseInt(Math.round(ins_details.Premium_Breakup.final_premium));
+                    final_plans[i]['Plan_Name'] = ins_details.Plan_Name;
+                    final_plans[i]['Sum_Insured'] = ins_details.Sum_Insured;
+                    final_plans[i]['Insurer_Logo_Name'] = ins_details.Insurer_Logo_Name;
+                });
+                final_plans.sort(function (a, b) {
+                    if (a.Final_Advisory == b.Final_Advisory && a.Is_Existing == 'no' && b.Is_Existing == 'no') {
+                        if (a.Premium > b.Premium) {
+                            return 1;
+                        }
+                        else if (a.Premium < b.Premium) {
+                            return -1;
+                        }
+                        else {
+                            return 0;
+                        }
+                    }
+                });
+                console.log('Final_Plans: ', final_plans);
+
+                final_plans.forEach((res, i) => {
+                    if (res !== null) {
+                        var remark;
+                        var score = parseFloat(res.Final_Advisory);
+                        if (4.4 < score) remark = "Awesome";
+                        else if (3.9 < score) remark = "Great";
+                        else if (3.4 < score) remark = "Good";
+                        else if (2.9 < score) remark = "Average";
+                        else remark = "Poor";
+
+                        /* Handling benefits */
+                        var benefitObj = {};
+                        var benefit_data = res.Benefits;
+                        var benefit_key = ["Co-payment", "Free Health Checkup", "ICU Daily Rent Limit", "Medical Screening", "No Claim Bonus", "Post Hospitalization Expenses", "Pre-Existing Diseases", "Pre-Hospitalization Expenses", "Restoration Benefit", "Room Rent Limit"];
+
+                        benefit_key.forEach(key => {
+                            let benefit_index = benefit_data.findIndex(el => el.Benefit_Key.toLowerCase() === key.toLowerCase());
+                            benefitObj[key] = benefit_index > -1 ? benefit_data[benefit_index].Benefit_Value : "NA";
+                        });
+
+                        /* Appending quotes */
+                        $('.row').append(
+                            `<div class="col-md-2" id="${res.Insurer_Id}_${res.Plan_Id}">
+						   <div class="plan group${i + 1}">
+							  <div class="title">
+								 <img src="https://www.policyboss.com/Images/insurer_logo/${res.Insurer_Logo_Name}">
+								 <p id="plan_name">${res.Plan_Name}</p>
+							  </div>
+							  <div class="premium">
+								 <p>${rupee_format(res.Sum_Insured)}</p>
+								 <span>Insurance Cover</span>
+								 <hr>
+								 <p>Rs. ${rupee_format(res.Premium)}</p>
+								 <span>Premium</span>
+							  </div>
+							  <div class="content">
+								<div class="d-flex align-items-center justify-content-center remark btn">
+									<div class="amount">${remark}&nbsp;-&nbsp;${res.Final_Advisory}/5</div>
+								</div>
+								 <div class="d-flex align-items-center justify-content-center RoomRent">
+									<p>${benefitObj["Room Rent Limit"]}<br>
+									   <span>Room Rent Limit</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center co-Payment">
+									<p>${benefitObj["Co-payment"]}<br>
+									   <span>Co-Pay (Your Contribution  in Claim)</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center Pre-existing">
+									<p>${benefitObj["Pre-Existing Diseases"]}<br>
+									   <span>Pre-Existing Diseases Waiting Period</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center NoClaim">
+									<p>${benefitObj["No Claim Bonus"]}<br>
+									   <span>No Claim Bonus</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center Restoration">
+									<p>${benefitObj["Restoration Benefit"]}<br>
+									   <span>Restoration Benefit</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center Pre-Hospital">
+									<p>${benefitObj["Pre-Hospitalization Expenses"]}<br>
+									   <span>Pre-Hospitalisation Benefit</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center Post-Hospital">
+									<p>${benefitObj["Post Hospitalization Expenses"]}<br>
+									   <span>Post-Hospitalisation Benefit</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center FreeHealth">
+									<p>${benefitObj["Free Health Checkup"]}<br>
+									   <span>Free Health Check Up</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center ICUDailyRent">
+									<p>${benefitObj["ICU Daily Rent Limit"]}<br>
+									   <span>ICU Daily Rent Limit</span>
+									</p>
+								 </div>
+								 <div class="d-flex align-items-center justify-content-center MedicalScreening">
+									<p>${benefitObj["Medical Screening"]}<br>
+									   <span>Medical Screening</span>
+									</p>
+								 </div>
+							  </div>
+						   </div>
+                        </div>`);
+
+                        var ins_plan_name = res.Insurer_Logo_Name.substr(0, res.Insurer_Logo_Name.lastIndexOf(".")).replaceAll('_', ' ') + ' - ' + res.Plan_Name;
+                        /* Appending prefered Plans */
+                        $('.prefered_plans').append(`<label><input type="radio" name="plans" data-position=${i}>${ins_plan_name}</label>`);
+
+                        /* Appending to compare Plans-Mobile */
+                        $('#compare_plan').append(`<option value=${i} ${i < 2 ? "disabled" : ''}>${ins_plan_name}</option>`);
+                    }
+                });
+
+                /* Appending recommended & existing titles */
+                var existing_pln = summary['Request_Core'].existing_insurer_id + '_' + summary['Request_Core'].existing_plan_id;
+
+                $('#' + existing_pln + ' .title').prepend("<div style='background-color: #a9a5a6;'>Your Existing Plan</div>");
+                $('#icons_bar').after($('#' + existing_pln));
+                var indx = $('#' + existing_pln).length > 0 ? 3 : 2;
+                $('.row > :nth-child(' + indx + ') .title').prepend("<div style='background-color: #1abb51;'>Recommended Plan</div>");
+                $('.row > :nth-child(' + indx + ') .plan').addClass("highlight");
+            }
+        };
+    </script>
+</body>
+
+</html>

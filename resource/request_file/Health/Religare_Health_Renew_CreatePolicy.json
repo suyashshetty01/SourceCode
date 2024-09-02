@@ -1,0 +1,148 @@
+	{
+		"policy": {
+			"partyDOList": [
+				{
+					"guid": "aaaa",
+					"firstName": "___member_1_first_name___",
+					"lastName": "___member_1_last_name___",
+					"roleCd": "PROPOSER",
+					"birthDt": "___member_1_birth_date___",
+					"genderCd": "___member_1_gender___",
+					"titleCd": "___member_1_salutation___",
+					"relationCd": "___member_1_relation___",
+					"customerId": "___member_1_customerId___",
+					"partyQuestionDOList": [
+						{
+							"questionSetCd": "yesNoExist",
+							"questionCd": "pedYesNo",
+							"response": "NO"
+						}
+					],
+					"partyIdentityDOList": [{
+						"identityTypeCd": "PAN",
+						"identityNum": ""
+					}],
+					"partyAddressDOList": [{
+							"addressTypeCd": "PERMANENT",
+							"addressLine1Lang1": "___member_1_premanent_address1___",
+							"addressLine2Lang1": "___member_1_premanent_address2___",
+							"stateCd": "___member_1_premanent_state___",
+							"cityCd": "___member_1_premanent_city___",
+							"pinCode": "___member_1_premanent_pincode___",
+							"areaCd": ""
+						},
+						{
+							"addressTypeCd": "COMMUNICATION",
+							"addressLine1Lang1": "___member_1_communication_address1___",
+							"addressLine2Lang1": "___member_1_communication_address2___",
+							"stateCd": "___member_1_communication_city___",
+							"cityCd": "___member_1_communication_state___",
+							"pinCode": "___member_1_communication_pincode___",
+							"areaCd": ""
+						}
+					],
+					"partyContactDOList": [{
+						"contactTypeCd": "MOBILE",
+						"contactNum": ___member_1_mobile_number___
+					}],
+					"partyEmailDOList": [{
+						"emailTypeCd": "PERSONAL",
+						"emailAddress": "___member_1_email___"
+					}]
+				},
+                                <!--InsurersDetail_Start-->
+				{
+					"guid": "aaaa",
+					"firstName": "___member_array_first_name___",
+					"lastName": "___member_array_last_name___",
+					"roleCd": "PRIMARY",
+					"birthDt": "___member_array_birth_date___",
+					"genderCd": "___member_array_gender___",
+					"titleCd": "___member_array_salutation___",
+					"relationCd": "___member_array_relation___",
+					"customerId": "___member_array_customerId___",
+					"partyQuestionDOList": [{
+							"questionSetCd": "Underwriting Questions",
+							"questionCd": "H001"
+
+						},
+						{
+							"questionSetCd": "Underwriting Questions",
+							"questionCd": "H002"
+
+						},
+						{
+							"questionSetCd": "Underwriting Questions",
+							"questionCd": "H003"
+
+						},
+						{
+							"questionSetCd": "Underwriting Questions",
+							"questionCd": "H004"
+
+						},
+						{
+							"questionSetCd": "Underwriting Questions",
+							"questionCd": "N001"
+
+						},
+						{
+							"questionSetCd": "yesNoExist",
+							"questionCd": "pedYesNo",
+							"response": "NO"
+						}
+					],
+					"partyIdentityDOList": [{
+						"identityTypeCd": "PAN",
+						"identityNum": ""
+					}],
+					"partyAddressDOList": [{
+							"addressTypeCd": "PERMANENT",
+							"addressLine1Lang1": "___member_array_premanent_address1___",
+							"addressLine2Lang1": "___member_array_premanent_address2___",
+							"stateCd": "___member_array_premanent_state___",
+							"cityCd": "___member_array_premanent_city___",
+							"pinCode": "___member_array_premanent_pincode___",
+							"areaCd": ""
+						},
+						{
+							"addressTypeCd": "COMMUNICATION",
+							"addressLine1Lang1": "___member_array_communication_address1___",
+							"addressLine2Lang1": "___member_array_communication_address2___",
+							"stateCd": "___member_array_communication_city___",
+							"cityCd": "___member_array_communication_state___",
+							"pinCode": "___member_array_communication_pincode___",
+							"areaCd": ""
+						}
+					],
+					"partyContactDOList": [{
+						"contactTypeCd": "MOBILE",
+						"contactNum": ___member_array_mobile_number___
+					}],
+					"partyEmailDOList": [{
+						"emailTypeCd": "PERSONAL",
+						"emailAddress": "___member_array_email___"
+					}]
+				}
+                                <!--InsurersDetail_End-->
+				
+			],
+			"policyAdditionalFieldsDOList": [{
+				"fieldAgree": "YES",
+				"fieldTc": "YES",
+				"fieldAlerts": "YES"
+			}],
+			"isPremiumCalculation": "YES",
+			"businessTypeCd": "RENEWAL",
+			"baseAgentId": "20008325",
+			"prevPolicyExpiryDt": "___prev_policy_expiry_date___",
+			"baseProductId": "10001101",
+			"sumInsured": "___sum_insured___",
+			"term": 1,
+			"coverType": "___health_insurance_type___",
+			"policyNum": "___policy_number___",
+			"addOns": "CARE",
+			"ncdDecalrationMandate": false
+		},
+		"ipAddress": "127.0.0.1"
+	}

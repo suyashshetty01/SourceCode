@@ -1,0 +1,55 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:tem="http://tempuri.org/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<tem:SavePartner_integration>
+			<!--Optional:-->
+			<tem:Partner_integrationXML>
+				<![CDATA[<PartnerIntegration>
+	<UserID type='string'>___insurer_integration_agent_code___</UserID>
+	<Password type='string'>___insurer_integration_location_code___</Password>
+	<ProductType type='string'>Private Car - P</ProductType>
+	<TransactionType type='string'>___vehicle_insurance_type___</TransactionType>
+	<TransactionID type='string'></TransactionID>
+	<PolicyNo type='string'></PolicyNo>
+	<ProposalDate type='date'></ProposalDate>
+	<ProposalTime type='time'></ProposalTime>
+	<PolicyStartDate type='datetime'>___policy_start_date___</PolicyStartDate>
+	<PolicyEndDate type='date'>___policy_end_date___</PolicyEndDate>
+	<ProposerType type='string'>I</ProposerType>
+	<CustomerName type='string'>___first_name___ ___last_name___</CustomerName>
+	<EngineNos type='string'>___engine_number___</EngineNos>
+	<ChassisNos type='string'>___chassis_number___</ChassisNos>
+	<Make type='string'>___dbmaster_insurer_vehicle_make_name___</Make>
+	<Model type='string'>___dbmaster_insurer_vehicle_model_name___</Model>
+	<Variant type='string'>___dbmaster_insurer_vehicle_variant_name___</Variant>
+	<IDV type='int'>___vehicle_expected_idv___</IDV>
+	<TotalA type='int'>___premium_breakup_od_net_premium___</TotalA>
+	<TotalB type='int'>___premium_breakup_tp_final_premium___</TotalB>
+	<GrossPremium type='int'>___net_premium___</GrossPremium>
+	<ServiceORSalesTax type='int'>___tax___</ServiceORSalesTax>
+	<NetPremium type='int'>___final_premium___</NetPremium>
+	<TransactionReference type='int'></TransactionReference>
+	<TransactionDate type='date'>___current_date___</TransactionDate>
+	<TransactionAmount type='int'></TransactionAmount>
+	<Prefix>BSP</Prefix>
+	<VehicleRegistrationNumber type='string'>___registration_no_1___$___registration_no_2___$___registration_no_3___$___registration_no_4___</VehicleRegistrationNumber>
+	<BiFuelKit type='string'>___is_external_bifuel___</BiFuelKit>
+	<BiFuelKitIDV type='int'>___external_bifuel_value___</BiFuelKitIDV>
+	<NCB type='int'>___vehicle_ncb_current___</NCB>
+	<LegalLiabilityPaidDriver type='string'>___is_llpd___</LegalLiabilityPaidDriver>
+	<ZeroDepreciation type='string'>___addon_zero_dep_cover___</ZeroDepreciation>
+	<EngineProtector type='string'>___addon_engine_protector_cover___</EngineProtector>
+	<ReturnToInvoice type='string'>___addon_invoice_price_cover___</ReturnToInvoice>
+	<PAUnnamedPassengerSI type='string'>___pa_unnamed_passenger_si___</PAUnnamedPassengerSI>
+	<Consumables_Addon type='string'>___addon_consumable_cover___</Consumables_Addon>
+	<RoadsideAssistance type='string'>___addon_road_assist_cover___</RoadsideAssistance>
+	<IMTNos type='string'>zzzz</IMTNos>
+	<Additional_Info type='string'>extra</Additional_Info>
+	<AccessKey type='string'>___insurer_integration_service_password___</AccessKey>
+</PartnerIntegration>]]>
+			</tem:Partner_integrationXML>
+		</tem:SavePartner_integration>
+	</soapenv:Body>
+</soapenv:Envelope>

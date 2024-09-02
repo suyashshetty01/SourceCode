@@ -1,0 +1,75 @@
+/*Travel Index Page*/
+
+.block_head{color: #666;padding-bottom: 10px;}
+.buttn_box{width: 100%;font-size: 13px;margin: 5px; padding: 10px;border: 1px solid #c9c9c9;    box-sizing: border-box;}
+.rt_wrap{display: flex; flex-grow: 1; flex-wrap: wrap;justify-content: space-between;}
+.rt_wrap div {text-align: center;border: 1px solid #c9c9c9;box-sizing: border-box;cursor: pointer;width: 30%;margin: 2px 0px;font-size: 12px;word-break: break-word;transition: all .25s}
+.rt_wrap div:hover{background: #2196f3;color: #fff}
+.radio_box{display: flex; flex-grow: 1;}
+.radio_box .container{font-size: 13px !important;margin-right: 5px}
+.skip_css{border: none;padding: 0;}
+.gen{text-align: right;}
+
+.comb_dob_age{
+    border: 1px solid #c9c9c9;
+    width: 100px;
+    text-align: center;
+    margin: 2px;
+    color: #333;
+}
+.me_head{text-align: center !important; font-size: 8px;text-transform: uppercase;}
+.act_btn{background: #2196f3 !important;color: #fff !important}
+.comb_dob_age input[type ="text"]{width: 100%;text-align: center}
+.gender_btn{display: flex;flex-grow: 1;text-align: center;    border-top: 1px solid #2196f3;display: none;}
+.gender_btn span{width: 100%;cursor: pointer;}
+.gender_btn span:hover{background: #2196f3;color: #fff}
+.dayRange{color:#333;}
+.dayRange option{font-size: 13px;}
+.memberbox_group {display: flex;flex-grow: 1;flex-wrap: wrap;}
+.membox_wrap{border: 1px solid #c9c9c9;width: 30%; display: flex;align-items: center;box-sizing: border-box;justify-content: flex-start;margin-right: 5px; margin-top: 5px; margin-bottom: 5px;}
+.mem_input input{width: 80px;border-bottom:2px solid #c9c9c9;}
+.input_row {
+	display: contents;align-items: center;flex-wrap: wrap;
+}
+.membox{padding: 5px;}
+.membox .close{
+	    font-weight: bold;
+	padding: 0;
+	cursor: pointer;
+	width:20px !important;
+	background: #e8e8e8;
+	 border: 1px solid #c9c9c9;
+	border-left: none;
+	color: #999;
+	padding-left:3px; 
+	padding-top:3px;
+	transition: all .25s;
+}
+
+.membox .close:hover {
+	background: lightpink;
+	color:#fff;
+	
+}
+.membox span{
+	display: block;
+	width: 100% !important;
+	text-align: center;
+	
+}
+
+.input_row span{box-sizing: border-box;width: 33.33%;display: flex;}
+.input_row input{width: 99%; border: 1px solid #c9c9c9; text-align: center}
+
+.addbtn{padding: 5px;box-sizing: border-box;cursor: pointer}
+.addbtn span {
+	    background: #2196f3;
+padding: 2px 12px 2px;
+    color: #fff;
+    
+	box-sizing: border-box;
+}
+
+
+/*flatpickr customised CSs*/
+.flatpickr-current-month{font-size: 110%;}

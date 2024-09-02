@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <PDF_Policy_Validator xmlns="http://tempuri.org/">
+      <USER_NAME>___insurer_integration_service_user___</USER_NAME>
+      <USER_PASWD>___insurer_integration_location_code___</USER_PASWD>
+      <POL_NO>___policy_number___</POL_NO>
+    </PDF_Policy_Validator>
+  </soap:Body>
+</soap:Envelope>

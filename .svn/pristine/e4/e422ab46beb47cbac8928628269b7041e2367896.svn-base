@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "derive-password-bytes",
+        "scope": null,
+        "escapedName": "derive-password-bytes",
+        "name": "derive-password-bytes",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\Nodejs\\SourceCode"
+    ]
+  ],
+  "_from": "derive-password-bytes@latest",
+  "_id": "derive-password-bytes@0.0.2",
+  "_inCache": true,
+  "_location": "/derive-password-bytes",
+  "_nodeVersion": "6.9.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/derive-password-bytes-0.0.2.tgz_1503095473187_0.26548787602223456"
+  },
+  "_npmUser": {
+    "name": "jheys",
+    "email": "jheys@swerv.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "derive-password-bytes",
+    "scope": null,
+    "escapedName": "derive-password-bytes",
+    "name": "derive-password-bytes",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/derive-password-bytes/-/derive-password-bytes-0.0.2.tgz",
+  "_shasum": "a88650a96fe45e8999e83f656e04552a145c1e3e",
+  "_shrinkwrap": null,
+  "_spec": "derive-password-bytes",
+  "_where": "E:\\Nodejs\\SourceCode",
+  "author": {
+    "name": "Jim Heys",
+    "email": "jheys@swerv.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jheys/derive-password-bytes/issues"
+  },
+  "dependencies": {},
+  "description": "A partial implementation of the C# System.Security.Cryptography.PasswordDeriveBytes class",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "a88650a96fe45e8999e83f656e04552a145c1e3e",
+    "tarball": "https://registry.npmjs.org/derive-password-bytes/-/derive-password-bytes-0.0.2.tgz"
+  },
+  "gitHead": "8829b3b94d330e14ad3e495c4799b005274b7479",
+  "homepage": "https://github.com/jheys/derive-password-bytes#readme",
+  "keywords": [
+    "C#",
+    "Mono",
+    ".Net",
+    "Unity",
+    "PasswordDeriveBytes",
+    "password",
+    "derive",
+    "bytes",
+    "buffer",
+    "node",
+    "crypto"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "jheys",
+      "email": "jheys@swerv.com"
+    }
+  ],
+  "name": "derive-password-bytes",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jheys/derive-password-bytes.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.2"
+}

@@ -1,0 +1,110 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "fullQuote",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        "ProductCode": "___dbmaster_pb_plan_code___",
+        "ProductVersion": "1.0",
+        "ArogyaPolicyType": "___policy_type___",
+        "PlanClassification": "1",
+        "EffectiveDate": "___policy_start_date___",
+        "ExpiryDate": "___policy_end_date___T23:59:59",
+        "PremiumFrequency": "___policy_tenure___",
+        "FirstPolicyInceptionDate": "___current_date___T00:00:00",
+        "TransactionId":"___timestamp___",
+        "TransactionDate":"___current_date___",
+        "Autorenewal": "0",
+        <!--FamilyFloaterCat_Start-->
+        "SanjeevaniFFCategory": "___get_member_type___",
+        "AdditionalChildren": "___additional_children___",
+        <!--FamilyFloaterCat_End-->
+        "NonFloaterDiscount": "",
+        "NewBizClassification": "1",
+        "GSTType": "SGST",
+        "AgreementCode": "___agreement_code___",
+        "SBIGBranchCode": "HO",
+        "SBIGBranchStateCode": "MH",
+        "SiCurrencyCode": "INR",
+        "PremiumCurrencyCode": "INR",
+        "PolicyCustomerList": [
+            {
+                "Title": "___salutation___",
+                "FirstName": "___first_name___",
+                "MiddleName": "___middle_name___",
+                "LastName": "___last_name___",
+                "GenderCode": "___gender___",
+                "DateOfBirth": "___birth_date___",
+                "PlotNo": "___permanent_address_1___",
+                "BuildingHouseName": "___permanent_address_2___",
+                "StreetName": "___permanent_address_3___",
+                "PostCode": "___permanent_pincode___",
+                "Locality": "",
+                "District": "___communication_district_code___",
+                "City": "",
+                "State": "___communication_state_code___",
+                "CountryCode": "1000000108",
+                "Mobile": "___mobile___",
+                "Email": "___email___",
+                "ContactEmail": "",
+                "IsPolicyHolder": "1",
+                "ContactPersonTel": "___mobile___",
+                "OccupationCode": "___occupation___",
+                "NationalityCode": "IND",
+                "PartyStatus": "1",
+                "GSTInputState": "MH",
+                "MaritalStatus": "___marital___",
+                "PAN": "___pan___",
+                "IsInsured": "___isInsured___"
+            }
+        ],
+        "PolicyLobList": [
+            {
+                "ProductCode": "___dbmaster_pb_plan_code___",
+                "PolicyRiskList": [
+                   <!--InsurersDetail_Start-->
+                    {
+                    "ProductElementCode": "R10007",
+                    "SBI_Title": "___member_array_salutation___",
+                    "FirstName": "___member_array_first_name___",
+                    "MiddleName": "___member_array_middle_name___",
+                    "LastName": "___member_array_last_name___",
+                    "GenderCode": "___member_array_gender___",
+                    "DateOfBirth": "___member_array_birth_date___",
+                    "InceptionDate": "___current_date___",
+                    "DateOfMemberEntry":"___current_date___",
+                    "ArgInsuredRelToProposer": "___member_array_rel___",
+                    "ArogyaEdQualification": "___member_array_qualification___",
+                    "ArogyaMaritalStatus": "___member_array_marital_status___",
+                    "ArogyaOccupation":"___member_array_occupation___",
+                    "Height": "___member_array_height___",
+                    "Weight": "___member_array_weight___",
+                    "InsuredDateofFirstPolicy": "___current_date___T00:00:00",
+                    "Questionnaire2b": "___member_array_question_1701_details___",
+                    "IsSmoker": "___member_array_question_1702_details___",
+                    "AlcoholStatus": "___member_array_question_1703_details___",
+                    "PreExistingDisease": "___member_array_question_1704_details___",
+                    "Details": "___member_array_question_1704_type___",
+                    "Years": "___member_array_question_1705_details___",
+                    "NomineeName": "___nominee_name___",
+                    "NomineeGender": "___gender___",
+                    "NomineeDOB": "___nominee_birth_date___",
+                    "NomineeAge": "___nominee_age___",
+                    "NomineeRelToProposer": "___nominee_relation___",
+                    "AppointeeName": "",
+                    "HasPrePolicy": "0",
+                    "PolicyCoverageList": [
+                        {
+                            "ProductElementCode": "HVSC01",
+                            "SanjeevaniSumInsured": "___health_insurance_si_2___"
+                        }
+                    ]
+                }
+                <!--InsurersDetail_End-->
+            ]
+        }
+        ]
+    }
+    }

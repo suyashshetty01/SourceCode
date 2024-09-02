@@ -1,0 +1,18 @@
+{
+    "CorrelationId": "___correlationCode___",
+    "PlanType": "___plan_type___",
+    "TripType": "___trip_type___",
+    "PlanCode": "___Plan_Code___",
+    "NoOfDays": ___max_days___,
+    "TripDuration": ___max_days___,
+    "InsuredDetails": [<!--InsurersDetail_Start-->
+        {
+            "InsuredDOB": "___member_array_birth_date___"
+        }<!--InsurersDetail_End-->
+    ],
+    "PolicyStartDate": "___policy_start_date___",
+    "PolicyEndDate": "___policy_end_date___",
+    "PolicyDuration": "___travel_days___",
+    "VisaType": "NON_IMMIGRANT",
+    "PartyStateName": "MAHARASHTRA"
+}

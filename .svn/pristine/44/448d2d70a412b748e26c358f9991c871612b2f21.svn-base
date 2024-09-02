@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LIFE INSURANCE</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/style-finmart.css" rel="stylesheet" type="text/css"/>
+	<link href="css/responsive-finmart.css" rel="stylesheet" type="text/css"/>
+	<link href="css/fonts.css" rel="stylesheet" type="text/css" />
+	
+	<link rel="stylesheet" href="css/jquery.tooltip.css" type="text/css" />
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+	
+	<style>
+		.appl-no-top {
+			padding-top: 10px !important;
+		}
+		.quote-loan-amt1 {
+			border-bottom: 0px solid #ddd;
+			text-align: right;
+			text-transform: capitalize;
+		}
+		.quote-loan-amt1 p {
+			font-family: "Roboto-Regular", arial, sans-serif;
+			color: #979797;
+			font-size: 11px;
+			margin: 0px;
+			padding: 2px 0 2px 0;
+			text-transform: uppercase;
+			text-align: left;
+		}
+		.quote-loan-amt1 h6 {
+			font-family: "Roboto-Regular", arial, sans-serif;
+			color: #282828;
+			font-size: 14px;
+			margin: 0;
+			padding: 5px 0 5px 0;
+			text-transform: uppercase;
+			text-align: left;
+			font-weight: bold;
+		}
+		.appl-no p {
+			font-family: "Roboto-Regular", arial, sans-serif;
+			color: #979797;
+			font-size: 11px;
+			margin-top: -5px;
+			padding: 2px 0 2px 0;
+			text-transform: uppercase;
+			text-align: left;
+			margin: 0;
+		}
+		.appl-no h6 {
+			font-family: "Roboto-Regular", arial, sans-serif;
+			color: #000;
+			font-size: 14px;
+			margin: 0;
+			padding: 2px 0 0 0;
+			text-transform: uppercase;
+			text-align: left;
+		}
+		.quote-name h6 {
+			color: #00476d;
+			font-size: 15px;
+			font-weight: 600;
+			margin: 0;
+			padding: 11px 0 10px 5px;
+			text-transform: uppercase;
+		}
+		div.item {
+			min-width: 1px;
+			min-height: auto;
+			text-align: right;
+			padding-top: 0px;
+			width:15px;
+			float:right;
+		}
+		.app-table {
+			border:1px solid #00476d;margin-bottom:0;
+		}
+		.head-table {
+			margin-top:10px;border:1px solid #00476d;
+		}
+		.mtool {
+			margin:0px;
+		}
+		.appl-date {
+			margin:10px 5px 10px 0 !important; text-align:right !important;
+		}
+		.body-bg-life {
+			background-color:#f6f6f6;
+		}
+		.tbal-color {
+			background-color:#fff;
+		}
+	</style>
+	
+  </head>
+  
+  <body class="body-bg-life">
+    <header class="main-header">
+        <div class="header-left">
+			<img src="images/menu-icon.png" alt=""/>
+		</div>
+		<div class="header-middle">LIFE INSURANCE</div>
+		<div class="header-right">
+			<img src="images/home-icon.png" class="img-responsive"/>
+		</div> 
+	</header>
+	
+	<div class="wrapper" style="top:48px;">
+		<ul id="myTab" class="nav nav-tab pad col-xs-12" style="border-bottom:none;">
+			<li class="active col-xs-6 pad"><a href="#Property" class="ripple-effect" data-toggle="tab">QUOTE</a></li>
+			<li class="col-xs-6 pad"><a href="#Appl" class="ripple-effect" data-toggle="tab">APPLICATION</a></li>
+		</ul>
+		
+       <!-- Main content -->
+	   <div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="Property">
+				<div class="col-xs-6 text-left bg-color-quote search">
+					<a href="#">
+						<img src="images/file_add.png"/>
+						<span class="add-quote-app">ADD QUOTE</span>
+					</a>
+				</div>
+				<!--<div class="col-xs-4 text-center pad">
+						<a href="#"><img src="images/filter-icon.png"/></a>
+						FILTER
+				</div>-->
+				<div class="col-xs-6 text-right bg-color-quote search">
+					<div class="search1">
+						<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search"/>
+						<button type="submit" class="btnserchopen btn-search btn-sm">
+							<img src="images/file_search2.png"/> 
+							SEARCH
+						</button>
+					</div>
+				<!--<div id="wrap">
+						<form action="" autocomplete="on">
+							<input id="search" name="search" type="text" placeholder="">
+							<input id="search_submit" value="Rechercher" type="submit">
+						</form>
+					</div>-->
+					<!--<p><a href="#">
+					<img src="images/file_search.png"/>
+					SEARCH</a></p>-->
+				</div>
+				
+					<table class="table tbal-color">
+						<tbody>
+							<tr>
+								<td class="quote-name">
+									<p>Amit Shrivastava</p>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Sum Insured</p>
+										<h6>10,50,00,000</h6>
+									</div>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Quote Date</p>
+										<h6>30/11/2016</h6>
+									</div>
+								</td>
+								<td class="table-align-center">
+									<div class="item tooltipleft">
+										<img src="images/dot.png"/>
+										<div class="tooltip_description" style="display:none">
+											<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+											<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+											<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="quote-name">
+									<p>Sudip Naik</p>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Sum Insured</p>
+										<h6>60,00,000</h6>
+									</div>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Quote Date</p>
+										<h6>09/11/2016</h6>
+									</div>
+								</td>
+								<td class="table-align-center">
+									<div class="item tooltipleft">
+										<img src="images/dot.png"/>
+										<div class="tooltip_description" style="display:none">
+											<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+											<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+											<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="quote-name">
+									<p>Anjan Gupta</p>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Sum Insured</p>
+										<h6>2,50,00,000</h6>
+									</div>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Quote Date</p>
+										<h6>02/11/2016</h6>
+									</div>
+								</td>
+								<td class="table-align-center">
+									<div class="item tooltipleft">
+										<img src="images/dot.png"/>
+										<div class="tooltip_description" style="display:none">
+											<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+											<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+											<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="quote-name">
+									<p>Mihir Parekh</p>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Sum Insured</p>
+										<h6>85,00,000</h6>
+									</div>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Quote Date</p>
+										<h6>31/10/2016</h6>
+									</div>
+								</td>
+								<td class="table-align-center">
+									<div class="item tooltipleft">
+										<img src="images/dot.png"/>
+										<div class="tooltip_description" style="display:none">
+											<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+											<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+											<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="quote-name">
+									<p>Shravan Agarwal</p>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Sum Insured</p>
+										<h6>40,00,000</h6>
+									</div>
+								</td>
+								<td>
+									<div class="quote-loan-amt">
+										<p>Quote Date</p>
+										<h6>18/10/2016</h6>
+									</div>
+								</td>
+								<td class="table-align-center">
+									<div class="item tooltipleft">
+										<img src="images/dot.png"/>
+										<div class="tooltip_description" style="display:none">
+											<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+											<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+											<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+			</div>
+			<!-- close first tab -->
+			
+			<!-- second tab -->
+			<div class="tab-pane fade" id="Appl">
+				<div class="col-xs-6 text-left bg-color-quote search">
+					<a href="#">
+						<img src="images/file_add.png"/>
+						<span class="add-quote-app">ADD QUOTE</span>
+					</a>
+				</div>
+			<!--<div class="col-xs-4 text-center pad">
+					<a href="#"><img src="images/filter-icon.png"/></a>
+					FILTER
+				</div>-->
+				<div class="col-xs-6 text-right bg-color-quote search">
+					<div class="search1">
+						<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search"/>
+						<button type="submit" class="btnserchopen btn-search btn-sm">
+							<img src="images/file_search2.png"/> 
+							SEARCH
+						</button>
+					</div>
+				<!--<div id="wrap">
+						<form action="" autocomplete="on">
+							<input id="search" name="search" type="text" placeholder="">
+							<input id="search_submit" value="Rechercher" type="submit">
+						</form>
+					</div>-->
+					<!--<p><a href="#">
+						<img src="images/file_search.png"/>
+						SEARCH</a></p>-->
+				</div>
+				
+				<div class="col-xs-12 pad-2">
+					<table class="table table-responsive app-table tbal-color">
+							<tbody>
+								<tr>
+									<div class="col-xs-12 pad head-table tbal-color">
+										<div class="col-xs-8 pad">
+											<div class="quote-name">
+												<h6>Mahesh Dhariras</h6>
+											</div>
+										</div>
+										<div class="col-xs-4 pad">
+											<div class="appl-no">
+												<h6 class="appl-date">30-Apr-2016</h6>
+											</div>
+										</div>
+									</div>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>term / ppt</p>
+											<h6>25 / 25</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>App No.</p>
+											<h6>834398883</h6>
+										</div>
+									</td>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>Sum</p>
+											<h6>60,00,000</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>status date</p>
+											<h6>24-apr-18</h6>
+										</div>
+									</td>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>mode</p>
+											<h6>Yly</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>status</p>
+											<h6>link sent</h6>
+										</div>
+									</td>
+									
+									<td class="table-align-center">
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>premium</p>
+											<h6>11650</h6>
+										</div>
+										
+										<div class="appl-no-top text-right">
+											<div class="item tooltipleft mtool">
+												<img src="images/dot.png"/>
+												<div class="tooltip_description" style="display:none">
+													<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+													<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+													<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table class="table table-responsive app-table tbal-color">
+							<tbody>
+								<tr>
+									<div class="col-xs-12 pad head-table tbal-color">
+										<div class="col-xs-8 pad">
+											<div class="quote-name">
+												<h6>Vinayak Mishra</h6>
+											</div>
+										</div>
+										<div class="col-xs-4 pad">
+											<div class="appl-no">
+												<h6 class="appl-date">30-Apr-2016</h6>
+											</div>
+										</div>
+									</div>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>term / ppt</p>
+											<h6>25 / 25</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>App No.</p>
+											<h6>834398883</h6>
+										</div>
+									</td>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>Sum</p>
+											<h6>60,00,000</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>status date</p>
+											<h6>24-apr-18</h6>
+										</div>
+									</td>
+									
+									<td>
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>mode</p>
+											<h6>Yly</h6>
+										</div>
+										<div class="appl-no appl-no-top">
+											<p>status</p>
+											<h6>link sent</h6>
+										</div>
+									</td>
+									
+									<td class="table-align-center">
+										<div class="quote-loan-amt1 loan-amt-top">
+											<p>premium</p>
+											<h6>11650</h6>
+										</div>
+										<div class="appl-no-top text-right">
+											<div class="item tooltipleft mtool">
+												<img src="images/dot.png"/>
+												<div class="tooltip_description" style="display:none">
+												<a href="#" class="tool-tip-popup"><img src="images/call.png"/></a> 
+												<a href="#" class="tool-tip-popup"><img src="images/sms.png"/></a> 
+												<a href="#" class="tool-tip-popup-1"><img src="images/delete.png"/></a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+			<!-- close second tab -->
+	  </div><!-- close Tab -->
+	</div><!-- close wrapper -->
+	
+	<script type="text/javascript">
+      $j = jQuery.noConflict();
+      $j(document).ready(function(){
+        $j("div.item").tooltip();
+		
+		// Ripple-effect animation
+				(function($) {
+					$(".ripple-effect").click(function(e){
+						var rippler = $(this);
+
+						// create .ink element if it doesn't exist
+						if(rippler.find(".ink").length == 0) {
+							rippler.append("<span class='ink'></span>");
+						}
+
+						var ink = rippler.find(".ink");
+
+						// prevent quick double clicks
+						ink.removeClass("animate");
+
+						// set .ink diametr
+						if(!ink.height() && !ink.width())
+						{
+							var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+							ink.css({height: d, width: d});
+						}
+
+						// get click coordinates
+						var x = e.pageX - rippler.offset().left - ink.width()/2;
+						var y = e.pageY - rippler.offset().top - ink.height()/2;
+
+						// set .ink position and add class .animate
+						ink.css({
+						  top: y+'px',
+						  left:x+'px'
+						}).addClass("animate");
+					})
+				})(jQuery);	
+			
+      });
+    </script>
+
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> 
+
+  </body>
+</html>

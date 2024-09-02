@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ENROLL FOR IRDA DSA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="dsa_signup_main.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="dsa_signup.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div style="display:none;" id="errorMsg">
+		<div class="warningmsg" style="padding-top: 169px;">
+			<h3 style="text-align: center; color: red;"><u>Error</u></h3>
+			<h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;" id="warningerror"></h3>
+			<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+		</div>
+	</div>
+	<div style="display:none;" id="successMsg">
+		<div class="warningmsg" style="padding-top: 169px;">
+			<h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;" id="successNote"></h3>
+		</div>
+	</div>
+	<div id="container" style="display:none;">
+	<div class="header"><span style="float: left;"><i class='fas fa-arrow-left'></i></span>ENROLL FOR DSA</div>
+	<div id="Details">
+		<div class="title">
+			<span>PERSONAL INFORMATION</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+		</div>
+		<div class="info">
+			<div class="grid">
+				<div>
+					<label>
+						<input type="text" name="firstName" id="firstName" placeholder="" required>
+						<span style="float: right;"><i class='fas fa-user-alt'></i></span>
+						<label for="firstName">Full Name</label>
+					</label>
+				</div>
+				<!--<div>
+					<label>
+						<input type="text" name="lastName" id="lastName" placeholder="" required>
+						<span style="float: right;"><i class='fas fa-user-alt'></i></span>
+						<label for="lastName">Last Name</label>
+					</label>
+				</div>-->
+				<!--<div>
+					<label>
+						<input type="text" name="DateofBirth" id="DateofBirth" placeholder="" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+						<span style="float: right;"><i class='far fa-calendar-alt'></i></span>
+						<label for="DateofBirth">Date of Birth</label>
+					</label>
+				</div>-->
+				<!--<div style="font-size: 11px;padding:0;text-align: center;border: none; ">
+					<label style="position: relative;">
+	                    <label style="top: -10px;left: -25px;">Gender</label><br>
+		                <span class="gender grid">
+			               	<label style="padding: 0;top: 17px;position: relative;">
+			            		<input type="radio" name="gender" required />
+					            <div class="male">Male</div>
+							</label>
+							<label style="padding: 0;top: 17px;position: relative;">
+								<input type="radio" name="gender" required />
+								<div class="female">Female</div>
+							</label>
+						</span>
+					</label>
+				</div>-->
+				<div>
+					<label>
+						<input type="number" name="Mobile" id="Mobile" placeholder="" required minlength="10" maxlength="10" required>
+						<span style="float: right;"><i class="fa fa-mobile" style="font-size: 19px;"></i></span>
+							<label for="Mobile">Mobile</label>
+					</label>
+				</div>
+				<!--<div>
+					<label>
+						<input type="number" name="Mobile_2" id="Mobile_2" placeholder="" minlength="10" maxlength="10">
+						<span style="float: right;"><i class="fa fa-mobile" style="font-size: 19px;"></i></span>
+						<label for="Mobile_2">Mobile 2</label>
+					</label>
+				</div>-->
+			</div>
+			<div class="row">
+				<div>
+					<input type="email" name="email" id="email" placeholder="" required>
+					<span style="float: right;"><i class="fa fa-envelope"></i></span>
+					<label for="email">Email</label>
+				</div>
+			</div>
+			<div class="grid">
+				<div>
+					<label>
+						<input type="text" name="pan" id="pan" placeholder="" required>
+						<span></span>
+						<label for="pan">PAN</label>
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="number" name="aadhar" id="aadhar" placeholder="" required minlength="12" maxlength="12">
+						<span></span>
+						<label for="aadhar">AADHAR</label>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<input type="text" name="gst" id="gst" placeholder="" required>
+					<span></span>
+					<label for="gst">GST</label>
+				</div>
+				<!--<div>
+					<input type="number" name="code" id="code" placeholder="" required>
+					<span></span>
+					<label for="code">CHANNEL PARTNER / DATACOMP EXECUTIVE CODE</label>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<div id="Details">
+		<div class="title">
+			<span>ADDRESS</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+		</div>
+		<div class="info">
+			<div class="row">
+				<div>
+					<input type="text" name="address_1" id="address_1" placeholder="" required>
+					<span></span>
+					<label for="address_1">ADDRESS 1</label>
+				</div>
+				<div>
+					<input type="text" name="address_2" id="address_2" placeholder="">
+					<span></span>
+					<label for="address_2">ADDRESS 2</label>
+				</div>
+				<div>
+					<input type="text" name="address_3" id="address_3" placeholder="">
+					<span></span>
+					<label for="address_3">ADDRESS 3</label>
+				</div>
+			</div>
+			<div class="grid">
+				<div>
+					<label>
+						<input type="number" name="pincode" id="pincode" placeholder="" required minlength="6" maxlength="6">
+						<span style="float: right;"><i class="material-icons" style="font-size: 14px;">location_on</i></span>
+						<label for="pincode">PINCODE</label>
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="text" name="city" id="city" placeholder="" required>
+						<span style="float: right;"><i class="material-icons" style="font-size: 14px;">location_city</i></span>
+						<label for="city">CITY</label>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<input type="text" name="state" id="state" placeholder="" required>
+					<span style="float: right;"><i class='fas fa-city'></i></span>
+					<label for="state">STATE</label><br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="Details">
+		<div class="title">
+			<span>BANK DETAILS</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+		</div>
+		<div class="info">
+			<p>Enter the details of bank account to which all commissions have to be credited</p>
+			<div class="grid">
+				<div>
+					<label>
+						<input type="number" name="accountNo" id="accountNo" placeholder="" required>
+						<span></span>
+						<label for="accountNo">BANK A/C NO</label>
+					</label>
+				</div>
+				<div style="font-size: 11px;padding:0;text-align: center;border: none;">
+                    <label style="top:-10px;position: relative;">ACCOUNT TYPE</label><br>
+	                <span class="account grid">
+	                	<label style="padding: 0;top: 17px;position: relative;">
+	                		<input type="radio" name="account" value="saving" required/>
+	                    	<div class="saving">SAVING</div>
+						</label>
+						<label style="padding: 0;top: 17px;position: relative;">
+							<input type="radio" name="account" value="current" required/>
+							<div class="current">CURRENT</div>
+				        </label>
+				    </span>
+				</div>
+				<div>
+					<label>
+						<input type="text" name="IFSCCode" id="IFSCCode" placeholder="" required>
+						<span></span>
+						<label for="IFSCCode">IFSC CODE</label>
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="number" name="MICRCode" id="MICRCode" placeholder="" required>
+						<span></span>
+						<label for="MICRCode">MICR CODE</label>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<input type="text" name="bankName" id="bankName" placeholder="" required>
+					<span></span>
+					<label for="bankName">BANK NAME</label><br>
+				</div>
+			</div>
+			<div class="grid">
+				<div>
+					<label>
+						<input type="text" name="branch" id="branch" placeholder="" required>
+						<span></span>
+						<label for="branch">BANK BRANCH</label>
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="text" name="bankCity" id="bankCity" placeholder="" required>
+						<span style="float: right;"><i class="material-icons" style="font-size: 14px;">location_city</i></span>
+						<label for="bankCity">BANK CITY</label>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="Details">
+		<div class="title">
+			<span>DOCUMENTS UPLOAD</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+		</div>
+		<div class="info">
+			<div class="row">
+				<!--<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>PHOTOGRAPH
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>-->
+				<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>PAN CARD
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>
+				<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>AADHAR CARD FRONT
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>
+				<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>AADHAR CARD BACK
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>
+				<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>CANCELLED CHQ
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>
+				<div class="threeColGrid">
+					<p>
+						<label class="cbox">
+	                		<input type="checkbox" checked="checked" name="document[]">
+	                		<span class="tick"></span>GST CERTIFICATION
+	                	</label>
+	                </p>
+	                <p for="fileInput">
+		                	<span><i class="material-icons">photo_camera</i></span>
+		                	<label><input type="file" id="fileInput"/></label>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="title button" onclick="submitData();">
+		SUBMIT
+	</div>
+	</div>
+	<script>
+		function submitData (){
+			var request = {
+				"ss_id" : getUrlVars()["ss_id"],
+				"name" : $("#firstName").val(),
+				"mobile" : $("#Mobile").val(),
+				"email" : $("#email").val(),				
+				"pan" : $("#pan").val(),
+				"aadhar" : $("#aadhar").val(),
+				"gst" : $("#gst").val(),				
+				"address_1" : $("#address_1").val(),
+				"address_2" : $("#address_2").val(),
+				"address_3" : $("#address_3").val(),				
+				"pincode" : $("#pincode").val(),
+				"city" : $("#city").val(),
+				"state" : $("#state").val(),				
+				"accountNo" : $("#accountNo").val(),				
+				"IFSCCode" : $("#IFSCCode").val(),
+				"MICRCode" : $("#MICRCode").val(),
+				"bankName" : $("#bankName").val(),				
+				"branch" : $("#branch").val(),
+				"bankCity" : $("#bankCity").val(),				
+				"account" : $("input[type='radio'][name='account']:checked").val(),
+				"pancard": "",
+				"aadharcardfront": '',
+				"Aadharcardback": '',
+				"cancelledchq": '',
+				"gstcertification": ''
+			}
+			console.log("request = " + JSON.stringify(request));
+			$.ajax({
+				type: "POST",
+				url: GetUrl() + "/postservicecall/save_FOS_Data",
+				dataType: "json",
+				data: JSON.parse(JSON.stringify(request)),
+				content_type: "application/json",
+				success: function (response) {
+					$("#successNote").text(response["Msg"]);
+					$("#successMsg").show();
+					$("#container").hide();
+					//location.reload();
+				}
+			});
+		}
+	
+	var getUrlVars = function () {
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for (var i = 0; i < hashes.length; i++) {
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
+	}
+	function GetUrl() {
+		var url = window.location.href;
+		var newurl;
+		if (url.includes("request_file")) {
+			newurl = "http://localhost:3000";
+		} else if (url.includes("qa")) {
+			newurl = "http://qa-horizon.policyboss.com:3000";
+		} else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+			newurl = "http://horizon.policyboss.com:5000";
+		}
+		return newurl;
+	}
+	$(document).ready(function () {
+		if(getUrlVars()["ss_id"] !== null && getUrlVars()["ss_id"] !== "" && getUrlVars()["ss_id"] !== undefined ){
+			$.ajax({
+				method: "GET",
+				url: GetUrl() + "/check_fos_present/" + getUrlVars()["ss_id"]
+			}).done(function (data) {
+				if(data["Status"] == "error"){
+					$("#warningerror").text(data["Msg"] + data["fos_status"]);
+					$("#errorMsg").show();
+					$("#container").hide();
+				}else{
+					$("#warningerror").text("");
+					$("#errorMsg").hide();
+					$("#container").show();
+				}
+			});
+		}else{
+			$("#warningerror").text("ss_id is mandatory");
+			$("#errorMsg").show();
+			$("#container").hide();
+		}
+		
+	});
+
+</script>
+</body>
+</html>

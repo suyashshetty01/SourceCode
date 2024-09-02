@@ -1,0 +1,275 @@
+body {
+font-family: Arial;
+font-size:14px;
+}
+.Popup {
+    background:rgba(0,0,0,0.2);
+    text-align:center;
+    width:100%;
+}
+.simplePopup {
+background:#0091c0 !important;
+padding:0px;
+width:100%;
+margin:0 auto;
+min-width:100%;
+}
+
+
+.simplePopupClose {
+float:right;
+cursor:pointer;
+margin-left:10px;
+margin-bottom:10px;
+}
+
+.simplePopupBackground {
+display:none;
+background:#000;
+position:fixed;
+height:100%;
+width:100%;
+top:0;
+left:0;
+z-index:1;
+}
+
+
+.btn {
+    border: none !important;
+    border-radius: 10px !important;
+}
+
+.btn {
+    border: solid 1px #e51b21;
+    padding: 10px 30px;
+    background: #e51b21;
+    color: #fff;
+}
+
+.btn-sm {
+    border:0px;
+    padding: 3px 10px !important;
+    background: #1b232d;
+    color: #fff;
+    border-radius: 3px !important;
+}
+
+.information{
+    padding-bottom:20px;
+}
+
+.information h2{
+    background: rgba(27,35,45,0.5);
+    font-size:16px;
+    color:#fff;
+    font-weight: bold;
+    padding:7px;
+    line-height:20px;
+    margin:0px;
+    text-align:left;
+}
+
+.information ul{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+}
+
+.information li{
+    list-style: none;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.leftpanel{
+    background:#0091c0;
+    height: 100hv !important;
+    color:#fff;
+    display: block;
+}
+.rightpanel{
+    background:#fff;
+}
+
+.leftpanel img{
+    width:100%;
+    max-width: 459px;
+}
+
+
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 0em;
+    max-width: 100%;
+    width: 100%;;
+    vertical-align: top;
+    font-weight: normal !important;
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #1b232d;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #a1a6ac;
+    font-weight: normal;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 0.6em 0;
+    width: 100%;
+    font-size:12px;
+}
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+
+.icon {
+    color: #ddd;
+    font-size: 150%;
+}
+
+
+.input--hoshi {
+    overflow: hidden;
+}
+
+.input__field--hoshi {
+    margin-top: 1em;
+    padding: 0.95em 0.15em;
+    width: 100%;
+    background: transparent;
+    color: #595F6E;
+}
+
+.input__label--hoshi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0.25em;
+    width: 100%;
+    height: calc(100% - 1em);
+    text-align: left;
+    pointer-events: none;
+}
+
+.input__label-content--hoshi {
+    position: absolute;
+}
+
+.input__label--hoshi::before,
+.input__label--hoshi::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 10px);
+    border-bottom: 1px solid #B9C1CA;
+}
+
+.input__label--hoshi::after {
+    margin-top: 0px;
+    border-bottom: 1px solid red;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.input__label--hoshi-color-1::after {
+    border-color: #c90500;
+}
+
+.input__field--hoshi:focus + .input__label--hoshi::after,
+.input--filled .input__label--hoshi::after {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.input__field--hoshi:focus + .input__label--hoshi .input__label-content--hoshi,
+.input--filled .input__label-content--hoshi {
+    -webkit-animation: anim-1 0.3s forwards;
+    animation: anim-1 0.3s forwards;
+}
+
+@-webkit-keyframes anim-1 {
+    50% {
+        opacity: 0;
+        -webkit-transform: translate3d(1em, 0, 0);
+        transform: translate3d(1em, 0, 0);
+    }
+    51% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1em, -40%, 0);
+        transform: translate3d(-1em, -40%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -40%, 0);
+        transform: translate3d(0, -40%, 0);
+    }
+}
+
+@keyframes anim-1 {
+    50% {
+        opacity: 0;
+        -webkit-transform: translate3d(1em, 0, 0);
+        transform: translate3d(1em, 0, 0);
+    }
+    51% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1em, -40%, 0);
+        transform: translate3d(-1em, -40%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -40%, 0);
+        transform: translate3d(0, -40%, 0);
+    }
+}
+
+.ctopHeader{
+    background:#fff;
+    padding:5px;
+    text-align: right;
+}
+
+

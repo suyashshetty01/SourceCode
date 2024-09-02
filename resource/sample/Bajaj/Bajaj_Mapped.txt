@@ -1,0 +1,68 @@
+{
+    "_id" : ObjectId("5975b018049b0f81f32084e8"),
+    "Insurer_Vehicle_ID" : 91476,
+    "Insurer_ID" : 1,
+    "Insurer_Vehicle_Code" : "38163480",
+    "Insurer_Vehicle_Make_Name" : "MARUTI",
+    "Insurer_Vehicle_Make_Code" : "110",
+    "Insurer_Vehicle_Model_Name" : "SWIFT",
+    "Insurer_Vehicle_Model_Code" : "29",
+    "Insurer_Vehicle_Variant_Name" : "VXI GLAM",
+    "Insurer_Vehicle_Variant_Code" : "27",
+    "Insurer_Vehicle_FuelType" : "P",
+    "Insurer_Vehicle_CubicCapacity" : 1298,
+    "Insurer_Vehicle_SeatingCapacity" : 5,
+    "Insurer_Vehicle_ExShowRoom" : "",
+    "Insurer_Vehicle_Insurer_Segmant" : "",
+    "Insurer_Vehicle_Insurer_BodyType" : "",
+    "Is_Active" : 1,
+    "Created_On" : "07:10.0",
+    "Product_Id_New" : 1,
+    "PB_Make_Name" : "Maruti"
+}
+{
+    "_id" : ObjectId("598eace8384188833d99abb3"),
+    "Insurer_Vehicle_ID" : 91477,
+    "Insurer_ID" : 1,
+    "Insurer_Vehicle_Code" : "38152243",
+    "Insurer_Vehicle_Make_Name" : "YAMAHA",
+    "Insurer_Vehicle_Make_Code" : "213",
+    "Insurer_Vehicle_Model_Name" : "ENTICER",
+    "Insurer_Vehicle_Model_Code" : "6",
+    "Insurer_Vehicle_Variant_Name" : "DLX",
+    "Insurer_Vehicle_Variant_Code" : "2",
+    "Insurer_Vehicle_FuelType" : "P",
+    "Insurer_Vehicle_CubicCapacity" : 125,
+    "Insurer_Vehicle_SeatingCapacity" : 2,
+    "Insurer_Vehicle_ExShowRoom" : "",
+    "Insurer_Vehicle_Insurer_Segmant" : "",
+    "Insurer_Vehicle_Insurer_BodyType" : "",
+    "Is_Active" : 1,
+    "Created_On" : "07:10.0",
+    "Product_Id_New" : 10,
+    "PB_Make_Name" : "YAMAHA"
+}
+
+{
+    "_id" : ObjectId("5975aec8049b0f81f32084e7"),
+    "Insurer_Vehicle_Mapping_ID" : 86297,
+    "Insurer_ID" : 1,
+    "Insurer_Vehicle_ID" : 91476,
+    "Vehicle_ID" : 685,
+    "Is_Active" : 1,
+    "Created_On" : "38:55.0",
+    "Status_Id" : 2,
+    "Premium_Status" : 2
+}
+
+{
+    "_id" : ObjectId("598ead80384188833d99abb4"),
+    "Insurer_Vehicle_Mapping_ID" : 86298,
+    "Insurer_ID" : 1,
+    "Insurer_Vehicle_ID" : 91477,
+    "Vehicle_ID" : 50734,
+    "Is_Active" : 1,
+    "Created_On" : "38:55.0",
+    "Status_Id" : 2,
+    "Premium_Status" : 2
+}

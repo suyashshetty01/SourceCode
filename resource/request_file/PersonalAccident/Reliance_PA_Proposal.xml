@@ -1,0 +1,167 @@
+<HealthDetails
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Policy>
+        <Tenure>1</Tenure>
+        <BusinessType>1</BusinessType>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <ProductCode>2913</ProductCode>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <Branch_Name>Test Branch</Branch_Name>
+        <AgentName>___insurer_integration_agent_code___</AgentName>
+        <AgentID>1</AgentID>
+        <ExternalSystemID>0</ExternalSystemID>
+        <IMDRefCode />
+        <IMDRefName />
+        <VendorCode />
+        <VendorName />
+        <CSOCode />
+        <CSOName />
+        <SMCode />
+        <SMName />
+        <CNIssueDate />
+        <Channel />
+    </Policy>
+    <ClientDetails>
+        <ClientTypeID>0</ClientTypeID>
+        <DOB>___birth_date___</DOB>
+        <Email>___email___</Email>
+        <Salutation>___salutation___</Salutation>
+        <ForeName>___first_name___</ForeName>
+        <MidName>___middle_name___</MidName>
+        <LastName>___last_name___</LastName>
+        <MaritalStatusID>___marital___</MaritalStatusID>
+        <Gender>___gender___</Gender>
+        <MobileNo>___mobile___</MobileNo>
+        <OccupationID>___occupation___</OccupationID>
+        <PhoneNo />
+        <Nationality>1949</Nationality>
+        <PassportNumber />
+        <PanNo>___pan___</PanNo>
+        <AadharNumber />
+        <VoterId />
+        <DrivingLiscense />
+        <Fax />
+        <Facebook />
+        <Twitter />
+        <Linkedin />
+        <Skype />
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1>___permanent_address_1___</Address1>
+                <Address2>___permanent_address_2___</Address2>
+                <Address3>___permanent_address_3___</Address3>
+                <CityID>___communication_city_code___</CityID>
+                <DistrictID>___district_code___</DistrictID>
+                <StateID>___state_code___</StateID>
+                <AreaID>___locality_code___</AreaID>
+                <Pincode>___pincode___</Pincode>
+                <Country>India</Country>
+                <NearestLandmark />
+            </CommunicationAddress>
+            <PermanentAddress>
+                <IsPermanentSameasCommAddr>true</IsPermanentSameasCommAddr>
+                <Address>
+                    <Address1>___permanent_address_1___</Address1>
+                    <Address2>___permanent_address_2___</Address2>
+                    <Address3>___permanent_address_3___</Address3>
+                    <CityID>___communication_city_code___</CityID>
+                    <DistrictID>___district_code___</DistrictID>
+                    <StateID>___state_code___</StateID>
+                    <AreaID>___locality_code___</AreaID>
+                    <Pincode>___pincode___</Pincode>
+                    <Country>India</Country>
+                    <NearestLandmark />
+                </Address>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <UploadDetails>
+        <DocumentType />
+    </UploadDetails>
+    <RiskDetails>
+        <CoverageOptionID>1901</CoverageOptionID>
+        <CoverageSubOptionID></CoverageSubOptionID>
+        <SumInsured>___pa_insurance_si___</SumInsured>
+        <MembertoInsure>___member_count___</MembertoInsure>
+        <Tenure>1</Tenure>
+        <IsEmployer-EmployeeRelationship />
+        <EmployerName />
+        <IsServiceTaxExemptionApplicable>false</IsServiceTaxExemptionApplicable>
+        <ServiceTaxExemptionID>1</ServiceTaxExemptionID>
+        <MemberCount>___member_count___</MemberCount>
+        <SpecialConditions />
+        <IsMedicalExpenseExtnApplicable>false</IsMedicalExpenseExtnApplicable>
+        <MedicalExpenseExtnRa>1</MedicalExpenseExtnRa>       
+        <FamilyDiscountRate />
+        <PlanID />
+        <CoverTypeID />
+    </RiskDetails>
+    <NomineeDetails>
+        <FirstName>___nominee_first_name___</FirstName>
+        <Salutation>___nominee_Salutation___</Salutation>
+        <MiddleName>___nominee_middle_name___</MiddleName>
+        <LastName>___nominee_last_name___</LastName>
+        <DOB>___nominee_birth_date___</DOB>
+        <NomineeRelationshipID>___nominee_relation___</NomineeRelationshipID>
+        <NomineeRelationshipOther />
+        <NomineeAddress>
+            <IsNomineeSameasCommAddr>true</IsNomineeSameasCommAddr>
+            <Address1>___permanent_address_1___</Address1>
+            <Address2>___permanent_address_2___</Address2>
+            <Address3>___permanent_address_3___</Address3>
+            <CityID>___communication_city_code___</CityID>
+            <Country>India</Country>
+            <DistrictID>___district_code___</DistrictID>
+            <NearestLandmark />
+            <Pincode>___pincode___</Pincode>
+            <AreaID>___locality_code___</AreaID>
+            <StateID>___state_code___</StateID>
+            
+        </NomineeAddress>
+    </NomineeDetails>
+    <PreviousInsuranceDetails>
+        <PrevYearPolicyNo>___PrevYearPolicyNo___</PrevYearPolicyNo>
+        <PrevYearPolicyStartDate />
+        <PrevYearPolicyEndDate />
+        <PrevInsuredName>___PrevInsuredName___</PrevInsuredName>
+        <PrevInsuranceCompanyName />
+        <PrevInsCompAddress />
+    </PreviousInsuranceDetails>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+    <IsQuickquote>false</IsQuickquote>
+    <IsHardCopy>1</IsHardCopy>
+    <InsuredDetailsList>
+        <!--InsurersDetail_Start-->
+        <InsuredDetail>
+            <RelationshipWithProposerID>___member_array_RelationshipWithProposerID___</RelationshipWithProposerID>
+            <FirstName>___member_array_first_name___</FirstName>
+            <LastName>___member_array_last_name___</LastName>
+            <DOB>___member_array_birth_date___</DOB>
+            <Age>___member_array_age___</Age>
+            <Gender>___member_array_gender___</Gender>
+            <Salutation>___member_array_salutation___</Salutation>
+            <MaritalStatusID>___member_array_marital_status___</MaritalStatusID>
+            <OccupationID>___member_array_occupation___</OccupationID>
+            <AnnualIncome>___member_array_AnnualIncome___</AnnualIncome>
+	    <IsTableA>true</IsTableA>
+            <IsTableB />
+            <IsTableC />
+            <IsTableD />
+            <SumInsuedTableA>___member_array_TotalCapitalSI___</SumInsuedTableA> 
+            <SumInsuedTableB />
+            <SumInsuedTableC />
+            <SumInsuedTableD />
+            <TotalCapitalSI>___member_array_TotalCapitalSI___</TotalCapitalSI>
+            <Loading />
+            
+            <ISPersonEarningMember>true</ISPersonEarningMember>
+            <MiddleName>___member_array_middle_name___</MiddleName>
+            <NationalityId>1949</NationalityId>
+    </InsuredDetail>
+        <!--InsurersDetail_End-->
+    </InsuredDetailsList>
+</HealthDetails>

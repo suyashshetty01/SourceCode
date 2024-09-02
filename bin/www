@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+//for app monitoring - Chirag Modi
+         require('newrelic');
+var app = require('../app');
+var debug = require('debug')('lm-api:server');
+var http = require('http');
+var config = require('config');
+
+var path = require('path'); 
+var fs = require('fs');
+var moment = require('moment');
+var appRoot = path.dirname(path.dirname(require.main.filename));
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || config.environment.port);
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+var winstonlogger = require('../libs/Logging');
+process.on('uncaughtException', function (exception) {
+    console.warn('uncaughtException', exception); // to see your exception details in the console
+//    // if you are on production, maybe you can send the exception details to your
+//    // email as well ?    
+//    var fs = require('fs');
+//    var today = new Date();
+//    var arrLog = {
+//        'Received_On': new Date(),
+//        'Details': exception
+//    };
+//
+//    var cache = [];
+//    var strLog = JSON.stringify(arrLog, function (key, value) {
+//        if (typeof value === 'object' && value !== null) {
+//            if (cache.indexOf(value) !== -1) {
+//                // Circular reference found, discard key
+//                return;
+//            }
+//            // Store value in our collection
+//            cache.push(value);
+//        }
+//        return value;
+//    });
+//    cache = null; // Enable garbage collection
+//    var log_file_name = today.toISOString().substring(0, 10).toString().replace(/-/g, '');
+//    fs.appendFile(appRoot + "/tmp/error/exception_" + log_file_name + ".log", '\n' + strLog, function (err) {
+//
+//    });
+});
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+    console.log('**************************');
+    console.log('Main_Error', error);
+    console.log('**************************');
+    /*
+     if (error.syscall !== 'listen') {
+     throw error;
+     }
+     
+     var bind = typeof port === 'string'
+     ? 'Pipe ' + port
+     : 'Port ' + port;
+     
+     // handle specific listen errors with friendly messages
+     switch (error.code) {
+     case 'EACCES':
+     console.error(bind + ' requires elevated privileges');
+     process.exit(1);
+     break;
+     case 'EADDRINUSE':
+     console.error(bind + ' is already in use');
+     process.exit(1);
+     break;
+     default:
+     throw error;
+     }
+     */
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    var addr = server.address();
+    var bind = typeof addr === 'string'
+            ? 'pipe ' + addr
+            : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+    console.log('$$$$$$$$$$$$$$$$$$$$$$$$');
+    console.log('');
+    console.log(config.environment.name + ' Environment is Listening on ' + bind);
+    console.log('Web URL : ' + config.environment.weburl);
+    console.log('');
+    console.log('$$$$$$$$$$$$$$$$$$$$$$$$');
+    console.log('');
+}

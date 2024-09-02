@@ -1,0 +1,51 @@
+{
+    "db": {
+        "connection": "mongodb://horizonqaapp:H%40r!z0nQA2108@13.127.179.204",
+        "name": "lm-api-qa"       
+    },
+    "environment": {
+        "name": "Development",
+        "port": "3000",
+        "weburl": "http://localhost:3000",
+        "downloadurl": "http://localhost:3000",
+        "portalurl": "http://qa.policyboss.com",
+        "notification_email": "horizonlive.2019@gmail.com",
+        "google_api_key": "AIzaSyDGHQ8Bqez5QDi4tzorkLU4mRn98uzSYpo",
+        "insurer_env": ""
+    },
+    "sms": {
+        "sendsms": true
+    },
+    "portalsqldb": {
+        "user": "newsstest",
+        "password": "sir@1234",
+        "server": "POLICYBOSS\\TESTPOLICYBOSS",
+        "port": "1433",
+        "database": "QA_PolicyBoss"
+    },
+    "email": {
+        "send": true,
+        "sg_api_key": "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"
+    },
+    "auth_url": {
+        "user": "horizon",
+        "pass": "horizon007"
+    },
+    "pb_config": {
+        "api_crn_url": "http://qa.policyboss.com/Quotes/Api/MotorCRN",
+        "api_health_crn_url": "http://qa.policyboss.com/quotes/api/HealthCRN",
+        "api_crn_user": "test",
+        "api_crn_pass": "test@123",
+        "pdf_system_loc": "D:\\QA\\PolicyBoss\\pdf-files\\policy\\",
+        "pdf_web_loc": "/pdf-files/policy/"
+    },
+    "erp_config": {
+        "api_login_url": "http://202.131.96.98:8099/Account/Login",
+        "api_qt_url": "http://202.131.96.98:8889/PushNewLeadIDToSolSof.svc?wsdl"
+    },
+    "icici_health_auth": {
+        "auth_url": "https://cldilbizapp02.cloudapp.net:9001/cerberus/connect/token"
+    }
+}
+
+

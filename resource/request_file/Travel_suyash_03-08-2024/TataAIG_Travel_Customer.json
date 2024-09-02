@@ -1,0 +1,77 @@
+{
+    "proposal_id": "___proposal_id___",
+    "product_id": "M100000000003",
+    "selected_product": "___selected_product___",
+    "selected_plan": "___plan_code_txt___",
+    "selected_zone": "___selected_zone___",
+    "departure_date": "___policy_start_date___",
+    "return_date_single": "___policy_end_date___",
+    "member_count": "___member_count___",
+    "application_date": "___application_date___",
+    "triptype": "___trip_type___",
+    "coverage_period": "___travel_days___",
+    "gstin": "",
+    "proposer_title": "___salutation___",
+    "fname_proposer": "___first_name___",
+    "mname_proposer": "___middle_name___",
+    "lname_proposer": "___last_name___",
+    "proposer_dob": "___birth_date___",
+    "email": "___email___",
+    "mobile_no": "___mobile___",
+    "customer_pincode": "___permanent_pincode___",
+    "office_location": "Mumbai",
+    "pi_pancard": "___pan___",
+    "pincode": "___permanent_pincode___",
+    "state": "___permanent_state___",
+    "city": "___permanent_city___",
+    "country": [
+        "INDIA"
+    ],
+     "address_line_1": "___permanent_address_1___",
+    "address_line_2": "___permanent_address_2___",
+    "address_line_3": "___permanent_address_3___",
+    "pi_gender": "___gender___",
+    "proposer_same_as_insured": "___proposer_same_as_insured___",
+    "pi_mobile": "___mobile___",
+    "pi_email": "___email___",
+    "pre_existing_desc": "",
+    "alternate_contact_no": null,
+    "pi_aadhar": null,
+    "selected_Country_lists": 
+       "___visiting_countries___"
+    ,
+        <!--InsurersAge_Start-->
+    "dob____member_count___": "___member_array_birth_date___",
+    "age____member_count___": "___member_array_age_1___" <!--InsurersAge_End-->
+     
+    "traveller_info": [
+          <!--InsurersDetail_Start-->
+        {
+             "title": "___member_array_salutation___",
+            "fname": "___member_array_first_name___",
+            "mname": "___member_array_middle_name___",
+            "lname": "___member_array_last_name___",
+            "gender": "___member_array_gender___",
+            "addon_unit": "0",
+            "idtype": "Passport Number",
+            "id_no": "___member_array_passport___",
+            "pre_existing": ___member_array_ped___,
+            "pre_existing_desc": "___member_array_ped_desc___",
+            "assignee": "___nominee_name___",
+            "n_relation": "___nominee_relation___",
+            "pan_no": "___pan___"
+        }
+        <!--InsurersDetail_End-->
+    ],
+    "uni_name": "",
+    "uni_location": "",
+    "course_name": "",
+    "course_duration": "",
+    "sponsor_name": "",
+    "sponsor_dob": "",
+    "sponsor_relation": "",
+    "sol_id": "",
+    "employee_id_code": "",
+    "sp_code": "",
+    "partner_app_no_id": ""
+}

@@ -1,0 +1,219 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:saveProposalRequest xmlns:ns2="http://stub.unotechsoft.com/wsdl/MotorService/">
+         <ProductCode>3121</ProductCode>
+         <AuthenticationToken/>
+         <CIAName/>
+         <Campaign>0</Campaign>
+         <HashKey>0</HashKey>
+         <HostAddress/>
+         <Medium>0</Medium>
+         <Source>0</Source>
+         <InputXML><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<PrivateCarInsurancePolicy>
+   <PropProductDetails_ProductCode>3121</PropProductDetails_ProductCode>
+   <PropPolicyEffectivedate_Fromdate_Mandatary>21/09/2017</PropPolicyEffectivedate_Fromdate_Mandatary>
+   <PropGeneralProposalInformation_ProposalDate_Mandatary>05/09/2017</PropGeneralProposalInformation_ProposalDate_Mandatary>
+   <PropGeneralNodes_ApplicationDate>05/09/2017</PropGeneralNodes_ApplicationDate>
+   <PropRisks_VehicleType>Indigenous</PropRisks_VehicleType>
+   <PropRisks_ProposalType>Rollover</PropRisks_ProposalType>
+   <PropRisks_RiskVariant>PackageComprehensive</PropRisks_RiskVariant>
+   <PropCustomerDtls_CustomerID_Mandatary>1000034986</PropCustomerDtls_CustomerID_Mandatary>
+   <PropCustomerDtls_CustomerName>Rahul</PropCustomerDtls_CustomerName>
+     <PropRisks_RegistrationNumber>DL</PropRisks_RegistrationNumber>
+   <PropRisks_RegistrationNumber2>01</PropRisks_RegistrationNumber2>
+   <PropRisks_RegistrationNumber3>CL</PropRisks_RegistrationNumber3>
+   <PropRisks_RegistrationNumber4>3580</PropRisks_RegistrationNumber4>
+   <PropRisks_Manufacture>HONDA</PropRisks_Manufacture>
+   <PropRisks_ModelVariant>E MT</PropRisks_ModelVariant>
+   <PropRisks_ManufactureYear>2016</PropRisks_ManufactureYear>
+   <PropRisks_AuthorityLocation>Delhi North: Under Hill Road</PropRisks_AuthorityLocation>
+   <PropRisks_IDVofthevehicle>365776</PropRisks_IDVofthevehicle>
+   <PropRisks_FuelType>Petrol</PropRisks_FuelType>
+   <PropRisks_Dateofpurchase>14/09/2016</PropRisks_Dateofpurchase>
+   <PropRisks_DateofRegistration>14/09/2016</PropRisks_DateofRegistration>
+   <PropRisks_VehicleAge_Mandatary>2</PropRisks_VehicleAge_Mandatary>
+   <PropRisks_BasisOfRating>GLM</PropRisks_BasisOfRating>
+   <PropRisks_CompulsoryPAwithOwnerDriver>true</PropRisks_CompulsoryPAwithOwnerDriver>
+   <PropRisks_EntitledforNCB>Yes</PropRisks_EntitledforNCB>
+   <PropRisks_SeatingCapacity>5</PropRisks_SeatingCapacity>
+   <PropRisks_CubicCapacity>1198</PropRisks_CubicCapacity>
+   <PropRisks_Engineno>222222222222222</PropRisks_Engineno>
+   <PropRisks_ChassisNumber>333333333333333</PropRisks_ChassisNumber>
+   <PropRisks_NoOfPersonsNamed />
+   <PropRisks_CapitalSIPerPerson>0</PropRisks_CapitalSIPerPerson>
+   <PropRisks_SumInsuredPaidDriver>0</PropRisks_SumInsuredPaidDriver>
+   <PropRisks_TPPDRestricted>false</PropRisks_TPPDRestricted>
+   <PropRisks_VehcleFitWithFibrGlasFuelTank>false</PropRisks_VehcleFitWithFibrGlasFuelTank>
+   <PropRisks_AntiTheftCheck>false</PropRisks_AntiTheftCheck>
+   <PropRisks_Geographicalareaextention>false</PropRisks_Geographicalareaextention>
+   <PropRisks_Discount />
+   <PropRisks_AddOnPlanSelected>Optional</PropRisks_AddOnPlanSelected>
+   <PropRisks_AddOnChoiceOpted>Choice 1</PropRisks_AddOnChoiceOpted>
+   <PropRisks_IsVehicleUsedforblindpersons>false</PropRisks_IsVehicleUsedforblindpersons>
+   <PropRisks_ConsumablesExpenses>false</PropRisks_ConsumablesExpenses>
+   <PropRisks_LossOfPersonalBelongings>false</PropRisks_LossOfPersonalBelongings>
+   <PropRisks_CourtesyHireCar>false</PropRisks_CourtesyHireCar>
+   <PropRisks_TyreSecure>false</PropRisks_TyreSecure>
+   <PropRisks_VoluntaryDeductibleAmount />
+   <PropRisks_EngineSecure>false</PropRisks_EngineSecure>
+   <PropRisks_ConsumablesExpenses>false</PropRisks_ConsumablesExpenses>
+   <PropRisks_NCBProtectionCover>false</PropRisks_NCBProtectionCover>
+   <PropRisks_ProtectedNCB>false</PropRisks_ProtectedNCB>
+   <PropRisks_KeyReplacement>false</PropRisks_KeyReplacement>
+   <PropRisks_SumAssuredKeyReplacement>0</PropRisks_SumAssuredKeyReplacement>
+   <PropRisks_SumAssuredAOY />
+   <PropRisks_RoadsideAssistance>true</PropRisks_RoadsideAssistance>
+   <PropRisks_DailyAllowance>false</PropRisks_DailyAllowance>
+   <PropRisks_AutomobileAssociC>false</PropRisks_AutomobileAssociC>
+   <PropRisks_ImprtdVehcleWoutPaymtCustmDuty>false</PropRisks_ImprtdVehcleWoutPaymtCustmDuty>
+   <PropRisks_IsVehcleUsdForDrivngTuitions>false</PropRisks_IsVehcleUsdForDrivngTuitions>
+   <PropRisks_CertifiedVintageCarByCarClub>false</PropRisks_CertifiedVintageCarByCarClub>
+   <PropRisks_DepreciationReimbursement>false</PropRisks_DepreciationReimbursement>
+   <PropRisks_ReturnToInvoice>false</PropRisks_ReturnToInvoice>
+   <PropPreviousPolicyDetails_PolicyEffectiveFrom>05/09/2016</PropPreviousPolicyDetails_PolicyEffectiveFrom>
+   <PropPreviousPolicyDetails_PolicyEffectiveTo>04/09/2017</PropPreviousPolicyDetails_PolicyEffectiveTo>
+   <PropRisks_CityWherePrimarilyUsed>MUMBAI</PropRisks_CityWherePrimarilyUsed>
+   <PropPreviousPolicyDetails_OfficeCode>000006</PropPreviousPolicyDetails_OfficeCode>
+   <PropPreviousPolicyDetails_OfficeAddress>SUNDARAM TOWERS 45-46,</PropPreviousPolicyDetails_OfficeAddress>
+   <PropPreviousPolicyDetails_AddressLine2>WHITES ROAD,</PropPreviousPolicyDetails_AddressLine2>
+   <PropPreviousPolicyDetails_AddressLine3>ROYAPET</PropPreviousPolicyDetails_AddressLine3>
+   <PropPreviousPolicyDetails_PreviousInsPincode>600001</PropPreviousPolicyDetails_PreviousInsPincode>
+   <PropPreviousPolicyDetails_City>11238</PropPreviousPolicyDetails_City>
+   <PropPreviousPolicyDetails_State>31</PropPreviousPolicyDetails_State>
+   <PropRisks_MainDriver>Self - Owner Driver</PropRisks_MainDriver>
+   <PropRisks_Age>25</PropRisks_Age>
+   <PropRisks_Drivingexperience>5</PropRisks_Drivingexperience>
+   <PropGeneralProposalInformation_PolicySchedule_Mandatary>Yes</PropGeneralProposalInformation_PolicySchedule_Mandatary>
+   <PropIntermediaryDetails_IntermediaryCode>0000445004</PropIntermediaryDetails_IntermediaryCode>
+   <PropSerIntermediaryDetails_SerIntermediaryCode />
+   <PropGeneralProposalInformation_OfficeName>MUMBAI</PropGeneralProposalInformation_OfficeName>
+   <PropRisks_Model>BRIO</PropRisks_Model>
+   <PropRisks_OtherChk2>false</PropRisks_OtherChk2>
+   <PropGeneralProposalInformation_BusinessType_Mandatary>Roll Over</PropGeneralProposalInformation_BusinessType_Mandatary>
+   <PropPolicyEffectivedate_Todate_Mandatary>04/09/2018</PropPolicyEffectivedate_Todate_Mandatary>
+   <PropPolicyEffectivedate_Tohour_Mandatary>23:59</PropPolicyEffectivedate_Tohour_Mandatary>
+   <PropMODetails_TertiaryMOCode>WEBSERVICE</PropMODetails_TertiaryMOCode>
+   <PropRisks_IsCNGLPGKitinsuredinPIP>false</PropRisks_IsCNGLPGKitinsuredinPIP>
+   <PropRisks_NumberofPersonsUnnamed>0</PropRisks_NumberofPersonsUnnamed>
+   <PropRisks_LiabilityToSoldierSailorAirMan>false</PropRisks_LiabilityToSoldierSailorAirMan>
+   <PropRisks_Lifemember>false</PropRisks_Lifemember>
+   <PropRisks_Bangladesh>false</PropRisks_Bangladesh>
+   <PropRisks_Bhutan>false</PropRisks_Bhutan>
+   <PropRisks_Nepal>false</PropRisks_Nepal>
+   <PropRisks_Maldives>false</PropRisks_Maldives>
+   <PropRisks_Pakistan>false</PropRisks_Pakistan>
+   <PropRisks_SriLanka>false</PropRisks_SriLanka>
+   <PropRisks_RepairOfGlasPlastcFibNRubrGlas>false</PropRisks_RepairOfGlasPlastcFibNRubrGlas>
+   <PropRisks_GroupPersonalAccident>false</PropRisks_GroupPersonalAccident>
+   <PropRisks_SumAssuredLossOfPersonalBelong />
+   <PropRisks_RatioofAOAinAOY />
+   <PropRisks_SumAssuredAOA />
+   <PropRisks_AllowanceDaystheft>0</PropRisks_AllowanceDaystheft>
+   <PropRisks_CourtseyFranchiDay>0</PropRisks_CourtseyFranchiDay>
+   <PropRisks_AllowanceDaysAccCourtHireCar>0</PropRisks_AllowanceDaysAccCourtHireCar>
+   <PropRisks_AllowanceDaysTheftTotal>0</PropRisks_AllowanceDaysTheftTotal>
+   <PropRisks_FranchiseDays>0</PropRisks_FranchiseDays>
+   <PropRisks_AllowanceDaysAccident>0</PropRisks_AllowanceDaysAccident>
+   <PropRisks_IsVehicleusedlimitedtopremises>false</PropRisks_IsVehicleusedlimitedtopremises>
+   <PropRisks_InsuredHasDrivinglicense>true</PropRisks_InsuredHasDrivinglicense>
+   <PropRisks_MaritalStatus>SINGLE</PropRisks_MaritalStatus>
+   <PropIntermediaryDetails_IntermediaryName>Futurisk Insurance Broking Company Pvt. Ltd</PropIntermediaryDetails_IntermediaryName>
+   <PropGeneralProposalInformation_BranchOfficeCode />
+   <PropGeneralProposalInformation_OfficeCode />
+   <PropEndorsementDtls_IsSellerInsured>false</PropEndorsementDtls_IsSellerInsured>
+   <PropGeneralProposalInformation_DisplayOfficeCode>0200</PropGeneralProposalInformation_DisplayOfficeCode>
+   <PropRisks_VariantCode>1816</PropRisks_VariantCode>
+   <PropRisks_Airbag />
+   <PropRisks_ABS />
+   <PropRisks_AutoTransmission />
+   <PropRisks_TheftTarget />
+   <PropRisks_VehicleSegment>Compact</PropRisks_VehicleSegment>
+   <PropRisks_Typeofbody>SALOON</PropRisks_Typeofbody>
+   <PropRisks_NoOfClaimsDepreciation>2</PropRisks_NoOfClaimsDepreciation>
+   <PropRisks_EmergTrnsprtAndHotelExpensIDV />
+   <PropRisks_ManufacturerCode>158</PropRisks_ManufacturerCode>
+   <PropRisks_ModelCode>102674</PropRisks_ModelCode>
+   <PropPolicyEffectivedate_Fromhour_Mandatary>17:23</PropPolicyEffectivedate_Fromhour_Mandatary>
+   <PropRisks_VehicleTypeCode>45</PropRisks_VehicleTypeCode>
+   <PropRisks_RTOCode>DL01</PropRisks_RTOCode>
+   <PropRisks_RTOGroupCode>9</PropRisks_RTOGroupCode>
+   <IsThinCustomer>false</IsThinCustomer>
+   <PropRisks_Zone_Mandatary>Zone-A</PropRisks_Zone_Mandatary>
+   <PropRisks_VehiclePurchaseAs />
+   <PropDistributionChannel_BusineeChanneltype />
+   <PropRisks_City />
+   <PropRisks_CityCode />
+   <PropRisks_CountryCode />
+   <PropRisks_District />
+   <PropRisks_DistrictCode />
+   <PropRisks_Gender>MALE</PropRisks_Gender>
+   <PropRisks_HomeAway>false</PropRisks_HomeAway>
+   <PropRisks_LegalLiabilityToEmployees>false</PropRisks_LegalLiabilityToEmployees>
+   <PropRisks_PersnalExtndedProtctionPolPEPP>false</PropRisks_PersnalExtndedProtctionPolPEPP>
+   <PropRisks_PersonalTripEffects>false</PropRisks_PersonalTripEffects>
+   <PropRisks_Pincode>110034</PropRisks_Pincode>
+   <PropRisks_NoOfPersonWiderLegalLiability />
+   <PropRisks_NoOfPersonsPaidDriver>0</PropRisks_NoOfPersonsPaidDriver>
+   <PropRisks_RegistrationAddressSameComm>true</PropRisks_RegistrationAddressSameComm>
+   <PropRisks_Registrationaddressline1>707-708 B-9 ITL Towers Netaji Subhash Place Pitam Pura</PropRisks_Registrationaddressline1>
+   <PropRisks_Registrationaddressline2 />
+   <PropRisks_State>DELHI</PropRisks_State>
+   <PropRisks_StateCode />
+   <PropDistributionChannel_BusinessSource_Mandatary>INTERMEDIARY</PropDistributionChannel_BusinessSource_Mandatary>
+   <PropGeneralProposalInformation_ServiceTaxExemptionCategory_Mandatary>No Exemption</PropGeneralProposalInformation_ServiceTaxExemptionCategory_Mandatary>
+   <PropRisks_PreSourceApproval>false</PropRisks_PreSourceApproval>
+   <PropGeneralProposalInformation_IsNCBApplicable>true</PropGeneralProposalInformation_IsNCBApplicable>
+   <PropRisks_FuelUsed>false</PropRisks_FuelUsed>
+   <PropGeneralProposalInformation_MethodOfCalculation />
+   <PropGeneralProposalInformation_iscovernoteused>false</PropGeneralProposalInformation_iscovernoteused>
+   <PropSerIntermediaryDetails_SerIntermediaryName />
+   <PropPreviousPolicyDetails_IssuingOfficeCode>000006</PropPreviousPolicyDetails_IssuingOfficeCode>
+   <PropPreviousPolicyDetails_PolicyVariant />
+   <PropRisks_WiderLegalLiabilityToPaid>false</PropRisks_WiderLegalLiabilityToPaid>
+   <PropRisks_OtherChk3>false</PropRisks_OtherChk3>
+   <PropRisks_AddTowingCharges>false</PropRisks_AddTowingCharges>
+   <PropRisks_YearLicensed>2012</PropRisks_YearLicensed>
+   <PropGeneralProposalInformation_QuoteNumber></PropGeneralProposalInformation_QuoteNumber>
+   <PropRisks_OtherInformation1T />
+   <PropRisks_NoOfPersonsLiabilityEmployee />
+   <PropRisks_LoadingNewCarRplacmnt>0</PropRisks_LoadingNewCarRplacmnt>
+   <PropGeneralProposalInformation_POSPanNo />
+   <PropGeneralProposalInformation_POSAadhaarNo />
+   <PropGeneralProposalInformation_IsPUP>true</PropGeneralProposalInformation_IsPUP>
+   <PropPreviousPolicyDetails_NCBPercentage>0</PropPreviousPolicyDetails_NCBPercentage>
+   <PropRisks_PrevYearNCB>0</PropRisks_PrevYearNCB>
+   <PropRisks_NoOfClaimsNCBProtection>1</PropRisks_NoOfClaimsNCBProtection>
+   <PropPreviousPolicyDetails_PolicyNo>1111111111111</PropPreviousPolicyDetails_PolicyNo>
+   <PropPreviousPolicyDetails_PreviousPolicyType>PackageComprehensive</PropPreviousPolicyDetails_PreviousPolicyType>
+   <PropPreviousPolicyDetails_CorporateCustomerId_Mandatary>RSAICL</PropPreviousPolicyDetails_CorporateCustomerId_Mandatary>
+   <PropPreviousPolicyDetails_ClaimLodgedInPast>false</PropPreviousPolicyDetails_ClaimLodgedInPast>
+   <PropPreviousPolicyDetails_ClaimAmount />
+   <PropRisks_NoClaimBonusApplicable>0</PropRisks_NoClaimBonusApplicable>
+   <PropRisks_NCBConfirmation>On declaration</PropRisks_NCBConfirmation>
+   <OtherDetailsGrid>
+      <OwnerDriverNomineeDetails Name="OwnerDriverNomineeDetails" Value="GRP292">
+         <OwnerDriverNomineeDetails Type="GroupData">
+            <Nominee Name="Nominee" Value="Ajay" Type="String" />
+            <Age Name="Age" Value="45" Type="Double" />
+            <Relationship Name="Relationship" Value="Brother" Type="String" />
+            <Nameofappointee Name="Nameofappointee" Value="" Type="String" />
+            <Relationshiptonominee Name="Relationshiptonominee" Value="" Type="String" />
+         </OwnerDriverNomineeDetails>
+      </OwnerDriverNomineeDetails>
+   </OtherDetailsGrid>
+   <PropRisks_NameOfNominee>Ajay</PropRisks_NameOfNominee>
+   <PropRisks_AgeCoverageDetails>45</PropRisks_AgeCoverageDetails>
+   <PropRisks_Relationship>Brother</PropRisks_Relationship>
+</PrivateCarInsurancePolicy>]]></InputXML>
+         <IsBankDataRequired>false</IsBankDataRequired>
+         <IsCutomerAddressRequired>false</IsCutomerAddressRequired>
+         <IsFinanciarDataRequired>false</IsFinanciarDataRequired>
+         <IsManufacturerMappingRequired>false</IsManufacturerMappingRequired>
+         <IsRTOMappingRequired>false</IsRTOMappingRequired>
+         <ModeOfOperation>NEWPOLICY</ModeOfOperation>
+         <UserId>jkadam</UserId>
+         <UserRole>ADMIN</UserRole>
+      </ns2:saveProposalRequest>
+   </soap:Body>
+</soap:Envelope>

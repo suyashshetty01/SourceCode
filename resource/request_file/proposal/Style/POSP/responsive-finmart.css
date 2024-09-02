@@ -1,0 +1,842 @@
+@media only screen and (min-width:1284px) and (max-width:1920px) {
+.img-floater-new {
+		width: 30%;
+	}
+/* main page */ 
+.notification-icon {
+    top: 12%;
+    right: 45%;
+}
+/* End main page */		
+}
+
+@media only screen and (min-width:761px) and (max-width:1284px) {
+.button-nav-pills-new {
+    width: 102%;
+}
+.box-style{
+	margin-left:12px; 
+	width:97%;
+	border: 1px solid #74c2e1 !important;
+}
+.nav-size {
+    font-size: 13px;
+    width: 31%;
+    text-align: center;
+    border: 0px solid #009ee3;
+    margin: 0px 15px 0 2px;
+    border-radius: 0px;
+}
+.nav-size-dropdown {
+    font-size: 13px;
+    width: 97%;
+    text-align: left;
+    margin: 0px 5px 6px 5px;
+    border-radius: 0px;
+	float:left;
+}
+.floater-top-up-pad {
+    padding-top: 10px;
+}
+.main-floater-top-up h2 {
+    color: #ff580e;
+    text-align: left;
+    font-size: 15px;
+    margin: 0;
+    padding: 3px 0 3px 10px;
+    font-weight: 500;
+	background: #f1f1f1;
+    margin: 3px;
+    width: 90%;
+	border: 0px solid #d4d4d4;
+}
+.map-icon {
+    color: #0090ff;
+    position: relative;
+    bottom: 2px;
+    left: 48%;
+    text-align: center;
+    font-size: 25px;
+}
+.scalling-left {
+    width: 15%;
+    float: left;
+    position: relative;
+    padding-top: 5px;
+    padding-left: 4.8%;
+}
+.top-up-cover-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    padding: 11% 0 0 1%;
+    border: 1px solid #9fa0a0;
+    background: #fafafa;
+    background: -moz-radial-gradient(center, ellipse cover, #fafafa 0%, #cfd1d1 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #fafafa 0%,#cfd1d1 100%);
+    background: radial-gradient(ellipse at center, #fafafa 0%,#cfd1d1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#cfd1d1',GradientType=1 );
+}
+.main-floater h2 {
+    color: #0281ca;
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+    padding: 20px 0 8px 0;
+    font-weight: 600;
+}
+.main-floater p {
+    color: #0281ca;
+    text-align: left;
+    font-size: 14px;
+}
+.floater-details h2 {
+    background: #f1f1f1;
+    color: #0281ca;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+}
+.floater-details h3 {
+    background: #f1f1f1;
+    color: #ff0000;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0 5px 0;
+}
+.floater-details p {
+    background: #f1f1f1;
+    color: #0281ca;
+    text-align: center;
+    font-size: 11px;
+}
+.icon-img-health {
+	padding-top:10px;
+}
+.compare-top {
+	padding-top: 15px;
+}
+.top-up-img {
+    width: 40%;
+}
+.logo-img-floater {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.img-floater-new {
+	width: 50%;
+}
+.img-floater-new {
+	width: 38%;
+}
+/* main page */ 
+.notification-icon {
+    top: 12%;
+    right: 38%;
+}
+/* End main page */	
+}
+@media only screen and (min-width:480px) and (max-width:760px) {	
+.top-info {
+	padding:28px;
+}
+.member-age-main {
+	border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    max-width: 100%;
+    height: auto;
+    display: inline;
+}
+.top {
+	padding-bottom:10px;
+}
+.anglerl {
+	font-weight: bold;
+    color: #32b4ff;
+}
+/* quotes-from-inrurers */
+.border-policy {
+	border-bottom:1px solid #c9c9c9;
+}
+.main-floater {  
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+    border-top: 1px solid #d2d4d4;
+    border-left: 1px solid #d2d4d4;
+    border-right: 1px solid #d2d4d4;
+	border-bottom: 1px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+	float:left;
+    margin-bottom: 8px;	
+}
+.main-floater h2 {
+    color: #0281ca;
+	text-align: left;
+    font-size:18px;
+    margin:0;
+    padding:18px 0 8px 0;
+	font-weight:600;	
+}
+.main-floater p {
+    color: #0281ca;
+	text-align: left;
+    font-size:14px;	
+}
+.floater-details {
+    background: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #0281ca;
+    border-bottom: 0px solid #d1d3d3;
+    border-radius: 0px;
+    float: left;
+	border-radius: 0 0 4px 4px;
+}
+.floater-details h2 {
+    background: #f1f1f1;
+    color: #0281ca;
+	text-align: center;
+    font-size:16px;	
+	padding: 10px 0 5px 0;
+}
+.floater-details h3 {
+    background: #f1f1f1;
+    color: #ff0000;
+	text-align: center;
+    font-size:16px;
+	margin:0;
+	padding: 10px 0 5px 0;
+}
+.floater-details p {
+    background: #f1f1f1;
+    color: #0281ca;
+	text-align: center;
+    font-size:11px;	
+}
+.cart-bg {
+	background:#005b9a;
+	padding: 3px 0 5px 3px;
+}
+.top-pad {
+	padding-top:5px;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #0281ca;
+    border-color: #0281ca;
+	font-size:11px;
+	float: right;
+	margin:0 5px 0 0;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
+    color: #fff;
+    background-color: #005c91;
+    border-color: #005c91;
+}		
+.top-up-cover-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    padding: 12% 0 0 2%;
+	border: 1px solid #9fa0a0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,cfd1d1+100 */
+	background: #fafafa; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #fafafa 0%, #cfd1d1 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, #fafafa 0%,#cfd1d1 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, #fafafa 0%,#cfd1d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#cfd1d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
+}
+.scalling-left {
+	width: 15%;
+	float: left;
+	position: relative;
+	padding-top: 5px;
+	padding-left: 4%;
+}
+.scalling {
+    width: 70%;
+    float: left;
+    position: relative;
+    padding: 0 12px 0 8px;
+}
+.heading-padding {
+    /* padding: 15px 8px; */
+    padding: 10px 2px 0 12px;
+}
+.main-floater-top-up {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+    border: 2px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+	float:left;	
+}
+.floater-top-up {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 2px 0 2px 0;
+	float:left;	
+}
+.main-floater-top-up h2 {
+    color: #ff580e;
+	text-align: left;
+    font-size:16px;
+    padding: 5px 0 1px 5px;
+	font-weight:500;
+    margin: 2px;
+    width: 85%;
+    border: 0px solid #d4d4d4;
+    background:#f1f1f1;	
+}
+.top-up-img {
+	width:40%;
+}
+.floater-top-up-pad {
+    padding-top: 10px;
+}
+.nav-size {
+    font-size: 13px;
+    width: 30.1%;
+    text-align: center;
+    border: 0px solid #009ee3;
+    margin: 2px 13px 0 2px;
+    border-radius: 0px;
+}
+.nav-size-dropdown {
+    width: 96%;
+    text-align: left;
+    /*margin: 2px 5px 10px 5px;*/
+    border-radius: 0px;
+	float:left;
+    font-weight:normal;
+}	
+.icon-img-health {
+	padding-top:10px;
+}
+.box-style {
+    margin-left: 12px;
+    width: 95%;
+    border: 1px solid #74c2e1 !important;
+}
+.compare-top {
+	padding-top: 15px;
+}
+.logo-img-floater {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.img-floater-new {
+	width: 80%;
+}
+/* main page */ 
+.notification-icon {
+    top: 12%;
+    right: 35%;
+}
+/* End main page */		
+}
+
+@media only screen and (min-width:550px) and (max-width:760px) { 
+.img-floater-new {
+	width: 60%;
+}		
+}
+@media only screen and (min-width:480px) and (max-width:550px) { 
+.img-floater-new {
+	width: 60%;
+}		
+}
+@media only screen and (max-width:480px) {	
+.img-floater-new {
+	width: 100%;
+}	
+.img-floater-rent {
+	width: 70%;
+	padding:2px 0 0 2px;
+}
+.top-info {
+	padding:28px;
+}
+.member-age-main {
+	border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    max-width: 100%;
+    height: auto;
+    display: inline;
+}
+.top {
+	padding-bottom:8px;
+}
+.anglerl {
+	font-weight: bold;
+    color: #32b4ff;
+}
+/* quotes-from-inrurers */
+.border-policy {
+	border-bottom:1px solid #c9c9c9;
+}
+.main-floater {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+    border-top: 1px solid #d2d4d4;
+    border-left: 1px solid #d2d4d4;
+    border-right: 1px solid #d2d4d4;
+	border-bottom: 1px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+	float:left;
+    margin-bottom: 8px;	
+}
+.main-floater h2 {
+    color: #0281ca;
+	text-align: left;
+    font-size:12px;
+    margin:0;
+    padding:8px 0 3px 0;
+	font-weight:600;	
+}
+.main-floater p {
+    color: #0281ca;
+	text-align: left;
+    font-size:12px;	
+}
+.floater-details {
+    background: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #0281ca;
+    border-bottom: 0px solid #d1d3d3;
+    border-radius: 0px;
+    float: left;
+    border-radius: 0 0 4px 4px;
+}
+.floater-details h2 {
+    background: #f1f1f1;
+    color: #0281ca;
+	text-align: center;
+    font-size:16px;	
+	padding: 10px 0 5px 0;
+}
+.floater-details h3 {
+    background: #f1f1f1;
+    color: #ff0000;
+	text-align: center;
+    font-size:16px;
+	margin:0;
+	padding: 10px 0 5px 0;
+}
+.floater-details p {
+    background: #f1f1f1;
+    color: #0281ca;
+	text-align: center;
+    font-size:11px;
+    margin: 0px;
+    padding: 2px 0 9px 0;	
+}
+.cart-bg {
+	background:#005b9a;
+	padding: 3px 0 5px 3px;
+	border-radius: 0 0 4px 0;
+}
+.top-pad {
+	padding-top:5px;
+}		
+.top-up-cover-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    padding: 18% 0 0 0;
+	border: 1px solid #9fa0a0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,cfd1d1+100 */
+	background: #fafafa; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #fafafa 0%, #cfd1d1 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, #fafafa 0%,#cfd1d1 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, #fafafa 0%,#cfd1d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#cfd1d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
+}
+.scalling-left {
+	width: 15%;
+	float: left;
+	position: relative;
+	padding-top: 5px;
+	padding-left: 1.8%;
+}
+.scalling {
+    width: 70%;
+    float: left;
+    position: relative;
+    padding: 0 12px 0 8px;
+}
+.nav-size {
+    font-size: 12px;
+    width: 30%;
+    text-align: center;
+    border: 0px solid #009ee3;
+    margin: 2px 9px 0 2px;
+    border-radius: 0px;
+}
+.heading-padding {
+    /* padding: 15px 8px; */
+    padding: 10px 2px 0 10px;
+}
+.main-floater-top-up {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+	border: 2px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+	float:left;	
+}
+.floater-top-up {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 2px 0 2px 0;
+	float:left;	
+}
+.main-floater-top-up h2 {
+    color: #ff580e;
+	text-align: left;
+    font-size:13px;
+    margin:0;
+    padding: 5px 0 1px 5px;
+	font-weight:500;
+    background: #f1f1f1;
+    margin: 2px;
+    width: 85%;
+    border: 0px solid #d4d4d4;	
+}
+.floater-top-up-pad {
+	padding-top:8px;
+}
+.compare-top {
+    padding-top: 0px;
+	}
+.logo-img-floater{
+		padding-top: 2px;
+		padding-left: 2px;
+	}	
+.button-nav-pills-new {
+    width: 104%;
+}
+.border-journey {
+    border-right: 1px solid #d2d4d4;
+    padding-bottom: 2px;
+}
+.date-img-activity {
+	background: url(../images/datepicker.png) transparent right no-repeat;
+    padding: 18px 0 0 0;
+    background-position: 100% 65%;
+    margin: -2px 0 0 0;
+}
+.date-img-activity-modal {
+	background: none;
+    padding: 18px 0 0 0;
+    background-position: 100% 0%;
+    margin: -2px 0 0 0;
+}
+.loan-premium {
+	width:100%;text-align: left;padding: 6px 0px 0px 0px;
+}
+.buy-now {
+    width: 100%;
+    text-align: left;
+    padding: 6px 0px 0px 0px;
+}
+.nav-size-dropdown {
+    width: 94%;
+    text-align: left;
+    margin: 4px 5px 6px 5px;
+    border-radius: 0px;
+	float:left;
+    font-weight:normal;
+}	
+.cart-icon-img {
+    padding: 25px 0 25px 0;
+}
+/* motor insurance */
+.quote-with-addon-img {
+    padding-top: 20px;
+    padding-right: 0;
+}
+.summary-top {
+    padding-top: 5px;
+    
+}
+.add-on-cover-icon {
+    left: 10px;
+}
+.vehicle-quote-with-addon-name {
+    width: 100%;
+    text-align: left;
+    padding: 6px 0px 2px 0px;
+    border-left: 1px solid #ccc;
+    font-family: "Roboto-Regular", arial, sans-serif;
+}
+/* end motor insurance */
+
+/* login */
+.login-field-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    transition: all 0.25s ease 0s;
+    padding-top: 2%;
+}
+.login-field-icon-1 {
+    font-size: 20px;
+    position: absolute;
+    right: 38px;
+    top: 7px;
+    transition: all 0.25s ease 0s;
+    padding-top: 2%;
+}
+/* end login */
+
+/* home loan */
+
+.prop-type-width {
+	width:28%;
+}
+.prop-type-width-new {
+	width:38%;
+}
+/* End home loan */
+
+/* main page */
+.notification-icon {
+    top: 12%;
+    right: 26%;
+} 
+/* End main page */
+/* health assure */
+.health-checkup-share{	
+	width:32%;
+}
+/* End health assure */
+/* life insurance */
+.life-3d-project {
+	padding-top:8%;
+}
+/* End life insurance */
+
+
+}
+
+@media only screen and (max-width:360px) {
+.top {
+    padding-bottom: 8px;
+}	
+.main-floater {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+    border-top: 1px solid #d2d4d4;
+    border-left: 1px solid #d2d4d4;
+    border-right: 1px solid #d2d4d4;
+	border-bottom: 1px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+	float:left;
+    margin-bottom: 8px;	
+}
+.main-floater h2 {
+    color: #0281ca;
+	text-align: left;
+    font-size:10px;
+    margin:0;
+    padding:8px 0 4px 0;
+	font-weight:800;	
+}
+.main-floater p {
+    color: #0281ca;
+	text-align: left;
+    font-size:10px;	
+}
+.floater-details {
+    background: rgba(241, 241, 241, 0);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #0281ca;
+    border-bottom: 0px solid #d1d3d3;
+    border-radius: 0px;
+    float: left;
+    border-radius: 0 0 4px 4px;
+}
+.floater-details h2 {
+    background: #f1f1f1;
+    color: #0281ca;
+	text-align: center;
+    font-size:15px;	
+	padding: 10px 0 5px 0;
+}
+.floater-details h3 {
+    background: #f1f1f1;
+    color: #ff0000;
+	text-align: center;
+    font-size:15px;
+	margin:0;
+	padding: 10px 0 5px 0;
+}
+.floater-details p {
+    background: #f1f1f1;
+    color: #0281ca;
+    text-align: center;
+    font-size: 9.6px;
+    margin: 0px;
+    padding: 2px 0 9px 0;	
+}
+.cart-bg {
+	background:#005b9a;
+	padding: 2px 0 3px 3px;
+	border-radius: 0 0 4px 0;
+}
+.top-pad {
+	padding-top:5px;
+}
+.top-up-cover-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 21% 0 0 0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,cfd1d1+100 */
+	background: #fafafa; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #fafafa 0%, #cfd1d1 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, #fafafa 0%,#cfd1d1 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, #fafafa 0%,#cfd1d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#cfd1d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.scalling-left {
+	width: 14%;
+	float: left;
+	position: relative;
+	padding-top: 5px;
+	padding-left: 2%;
+}
+.scalling {
+    width: 70%;
+    float: left;
+    position: relative;
+    padding: 0 11px 0 13px;
+}
+.nav-size {
+    font-size: 10px;
+    width: 30%;
+    text-align: center;
+    border: 0px solid #009ee3;
+    margin: 0px 8px 0 1px;
+    border-radius: 0px;
+    left:0;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 5px;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+.heading-padding {
+    /* padding: 15px 8px; */
+    padding: 8px 3px 0 10px;
+}
+.box-style{
+	margin-left:12px; 
+	width:92%;
+	border: 1px solid #74c2e1 !important;
+}
+/*
+label {
+	font-size:11px;
+	padding:-5px 0 0 0;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 1px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+*/
+.main-floater-top-up {
+    background: #ffffff;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid #d2d4d4;
+    text-align: center;
+    padding: 0 0 0 0;
+    float: left;
+    border-bottom: 2px solid #d2d4d4;
+}
+.floater-top-up {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0 0 2px 0;
+	float:left;	
+}
+.main-floater-top-up h2 {
+    color: #ff0000;
+    text-align: left;
+    font-size: 12px;
+    padding: 2px 0 2px 5px;
+    font-weight: 500;
+    background: #f1f1f1;
+    margin-top: 4px;
+    width: 85%;
+    border: 0px solid #d4d4d4;
+}
+.img-member-icon {
+    max-width: 100%;
+}
+.floater-top-up-pad {
+    padding-top: 8px;
+}
+.compare-top {
+    padding-top: 0px;
+	}
+.logo-img-floater{
+		padding-top: 2px;
+		padding-left: 3px;
+	}
+	
+}
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<title>Index</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+        <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" />-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<link href="Style/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+
+        <script src="Scripts/jquery.min.js"></script>
+        <script src="Scripts/jquery-ui.min.js"></script>
+		<style>
+			.header{
+				width:100%;
+				box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+			}
+			img{
+				padding:8px 50px;
+			}
+			.mainContetnt{
+				width:95%;
+				margin:50px auto;
+				padding:10px;
+				text-align:center;
+			}
+			.mainContetnt input{
+				width:280px;
+				border-radius:6px;
+				border:2px solid gray;
+				padding:7px;
+			}
+			.cambtn{
+				display:inline-block;
+				width:150px;
+				border:2px solid #c0c0c0;
+				border-radius:6px;
+				padding:10px 10px;
+				box-shadow:0 0 10px rgba(0,0,0,0.6);
+				margin-top:50px;
+				font-weight:bold;
+				background:#fff;
+			}
+			.srchIcon{
+				font-size:18px;
+				margin-left: -26px;
+				background: #c1c1c1;
+				padding: 4px 4px 7px 4px;
+			}
+            .ui-autocomplete {
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+                width: 22%;
+                margin: 0px auto;
+                left: 0px !important;
+            }
+
+            .ui-menu .ui-menu-item {
+                margin: 10px;
+                padding: 0;
+                width: 100%;
+                font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+                font-size: 1.2em;
+            }
+            @media only screen and (max-width: 768px) {
+                .mainContetnt input{
+				    width: 90%;
+				    border-radius:6px;
+				    border:2px solid gray;
+				    padding:7px;
+			    }
+                .ui-autocomplete {
+                    background-color: white;
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+                    width: 90%;
+                    margin: 0px auto;
+                    left: 0px !important;
+                }
+                
+            }
+            .ui-helper-hidden-accessible { display:none;}
+            .Error {
+                border: 1px solid red !important;
+            }
+		</style>
+  </head>
+  <body>
+	<div>
+		<div class="header">
+			<img src="Images/policyboss.png">
+		</div>
+		<div class="mainContetnt">
+			<input id="lm_agent_name" name="lm_agent_name" type="text" placeholder="Search By UID or Name"><i class="fa fa-search srchIcon" aria-hidden="true"></i>
+            <input id="lm_agent_id" name="lm_agent_id" class="form-input-new" type="hidden" />
+			<div>
+				<button class="cambtn"><i class="fa fa-camera" aria-hidden="true" style="font-size:18px;"></i>&nbsp;&nbsp; Click Here</button>
+			</div>
+		</div>
+	</div>
+    <script>
+        $(document).ready(function () {
+            $("#lm_agent_name, #lm_agent_id").val("");
+            $(".cambtn").click(function () {
+                var UID = $("#lm_agent_id").val();
+                if (UID == "" || $("#lm_agent_name").val() == "") {
+                    $("#lm_agent_name").addClass('Error');
+                    return false;
+                } else {
+                    url = 'CameraTest.html?UID=' + encodeURIComponent(UID);
+                    document.location.href = url;
+                }
+            });
+            var returnurl = GetUrl() + '/quote/photos_upload_hr';
+            $("#lm_agent_name").autocomplete({
+                source: function (request, response) {
+                    var obj_horizon_data = Horizon_Method_Convert('/pb_employees/list?q=' + $("#lm_agent_name").val() + '&client_id=2',"", "GET");
+                    var returnurl = GetUrl() + '/pb_employees/list?q=' + $("#lm_agent_name").val()+'&client_id=2';
+                    $.ajax({
+                        type: "GET",
+                        //url: returnurl,
+                        //data: { method_name: '/pb_employees/list?q=' + $("#lm_agent_name").val(), client_id: "2" },
+
+                        data: JSON.stringify(obj_horizon_data['data']),
+                        url: obj_horizon_data['url'],
+                        dataType: "json",
+                        success: function (data) {
+                            response($.map(data, function (val, Key) {
+                                return { label: val['Employee_Name'] + " (UID: " + val['UID'] + ")", value: val['Employee_Name'] + " (UID: " + val['UID'] + ")", id: val['UID'] };
+                            }));
+                        },
+                        error: function (response) {
+                        }
+                    });
+                },
+                select: function (event, ui) {
+                    event.preventDefault();
+                    if (ui.item.id == null) return false;
+                    //console.log(ui.item.value.split(' (')[0]);
+                    $('#lm_agent_id').val(ui.item.id);
+                    $("#lm_agent_name").text(ui.item.value.split(' (')[0]);
+                    $("#lm_agent_name").val(ui.item.value);
+                    $("#lm_agent_name").removeClass('Error');
+                },
+                change: function (event, ui) {
+                    if (ui.item == null) { $("#lm_agent_id").val(""); return false; }
+                },
+                minLength: 3
+            });
+        });
+        function GetUrl(){
+            var url = window.location.href;
+            var newurl;
+            //newurl = "http://qa.policyboss.com";
+            if (url.includes("resource")) {
+                newurl = "http://localhost:3000";
+                //newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                newurl = "https://horizon.policyboss.com:5000";
+            }
+            //newurl = "http://qa-horizon.policyboss.com:3000";
+            return newurl;
+        };
+        function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+    </script>
+  </body>
+  </html>

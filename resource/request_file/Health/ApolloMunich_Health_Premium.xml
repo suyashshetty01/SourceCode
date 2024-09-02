@@ -1,0 +1,166 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <ComputePremium xmlns="http://www.apollomunichinsurance.com/B2BService">
+            <premiumCalculatorRequest>
+                <Clients xmlns="http://schemas.datacontract.org/2004/07/PremiumCalculatorLibrary">
+                    <Client xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">
+                        <Address>
+                            <Address>
+                                <StateCode></StateCode>
+                                <TownCode>___town_id___</TownCode>
+                            </Address>
+                        </Address>
+                        <Age>___member_1_age___</Age>
+                        <ClientCode>PolicyHolder</ClientCode>
+                        <ContactInformation xsi:nil="true"/>
+                        <Dependants> 
+                        <!--InsurersDetail_Start-->                    
+                            <Client>
+                                <Age>___member_array_age___</Age>
+                                <ClientCode>Member ___member_array_inc___</ClientCode>
+                                <Product>
+                                    <Product>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <ProductCode>___Plan_Code___</ProductCode>
+                                        <ProductGroup>___get_plan_group___</ProductGroup>
+                                        <ProductLine>___get_plan_line___</ProductLine>
+                                        <ProductType>___get_plan_category___</ProductType>
+                                        <ProductVersion>___get_plan_version___</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_si___</SumAssured>
+                                    </Product>
+                                    <!--Addon_CA_Start-->
+                                    <Product>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <ProductCode>___addon_ca_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_ca_si___</SumAssured>
+                                    </Product>
+                                    <!--Addon_CA_End-->
+                                    <!--Addon_CI_Start-->
+                                    <Product>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <ProductCode>___addon_ci_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_ci_si___</SumAssured>
+                                    </Product>
+                                    <!--Addon_CI_End-->
+                                    <!--Addon_HDC_Start-->
+                                    <Product>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <ProductCode>___addon_hdc_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>1</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_hdc_si___</SumAssured>
+                                    </Product> 
+                                    <!--Addon_HDC_End-->
+                                    <!--Addon_PROTECTOR_Start-->
+                                    <Product>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <ProductCode>___addon_protector_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_protector_si___</SumAssured>
+                                    </Product>  
+                                    <!--Addon_PROTECTOR_End-->           
+                                </Product>
+                            </Client>
+                        <!--InsurersDetail_End-->
+                        </Dependants>
+                        <Product>
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___Plan_Code___</ProductCode>
+                                <ProductGroup>___get_plan_group___</ProductGroup>
+                                <ProductLine>___get_plan_line___</ProductLine>
+                                <ProductType>___get_plan_category___</ProductType>
+                                <ProductVersion>___get_plan_version___</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_si___</SumAssured>
+                            </Product>
+                            <!--Addon_ca_Start-->
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___addon_ca_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_ca_si___</SumAssured>
+                            </Product>
+                            <!--Addon_ca_End-->
+                            <!--Addon_ci_Start-->
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___addon_ci_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_ci_si___</SumAssured>
+                            </Product>
+                            <!--Addon_ci_End-->
+                            <!--Addon_hdc_Start-->
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___addon_hdc_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>1</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_hdc_si___</SumAssured>
+                            </Product> 
+                            <!--Addon_hdc_End-->
+                            <!--Addon_pa_Start-->
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___addon_pa_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_pa_si___</SumAssured>
+                            </Product> 
+                            <!--Addon_pa_End-->
+                            <!--Addon_protector_Start-->
+                            <Product>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <ProductCode>___addon_protector_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>___member_1_sac_code___</SACCode>
+                                <SumAssured>___member_1_protector_si___</SumAssured>
+                            </Product> 
+                            <!--Addon_protector_End-->
+                        </Product>
+                    </Client>
+                </Clients>
+                <Partner xmlns="http://schemas.datacontract.org/2004/07/PremiumCalculatorLibrary">
+                    <PartnerCode xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_agent_code___</PartnerCode>
+                    <Password xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_password___</Password>
+                    <UserName xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_user___</UserName>
+                </Partner>
+            </premiumCalculatorRequest>
+        </ComputePremium>
+    </soap:Body>
+</soap:Envelope>

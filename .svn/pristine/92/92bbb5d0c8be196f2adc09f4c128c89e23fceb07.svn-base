@@ -1,0 +1,45 @@
+{
+	"strBusinessType": "___vehicle_insurance_type___",//New Business
+	"strRTOCode": "___registration_no_1___ + ___registration_no_2___",//AP01
+	"strVehicleMake": "___dbmaster_insurer_vehicle_make_name___",//Maruti
+	"strVehicleMakeCode": "___dbmaster_insurer_vehicle_make_code___",//14
+	"strVehicleModel": "___dbmaster_insurer_vehicle_model_name___",//Alto
+	"strVehicleModelCode": "___dbmaster_insurer_vehicle_model_code___",//2022894
+	"strVehicleVariant": "___dbmaster_insurer_vehicle_variant_name___",//LX
+	"strVehicleVariantCode": "___dbmaster_insurer_vehicle_variant_code___",//2023065
+	"strDateofRegistration": "___vehicle_registration_date___",//12/06/2017 date format dd/mm/yyyy
+	"strIDV": "0",
+	"strReturnToInvoice": "___addon_invoice_price_cover___",//True or False
+	"strEngineProtect": "___addon_engine_protector_cover___",//True or False
+	"strRoadsideAssistance": "___addon_road_assist_cover___",//True or False
+	"strDepreciationCover": "addon_zero_dep_cover",//True or False
+	"strConsumableCover": "___addon_consumable_cover___",//True or False
+	"strPreviousYearNCBPercentage": "___vehicle_ncb_current___",//0  ___vehicle_ncb_current___
+	"strNEAR": "___non_electrical_accessory_2___",//True or false
+	"strEAR": "___electrical_accessory_2___",//True or false
+	"strCNG": "___is_external_bifuel___",//True or false
+	"strNEARSumInsured": "___non_electrical_accessory___",
+	"strEARSumInsured": "___electrical_accessory___",
+	"strCNGSumInsured": "___external_bifuel_value___",
+	"AccessKey": "___insurer_integration_service_password___",//e9a00ff327f747afb4e0d66dd8b05110
+	"TypeOfPolicyHolder": "___vehicle_registration_type_2___",//Individual Owner
+	"CustomerType": "___vehicle_registration_type_3___",//Individual
+	"PreviousPolicyTypeOrTypeofCover": "___vehicle_insurance_type_2___",//ComprehensivePolicy
+	"TotalClaimCount": "___is_claim_exists___",//doubt//value hard coded, in code only if business type is rollover // "TotalClaimCount: expected values are: No Claim or 1 OD Claim or 2 OD Claims or >2 OD Claims or 1 TP Claim or 2 TP Claims or >2 TP Claims or 1 OD and 1 TP Claims or 1 OD and 2 TP Claims or 2 OD and 1 TP Claims or 2 OD and 2 TP Claims or >2 OD and >2 TP Claims";
+	"PreviousPolicyExpiryDate": "___policy_expiry_date___",//date format dd/mm/yyyy
+	"VoluntaryDeductibleAmount": "___voluntary_deductible___",
+	"IsPACoverForUnnamedPersons": "___pa_unnamed_passenger_si_2___",
+	"NumberofPersonsUnnamed": "___dbmaster_insurer_vehicle_seatingcapacity___",
+	"CapitalSumInsuredPerPersonUnnamed": "___pa_unnamed_passenger_si___",
+	"IsPACoverForNamedPersons": "___pa_named_passenger_si_2___",//True or False
+	"NumberofPersonsNamed": "___dbmaster_insurer_vehicle_seatingcapacity___",//
+	"CapitalSumInsuredPerPersonNamed": "___pa_named_passenger_si___",
+	"IsPACoverForPaidDriver": "___pa_paid_driver_si_2___",//True or False
+	"NumberofPaidDrivers": "___pa_paid_driver_si_3___",//1 or 0
+	"SumInsuredForPaidDriver": "___pa_paid_driver_si___",
+	"WiderLegalLiabilityToPaidDriverCleanerConductorIMT28": "___is_llpd___",
+	"NoOfPersonWiderLegalLiability": "___is_llpd_2___",
+	"LegalLiabilityToEmployeesExcludingPaidDriverCleanerConductorIMT29": "___is_llpd___",
+	"NoofEmployees": "___is_llpd_2___",
+	"MarketMovement": "-15"
+}

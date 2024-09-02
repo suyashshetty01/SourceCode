@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetPremiumForReAssuredProduct>
+         <tem:planId>___planCode___</tem:planId>
+         <tem:dobCollection>___members_dob___</tem:dobCollection>
+         <tem:loadingCollection>___member_loading___</tem:loadingCollection>
+         <tem:paCollection>___members_pa___</tem:paCollection>
+         <tem:safeGaurdOpted>N</tem:safeGaurdOpted>
+         <tem:discount></tem:discount>
+         <tem:MedicalPractDiscount>___med_practitioner___</tem:MedicalPractDiscount>
+         <tem:billCycle>___billCycle___</tem:billCycle>
+         <tem:stateName>___state___</tem:stateName>
+         <tem:branchCode>521101</tem:branchCode>
+         <tem:premiumCalDate>___premium_calc_date___</tem:premiumCalDate>
+         <tem:policyNumber></tem:policyNumber>
+      </tem:GetPremiumForReAssuredProduct>
+   </soapenv:Body>
+</soapenv:Envelope>

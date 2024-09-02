@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl" xmlns:ns2="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl/types/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <SOAP-ENV:Body>
+      <ns1:calculateMotorPremiumSig>
+         <pUserId>___insurer_integration_service_user___</pUserId><!---->
+         <pPassword>___insurer_integration_service_password___</pPassword>
+         <pVehicleCode>___dbmaster_insurer_vehicle_code___</pVehicleCode><!--38164225-->
+         <pCity>MUMBAI</pCity><!--RTO hardcoded-->
+         <pWeoMotPolicyIn_inout>
+            <ns2:vehicleTypeCode>___product_id___</ns2:vehicleTypeCode><!--22-->
+            <ns2:vehicleSubtype>___dbmaster_insurer_vehicle_variant_name___</ns2:vehicleSubtype><!--2.3 VTi AUTO TRANSMISSION-->
+            <ns2:elecAccTotal>___electrical_accessory___</ns2:elecAccTotal><!--0-->
+            <ns2:addLoadingOn />
+            <ns2:nonElecAccTotal>___non_electrical_accessory___</ns2:nonElecAccTotal><!--0-->
+            <ns2:polType>___vehicle_insurance_type___</ns2:polType><!--new 1 ,renewal from other 3 ,renewal from bajaj 2-->
+            <ns2:registrationNo>___registration_no___</ns2:registrationNo><!--MH-01-ZZ-9999-->
+            <ns2:partnerType>___vehicle_registration_type___</ns2:partnerType><!--P- private I for institutution-->
+            <ns2:ncb>___vehicle_ncb_next___</ns2:ncb><!--20-->
+            <ns2:prvClaimStatus>___is_claim_exists___</ns2:prvClaimStatus><!--0-->
+            <ns2:registrationDate>___vehicle_registration_date___</ns2:registrationDate><!-- 04-JUL-2016 -->
+            <ns2:miscVehType>0</ns2:miscVehType>
+            <ns2:fuel>___dbmaster_insurer_vehicle_fueltype___</ns2:fuel><!--p-->
+            <ns2:chassisNo>12378956</ns2:chassisNo>
+            <ns2:contractId>0</ns2:contractId>
+            <ns2:yearManf>___vehicle_manf_year___</ns2:yearManf><!--2016-->
+            <ns2:spDiscRate />
+            <ns2:cubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</ns2:cubicCapacity><!--2254-->
+            <ns2:regiLocOther>MUMBAI</ns2:regiLocOther>
+            <ns2:addLoading />
+            <ns2:vehicleSubtypeCode>___dbmaster_insurer_vehicle_variant_code___</ns2:vehicleSubtypeCode><!--8-->
+            <ns2:prvPolicyRef>123123123</ns2:prvPolicyRef>
+            <ns2:vehicleMake>___dbmaster_insurer_vehicle_make_name___</ns2:vehicleMake><!--HONDA-->
+            <ns2:autoMembership />
+            <ns2:termStartDate>___policy_start_date___</ns2:termStartDate><!-- 27-JUL-2017 -->
+            <ns2:carryingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</ns2:carryingCapacity><!-- 5 -->
+            <ns2:termEndDate>___policy_end_date___</ns2:termEndDate><!-- 26-JUL-2018 -->
+            <ns2:hypo />
+            <ns2:branchCode>9906</ns2:branchCode><!-- 9906 -->
+            <ns2:prvNcb>___vehicle_ncb_current___</ns2:prvNcb><!-- 0 -->
+            <ns2:vehicleMakeCode>___dbmaster_insurer_vehicle_make_code___</ns2:vehicleMakeCode><!-- 107 -->
+            <ns2:vehicleIdv>___vehicle_expected_idv___</ns2:vehicleIdv><!-- 1143586 -->
+            <ns2:prvInsCompany>8</ns2:prvInsCompany><!--  -->
+            <ns2:engineNo>98765314</ns2:engineNo><!--  -->
+            <ns2:product4digitCode>___product_id_2___</ns2:product4digitCode><!-- 1801 -->
+            <ns2:color />
+            <ns2:vehicleModel>___dbmaster_insurer_vehicle_model_name___</ns2:vehicleModel><!-- ACCORD -->
+            <ns2:vehicleType>___product_id_3___</ns2:vehicleType><!-- Private Car -->
+            <ns2:prvExpiryDate>___policy_expiry_date___</ns2:prvExpiryDate><!-- 26-JUL-2017 -->
+            <ns2:tpFinType />
+            <ns2:deptCode>18</ns2:deptCode><!--18 -->
+            <ns2:vehicleModelCode>___dbmaster_insurer_vehicle_model_code___</ns2:vehicleModelCode><!-- 33 -->
+            <ns2:registrationLocation>MUMBAI</ns2:registrationLocation><!--  -->
+            <ns2:zone>A</ns2:zone><!--  -->
+         </pWeoMotPolicyIn_inout>
+         <accessoriesList_inout />
+         <paddoncoverList_inout>
+            <ns2:WeoMotGenParamUser />
+            <ns2:WeoMotGenParamUser />
+            <ns2:WeoMotGenParamUser />
+            <ns2:WeoMotGenParamUser />
+            <ns2:WeoMotGenParamUser />
+            <ns2:WeoMotGenParamUser />
+         </paddoncoverList_inout>
+         <motExtraCover>
+            <ns2:sideCarValue xsi:nil="true" />
+            <ns2:covernoteNo xsi:nil="true" />
+            <ns2:noOfTrailers xsi:nil="true" />
+            <ns2:subImdcode xsi:nil="true" />
+            <ns2:covernoteDate xsi:nil="true" />
+            <ns2:cngValue>___external_bifuel_value___</ns2:cngValue><!---->
+            <ns2:fibreGlassValue xsi:nil="true" />
+            <ns2:voluntaryExcess>___voluntary_deductible___</ns2:voluntaryExcess><!--0-->
+            <ns2:totalTrailerValue xsi:nil="true" />
+            <ns2:extraField1 xsi:nil="true" />
+            <ns2:sumInsuredTotalNamedPa xsi:nil="true">___pa_named_passenger_si___</sumInsuredTotalNamedPa>
+            <ns2:geogExtn xsi:nil="true" />
+            <ns2:noOfPersonsLlo>___is_llpd___</ns2:noOfPersonsLlo><!--0-->
+            <ns2:noOfEmployeesLle xsi:nil="true" />
+            <ns2:extraField2 xsi:nil="true" />
+            <ns2:extraField3 xsi:nil="true" />
+            <ns2:sumInsuredPa>___pa_unnamed_passenger_si___</ns2:sumInsuredPa><!--0-->
+            <ns2:noOfPersonsPa>___dbmaster_insurer_vehicle_seatingcapacity___</ns2:noOfPersonsPa><!--0-->
+         </motExtraCover>
+         <pQuestList_inout />
+           <pDetariffObj_inout>
+            <ns2:driverQualificationCode xsi:nil="true" />
+            <ns2:vehPurchaseType xsi:nil="true" />
+            <ns2:extCol25 xsi:nil="true" />
+            <ns2:extCol26 xsi:nil="true" />
+            <ns2:tacMakeCode xsi:nil="true" />
+            <ns2:extCol23 xsi:nil="true" />
+            <ns2:extCol24 xsi:nil="true" />
+            <ns2:extCol29 xsi:nil="true" />
+            <ns2:extCol27 xsi:nil="true" />
+            <ns2:extCol28 xsi:nil="true" />
+            <ns2:extCol33 xsi:nil="true" />
+            <ns2:extCol32 xsi:nil="true" />
+            <ns2:extCol31 xsi:nil="true" />
+            <ns2:extCol30 xsi:nil="true" />
+            <ns2:registrationAuth xsi:nil="true" />
+            <ns2:extCol12 xsi:nil="true" />
+            <ns2:extCol13 xsi:nil="true" />
+            <ns2:extCol14 xsi:nil="true" />
+            <ns2:extCol15 xsi:nil="true" />
+            <ns2:extCol16 xsi:nil="true" />
+            <ns2:extCol17 xsi:nil="true" />
+            <ns2:extCol18 xsi:nil="true" />
+            <ns2:extCol19 xsi:nil="true" />
+            <ns2:otherGoodsFrequency xsi:nil="true" />
+            <ns2:extCol20 xsi:nil="true" />
+            <ns2:extCol22 xsi:nil="true" />
+            <ns2:incurredClmExpCode xsi:nil="true" />
+            <ns2:extCol21 xsi:nil="true" />
+            <ns2:clmHistCode xsi:nil="true" />
+            <ns2:roadType xsi:nil="true" />
+            <ns2:bodyType xsi:nil="true" />
+            <ns2:monthOfMfg xsi:nil="true" />
+            <ns2:natureOfGoods xsi:nil="true" />
+            <ns2:extCol9 xsi:nil="true" />
+            <ns2:extCol8 xsi:nil="true" />
+            <ns2:extCol7 xsi:nil="true" />
+            <ns2:extCol6 xsi:nil="true" />
+            <ns2:vehPurchaseDate xsi:nil="true" />
+            <ns2:extCol5 xsi:nil="true" />
+            <ns2:extCol4 xsi:nil="true" />
+            <ns2:vehDrivenBy xsi:nil="true" />
+            <ns2:extCol3 xsi:nil="true" />
+            <ns2:extCol2 xsi:nil="true" />
+            <ns2:extCol1 xsi:nil="true" />
+            <ns2:goodsTransType xsi:nil="true" />
+            <ns2:permitType xsi:nil="true" />
+            <ns2:extCol38 xsi:nil="true" />
+            <ns2:extCol39 xsi:nil="true" />
+            <ns2:extCol34 xsi:nil="true" />
+            <ns2:extCol35 xsi:nil="true" />
+            <ns2:extCol36 xsi:nil="true" />
+            <ns2:extCol10>DRIVE_ASSURE_PACK</ns2:extCol10>
+            <ns2:extCol37 xsi:nil="true" />
+            <ns2:extCol11 xsi:nil="true" />
+            <ns2:extCol40 xsi:nil="true" />
+            <ns2:driverExperience xsi:nil="true" />
+         </pDetariffObj_inout>
+         <premiumDetailsOut_out />
+         <premiumSummeryList_out />
+         <pError_out />
+         <pErrorCode_out />
+         <pTransactionId_inout />
+         <pTransactionType />
+         <pContactNo />
+      </ns1:calculateMotorPremiumSig>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

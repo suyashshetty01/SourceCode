@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q0="http://premiumws.premiumwrapper.motor.itgi.com" xmlns:q1="http://premiumwrapper.motor.itgi.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <q0:getMotorPremium>
+            <q0:policyHeader>
+                <q1:messageId>1234</q1:messageId>
+            </q0:policyHeader>
+            <q0:policy>
+                <q1:contractType>___product_id___</q1:contractType>
+                <q1:expiryDate>___policy_end_date___ 00:00:00</q1:expiryDate>
+                <q1:inceptionDate>___policy_start_date___ 00:00:00</q1:inceptionDate>
+                <q1:previousPolicyEndDate>___policy_expiry_date___</q1:previousPolicyEndDate>
+                <q1:vehicle>
+                    <q1:attr1>___registration_no_1______registration_no_2______registration_no_3______registration_no_4___</q1:attr1>
+                    <q1:aaiExpiryDate></q1:aaiExpiryDate>
+                    <q1:aaiNo ></q1:aaiNo>
+                    <q1:capacity>___dbmaster_insurer_vehicle_seatingcapacity___</q1:capacity>
+                    <q1:engineCpacity>___dbmaster_insurer_vehicle_cubiccapacity___</q1:engineCpacity>
+                    <q1:grossVehicleWt />
+                    <q1:itgiRiskOccupationCode></q1:itgiRiskOccupationCode>
+                    <q1:itgiZone />
+                    <q1:make>___dbmaster_insurer_vehicle_make_code___</q1:make>
+                    <q1:regictrationCity>___dbmaster_insurer_rto_city_code___</q1:regictrationCity>
+                    <q1:registrationDate>___vehicle_registration_date___</q1:registrationDate>
+                    <q1:seatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</q1:seatingCapacity>
+                    <q1:type>___vehicle_registration_type___</q1:type>
+                    <q1:vehicleBody />
+                    <q1:vehicleClass>___product_id___</q1:vehicleClass>
+                    <q1:vehicleCoverage>
+                        <q0:item>
+                            <q1:coverageId>IDV Basic</q1:coverageId>
+                            <q1:number></q1:number>
+                            <q1:sumInsured>___vehicle_expected_idv___</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_PA_OD_Start-->
+                        <q0:item>
+                            <q1:coverageId>PA Owner / Driver</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>Y</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_PA_OD_End-->
+                        <!--Coverage_TPPD_TW_Start-->
+                        <q0:item>
+                            <q1:coverageId>TPPD</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>750000</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_TPPD_TW_End-->
+                        <!--Coverage_CNG_TW_Start-->
+                        <q0:item>
+                            <q1:coverageId>CNG Kit Company Fit</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___external_bifuel_type_2___</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_CNG_TW_End-->
+                        <!--Coverage_CNG_TW_Val_Start-->
+                        <q0:item>
+                            <q1:coverageId>CNG Kit</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___external_bifuel_value___</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_CNG_TW_Val_End-->
+                        <!--Coverage_LLPD_TW_Start-->
+                        <q0:item>              
+                            <q1:coverageId>Legal Liability to Driver</q1:coverageId> 
+                            <q1:number />
+                            <q1:sumInsured>___is_llpd___</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_LLPD_TW_End-->
+                        <!--Coverage_PA_UNNamed_Start-->
+                        <q0:item>
+                            <q1:coverageId>PA to Passenger</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___pa_unnamed_passenger_si___</q1:sumInsured>
+                        </q0:item>
+                        <!--Coverage_PA_UNNamed_End-->
+                        <!--vehicle_ncb_current_start-->                        
+                        <q0:item>
+                            <q1:coverageId>No Claim Bonus</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___vehicle_ncb_next___</q1:sumInsured>
+                        </q0:item>
+                        <!--vehicle_ncb_current_finish-->
+                        <q0:item>
+                            <q1:coverageId>Voluntary Excess</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___voluntary_deductible___</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>Anti-Theft</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>N</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>Electrical Accessories</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___electrical_accessory___</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>Cost of Accessories</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>___non_electrical_accessory___</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>AAI Discount</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>N</q1:sumInsured>
+                        </q0:item>
+                    </q1:vehicleCoverage>
+                    <q1:vehicleSubclass>___product_id___</q1:vehicleSubclass>
+                    <q1:yearOfManufacture>___vehicle_manf_year___</q1:yearOfManufacture>
+                    <q1:zcover>CO</q1:zcover>
+                    <q1:validDrivingLicence>Y</q1:validDrivingLicence>
+                </q1:vehicle>
+            </q0:policy>
+            <q0:partner>
+                <q1:partnerBranch>___insurer_integration_location_code___</q1:partnerBranch>
+                <q1:partnerCode>___insurer_integration_agent_code___</q1:partnerCode>
+                <q1:partnerSubBranch>___insurer_integration_location_code___</q1:partnerSubBranch>
+            </q0:partner>
+        </q0:getMotorPremium>
+    </soapenv:Body>
+</soapenv:Envelope>

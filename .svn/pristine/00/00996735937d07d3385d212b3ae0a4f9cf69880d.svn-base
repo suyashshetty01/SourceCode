@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Search By CrnNo.</title>
+
+<meta charset="utf-8">
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<style>
+	.sticky_btn{
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    z-index:10;
+
+    .refresh_quote{
+
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+            }
+.refresh_quote img{
+
+    width: 100%;
+
+}
+}
+	</style>
+</head>
+<body>
+<div class="container-fluid text-center maindiv">    
+  <div class="row content"> 
+    <div class="col-sm-8 text-left"> 
+	<form method="POST">
+      <h3>Search By CRN No</h3>   
+       <label>CRN No:</label>
+       <input type="radio" name="btncrnradio" style="display:none" class="btncrnradio" id="btncrnradio" onchange="valueChanged()" checked>
+       <label style="display:none">Vehicle No:</label>  
+       <input type="radio" name="btncrnradio" style="display:none" class="btnvehical" id="btncrnradio" onchange="valueChanged()">  
+       <div id="divcrn">	   
+       <input class="form-control" type="text" name="txtcrnno" id="txtcrnno" placeholder="Please Enter CRN No.">	   
+	   </div> 	   
+	   <br/>
+	   <div id="div_status" style="color:red;"></div>
+       <br/>
+	   
+       <div id="download_policy_div">
+       <input type="button" id="download_policy" value="DOWNLOAD POLICY" onclick="SaveToDisk();" class="btn btn-primary">
+	   <div><br/></div>
+       </div>	
+	   <div>
+       <input type="button" id="search" value="Search" onclick="Downloadpolicy();" class="btn btn-primary">
+		<input type="button" id="reload" value="Reset" onclick="Reload();" class="btn btn-primary"></button>
+       </div> 
+	</form>
+    </div>  
+  </div>
+</div>
+	<div class="warningmsg" style="display:none">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center;">ss_id , fba_id  is mandatory</h3>
+    </div>
+
+ <script type="text/javascript">
+ 
+var  ss_id, fba_id;
+var fileURL;
+var fileName = "image.pdf";
+$(document).ready(function () {
+	ss_id = getParameterByName('ss_id');
+    fba_id = getParameterByName('fba_id');
+	$("#download_policy_div").hide();
+	 if (ss_id=="" ||ss_id==null || fba_id=="" || fba_id ==null  ) { 
+       $(".maindiv").hide(); 
+        $(".warningmsg").show(); 
+     }                
+     else{ 
+			 $(".maindiv").show(); 
+             $(".warningmsg").hide(); 
+        }
+})
+$('#txtcrnno').on('keypress', function(event) {
+     var inputValue = event.which;
+     var regex = new RegExp("^[0-9]+$");
+     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+     if (!regex.test(key)) {
+         event.preventDefault();
+         return false;
+     }
+ });
+
+ function Reload() {
+            location.reload(true)
+};
+ function getParameterByName(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results)
+                return null;
+            if (!results[2])
+                return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+		
+function GetUrl() {
+    var url = window.location.href;
+    var newurl;
+    newurl = "http://qa-horizon.policyboss.com:3000";
+    if (url.includes("request_file")) {
+      // newurl = "http://qa-horizon.policyboss.com:3000";
+       newurl = "http://localhost:3000";
+	   //newurl="http://localhost:50111";
+    } else if (url.includes("qa")) {
+        newurl = "http://qa-horizon.policyboss.com:3000";
+    } else if (url.includes("www") || url.includes("cloudfront")) {
+        newurl = "http://horizon.policyboss.com:5000";
+    }
+    return newurl;
+}
+function Downloadpolicy(){
+
+//window.location = 'pdf/ICICI.pdf';
+//var textFile = new Blob(['E:/Codebase/Horizon_v1/resource/request_file/Motor_FinApp/pdf/ICICI.pdf'], {
+ //  type: 'pdf'
+//});
+//invokeSaveAsDialog(textFile, 'TextFile.pdf');
+var input_value=$('#txtcrnno').val();
+if(input_value!=""){
+var obj = {
+       "CRN":parseInt($('#txtcrnno').val()),
+	   "ss_id":ss_id,
+	   "fba_id":fba_id
+    };
+ $.ajax({ 
+         type: "POST",
+		 data: obj,		 
+	     url:GetUrl()+'/report/download_policy', 
+         dataType: "json", 
+         success: function(data) { 
+		 console.log(data);
+             if(data.Status =="Success"){ 
+				//debugger;			 
+				//SaveToDisk(data.Pdf_Url, 'image.pdf');
+				fileURL = data.Pdf_Url;
+				$('#div_status').text('');
+				$("#download_policy_div").show();
+			 }else if(data.Status =="WO_Policy"){ 		
+				 $('#div_status').inner('Policy copy not found');
+				 $("#download_policy_div").hide();
+			 } else{ 
+				$('#div_status').text('CRN not found');
+				$("#download_policy_div").hide();
+			 }
+         }, 
+		error: function(result){ 
+			 $('#div_status').text('CRN not found');
+			 $("#download_policy_div").hide();
+		 } 
+     }); 
+	 }
+	 else{
+		$('#div_status').text('Please enter CRN');
+	 }
+ } 
+ 
+function invokeSaveAsDialog(file, fileName) {
+    if (!file) {
+        throw 'Blob object is required.';
+    }
+
+    if (!file.type) {
+        try {
+            file.type = 'video/webm';
+        } catch (e) {}
+    }
+
+    var fileExtension = (file.type || 'video/webm').split('/')[1];
+
+    if (fileName && fileName.indexOf('.') !== -1) {
+        var splitted = fileName.split('.');
+        fileName = splitted[0];
+        fileExtension = splitted[1];
+    }
+
+    var fileFullName = (fileName || (Math.round(Math.random() * 9999999999) + 888888888)) + '.' + fileExtension;
+
+    if (typeof navigator.msSaveOrOpenBlob !== 'undefined') {
+        return navigator.msSaveOrOpenBlob(file, fileFullName);
+    } else if (typeof navigator.msSaveBlob !== 'undefined') {
+        return navigator.msSaveBlob(file, fileFullName);
+    }
+
+    var hyperlink = document.createElement('a');
+    hyperlink.href = URL.createObjectURL(file);
+    hyperlink.download = fileFullName;
+
+    hyperlink.style = 'display:none;opacity:0;color:transparent;';
+    (document.body || document.documentElement).appendChild(hyperlink);
+
+    if (typeof hyperlink.click === 'function') {
+        hyperlink.click();
+    } else {
+        hyperlink.target = '_blank';
+        hyperlink.dispatchEvent(new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+        }));
+    }
+
+    (window.URL || window.webkitURL).revokeObjectURL(hyperlink.href);
+}
+function SaveToDisk() {
+    // for non-IE
+	//alert(fileName);
+    if (!window.ActiveXObject) {
+        var save = document.createElement('a');
+        save.href = fileURL;
+        save.target = '_blank';
+        save.download = fileName || fileURL;
+        var evt = document.createEvent('MouseEvents');
+        evt.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0,
+            false, false, false, false, 0, null);
+        save.dispatchEvent(evt);
+        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+    }
+
+    // for IE
+    else if ( !! window.ActiveXObject && document.execCommand)     {
+        var _window = window.open(fileURL, "_blank");
+        _window.document.close();
+        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+        _window.close();
+    }
+}
+function SaveToDisk_old(fileURL, fileName) {
+    // for non-IE
+    if (!window.ActiveXObject) {
+        var save = document.createElement('a');
+        save.href = fileURL;
+        save.target = '_blank';
+        save.download = fileName || fileURL;
+        var evt = document.createEvent('MouseEvents');
+        evt.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0,
+            false, false, false, false, 0, null);
+        save.dispatchEvent(evt);
+        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+    }
+
+    // for IE
+    else if ( !! window.ActiveXObject && document.execCommand)     {
+        var _window = window.open(fileURL, "_blank");
+        _window.document.close();
+        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+        _window.close();
+    }
+}
+function valueChanged()
+{
+    if($('.btnvehical').is(":checked")) {
+    	$("#divcrn").show();
+    	$("#txtcrnno").attr("placeholder", "Please Enter Vehical No. :Ex.MH43AB6262");
+    }        
+    else if($('.btncrnradio').is(":checked")){
+        $("#divcrn").show();
+        $("#txtcrnno").attr("placeholder", "Please Enter CRN No.");
+    }else{
+    	$("#divcrn").hide();
+    }
+}
+
+</script>
+</body>
+
+</html>
+

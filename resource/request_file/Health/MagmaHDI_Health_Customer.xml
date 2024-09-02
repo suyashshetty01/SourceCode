@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?><Root Code="6111" Name="OneHealth">
+    <ProposalDetails>
+        <RiskDetails>
+            <Block>
+                <PropRisks_ALLChk Type="Boolean" Value="False"/>
+                <PropRisks_AdditionalInfo Type="String" Value=""/>
+                <PropRisks_AgreeDeductOpt Type="String" Value="No"/>
+                <PropRisks_AgreeDeductOptVal Type="String" Value=""/>
+                <PropRisks_AnnualIncome Type="String" Value=""/>
+                <PropRisks_AnyAdditionalInfo Type="String" Value=""/>
+                <PropRisks_BPChk Type="Boolean" Value="False"/>
+                <PropRisks_BloodTestChk Type="Boolean" Value="False"/>
+                <PropRisks_CoverOtherInfo1 Type="Double" Value="0"/>
+                <PropRisks_DateofRNHold Type="String" Value="___nominee_birth_date___"/>
+                <PropRisks_Dummychk Type="Boolean" Value="False"/>
+                <PropRisks_Dummynode Type="Double" Value="0"/>
+                <PropRisks_Dummynode1 Type="Double" Value="0"/>
+                <PropRisks_Dummynode2 Type="Double" Value="0"/>
+                <PropRisks_Dummynode3 Type="Double" Value="0"/>
+                <PropRisks_Dummynode4 Type="Double" Value="0"/>
+                <PropRisks_ECGChk Type="Boolean" Value="False"/>
+                <PropRisks_Endorsementinitiatedby Type="String" Value=""/>
+                <PropRisks_ExistingMHDIPolicy Type="String" Value=""/>
+                <PropRisks_FastBloodSugarChk Type="Boolean" Value="False"/>
+                <PropRisks_FloaterSI Type="String" Value="___nominee_relation___"/>
+                <PropRisks_Headernode Type="Double" Value="0"/>
+                <PropRisks_Headernode1 Type="Double" Value="0"/>
+                <PropRisks_Headernode2 Type="Double" Value="0"/>
+                <PropRisks_Headernode3 Type="Double" Value="0"/>
+                <PropRisks_Headernode4 Type="Double" Value="0"/>
+                <PropRisks_Headernode5 Type="Double" Value="0"/>
+                <PropRisks_HoldRNAcceptremark Type="String" Value=""/>
+                <PropRisks_HoldRNacceptedDate Type="String" Value=""/>
+                <PropRisks_IndividualSI Type="String" Value=""/>
+                <PropRisks_InstAdditionalEndorsement Type="Boolean" Value="False"/>
+                <PropRisks_InstallemntCase Type="String" Value="No"/>
+                <PropRisks_InwardDate Type="String" Value="___policy_start___"/>
+                <PropRisks_IsAnyPolicyWithMHDI Type="String" Value="No"/>
+                <PropRisks_IsCounterOffrLettrOrModFrmApp Type="Boolean" Value="False"/>
+                <PropRisks_LocationCode Type="String" Value=""/>
+                <PropRisks_MedUWPEDRemarks Type="String" Value="___mobile___"/>
+                <PropRisks_MedUWStatus Type="String" Value=""/>
+                <PropRisks_MedicalQuery Type="String" Value=""/>
+                <PropRisks_NameFamPhysician Type="String" Value=""/>
+                <PropRisks_NoOfAddChildren Type="String" Value=""/>
+                <PropRisks_NoOfInsured Type="String" Value="___get_member_type___"/>
+                <PropRisks_NoOfRisk Type="String" Value=""/>
+                <PropRisks_PaymentDate Type="String" Value="___policy_start___"/>
+                <PropRisks_PhysicianQuali Type="String" Value=""/>
+                <PropRisks_PlanName Type="String" Value="___dbmaster_pb_plan_name___"/>
+                <PropRisks_PolicyTenure Type="String" Value="___policy_tenure___ Year"/>
+                <PropRisks_PolicyType Type="String" Value="___policy_type___"/>
+                <PropRisks_PremiumPayFreq Type="String" Value=""/>
+                <PropRisks_Remarks1 Type="String" Value=""/>
+                <PropRisks_Remarks2 Type="String" Value=""/>
+                <PropRisks_Remarks3 Type="String" Value=""/>
+                <PropRisks_Remarks4 Type="String" Value=""/>
+                <PropRisks_Remarks5 Type="String" Value=""/>
+                <PropRisks_Remarks6 Type="String" Value=""/>
+                <PropRisks_Remarks7 Type="String" Value=""/>
+                <PropRisks_RenewalNotice Type="String" Value=""/>
+                <PropRisks_RenewalNoticeDate Type="String" Value=""/>
+                <PropRisks_ResidentAddress Type="String" Value=""/>
+                <PropRisks_RevertonQuery Type="String" Value=""/>
+                <PropRisks_RuleChk1 Type="Boolean" Value="False"/>
+                <PropRisks_RuleChk2 Type="Boolean" Value="False"/>
+                <PropRisks_RuleChk3 Type="Boolean" Value="False"/>
+                <PropRisks_RuleText1 Type="Double" Value="0"/>
+                <PropRisks_RuleText2 Type="Double" Value="0"/>
+                <PropRisks_RuleText3 Type="String" Value=""/>
+                <PropRisks_SecondOpCover Type="String" Value=""/>
+                <PropRisks_SumInsuredAsPlan Type="String" Value="___health_insurance_si___"/>
+                <PropRisks_TPACode Type="String" Value="TPA20009" />
+                <PropRisks_TPAName Type="String" Value="Family Health Plan Insurance TPA limited" />
+                <PropRisks_TotalPPCFee Type="Double" Value="0"/>
+                <PropRisks_UWComments Type="String" Value=""/>
+                <PropRisks_UWCounterOffer Type="String" Value=""/>
+                <PropRisks_UWName Type="String" Value="___nominee_name___"/>
+                <PropRisks_UWRemarks Type="String" Value=""/>
+                <PropRisks_UWRemarksRNHold Type="String" Value=""/>
+                <PropRisks_UWStatus Type="String" Value=""/>
+                <PropRisks_UrineSampleChk Type="Boolean" Value="False"/>
+                <PropRisks_VoluntaryCoPayment Type="String" Value="No"/>
+                <PropRisks_VoluntaryCoPaymentOpt Type="String" Value=""/>
+                <PropRisks_ZoneOpted Type="String" Value="Zone 1"/>
+                <PropRisks_xtraDD Type="String" Value="No"/>
+                <OtherDetailsGrid>
+                    <!--InsurersDetail_Start-->
+                    <PropRiskCol Name="Person~___member_array_inc___" Value="0">
+                        <PropRiskCol Type="GroupData">
+                            <IsOptionalCover Name="IsOptionalCover" Type="Boolean" Value="False"/>
+                            <PropRisks_Weight Name="PropRisks_Weight" Type="Double" Value="___member_array_weight___"/>
+                            <PropRisks_Smoking Name="PropRisks_Smoking" Value="False" type="Boolean"/>
+                            <PropRisks_Relationship Name="PropRisks_Relationship" Type="String" Value="___member_array_relation___"/>
+                            <PropRisks_PreAcceptHealthCheck Name="PropRisks_PreAcceptHealthCheck" Type="Boolean" Value="False"/>
+                            <PropRisks_PersonalAccCoverApp Name="PropRisks_PersonalAccCoverApp" Type="String" Value="No"/>
+                            <PropRisks_Person Name="PropRisks_Person" Type="String" Value="Person"/>
+                            <PropRisks_PEDCheckBox Name="PropRisks_PEDCheckBox" Type="Boolean" Value="___member_array_question_22_details1___"/>
+                            <PropRisks_OtherNodeBool2 Name="PropRisks_OtherNodeBool2" Type="Boolean" Value="False"/>
+                            <PropRisks_OtherNodeBool1 Name="PropRisks_OtherNodeBool1" Type="Boolean" Value="False"/>
+                            <PropRisks_Occupation Name="PropRisks_Occupation" Type="String" Value="___member_array_occupation___"/>
+                            <PropRisks_NameofInsured Name="PropRisks_NameofInsured" Type="String" Value="___member_array_first_name___ ___member_array_last_name___"/>
+                            <PropRisks_IsOldDataDeleted Name="PropRisks_IsOldDataDeleted" Type="Boolean" Value="False"/>
+                            <PropRisks_IsDataDeleted Name="PropRisks_IsDataDeleted" Type="Boolean" Value="False"/>
+                            <PropRisks_Hypertention Name="PropRisks_Hypertention" Type="Boolean" Value="___member_array_question_17_details1___"/>
+                            <PropRisks_HighCholesterol Name="PropRisks_HighCholesterol" Type="Boolean" Value="___member_array_question_18_details1___"/>
+                            <PropRisks_Height Name="PropRisks_Height" Type="Double" Value="___member_array_height___"/>
+                            <PropRisks_HaveYouEverSuffered Name="PropRisks_HaveYouEverSuffered" Type="Boolean" Value="False"/>
+                            <PropRisks_Gender Name="PropRisks_Gender" Type="String" Value="___member_array_gender_2___"/>
+                            <PropRisks_DrugAbuse Name="PropRisks_DrugAbuse" Type="Boolean" Value="___member_array_question_19_details1___"/>
+                            <PropRisks_DoYouChewtheTobacco Name="PropRisks_DoYouChewtheTobacco" Type="Boolean" Value="___member_array_question_20_details1___"/>
+                            <PropRisks_DoHaveAnyOtherHIPolicy Name="PropRisks_DoHaveAnyOtherHIPolicy" Type="Boolean" Value="False"/>
+                            <PropRisks_Diabeties Name="PropRisks_Diabeties" Type="Boolean" Value="___member_array_question_16_details1___"/>
+                            <PropRisks_DateOfBirth Name="PropRisks_DateOfBirth" Type="String" Value="___member_array_birth_date___"/>
+                            <PropRisks_CriticalIllnessCoverApp Name="PropRisks_CriticalIllnessCoverApp" Type="String" Value="No"/>
+                            <PropRisks_Alcohol Name="PropRisks_Alcohol" Value="___member_array_question_21_details1___" type="Boolean"/>
+                            <PropRisks_AccidentDetails Name="PropRisks_AccidentDetails" Type="Boolean" Value="False"/>
+                        </PropRiskCol>
+                    </PropRiskCol>
+                    <!--InsurersDetail_End-->
+                </OtherDetailsGrid>
+                <MQSecA>
+                    <MQSecA>
+                        <Diabetes1Selected Type="String" Value="No"/>
+                        <Diabetes2Selected Type="String" Value="No"/>
+                        <Diabetes3Selected Type="String" Value="No"/>
+                        <Diabetes4Selected Type="String" Value="No"/>
+                        <Diabetes5Selected Type="String" Value="No"/>
+                        <Diabetes6Selected Type="String" Value="No"/>
+                        <Diabetes7Selected Type="String" Value="No"/>
+                        <DiabetesDosage1 Type="String" Value=""/>
+                        <DiabetesDosage2 Type="String" Value=""/>
+                        <DiabetesDosage3 Type="String" Value=""/>
+                        <DiabetesDosage4 Type="String" Value=""/>
+                        <DiabetesDosage5 Type="String" Value=""/>
+                        <DiabetesDosage6 Type="String" Value=""/>
+                        <DiabetesDosage7 Type="String" Value=""/>
+                        <DiabetesDuration1Selected Type="String" Value=""/>
+                        <DiabetesDuration2Selected Type="String" Value=""/>
+                        <DiabetesDuration3Selected Type="String" Value=""/>
+                        <DiabetesDuration4Selected Type="String" Value=""/>
+                        <DiabetesDuration5Selected Type="String" Value=""/>
+                        <DiabetesDuration6Selected Type="String" Value=""/>
+                        <DiabetesDuration7Selected Type="String" Value=""/>
+                        <DiabetesMedication1 Type="String" Value=""/>
+                        <DiabetesMedication2 Type="String" Value=""/>
+                        <DiabetesMedication3 Type="String" Value=""/>
+                        <DiabetesMedication4 Type="String" Value=""/>
+                        <DiabetesMedication5 Type="String" Value=""/>
+                        <DiabetesMedication6 Type="String" Value=""/>
+                        <DiabetesMedication7 Type="String" Value=""/>
+                        <DiabetesType1Selected Type="String" Value=""/>
+                        <DiabetesType2Selected Type="String" Value=""/>
+                        <DiabetesType3Selected Type="String" Value=""/>
+                        <DiabetesType4Selected Type="String" Value=""/>
+                        <DiabetesType5Selected Type="String" Value=""/>
+                        <DiabetesType6Selected Type="String" Value=""/>
+                        <DiabetesType7Selected Type="String" Value=""/>
+                        <Hypertension1Selected Type="String" Value="No"/>
+                        <Hypertension2Selected Type="String" Value="No"/>
+                        <Hypertension3Selected Type="String" Value="No"/>
+                        <Hypertension4Selected Type="String" Value="No"/>
+                        <Hypertension5Selected Type="String" Value="No"/>
+                        <Hypertension6Selected Type="String" Value="No"/>
+                        <Hypertension7Selected Type="String" Value="No"/>
+                        <HypertensionDosage1 Type="String" Value=""/>
+                        <HypertensionDosage2 Type="String" Value=""/>
+                        <HypertensionDosage3 Type="String" Value=""/>
+                        <HypertensionDosage4 Type="String" Value=""/>
+                        <HypertensionDosage5 Type="String" Value=""/>
+                        <HypertensionDosage6 Type="String" Value=""/>
+                        <HypertensionDosage7 Type="String" Value=""/>
+                        <HypertensionDuration1Selected Type="String" Value=""/>
+                        <HypertensionDuration2Selected Type="String" Value=""/>
+                        <HypertensionDuration3Selected Type="String" Value=""/>
+                        <HypertensionDuration4Selected Type="String" Value=""/>
+                        <HypertensionDuration5Selected Type="String" Value=""/>
+                        <HypertensionDuration6Selected Type="String" Value=""/>
+                        <HypertensionDuration7Selected Type="String" Value=""/>
+                        <HypertensionMedication1 Type="String" Value=""/>
+                        <HypertensionMedication2 Type="String" Value=""/>
+                        <HypertensionMedication3 Type="String" Value=""/>
+                        <HypertensionMedication4 Type="String" Value=""/>
+                        <HypertensionMedication5 Type="String" Value=""/>
+                        <HypertensionMedication6 Type="String" Value=""/>
+                        <HypertensionMedication7 Type="String" Value=""/>
+                        <SectionA1Selected Type="String" Value="No"/>
+                        <SectionA2Selected Type="String" Value="No"/>
+                        <SectionA3Selected Type="String" Value="No"/>
+                        <SectionA4Selected Type="String" Value="No"/>
+                        <SectionA5Selected Type="String" Value="No"/>
+                        <SectionA6Selected Type="String" Value="No"/>
+                        <SectionA7Selected Type="String" Value="No"/>
+                    </MQSecA>
+                </MQSecA>
+                <MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_1_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_1_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_1_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_1_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_1_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_1_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Heart and Circulatory Conditions/Disorders: chest pain, angina, high cholesterol/lipids, palpitations, congestive heart failure, coronary artery disease, heart attack, bypass surgery/angioplasty, valve disorder/replacement, pacemaker insertion, rheumatic fever, congenital heart condition, varicose veins, thrombosis, blood disorders etc.?"/>
+                        <QuestionCode Type="Int64" Value="100"/>
+                        <SerialNo Type="Int32" Value="1"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_2_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_2_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_2_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_2_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_2_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_2_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Urinary Conditions/Disorders: Blood in urine, urinary frequency, painful/difficult urination Kidney and/or Bladder infections, stones of urinary system, renal failure, dialysis or Any Other Kidney/Urinary Tract Or Prostate Disease"/>
+                        <QuestionCode Type="Int64" Value="101"/>
+                        <SerialNo Type="Int32" Value="2"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_3_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_3_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_3_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_3_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_3_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_3_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Musculoskeletal Conditions/Disorders: Joint/back pain Arthritis, Spondylosis, Joint Replacement Or Any Other Disorder of Muscle/ Bone/ Joint/ligaments, tendons or discs, gout, herniated disc, amputation/prosthesis"/>
+                        <QuestionCode Type="Int64" Value="102"/>
+                        <SerialNo Type="Int32" Value="3"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_4_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_4_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_4_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_4_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_4_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_4_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Respiratory Conditions/Disorders: Shortness/difficulty of breath, Tuberculosis, Asthma, Bronchitis, Chronic Obstructive Pulmonary Disease COPD, chronic cough , coughing of blood, etc or any Other Lung / Respiratory Disease"/>
+                        <QuestionCode Type="Int64" Value="103"/>
+                        <SerialNo Type="Int32" Value="4"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_5_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_5_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_5_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_5_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_5_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_5_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Digestive Conditions/Disorders: Jaundice, chronic diarrhea, intestinal bleeding/problems/polyps, diseases of the pancreas, liver or gall bladder, hepatitis A/B/C/other, jaundice, Cirrhosis, unexplained weight loss or gain, eating disorder or any Other Gastro Intestinal condition"/>
+                        <QuestionCode Type="Int64" Value="104"/>
+                        <SerialNo Type="Int32" Value="5"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_6_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_6_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_6_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_6_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_6_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_6_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Cancer/Tumor - Benign Or Malignant tumor, Any Growth/Cyst, any Cancer"/>
+                        <QuestionCode Type="Int64" Value="105"/>
+                        <SerialNo Type="Int32" Value="6"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_7_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_7_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_7_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_7_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_7_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_7_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Brain/Nervous System/ Psychiatric Conditions/Disorders: Loss of consciousness, fainting, dizziness, numbness/tingling, weakness, paralysis, head injury, stroke, migraine headaches or chronic severe headaches, sleep apnea, multiple sclerosis, seizures/epilepsy or any Other Brain/ Nervous System Disease, Mental/Psychiatric disorder"/>
+                        <QuestionCode Type="Int64" Value="106"/>
+                        <SerialNo Type="Int32" Value="7"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_8_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_8_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_8_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_8_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_8_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_8_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Female Reproductive Conditions/Disorders: Pelvic pain, abnormal, menstrual bleeding abnormal PAP smear, endometriosis, Fibroid, Cyst/ Fibroadenoma, Bleeding Disorder, Pelvic infection Or Any Other Gynecological / Breast cysts/lumps/tumor"/>
+                        <QuestionCode Type="Int64" Value="107"/>
+                        <SerialNo Type="Int32" Value="8"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_9_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_9_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_9_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_9_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_9_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_9_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Is any female person proposed to be insured pregnant, tested positive with a home pregnancy test, or in the process of adoption or becoming a surrogate?"/>
+                        <QuestionCode Type="Int64" Value="108"/>
+                        <SerialNo Type="Int32" Value="9"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_10_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_10_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_10_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_10_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_10_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_10_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Metabolic and Endocrine Conditions/Disorders: Adrenal/pituitary disorders, lupus, scleroderma, thyroid disorders, any autoimmune/genetic disorder"/>
+                        <QuestionCode Type="Int64" Value="109"/>
+                        <SerialNo Type="Int32" Value="10"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_11_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_11_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_11_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_11_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_11_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_11_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Does the person proposed to be insured suffer from any chronic or long-term medical condition, or have any other disability, abnormality or recurrent illness or injury or unable to perform normal activities?"/>
+                        <QuestionCode Type="Int64" Value="110"/>
+                        <SerialNo Type="Int32" Value="11"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_12_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_12_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_12_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_12_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_12_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_12_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Does the person proposed to be insured use tobacco products/cigarettes or drinks alcohol?"/>
+                        <QuestionCode Type="Int64" Value="111"/>
+                        <SerialNo Type="Int32" Value="12"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_13_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_13_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_13_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_13_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_13_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_13_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Does any of the person proposed to be insured suffers from any infertility related condition?"/>
+                        <QuestionCode Type="Int64" Value="112"/>
+                        <SerialNo Type="Int32" Value="13"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_14_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_14_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_14_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_14_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_14_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_14_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Has any person proposed to be insured consulted with or received treatment from any doctor or other health care provider for any other condition or symptom(s)/any psychiatric condition/ undergone any hospitalization/illness/surgery/ currently taking medication(s) for any condition or medical procedures (including diagnostic testing)"/>
+                        <QuestionCode Type="Int64" Value="113"/>
+                        <SerialNo Type="Int32" Value="14"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                    <MQSecB>
+                        <Insured1 Type="Int32" Value="___member_1_question_15_details___"/>
+                        <Insured2 Type="Int32" Value="___member_2_question_15_details___"/>
+                        <Insured3 Type="Int32" Value="___member_3_question_15_details___"/>
+                        <Insured4 Type="Int32" Value="___member_4_question_15_details___"/>
+                        <Insured5 Type="Int32" Value="___member_5_question_15_details___"/>
+                        <Insured6 Type="Int32" Value="___member_6_question_15_details___"/>
+                        <Insured7 Type="Int32" Value="0"/>
+                        <Question Type="String" Value="Have you or any of the persons proposed to be insured been diagnosed with or undergone surgery for any of the following Critical Illnesses, prior to proposing for this cover - Cancer, Heart Attack, Coronory Artery, Bypass Graft, Heart Valve Replacement/ Repair, Coma, Kidney Failure, Stroke, any Transplant, Paralysis, Multiple Sclerosis, Motor Neurone Disease"/>
+                        <QuestionCode Type="Int64" Value="114"/>
+                        <SerialNo Type="Int32" Value="15"/>
+                        <Relationship Type="String" Value=""/>
+                        <Remarks1 Type="String" Value=""/>
+                        <Remarks2 Type="String" Value=""/>
+                        <Remarks3 Type="String" Value=""/>
+                        <Remarks4 Type="String" Value=""/>
+                        <Remarks5 Type="String" Value=""/>
+                        <Remarks6 Type="String" Value=""/>
+                        <Remarks7 Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <ErrorText Type="String" Value=""/>
+                    </MQSecB>
+                </MQSecB>
+                <MQSecC>
+                    <MQSecC>
+                        <DateOfConsult Type="String" Value=""/>
+                        <DoctorsName Type="String" Value=""/>
+                        <ErrorText Type="String" Value=""/>
+                        <Hospital Type="String" Value=""/>
+                        <InsuredName Type="String" Value=""/>
+                        <PhysicianName Type="String" Value=""/>
+                        <PhysicianNo Type="String" Value=""/>
+                        <Question Type="String" Value=""/>
+                        <QuestionCode Type="Int64" Value="0"/>
+                        <Relationship Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="0"/>
+                        <SerialNo Type="Int32" Value="0"/>
+                    </MQSecC>
+                </MQSecC>
+                <MQSecD>
+                    <MQSecD>
+                        <DateOfConsult Type="String" Value=""/>
+                        <DoctorsName Type="String" Value=""/>
+                        <ErrorText Type="String" Value=""/>
+                        <Hospital Type="String" Value=""/>
+                        <InsuredName Type="String" Value=""/>
+                        <PhysicianName Type="String" Value=""/>
+                        <PhysicianNo Type="String" Value=""/>
+                        <Question Type="String" Value=""/>
+                        <QuestionCode Type="Int64" Value="0"/>
+                        <Relationship Type="String" Value=""/>
+                        <RowCount Type="Int32" Value="2"/>
+                        <SerialNo Type="Int32" Value="0"/>
+                    </MQSecD>
+                </MQSecD>
+                <RiskCoverDetailsGrid>
+                    <!--InsurersDetailRisk_Start-->
+                    <RiskGroup Name="Person~___member_array_inc___" Type="GroupData" Value="Risk Wise Cover Details">
+                        <CoverSIComponant Name="OneHealth" Type="" Value="0"/>
+                    </RiskGroup>
+                    <!--InsurersDetailRisk_End-->
+                </RiskCoverDetailsGrid>
+            </Block>
+        </RiskDetails>
+        <GeneralProposalInformation>
+            <ErrorTrackingNeeded Type="Boolean" Value="False" />
+            <ProductType Type="String" Value="SB" />
+            <PropBranchDetails_IMDBranchCode Type="String" Value="" />
+            <PropBranchDetails_IMDBranchName Type="String" Value="" />
+            <PropCalculation_CalculateRate Type="Boolean" Value="True" />
+            <PropCalculation_Validate Type="Boolean" Value="False" />
+            <PropCalculation_ValidateData Type="Boolean" Value="False" />
+            <PropClauseDetails_Component51 Type="String" Value="" />
+            <PropClauseDetails_DepartmentCode_Mandatary Type="Double" Value="0" />
+            <PropClauseDetails_ProductCode_Mandatary Type="Double" Value="0" />
+            <PropClauseDetails_SectionCode Type="String" Value="" />
+            <PropCoinsuranceDetails_AddRow Type="Boolean" Value="True" />
+            <PropCoinsuranceDetails_CoinsuranceType Type="String" Value="" />
+            <PropCoinsuranceDetails_Commissiontobepaidbytheleader Type="Boolean" Value="False" />
+            <PropCoinsuranceDetails_PolicyNooftheleader Type="String" Value="" />
+            <PropCoinsuranceDetails_ReferenceNumber Type="String" Value="" />
+            <PropCoinsuranceDetails_Servicetaxtobepaidbytheleader Type="Boolean" Value="True" />
+            <PropCoinsuranceDetails_Validate Type="String" Value="" />
+            <PropCoinsuranceDetails_urn Type="String" Value="" />
+            <PropCoinsuranceDetails_urndate Type="String" Value="" />
+            <PropConditionDetails_ConditionDescription Type="String" Value="" />
+            <PropConditionDetails_DepartmentCode Type="Double" Value="0" />
+            <PropConditionDetails_ProductCode Type="Double" Value="0" />
+            <PropConditionDetails_SectionCode Type="String" Value="" />
+            <PropConditionDetails_SpecialConditionDescription Type="String" Value="" />
+            <PropCoverNoteDetails_CoverNoteBookNo Type="String" Value="" />
+            <PropCoverNoteDetails_CoverNoteLeafNo Type="String" Value="" />
+            <PropCoverNoteDetails_IssuedOnDt Type="String" Value="" />
+            <PropCoverNoteDetails_IsuedonTime Type="String" Value="" />
+            <PropCoverNoteDetails_LeafNo Type="Double" Value="0" />
+            <PropCoverNoteDetails_RecievedOn Type="String" Value="" />
+            <PropCoverNoteDetails_Validate Type="Boolean" Value="True" />
+            <PropCustomerDtls_CustomerID_Mandatary Type="String" Value="20000835981" />
+            <PropCustomerDtls_CustomerName Type="String" Value="Testing" />
+            <PropCustomerDtls_CustomerType Type="String" Value="I" />
+            <PropCustomerDtls_PayeeCustomerID Type="String" Value="" />
+            <PropCustomerDtls_PayeeCustomerName Type="String" Value="" />
+            <PropCustomerReferenceInfo_OldPolicyNumber Type="String" Value="" />
+            <PropCustomerReferenceInfo_PolicyConversionDate Type="String" Value="" />
+            <PropDistributionChannel_ATSApprovalRemarks Type="String" Value="" />
+            <PropDistributionChannel_ATSApprovalStatus Type="String" Value="" />
+            <PropDistributionChannel_ATSNumber Type="String" Value="" />
+            <PropDistributionChannel_BranchDetails Type="String" Value="" />
+            <PropDistributionChannel_BusineeChannelBrunch Type="String" Value="" />
+            <PropDistributionChannel_BusineeChanneltype Type="String" Value="BROKER" />
+            <PropDistributionChannel_BusinessServicingChannelType Type="String" Value="" />
+            <PropDistributionChannel_BusinessSource_Mandatary Type="String" Value="INTERMEDIARY" />
+            <PropDistributionChannel_BusinessSourcetype Type="String" Value="" />
+            <PropDistributionChannel_Commision Type="Double" Value="0" />
+            <PropDistributionChannel_EIANumber Type="String" Value="" />
+            <PropDistributionChannel_EndorsementDtls Type="String" Value="" />
+            <PropDistributionChannel_EntityRelationShipCode_Mandatary Type="String" Value="___insurer_integration_agent_code___" />
+            <PropDistributionChannel_EntityRelationShipName Type="String" Value="___entity_rel_name___" />
+            <PropDistributionChannel_InspectionCategory Type="String" Value="" />
+            <PropDistributionChannel_IntermediaryDetails Type="String" Value="" />
+            <PropDistributionChannel_IsApprovalRequired Type="Boolean" Value="True" />
+            <PropDistributionChannel_IsDocumentRequired Type="Boolean" Value="False" />
+            <PropDistributionChannel_IsInspectionRequired Type="Boolean" Value="False" />
+            <PropDistributionChannel_IsInternalProcess Type="Boolean" Value="False" />
+            <PropDistributionChannel_IsQCRequired Type="Boolean" Value="False" />
+            <PropDistributionChannel_MODetails Type="String" Value="" />
+            <PropDistributionChannel_OperationMode Type="String" Value="NEWPOLICY" />
+            <PropDistributionChannel_SPDetails Type="String" Value="" />
+            <PropDistributionChannel_SerIntermediaryDetails Type="String" Value="" />
+            <PropDistributionChannel_ServiceProvider Type="Double" Value="0" />
+            <PropDistributionChannel_SpecialDiscount Type="Double" Value="0" />
+            <PropDistributionChannel_TERRORISMCOMMISSION Type="String" Value="0" />
+            <PropDistributionChannel_Validate Type="Boolean" Value="False" />
+            <PropDistributionChannel_VerticalDtls Type="String" Value="" />
+            <PropEndorsementDtls_CancellationAmount Type="Double" Value="0" />
+            <PropEndorsementDtls_CancellationDueToDataEntry Type="Boolean" Value="False" />
+            <PropEndorsementDtls_CancellationchargesApplicable Type="String" Value="" />
+            <PropEndorsementDtls_ClientRequestDate Type="String" Value="" />
+            <PropEndorsementDtls_Component55 Type="String" Value="" />
+            <PropEndorsementDtls_EndorsementTypeCode Type="Double" Value="0" />
+            <PropEndorsementDtls_OfficeCodeAndAddress Type="String" Value="" />
+            <PropEndorsementDtls_OriginalCerticateSurrendered Type="Boolean" Value="False" />
+            <PropEndorsementDtls_PeriodFromDate Type="String" Value="" />
+            <PropEndorsementDtls_PeriodToDate Type="String" Value="" />
+            <PropEndorsementDtls_PolicyNumber Type="String" Value="" />
+            <PropEndorsementDtls_ReasonForCancellation Type="String" Value="" />
+            <PropEndorsementDtls_Remarksifany Type="String" Value="" />
+            <PropEndorsementDtls_TypeofEndorsement Type="String" Value="" />
+            <PropEndorsementDtls_UniqueReferenceID Type="String" Value="" />
+            <PropEndorsementEffectiveDate_EffectiveDate Type="String" Value="" />
+            <PropEndorsementEffectiveDate_EffectiveTime Type="String" Value="" />
+            <PropExclusionDetails_DepartmentCode Type="Double" Value="0" />
+            <PropExclusionDetails_ProductCode Type="Double" Value="0" />
+            <PropExclusionDetails_SectionCode Type="String" Value="" />
+            <PropFinancierDetails_AddRow Type="Boolean" Value="False" />
+            <PropFinancierDetails_Validate Type="Boolean" Value="True" />
+            <PropGeneralProposalGroup_CoverNoteDetails Type="String" Value="" />
+            <PropGeneralProposalGroup_DistributionChannel Type="String" Value="" />
+            <PropGeneralProposalGroup_GeneralProposalInformation Type="String" Value="" />
+            <PropGeneralProposalInformation_ActiveFlag Type="String" Value="YES" />
+            <PropGeneralProposalInformation_ApplicationNumber Type="String" Value="" />
+            <PropGeneralProposalInformation_BankID Type="Double" Value="0" />
+            <PropGeneralProposalInformation_BranchOfficeCode Type="String" Value="" />
+            <PropGeneralProposalInformation_BusinessSourceInfo Type="String" Value="" />
+            <PropGeneralProposalInformation_BusinessType_Mandatary Type="String" Value="New Business" />
+            <PropGeneralProposalInformation_CANCELLATIONMANUALAMOUNT Type="Double" Value="0" />
+            <PropGeneralProposalInformation_CANCELLATIONMANUALAMOUNTTERR Type="Double" Value="0" />
+            <PropGeneralProposalInformation_CertificateNumber Type="String" Value="" />
+            <PropGeneralProposalInformation_ChannelNumber Type="String" Value="___channel_id___" />
+            <PropGeneralProposalInformation_CoverNotePlace Type="String" Value="" />
+            <PropGeneralProposalInformation_CovernoteGenType Type="String" Value="AUTO" />
+            <PropGeneralProposalInformation_CustomerDtls Type="String" Value="" />
+            <PropGeneralProposalInformation_CustomerReferenceInfo Type="String" Value="" />
+            <PropGeneralProposalInformation_DealId Type="String" Value="" />
+            <PropGeneralProposalInformation_DepartmentCode Type="Double" Value="61" />
+            <PropGeneralProposalInformation_DepartmentName Type="String" Value="" />
+            <PropGeneralProposalInformation_DisplayOfficeCode Type="String" Value="___display_ocode___" />
+            <PropGeneralProposalInformation_DisplayStatus Type="String" Value="" />
+            <PropGeneralProposalInformation_EmployeeName Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementDescription Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementEffectiveDate Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementNo Type="Double" Value="0" />
+            <PropGeneralProposalInformation_EndorsementRequestType Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementRequestTypeCode Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementSi Type="Double" Value="0" />
+            <PropGeneralProposalInformation_EndorsementType Type="String" Value="" />
+            <PropGeneralProposalInformation_EndorsementWording Type="String" Value="" />
+            <PropGeneralProposalInformation_FacApplicability Type="String" Value="No" />
+            <PropGeneralProposalInformation_FacCurrency Type="String" Value="" />
+            <PropGeneralProposalInformation_FacExchangeRate Type="Double" Value="0" />
+            <PropGeneralProposalInformation_FrontingCompany Type="String" Value="" />
+            <PropGeneralProposalInformation_IndustryCode Type="String" Value="" />
+            <PropGeneralProposalInformation_IndustryName Type="String" Value="" />
+            <PropGeneralProposalInformation_InwardNo Type="String" Value="" />
+            <PropGeneralProposalInformation_IsNCBApplicable Type="Boolean" Value="False" />
+            <PropGeneralProposalInformation_ManualCovernoteNo Type="String" Value="" />
+            <PropGeneralProposalInformation_MasterPolicy Type="String" Value="" />
+            <PropGeneralProposalInformation_MethodOfCalculation Type="String" Value="___intermediary_code___" />
+            <PropGeneralProposalInformation_NCBpercentage Type="Double" Value="0" />
+            <PropGeneralProposalInformation_NextB Type="Boolean" Value="False" />
+            <PropGeneralProposalInformation_NoPrevInsuranceFlag Type="Boolean" Value="False" />
+            <PropGeneralProposalInformation_NonLiablePeriod Type="String" Value="" />
+            <PropGeneralProposalInformation_NonTerrorismPremCancellation Type="Double" Value="0" />
+            <PropGeneralProposalInformation_NumCovernoteNo Type="Double" Value="0" />
+            <PropGeneralProposalInformation_OfficeCode Type="String" Value="___office_code___" />
+            <PropGeneralProposalInformation_OfficeName Type="String" Value="___office_name___" />
+            <PropGeneralProposalInformation_OldCovernoteNo Type="String" Value="" />
+            <PropGeneralProposalInformation_OptionForCalculation Type="String" Value="Yearly" />
+            <PropGeneralProposalInformation_PolicyEffectivedate Type="String" Value="" />
+            <PropGeneralProposalInformation_PolicyNo Type="Double" Value="0" />
+            <PropGeneralProposalInformation_PolicyNumberChar Type="String" Value="" />
+            <PropGeneralProposalInformation_PolicySchedule_Mandatary Type="String" Value="Multi Page" />
+            <PropGeneralProposalInformation_PolicyTerm Type="String" Value="" />
+            <PropGeneralProposalInformation_ProductCode Type="Double" Value="6111" />
+            <PropGeneralProposalInformation_ProductName Type="String" Value="" />
+            <PropGeneralProposalInformation_ProposalDate_Mandatary Type="String" Value="___policy_start___" />
+            <PropGeneralProposalInformation_ProposalFormNumber Type="String" Value="" />
+            <PropGeneralProposalInformation_ProvisionalBooking Type="String" Value="" />
+            <PropGeneralProposalInformation_ProvisionalBookingReason Type="String" Value="" />
+            <PropGeneralProposalInformation_QuickId Type="String" Value="" />
+            <PropGeneralProposalInformation_QuoteNumber Type="String" Value="" />
+            <PropGeneralProposalInformation_ReInsuranceInward Type="String" Value="" />
+            <PropGeneralProposalInformation_ReSharePer Type="String" Value="" />
+            <PropGeneralProposalInformation_ReferenceNoDate Type="String" Value="" />
+            <PropGeneralProposalInformation_ReferralCode Type="String" Value="" />
+            <PropGeneralProposalInformation_RelationshipType Type="String" Value="" />
+            <PropGeneralProposalInformation_Remarks Type="String" Value="" />
+            <PropGeneralProposalInformation_RetainCancellationPremium Type="String" Value="" />
+            <PropGeneralProposalInformation_SalesTax Type="String" Value="" />
+            <PropGeneralProposalInformation_Sector_Mandatary Type="String" Value="Urban" />
+            <PropGeneralProposalInformation_SerDealId Type="String" Value="" />
+            <PropGeneralProposalInformation_ServiceTaxExemptionCategory_Mandatary Type="String" Value="No Exemption" />
+            <PropGeneralProposalInformation_SocialSector Type="String" Value="COBBLERS"/>
+            <PropGeneralProposalInformation_TerrorismPremiumCancellation Type="Double" Value="0" />
+            <PropGeneralProposalInformation_TotalSi Type="Double" Value="0" />
+            <PropGeneralProposalInformation_TypeOfBusiness Type="String" Value="" />
+            <PropGeneralProposalInformation_TypeOfCalculation Type="String" Value="" />
+            <PropGeneralProposalInformation_TypeOfIndustry Type="String" Value="" />
+            <PropGeneralProposalInformation_TypeOfPolicy Type="String" Value="SYSTEM" />
+            <PropGeneralProposalInformation_TypeofCancellation Type="String" Value="" />
+            <PropGeneralProposalInformation_UWLocation Type="String" Value="" />
+            <PropGeneralProposalInformation_UWLocationCode Type="String" Value="" />
+            <PropGeneralProposalInformation_ValidationFlag Type="String" Value="" />
+            <PropGeneralProposalInformation_VehicleLaidUpFrom Type="String" Value="" />
+            <PropGeneralProposalInformation_VehicleLaidUpTo Type="String" Value="" />
+            <PropGeneralProposalInformation_covernoteissuedate Type="String" Value="" />
+            <PropGeneralProposalInformation_covernoteissuetime Type="String" Value="" />
+            <PropGeneralProposalInformation_disprntoffcd Type="String" Value="400018" />
+            <PropGeneralProposalInformation_iscovernoteused Type="Boolean" Value="False" />
+            <PropGeneralProposal_GeneralProposalGroup Type="String" Value="" />
+            <PropGeneralProposal_IsCustomWorkflowCondition Type="String" Value="" />
+            <PropHealthOtherNodes_AfterFetch Type="Boolean" Value="False" />
+            <PropHealthOtherNodes_CancelationDetail Type="String" Value="" />
+            <PropHealthOtherNodes_EndorsementDtls Type="String" Value="" />
+            <PropHealthOtherNodes_FetchRiskCoverDetails Type="String" Value="" />
+            <PropHealthOtherNodes_validate_aftercalc Type="String" Value="" />
+            <PropHealthOtherNodes_validate_beforecalc Type="String" Value="" />
+            <PropHigherExcessDiscount_HE_Disc_RateType_In Type="Double" Value="0" />
+            <PropIntermediaryDetails_IntermediaryCode Type="String" Value="___intermediary_code___" />
+            <PropIntermediaryDetails_IntermediaryName Type="String" Value="___entity_rel_name___" />
+            <PropIntermediaryDetails_IntermediaryType Type="String" Value="" />
+            <PropMODetails_PrimaryMOCode Type="String" Value="" />
+            <PropMODetails_PrimaryMOName Type="String" Value="" />
+            <PropMODetails_SecondaryMOCode Type="String" Value="" />
+            <PropMODetails_SecondaryMOName Type="String" Value="" />
+            <PropMODetails_TertiaryMOCode Type="String" Value="C_AGENT" />
+            <PropMODetails_TertiaryMOName Type="String" Value="" />
+            <PropNonLiablePeriod_NonLiableEndTime Type="String" Value="" />
+            <PropNonLiablePeriod_NonLiableFromDate Type="String" Value="" />
+            <PropNonLiablePeriod_NonLiableStartTime Type="String" Value="" />
+            <PropNonLiablePeriod_NonLiableToDate Type="String" Value="" />
+            <PropParameters_AddClause Type="Boolean" Value="False" />
+            <PropParameters_AddCondition Type="Boolean" Value="False" />
+            <PropParameters_AddExclusion Type="Boolean" Value="False" />
+            <PropParameters_AddWarranty Type="Boolean" Value="False" />
+            <PropParameters_AfterFetch Type="Boolean" Value="True" />
+            <PropParameters_ClauseApplicable Type="Boolean" Value="True" />
+            <PropParameters_CoInsuranceApplicability Type="Boolean" Value="True" />
+            <PropParameters_CommissionApplicable Type="Boolean" Value="True" />
+            <PropParameters_ConditionApplicable Type="Boolean" Value="True" />
+            <PropParameters_CoverNoteApplicability Type="Boolean" Value="True" />
+            <PropParameters_EQHigherExcessDiscount Type="Boolean" Value="False" />
+            <PropParameters_ExclusionApplicable Type="Boolean" Value="True" />
+            <PropParameters_FamilyPackageDiscount Type="Boolean" Value="False" />
+            <PropParameters_FinancierApplicability Type="Boolean" Value="True" />
+            <PropParameters_FloaterRiskLoading Type="Boolean" Value="False" />
+            <PropParameters_GroupDiscount Type="Boolean" Value="False" />
+            <PropParameters_HighClaimLoading Type="Boolean" Value="False" />
+            <PropParameters_HigherExcessDiscount Type="Boolean" Value="False" />
+            <PropParameters_Installment Type="Boolean" Value="False" />
+            <PropParameters_LongTermPolicy Type="Boolean" Value="False" />
+            <PropParameters_LowClaimDiscount Type="Boolean" Value="False" />
+            <PropParameters_MinimumPremium Type="Boolean" Value="True" />
+            <PropParameters_NoClaimDiscount Type="Boolean" Value="False" />
+            <PropParameters_OverageLoading Type="Boolean" Value="False" />
+            <PropParameters_PasPolicyApplicable Type="String" Value="" />
+            <PropParameters_PastPolicyApplicable Type="Boolean" Value="False" />
+            <PropParameters_PolicyCancellation Type="Boolean" Value="False" />
+            <PropParameters_PopulateTransactionBegin Type="Boolean" Value="True" />
+            <PropParameters_PreviousPolicyApplicable Type="String" Value="" />
+            <PropParameters_RenewalAllowed Type="Boolean" Value="True" />
+            <PropParameters_SectionDiscount Type="Boolean" Value="False" />
+            <PropParameters_ServiceTaxExempted Type="Boolean" Value="False" />
+            <PropParameters_ShortPeriodLongPeriod Type="Boolean" Value="True" />
+            <PropParameters_SpecialDiscountApplicable Type="Boolean" Value="True" />
+            <PropParameters_StaffDiscount Type="Boolean" Value="False" />
+            <PropParameters_StampDutyChargeable Type="Boolean" Value="False" />
+            <PropParameters_TariffProduct Type="Boolean" Value="True" />
+            <PropParameters_TransferFees Type="Boolean" Value="False" />
+            <PropParameters_VDFDiscountAllowed Type="Boolean" Value="False" />
+            <PropParameters_ValidateClause Type="Boolean" Value="True" />
+            <PropParameters_ValidateCondition Type="Boolean" Value="True" />
+            <PropParameters_ValidateEndorsementData Type="Boolean" Value="True" />
+            <PropParameters_ValidateExclusion Type="Boolean" Value="True" />
+            <PropParameters_ValidateWarranty Type="Boolean" Value="True" />
+            <PropParameters_WarrentyApplicable Type="Boolean" Value="True" />
+            <PropPolicyEffectivedate_Fromdate_Mandatary Type="String" Value="___policy_start___" />
+            <PropPolicyEffectivedate_Fromhour_Mandatary Type="String" Value="___proposal_time___" />
+            <PropPolicyEffectivedate_Todate_Mandatary Type="String" Value="___policy_end___" />
+            <PropPolicyEffectivedate_Tohour_Mandatary Type="String" Value="23:59" />
+            <PropPremiumCalculation_BasicPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_Cess Type="Double" Value="0" />
+            <PropPremiumCalculation_CustomCoverLDPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_ERFAmount Type="Double" Value="0" />
+            <PropPremiumCalculation_EduCess Type="Double" Value="0" />
+            <PropPremiumCalculation_EndorsementERFAmount Type="Double" Value="0" />
+            <PropPremiumCalculation_EndorsementPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_EndorsementServiceTax Type="Double" Value="0" />
+            <PropPremiumCalculation_EndorsementStampDuty Type="Double" Value="1" />
+            <PropPremiumCalculation_EndorsementTerrorismPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_EndtEduCess Type="Double" Value="0" />
+            <PropPremiumCalculation_EndtHigherEduCess Type="Double" Value="0" />
+            <PropPremiumCalculation_GrossCoverPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_HigherEduCess Type="Double" Value="0" />
+            <PropPremiumCalculation_NetODPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_NetPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_NetTPPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_SP_PR_LTFactor Type="Double" Value="0" />
+            <PropPremiumCalculation_ServiceTax Type="Double" Value="0" />
+            <PropPremiumCalculation_StampDuty Type="Double" Value="1" />
+            <PropPremiumCalculation_StampDutyApplicability Type="Boolean" Value="False" />
+            <PropPremiumCalculation_TerrorismPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_TotalPremium Type="Double" Value="0" />
+            <PropPremiumCalculation_TransferFeeAmount Type="Double" Value="0" />
+            <PropPreviousPolicyDetails_AddRow Type="Boolean" Value="False" />
+            <PropPreviousPolicyDetails_CalculateClaimRatio Type="Boolean" Value="True" />
+            <PropPreviousPolicyDetails_ClaimRatio Type="Double" Value="0" />
+            <PropPreviousPolicyDetails_FirstPolicyInceptionDate Type="String" Value="" />
+            <PropPreviousPolicyDetails_InceptionYear Type="Double" Value="0" />
+            <PropPreviousPolicyDetails_NCBPercentage Type="Double" Value="0" />
+            <PropPreviousPolicyDetails_OldTariffSlab Type="Boolean" Value="False" />
+            <PropPreviousPolicyDetails_PreviousPolicyType Type="String" Value="" />
+            <PropPreviousPolicyDetails_Validate Type="Boolean" Value="True" />
+            <PropProductDetails_Component17 Type="String" Value="" />
+            <PropProductDetails_DepartmentCode Type="Double" Value="" />
+            <PropProductDetails_ProductCode Type="Double" Value="" />
+            <PropProductDetails_ProductName Type="String" Value="" />
+            <PropProductName Type="String" Value="OneHealth" />
+            <PropReferenceNoDate_ReferenceDate_Mandatary Type="String" Value="01/08/2019" />
+            <PropReferenceNoDate_ReferenceNo_Mandatary Type="Double" Value="" />
+            <PropSPDetails_SPCode Type="String" Value="___sp_code___" />
+            <PropSPDetails_SPName Type="String" Value="___sp_name___" />
+            <PropSerIntermediaryDetails_SerIntermediaryCode Type="String" Value="" />
+            <PropSerIntermediaryDetails_SerIntermediaryName Type="String" Value="" />
+            <PropSerIntermediaryDetails_SerIntermediaryType Type="String" Value="" />
+            <PropServiceTaxExemptionCategory_Component43 Type="String" Value="" />
+            <PropVerticalDtls_PrimaryVerticalCode Type="String" Value="" />
+            <PropVerticalDtls_PrimaryVerticalName Type="String" Value="" />
+            <PropVerticalDtls_SecondaryVerticalCode Type="String" Value="" />
+            <PropVerticalDtls_SecondaryVerticalName Type="String" Value="" />
+            <PropVerticalDtls_TertiaryVerticalCode Type="String" Value="" />
+            <PropVerticalDtls_TertiaryVerticalName Type="String" Value="" />
+            <PropWarranty_DepartmentCode Type="Double" Value="0" />
+            <PropWarranty_ProductCode Type="Double" Value="0" />
+            <PropWarranty_SectionCode Type="String" Value="" />
+            <PropWarranty_WarrantyType Type="String" Value="" />
+        </GeneralProposalInformation>
+    </ProposalDetails>
+    <CustomerDetails>
+        <CustomerType Name="CustomerType" Type="String" Value="I"/>
+        <Name Name="Name" Type="String" Value="___first_name___ ___last_name___"/>
+        <Country Name="Country" Type="String" Value="91"/>
+        <CountryName Name="CountryName" Type="String" Value="India"/>
+        <FirstName Name="FirstName" Type="String" Value="___first_name___"/>
+        <LastName Name="LastName" Type="String" Value="___last_name___"/>
+        <MasterContactNo Name="MasterContactNo" Type="String" Value="___mobile___"/>
+        <MasterPinCode Name="MasterPinCode" Type="String" Value="___permanent_pincode___"/>
+        <Nationality Name="Nationality" Type="String" Value="Indian"/>
+        <Salutation Name="Salutation" Type="String" Value="___salutation___"/>
+        <EmailId Name="EmailId" Type="String" Value="___email___"/>
+        <DOB Name="DOB" Type="String" Value="___birth_date___"/>
+        <Gender Name="Gender" Type="String" Value="___gender_2___"/>
+        <InterEmpTag Name="InterEmpTag" Type="String" Value="INTERMEDIARY"/>
+        <MaritalStatus Name="MaritalStatus" Type="String" Value="___marital___"/>
+        <PermanentLocationSameAsMailLocation Name="PermanentLocationSameAsMailLocation" Type="Boolean" Value="True"/>
+        <Occupation Name="Occupation" Type="String" Value="0"/>
+        <BankAccounttype Name="BankAccounttype" Type="String" Value="0"/>
+        <MobileNo Name="MobileNo" Type="String" Value="___mobile___"/>
+        <LandLineNo Name="LandLineNo" Type="String" Value="___mobile___"/>
+        <AddressLine1 Name="AddressLine1" Type="String" Value="___permanent_address_1___"/>
+        <CityDistrictCode Name="CityDistrictCode" Type="String" Value="___district_code___"/>
+        <CityDistrictName Name="CityDistrictName" Type="String" Value="___district___"/>
+        <PinCodeLocality Name="PinCodeLocality" Type="String" Value="___area___"/>
+        <PinCode Name="PinCode" Type="String" Value="___permanent_pincode___"/>
+        <StateCode Name="StateCode" Type="String" Value="___state_code___"/>
+        <StateName Name="StateName" Type="String" Value="___state___"/>
+        <BankAccNumber Name="BankAccNumber" Type="String" Value=""/>
+        <BankBranchName Name="BankBranchName" Type="String" Value=""/>
+        <BankCode Name="BankCode" Type="Int32" Value="0"/>
+        <BankName Name="BankName" Type="String" Value=""/>
+        <BankBranchCode Name="BankBranchCode" Type="String" Value=""/>
+        <AreaVillageCode Name="AreaVillageCode" Type="String" Value=""/>
+        <AddressLine3 Name="AddressLine3" Type="String" Value="___permanent_address_3___"/>
+        <AreaVillageName Name="AreaVillageName" Type="String" Value=""/>
+        <AddressLine2 Name="AddressLine2" Type="String" Value="___permanent_address_2___"/>
+        <POBox Name="POBox" Type="String" Value=""/>
+        <PanNo Name="PanNo" Type="String" Value="___pan___"/>
+        <LandLineSTD Name="LandLineSTD" Type="String" Value="91"/>
+        <FaxNo Name="FaxNo" Type="String" Value=""/>
+        <ISUIICEmployee Name="NA" Type="char"/>
+        <AnnualIncome Name="AnnualIncome" Type="String" Value="1"/>
+        <MaidenName Name="MaidenName" Type="String" Value="NA"/>
+        <CustomerInitials Name="CustomerInitials" Type="String" Value="NA"/>
+        <Remarks Name="Remarks" Type="String" Value="Done"/>
+    </CustomerDetails>
+</Root>

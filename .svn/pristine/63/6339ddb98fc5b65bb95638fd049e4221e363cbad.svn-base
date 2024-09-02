@@ -1,0 +1,2045 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Short Term Policy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min-3.3.7.css">
+    <!--         <script src="bootstrap/js/jquery.min-3.3.1.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap/js/jquery-1.12.3.min.js"></script> -->
+    <!-- <script src="bootstrap/js/bootstrap.min-3.3.7.js"></script> -->
+
+    <script src="bootstrap/js/awesomplete.js"></script>
+    <script src="bootstrap/js/swal.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://leaverou.github.io/awesomplete/awesomplete.css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- ---------------------*************************------------------------- -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"/> -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-material-datetimepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-material-datetimepicker.js"></script>
+    <link href="bootstrap/css/custom.css" rel="stylesheet">
+
+    <style>
+        .CRN {
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #009fdd;
+            font-weight: bold;
+        }
+
+        #cover {
+            text-transform: uppercase;
+        }
+
+        #type {
+            text-transform: uppercase;
+        }
+
+        /* Center the loader */
+        #myloader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        .loader {
+            padding-top: 0px;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s;
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+
+        .ansbox {
+            display: none;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 50%;
+            font-size: 12px;
+        }
+
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #fdfdfd;
+            text-shadow: 0 1px 0 #FFF;
+            filter: alpha(opacity=20);
+            opacity: 1;
+        }
+
+        .popScreen1 {
+            overflow-y: auto !important;
+        }
+
+        .ErrorBorder {
+            border: 1px solid red;
+        }
+
+        .dtpClass {
+            font-size: 12px !important;
+        }
+
+        .TopSpace {
+            margin-top: 5px;
+        }
+
+        .loader {
+            z-index: 999;
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .loader img {
+            height: 40px;
+            vertical-align: middle;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            position: absolute;
+            left: 50%;
+        }
+
+        .swal2-popup {
+            top: 8%;
+        }
+
+        .coverdetpopup {
+            position: fixed;
+            box-shadow: 0 0 1px 1px #e5e5e5;
+            width: 100%;
+            background: rgba(50, 55, 59, 0.5);
+            height: 100%;
+            z-index: 99;
+            display: none;
+            top: 0px;
+            left: 0px;
+        }
+
+        .coverDetails {
+            padding: 10px;
+            position: absolute;
+            z-index: 99;
+            text-align: left;
+            font-size: 13px;
+            font-weight: normal;
+            border-radius: 6px;
+            color: #333;
+            background: #fff;
+            width: 99%;
+            left: 1%;
+            top: 20%;
+        }
+
+        .coverpopupclose {
+            font-size: 14px;
+            font-weight: 700;
+            color: #00476d;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .coverpopupclose div {
+            margin-top: -10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #00476d;
+            float: right;
+            display: inline;
+        }
+
+        .coverDetails h3 {
+            padding: 0px;
+            margin: 5px;
+            text-align: center;
+            margin-top: -30px;
+            font-size: 20px;
+        }
+
+        #div_SI_Amt div {
+            margin: 6px;
+        }
+
+        .SIPopup {
+            cursor: pointer;
+        }
+
+        #quotemain_list {
+            padding-bottom:10px;
+        }
+
+        .quote-wrap {
+            padding: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto;
+            padding: 1px;
+        }
+
+        .daysCount {
+            margin: 2px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .brochure {
+            font-size: 13px;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			margin: 10px 0px 0px;
+        }
+		.brochure a{text-decoration: underline !important;color: rgb(35 82 124);padding:0px 10px 0px 10px;}
+    </style>
+</head>
+
+<body>
+    <div class="loader" style="display: none" id="loader_id">
+        <img src="images/mipmap-hdpi/loading.gif" style="height: 120px;">
+    </div>
+    <!-- <div id="myloader" ></div> -->
+    <div class="SubFOSPopup" id="advancesearch">
+        <div class="SubFOSScreen">
+            <div class="Close_popup">&times;</div>
+            <div class="MainContentBlog centerAlign">
+                <div class="txt-hylyt">
+                    <div class="TenureSec">
+                        <p>Tenure:&nbsp;</p>
+                        <button type="button" id="Tenure_Id1" class="Tenure_Id btn btn-cover backclr grab" value="1"> 1
+                        </button>&nbsp;&nbsp;
+                        <button type="button" id="Tenure_Id2" class="Tenure_Id btn btn-cover grab" value="2"> 2
+                        </button>&nbsp;&nbsp;
+                        <button type="button" id="Tenure_Id3" class="Tenure_Id btn btn-cover grab" value="3"> 3
+                        </button>&nbsp;&nbsp;
+                    </div>
+                    <div class="FMSec">
+                        <p>Select Policy Type:&nbsp;</p>
+                        <button type="button" id="floater" onclick="Floater();" class=" btn btn-cover grab"
+                            value="Floater">Floater</button>&nbsp;&nbsp;
+                        <button type="button" id="multi_individual" onclick="MultiIndividual();"
+                            class=" btn btn-cover grab" value="MultiIndividual">Multi-Individual</button>&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid main_health_div">
+        <ul class="navigation">
+            <li class="TopSpace">
+                <a class="nav_quote_list">
+                    <img src="./images/mipmap-hdpi/list-(1).png" class="img-responsive text-center">
+                </a>
+            </li>
+            <li class="TopSpace disbl_mem_input"><a href="#" class="nav_Input">INPUT</a></li>
+            <li><a href="" class="Active">QUOTE</a></li>
+        </ul>
+        <form id="abc">
+            <div class="sticky_btn">
+                <div class="refresh_quote">
+                    <span onclick="Reload();">
+                        <img src="./images/mipmap-hdpi/refresh.png">
+                    </span>
+                </div>
+            </div>
+            <div class="fullbox">
+                <div id="member">
+                    <img id="img_member" src="images/mipmap-hdpi/adult.png" />
+                </div>
+                <div>
+                    <div class="policy CRN"> CRN :</div>
+                    <div class="coverprice" id="type"> Type - </div>
+                </div>
+                <div>
+                    <a class="EditDiv" onclick="Editmethod()">
+                        <img src="images/mipmap-hdpi/edit_icon.png" style="width:27%;margin:10px 5px;" />
+                    </a>
+                    <!-- <a class="shareDiv" onclick="Sharemethod()">
+                        <img src="images/mipmap-hdpi/share_icon_white.png" style="width:25%;margin:10px 5px;" />
+                    </a> -->
+                </div>
+
+            </div>
+            <!-- <div class="text-center">
+                <div class="link">
+                    <span><span id="insurercnt"></span>Insurer(s) <span id="Plancnt"></span>plan(s) available from Policyboss.com </span>
+                </div>
+            </div> -->
+
+            <div class="quote-wrap  animate-bottom Insuere_id " id="quotemain_list">
+            </div>
+    </div>
+    <div class="coverdetpopup">
+        <div class="coverDetails">
+            <div class="coverpopupclose">Multi-Individual Sum Insured <div>&times;</div>
+            </div>
+            <div id="div_SI_Amt">
+
+            </div>
+        </div>
+    </div>
+    <div class="coverPanel MoreInsurer">
+        <div class="suminsuTitle">
+            Sum Insured
+            <span class="cancelbtn" id="CloseCover" onclick="$('.MoreInsurer').hide();">&times</span>
+        </div>
+        <br>
+        <div class="InsurerBtns">
+            <button class="btn btn-cover" value="50000">50 K</button>
+            <button class="btn btn-cover" value="100000">1 LAC</button>
+            <button class="btn btn-cover" value="150000">1.5 LAC</button>
+            <button class="btn btn-cover" value="200000">2 LACS</button>
+            <button class="btn btn-cover" value="250000">2.5 LACS</button>
+            <button class="btn btn-cover" value="300000">3 LACS</button>
+            <button class="btn btn-cover" value="350000">3.5 LACS</button>
+            <button class="btn btn-cover" value="400000">4 LACS</button>
+            <button class="btn btn-cover" value="450000">4.5 LACS</button>
+            <button class="btn btn-cover" value="500000">5 LACS</button>
+        </div>
+    </div>
+    <div class="popupbox" id="popupbox1" style="display: none; background: rgba(0,0,0,0.5) !important;">
+        <div class="popScreen1">
+            <h3 class="text-center popupheading1">
+                Member Information
+                <span class="close" onclick="MemberPopupClose()">&times;</span>
+            </h3>
+            <div class="Age_wrap_box Member1">
+                <div class="Member_Info">
+                    <div class="centralign">Eldest</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender1male">
+                                <img class="img-responsive" id="gen_1_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender1female">
+                                <img class="img-responsive" id="gen_1_female">
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="age_input Member_1_dtp" id="div_Member_1_dtp">
+                            <input type="text" placeholder="DOB" class="dtpClass grab" id="Member_1_dtp" readonly />
+                        </div>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age</div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" readonly id="Member_1_Age" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-Existing Conditions</div>
+                        <div id="div_mem1_disease"><input onclick="showdiseasebox_eldest()" id="member_1_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="eldestMember">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease" value="Smoking">&nbsp;&nbsp;</div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease" value="Hypertension">&nbsp;&nbsp;
+                            </div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease" value="Diabetes">&nbsp;&nbsp;</div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease" value="Asthma">&nbsp;&nbsp;</div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease" value="Cancer">&nbsp;&nbsp;</div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem" name="disease" value="None">&nbsp;&nbsp;</div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Age_wrap_box Member2" style="display: none;">
+                <div class="Member_Info">
+                    <div class="centralign">Spouse</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender2male">
+                                <img class="img-responsive" id="gen_2_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender2female">
+                                <img class="img-responsive" id="gen_2_female">
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="age_input Member_2_dtp" id="div_Member_2_dtp">
+                            <input type="text" placeholder="DOB" class="dtpClass grab" id="Member_2_dtp" readonly>
+                        </div>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age </div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" id="Member_2_Age" readonly />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-existing Conditions</div>
+                        <div id="div_mem2_disease"><input onclick="showdiseasebox_spouse()" id="member_2_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="eldestMember2">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease_spouse" value="Smoking">&nbsp;&nbsp;
+                            </div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease_spouse"
+                                    value="Hypertension">&nbsp;&nbsp;</div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease_spouse" value="Diabetes">&nbsp;&nbsp;
+                            </div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease_spouse" value="Asthma">&nbsp;&nbsp;
+                            </div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease_spouse" value="Cancer">&nbsp;&nbsp;
+                            </div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem0" name="disease_spouse" value="None">&nbsp;&nbsp;
+                            </div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Age_wrap_box Member3" style="display: none;">
+                <div class="Member_Info">
+                    <div class="centralign">Child 1</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender_3_Male">
+                                <img class="img-responsive" id="gen_3_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender_3_Female">
+                                <img class="img-responsive" id="gen_3_female">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="age_input Member_3_dtp" id="div_Member_3_dtp">
+                        <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_3_dtp" readonly>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age </div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" id="Member_3_Age" readonly />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-existing Conditions</div>
+                        <div id="div_mem3_disease"><input onclick="showdiseasebox_child1()" id="member_3_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="childMember1">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease_child1" value="Smoking">&nbsp;&nbsp;
+                            </div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease_child1"
+                                    value="Hypertension">&nbsp;&nbsp;</div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease_child1" value="Diabetes">&nbsp;&nbsp;
+                            </div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease_child1" value="Asthma">&nbsp;&nbsp;
+                            </div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease_child1" value="Cancer">&nbsp;&nbsp;
+                            </div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem1" name="disease_child1" value="None">&nbsp;&nbsp;
+                            </div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Age_wrap_box Member4" style="display: none;">
+                <div class="Member_Info">
+                    <div class="centralign">Child 2</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender_4_Male">
+                                <img class="img-responsive" id="gen_4_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender_4_Female">
+                                <img class="img-responsive" id="gen_4_female">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="age_input Member_4_dtp" id="div_Member_4_dtp">
+                        <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_4_dtp" readonly>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age </div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" id="Member_4_Age" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-existing Conditions</div>
+                        <div id="div_mem4_disease"><input onclick="showdiseasebox_child2()" id="member_4_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="childMember2">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease_child2" value="Smoking">&nbsp;&nbsp;
+                            </div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease_child2"
+                                    value="Hypertension">&nbsp;&nbsp;</div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease_child2" value="Diabetes">&nbsp;&nbsp;
+                            </div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease_child2" value="Asthma">&nbsp;&nbsp;
+                            </div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease_child2" value="Cancer">&nbsp;&nbsp;
+                            </div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem2" name="disease_child2" value="None">&nbsp;&nbsp;
+                            </div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Age_wrap_box Member5" style="display: none;">
+                <div class="Member_Info">
+                    <div class="centralign">Child 3</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender_5_Male">
+                                <img class="img-responsive" id="gen_5_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender_5_Female">
+                                <img class="img-responsive" id="gen_5_female">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="age_input Member_5_dtp" id="div_Member_5_dtp">
+                        <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_5_dtp" readonly>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age </div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" id="Member_5_Age" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-existing Conditions</div>
+                        <div id="div_mem5_disease"><input onclick="showdiseasebox_child3()" id="member_5_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="childMember3">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease_child3" value="Smoking">&nbsp;&nbsp;
+                            </div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease_child3"
+                                    value="Hypertension">&nbsp;&nbsp;</div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease_child3" value="Diabetes">&nbsp;&nbsp;
+                            </div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease_child3" value="Asthma">&nbsp;&nbsp;
+                            </div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease_child3" value="Cancer">&nbsp;&nbsp;
+                            </div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem3" name="disease_child3" value="None">&nbsp;&nbsp;
+                            </div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Age_wrap_box Member6" style="display: none;">
+                <div class="Member_Info">
+                    <div class="centralign">Child 4</div>
+                    <div>
+                        <div class="centralign gender">
+                            <span class="genderMale male grab" id="Gender_6_Male">
+                                <img class="img-responsive" id="gen_6_male">
+                            </span>
+                            <span class="genderFemale female grab" id="Gender_6_Female">
+                                <img class="img-responsive" id="gen_6_female">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="age_input Member_6_dtp" id="div_Member_6_dtp">
+                        <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_6_dtp" readonly>
+                    </div>
+                    <div class="Age_label">
+                        <div style="display: inline-block">Age </div>
+                        <div style="display: inline-block">
+                            <div class="totalAge">
+                                <input type="text" style="width: 20px" id="Member_6_Age" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 4px 2px;background: rgb(236 236 236);">
+                    <div style="display:grid;grid-template-columns:154px 1fr;">
+                        <div>Pre-existing Conditions</div>
+                        <div id="div_mem6_disease"><input onclick="showdiseasebox_child4()" id="member_6_disease"
+                                type="text" readonly
+                                style="width: 100%;border-width: 0px;border-bottom: 1px solid gray;background: rgb(236 236 236);">
+                        </div>
+                    </div>
+                    <div class="condition_box" id="childMember4">
+                        <div style="float:right;font-size:20px;color:#333;margin: -12px -6px;" onclick="closePoup();">
+                            &times;</div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check1" name="disease_child4" value="Smoking">&nbsp;&nbsp;
+                            </div>
+                            <div>Smoking </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check2" name="disease_child4"
+                                    value="Hypertension">&nbsp;&nbsp;</div>
+                            <div>Hypertension </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check3" name="disease_child4" value="Diabetes">&nbsp;&nbsp;
+                            </div>
+                            <div>Diabetes </div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check4" name="disease_child4" value="Asthma">&nbsp;&nbsp;
+                            </div>
+                            <div>Asthma</div>
+                        </div>
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="Check5" name="disease_child4" value="Cancer">&nbsp;&nbsp;
+                            </div>
+                            <div>Cancer/Renal Failure </div>
+                        </div>
+
+                        <div style="display:flex">
+                            <div><input type="checkbox" id="noneofthem4" name="disease_child4" value="None">&nbsp;&nbsp;
+                            </div>
+                            <div>None </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="form_Error"
+                style="text-align: center;margin: 8px;font-size: 10pt;color: #ee1924; visibility: collapse"></div>
+            <br>
+            <div class="col-md-12 space grab" style="text-align: center;">
+                <button type="button" class="hover-shadow" onclick="validateForm()">VERIFY</button>
+            </div>
+            <input type="hidden" id="Member_1_Gender" name="Member_1_Gender" />
+            <input type="hidden" id="Member_2_Gender" name="Member_2_Gender" />
+            <input type="hidden" id="Member_3_Gender" name="Member_3_Gender" />
+            <input type="hidden" id="Member_4_Gender" name="Member_4_Gender" />
+            <input type="hidden" id="Member_5_Gender" name="Member_5_Gender" />
+            <input type="hidden" id="Member_6_Gender" name="Member_6_Gender" />
+            <br>
+        </div>
+    </div>
+
+    <div class="popupbox" id="popupbox2" style="display: none; background: rgba(0,0,0,0.5) !important;">
+        <div class="popScreen1">
+            <h3 class="text-center popupheading1">
+                Attention<span class="close" onclick="dismissPremipopup()">&times;</span>
+            </h3>
+            <div class="Member1">
+                <div class="popup_txt" style="padding: 15px !important;">
+                    There is a premium mismatch. Premium has added loading because of pre-existing disease. Previous
+                    amount was ₹ <span id="span_prevFinalPremium"></span> and newly
+                    calculated premium is ₹ <span id="span_selPremium"></span>. Proceed?
+                </div>
+                <br>
+                <div class="col-md-12 space grab" style="text-align: center;">
+                    <button type="button" class="hover-shadow" id="PopupOk"
+                        onclick="proposal_redirect(selARN);">Ok</button>&nbsp;
+                    <button type="button" class="hover-shadow" onclick="dismissPremipopup();">Cancel</button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <!-- <div class="advanceBtn">
+        <p>Advance</p>
+    </div> -->
+    </form>
+    </div>
+    <div class="container" style="display:none;" id="tblshareQuote">
+
+
+
+    </div>
+
+    <div id="editor"></div>
+    <script type="text/javascript">
+        var myVar;
+        var res, Response_1, Response, Request_Core;
+        var crn, srn, arn;
+        var client_id, cover_type;
+        var geo_lat, geo_long, app_version, ss_id, fba_id, ip_address, mac_address;
+        var mobile, email;
+        var StatusCount = 0;
+        var final_premium = 0;
+        var insurerId_Addon;
+        var PremiumwithAddon = 0;
+        var addon_list = [];
+        var plan_show = [];
+        var adult_count, child_count, member_count, contact_name, first_name, middle_name, last_name;
+
+        var member_1_age, member_2_age, member_3_age, member_4_age, member_5_age, member_6_age;
+        var member_1_gender, member_2_gender, member_3_gender, member_4_gender, member_5_gender, member_6_gender;
+        var member_1_birth_date, member_2_birth_date, member_3_birth_date, member_4_birth_date, member_5_birth_date, member_6_birth_date;
+        var member_1_sum_insured, member_2_sum_insured, member_3_sum_insured, member_4_sum_insured, member_5_sum_insured, member_6_sum_insured;
+        var member_1_ped, member_2_ped, member_3_ped, member_4_ped, member_5_ped, member_6_ped;
+
+        var city_id, city_name, state_name, state_code, zone_name, permanent_pincode, health_insurance_si;
+        var IsQuoteComplete = false;
+        var isQuickQuote = true, quickSearch = true;
+        var siteURL = "";
+
+        var Multi_Individual_type = false;
+        var prevFinalPremium;
+
+
+        var const_insurerlogo = {
+            "4": "Future_Generali_General.png"
+        };
+
+        function MemberPopupOpen(plan) {
+            if (IsQuoteComplete === true) {
+                var Arn = plan.Service_Log_Unique_Id;
+                var PlanName = plan.Plan_Name;
+                var FinalPremium = plan['Premium_Breakup'].final_premium;
+                if (isQuickQuote === false) {
+                    proposal_redirect(Arn);
+                    // window.location.href = buynowUrl() + '/proposal-details' + '?client_id=' + client_id + '&arn=' + Arn + '&is_posp=NonPOSP' + '&ss_id=' + SSID;//local
+                    // window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + Arn + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+                } else {
+                    prevSelectedPlan = PlanName;
+                    prevFinalPremium = Math.round(FinalPremium);
+                    quickSearch = false;
+                    $('#popupbox1').show();
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        function MemberPopupClose() {
+            $('#popupbox1').hide();
+            $('.MoreInsurer').hide();
+        }
+
+        function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type === "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+        $(document).ready(function () {
+
+            var arrtxtElder = [];
+            var arrtxtSpouse = [];
+            var arrtxtChild1 = [];
+            var arrtxtChild2 = [];
+            var arrtxtChild3 = [];
+            var arrtxtChild4 = [];
+
+            $('input[name="disease"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    //console.log($(this).val());
+                    arrtxtElder.push($(this).val());
+                    document.getElementById('member_1_disease').value = arrtxtElder.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    //arrtxtElder.splice($(this).val());
+                    const index = arrtxtElder.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtElder.splice(index, 1);
+                    }
+                    document.getElementById('member_1_disease').value = arrtxtElder.join();
+                    console.log("Checkbox is unchecked.");
+                }
+                if ($(this).val() == "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease"]').attr("checked", false);
+                    $('input[id="noneofthem"]').attr("checked", true);
+                    arrtxtElder = [];
+                    document.getElementById('member_1_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem"]').attr("checked", false);
+                }
+                member_1_ped = document.getElementById('member_1_disease').value;
+            });
+
+            $('input[name="disease_spouse"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    //console.log($(this).val());
+                    arrtxtSpouse.push($(this).val());
+                    document.getElementById('member_2_disease').value = arrtxtSpouse.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    const index = arrtxtSpouse.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtSpouse.splice(index, 1);
+                    }
+                    document.getElementById('member_2_disease').value = arrtxtSpouse.join();
+                    console.log("Checkbox is unchecked.");
+                }
+                if ($(this).val() === "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease_spouse"]').attr("checked", false);
+                    $('input[id="noneofthem0"]').attr("checked", true);
+                    arrtxtSpouse = [];
+                    document.getElementById('member_2_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem0"]').attr("checked", false);
+                }
+                member_2_ped = document.getElementById('member_2_disease').value;
+            });
+
+            $('input[name="disease_child1"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    arrtxtChild1.push($(this).val());
+                    document.getElementById('member_3_disease').value = arrtxtChild1.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    const index = arrtxtChild1.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtChild1.splice(index, 1);
+                    }
+                    document.getElementById('member_3_disease').value = arrtxtChild1.join();
+                    console.log("Checkbox is unchecked.");
+                }
+                if ($(this).val() === "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease_child1"]').attr("checked", false);
+                    $('input[id="noneofthem1"]').attr("checked", true);
+                    arrtxtChild1 = [];
+                    document.getElementById('member_3_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem1"]').attr("checked", false);
+                }
+                member_3_ped = document.getElementById('member_3_disease').value;
+            });
+
+            $('input[name="disease_child2"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    //console.log($(this).val());
+                    arrtxtChild2.push($(this).val());
+                    document.getElementById('member_4_disease').value = arrtxtChild2.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    const index = arrtxtChild2.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtChild2.splice(index, 1);
+                    }
+                    document.getElementById('member_4_disease').value = arrtxtChild2.join();
+                    console.log("Checkbox is unchecked.");
+                }
+                if ($(this).val() === "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease_child2"]').attr("checked", false);
+                    $('input[id="noneofthem2"]').attr("checked", true);
+                    arrtxtChild2 = [];
+                    document.getElementById('member_4_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem2"]').attr("checked", false);
+                }
+                member_4_ped = document.getElementById('member_4_disease').value;
+            });
+
+            $('input[name="disease_child3"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    //console.log($(this).val());
+                    arrtxtChild3.push($(this).val());
+                    document.getElementById('member_5_disease').value = arrtxtChild3.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    const index = arrtxtChild3.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtChild3.splice(index, 1);
+                    }
+                    document.getElementById('member_5_disease').value = arrtxtChild3.join();
+                    console.log("Checkbox is unchecked.");
+                }
+                if ($(this).val() === "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease_child3"]').attr("checked", false);
+                    $('input[id="noneofthem3"]').attr("checked", true);
+                    arrtxtChild3 = [];
+                    document.getElementById('member_5_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem3"]').attr("checked", false);
+                }
+                member_5_ped = document.getElementById('member_5_disease').value;
+            });
+
+            $('input[name="disease_child4"]').click(function () {
+                if ($(this).prop("checked") === true) {
+                    //console.log($(this).val());
+                    arrtxtChild4.push($(this).val());
+                    document.getElementById('member_6_disease').value = arrtxtChild4.join();
+                }
+                else if ($(this).prop("checked") === false) {
+                    const index = arrtxtChild4.indexOf($(this).val());
+                    if (index > -1) {
+                        arrtxtChild4.splice(index, 1);
+                    }
+                    document.getElementById('member_6_disease').value = arrtxtChild4.join();
+                    console.log("Checkbox is unchecked.");
+                }
+
+                if ($(this).val() === "None" && $(this).prop("checked") === true) {
+                    $('input[name="disease_child4"]').attr("checked", false);
+                    $('input[id="noneofthem4"]').attr("checked", true);
+                    arrtxtChild4 = [];
+                    document.getElementById('member_6_disease').value = "None";
+                } else {
+                    $('input[id="noneofthem3"]').attr("checked", false);
+                }
+                member_6_ped = document.getElementById('member_6_disease').value;
+            });
+
+
+
+            var arr_preference = ["4"];
+            var arr_preference = ['4'];
+            var memID = 1;
+            var range;
+            var prevSelectedPlan;
+            var policy_tenure = 1, multiplyBy = 1;
+            var tenure_in_months, tenure_in_days;
+            var selPremium, selARN;
+
+            siteURL = window.location.href;
+            getUrlVars();
+            getClientBrowserDetails();
+            buynowUrl();
+            $('#loader_id').show();
+            //$('.main_health_div').addClass('modal');
+            srn = getUrlVars()["srn"];
+            if (srn !== '' && srn !== null) {
+                setTimeout(() => {
+                    getQuote();
+                }, 5000);
+            }
+
+            range = parseInt(member_1_age);
+            //range = new Date().getFullYear() - member_1_age;
+
+            $('#Member_1_dtp').on('change', function (e, date) {
+                var dt = $('#Member_1_dtp').val();
+                var mydate = new Date(dt);
+
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+                var currentyear = new Date().getFullYear();
+                console.log(day);
+                SetAge(1);
+
+                if (adult_count === 1) {
+                    Child_cal();
+                } else {
+                    $('#Member_2_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            //format: 'DD-MM-YYYY',
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(year, month, day),
+                            maxDate: new Date(currentyear - 18, new Date().getMonth(), day)
+                        });
+                }
+            });
+            $('#Member_2_dtp').on('change', function (e, date) {
+                SetAge(2);
+                Child_cal();
+            });
+            $('.Memberdtp').on('change', function (e, date) {
+                for (var i = 3; i <= 6; i++) {
+                    SetAge(i);
+                }
+            });
+            $('#Member_3_dtp').on('change', function (e, date) {
+                SetAge(3);
+                Child_cal();
+            });
+        });
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+        function getClientBrowserDetails() {
+            if (window.navigator && window.navigator.geolocation) {
+                window.navigator.geolocation.getCurrentPosition(
+                    position => {
+                        showPosition(position);
+                    },
+                    error => {
+                        console.log('Position Unavailable', error);
+                    }
+                );
+            }
+        }
+
+        function showPosition(position) {
+            geo_lat = position.coords.latitude;
+            geo_long = position.coords.longitude;
+            // ip_address = getIpAddress.responseJSON['ip'];
+        }
+        function getQuote() {
+            $("#popupbox1").hide();
+            $("#popupbox2").hide();
+            srn = getUrlVars()["srn"];
+            //var mainUrl = "quote/premium_list_db";
+            var str1 = {
+                "search_reference_number": srn,
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+            };
+
+            //var returnurl = GetUrl() + '/' + mainUrl;
+            var obj_horizon_data = Horizon_Method_Convert("/quote/premium_list_db", str1, "POST");
+            $.ajax({
+                type: "POST",
+                data: siteURL.indexOf('https') === 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str1),
+                url: siteURL.indexOf('https') === 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_list_db",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.Msg !== "Not Authorized") {
+                        console.log(data);
+                        res = data;
+                        srn = data['Summary']['Request_Unique_Id'];
+                        Response = data['Response'];
+                        Response_1 = data["Response_1"];
+                        Request_Core = data['Summary']['Request_Core'];
+                        client_id = getUrlVars()["client_id"];
+                        cover_type = data['Summary']['Request_Core']['health_insurance_type'];
+
+                        ss_id = Request_Core.ss_id;
+                        fba_id = Request_Core.fba_id;
+                        ip_address = Request_Core.ip_address;
+                        mac_address = Request_Core.mac_address;
+                        app_version = Request_Core.app_version;
+
+                        first_name = Request_Core.first_name;
+                        middle_name = Request_Core.middle_name;
+                        last_name = Request_Core.last_name;
+                        contact_name = Request_Core.contact_name;
+                        mobile = Request_Core.mobile;
+                        email = Request_Core.email;
+
+                        $(".EditDiv").attr("href", './shortTermPolicy.html?srn=' + srn + '&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+                        $(".nav_Input").attr("href", './shortTermPolicy.html?srn=' + srn + '&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+                        $(".nav_quote_list").attr("href", './Dashboard.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+
+                        city_id = Request_Core.city_id;
+                        city_name = Request_Core.city_name;
+                        state_name = Request_Core.state_name;
+                        zone_name = Request_Core.zone;
+                        state_code = Request_Core.State_Code;
+                        permanent_pincode = Request_Core.permanent_pincode;
+                        health_insurance_si = Request_Core.health_insurance_si;
+                        policy_tenure = Request_Core.policy_tenure;
+                        health_insurance_type = Request_Core.health_insurance_type;
+                        tenure_in_months = Request_Core.tenure_in_months;
+                        tenure_in_days = Request_Core.tenure_in_days;
+                        //execution_async
+                        crn = data['Summary'].PB_CRN === "" ? data['Summary']['Request_Core']['crn'] : data['Summary'].PB_CRN;
+
+                        $("#insurercnt").html(data['Summary'].Insurer_Cnt + '&nbsp;');
+                        $(".CRN").html('CRN : ' + crn);
+                        $("#cover").html('SI - ' + Request_Core.health_insurance_si);
+
+                        if (Request_Core.multi_individual === "yes") {
+                            $("#type").html('Type - Multi-Individual');
+                        } else {
+                            $("#type").html('Type - ' + data['Summary']['Request_Product'].health_insurance_type);
+                        }
+
+                        $("#Plancnt").html(data['Summary'].Plan_Cnt + '&nbsp;');
+                        var CreateTime = new Date(data['Summary'].Created_On);
+                        var CurrentTime = new Date();
+                        var DateDiff = Date.parse(CurrentTime) - Date.parse(CreateTime);
+                        console.log(DateDiff);
+
+                        adult_count = Request_Core.adult_count;
+                        child_count = Request_Core.child_count;
+                        member_count = adult_count + child_count;
+                        isQuickQuote = Request_Core.quick_quote;
+
+                        member_1_age = Request_Core.member_1_age;
+                        member_2_age = Request_Core.member_2_age;
+                        member_3_age = Request_Core.member_3_age;
+                        member_4_age = Request_Core.member_4_age;
+                        member_5_age = Request_Core.member_5_age;
+                        member_6_age = Request_Core.member_6_age;
+
+
+                        member_1_gender = Request_Core.member_1_gender;
+                        member_2_gender = Request_Core.member_2_gender;
+                        member_3_gender = Request_Core.member_3_gender;
+                        member_4_gender = Request_Core.member_4_gender;
+                        member_5_gender = Request_Core.member_5_gender;
+                        member_6_gender = Request_Core.member_6_gender;
+
+                        $("#Member_1_Gender").val(member_1_gender);
+                        $("#Member_2_Gender").val(member_2_gender);
+                        $("#Member_3_Gender").val(member_3_gender);
+                        $("#Member_4_Gender").val(member_4_gender);
+                        $("#Member_5_Gender").val(member_5_gender);
+                        $("#Member_6_Gender").val(member_6_gender);
+
+                        $("#Member_1_Age").val(member_1_age);
+                        //$("#Member_2_Age").val(member_2_age);
+                        if (Request_Core.adult_count == 0) {
+                            $("#Member_3_Age").val(member_3_age);
+                        }
+
+                        for (var i = 3; i < child_count + 3; i++) {
+                            $(".Member" + i).show();
+                            //$(".MultiFloatinfo" + i).show();
+                            if ($("#Member_" + i + "_Gender").val() === "F") {
+                                $("#Gender_" + i + "_Male").removeClass('male_img');
+                                $("#Gender_" + i + "_Female").addClass("female_img");
+
+                            }
+                            if ($("#Member_" + i + "_Gender").val() === "M") {
+                                $("#Gender_" + i + "_Male").addClass('male_img');
+                                $("#Gender_" + i + "_Female").removeClass("female_img");
+                            }
+                        }
+
+                        if (Request_Core.adult_count > 0) {
+                            range = new Date().getFullYear() - member_1_age;
+                            var min_date = new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1);
+                            var max_date = new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate());
+                            console.log("range:" + range);
+                            if (member_1_age === 18) {
+                                max_date = new Date(range, (new Date()).getMonth(), (new Date()).getDate());
+                            }
+                            if (member_1_age === 65) {
+                                min_date = new Date(range - 1, (new Date()).getMonth(), (new Date()).getDate() + 1);
+                            }
+                            $('#Member_1_dtp').bootstrapMaterialDatePicker
+                                ({
+                                    time: false, clearButton: true,
+                                    format: 'YYYY-MM-DD',
+                                    minDate: min_date,
+                                    maxDate: max_date,
+                                    onSelect: function () { SetAge(1); }
+                                });
+                        } else {
+                            range = new Date().getFullYear() - member_3_age;
+                            console.log("range:" + range);
+                            $('#Member_3_dtp').bootstrapMaterialDatePicker
+                                ({
+                                    time: false, clearButton: true,
+                                    format: 'YYYY-MM-DD',
+                                    // currentDate: new Date(range, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    //yearRange: (range - 2) + ':' + (range + 1),
+                                    minDate: new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    maxDate: new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate()),
+                                    onSelect: function () { SetAge(3); }
+                                });
+                        }
+
+                        //$('#date').bootstrapMaterialDatePicker('setMinDate', date);
+                        console.log(new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1) + " Min date");
+                        console.log(new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate()) + " Max date");
+
+                        if (member_1_gender === "M") { $("#Gender1male").addClass('male_img'); } else { $("#Gender1female").addClass('female_img'); }
+                        if (adult_count > 0) {
+                            $(".Member1").show();
+                        }
+                        if (adult_count === 2) {
+                            $(".Member2").show();
+                            //$(".MultiFloatinfo").show();
+                            if (member_2_gender === "M") { $("#Gender2male").addClass('male_img'); } else { $("#Gender2female").addClass('female_img'); }
+                        }
+                        for (var i = 3; i < child_count + 3; i++) {
+                            $(".Member" + i).show();
+                            //$(".MultiFloatinfo" + i).show();
+                            if ($("#Member_" + i + "_Gender").val() === "F") {
+                                $("#Gender_" + i + "_Male").removeClass('male_img');
+                                $("#Gender_" + i + "_Female").addClass("female_img");
+
+                            }
+                            if ($("#Member_" + i + "_Gender").val() === "M") {
+                                $("#Gender_" + i + "_Male").addClass('male_img');
+                                $("#Gender_" + i + "_Female").removeClass("female_img");
+                            }
+                        }
+
+                        $('#member').html("");
+                        for (var i = 0; i < member_count; i++) {
+                            var img = $('<img id="dynamic' + i + '">');
+                            img.attr('src', 'images/mipmap-hdpi/adult.png');
+                            img.appendTo('#member');
+                        }
+
+                        //Div append start
+                        $("#quotemain_list").html("");
+                        for (var i = 0; i < Response_1.length; i++) {
+                            ss_id = Request_Core.ss_id;
+                            var Service_Log_Unique_Id = Response_1[i]['Service_Log_Unique_Id'];
+                            var InsRes = JSON.stringify(Response[i]);
+                            var PlanName1 = Response_1[i]['Plan_Name'];  //BundlePlan.replace(new RegExp('___BundleName___', 'gi'), BuffetPlanName);
+                            PlanName = PlanName1.replace(new RegExp(' ', 'gi'), '_');
+                            var Premium = "";
+                            var ARN = "";
+                            var benefits = [];
+                            // Tenure_selected(Request_Core.policy_tenure);
+                            var res2 = JSON.stringify(Response[i]);
+                            SetBenefits(Response_1[i].Insurer_Id, Response_1[i]['Plan_Id'], cover_type);
+                            if (isQuickQuote === false) {
+                                selPremium = Math.round((Response_1[i]['Premium_Breakup'].final_premium));
+                                selARN = Response_1[i].Service_Log_Unique_Id;
+                                $("#span_selPremium").text(selPremium);
+                                $("#span_prevFinalPremium").text(prevFinalPremium);
+                                callProposal(selPremium, selARN);
+                            }
+
+                            $('#quotemain_list').append("<div style='display:block;' id='DivList" + Response_1[i]['Plan_Id'] + "'>"
+                                + "<div class='quotebox'><div class='plan_name'>"
+                                + "<span class='PlanName' style='font-size:11px;'>" + Response_1[i]['Plan_Name'] + "</span></div>"
+                                + "<div class='row_1'>"
+                                + "<img src = 'images/Future_Generali_General.png' class= 'imgLogo img-responsive' >"
+                                + "<div> <div class='title' style='line-height:25px;'>SUM INSURED</div>"
+                                + "<div class='section SumAsured'>" + Response_1[i].Sum_Insured
+                                + "</div></div >"
+                                + "<div> <div class='premium' onclick='MemberPopupOpen(" + JSON.stringify(Response_1[i]) + ")'>&#8377;" + Response_1[i]['Premium_Breakup'].final_premium + "<p class='daysCount'>/" + tenure_in_days + " days </p></div></div></div ></div>"
+                                + "<div style = 'display: grid;grid-gap: 5px;grid-template-columns: repeat(2,1fr);padding:5px 7px;border-bottom: 1px solid rgb(212 207 207);' >"
+                                + "<div><div class='feature'><div class='info'><span class='glyphicon glyphicon-ok' style='color:#009fdd'>&nbsp;</span>ROOM RENT</div>"
+                                + "<div class='detail'id='room_rent_" + Response_1[i]['Plan_Id'] + "'>NA</div></div>"
+                                + "<div class='feature'><div class='info'><span class='glyphicon glyphicon-ok'style='color:#009fdd'>&nbsp;</span>PRE-HOSP</div>"
+                                + "<div class='detail'id='pre_hosp_" + Response_1[i]['Plan_Id'] + "'>NA</div></div></div>"
+                                + "<div><div class='feature'><div class='info'><span class='glyphicon glyphicon-ok'style='color:#009fdd'>&nbsp;</span>ICU RENT</div>"
+                                + "<div class='detail'id='icu_rent_" + Response_1[i]['Plan_Id'] + "'>NA</div></div>"
+                                + "<div class='feature'><div class='info'><span class='glyphicon glyphicon-ok'style='color:#009fdd'>&nbsp;</span>POST-HOSP</div>"
+                                + "<div class='detail'id='post_hosp_" + Response_1[i]['Plan_Id'] + "'>NA</div></div></div>"
+                                + "</div>"
+                                + "<div class='brochure'>"
+                                + "<a href='https://www.policyboss.com/CoronaCare/CoronaKavachBrochures.pdf' target='_blank'>Brochure</a>"
+                                + "<a href='https://www.policyboss.com/CoronaCare/CoronaKavachPolicyWordings.pdf' style='float:right' target='_blank'>Policy Wordings</a></div>"
+                                + "</div>");
+
+                        }
+
+
+
+                        $("#quotemain_list .quote-wrap").sort(function (a, b) {
+                            return parseInt($(a).attr('pref')) - parseInt($(b).attr('pref'));
+                        }).each(function () {
+                            var elem = $(this);
+                            elem.remove();
+                            $(elem).appendTo("#quotemain_list");
+                        });
+                        if (Request_Core.multi_individual === "yes") {
+                            $('.SI_floater').hide();
+                            $('.SI_Mlt_Ind').show();
+                            Multi_Individual_type = true;
+                            $('#floater').removeClass('backclr');
+                            $('#multi_individual').addClass('backclr');
+                            $('.multi_ind_hidediv').show();
+                            $(".Member_Info").css("grid-template-columns", "1fr 1fr 1fr 1fr");
+
+                        } else {
+                            $('.SI_floater').show();
+                            $('.SI_Mlt_Ind').hide();
+                            Multi_Individual_type = false;
+                            $('#floater').addClass('backclr');
+                            $('#multi_individual').removeClass('backclr');
+                            $('.multi_ind_hidediv').hide();
+                            $(".Member_Info").css("grid-template-columns", "1fr 1fr 1fr 1fr");
+                        }
+
+                        StatusCount++;
+                        var is_complete = false;
+                        if (StatusCount > 3 || DateDiff >= 30000 || data['Summary']['Status'] === "complete") {
+                            is_complete = true;
+                            $('#loader_id').hide();
+                            //$('.main_health_div').removeClass('modal');
+                            console.log("STOP1");
+                            IsQuoteComplete = true;
+                        }
+
+                        if (is_complete === false) {
+                            setTimeout(() => {
+                                //$('#myloader').hide();
+                                getQuote();
+                            }, 3000);
+                        }
+
+                        if (Request_Core.member_count > 1 && Request_Core.adult_count > 0) {
+                            $(".FMSec").show();
+                        }
+                        else {
+                            $(".FMSec").hide();
+                            $(".TenureSec").css("border-bottom", "0px solid #cccfd1");
+                        }
+
+
+                    } else {
+                        //console.log("Not Authorized");
+                        $('#myloader').hide();
+                    }
+
+                    if (isQuickQuote === false) {
+                        $("#checkbox1").hide();
+                    }
+
+                    // End
+                },
+                error: function (result) {
+                    // console.log("Error");
+                }
+            });
+        }
+        $(".gender span").click(function (e) {
+            var gendertype = e.currentTarget.id;
+            //$("#Gendermale, #Genderfemale").removeClass('GenderError');
+            var GenderSelect = gendertype.split('_')[2];
+            var Mem = gendertype.split('_')[1];
+            var GenderVal = "";
+            if (Mem > 2 && Mem < 7) {
+                if (GenderSelect === "Male") {
+                    $("#Gender_" + Mem + "_Male").addClass('male_img');
+                    $("#Gender_" + Mem + "_Female").removeClass("female_img");
+                    GenderVal = "M"; //male_img
+                }
+                if (GenderSelect === "Female") {
+                    $("#Gender_" + Mem + "_Male").removeClass('male_img');
+                    $("#Gender_" + Mem + "_Female").addClass("female_img");
+                    GenderVal = "F";
+                }
+                $("#Member_" + Mem + "_Gender").val(GenderVal);
+
+
+
+            }
+            for (i = 1; i < 7; i++) { console.log($("#Member_" + i + "_Gender").val()); }
+        });
+        var buynowUrl = function () {
+            var url = window.location.href;
+            var buyurl;
+            buyurl = "http://localhost:4200";
+            if (url.includes("qa") || url.includes("localhost")) {
+                buyurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                buyurl = "https://www.policyboss.com";
+            }
+            return buyurl;
+        };
+        var GetUrl = function () {
+            var url = window.location.href;
+            var newurl;
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+        };
+
+        function showplan(Insurer_id, Plan_Id) {
+            const plan_show = [];
+            $(".child_" + Insurer_id).show();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .lesssection").show();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .moresection").hide();
+        }
+        $(function () {
+            createSticky($(".navigation"));
+        });
+
+        function createSticky(sticky) {
+            if (typeof sticky !== "undefined") {
+                var pos = sticky.offset().top + 20,
+                    win = $(window);
+                win.on("scroll", function () {
+                    win.scrollTop() >= pos ? sticky.addClass("fixed") : sticky.removeClass("fixed");
+                });
+            }
+        }
+
+        var getParameterByName = function (name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results)
+                return null;
+            if (!results[2])
+                return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        };
+
+        var stringparam = function () {
+            var arr = ["ss_id", "fba_id", "ip_address", "app_version"];
+            for (var i = 0; i < arr.length; i++) {
+                var qs_val = getParameterByName(arr[i]);
+                if (qs_val === null || qs_val === '' || qs_val === '0') {
+                    $(".healthmaindiv").hide();
+                    $(".warningmsg").show();
+                } else {
+                    $(".healthmaindiv").show();
+                    $(".warningmsg").hide();
+                }
+            }
+        };
+
+        ss_id = getParameterByName('ss_id');
+        if (ss_id === null || ss_id === "") {
+            ss_id = 0;
+        }
+        fba_id = getParameterByName('fba_id');
+        if (fba_id === null || fba_id === '') {
+            fba_id = 0;
+        }
+        ip_address = getParameterByName('ip_address');
+        if (ip_address === null || ip_address === '') {
+            ip_address = 0;
+        }
+        mac_address = getParameterByName('mac_address');
+        if (mac_address === null || mac_address === '') {
+            mac_address = 0;
+        }
+        app_version = getParameterByName('app_version');
+        if (app_version === null || app_version === '') {
+            app_version = 0;
+        }
+
+        $('ul.navigation li').click(function (e) {
+            $('ul.navigation li').removeClass("Active");
+            $(this).addClass("Active");
+
+            if ($('li.Active').text() === 'INPUT') {
+                location.reload(true);
+            } else if ($('li.Active').text() === 'QUOTE') {
+                //window.location.href = './health_quote.html?client_id=2&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version;
+            } else if ($('li.Active').text() === 'BUY') {
+
+            } else if ($('li.Active').children().children('.img-responsive').length > 0) {
+                window.location.href = './quote_list.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile;
+            }
+        });
+        //window.location.href='./health_main_new.html?ss_id='+ss_id +'&fba_id='+fba_id+'&ip_address='+ip_address+'&mac_address='+mac_address+'&app_version='+app_version;
+
+        function SetBenefits(Insurer_Id, Plan_Id, health_insurance_type) {
+            health_insurance_type = health_insurance_type.charAt(0).toUpperCase() + health_insurance_type.substr(1);
+            var benefitsarrays = [];
+            var url = GetUrl() + '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si;
+            // var url = GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get';
+            $.ajax({
+                type: "GET",
+                //url: url,
+                dataType: "json",
+                //data: {'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si},
+                data: siteURL.indexOf('https') === 0 ? { 'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si } : "",
+                url: siteURL.indexOf('https') === 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : url,
+                success: function (data) {
+                    if (data.length !== 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var benefits_key = data[i]['Benefit_Key'];
+                            var benefits_Value = data[i]['Benefit_Value'];
+                            benefitsarrays.push({ benefits_key, benefits_Value });
+                        }
+                        if (benefitsarrays.length !== 0) {
+                            $('div#room_rent_' + Plan_Id).text(benefitsarrays[0]['benefits_Value']);
+                            $('div#icu_rent_' + Plan_Id).text(benefitsarrays[1]['benefits_Value']);
+                            $('div#pre_hosp_' + Plan_Id).text(benefitsarrays[2]['benefits_Value']);
+                            $('div#post_hosp_' + Plan_Id).text(benefitsarrays[3]['benefits_Value']);
+                        }
+                    }
+                },
+                error: function (result) {
+                    //console.log("Benefits Error");
+                }
+            });
+            return benefitsarrays;
+        }
+
+        function More_benefits(Insurer_Id, Plan_Id, Health_insurance_type) {
+
+            Health_insurance_type = Health_insurance_type.charAt(0).toUpperCase() + Health_insurance_type.substr(1);
+            var benefitsarrays = [];
+            var htmlstring = "";
+            var url = GetUrl() + '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + Health_insurance_type + '/' + health_insurance_si;
+            //var url = GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get';
+            console.log(url);
+            $.ajax({
+                type: "GET",
+                data: siteURL.indexOf('https') === 0 ? { 'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si } : "",
+                url: siteURL.indexOf('https') === 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : url,
+                //url: url,
+                dataType: "json",
+                //data: {'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + Health_insurance_type + '/' + health_insurance_si},
+                success: function (data) {
+                    htmlstring += "<div>";
+                    if (data.length !== 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var benefits_key = data[i]['Benefit_Key'];
+                            var benefits_Value = data[i]['Benefit_Value'];
+                            benefitsarrays.push({ benefits_key, benefits_Value });
+                        }
+                    }
+                    else {
+                        if (benefitsarrays.length === 0) {
+                            htmlstring += "<div style='text-align: center; font-size: 13px; font-family: Lato-Regular;'>No benefits applicable. </div>";
+                        }
+                    }
+                    for (var i = 0; i < benefitsarrays.length; i++) {
+                        //htmlstring += "<ul><li style='text-align: left; font-size: 13px; font-family: Lato-Regular;'><span style='font-weight:900'>" + benefitsarrays[i]['benefits_key'] + ":</span> " + benefitsarrays[i]['benefits_Value'] + "</li></ul>"
+                        htmlstring += "<table><tr><td>" + benefitsarrays[i]['benefits_key'] + "</td><td>" + benefitsarrays[i]['benefits_Value'] + "</td></tr></table>";
+                    }
+
+                    htmlstring += "</div>";
+                    swal({
+                        title: 'Benefits',
+                        html: htmlstring,
+                        showCloseButton: true,
+                        width: '600px'
+                    });
+                },
+                error: function (result) {
+                    //console.log("Benefits Error");
+                }
+            });
+        }
+
+        function BuyNow(client_id, Service_Log_Unique_Id, ss_id) {
+            return false;
+            //alert(buynowUrl()+"/Health/proposal-details?client_id=" + client_id + "&arn=" + Service_Log_Unique_Id + "&is_posp=NonPOSP&ss_id=" + ((app_version=='FinPeace')?0:ss_id))
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + Service_Log_Unique_Id + "&is_posp=NonPOSP&ss_id=" + ((app_version === 'FinPeace') ? 0 : ss_id);
+        }
+        function BuyNow(res) {
+            //alert(buynowUrl()+"/Health/proposal-details?client_id=" + client_id + "&arn=" + arn + "&is_posp=NonPOSP&ss_id=" + ((app_version=='FinPeace')?0:ss_id))
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + arn + "&is_posp=NonPOSP&ss_id=" + ((app_version === 'FinPeace') ? 0 : ss_id);
+        }
+        function Reload() {
+            location.reload(true);
+        }
+        function SetAge(MemberNo) {
+            var Age;
+            var Dob, Today;
+            var DTPDateVal = $("#Member_" + MemberNo + "_dtp").val();
+            if (DTPDateVal !== "") {
+                //var DTPDate = DTPDateVal.split('-')[2] + "-" + DTPDateVal.split('-')[1] + "-" + DTPDateVal.split('-')[0];
+                Dob = new Date(DTPDateVal);
+                Today = new Date();
+                Age = Math.floor((Today - Dob) / (365.25 * 24 * 60 * 60 * 1000));
+                $("#Member_" + MemberNo + "_Age").val(Age);
+                $(".Member_" + MemberNo + "_dtp").removeClass('ErrorBorder');
+            }
+        }
+        function validateForm() {
+            var err = 0;
+            for (var i = 1; i <= adult_count; i++) {
+                var member_ped = document.getElementById('member_' + i + '_disease').value;
+
+                if ($("#Member_" + i + "_dtp").val() === "") {
+                    $(".Member_" + i + "_dtp").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "Mandatory field(s)";
+                    err++;
+                }
+                else {
+                    $(".Member_" + i + "_dtp").removeClass('ErrorBorder');
+                }
+                if (member_ped === "") {
+                    $("#div_mem" + i + "_disease").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "Mandatory field(s)";
+                    err++;
+                } else if (member_ped.includes(',') && member_ped.split(',').length > 2) {
+                    $("#div_mem" + i + "_disease").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "More than 2 PED not allowed";
+                    err++;
+                }
+                else {
+                    $("#div_mem" + i + "_disease").removeClass('ErrorBorder');
+                }
+            }
+            for (var i = 3; i < child_count + 3; i++) {
+                var member_ped = document.getElementById('member_' + i + '_disease').value;
+
+                if ($("#Member_" + i + "_dtp").val() === "") {
+                    $(".Member_" + i + "_dtp").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "Mandatory field(s)";
+                    err++;
+                }
+                else {
+                    $(".Member_" + i + "_dtp").removeClass('ErrorBorder');
+                }
+                if (member_ped === "") {
+                    $("#div_mem" + i + "_disease").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "Mandatory field(s)";
+                    err++;
+                } else if (member_ped.includes(',') && member_ped.split(',').length > 2) {
+                    $("#div_mem" + i + "_disease").addClass('ErrorBorder');
+                    document.getElementById("form_Error").innerText = "More than 2 PED not allowed";
+                    err++;
+                }
+                else {
+                    $("#div_mem" + i + "_disease").removeClass('ErrorBorder');
+                }
+            }
+
+            if (err <= 0) {
+                isQuickQuote = false;
+                document.getElementById("form_Error").style.visibility = "collapse";
+
+                member_1_birth_date = $("#Member_1_dtp").val();
+                member_1_age = $("#Member_1_Age").val() === "" ? "" : parseInt($("#Member_1_Age").val());
+                member_1_gender = $("#Member_1_Gender").val();
+
+                member_2_birth_date = $("#Member_2_dtp").val();
+                member_2_age = $("#Member_2_Age").val() === "" ? "" : parseInt($("#Member_2_Age").val());
+                member_2_gender = $("#Member_2_Gender").val();
+
+                member_3_birth_date = $("#Member_3_dtp").val();
+                member_3_age = $("#Member_3_Age").val() === "" ? "" : parseInt($("#Member_3_Age").val());
+                member_3_gender = $("#Member_3_Gender").val();
+
+                member_4_birth_date = $("#Member_4_dtp").val();
+                member_4_age = $("#Member_4_Age").val() === "" ? "" : parseInt($("#Member_4_Age").val());
+                member_4_gender = $("#Member_4_Gender").val();
+
+                member_5_birth_date = $("#Member_5_dtp").val();
+                member_5_age = $("#Member_5_Age").val() === "" ? "" : parseInt($("#Member_5_Age").val());
+                member_5_gender = $("#Member_5_Gender").val();
+
+                member_6_birth_date = $("#Member_6_dtp").val();
+                member_6_age = $("#Member_6_Age").val() === "" ? "" : parseInt($("#Member_6_Age").val());
+                member_6_gender = $("#Member_6_Gender").val();
+                premium_initiate();
+            } else {
+                document.getElementById("form_Error").style.visibility = "visible";
+            }
+            //return true;
+        }
+        function premium_initiate() {
+            var mainUrl = "quote/premium_initiate";
+
+            // Pratik
+            var str = {
+                "city_id": parseInt(city_id),
+                "city_name": city_name,
+                "state_name": state_name,
+                "zone": zone_name,
+                "State_Code": state_code,
+                "health_insurance_si": parseInt(health_insurance_si),
+                "adult_count": adult_count,
+                "child_count": child_count,
+                "member_1_age": member_1_age,
+                "member_2_age": member_2_age,
+                "member_3_age": member_3_age,
+                "member_4_age": member_4_age,
+                "member_5_age": member_5_age,
+                "member_6_age": member_6_age,
+                "member_1_gender": member_1_gender,
+                "member_2_gender": member_2_gender,
+                "member_3_gender": member_3_gender,
+                "member_4_gender": member_4_gender,
+                "member_5_gender": member_5_gender,
+                "member_6_gender": member_6_gender,
+                "member_1_birth_date": member_1_birth_date,
+                "member_2_birth_date": member_2_birth_date,
+                "member_3_birth_date": member_3_birth_date,
+                "member_4_birth_date": member_4_birth_date,
+                "member_5_birth_date": member_5_birth_date,
+                "member_6_birth_date": member_6_birth_date,
+                "member_1_ped": member_1_ped,
+                "member_2_ped": member_2_ped,
+                "member_3_ped": member_3_ped,
+                "member_4_ped": member_4_ped,
+                "member_5_ped": member_5_ped,
+                "member_6_ped": member_6_ped,
+                "contact_name": contact_name,
+                "mobile": mobile,
+                "email": "",
+                "product_id": 2,
+                "policy_tenure": 1,
+                "tenure_in_months": tenure_in_months,
+                "tenure_in_days": tenure_in_days,
+                // "tenureDiscount": multiplyBy,
+                "method_type": "Premium",
+                "health_insurance_type": member_count > 1 ? "floater" : "individual",
+                "execution_async": "yes",
+                "crn": crn,
+                "ss_id": ss_id,
+                "agent_source": "0",
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+                "fba_id": fba_id,
+                "ip_address": ip_address,
+                "geo_lat": geo_lat,
+                "geo_long": geo_long,
+                "app_version": app_version,
+                "mac_address": mac_address,
+                "permanent_pincode": parseInt(permanent_pincode),
+                "quick_quote": isQuickQuote,
+                "topup_applied": "none",
+                "insurer_selected": "4",
+                "is_short_term_policy": "yes",
+                "multi_individual": "no"
+            };
+
+            console.log(str);
+            console.log(JSON.stringify(str));
+            var obj_horizon_data = Horizon_Method_Convert("/quote/premium_initiate", str, "POST");
+            $.ajax({
+                type: "POST",
+                data: siteURL.indexOf('https') === 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str),
+                url: siteURL.indexOf('https') === 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_initiate",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    console.log(data);
+                    srn = data['Summary']['Request_Unique_Id'];
+                    if (history.pushState) {
+                        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?srn=' + srn + '&client_id=' + client_id;
+                        window.history.pushState({ path: newurl }, '', newurl);
+                    }
+                    $('#loader_id').show();
+                    //$('.main_health_div').addClass('modal');
+                    $("#quotemain_list").html("");
+                    StatusCount = 0;
+                    getQuote();
+                    //window.location.href = './health_quote.html?srn=' + srn + '&client_id='+client_id;
+                },
+                error: function (result) {
+                    //alert("Error");
+                }
+            });
+            $("#loadingbtn").html('Getting Quote . . .');
+
+
+        }
+
+        function callProposal(premium, selARN) {
+            if (prevFinalPremium == premium) {
+                proposal_redirect(selARN);
+            }
+            else {
+                if (prevFinalPremium !== undefined) {
+                    $('#span_prevFinalPremium').val(prevFinalPremium);
+                    $('#span_selPremium').val(premium);
+                    $("#popupbox2").show();
+                }
+            }
+        }
+        function proposal_redirect(selARN) {
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + selARN + "&is_posp=NonPOSP&ss_id=" + ss_id;
+            //$("#PopupOk").attr('href', buynowUrl() + "/Health/proposal-details?client_id=" + client_id + "&arn=" + selARN + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id));
+        }
+        function dismissPremipopup() {
+            $("#popupbox2").hide();
+        }
+
+        function Child_cal() {
+            if (Request_Core.adult_count > 0) {
+                var Gen1 = $('#Member_1_Gender').val();
+                var Female_dt;
+                if (adult_count === 2) {
+                    var Gen2 = $('#Member_2_Gender').val();
+                    Female_dt = (Gen2 === "F") ? $('#Member_2_dtp').val() : $('#Member_1_dtp').val();
+                }
+                else {
+                    Female_dt = $('#Member_1_dtp').val();
+                }
+                var mydate = new Date(Female_dt);
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+                var current_yr = new Date().getFullYear();
+                var range = (current_yr - (year + 18)) > 25 ? current_yr - 25 : year + 18;
+
+                for (var i = 3; i <= 6; i++) {
+                    $('#Member_' + i + '_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(range, month, day),
+                            maxDate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 1)
+                        });
+                }
+            } else {
+                var Gen1 = $('#Member_3_Gender').val();
+                var Child_dt = $('#Member_3_dtp').val();
+
+                var mydate = new Date(Child_dt);
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+
+                for (var i = 4; i <= 6; i++) {
+                    $('#Member_' + i + '_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(year, month, day),
+                            maxDate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 1)
+                        });
+                }
+            }
+        }
+
+        $('#Member_5_dtp').bootstrapMaterialDatePicker
+            ({
+                time: false,
+                clearButton: true,
+                format: 'YYYY-MM-DD'
+            });
+
+        $('#Member_6_dtp').bootstrapMaterialDatePicker
+            ({
+                time: false,
+                clearButton: true,
+                format: 'YYYY-MM-DD'
+            });
+
+        // });
+
+        function showdiseasebox_eldest() {
+            $('#eldestMember').toggle();
+        }
+        function showdiseasebox_spouse() {
+            $('#eldestMember2').toggle();
+        }
+        function showdiseasebox_child1() {
+            $('#childMember1').toggle();
+        }
+        function showdiseasebox_child2() {
+            $('#childMember2').toggle();
+        }
+        function showdiseasebox_child3() {
+            $('#childMember3').toggle();
+        }
+        function showdiseasebox_child4() {
+            $('#childMember4').toggle();
+        }
+        function closePoup() {
+            $('.condition_box').hide();
+        }
+    </script>
+</body>
+
+</html>

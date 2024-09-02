@@ -1,0 +1,20 @@
+{
+    "transactionDate": "___pg_reference_number_3___",
+    "totalAmount": ___transaction_amount___,
+    "transactionNR": "___pg_reference_number_1___-___dbmaster_insurer_transaction_identifier___",
+    "transactionAuthId": "___pg_reference_number_4___",
+    "template_id": ___dbmaster_insurer_transaction_identifier___,
+    "merchantTransactionId": ___dbmaster_insurer_transaction_identifier___,
+    "mobile_no": ___mobile___,
+    "title": ___salutation___,
+    "address_line_1": "___address_1___",
+    "address_line_2": "___address_2___",
+    "pincode": "___communication_pincode___",
+    "firstName": "___first_name___",
+    "middleName": "___middle_name___",
+    "lastName": "___last_name___",
+    "email": "___email___",
+    "corr_address_flag": "false",
+    "entityType": ___vehicle_registration_type___,
+    "gstin_no":"___gst_no___"
+}

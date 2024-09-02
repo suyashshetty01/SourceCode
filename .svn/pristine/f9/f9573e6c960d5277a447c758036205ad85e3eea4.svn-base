@@ -1,0 +1,40 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "getIssurance",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        "QuotationNo": "___quotation_no___",
+        "Amount": ___transaction_amount___,
+        "CurrencyId": ___Currency_Id___,
+        "PayMode": 212,
+        "FeeType": 11,
+        "Payer": "___Payer___",
+        "TransactionDate": "___pg_reference_number_3___T23:59:59",
+        "PaymentReferNo": "___transaction_id___",
+        "InstrumentNumber": "___pg_reference_number_2___",
+        "InstrumentDate": "___pg_reference_number_3___",
+        "BankCode": "2",	
+        "BankName": "STATE BANK OF INDIA",
+        "BankBranchName": "",
+        "BankBranchCode": "",
+
+        "LocationType": "___Location_Type___",
+        "RemitBankAccount": "30",
+        "ReceiptCreatedBy": "",
+        "PickupDate": "___pg_reference_number_3___",
+
+        "IFSCCode": "",
+        "MICRNumber": "",
+        "PANNumber": "___pan___",
+        "ReceiptBranch": "",
+        "ReceiptTransactionDate": "___pg_reference_number_3___",
+        "ReceiptDate": "___receipt_date___",
+        "EscalationDepartment": "",
+        "Comment": "",
+        "AccountNumber": "",
+        "AccountName": ""
+    }
+}

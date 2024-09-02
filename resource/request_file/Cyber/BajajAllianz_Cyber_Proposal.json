@@ -1,0 +1,44 @@
+{
+    "password": "___insurer_integration_service_password___",
+    "username": "___insurer_integration_service_user___",
+    "transid": null,
+    "paymentmode": "CC",
+    "custdtls": {
+        "parttempid": "",
+        "firstname": "___first_name___",
+        "middlename": "",
+        "surname": "___last_name___",
+        "addline1": "___permanent_address_1___",
+        "addline2": "___permanent_address_2___",
+        "addline3": "___permanent_address_3___",
+        "addline5": "___state___",
+        "pincode": "___permanent_pincode___",
+        "email": "___email___",
+        "telephone1": "___mobile___",
+        "telephone2": null,
+        "mobile": "___mobile___",
+        "poladdline1": null,
+        "poladdline2": null,
+        "poladdline3": null,
+        "poladdline5": null,
+        "polpincode": "",
+        "dateofbirth": "___birth_date___",
+        "title": "___salutation___."
+    },
+    "inputdtls": {
+        "stringval2": "___policy_start_date___",
+        "stringval3": "___policy_end_date___",
+        "stringval4": "___dbmaster_pb_plan_code___",
+        "stringval8": "___gst_no___"
+    },
+    "cbspoldtlobj": {
+        "phbdt": "___birth_date___",
+        "planid": "___si_code___"
+    },
+    "premdtls": {
+        "stringval7": "___final_premium___"
+    },
+    "pcbsriskproflst": [
+       <!--___medquestn-->
+    ]
+}

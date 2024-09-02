@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RSA Unlocking - PolicyBoss</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+ 	<link rel="stylesheet" href="style.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+ 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity= "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="loader" style="width: 100%;height: 100%;position: fixed;background: rgb(255,255,255,0.3);">
+		<img src="Images/Loader.gif" style="position: absolute;top: 50%;left: 50%;z-index: 999999;transform: translate(-50%,-50%);width: 30%;">
+		</div>
+	<div class="logo"><img src="Images/policylogo.png" align="right"></div>
+	<div class="container">
+		<div class="contain">
+		<h1>Congrats !</h1>
+		<p>You are One Step Away from Unlocking Your Gift!<br>
+		<strong style="font-family: Poppins-Medium;">Your Road Side Assistance Package*</strong></p>
+		<div class="inputForm">
+			<p>Simply Share Details Below. To Activate</p>
+			<form name="myForm" id="myForm" method="post" action="">
+				<div class="inputGrid">
+					<img src="Images/IND-logo.png" height="100%">
+					<input type="text" name="vehicleNumber" id="vehicleNumber" placeholder="MH 13 BN 8542">
+					<script type="text/javascript">
+						$('input[name="vehicleNumber"]').mask('SS 00 SS 0000');
+					</script>
+				</div>
+				<input type="text" name="" placeholder="Name" id="username">
+				<div class="grid">
+					<div>
+						<input type="text" class="mobileno" name="" placeholder="Mobile No. (Use to send details)" id="number" maxlength="10" minlength="10">
+					</div>
+					<div>
+						<input type="text" name="" placeholder="Email ID (Use to send details)" id="email" >
+					</div>
+					
+				</div>
+				<button>SUBMIT</button>
+			</form>
+			        <p id="gfg" style="display:none;"></p> 
+
+		</div>
+		<img src="Images/icons.png" align="center" class="icons">
+		<div class="bottom">
+			<p>*T&C apply. Refer to package document for details.</p>
+		</div>
+	</div>
+		
+	</div>
+		<div class="message">
+			<div class="SuccessfulMsg">
+				<h2>Great, We are Done!</h2>
+				<hr>
+				<hr>
+				<h4>RSA Certificate Number : <span id="CertificateNo"></span></h4>
+				<button type="button" ><a id="CertificateURL" target="_blank" style="text-decoration: none;color: white;" >Download RSA Certificate</a></button>
+				<p>Check Your Email Inbox for Your RSA Deatils.</p>
+			</div>
+			<div class="FailedMsg" style="display:none;">
+				<h2>Oops!</h2>
+				<hr>
+				<hr>
+				<p>RSA Certificate already issued for this mobile number.</p>
+			</div>
+		</div>
+</body>
+
+</html>

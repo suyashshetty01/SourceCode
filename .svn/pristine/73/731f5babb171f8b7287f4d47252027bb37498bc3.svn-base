@@ -1,0 +1,45 @@
+/* Author : Dipali Revanwar
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// grab the things we need
+var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
+var Schema = mongoose.Schema;
+autoIncrement = require('mongoose-plugin-autoinc');
+mongoose.Promise = global.Promise;
+var kyc_detailSchema = new Schema({
+    'Search_Type': String,
+    'KYC_Number': String,
+    'Full_Name': String,
+    'KYC_Full_Name': String,
+    'Mobile': Number,
+    'PAN': String,
+    'Aadhar': Number,
+    'KYC_Status': String,
+    'DOB': String,
+    'Created_On': Date,
+    'Modified_On': Date,
+    'Insurer_Id': Number,
+    'PAN_Doc': String,
+    'Aadhar_Doc': String,
+    'PB_CRN': Number,
+    'User_Data_Id': Number,
+    'Product_Id': Number,
+    'Email': String,
+    'Proposal_Request': Object,
+    'Proposal_Id': String,
+    'Quote_Id': String,
+    'KYC_URL': String
+});
+// we need to create a model using it
+kyc_detailSchema.plugin(mongoosePaginate);
+
+
+kyc_detailSchema.plugin(autoIncrement.plugin, {model: 'kyc_detail', field: 'Kyc_Detail_Id', startAt: 1});
+var kyc_detail = mongoose.model('kyc_detail', kyc_detailSchema);
+
+// make this available to our users in our Node applications
+module.exports = kyc_detail;

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PolicyBoss TrueCaller Demo - Chirag Modi</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>PolicyBoss TrueCaller Demo</h1>
+            <p style="font-style: italic">By Chirag Modi</p>
+            <p style="font-style: italic">Note : Truecaller must be installed in Mobile.</p>
+            <form>
+                <div class="form-group">
+                    <label for="mobile">Enter your Mobile:</label>
+                    <input name="mobile" type="number" class="form-control" id="mobile">
+                    <input name="requestId" type="hidden" id="requestId" value="">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <button id="btnSubmit" type="button" class="btn btn-danger">Submit</button>
+                </div>
+                <div class="form-group">                    
+                    <div class="table-responsive" id="profiledata" style="display: none;">
+                        <table class="table">                            
+                            <thead>
+                                <tr><th colspan="2" id='avatarUrl' style="text-align: center"><img id="avtar" src="" style='width:50%;height:50%'></th></tr>                                
+                            </thead>
+                            <tbody>
+                                <tr  class="success"><td colspan="2">Basic Details</td></tr>
+                                <tr><td>First Name</td><td id='first_name'></td></tr>
+                                <tr><td>Last Name</td><td  id='last_name'></td></tr>
+                                <tr><td>Email</td><td  id='email'></td></tr>
+                                <tr  class="success"><td colspan="2">Address</td></tr>
+                                <tr><td>Country</td><td  id='country'></td></tr>
+                                <tr><td>City</td><td  id='city'></td></tr>
+                                <tr><td>Street</td><td  id='street'></td></tr>
+                                <tr><td>Zipcode</td><td  id='zipcode'></td></tr>                                
+                                <tr  class="success"><td colspan="2">Professional Details</td></tr>
+                                <tr><td>Company Name</td><td  id='companyname'></td></tr>
+                                <tr><td>Job Title</td><td  id='jobtitle'></td></tr>                                                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </body>
+    <script>
+        function request_init() {
+            $('#btnSubmit').html('Initiating...');
+            $('#profiledata').hide();
+            $.ajax({
+                type: 'GET',
+                url: "http://interstellar.co.in/transactions/truecaller_init?mobile=91" + $('#mobile').val(), // json datasource
+                dataType: 'json',
+                //cache: false,
+                success: function (serviceResponse) {
+                    if (typeof serviceResponse.requestId !== 'undefined') {
+                        $('#requestId').val(serviceResponse.requestId);
+                        setTimeout(function () {
+                            token_check()
+                        }, 2000);
+                    } else {
+                        $('#btnSubmit').html('Submit');
+                        alert('Request Fail');
+                    }
+                },
+                error: function () {
+                    $('#btnSubmit').html('Submit');
+                }
+            });
+        }
+
+        function token_check() {
+            $('#btnSubmit').html('Pls authorize TrueCaller in mobile...');
+            $.ajax({
+                type: 'GET',
+                url: "http://interstellar.co.in/transactions/tokencheck?mobile=91" + $('#mobile').val() + "&requestId=" + $('#requestId').val(), // json datasource
+                dataType: 'json',
+                //cache: false,
+                success: function (serviceResponse) {
+                    if (serviceResponse.status === 'success') {
+                        fetching_profile();
+
+                    } else {
+                        setTimeout(function () {
+                            token_check();
+                        }, 2000);
+                    }
+                },
+                error: function () {
+                    $('#btnSubmit').html('Submit');
+                }
+            });
+        }
+        function fetching_profile() {
+            $('#btnSubmit').html('Thanks...Fetchin Profile...');
+            $.ajax({
+                type: 'GET',
+                url: "http://interstellar.co.in/transactions/truecaller_fetch?mobile=91" + $('#mobile').val() + "&request_id=" + $('#requestId').val(), // json datasource
+                dataType: 'json',
+                //cache: false,
+                success: function (serviceResponse) {
+                    //serviceResponse = serviceResponse.toString().replace('}1', '}');
+                    //serviceResponse = JSON.parse(serviceResponse);
+                    console.log(serviceResponse);
+                    //serviceResponse = {"id": "329444175", "userId": 329444175, "phoneNumbers": [917666020532], "name": {"first": "Chirag", "last": "Modi"}, "addresses": [{"countryCode": "in", "city": "Thane", "street": "Mira road", "zipcode": "401107"}], "onlineIdentities": {"email": "csmodi@gmail.com"}, "badges": ["true_name", "premium"], "avatarUrl": "https://s3-eu-west-1.amazonaws.com/images1.truecaller.com/myview/1/3075191cc106a4a58f449cdb72712930/3", "companyName": "Policyboss", "jobTitle": "Tech Head", "createdTime": 1388145008000, "history": {"name": {"updateTime": 1497078167000}}, "isActive": true, "gender": "NonSet", "privacy": "Public", "type": "Personal"};
+                    /*$('#avtar').attr('src', '');
+                     $('#first_name').html('NA');
+                     $('#last_name').html('NA');
+                     $('#email').html('NA');
+                     $('#country').html('NA');
+                     $('#city').html('NA');
+                     $('#street').html('NA');
+                     $('#zipcode').html('NA');
+                     $('#companyname').html('NA');
+                     $('#jobtitle').html('NA');
+                     */
+                    $('#avtar').attr('src', serviceResponse.avatarUrl);
+                    $('#first_name').html(serviceResponse.name.first);
+                    $('#last_name').html(serviceResponse.name.last);
+                    $('#email').html(serviceResponse.onlineIdentities.email);
+                    $('#country').html(serviceResponse.addresses[0].countryCode);
+                    $('#city').html(serviceResponse.addresses[0].city);
+                    $('#street').html(serviceResponse.addresses[0].street);
+                    $('#zipcode').html(serviceResponse.addresses[0].zipcode);
+                    $('#companyname').html(serviceResponse.companyName);
+                    $('#jobtitle').html(serviceResponse.jobTitle);
+                    $('#btnSubmit').html('Submit');
+                    $('#profiledata').show();
+                },
+                error: function () {
+                    $('#btnSubmit').html('Submit');
+                }
+            });
+        }
+        $(function () {
+            $('#btnSubmit').click(function () {
+                request_init();
+            });
+        });
+    </script>
+</html>

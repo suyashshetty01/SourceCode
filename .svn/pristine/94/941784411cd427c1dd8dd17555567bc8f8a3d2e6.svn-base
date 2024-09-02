@@ -1,0 +1,79 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <InsertImporteddata xmlns="http://tempuri.org/">
+            <Region>79</Region><!--HARD CODED-->
+            <ClientName>___contact_name___</ClientName><!--parvati-->
+            <HolderAddress>___communication_address___</HolderAddress>
+            <PhoneO>0</PhoneO>
+            <Mobile>___mobile___</Mobile>
+            <ProductName>___product_id___</ProductName><!--doubt 1 for car 11 for Two wheeler-->
+            <PolicyCategory />
+            <BussClass />
+            <ExpiryDate>___policy_expiry_date___</ExpiryDate><!--22-Sep-2016-->
+            <VehicleMake>___pb_insurer_vehicle_make_code___</VehicleMake><!--doubt-->
+            <Model>___pb_insurer_vehicle_model_code___</Model><!--doubt-->
+            <MfgYear>___vehicle_manf_year___</MfgYear><!--2016-->
+            <ChasisNo>___chassis_number___</ChasisNo>
+            <EngineNo>___engine_number___</EngineNo>
+            <RegistrationNo>___registration_no___</RegistrationNo>
+            <NoClaimBonus>___premium_rate_od_disc_ncb___</NoClaimBonus>
+            <Hypothication>0</Hypothication><!--HArd coded ?-->
+            <EMail>___email___</EMail>
+            <PolicyRemark />
+            <ExName>7058</ExName><!--HARD CODED-->
+            <AssignedTo>7058</AssignedTo><!--HARD CODED-->
+            <ClientRef>___crn___</ClientRef><!-- 458491 CRN of Policy bOss-->
+            <GroupCode />
+            <LeadGeneration />
+            <EntryDoneBy>7058</EntryDoneBy><!--HARD CODED-->
+            <CorporateName>POLICYBOSS</CorporateName><!--HARD CODED-->
+            <ContactPerson>___contact_name___</ContactPerson>
+            <ContactNo>___mobile___</ContactNo>
+            <Relation />
+            <OtherDataID>0</OtherDataID>
+            <OtherDataType />
+            <VehicleUser>___contact_name___</VehicleUser>
+            <PersonalTitle>___salutation___</PersonalTitle><!--Mr-->
+            <FuelType>___fuel_type___</FuelType><!--Doubt-->
+            <subModel>___pb_insurer_vehicle_variant_code___</subModel><!--Doubt-->
+            <City>___communication_city___</City><!-- communnication or Registration City-->
+            <pincode>___communication_pincode___</pincode>
+            <InscoID>___insurerco_id___</InscoID><!--Insurer Id-->
+            <BasicOwnDamage>___premium_breakup_od_basic___</BasicOwnDamage>
+            <NonElectricalAccessoriesPremium>___premium_breakup_od_non_elect_access___</NonElectricalAccessoriesPremium><!--0-->
+            <ODDiscountPercentage>___premium_rate_od_disc___</ODDiscountPercentage><!--doubt-->
+            <ODDiscount>___premium_breakup_od_disc___</ODDiscount><!--0-->
+            <NetODAfterTariffDiscount>___premium_breakup_od_after_tarrif_discount___</NetODAfterTariffDiscount><!--Doubt-->
+            <AgeDiscount>0</AgeDiscount><!--Doubt-->
+            <ProfessionDiscount>0</ProfessionDiscount><!--Doubt-->
+            <ElectricalAcessoriesPremium>___premium_breakup_od_elect_access___</ElectricalAcessoriesPremium>
+            <BiFuelKitPremium>___premium_breakup_od_cng_lpg___</BiFuelKitPremium><!--doubt od_cng_lpg + tp_cng_lpg-->
+            <TotalOwnDamagePremium>___premium_breakup_od_final_premium___</TotalOwnDamagePremium>
+            <AntiTheftDiscount>___premium_breakup_od_disc_anti_theft___</AntiTheftDiscount>
+            <VoluntaryDeductions>___voluntary_deductible___</VoluntaryDeductions><!--doubt-->
+            <AutomobileAssociationMembershipPremium>___premium_breakup_od_disc_aai___</AutomobileAssociationMembershipPremium><!--Doubt-->
+            <GrossODPremium>___premium_breakup_od_final_premium___</GrossODPremium><!--Doubt-->
+            <ODLoadingPercentage>___premium_rate_od_loading___</ODLoadingPercentage>
+            <UnderwriterLoading>___premium_breakup_od_loading___</UnderwriterLoading>
+            <TotalODPremium>___premium_breakup_od_final_premium___</TotalODPremium>
+            <ThirdPartyLiablityPremium>___premium_breakup_tp_final_premium___</ThirdPartyLiablityPremium>
+            <BiFuelKitLiabilityPremium>___premium_breakup_tp_cng_lpg___</BiFuelKitLiabilityPremium>
+            <PersonalAccidentCoverForOwnerDriver>___premium_breakup_tp_cover_owner_driver_pa___</PersonalAccidentCoverForOwnerDriver>
+            <LegalLiabilityPremiumForPaidDriver>___premium_breakup_tp_cover_paid_driver_ll___</LegalLiabilityPremiumForPaidDriver>
+            <PersonalAccidentCoverForUnammedPassenger>___premium_breakup_tp_cover_unnamed_passenger_pa___</PersonalAccidentCoverForUnammedPassenger>
+            <TotalLiabilityPremium>___premium_breakup_tp_final_premium___</TotalLiabilityPremium>
+            <TotalPremium>___premium_breakup_net_premium___</TotalPremium>
+            <AddOn /><!--Doubt-->
+            <AddOnRate>___premium_rate_addon_zero_dep_cover___</AddOnRate><!--Doubt-->
+            <AddOnAdditionalPremium>0</AddOnAdditionalPremium>
+            <AddOnPremium>___premium_breakup_addon_final_premium___</AddOnPremium>
+            <ServiceTax>___premium_breakup_service_tax___</ServiceTax>
+            <NetPremium>___premium_breakup_final_premium___</NetPremium>
+            <IMT23>0</IMT23>
+            <LegaliabilityforEmp>0</LegaliabilityforEmp><!--NA-->
+            <StaxRate>0</StaxRate>
+            <Idv>___vehicle_expected_idv___</Idv>
+            <QTNumber />
+        </InsertImporteddata>
+    </Body>
+</Envelope>

@@ -1,0 +1,153 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#camera--view, #camera--sensor, #camera--output{
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+#camera--trigger{
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 150px);
+}
+#flip--button{
+    width: auto;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 100px;
+    left: calc(50% - 160px);
+}
+#upload--button{
+    width: auto;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 170px;
+    left: calc(50% - 160px);
+}
+#camera--trigger1{
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 4px;
+    left: calc(50% - 150px);
+}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+.taken1{
+    height: 100%!important;
+    width: 100%!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+.gridView{
+	display:grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: 5px;
+	grid-row-gap: 0px;
+}
+.ImgDiv{
+	height:140px;
+	background:#c1c1c1;
+	margin:4px;
+}
+.uploadBtn{
+	margin-left: 40%;
+    border-radius: 8px;
+    background: black;
+    border: 1px solid black;
+    padding: 11px 19px;
+    color: white;
+}
+.popupMsg{
+	width:70%;
+	margin:10% auto;
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+	padding: 45px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.popupMsg button{
+	margin-top:30px;
+}
+
+#uploadDIV h3{
+	font-size:20px;
+	text-align:center;
+}
+#uploadDIV .fileInput{
+	text-align:center;
+	margin:10px auto;
+}
+#uploadDIV #output{
+	margin: 100px auto;
+    width: 90%;
+    height: 250px;
+}
+#uploadDIV #output img{
+	margin:0px auto;
+	width:100%;
+}
+#upload button{
+	width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 150px);
+}

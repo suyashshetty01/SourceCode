@@ -1,0 +1,25 @@
+/* Author : Kevin Monteiro
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+var config = require('config');
+var mongoose = require('mongoose');
+
+mongoose.connect(config.db.connection + ':27017/' + config.db.name, {useMongoClient: true}); // connect to our database
+
+module.exports.controller = function (app) {
+    app.post('/app_visitor/save_data', function (req, res) {
+        let AppVisitors = require('../models/app_visitor');
+        req.body.Created_On = new Date();
+        req.body.Modified_On = new Date();
+        let AppVisitors_data = new AppVisitors(req.body);
+        AppVisitors_data.save(function (err, objDB) {
+            if (err) {
+                res.json({'Msg': err, 'Status': "Error"});
+            } else {
+                res.json({'Msg': "Data Inserted Successfully", 'Status': "Success", "visitor_Id":objDB._doc.visitor_Id});
+            }
+        });
+    });
+};

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PremiumRequestPrivateCar>
+  <CorelationId>6809b1c2-20b5-4e39-ae96-1395564acee5</CorelationId><!--doubt not sure which tag to use for it-->
+  <DealNo>DEAL-3001-0206164</DealNo><!--doubt not sure which tag to use for it-->
+  <PolicyType>___vehicle_insurance_type___</PolicyType>
+  <CustomerType>___vehicle_registration_type___</CustomerType>
+  <VehicleMakeCode>___dbmaster_insurer_vehicle_make_name___</VehicleMakeCode>
+  <VehicleModelCode>___dbmaster_insurer_vehicle_model_name___</VehicleModelCode>
+  <SeatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</SeatingCapacity>
+  <CarryingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</CarryingCapacity>
+  <CubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</CubicCapacity>
+  <NoOfWheels>4</NoOfWheels>
+  <ShowroomPriceDeviation>0</ShowroomPriceDeviation>
+  <PlaceOfRegistrationCode>147</PlaceOfRegistrationCode>
+  <PlaceOfRegistration>MAHARASHTRA-MUMBAI</PlaceOfRegistration>
+  <IsInJammuAndKashmir>false</IsInJammuAndKashmir>
+  <ExShowroomPrice>___dbmaster_insurer_vehicle_exshowroom___</ExShowroomPrice>
+  <YearofManufacture>___vehicle_manf_year___</YearofManufacture><!--2017-->
+  <DateofDeliveryOrRegistration>___vehicle_registration_date___</DateofDeliveryOrRegistration><!--2017-06-06 yyyy-mm-dd-->
+  <PolicyStartDate>___policy_start_date___</PolicyStartDate><!--2017-06-06 yyyy-mm-dd-->
+  <PolicyEndDate>___policy_end_date___</PolicyEndDate><!--2018-06-05 yyyy-mm-dd-->
+  <GasKitType>___is_external_bifuel___</GasKitType>
+  <SumInsuredOfLPGCNGKit>___external_bifuel_value___</SumInsuredOfLPGCNGKit>
+  <ValueOfElectricalAccessories>___electrical_accessory___</ValueOfElectricalAccessories>
+  <ValueOfNonElectricalAccessories>___non_electrical_accessory___</ValueOfNonElectricalAccessories>
+  <NoOfDrivers>0</NoOfDrivers><!--1 in case of PA cover to the driver is yes-->
+  <NoOfEmployees>0</NoOfEmployees>
+  <AutoAssociationMembership>___is_aai_member___</AutoAssociationMembership>
+  <AutoAssociationNo></AutoAssociationNo><!--value not availble-->
+  <HasARAIApprovedAntiTheftDevice>___is_antitheft_fit___</HasARAIApprovedAntiTheftDevice>
+  <GeographicAreaExtension/>
+  <ZeroDepreciation></ZeroDepreciation>
+  <RTI>false</RTI>
+  <OnRoadCharges>0</OnRoadCharges>
+  <PreviousInsurance>___vehicle_insurance_type_2___ </PreviousInsurance>
+  <ExpiringPolicyStartDate>___pre_policy_start_date___</ExpiringPolicyStartDate><!--2015-06-06 yyyy-mm-dd-->
+  <ExpiringPolicyEndDate>___policy_expiry_date___</ExpiringPolicyEndDate><!--2017-06-05 yyyy-mm-dd-->
+  <ClaimInExpiringPolicy>___is_claim_exists___</ClaimInExpiringPolicy>
+  <PreviousPolicyType>Comprehensive Package</PreviousPolicyType>
+  <NCBPercentInPreviousYear>___vehicle_ncb_current___</NCBPercentInPreviousYear>
+  <DateOfPreviousVehicleSold/>
+  <NCBFromEarlierVehicleSold>NO</NCBFromEarlierVehicleSold>
+  <AmedusId/>
+  <TPPDLimit>0</TPPDLimit>
+  <BankId/>
+  <PACoverForUnnamedPassenger>___pa_unnamed_passenger_si___</PACoverForUnnamedPassenger>
+  <LoadingOrDiscount Description='NA'>0</LoadingOrDiscount>
+  <VoluntaryDeductible>___voluntary_deductible___</VoluntaryDeductible>
+</PremiumRequestPrivateCar>
+

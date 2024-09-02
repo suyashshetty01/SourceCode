@@ -1,0 +1,28 @@
+{
+    "authenticationDetails": {
+        "agentId": "___insurer_integration_service_user___",
+        "apiKey": "___insurer_integration_service_password___"
+    },
+    "insuredDetails": [<!--InsurersDetail_Start-->
+        {
+            "dateOfBirth": "___member_array_birth_date___",
+            "firstName": "___member_array_first_name___",           
+            "insuredType": "___member_array_insuredtype___",
+            "relationshipWithProposer": "___member_array_relation___"
+        }<!--InsurersDetail_End-->
+    ],
+    "product": {
+        "noOfAdults": ___adult_count___,
+        "noOfChilds": ___child_count___,
+        "noOfInsured": ___member_count___,
+        "sumInsured": ___health_insurance_si___
+    },
+    "proposerDetails": {
+        "dateOfBirth": "___member_1_birth_date___",
+        "emailId": "___email___",
+        "firstName": "___first_name___",
+        "mobileNumber": "___mobile___",
+        "state": "___dbmaster_pb_state_name___"
+    },
+    "quoteId": ""
+}

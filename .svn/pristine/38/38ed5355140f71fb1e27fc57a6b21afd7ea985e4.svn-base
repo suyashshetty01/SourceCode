@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl" xmlns:ns2="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl/types/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Body>
+        <ns1:calculateMotorPremiumSig>
+            <pUserId>___insurer_integration_service_user___</pUserId><!---->
+            <pPassword>___insurer_integration_service_password___</pPassword><!--newpas12-->
+            <pVehicleCode>___dbmaster_insurer_vehicle_code___</pVehicleCode><!--vehicle code 38160851-->
+            <pCity>___dbmaster_insurer_rto_city_name___</pCity><!--RTO City-->
+            <pWeoMotPolicyIn_inout>
+                <ns2:vehicleTypeCode>___product_id___</ns2:vehicleTypeCode>
+                <ns2:vehicleSubtype>___dbmaster_insurer_vehicle_variant_name___</ns2:vehicleSubtype><!--UNIQ -->
+                <ns2:elecAccTotal>___electrical_accessory___</ns2:elecAccTotal>
+                <ns2:addLoadingOn></ns2:addLoadingOn>
+                <ns2:nonElecAccTotal>___non_electrical_accessory___</ns2:nonElecAccTotal>
+                <ns2:polType>___vehicle_insurance_type___</ns2:polType><!--new 1 ,renewal from other 3 ,renewal from bajaj 2-->
+                <ns2:registrationNo>___registration_no___</ns2:registrationNo>
+                <ns2:partnerType>___vehicle_registration_type___</ns2:partnerType><!--P- private I for institutution-->
+                <ns2:ncb>___vehicle_ncb_next___</ns2:ncb>
+                <ns2:prvClaimStatus>___is_claim_exists___</ns2:prvClaimStatus>
+                <ns2:registrationDate>___vehicle_registration_date___</ns2:registrationDate><!--format dd-MMM-yyyy 25-AUG-2016-->
+                <ns2:miscVehType>0</ns2:miscVehType>
+                <ns2:fuel>___dbmaster_insurer_vehicle_fueltype___</ns2:fuel><!--sample value P for petrol-->
+                <ns2:chassisNo>TESTCHASIS123</ns2:chassisNo>
+                <ns2:contractId></ns2:contractId>
+                <ns2:yearManf>___vehicle_manf_year___</ns2:yearManf><!--2016-->
+                <ns2:spDiscRate></ns2:spDiscRate>
+                <ns2:cubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</ns2:cubicCapacity><!--796-->
+                <ns2:regiLocOther>___dbmaster_insurer_rto_city_name___</ns2:regiLocOther>
+                <ns2:addLoading>0</ns2:addLoading>
+                <ns2:vehicleSubtypeCode>___dbmaster_insurer_vehicle_variant_code___</ns2:vehicleSubtypeCode><!--51 -->
+                <ns2:prvPolicyRef></ns2:prvPolicyRef><!--Required in case of Renew  OG-13-1902-1801-00000001-->
+                <ns2:vehicleMake>___dbmaster_insurer_vehicle_make_name___</ns2:vehicleMake><!--MARUTI-->
+                <ns2:autoMembership></ns2:autoMembership><!---->
+                <ns2:termStartDate>___policy_start_date___</ns2:termStartDate>
+                <ns2:carryingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</ns2:carryingCapacity><!--5-->
+                <ns2:termEndDate>___policy_end_date___</ns2:termEndDate>
+                <ns2:hypo></ns2:hypo>
+                <ns2:branchCode>___insurer_integration_location_code___</ns2:branchCode><!--9906 1901 for mumbai-->
+                <ns2:prvNcb>___vehicle_ncb_current___</ns2:prvNcb>
+                <ns2:vehicleMakeCode>___dbmaster_insurer_vehicle_make_code___</ns2:vehicleMakeCode><!--110-->
+                <ns2:vehicleIdv>___vehicle_expected_idv___</ns2:vehicleIdv><!--so far-->
+                <ns2:prvInsCompany>___dbmaster_previousinsurer_code___</ns2:prvInsCompany>
+                <ns2:engineNo>TESTENGINE123</ns2:engineNo>
+                <ns2:product4digitCode>___vehicle_insurance_subtype_2___</ns2:product4digitCode>
+                <ns2:color></ns2:color>
+                <ns2:vehicleModel>___dbmaster_insurer_vehicle_model_name___</ns2:vehicleModel><!--value for taken sample 800-->
+                <ns2:vehicleType>___product_id_3___</ns2:vehicleType>
+                <ns2:prvExpiryDate>___policy_expiry_date___</ns2:prvExpiryDate>
+                <ns2:tpFinType></ns2:tpFinType>
+                <ns2:deptCode>18</ns2:deptCode><!-- not sure might change on live -->
+                <ns2:vehicleModelCode>___dbmaster_insurer_vehicle_model_code___</ns2:vehicleModelCode><!--value for taken sample 2-->
+                <ns2:registrationLocation>___dbmaster_insurer_rto_city_name___</ns2:registrationLocation><!-- not provided any value-->
+                <ns2:zone>___dbmaster_insurer_rto_zone_code___</ns2:zone><!-- should be from database-->
+            </pWeoMotPolicyIn_inout>
+            <accessoriesList_inout>
+                <!--Zero or more repetitions:-->
+                <ns2:WeoMotAccessoriesUser >
+                    <accModel></accModel><!-- -->
+                    <accTypeCode></accTypeCode>
+                    <accCategoryCode></accCategoryCode>
+                    <accCount></accCount>
+                    <contractId></contractId>
+                    <accIev></accIev>
+                    <accMake></accMake>
+                </ns2:WeoMotAccessoriesUser>
+            </accessoriesList_inout>
+            <paddoncoverList_inout>
+                <!--Zero or more repetitions:-->
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>VOLEX</paramDesc>
+                    <paramRef>VOLEX</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>PA</paramDesc>
+                    <paramRef>PA</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>CNG</paramDesc>
+                    <paramRef>CNG</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>LLO</paramDesc>
+                    <paramRef>LLO</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>ELECACC</paramDesc>
+                    <paramRef>ELECACC</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <ns2:WeoMotGenParamUser>
+                    <paramDesc>NELECACC</paramDesc>
+                    <paramRef>NELECACC</paramRef>
+                </ns2:WeoMotGenParamUser>
+                <!--TPPD_REQ-->
+            </paddoncoverList_inout>
+            <motExtraCover>
+                <ns2:sideCarValue>0</ns2:sideCarValue>
+                <ns2:covernoteNo></ns2:covernoteNo>
+                <ns2:noOfTrailers>0</ns2:noOfTrailers>
+                <ns2:subImdcode></ns2:subImdcode><!--not available-->
+                <ns2:covernoteDate></ns2:covernoteDate>
+                <ns2:cngValue>___external_bifuel_value___</ns2:cngValue>
+                <ns2:fibreGlassValue>0</ns2:fibreGlassValue>
+                <ns2:voluntaryExcess>___voluntary_deductible___</ns2:voluntaryExcess>
+                <ns2:totalTrailerValue>0</ns2:totalTrailerValue>
+                <ns2:extraField1></ns2:extraField1><!--411001-->
+                <ns2:sumInsuredTotalNamedPa>___pa_named_passenger_si___</ns2:sumInsuredTotalNamedPa><!--doubt what value to be assigned?-->
+                <ns2:geogExtn></ns2:geogExtn>
+                <ns2:noOfPersonsLlo>___is_llpd_2___</ns2:noOfPersonsLlo>
+                <ns2:noOfEmployeesLle>0</ns2:noOfEmployeesLle>
+                <ns2:extraField2></ns2:extraField2>
+                <ns2:extraField3></ns2:extraField3>
+                <ns2:sumInsuredPa>___pa_unnamed_passenger_si___</ns2:sumInsuredPa>
+                <ns2:noOfPersonsPa>___dbmaster_insurer_vehicle_seatingcapacity___</ns2:noOfPersonsPa>
+            </motExtraCover>
+            <pQuestList_inout>
+                <!--Zero or more repetitions:-->
+                <WeoBjazMotQuestionaryUser>
+                    <questionRef></questionRef>
+                    <contractId></contractId>
+                    <questionVal></questionVal>
+                </WeoBjazMotQuestionaryUser>
+            </pQuestList_inout>
+            <pDetariffObj_inout>
+                <ns2:driverQualificationCode></ns2:driverQualificationCode>
+                <ns2:vehPurchaseType></ns2:vehPurchaseType>
+                <ns2:extCol25></ns2:extCol25>
+                <ns2:extCol26></ns2:extCol26>
+                <ns2:tacMakeCode></ns2:tacMakeCode>
+                <ns2:extCol23></ns2:extCol23>
+                <ns2:extCol24>___policy_tenure___</ns2:extCol24>
+                <ns2:extCol29></ns2:extCol29>
+                <ns2:extCol27></ns2:extCol27>
+                <ns2:extCol28></ns2:extCol28>
+                <ns2:extCol33></ns2:extCol33>
+                <ns2:extCol32></ns2:extCol32>
+                <ns2:extCol31></ns2:extCol31>
+                <ns2:extCol30></ns2:extCol30>
+                <ns2:registrationAuth></ns2:registrationAuth>
+                <ns2:extCol12></ns2:extCol12>
+                <ns2:extCol13></ns2:extCol13>
+                <ns2:extCol14></ns2:extCol14>
+                <ns2:extCol15></ns2:extCol15>
+                <ns2:extCol16></ns2:extCol16>
+                <ns2:extCol17></ns2:extCol17>
+                <ns2:extCol18></ns2:extCol18>
+                <ns2:extCol19></ns2:extCol19>
+                <ns2:otherGoodsFrequency></ns2:otherGoodsFrequency>
+                <ns2:extCol20></ns2:extCol20>
+                <ns2:extCol22></ns2:extCol22>
+                <ns2:incurredClmExpCode></ns2:incurredClmExpCode>
+                <ns2:extCol21></ns2:extCol21>
+                <ns2:clmHistCode></ns2:clmHistCode>
+                <ns2:roadType></ns2:roadType>
+                <ns2:bodyType></ns2:bodyType>
+                <ns2:monthOfMfg></ns2:monthOfMfg>
+                <ns2:natureOfGoods></ns2:natureOfGoods>
+                <ns2:extCol9></ns2:extCol9>
+                <ns2:extCol8>___pa_od_1___</ns2:extCol8>
+                <ns2:extCol7></ns2:extCol7>
+                <ns2:extCol6></ns2:extCol6>
+                <ns2:vehPurchaseDate></ns2:vehPurchaseDate>
+                <ns2:extCol5></ns2:extCol5>
+                <ns2:extCol4></ns2:extCol4>
+                <ns2:vehDrivenBy></ns2:vehDrivenBy>
+                <ns2:extCol3></ns2:extCol3>
+                <ns2:extCol2></ns2:extCol2>
+                <ns2:extCol1></ns2:extCol1>
+                <ns2:goodsTransType></ns2:goodsTransType>
+                <ns2:permitType></ns2:permitType>
+                <ns2:extCol38></ns2:extCol38>
+                <ns2:extCol39></ns2:extCol39>
+                <ns2:extCol34></ns2:extCol34>
+                <ns2:extCol35></ns2:extCol35>
+                <ns2:extCol36></ns2:extCol36>
+                <ns2:extCol10>___addon_package_name___</ns2:extCol10>
+                <ns2:extCol37></ns2:extCol37>
+                <ns2:extCol11></ns2:extCol11>
+                <!--POS_CONFIG_START-->
+                <ns2:extCol40>___posp_pan_no___</ns2:extCol40>
+                <!--POS_CONFIG_FINISH-->
+                <ns2:driverExperience></ns2:driverExperience>                
+            </pDetariffObj_inout>
+            <premiumDetailsOut_out/>
+            <premiumSummeryList_out/>
+            <pError_out/>
+            <pErrorCode_out></pErrorCode_out>
+            <pTransactionId_inout></pTransactionId_inout>
+            <pTransactionType></pTransactionType>
+            <pContactNo></pContactNo>
+            <!--<pAdditionalFields_inout>
+                <ns2:Stringval1>___policy_od_tenure___</ns2:Stringval1>
+            </pAdditionalFields_inout>-->
+        </ns1:calculateMotorPremiumSig>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

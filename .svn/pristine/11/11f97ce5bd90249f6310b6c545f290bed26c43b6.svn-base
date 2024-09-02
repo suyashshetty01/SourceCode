@@ -1,0 +1,11 @@
+<GPROPOSALREQUEST>
+    <authenticationDetails>
+        <agentId>___insurer_integration_service_user___</agentId>
+        <apikey>___insurer_integration_service_password___</apikey>
+    </authenticationDetails>
+    <isOTPVerified>Yes</isOTPVerified>
+    <premium>___final_premium_verified___</premium>
+    <quoteId>___insurer_customer_identifier___</quoteId>
+    <reqType>XML</reqType>
+    <strEmail>___email___</strEmail>
+</GPROPOSALREQUEST>

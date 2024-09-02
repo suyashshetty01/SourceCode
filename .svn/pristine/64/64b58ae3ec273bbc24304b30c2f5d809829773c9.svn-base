@@ -1,0 +1,322 @@
+    <PolicyDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CoverDetails />
+    <TrailerDetails />
+    <ClientDetails>
+        <ClientType>___vehicle_registration_type___</ClientType>
+        <LastName>___last_name___</LastName>
+        <MidName>___middle_name___</MidName>
+        <ForeName>___first_name___</ForeName>
+        <CorporateName>___company_name___</CorporateName>
+        <OccupationID>___occupation___</OccupationID>
+        <DOB>___birth_date___</DOB>
+        <Gender>___gender___</Gender>
+        <PhoneNo />
+        <MobileNo>___mobile___</MobileNo>
+        <GSTIN>___gst_no___</GSTIN>
+        <ClientAddress>
+            <CommunicationAddress>
+                <AddressType>0</AddressType>
+                <Address1>___communication_address_1___</Address1>
+                <Address2>___communication_address_2___</Address2>
+                <Address3>___communication_address_3___</Address3>
+                <CityID>___communication_city_code___</CityID>
+                <DistrictID>___communication_district_code___</DistrictID>
+                <StateID>___communication_state_code___</StateID>
+                <Pincode>___communication_pincode___</Pincode>
+                <Country>India</Country>
+                <NearestLandmark />
+            </CommunicationAddress>
+            <PermanentAddress>
+                <AddressType>0</AddressType>
+                <Address1>___permanent_address_1___</Address1>
+                <Address2>___permanent_address_2___</Address2>
+                <Address3>___permanent_address_3___</Address3>
+                <CityID>___permanent_city_code___</CityID>
+                <DistrictID>___permanent_district_code___</DistrictID>
+                <StateID>___permanent_state_code___</StateID>
+                <Pincode>___permanent_pincode___</Pincode>
+                <Country>India</Country>
+                <NearestLandmark />
+            </PermanentAddress>
+            <RegistrationAddress>
+                <AddressType>0</AddressType>
+                <Address1>___permanent_address_1___</Address1>
+                <Address2>___permanent_address_2___</Address2>
+                <Address3>___permanent_address_3___</Address3>
+                <CityID>___permanent_city_code___</CityID>
+                <DistrictID>___permanent_district_code___</DistrictID>
+                <StateID>___permanent_state_code___</StateID>
+                <Pincode>___permanent_pincode___</Pincode>
+                <Country>India</Country>
+                <NearestLandmark />
+            </RegistrationAddress>
+            <!--INSPECT_START-->
+            <InspectionAddress>
+                <AddressType>0</AddressType>
+                <Address1>___permanent_address_1___</Address1>
+                <Address2>___permanent_address_2___</Address2>
+                <Address3>___permanent_address_3___</Address3>
+                <CityID>___permanent_city_code___</CityID>
+                <DistrictID>___permanent_district_code___</DistrictID>
+                <StateID>___permanent_state_code___</StateID>
+                <Pincode>___permanent_pincode___</Pincode>
+                <Country>India</Country>
+                <NearestLandmark />
+            </InspectionAddress>
+            <!--INSPECT_FINISH-->
+        </ClientAddress>
+        <EmailID>___email___</EmailID>
+        <Salutation>___salutation___</Salutation>
+        <MaritalStatus>___marital___</MaritalStatus>
+        <Nationality>1949</Nationality>
+        <IsExistingRGICustomer>false</IsExistingRGICustomer>
+        <ExistingRGICustomerPolicyNo>0</ExistingRGICustomerPolicyNo>
+    </ClientDetails>
+    <Policy>
+        <BusinessType>___vehicle_insurance_type___</BusinessType>
+        <Cover_From>___policy_start_date___</Cover_From>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <AgentName>___insurer_integration_agent_code___</AgentName>
+        <productcode>___product_code___</productcode>
+        <OtherSystemName>1</OtherSystemName>
+        <isMotorQuote>false</isMotorQuote>
+        <isMotorQuoteFlow />
+        <PolicyTenure>___policy_tenure___</PolicyTenure>
+        <!--ODONLY_START-->
+        <TPPolicyNumber>___tp_policy_number___</TPPolicyNumber>
+        <TPPolicyStartDate>___tp_start_date___</TPPolicyStartDate>
+        <TPPolicyEndDate>___tp_end_date___</TPPolicyEndDate>
+        <TPPolicyInsurer>___tp_insurer_code___</TPPolicyInsurer>
+        <!--ODONLY_FINISH-->
+        <!--POS_CONFIG_START-->
+        <POSType>2</POSType>
+        <POSAadhaarNumber>___posp_aadhar___</POSAadhaarNumber>
+        <POSPANNumber>___posp_pan_no___</POSPANNumber>
+        <!--POS_CONFIG_FINISH-->
+    </Policy>
+    <Risk>
+        <VehicleMakeID>___dbmaster_insurer_vehicle_make_code___</VehicleMakeID>
+        <VehicleModelID>___dbmaster_insurer_vehicle_model_code___</VehicleModelID>
+        <CubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</CubicCapacity>
+        <Zone>___dbmaster_insurer_rto_zone_code___</Zone>
+        <RTOLocationID>___dbmaster_insurer_rto_city_code___</RTOLocationID>
+        <ExShowroomPrice></ExShowroomPrice><!--___dbmaster_insurer_vehicle_exshowroom___-->
+        <IDV>___vehicle_expected_idv___</IDV>
+        <DateOfPurchase>___vehicle_registration_date___</DateOfPurchase>
+        <ManufactureMonth>___vehicle_manf_date_1___</ManufactureMonth>
+        <ManufactureYear>___vehicle_manf_year___</ManufactureYear>
+        <EngineNo>___engine_number___</EngineNo>
+        <Chassis>___chassis_number___</Chassis>
+        <IsVehicleHypothicated>___is_financed___</IsVehicleHypothicated>
+        <FinanceType>___financial_agreement_type___</FinanceType>
+        <FinancierName>___financial_institute_name___</FinancierName>
+        <FinancierAddress>Mumbai</FinancierAddress><!--___financial_institute_city___-->
+        <FinancierCity></FinancierCity>
+        <IsRegAddressSameasCommAddress>true</IsRegAddressSameasCommAddress>
+        <IsPermanentAddressSameasCommAddress>true</IsPermanentAddressSameasCommAddress>
+        <IsRegAddressSameasPermanentAddress>true</IsRegAddressSameasPermanentAddress>
+        <VehicleVariant>___dbmaster_insurer_vehicle_variant_name___</VehicleVariant>
+        <StateOfRegistrationID>___dbmaster_insurer_rto_state_code___</StateOfRegistrationID>
+        <Rto_RegionCode>___dbmaster_insurer_rto_code___</Rto_RegionCode>
+        <IsHavingValidDrivingLicense>true</IsHavingValidDrivingLicense>
+        <IsOptedStandaloneCPAPolicy>true</IsOptedStandaloneCPAPolicy>
+    </Risk>
+    <Vehicle>
+        <Registration_Number>___registration_no___</Registration_Number>
+        <ISNewVehicle>___vehicle_insurance_type_3___</ISNewVehicle>
+        <Registration_date>___vehicle_registration_date___</Registration_date>
+        <SeatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</SeatingCapacity>
+        <TypeOfFuel>___reliance_fuel_code___</TypeOfFuel>
+        <NightParkingCode>1</NightParkingCode>
+        <NoOfVehicleUsersCode>2</NoOfVehicleUsersCode>
+        <InspectionNo>___insurer_transaction_identifier___</InspectionNo>
+    </Vehicle>
+    <Cover>
+        <IsAntiTheftDeviceFitted>___is_antitheft_fit___</IsAntiTheftDeviceFitted>
+        <IsAutomobileAssociationMember>___is_aai_member___</IsAutomobileAssociationMember>
+        <IsVoluntaryDeductableOpted>___voluntary_deductible_2___</IsVoluntaryDeductableOpted>
+        <VoluntaryDeductableAmount>___voluntary_deductible___</VoluntaryDeductableAmount>
+        <IsElectricalItemFitted>___electrical_accessory_2___</IsElectricalItemFitted>
+        <ElectricalItemsTotalSI>___electrical_accessory___</ElectricalItemsTotalSI>
+        <IsNonElectricalItemFitted>___non_electrical_accessory_2___</IsNonElectricalItemFitted>
+        <NonElectricalItemsTotalSI>___non_electrical_accessory___</NonElectricalItemsTotalSI>
+        <IsPAToUnnamedPassengerCovered>___pa_unnamed_passenger_si_2___</IsPAToUnnamedPassengerCovered>
+        <NoOfUnnamedPassenegersCovered>___dbmaster_insurer_vehicle_seatingcapacity___</NoOfUnnamedPassenegersCovered>
+        <UnnamedPassengersSI>___pa_unnamed_passenger_si___</UnnamedPassengersSI>
+        <IsBiFuelKit>___is_external_bifuel___</IsBiFuelKit>
+        <BiFuelKitSi>___external_bifuel_value___</BiFuelKitSi>
+        <IsTPPDCover>___is_tppd___</IsTPPDCover>
+        <TPPDCover>
+            <TPPDCover>
+                <SumInsured>___tppd_si___</SumInsured>
+            </TPPDCover>
+        </TPPDCover>
+        <IsBasicODCoverage>true</IsBasicODCoverage>
+        <IsBasicLiability>true</IsBasicLiability>
+        <IsPAToOwnerDriverCoverd>___pa_owner_driver_si_2___</IsPAToOwnerDriverCoverd>
+        <IsLiabilityToPaidDriverCovered>___is_llpd___</IsLiabilityToPaidDriverCovered>
+        <IsNCBRetention>___addon_ncb_protection_cover___</IsNCBRetention>
+        <PACoverToOwner>
+            <PACoverToOwner>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>true</IsChecked>
+                <CPAcovertenure>1</CPAcovertenure>
+                <NoOfItems />
+                <PackageName />
+                <!--NO_NOMINEE_START-->
+                <NomineeName>___nominee_name___</NomineeName>
+                <NomineeDOB>___nominee_birth_date___</NomineeDOB>
+                <NomineeRelationship>___nominee_relation___</NomineeRelationship>
+                <!--NO_NOMINEE_FINISH-->
+            </PACoverToOwner>
+        </PACoverToOwner>
+        <BifuelKit>
+            <BifuelKit>
+                <IsChecked>___is_external_bifuel___</IsChecked>
+                <IsMandatory>false</IsMandatory>
+                <PolicyCoverDetailsID />
+                <Fueltype>___external_bifuel_type___</Fueltype>
+                <ISLpgCng>false</ISLpgCng>
+                <PolicyCoverID />
+                <SumInsured>___external_bifuel_value___</SumInsured>
+                <NoOfItems />
+                <PackageName />
+            </BifuelKit>
+        </BifuelKit>
+        <AntiTheftDeviceDiscount>
+            <AntiTheftDeviceDiscount>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>true</IsChecked>
+                <NoOfItems />
+                <PackageName />
+            </AntiTheftDeviceDiscount>
+        </AntiTheftDeviceDiscount>
+        <AutomobileAssociationMembershipDiscount>
+            <AutomobileAssociationMembershipDiscount>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>true</IsChecked>
+                <NoOfItems />
+                <PackageName />
+            </AutomobileAssociationMembershipDiscount>
+        </AutomobileAssociationMembershipDiscount>
+        <VoluntaryDeductible>
+            <VoluntaryDeductible>
+                <IsMandatory>false</IsMandatory>
+                <PolicyCoverID />
+                <SumInsured>___voluntary_deductible___</SumInsured>
+                <IsChecked>false</IsChecked>
+                <NoOfItems />
+                <PackageName />
+            </VoluntaryDeductible>
+        </VoluntaryDeductible>
+        <LiabilityToPaidDriver>
+            <LiabilityToPaidDriver>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>false</IsChecked>
+                <NoOfItems>1</NoOfItems>
+                <PackageName />
+                <PolicyCoverID />
+            </LiabilityToPaidDriver>
+        </LiabilityToPaidDriver>
+        <ElectricItems>
+            <ElectricalItems>
+                <ElectricalItemsID />
+                <PolicyId />
+                <SerialNo />
+                <MakeModel />
+                <ElectricPremium />
+                <Description />
+                <ElectricalAccessorySlNo />
+                <SumInsured>___electrical_accessory___</SumInsured>
+            </ElectricalItems>
+        </ElectricItems>
+        <NonElectricItems>
+            <NonElectricalItems>
+                <NonElectricalItemsID />
+                <PolicyID />
+                <SerialNo />
+                <MakeModel />
+                <NonElectricPremium />
+                <Description />
+                <Category />
+                <NonElectricalAccessorySlNo />
+                <SumInsured>___non_electrical_accessory___</SumInsured>
+            </NonElectricalItems>
+        </NonElectricItems>
+        <PAToUnNamedPassenger>
+            <PAToUnNamedPassenger>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>true</IsChecked>
+                <NoOfItems>___dbmaster_insurer_vehicle_seatingcapacity___</NoOfItems>
+                <PackageName />
+                <PolicyCoverID />
+                <SumInsured>___pa_unnamed_passenger_si___</SumInsured>
+            </PAToUnNamedPassenger>
+        </PAToUnNamedPassenger>
+		<!--NIL_DEP_START-->
+		<IsNilDepreciation>___addon_zero_dep_cover___</IsNilDepreciation>
+        <NilDepreciationCoverage>
+            <NilDepreciationCoverage>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>___addon_zero_dep_cover___</IsChecked>
+                <NoOfItems />
+                <PackageName />
+                <PolicyCoverID />
+                <ApplicableRate>___addon_zero_dep_cover_rate___</ApplicableRate>
+            </NilDepreciationCoverage>
+        </NilDepreciationCoverage>
+		<!--NIL_DEP_FINISH-->
+		<!--SECURE_PLUS_START-->
+		<IsNilDepreciation>false</IsNilDepreciation>
+		<IsNilDepApplyingFirstTime>true</IsNilDepApplyingFirstTime>
+		<IsSecurePremium>false</IsSecurePremium>
+		<IsSecurePlus>true</IsSecurePlus>
+		<SecurePlus>
+			<SecurePlus>
+				<IsMandatory>false</IsMandatory>
+				<IsChecked>true</IsChecked>
+				<NoOfItems />
+				<PackageName />
+				<PolicyCoverID />
+				<ApplicableRate>___package_secureplus_rate___</ApplicableRate>
+			</SecurePlus>
+		</SecurePlus>
+		<!--SECURE_PLUS_FINISH-->
+		<!--SECURE_PREMIUM_START-->
+		<IsNilDepreciation>false</IsNilDepreciation>
+		<IsNilDepApplyingFirstTime>true</IsNilDepApplyingFirstTime>
+		<IsSecurePlus>false</IsSecurePlus>
+		<IsSecurePremium>true</IsSecurePremium>
+		<SecurePremium>
+			<SecurePremium>
+				<IsMandatory>false</IsMandatory>
+				<IsChecked>true</IsChecked>
+				<NoOfItems />
+				<PackageName />
+				<PolicyCoverID />
+				<ApplicableRate>___package_securepremium_rate___</ApplicableRate>
+			</SecurePremium>
+		</SecurePremium>
+		<!--SECURE_PREMIUM_FINISH-->	
+    </Cover>
+    <PreviousInsuranceDetails>
+        <PrevYearInsurer>___dbmaster_previousinsurer_code___</PrevYearInsurer>
+        <PrevYearPolicyNo>___previous_policy_number___</PrevYearPolicyNo>
+        <PrevYearPolicyStartDate>___pre_policy_start_date___</PrevYearPolicyStartDate>
+        <PrevYearPolicyEndDate>___policy_expiry_date___</PrevYearPolicyEndDate>
+        <InspectionID>___insurer_transaction_identifier___</InspectionID>
+        <InspectionDate>___inspection_date___</InspectionDate>
+        <IsInspectionDone>true</IsInspectionDone>
+    </PreviousInsuranceDetails>
+    <NCBEligibility>
+        <IsNCBApplicable>___is_claim_exists_2___</IsNCBApplicable>
+        <NCBEligibilityCriteria>___is_claim_exists_3___</NCBEligibilityCriteria>
+        <PreviousNCB>___vehicle_ncb_current___</PreviousNCB>
+        <CurrentNCB>___vehicle_ncb_next___</CurrentNCB>
+        <NCBOtherPercentage></NCBOtherPercentage>
+    </NCBEligibility>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <ProductCode>___product_code___</ProductCode>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+</PolicyDetails>

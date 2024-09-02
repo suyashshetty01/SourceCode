@@ -1,0 +1,600 @@
+<PolicyDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CoverDetails />
+  <TrailerDetails />
+  <ClientDetails>
+    <ClientType>0</ClientType>
+    <LastName />
+    <MidName />
+    <ForeName />
+    <CorporateName />
+    <OccupationID>26</OccupationID>
+    <DOB />
+    <Gender />
+    <PhoneNo />
+    <MobileNo>9867657086</MobileNo>
+    <ClientAddress>
+      <CommunicationAddress>
+        <AddressType>0</AddressType>
+        <Address1 />
+        <Address2 />
+        <Address3 />
+        <CityID />
+        <DistrictID />
+        <StateID />
+        <Pincode />
+        <Country>India</Country>
+        <NearestLandmark />
+      </CommunicationAddress>
+      <PermanentAddress>
+        <AddressType>0</AddressType>
+        <Address1 />
+        <Address2 />
+        <Address3 />
+        <CityID />
+        <DistrictID />
+        <StateID />
+        <Pincode />
+        <Country>India</Country>
+        <NearestLandmark />
+      </PermanentAddress>
+      <RegistrationAddress>
+        <AddressType>0</AddressType>
+        <Address1 />
+        <Address2 />
+        <Address3 />
+        <CityID />
+        <DistrictID />
+        <StateID />
+        <Pincode />
+        <Country />
+        <NearestLandmark />
+      </RegistrationAddress>
+      <InspectionAddress>
+        <AddressType>0</AddressType>
+        <Address1 />
+        <Address2 />
+        <Address3 />
+        <CityID />
+        <DistrictID />
+        <StateID />
+        <Pincode />
+        <Country>India</Country>
+        <NearestLandmark />
+      </InspectionAddress>
+    </ClientAddress>
+    <EmailID>imran.jilani@relianceada.com</EmailID>
+    <Salutation />
+    <MaritalStatus>1952</MaritalStatus>
+    <Nationality>1949</Nationality>
+  </ClientDetails>
+  <Policy>
+    <BusinessType>5</BusinessType>
+    <Cover_From>15/12/2015</Cover_From>
+    <Branch_Code>9202</Branch_Code>
+    <AgentName>Direct</AgentName>
+    <productcode>2311</productcode>
+    <OtherSystemName>1</OtherSystemName>
+    <isMotorQuote>false</isMotorQuote>
+    <isMotorQuoteFlow />
+  </Policy>
+  <Risk>
+    <VehicleMakeID>192</VehicleMakeID>
+    <VehicleModelID>8143</VehicleModelID>
+    <Colour />
+    <BodyType />
+    <OtherColour />
+    <GrossVehicleWeight />
+    <CubicCapacity />
+    <Zone>A</Zone>
+    <RTOLocationID>584</RTOLocationID>
+    <ExShowroomPrice>392838</ExShowroomPrice>
+    <IDV>314270</IDV>
+    <DateOfPurchase>01/12/2014</DateOfPurchase>
+    <LicensedCarryingCapacity />
+    <NoOfWheels />
+    <PurposeOfUsage />
+    <ManufactureMonth>12</ManufactureMonth>
+    <ManufactureYear>2014</ManufactureYear>
+    <EngineNo />
+    <Chassis />
+    <TrailerIDV />
+    <IsVehicleHypothicated>false</IsVehicleHypothicated>
+    <FinanceType />
+    <FinancierName />
+    <FinancierAddress />
+    <FinancierCity />
+    <IsRegAddressSameasCommAddress>true</IsRegAddressSameasCommAddress>
+    <IsRegAddressSameasPermanentAddress>false</IsRegAddressSameasPermanentAddress>
+    <IsPermanentAddressSameasCommAddress>true</IsPermanentAddressSameasCommAddress>
+    <IsInspectionAddressSameasCommAddress />
+    <SalesManagerCode>Direct</SalesManagerCode>
+    <SalesManagerName>Direct</SalesManagerName>
+    <VehicleVariant>LXI</VehicleVariant>
+    <StateOfRegistrationID>21</StateOfRegistrationID>
+    <BodyIDV>0</BodyIDV>
+    <ChassisIDV>0</ChassisIDV>
+    <Rto_State_City />
+    <Rto_RegionCode>MH-12</Rto_RegionCode>
+  </Risk>
+  <Vehicle>
+    <Registration_Number>ZZ-00-ZZ-0000</Registration_Number>
+    <RegistrationNumber_New />
+    <Registration_date />
+    <RoadTypes>
+      <RoadType>
+        <RoadTypeID />
+        <TypeOfRoad />
+      </RoadType>
+    </RoadTypes>
+    <Permit>
+      <PermitType>
+        <TypeOfPermit />
+      </PermitType>
+    </Permit>
+    <SeatingCapacity>5</SeatingCapacity>
+    <MiscTypeOfVehicle />
+    <TypeOfFuel>1</TypeOfFuel>
+    <MiscTypeOfVehicleID />
+  </Vehicle>
+  <Cover>
+    <PACoverToNamedPassengerSI>0</PACoverToNamedPassengerSI>
+    <IsPAToUnnamedPassengerCovered>false</IsPAToUnnamedPassengerCovered>
+    <NoOfUnnamedPassenegersCovered>0</NoOfUnnamedPassenegersCovered>
+    <UnnamedPassengersSI>0</UnnamedPassengersSI>
+    <IsRacingCovered>false</IsRacingCovered>
+    <IsLossOfAccessoriesCovered>false</IsLossOfAccessoriesCovered>
+    <IsVoluntaryDeductableOpted>false</IsVoluntaryDeductableOpted>
+    <VoluntaryDeductableAmount>0</VoluntaryDeductableAmount>
+    <IsElectricalItemFitted>false</IsElectricalItemFitted>
+    <ElectricalItemsTotalSI>0</ElectricalItemsTotalSI>
+    <IsNonElectricalItemFitted>false</IsNonElectricalItemFitted>
+    <NonElectricalItemsTotalSI>0</NonElectricalItemsTotalSI>
+    <IsGeographicalAreaExtended>false</IsGeographicalAreaExtended>
+    <IsBiFuelKit>false</IsBiFuelKit>
+    <BiFuelKitSi>0</BiFuelKitSi>
+    <IsAutomobileAssociationMember>false</IsAutomobileAssociationMember>
+    <IsVehicleMadeInIndia>false</IsVehicleMadeInIndia>
+    <IsUsedForDrivingTuition>false</IsUsedForDrivingTuition>
+    <IsInsuredAnIndividual>false</IsInsuredAnIndividual>
+    <IsIndividualAlreadyInsured>false</IsIndividualAlreadyInsured>
+    <IsPAToOwnerDriverCoverd>true</IsPAToOwnerDriverCoverd>
+    <ISLegalLiabilityToDefenceOfficialDriverCovered>false</ISLegalLiabilityToDefenceOfficialDriverCovered>
+    <IsLiabilityToPaidDriverCovered>false</IsLiabilityToPaidDriverCovered>
+    <IsLiabilityToEmployeeCovered>false</IsLiabilityToEmployeeCovered>
+    <IsPAToDriverCovered>false</IsPAToDriverCovered>
+    <IsPAToPaidCleanerCovered>false</IsPAToPaidCleanerCovered>
+    <IsAdditionalTowingCover>false</IsAdditionalTowingCover>
+    <IsLegalLiabilityToCleanerCovered>false</IsLegalLiabilityToCleanerCovered>
+    <IsLegalLiabilityToNonFarePayingPassengersCovered>false</IsLegalLiabilityToNonFarePayingPassengersCovered>
+    <IsLegalLiabilityToCoolieCovered>false</IsLegalLiabilityToCoolieCovered>
+    <IsCoveredForDamagedPortion>false</IsCoveredForDamagedPortion>
+    <IsImportedVehicle>false</IsImportedVehicle>
+    <IsFibreGlassFuelTankFitted>false</IsFibreGlassFuelTankFitted>
+    <IsConfinedToOwnPremisesCovered>false</IsConfinedToOwnPremisesCovered>
+    <IsAntiTheftDeviceFitted>false</IsAntiTheftDeviceFitted>
+    <IsTPPDLiabilityRestricted>false</IsTPPDLiabilityRestricted>
+    <IsTPPDCover>true</IsTPPDCover>
+    <IsBasicODCoverage>true</IsBasicODCoverage>
+    <IsBasicLiability>true</IsBasicLiability>
+    <IsUseOfVehiclesConfined>false</IsUseOfVehiclesConfined>
+    <IsTotalCover>false</IsTotalCover>
+    <IsRegistrationCover>false</IsRegistrationCover>
+    <IsRoadTaxcover>false</IsRoadTaxcover>
+    <IsInsurancePremium>false</IsInsurancePremium>
+    <IsCoverageoFTyreBumps>false</IsCoverageoFTyreBumps>
+    <IsImportedVehicleCover>false</IsImportedVehicleCover>
+    <IsVehicleDesignedAsCV>false</IsVehicleDesignedAsCV>
+    <IsWorkmenCompensationExcludingDriver>false</IsWorkmenCompensationExcludingDriver>
+    <IsLiabilityForAccidentsInclude>false</IsLiabilityForAccidentsInclude>
+    <IsLiabilityForAccidentsExclude>false</IsLiabilityForAccidentsExclude>
+    <IsLiabilitytoCoolie>false</IsLiabilitytoCoolie>
+    <IsLiabilitytoCleaner>false</IsLiabilitytoCleaner>
+    <IsLiabilityToConductor>false</IsLiabilityToConductor>
+    <IsPAToConductorCovered>false</IsPAToConductorCovered>
+    <IsNFPPIncludingEmployees>false</IsNFPPIncludingEmployees>
+    <IsNFPPExcludingEmployees>false</IsNFPPExcludingEmployees>
+    <IsNCBRetention />
+    <IsHandicappedDiscount>false</IsHandicappedDiscount>
+    <IsTrailerAttached>false</IsTrailerAttached>
+    <cAdditionalCompulsoryExcess>0</cAdditionalCompulsoryExcess>
+    <iNumberOfLegalLiabilityCoveredPaidDrivers>0</iNumberOfLegalLiabilityCoveredPaidDrivers>
+    <NoOfLiabilityCoveredEmployees>0</NoOfLiabilityCoveredEmployees>
+    <PAToDriverSI>0</PAToDriverSI>
+    <PAToCleanerSI>0</PAToCleanerSI>
+    <NumberOfPACoveredPaidDrivers>0</NumberOfPACoveredPaidDrivers>
+    <NoOfPAtoPaidCleanerCovered>0</NoOfPAtoPaidCleanerCovered>
+    <AdditionalTowingCharge>0</AdditionalTowingCharge>
+    <NoOfLegalLiabilityCoveredCleaners>0</NoOfLegalLiabilityCoveredCleaners>
+    <NoOfLegalLiabilityCoveredNonFarePayingPassengers>0</NoOfLegalLiabilityCoveredNonFarePayingPassengers>
+    <NoOfLegalLiabilityCoveredCoolies>0</NoOfLegalLiabilityCoveredCoolies>
+    <iNoOfLegalLiabilityCoveredPeopleOtherThanPaidDriver>0</iNoOfLegalLiabilityCoveredPeopleOtherThanPaidDriver>
+    <ISLegalLiabilityToConductorCovered>false</ISLegalLiabilityToConductorCovered>
+    <NoOfLegalLiabilityCoveredConductors>0</NoOfLegalLiabilityCoveredConductors>
+    <PAToConductorSI>0</PAToConductorSI>
+    <CompulsoryDeductible>0</CompulsoryDeductible>
+    <PACoverToOwnerDriver>0</PACoverToOwnerDriver>
+    <ElectricItems>
+      <ElectricalItems>
+        <ElectricalItemsID />
+        <PolicyId />
+        <SerialNo />
+        <MakeModel />
+        <ElectricPremium />
+        <Description />
+        <ElectricalAccessorySlNo />
+        <SumInsured>0</SumInsured>
+      </ElectricalItems>
+    </ElectricItems>
+    <NonElectricItems>
+      <NonElectricalItems>
+        <NonElectricalItemsID />
+        <PolicyID />
+        <SerialNo />
+        <MakeModel />
+        <NonElectricPremium />
+        <Description />
+        <Category />
+        <NonElectricalAccessorySlNo />
+        <SumInsured />
+      </NonElectricalItems>
+    </NonElectricItems>
+    <BasicODCoverage>
+      <BasicODCoverage>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </BasicODCoverage>
+    </BasicODCoverage>
+    <GeographicalExtension>
+      <GeographicalExtension>
+        <Countries />
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+      </GeographicalExtension>
+    </GeographicalExtension>
+    <BifuelKit>
+      <BifuelKit>
+        <IsChecked>false</IsChecked>
+        <IsMandatory>false</IsMandatory>
+        <PolicyCoverDetailsID />
+        <Fueltype />
+        <ISLpgCng>false</ISLpgCng>
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+        <NoOfItems />
+        <PackageName />
+      </BifuelKit>
+    </BifuelKit>
+    <DrivingTuitionCoverage>
+      <DrivingTuitionCoverage>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </DrivingTuitionCoverage>
+    </DrivingTuitionCoverage>
+    <FibreGlassFuelTank>
+      <FibreGlassFuelTank>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </FibreGlassFuelTank>
+    </FibreGlassFuelTank>
+    <AdditionalTowingCoverage>
+      <AdditionalTowingCoverage>
+        <IsMandatory>false</IsMandatory>
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </AdditionalTowingCoverage>
+    </AdditionalTowingCoverage>
+    <VoluntaryDeductible>
+      <VoluntaryDeductible>
+        <IsMandatory>false</IsMandatory>
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </VoluntaryDeductible>
+    </VoluntaryDeductible>
+    <AntiTheftDeviceDiscount>
+      <AntiTheftDeviceDiscount>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </AntiTheftDeviceDiscount>
+    </AntiTheftDeviceDiscount>
+    <SpeciallyDesignedforChallengedPerson>
+      <SpeciallyDesignedforChallengedPerson>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </SpeciallyDesignedforChallengedPerson>
+    </SpeciallyDesignedforChallengedPerson>
+    <AutomobileAssociationMembershipDiscount>
+      <AutomobileAssociationMembershipDiscount>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </AutomobileAssociationMembershipDiscount>
+    </AutomobileAssociationMembershipDiscount>
+    <UseOfVehiclesConfined>
+      <UseOfVehiclesConfined>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </UseOfVehiclesConfined>
+    </UseOfVehiclesConfined>
+    <TotalCover>
+      <TotalCover>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </TotalCover>
+    </TotalCover>
+    <RegistrationCost>
+      <RegistrationCost>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <SumInsured>0</SumInsured>
+      </RegistrationCost>
+    </RegistrationCost>
+    <RoadTax>
+      <RoadTax>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <SumInsured>0</SumInsured>
+        <PolicyCoverID />
+      </RoadTax>
+    </RoadTax>
+    <InsurancePremium>
+      <InsurancePremium>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </InsurancePremium>
+    </InsurancePremium>
+    <NilDepreciationCoverage>
+      <NilDepreciationCoverage>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+        <ApplicableRate />
+      </NilDepreciationCoverage>
+    </NilDepreciationCoverage>
+    <BasicLiability>
+      <BasicLiability>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </BasicLiability>
+    </BasicLiability>
+    <TPPDCover>
+      <TPPDCover>
+        <IsMandatory>false</IsMandatory>
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+      </TPPDCover>
+    </TPPDCover>
+    <PACoverToOwner>
+      <PACoverToOwner>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <AppointeeName />
+        <NomineeName />
+        <NomineeDOB />
+        <NomineeRelationship />
+        <NomineeAddress />
+        <OtherRelation />
+      </PACoverToOwner>
+    </PACoverToOwner>
+    <PAToNamedPassenger>
+      <PAToNamedPassenger>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <SumInsured />
+        <PassengerName />
+        <NomineeName />
+        <NomineeDOB />
+        <NomineeRelationship />
+        <NomineeAddress />
+        <OtherRelation />
+        <AppointeeName />
+      </PAToNamedPassenger>
+    </PAToNamedPassenger>
+    <PAToUnNamedPassenger>
+      <PAToUnNamedPassenger>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+      </PAToUnNamedPassenger>
+    </PAToUnNamedPassenger>
+    <PAToPaidDriver>
+      <PAToPaidDriver>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+      </PAToPaidDriver>
+    </PAToPaidDriver>
+    <PAToPaidCleaner>
+      <PAToPaidCleaner>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+        <SumInsured>0</SumInsured>
+      </PAToPaidCleaner>
+    </PAToPaidCleaner>
+    <LiabilityToPaidDriver>
+      <LiabilityToPaidDriver>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+      </LiabilityToPaidDriver>
+    </LiabilityToPaidDriver>
+    <LiabilityToEmployee>
+      <LiabilityToEmployee>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+      </LiabilityToEmployee>
+    </LiabilityToEmployee>
+    <NFPPIncludingEmployees>
+      <NFPPIncludingEmployees>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems>0</NoOfItems>
+      </NFPPIncludingEmployees>
+    </NFPPIncludingEmployees>
+    <NFPPExcludingEmployees>
+      <NFPPExcludingEmployees>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+      </NFPPExcludingEmployees>
+    </NFPPExcludingEmployees>
+    <WorkmenCompensationExcludingDriver>
+      <WorkmenCompensationExcludingDriver>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems>0</NoOfItems>
+      </WorkmenCompensationExcludingDriver>
+    </WorkmenCompensationExcludingDriver>
+    <PAToConductor>
+      <PAToConductor>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <SumInsured />
+      </PAToConductor>
+    </PAToConductor>
+    <LiabilityToConductor>
+      <LiabilityToConductor>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems>0</NoOfItems>
+      </LiabilityToConductor>
+    </LiabilityToConductor>
+    <LiabilitytoCoolie>
+      <LiabilitytoCoolie>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems>0</NoOfItems>
+      </LiabilitytoCoolie>
+    </LiabilitytoCoolie>
+    <LegalLiabilitytoCleaner />
+    <IndemnityToHirer>
+      <IndemnityToHirer>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+      </IndemnityToHirer>
+    </IndemnityToHirer>
+    <TrailerDetails>
+      <TrailerInfo>
+        <MakeandModel />
+        <IDV>1</IDV>
+        <Registration_No />
+        <ChassisNumber />
+        <ManufactureYear />
+        <SerialNumber />
+      </TrailerInfo>
+    </TrailerDetails>
+    <IsSpeciallyDesignedForHandicapped>false</IsSpeciallyDesignedForHandicapped>
+    <IsPAToNamedPassenger>false</IsPAToNamedPassenger>
+    <IsOverTurningCovered>false</IsOverTurningCovered>
+    <IsLLToPersonsEmployedInOperations_PaidDriverCovered>false</IsLLToPersonsEmployedInOperations_PaidDriverCovered>
+    <NoOfLLToPersonsEmployedInOperations_PaidDriver>0</NoOfLLToPersonsEmployedInOperations_PaidDriver>
+    <IsLLToPersonsEmployedInOperations_CleanerConductorCoolieCovered>false</IsLLToPersonsEmployedInOperations_CleanerConductorCoolieCovered>
+    <NoOfLLToPersonsEmployedInOperations_CleanerConductorCoolie>0</NoOfLLToPersonsEmployedInOperations_CleanerConductorCoolie>
+    <IsLLUnderWCActForCarriageOfMoreThanSixEmpCovered>false</IsLLUnderWCActForCarriageOfMoreThanSixEmpCovered>
+    <NoOfLLUnderWCAct>1</NoOfLLUnderWCAct>
+    <IsLLToNFPPNotWorkmenUnderWCAct>false</IsLLToNFPPNotWorkmenUnderWCAct>
+    <NoOfLLToNFPPNotWorkmenUnderWCAct>0</NoOfLLToNFPPNotWorkmenUnderWCAct>
+    <IsIndemnityToHirerCovered>false</IsIndemnityToHirerCovered>
+    <IsAccidentToPassengerCovered>false</IsAccidentToPassengerCovered>
+    <NoOfAccidentToPassengerCovered>0</NoOfAccidentToPassengerCovered>
+    <IsNilDepreciation>false</IsNilDepreciation>
+    <IsDetariffRateForOverturning>false</IsDetariffRateForOverturning>
+    <IsAddOnCoverforTowing>false</IsAddOnCoverforTowing>
+    <AddOnCoverTowingCharge>0</AddOnCoverTowingCharge>
+    <NCBRetentiontRate />
+    <EMIprotectionCover />
+    <AutomobileAssociationName />
+    <AutomobileAssociationNo />
+    <AutomobileAssociationExpiryDate />
+  </Cover>
+  <PreviousInsuranceDetails>
+    <PrevInsuranceID />
+    <IsVehicleOfPreviousPolicySold />
+    <IsNCBApplicable>false</IsNCBApplicable>
+    <PrevYearInsurer>0</PrevYearInsurer>
+    <PrevYearPolicyNo />
+    <PrevYearInsurerAddress />
+    <DocumentProof />
+    <PrevYearPolicyType />
+    <PrevYearPolicyStartDate>15/12/2014</PrevYearPolicyStartDate>
+    <MTAReason />
+    <PrevYearPolicyEndDate>14/12/2015</PrevYearPolicyEndDate>
+    <PrevYearNCB />
+    <IsInspectionDone>false</IsInspectionDone>
+    <InspectionDate />
+    <Inspectionby />
+    <InspectorName />
+    <IsNCBEarnedAbroad>false</IsNCBEarnedAbroad>
+    <ODLoading />
+    <IsClaimedLastYear>false</IsClaimedLastYear>
+    <ODLoadingReason />
+    <PreRateCharged />
+    <PreSpecialTermsAndConditions />
+    <IsTrailerNCB>false</IsTrailerNCB>
+    <InspectionID />
+  </PreviousInsuranceDetails>
+  <ProductCode>2311</ProductCode>
+  <UserID>100002</UserID>
+  <NCBEligibility>
+    <NCBEligibilityCriteria />
+    <NCBReservingLetter />
+    <PreviousNCB>0</PreviousNCB>
+    <CurrentNCB />
+  </NCBEligibility>
+  <LstCoveragePremium />
+  <SourceSystemID>100002</SourceSystemID>
+  <AuthToken>Pass@123</AuthToken>
+</PolicyDetails>

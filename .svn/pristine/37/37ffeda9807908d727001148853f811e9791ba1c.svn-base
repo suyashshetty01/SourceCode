@@ -1,0 +1,247 @@
+<div class="modal menu-popup modal-common modal-single-view fade" id="selectCarDetails" data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-labelledby="selectCarDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content wrapper-540 modal-popup-shadow">
+                
+                <!-- WithoutCarNumber Modal -->
+                <div class="WithoutCarNumber-modal">
+                    <div class="modal-header headerPaadding">
+                        <div class="title-box hideForNew">
+                            <h2 class="font-30 title-text changeProductNameRenew">Continue without bike number</h2>
+                        </div>
+						<div class="title-box showForNew">
+                            <h2 class="font-30 title-text changeProductNameNew">New Bike</h2>
+                        </div>
+                        <button type="button" class="btn-close js_modal_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="common-form-area">
+                            <form class="form-field without-car-number-form" id="">
+							 <div class="addScroller_class" style="max-height:400px;">
+								<div class="input-field-box forCV">
+									<label for="" class="label font-18">Vehicle Class</label>
+									<input type="text" class="btn input-field dropdown-toggle select-dropdown border-thick" type="button" id="vehClass" placeholder="Select Vehicle Class" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" readonly/>
+									<div class="dropdown-menu dropdown-menu-box select-dropdown-box" aria-labelledby="vehClass">
+										<div class="dropdown-content-wrapper">
+											<ul class="dropdown-list-row select-dropdown-box-ul js-dropdown-field">
+												<li class="dropdown-list-col select-dropdown-box-li">
+													<a href="javascript:void(0)" class="dropdown-list-link select-dropdown-box-link" onclick="setVehicleData('24_gcv')">Goods Carrying Vehicle</a>
+												</li>
+												<li class="dropdown-list-col select-dropdown-box-li">
+													<a href="javascript:void(0)" class="dropdown-list-link select-dropdown-box-link" onclick="setVehicleData('41_pcv')">Passenger Carrying Vehicle</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="input-field-box forCV">
+                                    <label for="" class="label font-18">Vehicle Sub Class</label>
+									<input type="text" class="btn input-field dropdown-toggle select-dropdown border-thick" type="button" id="vehSubClass" placeholder="Select Vehicle Sub Class" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" readonly/>
+									<div class="dropdown-menu dropdown-menu-box select-dropdown-box" aria-labelledby="vehSubClass">
+										<div class="dropdown-content-wrapper">
+											<ul class="dropdown-list-row select-dropdown-box-ul js-dropdown-field" id="vehSubClassList">
+												
+											</ul>
+										</div>
+									</div>
+                                </div>
+                                <div class="input-field-box">
+                                    <label for="" class="label font-18 text-extralight productDetailsLabel">Bike Details</label>
+                                    <input type="text" class="input-field border-thick js-detail" placeholder="Make, Model, Fuel and Variant" readonly onclick="showSelectCarDetails('WithoutCarNumber-modal')" id="MakeModelVarientFuel"/>
+                                </div>
+                                <div class="fields-box">
+                                    <label for="" class="label font-18 text-extralight">Registration Details</label>
+                                    <div class="flex-box">
+                                        <div class="input-field-box tag-field-box">
+                                            <input type="text" class="input-field border-thick tags tag-field" id="tag2" placeholder="Place of Registration" autocomplete="off"/>
+											<input type="text" id="rtoHidden" style="display:none"/>
+											<input type="text" id="rtoName" style="display:none"/>
+                                            <div id="autoComplete2"></div>
+                                        </div>
+                                        <div class="input-field-box">
+                                            <input type="text" class="btn input-field dropdown-toggle select-dropdown border-thick DateOfRegistration" type="button" id="dropdownMenuButton12" placeholder="Year of Registration" data-bs-toggle="dropdown" aria-expanded="false" autocomplete="off" readonly/>
+                                            <div class="dropdown-menu dropdown-menu-box select-dropdown-box" aria-labelledby="dropdownMenuButton12">
+                                                <div class="dropdown-content-wrapper">
+                                                    <ul class="dropdown-list-row select-dropdown-box-ul js-dropdown-field" id="WithoutCarNumberRegistrationDate">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="selection-box-area policy-status-area hideForNew">
+                                    <label for="" class="label font-18 text-extralight">Previous Policy Status</label>
+                                    <div class="selection-box-row">
+                                        <div class="selection-box-col">
+                                            <div class="radio-box">
+                                                <input class="form-check-input radio-custom radio-image" name="radio-group3" type="radio" id="inlineRadiobox17"  onclick="setBreakinStatus('Not Expired')" />
+                                                <label class="form-check-label input-field border-thick radio-custom-label radio-input-hidden PreviousPolicyStatus" for="inlineRadiobox17"> 
+                                                <span class="radio-text text-extralight font-18">Not Expired</span>
+                                                </label>
+                                            </div> 
+                                        </div>
+                                        <div class="selection-box-col">
+                                            <div class="radio-box">
+                                                <input class="form-check-input radio-custom radio-image" name="radio-group3" type="radio" id="inlineRadiobox18" onclick="setBreakinStatus('Expired within last 90 days')"  />
+                                                <label class="form-check-label input-field border-thick radio-custom-label radio-input-hidden PreviousPolicyStatus" for="inlineRadiobox18"> 
+                                                <span class="radio-text text-extralight font-18">Expired within
+                                                    last 90 days</span>
+                                                </label>
+                                            </div> 
+                                        </div>
+                                        <div class="selection-box-col">
+                                            <div class="radio-box">
+                                                <input class="form-check-input radio-custom radio-image" name="radio-group3" type="radio" id="inlineRadiobox19"  onclick="setBreakinStatus('Expired for more than 90 days')" />
+                                                <label class="form-check-label input-field border-thick radio-custom-label radio-input-hidden PreviousPolicyStatus" for="inlineRadiobox19"> 
+                                                <span class="radio-text text-extralight font-18">Expired for more
+                                                    than 90 days</span>
+                                                </label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+								<div class="ErrMsg">
+									<label for="" class="label font-18 text-extralight ErrMsgTxt" style="color: red;"></label>
+								</div>
+								<a type="button" class="submit-btn view-quote-btn main-btn width-full" onclick="Mainformvalidate()">View Quote</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+				
+					<!-- start varient popup screen-->
+	<div class="modal-fix SelectCarDetail-modal">
+                    <div class="modal-header headerPaadding">
+                        <div class="tab-control-panel-area">
+                            <nav>
+                                <div class="nav nav-tabs tab-change-wrap WithoutCarNumber-modal-nav-tabs" data-for-modal="WithoutCarNumber-modal" id="nav-tab" role="tablist">
+                                    <button class="nav-link tab-change-btn flex-col-4 font-18 active removeCss" id="nav-make-tab" data-bs-toggle="tab" data-bs-target="#nav-make" type="button" role="tab" aria-controls="nav-make" aria-selected="true" data-text-mob="1" style="flex: 0 0 36%;max-width: 36%;">
+                                        Make Model
+                                        <span class="tab-text">
+                                            1
+                                        </span>
+                                    </button>
+                                    <button class="nav-link tab-change-btn flex-col-4 font-18 removeCss" id="nav-fuel-tab" data-bs-toggle="" data-bs-target="#nav-fuel" type="button" role="tab" aria-controls="nav-fuel" aria-selected="false" data-text-mob="3" style="flex: 0 0 32%;max-width: 32%;">
+                                        Fuel
+                                        <span class="tab-text">
+                                            2
+                                        </span>
+                                    </button>
+                                    <button class="nav-link tab-change-btn flex-col-4 font-18 removeCss" id="nav-variant-tab" data-bs-toggle="" data-bs-target="#nav-variant" type="button" role="tab" aria-controls="nav-variant" aria-selected="false" data-text-mob="4" style="flex: 0 0 32%;max-width: 32%;">
+                                        Variant
+                                        <span class="tab-text">
+                                            3
+                                        </span>
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
+                        <button type="button" class="btn-close js_modal_close" id="selectCarModalBackBtn" onclick="openPrevSelectCarModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="car-detail-form" id="card-detail-form">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane show active animated slideInRight animate__delay-0.5s" id="nav-make" role="tabpanel" aria-labelledby="nav-make-tab">
+                                    <div class="select-detail-area select-car-detail-area">
+                                        <div class="select-detail-heading-area select-car-detail-heading-area">
+                                            <div class="title-box">
+                                                <h2 class="font-20 select-car-brand-title select-product-title changeProductTitleMake">Select Car Brand</h2>
+                                            </div>
+                                            <div class="search-box modal-search-box">
+                                                <div class="input-field-box">
+                                                    <input type="text" class="input-field search-input searchBrand" placeholder="Search car brand" onkeyup='mySearch(event.target.value)' autocomplete="off"/>
+                                                    <div class="icon-box">
+                                                        <img src="https://www.policyboss.com/UI22/images/icons/search-icon.svg" alt="Search for Car Brands">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="select-brand-listing-wrapper">
+                                            <div class="select-brand-listing-area">
+                                                <div class="select-brand-listing-row" id="WithoutCarNumberPopup">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated slideInRight animate__delay-0.5s" id="nav-model" role="tabpanel" aria-labelledby="nav-model-tab">
+                                    <div class="select-detail-area select-car-detail-area">
+                                        <div class="select-detail-heading-area select-car-detail-heading-area">
+                                            <div class="title-box">
+                                                <h2 class="font-20 select-car-brand-title select-product-title changeProductTitleModel">Select Car Model</h2>
+                                            </div>
+                                            <div class="search-box modal-search-box">
+                                                <div class="input-field-box">
+                                                    <input type="text" class="input-field search-input searchModel" placeholder="Search car model" onkeyup='mySearch(event.target.value)' autocomplete="off"/>
+                                                    <div class="icon-box">
+                                                        <img src="https://www.policyboss.com/UI22/images/icons/search-icon.svg" alt="Search for Car Brands">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="select-brand-listing-wrapper forMobile" style="height: 360px;">
+                                        <div class="select-model-listing-area">
+                                            <div class="select-model-listing-row" id="WithoutCarNumberPopupModel">
+                                            </div>
+                                        </div>
+										</div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated slideInRight animate__delay-0.5s" id="nav-fuel" role="tabpanel" aria-labelledby="nav-fuel-tab">
+                                    <div class="select-detail-area select-car-detail-area">
+                                        <div class="select-detail-heading-area select-car-detail-heading-area">
+                                            <div class="title-box">
+                                                <h2 class="font-20 select-car-brand-title select-product-title changeProductTitleFuel">Select Car Fuel Type</h2>
+                                            </div>
+											<div class="search-box modal-search-box">
+                                                <div class="input-field-box">
+                                                    <input type="text" class="input-field search-input searchFuel" placeholder="Search car fuel" onkeyup='mySearch(event.target.value)' autocomplete="off"/>
+                                                    <div class="icon-box">
+                                                        <img src="https://www.policyboss.com/UI22/images/icons/search-icon.svg" alt="Search for Car Brands">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="select-brand-listing-wrapper forMobile" style="height: 360px;">
+                                        <div class="select-fuel-listing-area">
+                                            <div class="select-fuel-listing-row" id="WithoutCarNumberPopupFuel">
+                                            </div>
+                                        </div>
+										</div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated slideInRight animate__delay-0.5s" id="nav-variant" role="tabpanel" aria-labelledby="nav-variant-tab">
+                                    <div class="select-detail-area select-car-detail-area">
+                                        <div class="select-detail-heading-area select-car-detail-heading-area">
+                                            <div class="title-box">
+                                                <h2 class="font-20 select-car-brand-title select-product-title changeProductTitleVariant">Select Car Variant</h2>
+                                            </div>
+                                            <div class="search-box modal-search-box">
+                                                <div class="input-field-box">
+                                                    <input type="text" class="input-field search-input searchVariant" placeholder="Search car variant" onkeyup='mySearch(event.target.value)' autocomplete="off"/>
+                                                    <div class="icon-box">
+                                                        <img src="https://www.policyboss.com/UI22/images/icons/search-icon.svg" alt="Search for Car Brands">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="select-brand-listing-wrapper forMobile" style="height: 360px;">
+                                        <div class="select-variant-listing-area">
+                                            <div class="select-variant-listing-row" id="WithoutCarNumberPopupVarient">
+                                            </div>
+                                        </div>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+	<!-- end varient popup screen -->
+	
+			</div>
+		</div>
+	</div>
+	

@@ -1,0 +1,13 @@
+{
+    "payment": {
+        "paymentType": "DIRECT",
+        "transactionID": "___transaction_Id___",
+        "transactionDate": "___current_date___",
+        "paymentAmount": ___final_premium___
+    },
+    "enquiryId": "___dbmaster_insurer_transaction_identifier___",
+    "security": {
+        "webUserId": "___insurer_integration_service_user___",
+        "password": "___insurer_integration_service_password___"
+    }
+}

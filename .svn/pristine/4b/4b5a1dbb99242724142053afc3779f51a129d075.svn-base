@@ -1,0 +1,263 @@
+{
+    "ClientCreation": {
+        "salutation": "Mr",
+        "firstName": "Amit",
+        "middleName": "",
+        "lastName": "K",
+        "dateofBirth": "01/01/1982",
+        "gender": "M",
+        "educationalQualification": "",
+        "pinCode": "400001",
+        "uidNo": "",
+        "maritalStatus": "Married",
+        "nationality": "Indian",
+        "occupation": "O108",
+        "primaryEmailID": "amit@gmail.com",
+        "contactMobileNo": "9869116991",
+        "stdLandlineNo": "",
+        "panNo": "",
+        "passportNumber": "",
+        "contactPerson": "",
+        "annualIncome": "1000000",
+        "remarks": "",
+        "startDate": "",
+        "endDate": "",
+        "IdProof": "",
+        "residenceProof": "",
+        "ageProof": "",
+        "others": "",
+        "homeAddressLine1": "1",
+        "homeAddressLine2": "MUMBAI,MAHARASHTRA",
+        "homeAddressLine3": "Maharashtra,Mumbai",
+        "homePinCode": "400001",
+        "homeArea": "mumbai",
+        "homeContactMobileNo": "9869116991",
+        "homeContactMobileNo2": "",
+        "homeSTDLandlineNo": "",
+        "homeSTDLandlineNo2": "",
+        "homeFaxNo": "",
+        "sameAsHomeAddress": "",
+        "mailingAddressLine1": "1",
+        "mailingAddressLine2": "MUMBAI,MAHARASHTRA",
+        "mailingAddressLine3": "Maharashtra,Mumbai",
+        "mailingPinCode": "400001",
+        "mailingArea": "mumbai",
+        "mailingContactMobileNo": "",
+        "mailingContactMobileNo2": "",
+        "mailingSTDLandlineNo": "",
+        "mailingSTDLandlineNo2": "",
+        "mailingFaxNo": "",
+        "bankAccountType": "",
+        "bankAccountNo": "",
+        "ifscCode": "",
+        "GSTIN": "",
+        "GSTRegistrationStatus": "Consumers"
+    },
+    "PolicyCreationRequest": {
+        "Quotation_Number": "20171103421970001701",
+        "Product_Code": "4219",
+        "Plan_Code": "4219100001",
+        "SumInsured_Type": "FamilyFloater",
+        "Policy_Tanure": "1",
+        "Member_Type_Code": "M398",
+        "intermediaryCode": "ABH1100203",
+        "intermediaryBranchCode": "RJ009",
+        "agentSignatureDate": "",
+        "Customer_Signature_Date": "",
+        "businessSourceChannel": "",
+        "leadID": "LEAD-3301",
+        "Source_Name": "QUICKBIMA",
+        "IsPayment": "1",
+        "familyDoctor": {
+            "fullName": "",
+            "qualification": "",
+            "emailId": "",
+            "RegistrationNumber": "",
+            "addressLine1": "",
+            "addressLine2": "",
+            "pinCode": "",
+            "contact_number": ""
+        }
+    },
+    "MemObj": {
+        "Member": [{
+                "MemberNo": "1",
+                "Salutation": "Mr",
+                "First_Name": "Amit",
+                "Middle_Name": "",
+                "Last_Name": "K",
+                "Gender": "M",
+                "DateOfBirth": "01/01/1982",
+                "Relation_Code": "R001",
+                "Marital_Status": "Married",
+                "height": 165,
+                "weight": "45",
+                "occupation": "O108",
+                "PrimaryMember": "Y",
+                "optionalCovers": [
+
+                    {
+                        "optionalCoverName": "ReductioninPEDWaitingPeriod",
+                        "optionalCoverValue": "0"
+                    }
+                ],
+                "productComponents": [
+
+                    {
+                        "productComponentName": "SumInsured",
+                        "productComponentValue": "300000"
+                    }
+                ],
+                "MemberPED": [
+
+                    {
+
+                        "PedCode": "Q001",
+                        "WaitingPeriod": 0,
+                        "Remarks": "OK"
+                    }
+                ],
+
+                "MemberQuestionDetails": [
+
+                    {
+
+                        "QuestionCode": "Q001"
+                    }
+                ],
+
+                "exactDiagnosis": "heart,kidneystone",
+                "dateOfDiagnosis": "01/01/2017",
+                "lastDateConsultation": "01/01/2017",
+                "detailsOfTreatmentGiven": "abc,axyz,rhh",
+                "doctorName": "",
+                "hospitalName": "",
+                "phoneNumberHosital": "",
+                "labReport": "",
+                "dischargeCardSummary": "",
+                "personalHabitDetail": [{
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "alcohol"
+                    },
+                    {
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "smoking"
+                    },
+                    {
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "tobacco"
+                    }
+                ],
+                "Nominee_First_Name": "Ankita",
+                "Nominee_Last_Name": "K",
+                "Nominee_Contact_Number": "9869116991",
+                "Nominee_Home_Address": "",
+                "Nominee_Relationship_Code": "R002"
+            },
+            {
+                "MemberNo": 2,
+                "Salutation": "Mr",
+                "First_Name": "Ankit",
+                "Middle_Name": "",
+                "Last_Name": "K",
+                "Gender": "M",
+                "DateOfBirth": "12/05/2017",
+                "Relation_Code": "R003",
+                "Marital_Status": "Single",
+                "height": 165,
+                "weight": "55",
+                "occupation": "O108",
+                "PrimaryMember": "N",
+                "optionalCovers": [
+
+                    {
+                        "optionalCoverName": "ReductioninPEDWaitingPeriod",
+                        "optionalCoverValue": "0"
+                    }
+                ],
+                "productComponents": [
+
+                    {
+                        "productComponentName": "SumInsured",
+                        "productComponentValue": "300000"
+                    }
+
+                ],
+                "MemberPED": [
+
+                    {
+
+                        "PedCode": "Q001",
+                        "WaitingPeriod": "0",
+                        "Remarks": "OK"
+                    }
+                ],
+
+                "MemberQuestionDetails": [
+
+                    {
+
+                        "QuestionCode": "Q001"
+                    }
+                ],
+
+                "exactDiagnosis": "",
+                "dateOfDiagnosis": "",
+                "lastDateConsultation": "",
+                "detailsOfTreatmentGiven": "",
+                "doctorName": "",
+                "hospitalName": "",
+                "phoneNumberHosital": "",
+                "labReport": "",
+                "dischargeCardSummary": "",
+                "personalHabitDetail": [{
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "alcohol"
+                    },
+                    {
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "smoking"
+                    },
+                    {
+                        "numberOfYears": "0",
+                        "count": "0",
+                        "type": "tobacco"
+                    }
+                ],
+                "Nominee_First_Name": "Ankita",
+                "Nominee_Last_Name": "K",
+                "Nominee_Contact_Number": "9869116991",
+                "Nominee_Home_Address": "",
+                "Nominee_Relationship_Code": "R002"
+            }
+        ]
+    },
+    "ReceiptCreation": {
+        "officeLocation": "Mumbai",
+        "modeOfEntry": "DIRECT",
+        "cdAcNo": "",
+        "expiryDate": "",
+        "payerType": "Proposer",
+        "payerCode": "",
+        "paymentBy": "Proposer",
+        "paymentByName": "AmitK",
+        "paymentByRelationship": "R001",
+        "collectionAmount": "20555.6",
+        "collectionRcvdDate": "11/08/2017",
+        "collectionMode": "OnlineCollections",
+        "remarks": "",
+        "instrumentNumber": "CTX170810002288122",
+        "instrumentDate": "11/08/2017",
+        "bankName": "",
+        "branchName": "",
+        "bankLocation": "",
+        "micrNo": "",
+        "chequeType": "",
+        "ifscCode": ""
+    }
+}

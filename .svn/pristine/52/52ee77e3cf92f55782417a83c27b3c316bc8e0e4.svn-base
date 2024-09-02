@@ -1,0 +1,72 @@
+/*COMMON CSS*/
+@charset "utf-8";
+body{
+    background-color:#FFFFFF;  
+    overflow:hidden;
+}
+.coming-soon-title{
+    margin:0;
+    font-size:64px;
+    font-weight:800;
+    color:#33B050;
+    text-transform:uppercase;
+}
+/*END OF COMMON CSS*/
+
+/*COMING SOON CSS*/
+
+.content-wrapper{ 
+    /* float:left; */
+    width:100%;
+    padding:50px 0;
+    position:relative;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-wrapper .inner-wrapper .description-text{
+    margin-bottom: 30px;
+    color:#000000;
+    font-size:24px;
+}
+.content-wrapper h1 span{
+    color:#F17431;
+}
+.separator{
+    margin:20px 0 20px;
+}
+.separator span{
+    width:240px;
+    margin:0 auto;
+    display:block;
+	height:4px;
+}
+.separator span:first-child{
+	background:#F17431;
+}
+.separator span:last-child{
+    margin-top:4px;
+	background:#33B050;
+}
+
+.location-wrapper{
+    margin:0 auto;
+    text-align:center;
+    display:inline-block;
+}
+.location-wrapper .address{
+    display:flex;
+    text-align:left;
+    font-size:22px;
+    align-items:flex-start;
+}
+.location-wrapper .address:first-child{
+    margin-bottom:30px;
+}
+.location-wrapper .address img{
+    padding-right:18px;
+}
+/*END OF COMING SOON CSS*/
+
+/*MEDIA QUERY CSS*/

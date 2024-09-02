@@ -1,0 +1,113 @@
+{
+	"intPolicyDataIO": {
+		"policy": {
+			"quotationPremium": "___final_premium___",
+			"baseAgentId": "___insurer_integration_agent_code___",
+			"baseProductId": "___dbmaster_pb_plan_code___",
+			"productName": "___dbmaster_pb_plan_name___",
+			"productFamilyId": "HEALTH",
+			"businessTypeCd": "NEWBUSINESS",
+			"faveoOTC": "YES",
+			"abacusId": "432",
+			"sumInsuredValue": "___sum_ins___",
+			"coverType": "INDIVIDUAL",
+			"numberOfChildren": 0,
+			"eldestMemberAge": "___member_1_age___",
+			"policyAdditionalFieldsDOList": [{
+				"fieldAgree": "YES",
+				"fieldTc": "YES",
+				"field1": "NEWFAVEO",
+				"siforCreditcard": 0,
+				"field10": "___nominee_name___",
+				"field12": "___nominee_relation___"
+			}],
+			"partyDOList": [{
+				"guid": "___guid___",
+				"firstName": "___first_name___",
+				"lastName": "___last_name___",
+				"roleCd": "PROPOSER",
+				"birthDt": "___member_1_birth_date___",
+				"partyAddressDOList": [{
+					"addressLine1Lang1": "___permanent_address_1___",
+					"addressLine2Lang1": "___permanent_address_2___",
+					"addressTypeCd": "PERMANENT",
+					"areaCd": "",
+					"cityCd": "___dbmaster_pb_city_name___",
+					"stateCd": "___communication_state___",
+					"pinCode": "___permanent_pincode___",
+					"countryCd": "IND"
+				}, {
+					"addressLine1Lang1": "___permanent_address_1___",
+					"addressLine2Lang1": "___permanent_address_2___",
+					"addressTypeCd": "COMMUNICATION",
+					"areaCd": "",
+					"cityCd": "___dbmaster_pb_city_name___",
+					"stateCd": "___communication_state___",
+					"pinCode": "___permanent_pincode___",
+					"countryCd": "IND"
+				}],
+				"genderCd": "___gender___",
+				"titleCd": "___salutation___",
+				"relationCd": "SELF",
+				"height": "___height___",
+				"weight": "___weight___",
+				"partyContactDOList": [{
+					"contactTypeCd": "MOBILE",
+					"contactNum": "___mobile___",
+					"stdCode": "+91"
+				}],
+				"partyEmailDOList": [{
+					"emailTypeCd": "PERSONAL",
+					"emailAddress": "___email___"
+				}],
+				"partyIdentityDOList": [],
+				"partyQuestionDOList": []
+			}, {
+				"guid": "___guid___",
+				"firstName": "___first_name___",
+				"lastName": "___last_name___",
+				"roleCd": "PRIMARY",
+				"birthDt": "___member_1_birth_date___",
+				"genderCd": "___gender___",
+				"titleCd": "___salutation___",
+				"relationCd": "SELF",
+				"height": "___height___",
+				"weight": "___weight___",
+				"partyIdentityDOList": [],
+				"partyAddressDOList": [{
+					"addressLine1Lang1": "___permanent_address_1___",
+					"addressLine2Lang1": "___permanent_address_2___",
+					"addressTypeCd": "PERMANENT",
+					"areaCd": "",
+					"cityCd": "___dbmaster_pb_city_name___",
+					"stateCd": "___communication_state___",
+					"pinCode": "___permanent_pincode___",
+					"countryCd": "IND"
+				}, {
+					"addressLine1Lang1": "___permanent_address_1___",
+					"addressLine2Lang1": "___permanent_address_2___",
+					"addressTypeCd": "COMMUNICATION",
+					"areaCd": "",
+					"cityCd": "___dbmaster_pb_city_name___",
+					"stateCd": "___communication_state___",
+					"pinCode": "___permanent_pincode___",
+					"countryCd": "IND"
+				}],
+				"partyContactDOList": [{
+					"contactTypeCd": "MOBILE",
+					"contactNum": "___mobile___",
+					"stdCode": "+91"
+				}],
+				"partyEmailDOList": [{
+					"emailTypeCd": "PERSONAL",
+					"emailAddress": "___email___"
+				}],
+				"partyQuestionDOList": []
+			}],
+			
+			"sumInsured": "___health_insurance_si_2___",
+			"term": "1",
+			"isPremiumCalculation": "YES"   
+		}
+	}
+}

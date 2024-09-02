@@ -1,0 +1,62 @@
+.container {
+	width:220px;
+	height:252px;
+	overflow:hidden;
+	position:relative;
+	cursor:pointer;
+	
+	margin-bottom:10px;
+}
+		div.slides { position:absolute; top:0; left:0; }
+		ul.slides {
+	position:relative;
+	top:0;
+	left:0;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+		div.slides div,ul.slides li { position:absolute; top:0; width:220px; display:none; padding:0; margin:0; }
+		/*
+		 * Optional
+		*/
+		#loopedSlider,#newsSlider {
+	margin:0;
+	width:220px;
+	position:relative;
+	clear:both;
+}
+		ul.pagination { list-style:none; padding:0; margin:0; }
+		ul.pagination li  { float:left; }
+		ul.pagination li a { padding:2px 4px; }
+		ul.pagination li.active a { background:blue; color:white; }
+
+
+
+
+.testimonial-text{font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+background:url(invited-top.jpg) no-repeat top left;
+color:#080808;
+padding:4px 4px 0px 15px;
+line-height:18px; text-align: justify;
+}
+
+.testimonial-date{font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#999999;
+padding:10px;
+}
+
+.testimonial-sub{font-family:Arial, Helvetica, sans-serif;
+font-size:8px;
+color:#4f9714;
+padding:1px; 
+}
+
+.testimonial-sub2{font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+font-weight:bold;
+color:#4f9714;
+padding:1px; text-align:left;
+}

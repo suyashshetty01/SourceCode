@@ -1,0 +1,540 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+var util = require('util');
+var path = require('path');
+var appRoot = path.dirname(path.dirname(require.main.filename));
+var Travel = require(appRoot + '/libs/Travel');
+var fs = require('fs');
+var config = require('config');
+var moment = require('moment');
+var crypto = require('crypto');
+var sleep = require('system-sleep');
+function TataAIGTravel() {
+}
+util.inherits(TataAIGTravel, Travel);
+TataAIGTravel.prototype.lm_request_single = {};
+TataAIGTravel.prototype.insurer_integration = {};
+TataAIGTravel.prototype.insurer_addon_list = [];
+TataAIGTravel.prototype.insurer = {};
+TataAIGTravel.prototype.insurer_date_format = 'MM/DD/YYYY';
+TataAIGTravel.prototype.insurer_product_api_pre = function (objProduct, Insurer_Object, specific_insurer_object) {
+    console.log('insurer_product_api_pre');
+};
+TataAIGTravel.prototype.insurer_product_field_process_pre = function () {
+    this.prepared_request['messageTrans_Id'] = 'LTA' + this.lm_request['crn'];
+    this.processed_request['___messageTrans_Id___'] = this.prepared_request['messageTrans_Id'];
+    this.prepared_request['member_count'] = this.lm_request['adult_count'] + this.lm_request['child_count'];
+    this.processed_request['___member_count___'] = this.prepared_request['member_count'];
+    this.prepared_request['start_date'] = (moment(this.prepared_request['policy_start_date']).format('MM/DD/YYYY h:mm:ss a')).toUpperCase();
+    this.processed_request['___start_date___'] = this.prepared_request['start_date'];
+    var end_date = this.lm_request['trip_type'] === "MULTI" ? moment(this.prepared_request['policy_end_date']).subtract(1, "days").endOf('day').format('MM/DD/YYYY h:mm:ss a') : moment(this.prepared_request['policy_end_date']).endOf('day').format('MM/DD/YYYY h:mm:ss a');
+    this.prepared_request['end_date'] = (end_date).toUpperCase();
+    this.processed_request['___end_date____'] = this.prepared_request['end_date'];
+    const today = moment();
+    this.prepared_request['ApplDate'] = (today.format('MM/DD/YYYY h:mm:ss a')).toUpperCase();
+    this.processed_request['___ApplDate___'] = this.prepared_request['ApplDate'];
+    if (this.lm_request['method_type'] === 'Premium') {
+        var plan_id = this.prepared_request['Plan_Id'];
+        var plan_code = this.prepared_request['Plan_Code'];
+    }
+    if (this.lm_request['method_type'] === 'Proposal') {
+        var plan_id = this.prepared_request['dbmaster_pb_plan_id'];
+        var plan_code = this.prepared_request['dbmaster_pb_plan_code'];
+        var txt_replace = this.find_text_btw_key(this.method_content, '<!--InsurersDetail_Start-->', '<!--InsurersDetail_End-->', true);
+        var txt_replace_with = "";
+        for (member = 1; member <= this.lm_request['adult_count']; member++) {
+            txt_replace_with += txt_replace.replaceAll('___member_array', '___member_' + member);
+        }
+        for (member = 3; member <= this.lm_request['child_count'] + 2; member++) {
+            txt_replace_with += txt_replace.replaceAll('___member_array', '___member_' + member);
+        }
+        var is_residents_of_India = true;
+        if (this.lm_request['question_1101_details'] === false) {
+            is_residents_of_India = false;
+        }
+        this.prepared_request['is_residents_of_India'] = is_residents_of_India;
+
+        this.method_content = this.method_content.replace(txt_replace, txt_replace_with);
+        this.method_content = this.method_content.replaceAll(/<!--(.*?)-->/g, "");
+    }
+    this.processed_request['___TransactionType___'] = this.prepared_request['TransactionType'];
+    if ([1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116].indexOf(plan_id) > -1) {
+        var plan = {1108: 'GOLD', 1109: 'PLATNM', 1110: 'SILVER', 1111: 'SILPLS', 1112: 'SENPLN', 1113: 'ANGOLD', 1114: 'ANPLAT', 1115: 'GOLD', 1116: 'SILVER'};
+        plan_code = plan[plan_id];
+        this.processed_request['___Plan_Code___'] = plan_code;
+        this.processed_request['___dbmaster_pb_plan_code___'] = plan_code;
+    }
+    this.get_product_details(plan_code);
+    //for without sublimte code
+    if ([1108, 1109, 1110, 1111, 1112, 1113, 1114].indexOf(plan_id) > -1) {
+        if (this.processed_request['___member_1_age___'] > 55 && this.lm_request['adult_count'] === 1) {
+            this.processed_request['___product_code___'] = "020953";
+        } else if (this.processed_request['___member_1_age___'] > 55 && this.processed_request['___member_2_age___'] > 55) {
+            this.processed_request['___product_code___'] = "020953";
+        }
+    }
+    if (this.lm_request['method_type'] === 'Pdf') {
+        this.prepared_request['GDSProductCode'] = this['insurer_master']['service_logs']['pb_db_master']['Insurer_Response']['TINS_XML_DATA']['Segment'][0]['PolicyIn'][0]['GDSProductCode'][0];
+        this.processed_request['___GDSProductCode___'] = this.prepared_request['GDSProductCode'];
+        this.prepared_request['InceptionDate'] = this['insurer_master']['service_logs']['pb_db_master']['Insurer_Response']['TINS_XML_DATA']['Segment'][0]['PolicyIn'][0]['InceptionDate'][0];
+        this.processed_request['___InceptionDate___'] = this.prepared_request['InceptionDate'];
+        this.prepared_request['PlanCode'] = this['insurer_master']['service_logs']['pb_db_master']['Insurer_Response']['TINS_XML_DATA']['Segment'][0]['Insured'][0]['PlanCode'][0];
+        this.processed_request['___PlanCode___'] = this.prepared_request['PlanCode'];
+    }
+    this.method_content = this.method_content.replaceAll(/<!--(.*?)-->/g, "");
+};
+TataAIGTravel.prototype.insurer_product_response_handler = function (objResponseJson, objProduct, Insurer_Object, specific_insurer_object) {
+
+    var obj_response_handler;
+    if (specific_insurer_object.method.Method_Type === 'Premium') {
+        obj_response_handler = this.premium_response_handler(objResponseJson);
+    }
+    if (specific_insurer_object.method.Method_Type === 'Proposal') {
+        obj_response_handler = this.proposal_response_handler(objResponseJson);
+    }
+    if (specific_insurer_object.method.Method_Type === 'Pdf') {
+        obj_response_handler = this.pdf_response_handler(objResponseJson);
+    }
+    if (specific_insurer_object.method.Method_Type === 'Verification') {
+        obj_response_handler = this.verification_response_handler(objResponseJson);
+    }
+    return obj_response_handler;
+};
+TataAIGTravel.prototype.insurer_product_field_process_post = function () {
+
+};
+TataAIGTravel.prototype.insurer_product_api_post = function () {
+
+};
+TataAIGTravel.prototype.service_call = function (docLog, objProduct, Insurer_Object, specific_insurer_object, Db_Idv_Item) {
+    console.log('service_call');
+    try {
+        var objInsurerProduct = this;
+        console.log(docLog.Insurer_Request);
+        var Client = require('node-rest-client').Client;
+        var xml2js = require('xml2js');
+        var client = new Client();
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        var body = docLog.Insurer_Request;
+        var args = {
+            data: {
+                "MessageText": body,
+                'MessageType': 'INPN',
+                'MessageId': '0987654321',
+                'GDSCode': 'UTL'
+            },
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+
+        };
+        console.log(JSON.stringify(args));
+        if (specific_insurer_object.method.Method_Type === 'Pdf') {
+            sleep(20000);
+        }
+        client.post(specific_insurer_object.method_file_url, args, function (data, response) {
+            // parsed response body as js object 
+            console.log('TATA AIG Data', data.toString());
+            xml2js.parseString(data.toString(), {ignoreAttrs: true}, function (err2, objXml2Json) {
+                var objXml2Json = JSON.parse(JSON.stringify(objXml2Json));
+                if (err2) {
+                    console.error('Exception', this.constructor.name, 'service_call', err2);
+                } else {
+                    var objResponseFull = {
+                        'err': null,
+                        'result': data.toString(),
+                        'raw': data.toString(),
+                        'soapHeader': null,
+                        'objResponseJson': objXml2Json
+                    };
+                    var serviceBreakup = objInsurerProduct.base_response_handler(objResponseFull, docLog, objProduct, Insurer_Object, specific_insurer_object, Db_Idv_Item);
+                }
+            });
+        });
+    } catch (e) {
+        console.error('Exception', this.constructor.name, 'service_call', e);
+    }
+};
+TataAIGTravel.prototype.premium_response_handler = function (objResponseJson) {
+    try {
+        console.log('Start', this.constructor.name, 'premium_response_handler', objResponseJson);
+        var objServiceHandler = {
+            'Error_Msg': 'NO_ERR',
+            'Insurer_Transaction_Identifier': null,
+            'Premium_Breakup': null
+        };
+        var Error_Msg = 'NO_ERR';
+        if (objResponseJson.hasOwnProperty('TINS_XML_DATA')) {
+            if (objResponseJson['TINS_XML_DATA']['Header'][0]['ErrorCode'][0] !== "0") {
+                Error_Msg = objResponseJson['TINS_XML_DATA']['Header'][0]['ErrorMessage'][0];
+            } else if (objResponseJson['TINS_XML_DATA']['Segment'][0].hasOwnProperty('ErrorMessage')) {
+                Error_Msg = objResponseJson['TINS_XML_DATA']['Segment'][0]['ErrorMessage'][0];
+            } else if (!objResponseJson['TINS_XML_DATA']['Segment'][0].hasOwnProperty('PolicyOut')) {
+                Error_Msg = 'LM_MSG::PREMIUM_NODE_MISSING';
+            }
+        } else {
+            Error_Msg = 'LM_MSG::MAIN_NODE_MISSING';
+        }
+
+        if (Error_Msg === 'NO_ERR')
+        {
+            var premium_breakup = this.get_const_premium_breakup();
+            var objPremiumService = objResponseJson['TINS_XML_DATA']['Segment'][0]['PolicyOut'][0];
+            var plan_code = objResponseJson['TINS_XML_DATA']['Segment'][0]['Insured'][0]['PlanCode'][0];
+            premium_breakup['final_premium'] = Math.round(objPremiumService['TotalPremium'][0]);
+            premium_breakup['service_tax'] = objPremiumService['TotalTaxAmt'][0];
+            premium_breakup['tax']['CGST'] = premium_breakup['service_tax'] / 2;
+            premium_breakup['tax']['SGST'] = premium_breakup['service_tax'] / 2;
+            premium_breakup['net_premium'] = objResponseJson['TINS_XML_DATA']['Segment'][0]['Insured'][0]['PremiumAmt'][0];
+            if (this.lm_request['travelling_to_area'] === 'Asia') {
+                var si = {'SILVER': '$50000', 'GOLD': '$200000'};
+                premium_breakup['travel_insurance_si'] = si[plan_code];
+            } else {
+                var si = {'SILVER': '$50000', 'SILPLS': '$100000', 'GOLD': '$250000', 'PLATNM': '$500000', 'SENPLN': '$50000', 'ANGOLD': '$250000', 'ANPLAT': '$500000'};
+                premium_breakup['travel_insurance_si'] = si[plan_code];
+            }
+            objServiceHandler.Premium_Breakup = premium_breakup;
+        }
+        objServiceHandler.Error_Msg = Error_Msg;
+        console.log('Finish', this.constructor.name, 'premium_response_handler', objServiceHandler);
+        return objServiceHandler;
+    } catch (ex) {
+        var Err = {
+            'Type': 'LM',
+            'Msg': ex.stack
+        };
+        objServiceHandler.Error_Msg = JSON.stringify(Err);
+        console.error('Exception', this.constructor.name, 'premium_response_handler', objServiceHandler);
+    }
+};
+TataAIGTravel.prototype.proposal_response_handler = function (objResponseJson) {
+    console.log('Start', this.constructor.name, 'proposal_response_handler', objResponseJson);
+    var objServiceHandler = {
+        'Error_Msg': 'NO_ERR',
+        'Insurer_Transaction_Identifier': null,
+        'Premium_Breakup': null,
+        'Payment': this.const_payment
+    };
+    var Error_Msg = 'NO_ERR';
+    var directPayment, productCode;
+    try {
+        if (objResponseJson.hasOwnProperty('TINS_XML_DATA')) {
+            if (objResponseJson['TINS_XML_DATA']['Header'][0]['ErrorCode'][0] !== "0") {
+                Error_Msg = objResponseJson['TINS_XML_DATA']['Header'][0]['ErrorMessage'][0];
+            } else if (objResponseJson['TINS_XML_DATA']['Segment'][0].hasOwnProperty('ErrorMessage')) {
+                Error_Msg = objResponseJson['TINS_XML_DATA']['Segment'][0]['ErrorMessage'][0];
+            } else if (!objResponseJson['TINS_XML_DATA']['Segment'][0].hasOwnProperty('PolicyOut')) {
+                Error_Msg = 'LM_MSG::PREMIUM_NODE_MISSING';
+            }
+        } else {
+            Error_Msg = 'LM_MSG::MAIN_NODE_MISSING';
+        }
+        if (this.prepared_request['is_residents_of_India'] === false) {
+            Error_Msg = 'Traveler(s) need to be residents of India and the trip should be starting from India only';
+        }
+        if (Error_Msg === 'NO_ERR') {
+            var proposalAmt = Math.round(objResponseJson['TINS_XML_DATA']['Segment'][0]['PolicyOut'][0]['TotalPremium'][0]);
+            var objPremiumVerification = this.premium_verification(this.lm_request['final_premium'], proposalAmt);
+            if (objPremiumVerification.Status) {
+                var req_id = this.lm_request['crn'] + this.prepared_request['current_time'].replace(/\:/g, '');
+                var returnUrl = this.const_payment.pg_ack_url;
+                var policy_number = objResponseJson['TINS_XML_DATA']['Segment'][0]['PolicyOut'][0]['PolicyNumber'][0];
+                const today = moment();
+                var current_date = today.format('DD-MM-YYYY hh:mm:ss.sss');
+//                let directPayment = (config.environment.name !== 'Development' ? "N" : "Y");
+                productCode = this.lm_request['travelling_to_area'] === "Asia" ? "1029" : "1001";
+                var pg_data = {
+                    "lob": "1",
+                    "paymentType": "1",
+                    "portalName": "1",
+                    "businessType": "1",
+                    "productCode": productCode,
+                    "reqID": req_id,
+                    "sourceReturnUrl": returnUrl,
+                    "policyNumber": policy_number,
+                    "transTimeStamp": current_date,
+                    "paymentAmount": config.environment.name !== 'Production' ? "1" : (Math.round(proposalAmt)).toString(),
+                    "consumer_app_ID": "POLIBO01",
+                    "clientId": "",
+                    "directPayment": "Y",
+                    "transactionID": ("PB" + this.lm_request['crn']).trim(),
+                    "currencyCode": "INR",
+                    "additionalInfo1": "",
+                    "additionalInfo2": null,
+                    "additionalInfo3": ""
+                };
+                console.log(JSON.stringify(pg_data));
+                var pgiRequest = this.encrypt(JSON.stringify(pg_data));
+                console.log("Encrypted*** " + pgiRequest);
+                var encryptedData = {pgiRequest};
+                objServiceHandler.Payment.pg_data = encryptedData;
+                objServiceHandler.Payment.pg_redirect_mode = 'POST';
+                objServiceHandler.Insurer_Transaction_Identifier = objResponseJson['TINS_XML_DATA']['Segment'][0]['PolicyOut'][0]['PolicyNumber'][0];
+            } else {
+                Error_Msg = 'LM_PREMIUM_MISMATCH_' + JSON.stringify(objPremiumVerification);
+            }
+        }
+        objServiceHandler.Error_Msg = Error_Msg;
+        console.log('Finish', this.constructor.name, 'proposal_response_handler', objServiceHandler);
+    } catch (ex) {
+        var Err = {
+            'Type': 'LM',
+            'Msg': ex.stack
+        };
+        objServiceHandler.Error_Msg = JSON.stringify(Err);
+        console.error('Exception', this.constructor.name, 'proposal_response_handler', objServiceHandler);
+    }
+    return objServiceHandler;
+};
+TataAIGTravel.prototype.pg_response_handler = function () {
+    try {
+        console.log('Start', this.constructor.name, 'pg_response_handler');
+        var output = '';
+        if (this.const_payment_response.pg_post.hasOwnProperty('pgiResponse') && this.const_payment_response.pg_post['pgiResponse'] !== "") {
+            if (this.const_payment_response.pg_post.hasOwnProperty('transactionid')) {
+                output = JSON.parse(new Buffer(this.const_payment_response.pg_post['pgiResponse'], 'base64').toString('ascii'));
+            } else {
+                output = JSON.parse(this.decrypt(this.const_payment_response.pg_post['pgiResponse']));
+            }
+            console.log("decrypted Response*** " + JSON.stringify(output));
+            if (output.hasOwnProperty('transactionStatus') && output['transactionStatus'] !== "Failure") {
+                this.const_policy.transaction_amount = output['premiumAmount'];
+                this.const_policy.pg_status = 'SUCCESS';
+                this.const_policy.transaction_status = 'SUCCESS';
+                this.const_policy.transaction_id = output['pgiTransactionid'];
+                this.const_policy.pg_reference_number_1 = output['consumerAppTransId'];
+                this.const_policy.pg_reference_number_2 = JSON.stringify(output);
+            } else {
+                this.const_policy.pg_status = 'FAIL';
+                this.const_policy.transaction_status = 'FAIL';
+            }
+        } else {
+            this.const_policy.pg_status = 'FAIL';
+            this.const_policy.transaction_status = 'FAIL';
+        }
+        console.log('End', this.constructor.name, 'pg_response_handler');
+    } catch (ex) {
+        console.error('Exception', this.constructor.name, 'pg_response_handler', ex);
+    }
+};
+TataAIGTravel.prototype.verification_response_handler = function (objResponseJson) {
+    console.log('Start', this.constructor.name, 'verification_response_handler', objResponseJson);
+    var Error_Msg = 'NO_ERR';
+    try {
+        var objServiceHandler = {
+            'Error_Msg': 'NO_ERR',
+            'Insurer_Transaction_Identifier': null,
+            'Premium_Breakup': null,
+            'Policy': null
+        };
+        if (this.const_policy.transaction_status === 'SUCCESS') {//transaction success  
+            this.const_policy.policy_number = this.prepared_request['dbmaster_insurer_transaction_identifier'];
+            if (this.const_policy.policy_number !== '' && this.const_policy.policy_number !== null && this.const_policy.policy_number !== undefined) {
+                this.const_policy.transaction_substatus = "IF";
+                var pdf_file_name = this.constructor.name + '_' + "Travel" + '_' + this.const_policy.policy_number + '.pdf';
+                var pdf_sys_loc_horizon = appRoot + "/tmp/pdf/" + pdf_file_name;
+                var pdf_web_path_portal = config.environment.downloadurl + config.pb_config.pdf_web_loc + pdf_file_name;
+                this.const_policy.policy_url = pdf_web_path_portal;
+                var args = {
+                    data: {
+                        "search_reference_number": this.lm_request['search_reference_number'],
+                        "api_reference_number": this.lm_request['api_reference_number'],
+                        "policy_number": this.const_policy.policy_number,
+                        'client_key': this.lm_request['client_key'],
+                        'secret_key': this.lm_request['secret_key'],
+                        'insurer_id': this.lm_request['insurer_id'],
+                        'email': this.lm_request['email'],
+                        'mobile': this.lm_request['mobile'],
+                        'method_type': 'Pdf',
+                        'execution_async': 'no'
+                    },
+                    headers: {
+                        "Content-Type": "application/json",
+                        'client_key': this.lm_request['client_key'],
+                        'secret_key': this.lm_request['secret_key']
+                    }
+                };
+                this.pdf_call(config.environment.weburl + '/quote/pdf_initiate', args, pdf_sys_loc_horizon);
+            } else {
+                this.const_policy.transaction_status = 'PAYPASS';
+            }
+        }
+        objServiceHandler.Policy = this.const_policy;
+        objServiceHandler.Error_Msg = Error_Msg;
+        console.log('Finish', this.constructor.name, 'verification_response_handler', objServiceHandler);
+    } catch (ex) {
+        var Err = {
+            'Type': 'LM',
+            'Msg': ex.stack
+        };
+        objServiceHandler.Error_Msg = JSON.stringify(Err);
+        console.error('Exception', this.constructor.name, 'verification_response_handler', objServiceHandler);
+    }
+    return objServiceHandler;
+};
+TataAIGTravel.prototype.pdf_call = function (url, args, pdf_sys_loc) {
+    var objInsurerProduct = this;
+    objInsurerProduct.pdf_attempt++;
+    var Client = require('node-rest-client').Client;
+    var client = new Client();
+    client.post(url, args, function (data, response) {
+        console.log("Pdf initiate");
+        if (data.Error_Code !== '' || true) {
+            if (!fs.existsSync(pdf_sys_loc) && objInsurerProduct.pdf_attempt < 11) {
+                var sleep = require('system-sleep');
+                sleep(6000);
+                objInsurerProduct.pdf_call(url, args, pdf_sys_loc);
+            }
+        }
+    });
+};
+TataAIGTravel.prototype.pdf_response_handler = function (objResponseJson) {
+    console.log('Start', this.constructor.name, 'pdf_response_handler', objResponseJson);
+    var Error_Msg = 'NO_ERR';
+    try {
+        var objServiceHandler = {
+            'Error_Msg': 'NO_ERR',
+            'Insurer_Transaction_Identifier': null,
+            'Premium_Breakup': null,
+            'Policy': null
+        };
+        if (objResponseJson.hasOwnProperty('TINS_XML_DATA')) {
+            if (objResponseJson['TINS_XML_DATA']['Segment'][0]['EmailReport'][0] !== "Success") {
+                var pdf_binary = objResponseJson['TINS_XML_DATA']['Segment']['0']['PolicyDoc'][0];
+            }
+        }
+        var policy = {
+            'policy_url': null,
+            'policy_number': this.lm_request['policy_number'],
+            'pdf_status': null
+        };
+        if (Error_Msg === 'NO_ERR' && pdf_binary !== '' && pdf_binary !== undefined) {
+            var product_name = 'Travel';
+            var pdf_file_name = this.constructor.name + '_' + product_name + '_' + this.lm_request['policy_number'] + '.pdf';
+            var pdf_sys_loc = appRoot + "/tmp/pdf/" + pdf_file_name;
+            var pdf_web_path_portal = config.environment.downloadurl + config.pb_config.pdf_web_loc + pdf_file_name;
+            policy.policy_url = pdf_web_path_portal;
+            var binary = new Buffer(pdf_binary, 'base64');
+            fs.writeFileSync(pdf_sys_loc, binary);
+            policy.pdf_status = 'SUCCESS';
+            objServiceHandler.Insurer_Transaction_Identifier = this.lm_request['policy_number'];
+        }
+        objServiceHandler.Policy = policy;
+        objServiceHandler.Error_Msg = Error_Msg;
+        console.log('Finish', this.constructor.name, 'pdf_response_handler', objServiceHandler);
+    } catch (ex) {
+        var Err = {
+            'Type': 'LM',
+            'Msg': ex.stack
+        };
+        objServiceHandler.Error_Msg = JSON.stringify(Err);
+        console.error('Exception', this.constructor.name, 'premium_response_handler', objServiceHandler);
+        objServiceHandler.Policy = this.const_policy;
+    }
+    return objServiceHandler;
+
+};
+TataAIGTravel.prototype.get_product_details = function (planCd) {
+    var plans = [
+        {'area': 'WWExUSCanada', 'plan_code': "GOLD", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Excluding Americas", 'Destination': 1, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WorldWide', 'plan_code': "GOLD", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Including Americas", 'Destination': 2, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WWExUSCanada', 'plan_code': "PLATNM", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Excluding Americas", 'Destination': 1, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WorldWide', 'plan_code': "PLATNM", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Including Americas", 'Destination': 2, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WWExUSCanada', 'plan_code': "SILVER", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Excluding Americas", 'Destination': 1, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WorldWide', 'plan_code': "SILVER", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Including Americas", 'Destination': 2, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WWExUSCanada', 'plan_code': "SILPLS", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Excluding Americas", 'Destination': 1, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WorldWide', 'plan_code': "SILPLS", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Including Americas", 'Destination': 2, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WWExUSCanada', 'plan_code': "SENPLN", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Excluding Americas", 'Destination': 1, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'WorldWide', 'plan_code': "SENPLN", 'trip_type': "SINGLE", 'GeneralPurpose': "Worldwide Including Americas", 'Destination': 2, 'benefitCd': "01001", 'product_code': "020952"},
+        {'area': 'Asia', 'plan_code': "GOLD", 'trip_type': "SINGLE", 'GeneralPurpose': "ASIA", 'Destination': 0, 'benefitCd': "01001", 'product_code': "020212"},
+        {'area': 'Asia', 'plan_code': "SILVER", 'trip_type': "SINGLE", 'GeneralPurpose': "ASIA", 'Destination': 0, 'benefitCd': "01001", 'product_code': "020212"},
+        {'area': 'WorldWide', 'plan_code': "ANGOLD", 'max_duration': '30', 'trip_type': "MULTI", 'GeneralPurpose': "AN Worldwide 1 - 30", 'Destination': 3, 'product_code': "020952", 'benefitCd': "01003"},
+        {'area': 'WorldWide', 'plan_code': "ANGOLD", 'max_duration': '45', 'trip_type': "MULTI", 'GeneralPurpose': "AN Worldwide 1 - 45", 'Destination': 4, 'product_code': "020952", 'benefitCd': "01003"},
+        {'area': 'WorldWide', 'plan_code': "ANPLAT", 'max_duration': '30', 'trip_type': "MULTI", 'GeneralPurpose': "AN Worldwide 1 - 30", 'Destination': 3, 'product_code': "020952", 'benefitCd': "01003"},
+        {'area': 'WorldWide', 'plan_code': "ANPLAT", 'max_duration': '45', 'trip_type': "MULTI", 'GeneralPurpose': "AN Worldwide 1 - 45", 'Destination': 4, 'product_code': "020952", 'benefitCd': "01003"}
+    ];
+    if (this.lm_request['trip_type'] === "SINGLE") {
+        var index = plans.findIndex(x => x.area === this.lm_request['travelling_to_area'] && x.trip_type === this.lm_request['trip_type'] && x.plan_code === planCd);
+        this.processed_request['___product_code___'] = index === -1 ? "" : plans[index]['product_code'];
+        this.processed_request['___destination___'] = index === -1 ? "" : plans[index]['Destination'];
+        this.processed_request['___generalPurpose___'] = index === -1 ? "" : plans[index]['GeneralPurpose'];
+        this.processed_request['___benefitCd___'] = index === -1 ? "" : plans[index]['benefitCd'];
+    } else {
+        var index = plans.findIndex(x => x.area === this.lm_request['travelling_to_area'] && x.trip_type === this.lm_request['trip_type'] && x.plan_code === planCd && x.max_duration === this.lm_request['maximum_duration']);
+        this.processed_request['___product_code___'] = index === -1 ? "" : plans[index]['product_code'];
+        this.processed_request['___destination___'] = index === -1 ? "" : plans[index]['Destination'];
+        this.processed_request['___generalPurpose___'] = index === -1 ? "" : plans[index]['GeneralPurpose'];
+        this.processed_request['___benefitCd___'] = index === -1 ? "" : plans[index]['benefitCd'];
+    }
+};
+TataAIGTravel.prototype.is_valid_plan = function (lm_request, planCode) {
+    console.log('TataAIGTravel is_valid_plan', 'start');
+    var total_days;
+    for (i = 1; i <= lm_request['adult_count']; i++) {
+        if (['ANGOLD', 'ANPLAT'].indexOf(planCode) > -1 && lm_request['member_' + i + '_age'] < 19) {
+            return false;
+        }
+        if (['GOLD-1', 'PLATNM-1', 'SILVER-1', 'SILPLS-1', 'SENPLN-1', 'ANGOLD-1', 'ANPLAT-1'].indexOf(planCode) > -1 && (lm_request['member_' + i + '_age'] < 56 || lm_request['child_count'] > 0)) {
+            return false;
+        }
+        if (['SENPLN', 'SENPLN-1'].indexOf(planCode) === -1 && lm_request['member_' + i + '_age'] > 70) {
+            return false;
+        }
+        if (['SENPLN', 'SENPLN-1'].indexOf(planCode) > -1 && lm_request['member_' + i + '_age'] < 71) {
+            return false;
+        }
+
+    }
+    if (lm_request['trip_type'] !== "MULTI") {
+        for (i = 3; i <= lm_request['child_count'] + 2; i++) {
+            var ageInMonths = moment().diff(lm_request['member_' + i + '_birth_date'], 'months');
+            if (['ASIA_GOLD', 'ASIA_SILVER', 'GOLD', 'PLATNM', 'SILVER', 'SILPLS', 'SENPLN'].indexOf(planCode) > -1 && ageInMonths < 6) {
+                return false;
+            }
+        }
+    }
+    var travelArea = lm_request['travelling_to_area'];
+    if (lm_request['trip_type'] === "SINGLE" && travelArea === 'Asia') {
+        total_days = moment(lm_request['policy_end_date']).diff(moment(lm_request['policy_start_date']), 'days') + 1; // getting two dates difference
+    }
+
+    if (["Africa", "Europe"].includes(travelArea)) {
+        return false;
+    } else if (lm_request['trip_type'] === "MULTI" && ['ASIA_GOLD', 'ASIA_SILVER', 'GOLD', 'PLATNM', 'SILVER', 'SILPLS', 'SENPLN', 'GOLD-1', 'PLATNM-1', 'SILVER-1', 'SILPLS-1', 'SENPLN-1'].indexOf(planCode) > -1) {
+        return false;
+    } else if (lm_request['trip_type'] === "SINGLE" && ['ANGOLD', 'ANPLAT', 'ANGOLD-1', 'ANPLAT-1'].indexOf(planCode) > -1) {
+        return false;
+    } else if (lm_request['trip_type'] === "MULTI" && (travelArea === 'WWExUSCanada' || ['60', '90'].includes(lm_request['maximum_duration']) || lm_request['child_count'] > 0)) {
+        return false;
+    } else if (lm_request['trip_type'] === "SINGLE" && travelArea === 'Asia' && (['GOLD', 'PLATNM', 'SILVER', 'SILPLS', 'SENPLN', 'GOLD-1', 'PLATNM-1', 'SILVER-1', 'SILPLS-1', 'SENPLN-1'].indexOf(planCode) > -1 || total_days > 14)) {
+        return false;
+    } else if (travelArea !== 'Asia' && ['ASIA_GOLD', 'ASIA_SILVER'].indexOf(planCode) > -1) {
+        return false;
+    } else {
+        return true;
+    }
+    console.log('TataAIGTravel is_valid_plan', 'End');
+};
+TataAIGTravel.prototype.encrypt = function (text) {
+    var cipher = crypto.createCipher("aes-128-ecb", "#g%t8&(k$^");
+    var crypted = cipher.update(text, 'utf8', 'hex');
+    crypted += cipher.final('hex');
+    return crypted;
+};
+TataAIGTravel.prototype.decrypt = function (text) {
+    var decipher = crypto.createDecipher("aes-128-ecb", "#g%t8&(k$^");
+    var dec = decipher.update(text, 'hex', 'utf8');
+    dec += decipher.final('utf8');
+    return dec;
+};
+TataAIGTravel.prototype.premium_breakup_schema = {
+    "net_premium": "NetPremium",
+    "CGST": "CGST",
+    "SGST": "SGST",
+    "service_tax": "",
+    "final_premium": "FinalPremium"
+};
+module.exports = TataAIGTravel;

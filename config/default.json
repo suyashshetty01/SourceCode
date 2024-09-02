@@ -1,0 +1,157 @@
+{
+    "db": {
+        "connection": "mongodb://horizonqaapp:H%40r!z0nQA2108@65.0.176.149",
+        "name": "lm-api-qa"       
+    },
+    "razor_pay":{
+         "rzp_sbi":{
+            "account_id" : "acc_HkHhn0PQVj5NfV",
+            "username" : "rzp_test_YpeuqwvvTh0xzG",
+            "password" : "aiCAYsYUgj5lRITZQ9wIOePg"
+        },
+        "rzp_sbi_tw":{
+            "username" : "rzp_live_rx7BlxLnL1pjA9",
+            "password" : "FqafWjX3OrgIbLBmUw10Pzbm"
+        },
+        "rzp_kotak": {
+            "account_id": "acc_IVgOUicAfckBpp",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_icici": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_edelweiss": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_chola": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_future": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        }, 
+        "rzp_digit": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+         "rzp_cigna": {
+            "account_id": "acc_FzLR52B4F8aL3o",
+            "username": "rzp_test_iTmF6soqNfL0q6",
+            "password": "X4q34qIcZTcA0B73tOs7lw6q"
+        }
+    },
+    "rzp_landmark" : {
+        "account_id" : "acc_HkHhn0PQVj5NfV",
+        "username" : "rzp_test_PR1nbJKsdaLPop",
+        "password" : "CoNzrJZbBry80jMzzAbXSckP"
+    },
+    "icici_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/Cerberus/connect/token"
+    },
+    "icici_health_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    },
+    "icici_marine_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    },
+    "icici_travel_auth": {
+        "auth_url": "https://ilesb.southindia.cloudapp.azure.com/cerberus/connect/token"
+    },
+    "policyboss_branch_ip":[
+         "202.131.96.98","103.206.58.57","103.216.81.25","122.168.123.9","203.90.110.34","180.211.114.130","210.211.208.149","49.248.9.46","122.180.254.145","122.165.118.152","121.247.149.141","14.102.95.74","122.162.221.152","1.23.165.38","116.74.78.100","183.82.126.164","210.211.211.41","43.246.161.10","124.124.221.146","27.106.83.186","103.75.32.86","182.76.41.18","45.64.237.9","122.160.15.88","122.180.254.226","115.249.5.170","115.97.20.141","183.87.138.14","182.58.73.96","103.57.141.170","202.189.234.23","114.29.232.50","180.211.109.2","202.131.109.218","202.131.109.178","117.247.240.224","180.211.109.26","49.248.138.118","176.100.176.242","175.100.184.250","203.88.135.195","180.211.115.98","122.165.155.5","180.211.115.242","182.73.4.194","27.116.53.21","111.125.142.233","103.205.129.26 ","103.231.44.198","202.164.40.108","122.165.177.205","103.242.186.38","103.36.82.40","103.209.65.199","103.205.129.26","163.53.74.177","103.249.248.165","182.64.228.139","122.180.240.145","103.252.6.92","103.58.154.228","122.170.218.95","171.48.22.117","122.187.217.194","61.246.36.64","45.248.21.83","103.206.135.82","49.205.230.26","116.193.139.6","106.201.236.135","202.179.91.190","103.93.192.28","103.206.135.38","180.151.1.146","103.93.192.25","103.210.50.112","103.93.192.26","43.228.231.154","125.99.247.106","14.98.112.242","110.226.183.241","203.163.233.58","122.176.98.72","115.96.133.0","103.210.50.114","116.74.86.66","103.93.192.27","203.163.250.100","122.168.55.214","116.206.222.5","103.225.100.98","180.211.97.186","103.195.81.173","103.93.192.31","103.171.41.20","103.171.211.74","163.53.74.136","182.71.62.140","103.206.58.58","202.131.96.98","183.182.88.85"
+    ],
+    "const_insurer_short" : {"1": "BajajAllianz", "2": "BhartiAxa", "3": "Cholamandalam MS", "4": "Future Generali", "5": "HDFCERGO", "6": "ICICILombard", "7": "IFFCOTokio", "8": "National Insurance", "9": "Reliance", "10": "RoyalSundaram", "11": "TataAIG", "12": "New India", "13": "Oriental", "14": "UnitedIndia", "15": "L&amp;T General", "16": "Raheja QBE", "17": "SBI General", "18": "Shriram General", "19": "UniversalSompo", "20": "Max Bupa", "21": "HDFC ERGO Health", "22": "DLF Pramerica", "23": "Bajaj Allianz", "24": "IndiaFirst", "25": "AEGON Religare", "26": "Star Health", "27": "Express BPO", "28": "HDFC Life", "29": "Bharti Axa", "30": "Kotak Mahindra", "31": "LIC India", "32": "Birla Sun Life", "33": "LibertyGeneral", "34": "Care Health", "35": "Magma HDI", "36": "Indian Health Organisation", "37": "TATA AIA", "38": "Manipal Cigna", "39": "ICICI Pru", "42": "Aditya Birla", "43": "Edelweiss Tokio Life", "44": "GoDigit", "45": "Acko", "46": "Edelweiss", "48": "Kotak", "47": "Navi", "100": "FastLaneVariantMapping", "101": "Landmark"},
+    "environment": {
+        "pdf_url_qa": "http://qa.policyboss.com:3000/html2pdf?o=download&u=",
+        "pdf_url": "https://pdftool.policyboss.com/html2pdf.php?o=download&u=",
+        "testing_ssid": [7582, 7583, 7601],
+        "sbi_pg_type" : "rzrpay",
+        "kotak_pg_type" : "rzrpay",
+        "icici_pg_type" : "rzrpay",
+        "edelweiss_pg_type" : "rzrpay",
+        "chola_pg_type": "rzrpay",
+        "name": "Production",
+        "port": "3000",
+        "weburl": "http://localhost:3000",
+        "downloadurl": "http://localhost:3000",
+        "portalurl": "http://qa-www.policyboss.com",
+        "notification_email" : "horizonlive.2020@gmail.com",
+        "google_api_key": "AIzaSyDGHQ8Bqez5QDi4tzorkLU4mRn98uzSYpo",
+        "shorten_url" : "http://horizon.policyboss.com:5000/short_url/create",
+        "insurer_env": "",
+        "otp_success": "8888" 
+    },
+    "sms": {
+        "sendsms": true
+    },
+    "portalsqldb": {
+        "user": "newsstest",
+        "password": "sir@1234",
+        "server": "POLICYBOSS\\TESTPOLICYBOSS",
+        "port": "1433",
+        "database": "QA_PolicyBoss"
+    },
+    "email": {
+        "send": true,
+        "sg_api_key": "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"
+    },
+    "auth_url": {
+        "user": "horizon",
+        "pass": "horizon007"
+    },
+    "pb_config":{
+        "api_crn_url":"http://qa.policyboss.com/Quotes/Api/MotorCRN",
+        "api_health_crn_url":"http://qa.policyboss.com/quotes/api/HealthCRN",
+        "api_marine_crn_url":"http://qa.policyboss.com/quotes/api/MarineCRN",
+        "horizon_api_crn_url": "https://qa-horizon.policyboss.com:3443/quote/horizon_crn_create",
+        "api_login_url":"http://vehicleinfo.policyboss.com/api/AuthenticateUser",
+        "api_crn_user":"test",
+        "api_crn_pass":"test@123",
+        "pdf_system_loc": "D:\\QA\\PolicyBoss\\pdf-files\\policy\\",
+        "pdf_web_loc": "/pdf-files/policy/"
+    },
+    "erp_config":{
+        "api_login_url":"http://202.131.96.98:8099/Account/Login",
+        "api_qt_url":"http://202.131.96.98:8889/PushNewLeadIDToSolSof.svc?wsdl"
+    },
+    "channel": {
+        "Const_FOS_Code": {
+            "28": "MISP",
+            "29": "FOS",
+            "34": "GS-FOS",
+            "39": "DC-FOS",
+            "41": "EM-FOS",
+            "43": "LA-FOS"
+        },
+        "Const_FOS_Channel": {
+            "29": "SM",
+            "34": "GS",
+            "39": "DC",
+            "41": "EM",
+            "43": "LA"
+        },
+        "Const_POSP_Channel": {
+            "1": "DC",
+            "2": "SM",
+            "4": "SG",
+            "8": "GS",
+            "11": "EM",
+            "12": "LA"
+        }
+    },
+    "icici_auth": {
+        "auth_url": "https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    }
+    
+}
+
+

@@ -1,0 +1,53 @@
+<html>
+<head>
+    <style>
+    .button {
+        background-color: #4CAF50; 
+        border: none;
+        color: white;
+        padding: 5px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+    }    
+    .button2 {background-color: #008CBA;}
+    </style>
+<title>Session Management in NodeJS using Node and Express</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+function testsession(){
+ $.get("/quote/getSession",function(data){
+            document.getElementById("testsession").innerHTML = 'Welcome '+data;
+        });
+}
+$(document).ready(function(){
+    $("#submit").click(function(){
+        $.get("/quote/logout",function(data){
+                if(data === 'Logout')
+				{
+				    window.location.href="Login.html";
+				}
+        });
+    });
+});
+
+</script>
+</head>
+    <body onload=testsession();>
+		<table border="1" align="center"><tr>
+        <td id="testsession"></td>
+		</tr>
+		<tr>
+		<td><input  type="button" value="Logout" id="submit" class="button button2"></td>
+		</tr>
+		</table>
+    </body>
+</html>
+
+
+
+

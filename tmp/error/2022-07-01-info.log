@@ -1,0 +1,118 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:48:38 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:48:38 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"8:48:38 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"8:48:38 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:48:38 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:48:38 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:48:38 AM"}
+{"level":"info","message":"Success","timestamp":"8:55:49 AM"}
+{"level":"info","message":"Success","timestamp":"8:59:57 AM"}
+{"level":"info","message":"Success","timestamp":"9:00:05 AM"}
+{"level":"info","message":"Success","timestamp":"9:00:54 AM"}
+{"level":"info","message":"Success","timestamp":"9:00:59 AM"}
+{"level":"info","message":"Success","timestamp":"9:05:19 AM"}
+{"level":"info","message":"{\"PremiumwithAddon\":0,\"addon_Hdc\":\"no\",\"addon_Pa\":\"no\",\"addon_aru\":\"no\",\"addon_ca\":\"no\",\"addon_cbb\":\"no\",\"addon_ci\":\"no\",\"addon_cover\":\"no\",\"addon_dsi\":\"no\",\"addon_global\":\"no\",\"addon_hdc\":\"no\",\"addon_ncb\":\"no\",\"addon_protector\":\"no\",\"addon_rmw\":\"no\",\"addon_sncp\":\"no\",\"addon_time\":\"no\",\"addon_uar\":\"no\",\"addon_ursi\":\"no\",\"freeAddOnCover\":\"no\",\"adult_count\":1,\"agent_source\":\"0\",\"app_version\":\"PolicyBoss.com\",\"child_count\":0,\"client_key\":\"CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9\",\"contact_name\":\"test tset\",\"crn\":0,\"elder_mem_age\":26,\"eldest_mem_gender\":\"\",\"email\":\"test@tets.com\",\"execution_async\":\"yes\",\"fba_id\":0,\"geo_lat\":0,\"geo_long\":0,\"pa_insurance_type\":\"individual\",\"insurer_selected\":\"\",\"ip_address\":\"\",\"ip_city_state\":\"\",\"member_1_age\":26,\"member_1_gender\":\"\",\"member_2_age\":-1,\"member_2_gender\":\"\",\"member_3_age\":-1,\"member_3_gender\":\"\",\"member_4_age\":-1,\"member_4_gender\":\"\",\"member_5_age\":-1,\"member_5_gender\":\"\",\"member_6_age\":-1,\"member_6_gender\":\"\",\"method_type\":\"Premium\",\"mobile\":\"9876856758\",\"city_id\":\"677\",\"city_name\":\"Mumbai\",\"state_name\":\"\",\"multi_individual\":\"no\",\"policy_tenure\":1,\"product_id\":8,\"quick_quote\":true,\"secret_key\":\"SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW\",\"source\":\"desktop\",\"ss_id\":0,\"topup_applied\":\"none\",\"ui_source\":\"PBBETA\",\"car_value\":\"755776\",\"member_1_monthly_income\":7657657,\"member_2_monthly_income\":0,\"member_3_monthly_income\":0,\"member_4_monthly_income\":0,\"member_5_monthly_income\":0,\"member_6_monthly_income\":0,\"member_1_occupation\":\"Job\",\"pa_insurance_si\":0,\"initial_si\":0,\"is_initial_si_set\":\"no\",\"visitor_id\":\"\"}","timestamp":"10:29:44 AM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"10:29:44 AM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"10:29:44 AM"}
+{"level":"info","message":"PersonalAccident::product_api_pre::Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident child_count Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident adult_count Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_age Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Start PersonalAccident elder_member_age","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Start PersonalAccident elder_member_age_in_months","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Start PersonalAccident elder_member_age_in_months","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident get_member_birth_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident policy_start_date Start","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident policy_start_date Finish 2022-07-02","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Start PersonalAccident policy_end_date","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Finish PersonalAccident policy_end_date 2023-07-01","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident::product_api_pre::Finish","timestamp":"10:29:45 AM"}
+{"level":"info","message":"PersonalAccident premium_initiate_handler SRN-ISDJBVFS-WURF-NTRV-WUNC-OZIWJ6FJSODX","timestamp":"10:29:45 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"10:29:50 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"10:29:50 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"10:29:50 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"10:29:52 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:29:53 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 1, ok: 1 }","timestamp":"10:29:53 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"10:31:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:31:18 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"10:31:18 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:49 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:50 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"10:34:50 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:34:50 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"10:34:50 AM"}
+{"level":"info","message":"Waiting api_log_summary","timestamp":"10:36:25 AM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"10:36:26 AM"}
+{"level":"info","message":"Finish api_log_summary","timestamp":"10:36:26 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:37:03 AM"}
+{"level":"info","message":"Waiting api_log_summary","timestamp":"10:38:26 AM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"10:38:26 AM"}
+{"level":"info","message":"Finish api_log_summary","timestamp":"10:38:26 AM"}
+{"level":"info","message":"Waiting api_log_summary","timestamp":"10:38:40 AM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"10:38:40 AM"}
+{"level":"info","message":"Finish api_log_summary","timestamp":"10:38:40 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"10:38:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"10:38:43 AM"}

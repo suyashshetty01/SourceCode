@@ -1,0 +1,50 @@
+{
+    "own_damage": {
+        "od_basic": "Basic OD",
+        "od_elect_access": "ELECTRICAL ACCESSORY OD",
+        "od_non_elect_access": "NON ELECTRICAL ACCESSORY OD",
+        "od_cng_lpg": "CNGLPG KIT OD",
+        "od_disc_ncb": "No claim bonus",
+        "od_disc_vol_deduct": "Voluntary deductable",
+        "od_disc_anti_theft": "Antitheft device discount",
+        "od_disc_aai": "Automobile Association discount",
+        "od_loading": "",//doubt De-tariff Loading
+        "od_disc": "De-tariff Discount",
+        "od_final_premium": ""
+    },
+    "liability": {
+        "tp_basic": "Basic TP",
+        "tp_cover_owner_driver_pa": "PA COVER TO OWNER DRIVER",
+        "tp_cover_unnamed_passenger_pa": "UNNAMED PA COVER TO PASSENGERS",
+        "tp_cover_named_passenger_pa": "",
+        "tp_cover_paid_driver_pa": "",
+        "tp_cover_paid_driver_ll": "LEGAL LIABILITY TO PAID DRIVER",
+        "tp_cng_lpg": "CNGLPG KIT TP",
+        "tp_final_premium": ""
+    },
+    "addon": {
+        "addon_zero_dep_cover": "NIL DEPRECIATION WAIVER COVER",
+        "addon_road_assist_cover": "Road side Assistance",
+        "addon_ncb_protection_cover": null,
+        "addon_engine_protector_cover": "",
+        "addon_invoice_price_cover": "RETURN TO INVOICE",
+        "addon_key_lock_cover": "KEY REPLACEMENT",
+        "addon_consumable_cover": "COST OF CONSUMABLES",
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": "HYDROSTATIC LOCK COVER",
+        "addon_final_premium":0 //AddOnCoverDetails Premium
+    },
+    "net_premium": "NetPremium",
+    "service_tax": "ServiceTax",
+    "final_premium": ""//TotalPremium- nildippremium
+}

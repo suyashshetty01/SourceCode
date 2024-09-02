@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travel FinMart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="./handle_Url.js"></script>
+    <script src="./Travel_Finmart.js"></script>
+    <link rel="stylesheet" type="text/css" href="Travel_Finmart-main.css" />
+</head>
+
+<body>
+    <!--<div class="header" style="display:none;">TRAVEL INSURANCE</div> -->
+
+    <div class="Premiumpopup PremInitiVerify" style="display: none;">
+        <div class="premium_section" style="top: 30%;">
+            <div>
+                <div class="validationMsg" style="padding: 10px;">
+
+                </div>
+            </div>
+            <div>
+                <button class="filter_btn closeValidPopup" style="padding: 8px">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="warningmsg" style="padding-top: 219px; display:none">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center;" id="warningerror">ss_id , fba_id , app_version is mandatory</h3>
+    </div>
+
+    <div id="Dashboard">
+        <div class="container_fluid">
+            <div class="DashboardnavItem">
+                <nav>
+                    <div><a class="Quotenav ActivenavItem" onclick="quoteClick()">QUOTE</a></div>
+                    <div><a class="Applicationnav" onclick="applicationClick()">APPLICATION</a></div>
+                    <div><a class="Completenav" onclick="completeClick()">COMPLETED</a></div>
+                </nav>
+            </div>
+            <div class="searchbar">
+                <div class="grab">
+                    <span class="ad_quote" onclick="showInput()"> <img src="images/file.png" /> Add Quote </span>
+                </div>
+            </div>
+        </div>
+        <div class="sticky_btn">
+            <div class="plus_quote">
+                <img src="images/add.png" onclick="showInput();" />
+            </div>
+            <div class="refresh_quote">
+                <span onclick="Reload();">
+                    <img src="images/refresh.png" />
+                </span>
+            </div>
+        </div>
+        <div class="DashboardSec">
+            <div id="sales_loader" align="center">
+                <img src="images/sales-loader.gif" />
+            </div>
+            <div id="No_Record" style="display:none;text-align:center;margin:4% auto;font-size:25px;">
+                <b>No Records found</b>
+            </div>
+            <div class="info_section" id="quoteId"></div>
+            <div class="info_section" id="applicationId"></div>
+            <div class="info_section" id="completeId"></div>
+        </div>
+    </div>
+
+    <div class="tabContainer" id="travel">
+        <div class="buttonContainer">
+            <a class="Dashboardnav" onclick="showDashBoard()">
+                <img src="images/list-(1).png" id="menu1" alt="" style="margin: 10px; width: 20px; float: left;" />
+            </a>
+            <button onclick="showPanel(0)" id="inputTabBtn"><span>INPUT</span></button>
+            <button onclick="showPanel(1)" disabled>QUOTE</button>
+            <!-- <button onclick="showPanel(2)">APPLY</button> -->
+        </div>
+        <div class="tabPanel tabPanel_Details" id="InputPage">
+            <form>
+                <div style="display: grid; grid-template-columns: 30% 70%; padding: 6px 0px;">
+                    <span style="margin-top: 7px;">
+                        <label>Type of Trip:</label>
+                    </span>
+                    <div class="inpErr" id="trip_type"
+                        style="margin-top: 5px; display: grid; grid-template-columns: 50% 50%;">
+                        <label class="container">
+                            Single Trip
+                            <input type="radio" name="up" id="SINGLE" class="trip_type" value="SINGLE" />
+                            <span class="checkmark margin"></span>
+                        </label>
+                        <label class="container">
+                            Multi-City Trip
+                            <input type="radio" name="up" id="MULTI" class="trip_type" value="MULTI" />
+                            <span class="checkmark margin"></span>
+                        </label>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 35% 63%">
+                    <div style="margin-top: 10px;">
+                        <label>Region of Travel:</label>
+                    </div>
+                    <select class="inpErr" id="region">
+                        <option selected disabled>Select Region</option>
+                        <option class="hideOnMultiTrip" value="Asia">Asia</option>
+                        <option class="hideOnMultiTrip" value="Africa">Africa</option>
+                        <option class="hideOnMultiTrip" value="Europe">Europe</option>
+                        <option value="WorldWide">WorldWide</option>
+                        <option value="WWExUSCanada">WorldWide Excl. US/Canada</option>
+                    </select>
+                </div>
+                <div class="inputGrid">
+                    <div>
+                        <span><input type="text" maxlength="10" placeholder="Start Date" id="travel_start_date"
+                                class="inpErr start_dt" /></span>
+                    </div>
+                    <div class="dvEndPeriod">
+                        <span><input type="text" maxlength="10" placeholder="Return Date" disabled id="travel_end_date"
+                                class="inpErr end_dt" /></span>
+                    </div>
+                    <div class="dvMaxTripPeriod" style="width: 98%; margin-top: -7px;">
+                        <span class="input" id="onDyn">
+                            <select class="dayRange inpErr" id="maxTripPeriod">
+                                <option selected disabled>Max Trip Days </option>
+                                <option value="30">0-30</option>
+                                <option value="45">30-45</option>
+                                <option value="60">45-60</option>
+                                <option value="90">60-90</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <label>Add Member</label>
+                <div class="inputGrid" id="MemberCount" style="padding-bottom: 17px;">
+                    <div>
+                        <span id="adultRemove" class="member" memberType="Adult" operation="minus">&#45;</span>
+                        <span style="padding: 0px 7px;">Adult [<span id="adult">1</span>]</span>
+                        <span id="adultAdd" class="member" memberType="Adult" operation="plus">&#43;</span>
+                    </div>
+                    <div>
+                        <span id="childRemove" class="member" memberType="Child" operation="minus">&#45;</span>
+                        <span style="padding: 0px 7px;">Child [<span id="child">0</span>]</span>
+                        <span id="childAdd" class="member" memberType="Child" operation="plus">&#43;</span>
+                    </div>
+                </div>
+                <span>
+                    <label>Add Insured Members Birth Date</label>
+                </span>
+                <div class="inputGrid" id="Member_dob">
+                    <div>
+                        <input type="text" id="Member_1_DOB" maxlength="10" placeholder="Eldest Adult-DOB"
+                            class="inpErr M_1_DOB" />
+                    </div>
+                </div>
+                <span class="inputfieldGrid">
+                    <label>Full Name:</label><input type="text" id="name" class="inpErr" autocomplete='off'
+                        autocorrect='false' spellcheck="false" />
+                </span>
+                <span class="inputfieldGrid">
+                    <label>Email ID:</label><input type="text" id="email" class="inpErr" autocomplete='off' />
+                </span>
+                <span class="inputfieldGrid">
+                    <label>Mobile:</label><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="10"
+                        id="mobile" class="inpErr" />
+                </span>
+
+                <!-- <div class="inputGrid"> 
+                    <span>
+                    <label>Email ID</label><input type="text" name="" placeholder="" id='email' class='inpErr'>
+                    </span>
+                    <span>
+                    <label>Mobile</label><input type="text" name="" placeholder="" maxlength='10' id='mobile' class='inpErr'>
+                    </span> 
+                    </div> -->
+            </form>
+            <div class="button" onclick="validateForm()">GET QUOTE</div>
+        </div>
+        <div class="tabPanel" id="QuotePage">
+            <div id="loader">
+                <img src="images/search-loader.gif" />
+            </div>
+            <div class="Premiumpopup">
+                <div class="premium_section">
+                    <div class="premium_header">
+                        Premium Breakup Details
+                        <span class="premium_breakup_close" style="font-size: 24px; line-height: 16px; float: right;"
+                            onclick="closePopup()">&times;</span>
+                    </div>
+                    <div class="premium_content" style="margin-top: 41px;"></div>
+                    <div class="premium_footer"></div>
+                </div>
+            </div>
+            <div class="Filter_popup">
+                <div class="Filter_section">
+                    <div class="Filter_header">
+                        <strong>Filters</strong>
+                        <span style="font-size: 24px; line-height: 16px; float: right;"
+                            onclick="hideFilters()">&times;</span>
+                    </div>
+                    <div class="filter_Body">
+                        <div style="padding: 10px 15px;">
+                            <div class="row">
+                                <div class="twoCol" class="section_pane"><b>Sum Insured</b></div>
+                                <hr />
+                                <div style="margin-left: 5px;">
+                                    <div class="label">
+                                        <span class="left_label">All</span><span class="right_label"
+                                            style="float: right;">Max</span>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="slidecontainer">
+                                        <span class="infoTag"><input type="range" id="tpslide" class="slider" min="0"
+                                                max="0" value="0" step="1" /></span>
+                                    </div>
+                                    <div class="slider_Si_value">Show SI : ALL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px 15px;">
+                            <div class="twoCol section_pane">
+                                <div>Insurer <i class="fa fa-angle-down" aria-hidden="true"
+                                        style="float: right; font-size: 20px;"></i>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="insurer" style="margin-left: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Filter_footer">
+                    <button class="filter_btn" onclick="applyFilter()"><strong>Apply</strong></button>
+                    <button class="filter_btn" onclick="resetFilter()"><strong>RESET</strong></button>
+                </div>
+            </div>
+
+            <div class="quote_content">
+                <div class="header_content">
+                    <div class="header_grid_">
+                        <div>
+                            <div class="info_dv" id="info_sectn_one">CRN:<b class="crntxt info_det">0</b>Insurer:<b
+                                    class="ins_count info_det">0</b>Plans:<b class="plan_count info_det">0</b></div>
+                            <div class="info_dv" id="info_sectn_two">Type: <b class="trip_type info_det"> </b>
+                                Destination: <b class="destination info_det"></b></div>
+                        </div>
+                        <div id="sort" style="padding-top: 7px;">
+                            <div class="fa fa-sort-amount-asc" id="sort_icon"></div>
+                            <select class="sort_select"
+                                style="opacity: 0; margin-left: -5px; margin-bottom: 15px; margin-top: -18px; display: flex;">
+                                <option value="" disabled>--Sort Premium--</option>
+                                <option value="ascending" selected>Low to High</option>
+                                <option value="descending">High to Low</option>
+                            </select>
+                        </div>
+                        <div onclick="EditCustdetails()" title="Edit Customer Details" class="tooltip"><i
+                                class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+
+                <div class="quote_section" id="quote_display"></div>
+
+                <div>
+                    <div class="footer_section" onclick="showFilters()">
+                        <button class="SendLink">Filters</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Corporate Insurance</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/mainsme.css">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+ 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity= "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/corp_product.js"></script>
+</head>
+<body>
+		<div class="Popup_thank">
+            <div class="popup">
+				<img class="loader" src="Image/loading.gif">
+            </div>
+        </div>
+		<div class='qr-container' id='qrcode-container'>
+			<div class='popupContainer1' style="text-align: center;">
+				<div class="popupHeading1" style="text-align: center;">
+					Message
+					<span class='popClose1'>&times;</span>
+				</div>
+				<div class='popupSection1'>
+					<span class="successLinkMsg"></span>
+				</div>
+			</div>
+		</div>
+	<div class="logo">
+	<a class="redirectIcon" style="display:none">
+		 <img src="Image/dashboard-icon.png" id="menu1" alt=""
+			 style="padding:1px;margin:11px;width:40px;color: white;" onclick="redirectDashboard();" />
+	</a>
+		<img src="Image/PB-Pro.png" align="right">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6" style="margin: auto;">
+				<h1>Corporate Insurance</h1>
+				<div class="bgImg">
+					<img src="Image/SME-Insurance.png" width="100%">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="VDetails">
+					<div>
+						<div class="row">
+							<div class="col-md-12 col-12">
+								 <input type="text" id="name" name="name" onkeyup="forceText(event)" maxlength="40" class="inpErr"
+								 autocomplete="off">
+								<label for="name">Name</label>
+							</div>
+							<div class="col-md-12 col-12" style="padding-right: 10px;">
+								 <input inputmode="numeric" maxlength="10" onKeyPress="if(this.value.length==10) return false;" onkeyup="forceNumeric(event)"
+								 pattern="[0-9]*" id="mobile" name="mobile" autocomplete="off" class="inpErr">
+								<label for="mobile">Mobile</label>
+							</div>
+							<div class="col-md-12 col-12">
+								 <input type="text" id="email" name="email" class="inpErr">
+								<label for="email">Email</label>
+							</div>
+							<div class="col-md-12 col-12">
+                            <div class="inputBox">
+								<label>Product</label><br>
+            						<select id="product" name="product" class="inpErr">
+									<option value="">Product</option>
+									<!--<option value="24">SME Home Page</option>-->
+									<option value="Applicable only for Fresh Proposals Maximum Sum Insured Restricted to 5,00,00,000 and Claim Amount Less Than 1,00,000">Workmen compensation Insurance</option>
+									<option value="Applicable only for Fresh proposals Maximum Sum insured  restricted to 1,00,00,000">Marine Transit Insurance</option>
+									<option value="">Group Health Insurance</option>
+									<option value="Applicable only for Fresh proposals Maximum Sum insured 5,00,00,000 *Certain occupancies are restricted up to 1,00,00,000 ">Property Insurance</option>
+									<option value="Applicable only for Fresh proposals Maximum Sum insured  restricted to 5,00,00,000 Subject to nil claim / loss history">Professional Indemnity for CA</option>
+									<option value="Applicable only for Fresh proposals Maximum Sum insured  restricted to 5,00,00,000 Subject to nil claim / loss history">Professional Indemnity for Doctors</option>
+            						</select>
+							</div>
+							<div class="valueResult" style="font-size:14px;padding-top: 10px;"></div>
+                            </div>
+							
+						</div>
+					</div>
+					<div style="text-align: center;" class="button">
+						<button type="button" onclick="validate_details('SendLink');">SEND LINK</button>
+						<button type="button" onclick="validate_details('PayNow');">PROCEED</button>
+					</div>
+					<input type="hidden" id="source_type">
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input').focus( function() {
+		 		var element = $(this).next();
+		 		var id = $(this).attr('id');
+		 		var type = $(this).attr('type');
+		 		var name = $(this).attr('name');
+		 		if((type == 'radio') && (name == 'Premium')){
+		 			console.log('true');
+		 			var txt = $(this).parent('label').find('span').text();
+		 			console.log(txt);
+		 			$('#amount').text(txt);
+		 		}
+		 		else{
+		 			element.css({"top":"-15px","color":"#757575","font-size":"10px"});
+		 		}
+		 		if(id == 'registrationNo'){
+		 			var label = $(this).parents('.box').find('label');
+		 			label.css({"top":"-15px","color":"#757575","font-size":"10px"});
+		 		}
+			})
+			$('input').blur( function() {
+				if(!$(this).val()){
+					var element = $(this).next();
+					element.css({"top":"3px","color":"gray","font-size":"14px"});
+				}
+			})
+			$('textarea').focus( function() {
+		 		var element = $(this).next();
+				element.css({"top":"-15px","color":"#757575","font-size":"10px"});
+			})
+			$('textarea').blur( function() {
+				if(!$(this).val()){
+					var element = $(this).next();
+					element.css({"top":"3px","color":"gray","font-size":"14px"});
+				}
+			});
+			$(".popClose1").click(function () {
+                $('#qrcode-container').hide();
+		});
+		if(window.location.href.includes('ss_id') && parseInt(getUrlVars()['ss_id']) > 0) {
+					$('.redirectIcon').show();
+				}
+				if(window.location.href.includes('isCustomer') && getUrlVars()['isCustomer'] === 'true'){
+					$('.redirectIcon').hide();
+				}
+		});
+		$("#product")
+              .change(function () {
+                var str = "";
+                $( "select option:selected" ).each(function() {
+                  str += $( this ).val() + " ";
+                });
+                $( ".valueResult" ).text( str );
+              })
+              .change();
+	</script>
+</body>
+</html>

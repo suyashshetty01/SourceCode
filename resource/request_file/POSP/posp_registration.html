@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="posp_registration_main.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="posp_registration.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header"><span style="float: left;"><i class='fas fa-arrow-left'></i></span>REGISTER AS ASSOCIATE</div>
+	<div id="tab">
+		<div id="Details">
+			<div class="title">
+				<span>PERSONAL INFORMATION</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+			</div>
+			<div class="info">
+				<form name="PersonalInfo" class="PersonalInfo" id="PersonalInfo" method="post">
+					<div class="grid">
+						<div>
+							<label>
+								<input type="text" name="firstName" id="firstName" placeholder="" required>
+								<span style="float: right;"><i class='fas fa-user-alt'></i></span>
+								<label for="firstName">First Name</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="text" name="lastName" id="lastName" placeholder="" >
+								<span style="float: right;"><i class='fas fa-user-alt'></i></span>
+								<label for="lastName">Last Name</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="text" name="DateofBirth" id="DateofBirth" placeholder="" required  onfocus="(this.type='date')" onblur="(this.type='text')">
+								<span style="float: right;"><i class='far fa-calendar-alt'></i></span>
+								<label for="DateofBirth">Date of Birth</label>
+							</label>
+						</div>
+						<div style="font-size: 11px;padding:0;text-align: center;border: none; ">
+							<label style="position: relative;">
+			                    <label style="top: -10px;">Gender</label><br>
+				                <span class="gender grid">
+				                	<label style="padding: 0;top: 0;">
+				                		<input type="radio" name="gender" required />
+				                    	<div class="male">Male</div>
+									</label>
+									<label style="padding: 0;top: 0;">
+										<input type="radio" name="gender" required />
+										<div class="female">Female</div>
+							        </label>
+							    </span>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="number" name="Mobile" id="Mobile" placeholder="" required minlength="10" maxlength="10" required>
+								<span style="float: right;"><i class="fa fa-mobile" style="font-size: 19px;"></i></span>
+								<label for="Mobile">Mobile</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="number" name="Mobile_2" id="Mobile_2" placeholder="" minlength="10" maxlength="10">
+								<span style="float: right;"><i class="fa fa-mobile" style="font-size: 19px;"></i></span>
+								<label for="Mobile_2">Mobile 2</label>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div>
+							<input type="email" name="email" id="email" placeholder="" required>
+							<span style="float: right;"><i class="fa fa-envelope"></i></span>
+							<label for="email">Email</label>
+						</div>
+					</div>
+					<div class="row">	
+						<div>
+							<input type="email" name="confirm_email" id="confirm_email" placeholder="" required>
+							<span style="float: right;"><i class="fa fa-envelope"></i></span>
+							<label for="confirm_email">Confirm Email</label>
+						</div>
+					</div>
+					<div class="grid">
+						<div>
+							<label>
+								<input type="number" name="pincode" id="pincode" placeholder="" required minlength="6" maxlength="6">
+								<span style="float: right;"><i class="material-icons" style="font-size: 14px;">location_on</i></span>
+								<label for="pincode">Pincode</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="text" name="city" id="city" placeholder="" required>
+								<span style="float: right;"><i class="material-icons" style="font-size: 14px;">location_city</i></span>
+								<label for="city">City</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="text" name="state" id="state" placeholder="" required>
+								<span style="float: right;"><i class='fas fa-city'></i></span>
+								<label for="state">State</label>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="text" name="referrer_code" id="referrer_code" id="referrer_code" placeholder="">
+								<span></span>
+								<label for="referrer_code">Referrer Code</label>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div style="color: gray;border: none;">Source<br>
+							<select>
+								<option>Finmart</option>
+								<option>Campaign-SM</option>
+								<option>Campaign-Sagar</option>
+								<option>Campaign-RB</option>
+								<option>Campaign-GS</option>
+								<option>Campaign-EM</option>
+								<option>LM AUTO</option>
+								<option>CC AUTO</option>
+								<option>CC Health</option>
+								<option>Camp SM-NP</option>
+								<option>Camp GS-NP</option>
+								<option>Finmart-NP</option>
+								<option>Camp EM-NP</option>
+								<option>Operation-NP</option>
+								<option>RURBAN</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="Details">
+			<div class="title">
+				<span>PROFESSIONAL INFORMATION</span><span style="float: right;"><i class='fas fa-caret-down' id="icon"></i></span>
+			</div>
+			<div class="info" id="professionalInfo" >
+				<form>
+					<div class="row">
+						<div><input type="checkbox" id="LifeInsu" name="insurance">Life Insurance<br>
+							<select id="life">
+								<option>Ane Life</option>
+							</select>
+						</div>
+						<div><input type="checkbox" id="GeneralInsu" name="insurance">General Insurance<br>
+							<select id="general">
+								<option>Agri.Ins</option>
+							</select>
+						</div>
+						<div><input type="checkbox" id="HealthInsu" name="insurance">Health Insurance<br>
+							<select id="health">
+								<option>Agri.Ins</option>
+							</select>
+						</div>
+					</div>
+					<div class="grid">
+						<div><input type="checkbox" name="insurance">Mutual Fund</div>
+						<div><input type="checkbox" name="insurance">Stocks</div>
+						<div><input type="checkbox" name="insurance">Postal Savings</div>
+						<div><input type="checkbox" name="insurance">Bonds/CFDs</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="button">
+		SUBMIT
+	</div>
+</body>
+</html>

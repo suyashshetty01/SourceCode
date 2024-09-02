@@ -1,0 +1,392 @@
+@font-face {
+  font-family: Hind;
+  src: url(../fonts/Hind-Regular.ttf);
+
+}
+@font-face {
+font-family: Script;
+  src: url(../fonts/Script-MT.ttf);
+}
+
+
+
+/* input.picker[type="date"] { position: relative; } */
+input.picker[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: transparent;
+  background: transparent;
+}
+input:invalid::-webkit-datetime-edit{ color: transparent; }
+input:focus::-webkit-datetime-edit{ color: #000; }
+
+.errInvalid{border-bottom:2px solid red !important;}
+
+/* Loader CSS */
+#loader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgb(255,255,255,0.4);
+}
+#loader img{
+	width:100px;
+	height: 100px;
+	position: absolute;
+	left: 50%;top: 50%;
+	transform: translate(-50px, -50px);
+}
+
+#maxDuration{display: none;}
+.topmenuResultBox .userBox select::-ms-expand {
+  display: none;
+}
+.crn{padding:10px;margin-bottom: 10px;text-align: center;}
+
+body{background:#F1F1F2;font-family: "Hind", Arial, Helvetica, sans-serif;font-size: 14px;}
+.mainContainer{margin: auto 0px;}
+.topBox{padding:5px 0px; text-align: right;}
+.topBox a{color:#000; text-decoration: none; }
+.logo{text-decoration: none; padding-top: 20px; padding-bottom: 20px; }
+.mainText{padding-top: 0px; padding-bottom: 10px; }
+.footerBtn{padding-top: 60px; padding-bottom: 60px; }
+.footer{padding: 20px; font-size:14px; text-align: center;}
+.btnBox{padding-top: 20px; }
+.TopHeader{font-family: "Hind", Arial, Helvetica, sans-serif;font-size: 32px; text-align: center; font-weight: bold;}
+.subHeader{font-family: "Script", Arial, Helvetica, sans-serif;font-size:16px; text-align: center;}
+/*.login-box {
+    margin-top: 90px;
+  padding: 25px;
+  background: rgba(255,255,255,.7);
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0,0,0,.6);
+  border-radius: 10px;
+  border:solid 1px #3131bd;
+}*/
+.hdline{border-left: 1px dotted #3131bd;}
+
+.login-box {
+  position: relative;
+  border: 1px solid #3131bd;
+  margin-top: 90px;
+  padding: 25px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.9);
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0,0,0,.6);
+}
+
+.login-box::before {
+  position: absolute;
+  content: '';
+  left: 48%;
+  z-index: 10;
+  width: 30px;
+  height: 15px;
+  background:rgba(255,255,255,.9);
+  bottom: -1px;
+  border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border: 1px solid #3131bd;
+    border-bottom: 0;
+}
+
+.login-box::after {
+  position: absolute;
+  content: '';
+  left: 48%;
+  z-index: 10;
+  width: 30px;
+  height: 15px;
+  background:rgba(255,255,255,.9);
+  top: -1px;
+  border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid #3131bd;
+    border-top: 0;
+}
+.user-box {
+  position: relative;
+  margin-top: 30px;
+}
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+}
+.user-box label {
+  position: absolute;
+  top:0;
+  left: 20px;
+  padding: 00px 0;
+  font-size: 14px;
+  color: #000;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.user-box input:focus ~ label, .user-box select:focus ~ label{
+  top: -25px;
+  left: 30px;
+  color: #96989A;
+  font-size: 12px;
+}
+
+
+.user-box input:valid ~ label, .user-box select:valid ~ label {
+  top: -25px;
+  left: 20px;
+  color: #96989A;
+  font-size: 12px;
+}
+
+.user-box select{
+    width: 100%;
+  padding: 10px 0;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+}
+
+.mainBox{text-decoration:none;background: #fff url(../images/schengen-city.png) no-repeat top center; padding-bottom: 20px;}
+.btnMain{text-decoration:none;background: #3131bd !important; color:#fff; text-align: center; padding:10px 50px; border: 0px; font-weight: bold; font-size: 22px; border-radius: 5px}
+.btnRed{text-decoration:none; background: #d7494d !important; color:#fff; text-align: center; padding:5px 50px; border: 0px; font-weight: bold; font-size: 14px; border-radius: 5px}
+.btnBlue{text-decoration:none;background: #3131bd !important; color:#fff; text-align: center; padding:5px 50px; border: 0px; font-weight: bold; font-size: 14px; border-radius: 5px}
+.btnGrey{text-decoration:none;background: #96989a !important; color:#fff; text-align: center; padding:5px 50px; border: 0px; font-weight: bold; font-size: 14px; border-radius: 5px}
+.btnRed:visited,.btnBlue:visited,.btnGrey:visited{color:#fff;text-decoration:none;}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  display:none;
+  z-index: 100;
+}
+/* .overlay { */
+  /* visibility: visible; */
+  /* opacity: 1; */
+/* } */
+/* #popup_dob{ */
+	/* display:none; */
+/* } */
+.popup {
+  margin: 130px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 70%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top:0px;
+  color: #333;
+  font-size: 16px;
+  font-weight:bold;
+  text-align: center;;
+}
+.popup .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 100%;
+  overflow: auto;
+}
+.premVerifyPop{width: 27%;}
+
+
+.resultBox ul{padding:0px; margin:0px;}
+.resultBox ul li{padding:0px; margin:0px; list-style: none; margin-top: 10px;margin-bottom: 10px;}
+.resultCol{padding:5px; text-align: center;}
+li.resultRoW{background:#fff; border: 1px solid #3131bd; border-radius: 5px; }
+li.resultRoW .details{background:#3131bd; color: #fff; border-radius: 5px; border-top-left-radius: 0px; border-top-right-radius: 0px; text-align: right; padding:5px 20px;}
+li.resultRoW .details a, li.resultRoW .details a:visited, li.resultRoW .details a:active{color: #fff; text-decoration:none;}
+.colLine{border-right: 1px solid #3131bd;}
+.pAlign{margin: 8px;}
+.colsmtext{color: #96989A;font-size: 12px;}
+.colbgtext{color: #000;font-size: 16px;}
+.buyBtn{margin:10px 20px;padding:5px 10px;background:#fa4147; border-radius: 5px; }
+.buyBtn a{color: #fff;text-decoration: none; display: block; text-align: center; }
+
+.topmenuResultBox{background:#fff; border: 1px solid #3131bd; border-radius: 5px;}
+.topmenuResultBox .col-3{text-align: center;}
+
+.topmenuResultBox .userBox {
+  /*position: relative; */
+  padding: 10px;
+}
+.topmenuResultBox .userBox input {
+  width: 100%;
+  padding: 25px 0;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+}
+.topmenuResultBox .userBox label {
+  position: absolute;
+  top:0;
+  left: 20px;
+  padding: 0px 0;
+  font-size: 14px;
+  color: #000;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.topmenuResultBox .userBox input:focus ~ label, .topmenuResultBox .userBox select:focus ~ label{
+top:10px;
+color: #96989A;
+  font-size: 14px;
+}
+
+
+.topmenuResultBox .userBox input:valid ~ label,
+.topmenuResultBox .userBox select:valid ~ label {
+  top:10px;
+  color: #96989A;
+  font-size: 14px;
+}
+
+.topmenuResultBox .userBox select{
+  width: 100%;
+  padding: 25px 0;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.topmenuResultBox .userBox select::-ms-expand {
+  display: none;
+}
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
+ .hdline{border-left: 0px dotted #3131bd;}
+ .topBox{padding:5px 0px; text-align: right;}
+.topBox a{color:#000; text-decoration: none; font-size:12px; }
+.disnone{display: none; }
+.col-25{-ms-flex: 0 0 33.333%;
+    flex: 0 0 33.333%;
+    max-width: 33.333%; }
+
+.col-25 img{width:100%;}
+.pAlign{margin:0px; margin-top:3px;}
+
+.buyBtn{margin:10px 10px;padding:5px 10px;background:#fa4147; border-radius: 5px; }
+.buyBtn a{color: #fff;text-decoration: none; display: block; text-align: center; }
+.validationMsg{font-size: 12px}
+.topmenuResultBox .userBox {
+  /*position: relative; */
+  padding: 10px;
+}
+.topmenuResultBox .userBox input {
+  width: 100%;
+  padding: 25px 0;
+  padding-bottom: 5px;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+}
+.topmenuResultBox .userBox label {
+  position: absolute;
+  top:0;
+  left: 20px;
+  padding: 0px 0;
+  font-size: 12px;
+  color: #000;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.topmenuResultBox .userBox input:focus ~ label, .topmenuResultBox .userBox select:focus ~ label{
+top:10px;
+color: #96989A;
+  font-size: 10px;
+}
+
+
+.topmenuResultBox .userBox input:valid ~ label,
+.topmenuResultBox .userBox select:valid ~ label {
+  top:10px;
+  color: #96989A;
+  font-size: 10px;
+}
+
+.topmenuResultBox .userBox select{
+  width: 100%;
+  padding: 25px 0;
+  padding-bottom: 5px;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #81828C;
+  outline: none;
+  background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.topmenuResultBox .userBox select::-ms-expand {
+  display: none;
+}
+
+
+}
+
+.disableBuy {
+    pointer-events: none;
+    opacity: 0.6;
+}
+@media screen and (max-width: 700px){
+  .popup{
+    width: 90%;
+  }
+}

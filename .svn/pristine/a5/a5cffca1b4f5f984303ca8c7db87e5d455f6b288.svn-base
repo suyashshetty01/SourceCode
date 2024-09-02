@@ -1,0 +1,34 @@
+{  
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 30,
+    "IsActive": 1,
+    "Agent_Code": "",
+    "Location_Code": "",
+    "Service_User": "GC0014",
+    "Service_Password": "cmc123",
+    "Payment_Gateway_URL": "",
+    "Name": "Kotak::Motor",
+    "Lib_Class": "KotakMotor",
+    "Method_List": [         
+        {
+            "Method_Id": 7,
+            "Method_Name": "CalculatePremiumPrivateCarGeneric",
+            "Method_Type_ID": 2,
+            "Method_Action": "",
+            "Method_Request_File": "",
+            "Method_Calling_Type": "",
+            "WSDL_URL": null,
+            "Service_URL": "https://kgipass.kotakmahindrageneralinsurance.co.in/KGIGenericPremiumCalcService/kgiservice.svc", 
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 30
+        }
+    ]
+   
+}

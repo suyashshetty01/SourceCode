@@ -1,0 +1,127 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:rel="http://relinterface.insurance.symbiosys.c2lbiz.com" xmlns:xsd="http://intf.insurance.symbiosys.c2lbiz.com/xsd">
+    <soap:Header />
+    <soap:Body>
+        <rel:createPolicyTravel>
+            <rel:intIO>
+                <xsd:policy>
+                    <xsd:businessTypeCd>NEWBUSINESS</xsd:businessTypeCd>
+                    <xsd:baseProductId>___baseProductId___</xsd:baseProductId>
+                    <xsd:baseAgentId>___insurer_integration_agent_code___</xsd:baseAgentId>
+                    <xsd:coverType>INDIVIDUAL</xsd:coverType>
+                    <xsd:partyDOList>
+                        <xsd:birthDt>___birth_date___</xsd:birthDt>
+                        <xsd:firstName>___first_name___</xsd:firstName>
+                        <xsd:genderCd>___proposer_gender___</xsd:genderCd>
+                        <xsd:guid>___dbmaster_pb_crn____1</xsd:guid>
+                        <xsd:lastName>___last_name___</xsd:lastName>
+                        <xsd:partyAddressDOList>
+                            <xsd:addressLine1Lang1>___permanent_address_1___</xsd:addressLine1Lang1>
+                            <xsd:addressLine2Lang1>___permanent_address_2___ ___permanent_address_3___</xsd:addressLine2Lang1>
+                            <xsd:addressTypeCd>PERMANENT</xsd:addressTypeCd>
+                            <xsd:areaCd>___permanent_city___</xsd:areaCd>
+                            <xsd:cityCd>___permanent_city___</xsd:cityCd>
+                            <xsd:pinCode>___permanent_pincode___</xsd:pinCode>
+                            <xsd:stateCd>___permanent_state___</xsd:stateCd>
+                        </xsd:partyAddressDOList>
+                        <xsd:partyAddressDOList>
+                            <xsd:addressLine1Lang1>___permanent_address_1___</xsd:addressLine1Lang1>
+                            <xsd:addressLine2Lang1>___permanent_address_2___ ___permanent_address_3___</xsd:addressLine2Lang1>
+                            <xsd:addressTypeCd>COMMUNICATION</xsd:addressTypeCd>
+                            <xsd:areaCd>___permanent_city___</xsd:areaCd>
+                            <xsd:cityCd>___permanent_city___</xsd:cityCd>
+                            <xsd:pinCode>___permanent_pincode___</xsd:pinCode>
+                            <xsd:stateCd>___permanent_state___</xsd:stateCd>
+                        </xsd:partyAddressDOList>
+                        <xsd:partyContactDOList>
+                            <xsd:contactNum>___mobile___</xsd:contactNum>
+                            <xsd:contactTypeCd>MOBILE</xsd:contactTypeCd>
+                            <xsd:stdCode />
+                        </xsd:partyContactDOList>
+                        <xsd:partyEmailDOList>
+                            <xsd:emailAddress>___email___</xsd:emailAddress>
+                            <xsd:emailTypeCd>PERSONAL</xsd:emailTypeCd>
+                        </xsd:partyEmailDOList>
+                        <xsd:partyIdentityDOList>
+                            <xsd:identityNum />
+                            <xsd:identityTypeCd>PASSPORT</xsd:identityTypeCd>
+                        </xsd:partyIdentityDOList>
+                        <xsd:relationCd>SELF</xsd:relationCd>
+                        <xsd:roleCd>PROPOSER</xsd:roleCd>
+                        <xsd:titleCd>___salutation___</xsd:titleCd>
+                    </xsd:partyDOList>
+                    <!--InsurersDetail_Start-->
+                    <xsd:partyDOList>
+                        <xsd:birthDt>___member_array_birth_date___</xsd:birthDt>
+                        <xsd:firstName>___member_array_first_name___</xsd:firstName>
+                        <xsd:genderCd>___member_array_gender_2___</xsd:genderCd>
+                        <xsd:guid>___dbmaster_pb_crn_______member_array_inc___</xsd:guid>
+                        <xsd:lastName>___member_array_last_name___</xsd:lastName>
+                        <xsd:partyAddressDOList>
+                            <xsd:addressLine1Lang1>___permanent_address_1___</xsd:addressLine1Lang1>
+                            <xsd:addressLine2Lang1>___permanent_address_2___ ___permanent_address_3___</xsd:addressLine2Lang1>
+                            <xsd:addressTypeCd>PERMANENT</xsd:addressTypeCd>
+                            <xsd:areaCd>___permanent_city___</xsd:areaCd>
+                            <xsd:cityCd>___permanent_city___</xsd:cityCd>
+                            <xsd:pinCode>___permanent_pincode___</xsd:pinCode>
+                            <xsd:stateCd>___permanent_state___</xsd:stateCd>
+                        </xsd:partyAddressDOList>
+                        <xsd:partyAddressDOList>
+                            <xsd:addressLine1Lang1>___permanent_address_1___</xsd:addressLine1Lang1>
+                            <xsd:addressLine2Lang1>___permanent_address_2___ ___permanent_address_3___</xsd:addressLine2Lang1>
+                            <xsd:addressTypeCd>COMMUNICATION</xsd:addressTypeCd>
+                            <xsd:areaCd>___permanent_city___</xsd:areaCd>
+                            <xsd:cityCd>___permanent_city___</xsd:cityCd>
+                            <xsd:pinCode>___permanent_pincode___</xsd:pinCode>
+                            <xsd:stateCd>___permanent_state___</xsd:stateCd>
+                        </xsd:partyAddressDOList>
+                        <xsd:partyContactDOList>
+                            <xsd:contactNum>___mobile___</xsd:contactNum>
+                            <xsd:contactTypeCd>MOBILE</xsd:contactTypeCd>
+                            <xsd:stdCode />
+                        </xsd:partyContactDOList>
+                        <xsd:partyEmailDOList>
+                            <xsd:emailAddress>___email___</xsd:emailAddress>
+                            <xsd:emailTypeCd>PERSONAL</xsd:emailTypeCd>
+                        </xsd:partyEmailDOList>
+                        <xsd:partyIdentityDOList>
+                            <xsd:identityNum>___member_array_passport___</xsd:identityNum>
+                            <xsd:identityTypeCd>PASSPORT</xsd:identityTypeCd>
+                        </xsd:partyIdentityDOList>
+                        <!--___member_array_medquestn-->
+                        <xsd:relationCd>___member_array_relation___</xsd:relationCd>
+                        <xsd:roleCd>PRIMARY</xsd:roleCd>
+                        <xsd:titleCd>___member_array_salutation___</xsd:titleCd>
+                    </xsd:partyDOList>
+                    <!--InsurersDetail_End-->
+                    <xsd:policyAdditionalFieldsDOList>
+                        <xsd:fieldAgree>YES</xsd:fieldAgree>
+                        <xsd:fieldAlerts>YES</xsd:fieldAlerts>
+                        <xsd:fieldTc>YES</xsd:fieldTc>
+                        <xsd:field20>___travel_days___</xsd:field20>
+                        <xsd:field10>___nominee_name___</xsd:field10>
+                        <xsd:field12></xsd:field12>
+                        <xsd:tripStart>YES</xsd:tripStart>
+                    </xsd:policyAdditionalFieldsDOList>
+                    <xsd:policyNum />
+                    <xsd:proposalNum />
+                    <xsd:quotationReferenceNum />
+                    <xsd:sumInsured>___si_code___</xsd:sumInsured>
+                    <xsd:policyCommencementDt>___policy_start_date___</xsd:policyCommencementDt>
+                    <xsd:policyMaturityDt>___policy_end_date___</xsd:policyMaturityDt>
+                    <xsd:maxTripPeriod />
+                    <xsd:term />
+                    <xsd:travelGeographyCd>___baseProductId___</xsd:travelGeographyCd>
+                    <xsd:tripTypeCd>___trip_type___</xsd:tripTypeCd>
+                    <xsd:uwDecisionCd />
+                    <xsd:isPremiumCalculation>YES</xsd:isPremiumCalculation>
+                    <xsd:everTravelledAbroad>YES</xsd:everTravelledAbroad>
+                    <!--TravelAbroadDetails_start-->
+                    <xsd:travelCountry>___travel_country_array___</xsd:travelCountry>
+                    <xsd:travelDays>___travel_days___</xsd:travelDays>
+                    <xsd:travelPurpose>___travel_purpose___</xsd:travelPurpose>
+                    <!--TravelAbroadDetails_end-->
+                </xsd:policy>
+            </rel:intIO>
+        </rel:createPolicyTravel>
+    </soap:Body>
+</soap:Envelope>

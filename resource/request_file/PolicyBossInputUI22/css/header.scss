@@ -1,0 +1,181 @@
+@import "globalvar.scss";
+
+$headerbg:#fff;
+
+//Header Desktop Variables
+$headerTextTransform:uppercase; 
+$navlinkColor:#000;
+$navlinkPadding:10px 12px 10px 12px; 
+$navlinkFontSize:16px; 
+ 
+//Header Mini Desktop Variables
+$navlinkPaddingminiDesktop:10px 12px 10px 12px;
+$navlinkFontSizeminiDesktop:13px;
+
+//Header Burger Menu Variables
+$navlinkColorPhone:$whiteColor;
+$navlinkPaddingPhone:10px 12px 10px 12px;
+$navlinkFontSizePhone:16px; 
+
+/* ----- Active and Hover Links ----- */
+
+    //Desktop
+    $navactiveLinkColor:$lightGray;
+    $navactiveBg:$bgnone; 
+    $activeBgRadius:0;
+
+    //Burger Menu 
+    $navactiveLinkColorPhone:$lightGray;
+    $navactiveBgPhone:$bgnone;
+
+/* ----- Active and Hover Links End ----- */
+
+
+//Dropdown Menu Variables
+$dropDownPadding:10px;
+$dropDownnavlinkColor:$blackColor;
+$dropDownnavlinkFontSize:16px; 
+$dropDownUlBg:$whiteColor;
+$dropDownBorder:0;
+$dropDownBorderRadius:0;
+
+    //Burger Menu
+    $dropDownUlBgPhone:$bgnone;
+    $dropDownnavlinkColorPhone:$whiteColor;
+    $dropDownPaddingPhone:3px 5px;
+ 
+//Dropdown Menu Active Effects Variables
+$dropDownnavlinkActiveColor:$whiteColor;
+$dropDownactiveBgColor:$lightGray;
+$dropDownactiveBgRadius:0px;
+
+
+//Burger Menu Variables
+$mobilebg: #000;
+$navbarTopPaddingBurgerMenu: 35px;
+$dismissWidth:35px;
+$dismissHeight:35px;
+$dismissLineHeight:35px;
+$dismissBg: #7a7a7a;
+$dismisColor: #fff;
+
+
+@mixin dropDownStyle() { 
+    background: $dropDownUlBg;padding: 0; margin: 0;min-width: 220px;
+    border: $dropDownBorder;border-radius: $dropDownBorderRadius;
+    transform: inherit!important;top: 100%!important;
+    li{
+        margin-left: 0; 
+        a{
+            color: $dropDownnavlinkColor;padding: $dropDownPadding; font-size: $dropDownnavlinkFontSize;text-transform: capitalize;
+        }
+        &.active, &:hover{
+            background: $dropDownactiveBgColor;border-radius: $dropDownactiveBgRadius;
+            > a{color: $dropDownnavlinkActiveColor!important;}
+        } 
+
+        //For Showing 2 Step Dropdown Menu on Right Side
+        &.submenu{
+            .dropdown-toggle{transform: rotate(-90deg);}
+            .subdropdown{ left: 100%;top: 0!important;}
+            @include tab{
+                .dropdown-toggle{transform: rotate(0deg);}
+            }
+        } 
+    } 
+    @include tab{
+        background: $dropDownUlBgPhone;
+        li{
+            text-align: center;
+            a{ color: $dropDownnavlinkColorPhone;text-align: center;padding: $dropDownPaddingPhone;}
+        }
+
+        //For Showing 2 Step Dropdown Menu on Right Side to Bottom in Burger Menu
+        .subdropdown{left: 0!important;}
+    }
+}
+
+
+@mixin fullwidth {
+    @include dispflex(flex,space-between,center);
+    position: relative;
+    .logo a{ display: block;}
+    .navbarLink{
+        ul{
+            @include navFlex($alignCenter);
+            li{ 
+                text-transform: $headerTextTransform;
+                margin-left: 10px;
+                .dropdown-toggle{padding: 3px;
+                    &::after{display: none;}
+                }
+                a{ 
+                    color: $navlinkColor;font-size: $navlinkFontSize;padding: $navlinkPadding;display: inline-block;
+                    @include mini-desktop{
+                        font-size: $navlinkFontSizeminiDesktop;padding: $navlinkPaddingminiDesktop;
+                    }
+                    @include tab{
+                        color: $navlinkColorPhone;font-size: $navlinkFontSizePhone;padding: $navlinkPaddingPhone;
+                    }  
+                }
+                //Main Header Navigation Hover Effect
+                &.active ,&:hover{
+                    a { background: $navactiveBg; border-radius: $activeBgRadius;color: $navactiveLinkColor;}
+                }  
+                
+                //DropDown menu Styling
+                > .dropdown-menu{   @include dropDownStyle();   } 
+
+                //For Showing Dropdown on Hover css in Desktop
+                &:hover, &:focus{
+                    > .dropdown-menu{
+                        li{flex-direction: column;}
+                        @include tab_min{
+                            display: block;opacity: 1;visibility: visible;z-index: 10;transition: all .25s ease-out;
+                            li{flex-direction: column;}
+                        }
+                    } 
+                }
+
+                //For Showing Sub Dropdown in Bottom
+                &.openBottom{
+                    li.submenu .dropdown-toggle{transform: rotate(0deg);}
+                    .subdropdown{
+                        left: 0!important;top: 100%!important;position: relative;
+                        li{
+                            padding-left: 20px;
+                            a{font-size: 13px;padding: 0;}
+                            &:hover{
+                                background: none;
+                                a{color: $lightGray!important}
+                            }
+                        }
+                    }
+                }
+            }
+            @include tab {
+                flex-direction: column;margin: 0 auto;
+                li > .dropdown-menu{position: relative!important;transform: none!important}
+            }
+        }
+        //Burger Menu CSS
+        &.active {left:0;}
+        @include tab {
+            background: $mobilebg;   
+            width: 100%;position: fixed; top: 0;left: -100%; 
+            height: 100vh;z-index: 999; transition: all 0.3s; 
+            overflow-y: scroll;text-align: center;
+            padding-top: $navbarTopPaddingBurgerMenu;
+            .navbar-nav {   flex-direction: column; width: 100%;    }
+            #dismiss .d-md-none {display:block !important;}
+        }
+        
+        //Close Button in Burger Menu
+        #dismiss{
+            width: $dismissWidth;height: $dismissHeight;line-height: $dismissLineHeight;
+            background: $dismissBg;color: $dismisColor;text-align: center;
+            position: absolute;top: 0px;  right: 0px;
+            cursor: pointer;transition: all 0.3s; z-index:9999;
+        }
+    }
+}

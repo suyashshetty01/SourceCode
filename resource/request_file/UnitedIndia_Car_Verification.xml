@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.uiic.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:paymentInfo>
+         <application>___insurer_integration_agent_code___</application>
+         <userid>___insurer_integration_service_user___</userid>
+         <password>___insurer_integration_service_password___</password>
+         <paymentXml><![CDATA[<ROOT>
+    <HEADER>
+        <DAT_UTR_DATE>___current_date___</DAT_UTR_DATE>
+        <NUM_PREMIUM_AMOUNT>___final_premium___</NUM_PREMIUM_AMOUNT>
+        <NUM_REFERENCE_NUMBER>___reference_no___</NUM_REFERENCE_NUMBER>
+        <NUM_UTR_PAYMENT_AMOUNT>___transaction_amount___</NUM_UTR_PAYMENT_AMOUNT>
+        <TXT_BANK_CODE></TXT_BANK_CODE>
+        <TXT_BANK_NAME></TXT_BANK_NAME>
+        <TXT_MERCHANT_ID>___insurer_integration_location_code___</TXT_MERCHANT_ID>
+        <TXT_TRANSACTION_ID>___transaction_id___</TXT_TRANSACTION_ID>
+        <TXT_UTR_NUMBER>___pg_reference_number_1___</TXT_UTR_NUMBER>
+    </HEADER>
+</ROOT>]]></paymentXml>
+      </ws:paymentInfo>
+   </soapenv:Body>
+</soapenv:Envelope>

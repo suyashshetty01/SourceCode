@@ -1,0 +1,144 @@
+﻿[
+    {
+
+        "Field_Name": "product_id",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"FPV\",\"10\":\"FTW\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "vehicle_registration_type",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"individual\":\"I\",\"corporate\":\"C\"}",
+        "Field_Group": "Registration",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_registration_type"
+    },    
+    {
+        "Field_Name": "vehicle_manf_date_2",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "yyyy",
+        "Field_Group": "Registration",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_manf_date"
+    },
+    {
+        "Field_Name": "is_addon",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Y\",\"no\":\"N\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "is_addon"
+    },
+    {
+    
+    "Field_Name" : "addon_package_name",
+    "Insurer_ID" : "4",
+    "Product_Id" : "1",
+    "Field_Type" : "text",
+    "Field_Value" : "",
+    "Field_Group" : "Addon",
+    "Field_Category" : "input",
+    "Field_Parent" : "addon_package_name"
+},
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"N\",\"renew\":\"Y\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type_2",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"Y\",\"renew\":\"N\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Y\",\"no\":\"N\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+    {
+        "Field_Name": "is_external_bifuel",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Y\",\"no\":\"N\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "is_external_bifuel"
+    },
+	{
+        "Field_Name": "previous_insurer_address_1",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "string",
+        "Field_Value": "",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "previous_insurer_address_1"
+    },
+	{
+        "Field_Name": "previous_insurer_address_2",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "string",
+        "Field_Value": "",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "previous_insurer_address_2"
+    },
+	{
+        "Field_Name": "previous_insurer_address_3",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "string",
+        "Field_Value": "",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "previous_insurer_address_3"
+    },
+	{
+        "Field_Name": "previous_insurer_pincode",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type": "string",
+        "Field_Value": "",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "previous_insurer_pincode"
+    },
+	{
+        "Field_Name": "is_llpd_2",
+        "Insurer_ID": "4",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value" : "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group" : "Additional_Coverage",
+        "Field_Category" : "input",
+        "Field_Parent": "is_llpd"
+    }
+]

@@ -1,0 +1,655 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:23:58 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:23:58 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"8:23:58 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"8:23:58 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:23:58 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:23:58 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:23:58 AM"}
+{"level":"info","message":"Success","timestamp":"8:35:50 AM"}
+{"level":"info","message":"Success","timestamp":"8:37:03 AM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":12,\"Product_Sub_Category_Code\":24}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Model_ID\":1}}]","timestamp":"8:42:58 AM"}
+{"level":"info","message":"Success","timestamp":"8:50:56 AM"}
+{"level":"info","message":"Success","timestamp":"8:51:08 AM"}
+{"level":"info","message":"Success","timestamp":"8:51:42 AM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":12,\"Product_Sub_Category_Code\":24}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Model_ID\":1}}]","timestamp":"9:02:43 AM"}
+{"level":"info","message":"?user=policyboss&pwd=apipolicyboss&sender=PLBOSS&mobile=7987987897&msg=2359%20is%20the%20OTP%20for%20your%204w%20insurance%20quote%20search%20on%20Policyboss.com.%20Validity%205%20minutes.&mt=0","timestamp":"9:03:09 AM"}
+{"level":"info","message":"==============","timestamp":"9:03:10 AM"}
+{"level":"info","message":"SendSmS MSP-7987987897-1656387189901-27928-11mspRc01","timestamp":"9:03:10 AM"}
+{"level":"info","message":"sms_logupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"9:03:10 AM"}
+{"level":"info","message":"Error response received","timestamp":"9:03:10 AM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"9:03:10 AM"}
+{"level":"info","message":"{\"product_id\":12,\"vehicle_id\":102363,\"rto_id\":580,\"vehicle_insurance_type\":\"renew\",\"vehicle_registration_date\":\"2018-06-13\",\"is_fastlane_rto\":\"no\",\"vehicle_manf_date\":\"2018-01-01\",\"policy_expiry_date\":\"2022-06-29\",\"prev_insurer_id\":2,\"vehicle_registration_type\":\"individual\",\"vehicle_ncb_current\":\"0\",\"is_claim_exists\":\"yes\",\"method_type\":\"Premium\",\"execution_async\":\"yes\",\"electrical_accessory\":\"0\",\"non_electrical_accessory\":\"0\",\"registration_no\":\"MH-02-AA-1234\",\"is_having_valid_dl\":\"no\",\"is_llpd\":\"no\",\"is_opted_standalone_cpa\":\"yes\",\"is_pa_od\":\"yes\",\"is_antitheft_fit\":\"no\",\"is_external_bifuel\":\"no\",\"is_aai_member\":\"no\",\"external_bifuel_type\":\"\",\"external_bifuel_value\":\"\",\"pa_owner_driver_si\":\"100000\",\"pa_paid_driver_si\":\"0\",\"last_name\":\"tse\",\"imt23\":\"no\",\"non_fairing_paying_passenger\":\"no\",\"fairing_paying_passenger\":\"no\",\"other_use\":\"no\",\"own_premises\":\"no\",\"emp_pa\":\"no\",\"conductor_ll\":\"no\",\"coolie_ll\":\"no\",\"cleaner_ll\":\"no\",\"geographicalareaext\":\"no\",\"additionaltowing\":\"no\",\"fibreglasstankfitted\":\"no\",\"first_name\":\"tetst\",\"mobile\":\"7987987897\",\"email\":\"test@Tet.com\",\"crn\":\"0\",\"ss_id\":0,\"client_id\":2,\"fba_id\":0,\"geo_lat\":0,\"geo_long\":0,\"agent_source\":\"\",\"ip_city_state\":\"\",\"app_version\":\"PolicyBoss.com\",\"vehicle_sub_class\":\"gcv_public_otthw\",\"vehicle_class\":\"gcv\",\"vehicle_class_code\":24,\"vehicle_insurance_subtype\":\"1CH_0TP\",\"secret_key\":\"SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW\",\"client_key\":\"CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9\",\"is_breakin\":\"no\",\"is_policy_exist\":\"yes\",\"visitor_id\":6571,\"vehicle_make_name\":\"ASHOK LEYLAND\",\"vehicle_full\":\"ASHOK LEYLAND|1611|1611 COWL (170)|DIESEL|1\",\"rto_full\":\"MH02|Mumbai-Andheri|MAHARASHTRA|A\"}","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor::product_api_pre::Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor::product_api_pre::Finish","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor premium_initiate_handler SRN-UTZYV07D-CBRQ-YCI7-96TU-ITB4JLXYTYPR","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start Motor vehicle_manf_year","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Finish Motor vehicle_manf_year 2018","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor vehicle_ncb_next Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start Motor vehicle_age_year","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Finish Motor vehicle_age_year 4","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start Motor pre_policy_start_date","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-29","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor pre_policy_start_date Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Motor pre_policy_start_date Finish 2021-06-30","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-29","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Jyoti :: HDFCErgoMotor insurer_product_api_pre()","timestamp":"9:03:16 AM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Start { insurer_id: 5,\n  insurer_product_class: 'HDFCErgoMotor',\n  method: \n   { Method_Id: 4,\n     Method_Name: 'HDFCErgo_Car_Premium',\n     Method_Type_ID: 2,\n     Method_Action: 'getPremium',\n     Method_Request_File: 'CV/HDFCErgo_CV_Premium.xml',\n     Method_Calling_Type: 'SOAP',\n     WSDL_URL: null,\n     Service_URL: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl',\n     Service_URL_Live: 'https://hepgw.hdfcergo.com/wscalculate/CommercialPremiumService.asmx?wsdl',\n     Service_File: '',\n     Checkpoint_URL: null,\n     Service_User: '',\n     Service_Password: '',\n     Product_Insurer_ID: 12,\n     Is_Active: true,\n     Method_Type: 'Premium',\n     Product_Id: 12,\n     Insurer_Id: 5 },\n  prepared_request: {},\n  master_db_list: \n   { vehicles: { pb_db_master: [Object], insurer_db_master: [Object] },\n     rtos: { pb_db_master: [Object], insurer_db_master: [Object] },\n     prev_insurer: { pb_db_master: [Object], insurer_db_master: [Object] } },\n  method_field_list: \n   [ { Field_Parent: 'addon_package_name',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '',\n       Field_Type: 'text',\n       Field_Name: 'addon_package_name',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 19,\n       _id: '58cfb7b71f4420329cfe150d' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"New Business\",\"renew\":\"Rollover\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '58cfc2471f4420329cfe150e' },\n     { Field_Parent: 'is_claim_exists',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"0\",\"no\":\"1\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_claim_exists',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 2,\n       _id: '58d0d5d96d0ad8265ecf85d2' },\n     { Field_Parent: 'addon_zero_dep_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_zero_dep_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '58d0d5d96d0ad8265ecf85d3' },\n     { Field_Parent: 'addon_ncb_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_ncb_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 11,\n       _id: '58d0d5d96d0ad8265ecf85d4' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 10,\n       _id: '58d0d5d96d0ad8265ecf85d5' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"I\",\"corporate\":\"O\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '58d0d5d96d0ad8265ecf85d6' },\n     { Field_Parent: 'addon_engine_protector_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_engine_protector_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 12,\n       _id: '58d0d5d96d0ad8265ecf85d7' },\n     { Field_Parent: 'addon_key_lock_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_key_lock_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '58d0d5d96d0ad8265ecf85d8' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58d90a8548529ea903204f86' },\n     { Field_Parent: 'is_llpd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_llpd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58da854348529ea903204f87' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"45\",\"10\":\"37\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_id',\n       _id: '593e7f0904f111ea992d6115' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"1\",\"corporate\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a40311a1da2c73540f8233' },\n     { Field_Parent: 'gender',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"M\":\"Male\",\"F\":\"Female\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'gender_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a4039ea1da2c73540f8651' },\n     { Field_Parent: 'addon_consumable_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_consumable_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0a43436f3a90f5853a41' },\n     { Field_Parent: 'addon_losstime_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_losstime_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0adc436f3a90f585acd1' },\n     { Field_Parent: 'addon_invoice_price_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_invoice_price_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '5c3c70cae6c8b9f71b74cb27' },\n     { Field_Parent: 'pa_unnamed_passenger_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_unnamed_passenger_si',\n       _id: '5c62998ccd4ffee12ae742bd' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"NB\",\"renew\":\"RO\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_tp',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209c7aa4d3ace10e793ca' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"N\",\"renew\":\"S\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209e3aa4d3ace10e7a938' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"1\",\"20000\":\"1\",\"30000\":\"1\",\"40000\":\"1\",\"50000\":\"1\",\"60000\":\"1\",\"70000\":\"1\",\"80000\":\"1\",\"90000\":\"1\",\"100000\":\"1\",\"110000\":\"1\",\"120000\":\"1\",\"130000\":\"1\",\"140000\":\"1\",\"150000\":\"1\",\"160000\":\"1\",\"170000\":\"1\",\"180000\":\"1\",\"190000\":\"1\",\"200000\":\"1\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si_num',\n       _id: '5c821261aa4d3ace10ee33b7' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"2319\",\"10\":\"2320\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_code',\n       _id: '5c82146eaa4d3ace10efc723' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si',\n       _id: '5c836707aa4d3ace10b46f2e' },\n     { Field_Parent: 'imt23',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'imt23',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc8ba2a4e472cba698a47' },\n     { Field_Parent: 'non_fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'non_fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc91b2a4e472cba69bb7c' },\n     { Field_Parent: 'fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc92d2a4e472cba69c6d5' },\n     { Field_Parent: 'other_use',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'other_use',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc93e2a4e472cba69d143' },\n     { Field_Parent: 'own_premises',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'own_premises',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc95d2a4e472cba69e3ff' },\n     { Field_Parent: 'emp_pa',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'emp_pa',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc9812a4e472cba69fa64' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2315\",\"pcv\":\"2314\",\"msc\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fdb7dedec17bbbf7db78' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2317\",\"pcv\":\"2313\",\"msc\":\"2318\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fff5dedec17bbbf8d6e7' },\n     { Field_Parent: 'is_tppd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_tppd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5d5d30a40afffb261a4f8658' },\n     { Field_Parent: 'is_pa_od',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_pa_od',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       _id: '5da02ec249f3abdcfbf5a1b9' } ],\n  method_file_url: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl' }","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start HDFCErgoMotor pre_policy_start_date","timestamp":"9:03:16 AM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Start","timestamp":"9:03:16 AM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Finish 2022-06-30","timestamp":"9:03:16 AM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Finish","timestamp":"9:03:16 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Start premium_summary","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Object motor_vehicle_idv NO IDV from DB","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Start HDFCErgoMotor insurer_vehicle_idv","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Start HDFCErgoMotor policy_end_date_2","timestamp":"9:03:17 AM"}
+{"level":"info","message":"Finish HDFCErgoMotor policy_end_date 29/06/2023","timestamp":"9:03:17 AM"}
+{"level":"info","message":"HDFCErgoMotor :: service_call for -  Idv","timestamp":"9:03:19 AM"}
+{"level":"info","message":"{ str: '<IDV>\\n<policy_start_date>30/06/2022</policy_start_date>\\n<vehicle_class_cd>24</vehicle_class_cd><!--41-->\\n<vehicle_subclass_cd>7</vehicle_subclass_cd><!--3-->\\n<RTOLocationCode>65572</RTOLocationCode><!--16404--><!--14013_PCV-->\\n<vehiclemodelcode>24696</vehiclemodelcode><!--12126-->\\n<manufacturer_code>5</manufacturer_code><!--13-->\\n<purchaseregndate>13/06/2018</purchaseregndate>\\n<manufacturingyear>2018</manufacturingyear>\\n<prev_policy_end_date>29/06/2022</prev_policy_end_date>\\n<typeofbusiness>Rollover</typeofbusiness>\\n</IDV>',\n  VehicleClassCode: '24' }","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Success","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:03:19 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:20 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 1, ok: 1 }","timestamp":"9:03:20 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:03:20 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:03:20 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:03:20 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:21 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:03:21 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:23 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:03:23 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:24 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:03:24 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:03:26 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:03:26 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_summary","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:13 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Success","timestamp":"9:04:13 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:17 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:04:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:04:18 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:04:18 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Start premium_summary","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"9:05:42 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Success","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:43 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:05:43 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:05:46 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:05:46 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:05:46 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:05:47 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:05:47 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_summary","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:14 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:06:14 AM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"9:06:18 AM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"9:06:18 AM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"9:06:18 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'SEARCH',\n        'ADDON_PROPOSAL_CUSTOMER_APPLY',\n        'ADDON_QUOTE_APPLY',\n        'ADDON_PROPOSAL_AGENT_APPLY' ] } }","timestamp":"9:36:54 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'PROPOSAL_LINK_SENT',\n        'BUY_NOW_CUSTOMER',\n        'BUY_NOW_AGENT',\n        'PROPOSAL_SUBMIT',\n        'PROPOSAL_EXCEPTION',\n        'TRANS_FAIL',\n        'PROPOSAL_SAVE_AGENT' ] } }","timestamp":"9:36:54 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'TRANS_SUCCESS_WO_POLICY',\n        'TRANS_SUCCESS_WITH_POLICY',\n        'VERIFICATION_EXCEPTION',\n        'TRANS_MANUAL_PAYPASS',\n        'TRANS_PAYPASS' ] } }","timestamp":"9:36:54 AM"}
+{"level":"info","message":"0","timestamp":"9:36:55 AM"}
+{"level":"info","message":"0","timestamp":"9:36:55 AM"}
+{"level":"info","message":"0","timestamp":"9:36:55 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'SEARCH',\n        'ADDON_PROPOSAL_CUSTOMER_APPLY',\n        'ADDON_QUOTE_APPLY',\n        'ADDON_PROPOSAL_AGENT_APPLY' ] } }","timestamp":"9:37:00 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'PROPOSAL_LINK_SENT',\n        'BUY_NOW_CUSTOMER',\n        'BUY_NOW_AGENT',\n        'PROPOSAL_SUBMIT',\n        'PROPOSAL_EXCEPTION',\n        'TRANS_FAIL',\n        'PROPOSAL_SAVE_AGENT' ] } }","timestamp":"9:37:00 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'TRANS_SUCCESS_WO_POLICY',\n        'TRANS_SUCCESS_WITH_POLICY',\n        'VERIFICATION_EXCEPTION',\n        'TRANS_MANUAL_PAYPASS',\n        'TRANS_PAYPASS' ] } }","timestamp":"9:37:00 AM"}
+{"level":"info","message":"0","timestamp":"9:37:00 AM"}
+{"level":"info","message":"0","timestamp":"9:37:00 AM"}
+{"level":"info","message":"0","timestamp":"9:37:00 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'SEARCH',\n        'ADDON_PROPOSAL_CUSTOMER_APPLY',\n        'ADDON_QUOTE_APPLY',\n        'ADDON_PROPOSAL_AGENT_APPLY' ] } }","timestamp":"10:47:19 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'PROPOSAL_LINK_SENT',\n        'BUY_NOW_CUSTOMER',\n        'BUY_NOW_AGENT',\n        'PROPOSAL_SUBMIT',\n        'PROPOSAL_EXCEPTION',\n        'TRANS_FAIL',\n        'PROPOSAL_SAVE_AGENT' ] } }","timestamp":"10:47:19 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'TRANS_SUCCESS_WO_POLICY',\n        'TRANS_SUCCESS_WITH_POLICY',\n        'VERIFICATION_EXCEPTION',\n        'TRANS_MANUAL_PAYPASS',\n        'TRANS_PAYPASS' ] } }","timestamp":"10:47:19 AM"}
+{"level":"info","message":"0","timestamp":"10:47:29 AM"}
+{"level":"info","message":"0","timestamp":"10:47:29 AM"}
+{"level":"info","message":"0","timestamp":"10:47:29 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'SEARCH',\n        'ADDON_PROPOSAL_CUSTOMER_APPLY',\n        'ADDON_QUOTE_APPLY',\n        'ADDON_PROPOSAL_AGENT_APPLY' ] } }","timestamp":"10:48:29 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'PROPOSAL_LINK_SENT',\n        'BUY_NOW_CUSTOMER',\n        'BUY_NOW_AGENT',\n        'PROPOSAL_SUBMIT',\n        'PROPOSAL_EXCEPTION',\n        'TRANS_FAIL',\n        'PROPOSAL_SAVE_AGENT' ] } }","timestamp":"10:48:29 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'TRANS_SUCCESS_WO_POLICY',\n        'TRANS_SUCCESS_WITH_POLICY',\n        'VERIFICATION_EXCEPTION',\n        'TRANS_MANUAL_PAYPASS',\n        'TRANS_PAYPASS' ] } }","timestamp":"10:48:29 AM"}
+{"level":"info","message":"0","timestamp":"10:48:32 AM"}
+{"level":"info","message":"0","timestamp":"10:48:32 AM"}
+{"level":"info","message":"0","timestamp":"10:48:32 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'SEARCH',\n        'ADDON_PROPOSAL_CUSTOMER_APPLY',\n        'ADDON_QUOTE_APPLY',\n        'ADDON_PROPOSAL_AGENT_APPLY' ] } }","timestamp":"10:52:07 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'PROPOSAL_LINK_SENT',\n        'BUY_NOW_CUSTOMER',\n        'BUY_NOW_AGENT',\n        'PROPOSAL_SUBMIT',\n        'PROPOSAL_EXCEPTION',\n        'TRANS_FAIL',\n        'PROPOSAL_SAVE_AGENT' ] } }","timestamp":"10:52:07 AM"}
+{"level":"info","message":"{ Product_Id: 4,\n  'Premium_Request.ss_id': 8165,\n  Last_Status: \n   { '$in': \n      [ 'TRANS_SUCCESS_WO_POLICY',\n        'TRANS_SUCCESS_WITH_POLICY',\n        'VERIFICATION_EXCEPTION',\n        'TRANS_MANUAL_PAYPASS',\n        'TRANS_PAYPASS' ] } }","timestamp":"10:52:07 AM"}
+{"level":"info","message":"Success","timestamp":"10:52:07 AM"}
+{"level":"info","message":"0","timestamp":"10:52:10 AM"}
+{"level":"info","message":"0","timestamp":"10:52:10 AM"}
+{"level":"info","message":"0","timestamp":"10:52:10 AM"}
+{"level":"info","message":"Success","timestamp":"11:13:52 AM"}
+{"level":"info","message":"Success","timestamp":"12:53:38 PM"}
+{"level":"info","message":"Success","timestamp":"12:54:08 PM"}
+{"level":"info","message":"Success","timestamp":"12:54:18 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"1:59:39 PM"}
+{"meta":"","level":"info","message":"","timestamp":"1:59:39 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"1:59:39 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"1:59:39 PM"}
+{"meta":"","level":"info","message":"","timestamp":"1:59:39 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"1:59:39 PM"}
+{"meta":"","level":"info","message":"","timestamp":"1:59:39 PM"}
+{"level":"info","message":"Success","timestamp":"2:20:26 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"2:24:28 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:24:28 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"2:24:28 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"2:24:28 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:24:28 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"2:24:28 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:24:28 PM"}
+{"level":"info","message":"Success","timestamp":"2:52:43 PM"}
+{"level":"info","message":"Success","timestamp":"2:53:14 PM"}
+{"level":"info","message":"Success","timestamp":"2:53:44 PM"}
+{"level":"info","message":"Success","timestamp":"2:54:03 PM"}
+{"level":"info","message":"Success","timestamp":"2:57:27 PM"}
+{"level":"info","message":"Success","timestamp":"2:59:53 PM"}
+{"level":"info","message":"Success","timestamp":"3:15:09 PM"}
+{"level":"info","message":"Success","timestamp":"3:15:35 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:20:49 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:20:49 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:20:49 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:20:49 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:20:49 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:20:49 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:20:49 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:34:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:34:59 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:34:59 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:34:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:34:59 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:34:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:34:59 PM"}
+{"level":"info","message":"Success","timestamp":"3:37:04 PM"}
+{"level":"info","message":"Success","timestamp":"3:37:33 PM"}
+{"level":"info","message":"Success","timestamp":"3:39:19 PM"}
+{"level":"info","message":"Success","timestamp":"3:40:09 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:44:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:44:54 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:44:54 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:44:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:44:54 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:44:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:44:54 PM"}
+{"level":"info","message":"Success","timestamp":"4:50:03 PM"}
+{"level":"info","message":"Success","timestamp":"4:59:59 PM"}
+{"level":"info","message":"Success","timestamp":"5:18:04 PM"}
+{"level":"info","message":"Success","timestamp":"5:34:23 PM"}
+{"level":"info","message":"Success","timestamp":"5:35:35 PM"}
+{"level":"info","message":"Success","timestamp":"5:36:09 PM"}
+{"level":"info","message":"Success","timestamp":"5:36:30 PM"}
+{"level":"info","message":"Success","timestamp":"5:38:05 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":12,\"Product_Sub_Category_Code\":24}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Model_ID\":1}}]","timestamp":"5:38:56 PM"}
+{"level":"info","message":"?user=policyboss&pwd=apipolicyboss&sender=PLBOSS&mobile=8998789798&msg=2271%20is%20the%20OTP%20for%20your%204w%20insurance%20quote%20search%20on%20Policyboss.com.%20Validity%205%20minutes.&mt=0","timestamp":"5:39:31 PM"}
+{"level":"info","message":"{\"product_id\":12,\"vehicle_id\":102363,\"rto_id\":580,\"vehicle_insurance_type\":\"renew\",\"vehicle_registration_date\":\"2018-06-21\",\"is_fastlane_rto\":\"no\",\"vehicle_manf_date\":\"2018-01-01\",\"policy_expiry_date\":\"2022-06-30\",\"prev_insurer_id\":2,\"vehicle_registration_type\":\"individual\",\"vehicle_ncb_current\":\"0\",\"is_claim_exists\":\"yes\",\"method_type\":\"Premium\",\"execution_async\":\"yes\",\"electrical_accessory\":\"0\",\"non_electrical_accessory\":\"0\",\"registration_no\":\"MH-02-AA-1234\",\"is_having_valid_dl\":\"no\",\"is_llpd\":\"no\",\"is_opted_standalone_cpa\":\"yes\",\"is_pa_od\":\"yes\",\"is_antitheft_fit\":\"no\",\"is_external_bifuel\":\"no\",\"is_aai_member\":\"no\",\"external_bifuel_type\":\"\",\"external_bifuel_value\":\"\",\"pa_owner_driver_si\":\"100000\",\"pa_paid_driver_si\":\"0\",\"last_name\":\"stetr\",\"imt23\":\"no\",\"non_fairing_paying_passenger\":\"no\",\"fairing_paying_passenger\":\"no\",\"other_use\":\"no\",\"own_premises\":\"no\",\"emp_pa\":\"no\",\"conductor_ll\":\"no\",\"coolie_ll\":\"no\",\"cleaner_ll\":\"no\",\"geographicalareaext\":\"no\",\"additionaltowing\":\"no\",\"fibreglasstankfitted\":\"no\",\"first_name\":\"test\",\"mobile\":\"8998789798\",\"email\":\"test@tet.com\",\"crn\":\"0\",\"ss_id\":0,\"client_id\":2,\"fba_id\":0,\"geo_lat\":0,\"geo_long\":0,\"agent_source\":\"\",\"ip_city_state\":\"\",\"app_version\":\"PolicyBoss.com\",\"vehicle_sub_class\":\"gcv_public_thwpc\",\"vehicle_class\":\"gcv\",\"vehicle_class_code\":24,\"vehicle_insurance_subtype\":\"1CH_0TP\",\"secret_key\":\"SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW\",\"client_key\":\"CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9\",\"is_breakin\":\"no\",\"is_policy_exist\":\"yes\",\"visitor_id\":6852,\"vehicle_make_name\":\"ASHOK LEYLAND\",\"vehicle_full\":\"ASHOK LEYLAND|1611|1611 COWL (170)|DIESEL|1\",\"rto_full\":\"MH02|Mumbai-Andheri|MAHARASHTRA|A\"}","timestamp":"5:39:31 PM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"5:39:31 PM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"5:39:31 PM"}
+{"level":"info","message":"==============","timestamp":"5:39:32 PM"}
+{"level":"info","message":"SendSmS MSP-8998789798-1656418172361-15494-11mspRc01","timestamp":"5:39:32 PM"}
+{"level":"info","message":"sms_logupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor::product_api_pre::Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor::product_api_pre::Finish","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Error response received","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor premium_initiate_handler SRN-0LNU918X-UXHA-55MM-VGDE-7GBDD1C53Y5N","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start Motor vehicle_manf_year","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish Motor vehicle_manf_year 2018","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start Motor vehicle_age_year","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-07-01","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish Motor vehicle_age_year 4","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start Motor pre_policy_start_date","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-07-01","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-07-01","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-30","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Start","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Finish 2021-07-01","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-30","timestamp":"5:39:32 PM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"5:39:32 PM"}
+{"level":"info","message":"Jyoti :: HDFCErgoMotor insurer_product_api_pre()","timestamp":"5:39:32 PM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Start { insurer_id: 5,\n  insurer_product_class: 'HDFCErgoMotor',\n  method: \n   { Method_Id: 4,\n     Method_Name: 'HDFCErgo_Car_Premium',\n     Method_Type_ID: 2,\n     Method_Action: 'getPremium',\n     Method_Request_File: 'CV/HDFCErgo_CV_Premium.xml',\n     Method_Calling_Type: 'SOAP',\n     WSDL_URL: null,\n     Service_URL: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl',\n     Service_URL_Live: 'https://hepgw.hdfcergo.com/wscalculate/CommercialPremiumService.asmx?wsdl',\n     Service_File: '',\n     Checkpoint_URL: null,\n     Service_User: '',\n     Service_Password: '',\n     Product_Insurer_ID: 12,\n     Is_Active: true,\n     Method_Type: 'Premium',\n     Product_Id: 12,\n     Insurer_Id: 5 },\n  prepared_request: {},\n  master_db_list: \n   { vehicles: { pb_db_master: [Object], insurer_db_master: [Object] },\n     rtos: { pb_db_master: [Object], insurer_db_master: [Object] },\n     prev_insurer: { pb_db_master: [Object], insurer_db_master: [Object] } },\n  method_field_list: \n   [ { Field_Parent: 'addon_package_name',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '',\n       Field_Type: 'text',\n       Field_Name: 'addon_package_name',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 19,\n       _id: '58cfb7b71f4420329cfe150d' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"New Business\",\"renew\":\"Rollover\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '58cfc2471f4420329cfe150e' },\n     { Field_Parent: 'is_claim_exists',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"0\",\"no\":\"1\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_claim_exists',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 2,\n       _id: '58d0d5d96d0ad8265ecf85d2' },\n     { Field_Parent: 'addon_zero_dep_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_zero_dep_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '58d0d5d96d0ad8265ecf85d3' },\n     { Field_Parent: 'addon_ncb_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_ncb_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 11,\n       _id: '58d0d5d96d0ad8265ecf85d4' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 10,\n       _id: '58d0d5d96d0ad8265ecf85d5' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"I\",\"corporate\":\"O\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '58d0d5d96d0ad8265ecf85d6' },\n     { Field_Parent: 'addon_engine_protector_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_engine_protector_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 12,\n       _id: '58d0d5d96d0ad8265ecf85d7' },\n     { Field_Parent: 'addon_key_lock_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_key_lock_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '58d0d5d96d0ad8265ecf85d8' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58d90a8548529ea903204f86' },\n     { Field_Parent: 'is_llpd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_llpd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58da854348529ea903204f87' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"45\",\"10\":\"37\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_id',\n       _id: '593e7f0904f111ea992d6115' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"1\",\"corporate\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a40311a1da2c73540f8233' },\n     { Field_Parent: 'gender',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"M\":\"Male\",\"F\":\"Female\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'gender_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a4039ea1da2c73540f8651' },\n     { Field_Parent: 'addon_consumable_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_consumable_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0a43436f3a90f5853a41' },\n     { Field_Parent: 'addon_losstime_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_losstime_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0adc436f3a90f585acd1' },\n     { Field_Parent: 'addon_invoice_price_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_invoice_price_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '5c3c70cae6c8b9f71b74cb27' },\n     { Field_Parent: 'pa_unnamed_passenger_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_unnamed_passenger_si',\n       _id: '5c62998ccd4ffee12ae742bd' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"NB\",\"renew\":\"RO\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_tp',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209c7aa4d3ace10e793ca' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"N\",\"renew\":\"S\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209e3aa4d3ace10e7a938' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"1\",\"20000\":\"1\",\"30000\":\"1\",\"40000\":\"1\",\"50000\":\"1\",\"60000\":\"1\",\"70000\":\"1\",\"80000\":\"1\",\"90000\":\"1\",\"100000\":\"1\",\"110000\":\"1\",\"120000\":\"1\",\"130000\":\"1\",\"140000\":\"1\",\"150000\":\"1\",\"160000\":\"1\",\"170000\":\"1\",\"180000\":\"1\",\"190000\":\"1\",\"200000\":\"1\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si_num',\n       _id: '5c821261aa4d3ace10ee33b7' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"2319\",\"10\":\"2320\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_code',\n       _id: '5c82146eaa4d3ace10efc723' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si',\n       _id: '5c836707aa4d3ace10b46f2e' },\n     { Field_Parent: 'imt23',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'imt23',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc8ba2a4e472cba698a47' },\n     { Field_Parent: 'non_fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'non_fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc91b2a4e472cba69bb7c' },\n     { Field_Parent: 'fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc92d2a4e472cba69c6d5' },\n     { Field_Parent: 'other_use',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'other_use',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc93e2a4e472cba69d143' },\n     { Field_Parent: 'own_premises',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'own_premises',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc95d2a4e472cba69e3ff' },\n     { Field_Parent: 'emp_pa',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'emp_pa',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc9812a4e472cba69fa64' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2315\",\"pcv\":\"2314\",\"msc\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fdb7dedec17bbbf7db78' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2317\",\"pcv\":\"2313\",\"msc\":\"2318\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fff5dedec17bbbf8d6e7' },\n     { Field_Parent: 'is_tppd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_tppd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5d5d30a40afffb261a4f8658' },\n     { Field_Parent: 'is_pa_od',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_pa_od',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       _id: '5da02ec249f3abdcfbf5a1b9' } ],\n  method_file_url: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl' }","timestamp":"5:39:33 PM"}
+{"level":"info","message":"Start HDFCErgoMotor pre_policy_start_date","timestamp":"5:39:33 PM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Start","timestamp":"5:39:33 PM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Finish 2022-07-01","timestamp":"5:39:33 PM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Finish","timestamp":"5:39:33 PM"}
+{"level":"info","message":"Object motor_vehicle_idv NO IDV from DB","timestamp":"5:39:33 PM"}
+{"level":"info","message":"Start HDFCErgoMotor insurer_vehicle_idv","timestamp":"5:39:33 PM"}
+{"level":"info","message":"Start HDFCErgoMotor policy_end_date_2","timestamp":"5:39:33 PM"}
+{"level":"info","message":"Finish HDFCErgoMotor policy_end_date 30/06/2023","timestamp":"5:39:33 PM"}
+{"level":"info","message":"HDFCErgoMotor :: service_call for -  Idv","timestamp":"5:39:40 PM"}
+{"level":"info","message":"{ str: '<IDV>\\n<policy_start_date>01/07/2022</policy_start_date>\\n<vehicle_class_cd>24</vehicle_class_cd><!--41-->\\n<vehicle_subclass_cd>7</vehicle_subclass_cd><!--3-->\\n<RTOLocationCode>65572</RTOLocationCode><!--16404--><!--14013_PCV-->\\n<vehiclemodelcode>24696</vehiclemodelcode><!--12126-->\\n<manufacturer_code>5</manufacturer_code><!--13-->\\n<purchaseregndate>21/06/2018</purchaseregndate>\\n<manufacturingyear>2018</manufacturingyear>\\n<prev_policy_end_date>30/06/2022</prev_policy_end_date>\\n<typeofbusiness>Rollover</typeofbusiness>\\n</IDV>',\n  VehicleClassCode: '24' }","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:40 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Success","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:41 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:39:41 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:45 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:45 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:39:45 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:45 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:39:45 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:45 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:39:45 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:39:47 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:39:47 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:39:48 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:39:48 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"5:40:19 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:20 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:40:20 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:40:23 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:40:23 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:40:24 PM"}
+{"level":"info","message":"Success","timestamp":"5:40:42 PM"}
+{"level":"info","message":"Success","timestamp":"5:43:19 PM"}
+{"level":"info","message":"Success","timestamp":"5:43:41 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":12,\"Product_Sub_Category_Code\":24}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Model_ID\":1}}]","timestamp":"5:44:13 PM"}
+{"level":"info","message":"?user=policyboss&pwd=apipolicyboss&sender=PLBOSS&mobile=8976867587&msg=5217%20is%20the%20OTP%20for%20your%204w%20insurance%20quote%20search%20on%20Policyboss.com.%20Validity%205%20minutes.&mt=0","timestamp":"5:44:50 PM"}
+{"level":"info","message":"==============","timestamp":"5:44:50 PM"}
+{"level":"info","message":"SendSmS MSP-8976867587-1656418491249-16970-11mspRc01","timestamp":"5:44:50 PM"}
+{"level":"info","message":"sms_logupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:44:50 PM"}
+{"level":"info","message":"Error response received","timestamp":"5:44:51 PM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:44:51 PM"}
+{"level":"info","message":"{\"product_id\":12,\"vehicle_id\":102369,\"rto_id\":580,\"vehicle_insurance_type\":\"renew\",\"vehicle_registration_date\":\"2017-06-08\",\"is_fastlane_rto\":\"no\",\"vehicle_manf_date\":\"2017-01-01\",\"policy_expiry_date\":\"2022-06-29\",\"prev_insurer_id\":2,\"vehicle_registration_type\":\"individual\",\"vehicle_ncb_current\":\"0\",\"is_claim_exists\":\"yes\",\"method_type\":\"Premium\",\"execution_async\":\"yes\",\"electrical_accessory\":\"0\",\"non_electrical_accessory\":\"0\",\"registration_no\":\"MH-02-AA-1234\",\"is_having_valid_dl\":\"no\",\"is_llpd\":\"no\",\"is_opted_standalone_cpa\":\"yes\",\"is_pa_od\":\"yes\",\"is_antitheft_fit\":\"no\",\"is_external_bifuel\":\"no\",\"is_aai_member\":\"no\",\"external_bifuel_type\":\"\",\"external_bifuel_value\":\"\",\"pa_owner_driver_si\":\"100000\",\"pa_paid_driver_si\":\"0\",\"last_name\":\"set\",\"imt23\":\"no\",\"non_fairing_paying_passenger\":\"no\",\"fairing_paying_passenger\":\"no\",\"other_use\":\"no\",\"own_premises\":\"no\",\"emp_pa\":\"no\",\"conductor_ll\":\"no\",\"coolie_ll\":\"no\",\"cleaner_ll\":\"no\",\"geographicalareaext\":\"no\",\"additionaltowing\":\"no\",\"fibreglasstankfitted\":\"no\",\"first_name\":\"test\",\"mobile\":\"8976867587\",\"email\":\"tset@tets.com\",\"crn\":\"0\",\"ss_id\":0,\"client_id\":2,\"fba_id\":0,\"geo_lat\":0,\"geo_long\":0,\"agent_source\":\"\",\"ip_city_state\":\"\",\"app_version\":\"PolicyBoss.com\",\"vehicle_sub_class\":\"gcv_public_otthw\",\"vehicle_class\":\"gcv\",\"vehicle_class_code\":24,\"vehicle_insurance_subtype\":\"1CH_0TP\",\"secret_key\":\"SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW\",\"client_key\":\"CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9\",\"is_breakin\":\"no\",\"is_policy_exist\":\"yes\",\"visitor_id\":6861,\"vehicle_make_name\":\"ASHOK LEYLAND\",\"vehicle_full\":\"ASHOK LEYLAND|1611/3|1611/3 HSD (189)|DIESEL|1\",\"rto_full\":\"MH02|Mumbai-Andheri|MAHARASHTRA|A\"}","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Client_Details { Platform: 'Website',\n  Role: 'LMClient',\n  Integration_Type: 'NonPOSP',\n  Premium_Source: 'Real',\n  __v: 0,\n  Response_Type: 'QUOTE',\n  Client_Name: 'PolicyBoss',\n  Client_Unique_Id: 'CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9',\n  Secret_Key: 'SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW',\n  Created_On: '2017-05-17T12:55:14.111Z',\n  Is_Active: true,\n  Modified_On: '2017-05-17T12:55:14.111Z',\n  Client_Id: 2,\n  _id: '591c48321cc1042aec9ee6c9' }","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Client_Id 2 2","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor::product_api_pre::Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor::product_api_pre::Finish","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor premium_initiate_handler SRN-BKDOGPCC-8RPV-HZZA-TCXC-EH8CQ7GSRUPT","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start Motor vehicle_manf_year","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish Motor vehicle_manf_year 2017","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor vehicle_ncb_next Finish","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start Motor vehicle_age_year","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish Motor vehicle_age_year 5","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start Motor pre_policy_start_date","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor policy_start_date Finish 2022-06-30","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-29","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Start","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Motor pre_policy_start_date Finish 2021-06-30","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start Motor policy_end_date","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish Motor policy_end_date 2023-06-29","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"5:44:53 PM"}
+{"level":"info","message":"Jyoti :: HDFCErgoMotor insurer_product_api_pre()","timestamp":"5:44:54 PM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Start { insurer_id: 5,\n  insurer_product_class: 'HDFCErgoMotor',\n  method: \n   { Method_Id: 4,\n     Method_Name: 'HDFCErgo_Car_Premium',\n     Method_Type_ID: 2,\n     Method_Action: 'getPremium',\n     Method_Request_File: 'CV/HDFCErgo_CV_Premium.xml',\n     Method_Calling_Type: 'SOAP',\n     WSDL_URL: null,\n     Service_URL: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl',\n     Service_URL_Live: 'https://hepgw.hdfcergo.com/wscalculate/CommercialPremiumService.asmx?wsdl',\n     Service_File: '',\n     Checkpoint_URL: null,\n     Service_User: '',\n     Service_Password: '',\n     Product_Insurer_ID: 12,\n     Is_Active: true,\n     Method_Type: 'Premium',\n     Product_Id: 12,\n     Insurer_Id: 5 },\n  prepared_request: {},\n  master_db_list: \n   { vehicles: { pb_db_master: [Object], insurer_db_master: [Object] },\n     rtos: { pb_db_master: [Object], insurer_db_master: [Object] },\n     prev_insurer: { pb_db_master: [Object], insurer_db_master: [Object] } },\n  method_field_list: \n   [ { Field_Parent: 'addon_package_name',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '',\n       Field_Type: 'text',\n       Field_Name: 'addon_package_name',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 19,\n       _id: '58cfb7b71f4420329cfe150d' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"New Business\",\"renew\":\"Rollover\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '58cfc2471f4420329cfe150e' },\n     { Field_Parent: 'is_claim_exists',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"0\",\"no\":\"1\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_claim_exists',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 2,\n       _id: '58d0d5d96d0ad8265ecf85d2' },\n     { Field_Parent: 'addon_zero_dep_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_zero_dep_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '58d0d5d96d0ad8265ecf85d3' },\n     { Field_Parent: 'addon_ncb_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_ncb_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 11,\n       _id: '58d0d5d96d0ad8265ecf85d4' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 10,\n       _id: '58d0d5d96d0ad8265ecf85d5' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"I\",\"corporate\":\"O\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '58d0d5d96d0ad8265ecf85d6' },\n     { Field_Parent: 'addon_engine_protector_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_engine_protector_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 12,\n       _id: '58d0d5d96d0ad8265ecf85d7' },\n     { Field_Parent: 'addon_key_lock_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_key_lock_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '58d0d5d96d0ad8265ecf85d8' },\n     { Field_Parent: 'addon_road_assist_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_road_assist_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58d90a8548529ea903204f86' },\n     { Field_Parent: 'is_llpd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_llpd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '58da854348529ea903204f87' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"45\",\"10\":\"37\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_id',\n       _id: '593e7f0904f111ea992d6115' },\n     { Field_Parent: 'vehicle_registration_type',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"individual\":\"1\",\"corporate\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_registration_type_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a40311a1da2c73540f8233' },\n     { Field_Parent: 'gender',\n       Field_Category: 'input',\n       Field_Group: 'Registration',\n       Field_Value: '{\"M\":\"Male\",\"F\":\"Female\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'gender_2',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 7,\n       _id: '59a4039ea1da2c73540f8651' },\n     { Field_Parent: 'addon_consumable_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_consumable_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0a43436f3a90f5853a41' },\n     { Field_Parent: 'addon_losstime_protection_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_losstime_protection_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 9,\n       _id: '5c2a0adc436f3a90f585acd1' },\n     { Field_Parent: 'addon_invoice_price_cover',\n       Field_Category: 'input',\n       Field_Group: 'Addon',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'addon_invoice_price_cover',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 13,\n       _id: '5c3c70cae6c8b9f71b74cb27' },\n     { Field_Parent: 'pa_unnamed_passenger_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_unnamed_passenger_si',\n       _id: '5c62998ccd4ffee12ae742bd' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"NB\",\"renew\":\"RO\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_tp',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209c7aa4d3ace10e793ca' },\n     { Field_Parent: 'vehicle_insurance_type',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"new\":\"N\",\"renew\":\"S\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_insurance_type_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: 1,\n       _id: '5c8209e3aa4d3ace10e7a938' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"1\",\"20000\":\"1\",\"30000\":\"1\",\"40000\":\"1\",\"50000\":\"1\",\"60000\":\"1\",\"70000\":\"1\",\"80000\":\"1\",\"90000\":\"1\",\"100000\":\"1\",\"110000\":\"1\",\"120000\":\"1\",\"130000\":\"1\",\"140000\":\"1\",\"150000\":\"1\",\"160000\":\"1\",\"170000\":\"1\",\"180000\":\"1\",\"190000\":\"1\",\"200000\":\"1\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si_num',\n       _id: '5c821261aa4d3ace10ee33b7' },\n     { Field_Parent: 'product_id',\n       Field_Category: 'input',\n       Field_Group: 'Vehicle',\n       Field_Value: '{\"1\":\"2319\",\"10\":\"2320\"}',\n       Field_Type: 'list_val',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'product_code',\n       _id: '5c82146eaa4d3ace10efc723' },\n     { Field_Parent: 'pa_paid_driver_si',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"0\":\"0\",\"10000\":\"10000\",\"20000\":\"20000\",\"30000\":\"30000\",\"40000\":\"40000\",\"50000\":\"50000\",\"60000\":\"60000\",\"70000\":\"70000\",\"80000\":\"80000\",\"90000\":\"90000\",\"100000\":\"100000\",\"110000\":\"110000\",\"120000\":\"120000\",\"130000\":\"130000\",\"140000\":\"140000\",\"150000\":\"150000\",\"160000\":\"160000\",\"170000\":\"170000\",\"180000\":\"180000\",\"190000\":\"190000\",\"200000\":\"200000\",\"empty\":\"0\"}',\n       Field_Type: 'list_key',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Name: 'pa_paid_driver_si',\n       _id: '5c836707aa4d3ace10b46f2e' },\n     { Field_Parent: 'imt23',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'imt23',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc8ba2a4e472cba698a47' },\n     { Field_Parent: 'non_fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'non_fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc91b2a4e472cba69bb7c' },\n     { Field_Parent: 'fairing_paying_passenger',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'fairing_paying_passenger',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc92d2a4e472cba69c6d5' },\n     { Field_Parent: 'other_use',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'other_use',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc93e2a4e472cba69d143' },\n     { Field_Parent: 'own_premises',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'own_premises',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc95d2a4e472cba69e3ff' },\n     { Field_Parent: 'emp_pa',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"1\",\"no\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'emp_pa',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5c9dc9812a4e472cba69fa64' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2315\",\"pcv\":\"2314\",\"msc\":\"0\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fdb7dedec17bbbf7db78' },\n     { Field_Parent: 'vehicle_class',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"gcv\":\"2317\",\"pcv\":\"2313\",\"msc\":\"2318\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'vehicle_class_1',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5cc3fff5dedec17bbbf8d6e7' },\n     { Field_Parent: 'is_tppd',\n       Field_Category: 'input',\n       Field_Group: 'Additional_Coverage',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_tppd',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       Field_Id: null,\n       _id: '5d5d30a40afffb261a4f8658' },\n     { Field_Parent: 'is_pa_od',\n       Field_Category: 'input',\n       Field_Group: 'Policy',\n       Field_Value: '{\"yes\":\"Y\",\"no\":\"N\"}',\n       Field_Type: 'list_val',\n       Field_Name: 'is_pa_od',\n       Product_Id: '1',\n       Insurer_ID: '5',\n       _id: '5da02ec249f3abdcfbf5a1b9' } ],\n  method_file_url: 'http://202.191.196.210/uat/OnlineProducts/WsCalculate/CommercialPremiumService.asmx?wsdl' }","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start HDFCErgoMotor pre_policy_start_date","timestamp":"5:44:54 PM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Start","timestamp":"5:44:54 PM"}
+{"level":"info","message":"HDFCErgoMotor policy_start_date Finish 2022-06-30","timestamp":"5:44:54 PM"}
+{"level":"info","message":"HDFCErgoMotor motor_vehicle_idv Finish","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Object motor_vehicle_idv NO IDV from DB","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start HDFCErgoMotor insurer_vehicle_idv","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start HDFCErgoMotor policy_end_date_2","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Finish HDFCErgoMotor policy_end_date 29/06/2023","timestamp":"5:44:54 PM"}
+{"level":"info","message":"HDFCErgoMotor :: service_call for -  Idv","timestamp":"5:44:54 PM"}
+{"level":"info","message":"{ str: '<IDV>\\n<policy_start_date>30/06/2022</policy_start_date>\\n<vehicle_class_cd>24</vehicle_class_cd><!--41-->\\n<vehicle_subclass_cd>7</vehicle_subclass_cd><!--3-->\\n<RTOLocationCode>65572</RTOLocationCode><!--16404--><!--14013_PCV-->\\n<vehiclemodelcode>24708</vehiclemodelcode><!--12126-->\\n<manufacturer_code>5</manufacturer_code><!--13-->\\n<purchaseregndate>08/06/2017</purchaseregndate>\\n<manufacturingyear>2017</manufacturingyear>\\n<prev_policy_end_date>29/06/2022</prev_policy_end_date>\\n<typeofbusiness>Rollover</typeofbusiness>\\n</IDV>',\n  VehicleClassCode: '24' }","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Success","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":12,\"Model_ID\":1495}},{\"$sort\":{\"Variant_Name\":1}}]","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:54 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 1, ok: 1 }","timestamp":"5:44:54 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:44:58 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:44:58 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:02 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:45:02 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:45:02 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"5:45:39 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:41 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:45:41 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"5:45:43 PM"}
+{"level":"info","message":"Waiting premium_list_db","timestamp":"5:45:43 PM"}
+{"level":"info","message":"Finish premium_list_db","timestamp":"5:45:43 PM"}
+{"level":"info","message":"Motor premium_list Start","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Motor premium_list Finish","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler_version_2","timestamp":"5:45:44 PM"}
+{"level":"info","message":"Start premium_list_db_handler","timestamp":"5:45:44 PM"}
+{"level":"info","message":"premium_db_list user_data null { n: 1, nModified: 0, ok: 1 }","timestamp":"5:45:44 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"6:09:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:09:35 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"6:09:35 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"6:09:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:09:35 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"6:09:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:09:35 PM"}
+{"level":"info","message":"Success","timestamp":"6:09:43 PM"}
+{"level":"info","message":"Success","timestamp":"6:11:39 PM"}
+{"level":"info","message":"Success","timestamp":"6:12:51 PM"}
+{"level":"info","message":"Success","timestamp":"6:12:52 PM"}

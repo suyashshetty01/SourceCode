@@ -1,0 +1,146 @@
+{
+    "password": "___insurer_integration_service_password___",
+    "userid": "___insurer_integration_service_user___",
+    "sourcedtls": {
+        "username": "___insurer_integration_service_user___",
+        "departmentcode": "9906",
+        "productcode": "8428",
+        "businesstype": "NB",
+        "modulename": "WEBSERVICE"
+    },
+    "policydtls": {
+        "remarks": "",
+        "termstartdate": "___policy_start_date___",
+        "termenddate": "___policy_end_date___",
+        "partnertype": "P",
+        "businesstype": "NB",
+        "policyperiod": "1200",
+        "paymentmode": "CC",
+        "deptcode": "84",
+        "scrcategory": "NB"
+    },
+    "tycpdetails": {
+        "telephone": "",
+        "email": "___email___",
+        "surname": "",
+        "contact1": "___mobile___",
+        "dateofbirth": "___birth_date___",
+        "firstname": "",
+        "middlename": ""
+    },
+    "tycpaddrlist": [
+        {
+            "state": "",
+            "postcode": "",
+            "addressline1": "",
+            "addressline2": ". ",
+            "addressline3": "",
+            "addressline4": "",
+            "addressline5": "INDIA"
+        }
+    ],
+    "channeldtls": {
+        "subimdcode": "0",
+        "imdcode": "10044465"
+    },
+    "previnsdtls": {
+        "noofclaims": "0",
+        "previnsname": "",
+        "previnsaddress": "",
+        "previnspolicyno": "",
+        "prevpolicyexpirydate": ""
+    },
+    "hcpdtmemlist": [
+        <!--InsurersDetail_Start-->
+        {
+            "membername": "NO NAME",
+            "memrelation": "___member_array_relation___",
+            "memdob": "___member_array_birth_date___",
+            "memage": "___member_array_age___",
+            "memgender": "M",
+            "memheightcm": "",
+            "memweightkg": "",
+            "membmi": "",
+            "memoccupation": "104",
+            "memgrossmonthlyincome": "___member_array_monthly_income___",
+            "mempreexistdisease": "0",
+            "memsmkertbco": "0",
+            "memasthma": "0",
+            "memcholstrldisordr": "0",
+            "memheartdisease": "0",
+            "memhypertension": "0",
+            "memdiabetes": "0",
+            "memobesity": "0",
+            "memaddflag": "___member_add_flag___",
+            "selfcoveredflag": "Y",
+            "memnomineename": "Asd Asd",
+            "memnomineerelation": "",
+            "memprvsi": "",
+            "bahcpdtmemparam91": null,
+            "bahcpdtmemparam41": null
+        }
+        <!--InsurersDetail_End-->
+    ],
+    "hcpdtmemcovlist": [
+        <!--InsurersDetail2_Start-->
+        {
+            "membername": "NO NAME",
+            "memiptreatsi": "",
+            "memiptreatplan": "",
+            "memaddflag": "___member_add_flag___",
+            "selfcoveredflag": "Y",
+            "memcovrc": "1",
+            "memdthsi": "___pa_insurance_si_death___",
+            "memperdbsi": "___pa_insurance_si_ptd__",
+            "mempardbsi": "___pa_insurance_si_ppd__",
+            "memmatnormsi": "0",
+            "memmatcesrnsi": "0",
+            "memcoonbnftsi": "",
+            "meminschldsi": ""
+        }
+        <!--InsurersDetail2_End-->
+    ],
+    "hcpdtpolcovobj": {
+        "polcovzone": "1",
+        "polcov41": "NA",
+        "polcov51": "Y",
+        "polcovvolntrycp": "",
+        "polcovspcndt": "NA",
+        "polcovmedcnd": "N",
+        "polcov91": "NA",
+        "polcovihtsi": "___pa_insurance_si___",
+        "polcovihtpln": "",
+        "polcovmatexpnorm": "0",
+        "polcovmatexpcsrn": "0",
+        "polcov46": "0"
+    },
+         "hcpdtmemcovaddonlist": [
+        <!--InsurersDetail3_Start-->
+        {
+            "membername": "NO NAME",
+            "memaddflag": "___member_add_flag___",
+            "addonacchspexp": "",
+            "addonadvsprt": "",
+            "addonptdadvsprt": "",
+            "addonairambcv": "",
+            "addonchildeb": "",
+            "addoncomaacc": "",
+            "addonfracture": "",
+            "addonhcperday": "",
+            "addondbfrmaccsi": "",
+            "addonrdambcvr": "",
+            "addontrvexpbnf": ""
+        }
+        <!--InsurersDetail3_End-->
+    ],
+    "hcpstagedataobj": {
+        "busstype": "NB",
+        "productcode": "8428",
+        "termstartdate": "___policy_start_date___",
+        "termenddate": "___policy_end_date___",
+        "selfcoveredflag": "Y",
+        "membercombo": "___member_combo___",
+        "totalmembernos": "___member_count___",
+        "partnerpincode": "400086"
+    }
+}

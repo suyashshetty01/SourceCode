@@ -1,0 +1,20 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:util="http://util.itgi.com" xmlns:wrap="http://wrapper.itgi.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <util:downloadPolicyCopy>
+         <util:downloadRequestWrapper>
+            <wrap:attrib1></wrap:attrib1>
+            <wrap:attrib2></wrap:attrib2>
+            <wrap:attrib3></wrap:attrib3>
+            <wrap:attrib4></wrap:attrib4>
+            <wrap:attrib5></wrap:attrib5>
+            <wrap:emailId></wrap:emailId>
+            <wrap:engineNo>___engine_number___</wrap:engineNo>
+            <wrap:mobileNumber>___mobile___</wrap:mobileNumber>
+            <wrap:policyNumber>___policy_number___</wrap:policyNumber>
+            <wrap:source>PTNR</wrap:source>
+            <wrap:vehRegNumber>___registration_no___</wrap:vehRegNumber>
+         </util:downloadRequestWrapper>
+      </util:downloadPolicyCopy>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,13 @@
+
+{
+    "userid": "___insurer_integration_service_user___",
+    "password": "___insurer_integration_service_password___",
+    "transaction_id": "___dbmaster_insurer_transaction_identifier___",
+    "payment_transobj": {
+        "stringval1": "Y",
+        "stringval2": "___transaction_id___",
+        "stringval3": "HEALTH_WS",
+        "stringval6": "HDFC",
+       "stringval20": "___transaction_amount___"
+    }
+}

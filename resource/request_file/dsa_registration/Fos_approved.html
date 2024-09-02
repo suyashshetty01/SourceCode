@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ENROLL FOR IRDA DSA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body, *, html {
+			font-family: 'Google Sans',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+		.table-bordered tbody tr td, .table-bordered tbody tr th {padding: 10px; border: 1px solid #eee; }
+		.table-bordered thead tr th { padding: 10px; border: 1px solid #eee; }
+		.wrap {margin: 0px auto; height: 600px;}
+		.bottom {text-align: center; font-size: 2em; padding: 5px 0px 5px; animation: fadeInDown 1s cubic-bezier(0.25, 0.25, 0.25, 1); }
+		.msg-greet {font-weight: bold; letter-spacing: 1px;}
+		
+		.modal-open .modal {overflow-x: hidden; overflow-y: auto; }
+		.fade.in {opacity: 1;}
+		.modal {position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index: 1050;overflow: hidden;-webkit-overflow-scrolling: touch;outline: 0; }
+		.fade {opacity: 0;-webkit-transition: opacity .15s linear;-o-transition: opacity .15s linear;transition: opacity .15s linear;}
+		/*   Cross Sell popup CSS*/
+		.crossSell_popup{ width: 100%;height: 100%;position: fixed;background: rgb(0,0,0,0.5);z-index: 9999;left:0px;right:0px;top:0px;bottom:0px; }   
+		.CrossSell_container { width:40%;border-radius:0px;left: 50%;top: 40%;background: rgb(255, 255, 255);transform: translate(-50%,-50%);position: absolute;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+		.CSell_Content { margin:4px;padding:4px; }
+		.crossSell button{float:right; background:red;color:#fff;border:1px solid red;border-radius:5px;padding:0px 7px;height:30px;line-height:19px;}
+		.crossSell {margin:auto 0px;}
+		.CSell_Content h3{text-align:center;font-weight:bold;font-size:19px;}
+		.boldFont{font-weight:bold}
+		.center_align{text-align:center}
+		.ticket_msg h4{color: rgb(87, 87, 87);margin:18px;font-size:14px;}
+		.cat_table{margin:0px;border:1px solid #c9c9c9;}
+		.sidemargin{margin:20px;}
+		/* Cross Sell popup CSS End*/
+		.modal .modal-footer {border: none;}
+		.modal-footer {padding: 15px;text-align: right;border-top: 1px solid #e5e5e5;}
+		.btn {padding: 4px 4px;}
+		.btn-link {font-weight: bold;color: #333;-moz-transition: 0.5s;-o-transition: 0.5s;-webkit-transition: 0.5s;transition: 0.5s;}
+		.waves-effect {position: relative;cursor: pointer;display: inline-block;overflow: hidden;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;
+			user-select: none;-webkit-tap-highlight-color: transparent;}
+		.popup_data{padding-left: 10%;}
+		#ul_data li {-webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;}
+	</style>
+</head>
+<body>
+	<div style="display:none;" id="errorMsg">
+		<div class="warningmsg" style="padding-top: 169px;">
+			<h3 style="text-align: center; color: red;"><u>Error</u></h3>
+			<h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;" id="warningerror"></h3>
+			<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+		</div>
+	</div>
+	<!-- Fos popup start -->
+	<div class="crossSell_popup " style="display: none;">
+		<div class="CrossSell_container">
+			<div class="CSell_Content" style="">
+				<div style="float:left; padding-left:40%;" ><h3>List of <span id="level_no"> </span></h3></div>
+				<div class="modal-footer" style="float:right">
+					<button type="button" class="btn btn-link waves-effect" onclick="closePopup();">CLOSE</button>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ticket_msg" >
+					<div id="fos_data" class="" style="font-size: smaller;margin-top: 11%;">
+						<ul style="list-style-type: none;" id="ul_data">
+							<table id="fos_data" class="table table-bordered table-striped table-hover dataTable" style="margin-left: auto;margin-right: auto;width: 40%;font-size: 12px;font-weight: 500;">
+								<tr><td><li><span class="popup_data">Full Name </span></li></td><td><li><span id="name" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Mobile No </span></li></td><td><li><span style="margin-left: 0px;" id="mobile" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Pan No </span></li></td><td><li><span style="margin-left: 0px;" id="pan" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Email Id </span></li></td><td><li><span style="margin-left: 0px;" id="email" class="popup_data"></span></li>	</td></tr>						
+								<tr><td><li><span class="popup_data">Aadhar </span></li></td><td><li><span style="margin-left: 0px;" id="aadhar" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Gst </span></li></td><td><li><span style="margin-left: 0px;" id="gst" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Last Status </span></li></td><td><li><span style="margin-left: 0px;" id="status" class="popup_data"></span></li></td></tr>
+								<tr><td><li><span class="popup_data">Level </span></li></td><td><li><span style="margin-left: 0px;" id="level" class="popup_data"></span></li></td></tr>
+							</table>
+						</ul>
+					</div>
+					<div style="padding: 25px 0px 25px 35%">
+						<div>
+							Select Status : <select name="status_opt" id="status_opt" >
+							<option value = "0" >Select Status</option>
+							<option value = "approved" >Approve</option>
+							<option value = "rejected" >Reject</option>
+							<option value = "edit" >Edit</option>
+							</select>
+						</div>
+						<div style="padding-top: 10px;">
+							Remark : <input type="text" name="" id="remark">
+						</div>
+						<input type="hidden" id="ssid" >
+					</div>
+				</div>
+				<div class="center_align" style="padding-bottom: 20px;">
+					<button style="width :23%" type="button" onclick="ChangeStatus();" data-color="blue" class="btn bg-blue waves-effect">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Fos popup end -->
+	<div id="container" style="display:none;">
+		<div class="wrap" id="fos_main">
+			<div class="bottom" id="success_bottom" style="background-color: #ded9d9;">
+				<div class="msg-greet" style="color: #136e5c;">
+					FOS Approval List
+				</div>
+			</div>
+			<div id="container" style="padding-top: 30px;">
+				<table id="disposition_table" class="table table-bordered table-striped table-hover dataTable " style="font-size: smaller;margin-left: auto;margin-right: auto;">
+					<thead>
+						<tr>
+							<th>Full_Name</th>
+							<th>Mobile No</th>
+							<th>Pan No</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="disposition_body">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script>
+		var lead_grid;
+		var getUrlVars = function () {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for (var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		function GetUrl() {
+			var url = window.location.href;
+			var newurl;
+			if (url.includes("request_file")) {
+				newurl = "http://localhost:3000";
+			} else if (url.includes("qa")) {
+				newurl = "http://qa-horizon.policyboss.com:3000";
+			} else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+				newurl = "http://horizon.policyboss.com:5000";
+			}
+			return newurl;
+		}
+		$(document).ready(function () {
+			if(getUrlVars()["ss_id"] !== null && getUrlVars()["ss_id"] !== "" && getUrlVars()["ss_id"] !== undefined ){
+				$.ajax({
+					method: "GET",
+					url: GetUrl() + "/get_pending_approval/" + getUrlVars()["ss_id"]
+				}).done(function (db) {
+					if(db["Status"] === "error"){
+						$("#warningerror").text(db["Msg"]);
+						$("#errorMsg").show();
+						$("#container").hide();
+					}else{
+						$("#container").show();
+						$('#disposition_table tbody').empty();
+						for (var k in db) {
+						var data = JSON.stringify(db[k]);
+						data = data.replaceAll('"', '\'');
+							$('#disposition_body').append('<tr><td>' + db[k].Full_Name + '</td><td>' + db[k].Mobile + '</td><td>' + db[k].Pan + '</td><td>' + db[k].status + '</td><td><a href=javascript:void(0);" onclick="view_fos_data(' + k + ');" title="DISPOSE FOS" style="text-decoration: none;color: black;"><i class="material-icons bg-green">add_box</i></a></td><input type="hidden" id="fos_data_'+ k +'" name="'+ k +'" value="' + data + '"></tr>');
+						}
+					}
+				});
+			}else{
+				$("#warningerror").text("ss_id is mandatory");
+				$("#errorMsg").show();
+				$("#container").hide();
+			}
+		});
+		function view_fos_data(data_index) {
+			var data = $("#fos_data_"+ data_index ).val();
+			data = data.replaceAll('\'', '"');
+			var obj = JSON.parse(data);
+			console.log(obj);
+			$("#level_no").text(obj.approver_level);
+			$("#ssid").val(obj.ss_id);
+			$("#name").text(obj.Full_Name);			
+			$("#pan").text(obj.Pan);
+			$("#mobile").text(obj.Mobile);
+			$("#email").text(obj.Email);
+			$("#aadhar").text(obj.Aadhar);
+			$("#gst").text(obj.Gst);
+			$("#status").text(obj.status);
+			$("#level").text(obj.level);
+			
+			$('.crossSell_popup').show();
+		}
+		function ChangeStatus() {
+			if($("#status_opt").val() == "0"){
+				$("#status_opt").css("border-color" , "red");
+			}else{
+				$("#status_opt").css("border-color" , "black");
+				var obj = {
+					"ss_id" : $("#ssid").val(),
+					"remark" : $("#remark").val(),
+					"status" : $("#status_opt").val(),
+					"level" : $("#level_no").text()
+				}
+				$.ajax({
+					type: "POST",
+					data: JSON.stringify(obj),//Local
+					url : GetUrl() + "/postservicecall/updateFOSStatus",//Local
+					contentType: "application/json",
+					dataType: "json",
+					success: function (response) {
+						console.log(response);
+						alert(response["Msg"]);
+						location.reload();
+					}
+				});
+			}
+		}
+		function closePopup(){
+			$('.crossSell_popup').hide();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+"LimitPerSending": 1,
+"LimitPerLocation": 45000000,
+"InvoiceDate": "___invoice_date___",
+"SubCommodityCode": "CM781",
+"SubCommodityType": "Auto and spares parts",
+"Coverage": "ITC(A)",
+"IntermediaryStorageRequired": "No",
+"DescriptionOfCargo": "___desctiption_of_cargo___",
+"InvoiceNumber": "___invoice_number___",
+"LRRRNumber" : "___bill_number___",
+"LRRRDate" : "___bill_date___",
+"DescriptionofPacking": "___desctiption_of_Packing___",
+"TransitFrom": "___Transit_From___",
+"TransitTo": "___Transit_To___",
+"ModeOfTransit": "Rail, Road or Air",
+"NoOfDays": 15,
+"IntermediaryStorageRequiredLocation":"HYDERABAD",
+"CoverageType":"Fire and burglary perils only",
+"OwnSharePSL": 45000000,
+"BasisOfValuation": "INVOICE",
+"SingleExcessType": true,
+"DeductibleValue": 0.5,
+"DeductibleType": "Whole Shipment Value",
+"Amount": "___amount___",
+"SumInsured": "___sumInsured___",
+"Rate": 1.2,
+"Premium": "___final_premium___",
+"CommodityCode": "CM78",
+"CommodityType": "Auto and spares",
+"CoverDetails":
+[{
+"CoverGroups":"ITC(A)",
+"Applicable":"true",
+"SumInsured":"___sumInsured___",
+"Rate":"___ninety_FivePercent_Rate___",
+"Premium":"___ninety_FivePercent_Premium___"
+},
+{
+"CoverGroups":"SRCC Cover",
+"Applicable":true,
+"SumInsured":"___sumInsured___",
+"Rate":"___five_Percent_Rate___",
+"Premium":"___five_Percent_Premium___"
+}
+],
+"PolicyStartDate": "___policy_start_date___",
+"PolicyEndDate": "___policy_end_date___",
+"DealId": "DL-2005/1574583",
+"CustomerDetails":
+{
+"CustomerType":"C",
+"CustomerName":"___first_name___",
+"DateOfBirth":"1985-11-17",
+"PinCode":"226022",
+"PANCardNo":"",
+"Email":"___email___",
+"MobileNumber":"___mobile___",
+"AddressLine1":"Andheri East",
+"CountryCode":100,
+"StateCode":65,                           
+"CityCode":200
+},
+"CorrelationId": "___dbmaster_insurer_transaction_identifier___"
+}

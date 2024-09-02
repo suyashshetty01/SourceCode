@@ -1,0 +1,132 @@
+<Envelope
+	xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+	<Body>
+		<serve
+			xmlns="http://schemas.cordys.com/gateway/Provider">
+			<SessionDoc>
+				<Session>
+					<SessionData
+						xmlns="http://schemas.cordys.com/bagi/b2c/emotor/bpm/1.0">
+						<Index>2</Index>
+						<InitTime>Thu, 03 Aug 2017 16:59:09 GMT</InitTime>
+						<UserName>landmarkmtr</UserName>
+						<Password>AZg3Q1SktWKLz0Os/H0MlAxFfI75pjnpKjn9xrV9vimyyS7/5Ilil/ftcP5oHxC7IFYLVF0C3MAJcIznwrZvDA==</Password>
+						<OrderNo>VDJC019304</OrderNo>
+						<QuoteNo>QRN201708030001795</QuoteNo>
+						<Route>INT</Route>
+						<Contract>MTR</Contract>
+						<Channel>lmMtr</Channel>
+						<TransactionType>Quote</TransactionType>
+						<TransactionStatus>Fresh</TransactionStatus>
+						<ID />
+						<UserAgentID>2C000024</UserAgentID>
+						<Source />
+					</SessionData>
+					<tns:Vehicle
+						xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+						<tns:TypeOfBusiness>NB</tns:TypeOfBusiness>
+						<tns:AccessoryInsured>N</tns:AccessoryInsured>
+						<tns:AccessoryValue>0</tns:AccessoryValue>
+						<tns:BiFuelKit>
+							<tns:IsBiFuelKit>N</tns:IsBiFuelKit>
+							<tns:BiFuelKitValue>0</tns:BiFuelKitValue>
+							<tns:ExternallyFitted>N</tns:ExternallyFitted>
+						</tns:BiFuelKit>
+						<tns:DateOfRegistration>2017-08-03T00:00:00:000</tns:DateOfRegistration>
+						<tns:RiskType>FTW</tns:RiskType>
+						<tns:Make>YAMAHA</tns:Make>
+						<tns:Model>GLADIATOR</tns:Model>
+						<tns:FuelType>P</tns:FuelType>
+						<tns:Variant>GRAFFITI</tns:Variant>
+						<tns:IDV>53000</tns:IDV>
+						<tns:AntiTheftDevice>N</tns:AntiTheftDevice>
+						<tns:EngineNo>fghgf456gffddf</tns:EngineNo>
+						<tns:ChasisNo>fh456yfghg</tns:ChasisNo>
+						<tns:DriveExperiance>0</tns:DriveExperiance>
+						<tns:NoOfDrivers />
+						<tns:ParkingType />
+						<tns:AnnualMileage />
+						<tns:YoungestDriverAge>0</tns:YoungestDriverAge>
+						<tns:PaidDriver>True</tns:PaidDriver>
+						<tns:VehicleAge>1</tns:VehicleAge>
+						<tns:CC>124</tns:CC>
+						<tns:SeatingCapacity>2</tns:SeatingCapacity>
+						<tns:PlaceOfRegistration>(AR13) Khonsa</tns:PlaceOfRegistration>
+						<tns:VehicleExtraTag01 />
+						<tns:RegistrationNo>NEW</tns:RegistrationNo>
+						<tns:ExShowroomPrice>53000</tns:ExShowroomPrice>
+					</tns:Vehicle>
+					<tns:Quote
+						xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+						<tns:ExistingPolicy>
+							<tns:Claims>0</tns:Claims>
+							<tns:PolicyType></tns:PolicyType>
+							<tns:EndDate></tns:EndDate>
+							<tns:NCB>0</tns:NCB>
+							<tns:PolicyNo></tns:PolicyNo>
+							<tns:InsuranceCompany></tns:InsuranceCompany>
+						</tns:ExistingPolicy>
+						<tns:PolicyStartDate>2017-08-03T00:00:00:000</tns:PolicyStartDate>
+						<tns:Deductible>0</tns:Deductible>
+						<tns:PAFamilySI>0</tns:PAFamilySI>
+						<tns:AgentNumber />
+						<tns:DealerId />
+						<tns:Premium>
+							<tns:Discount />
+						</tns:Premium>
+						<tns:SelectedCovers>
+							<tns:CarDamageSelected>True</tns:CarDamageSelected>
+							<tns:TPLiabilitySelected>True</tns:TPLiabilitySelected>
+							<tns:PADriverSelected>False</tns:PADriverSelected>
+							<tns:ZeroDepriciationSelected>False</tns:ZeroDepriciationSelected>
+							<tns:InvoicePriceSelected>False</tns:InvoicePriceSelected>
+							<tns:PAFamilyPremiumSelected>False</tns:PAFamilyPremiumSelected>
+						</tns:SelectedCovers>
+						<tns:PolicyEndDate>2018-08-02T23:59:59:000</tns:PolicyEndDate>
+					</tns:Quote>
+					<tns:Client
+						xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+						<tns:ClientType>Individual</tns:ClientType>
+						<tns:CltDOB>19990803</tns:CltDOB>
+						<tns:FinancierDetails>
+							<tns:IsFinanced>0</tns:IsFinanced>
+							<tns:InstitutionName />
+							<tns:InstitutionCity />
+						</tns:FinancierDetails>
+						<tns:Salut>MRS</tns:Salut>
+						<tns:GivName>pramod</tns:GivName>
+						<tns:ClientExtraTag01>ARUNACHAL PRADESH</tns:ClientExtraTag01>
+						<tns:CityOfResidence>Khonsa</tns:CityOfResidence>
+						<tns:EmailID>pramod.parit@poliycboss.com</tns:EmailID>
+						<tns:MobileNo>9798192909</tns:MobileNo>
+						<tns:SurName>sdfsdfsdf</tns:SurName>
+						<tns:CltSex>M</tns:CltSex>
+						<tns:Marryd>S</tns:Marryd>
+						<tns:Occupation>0007</tns:Occupation>
+						<tns:CltAddr01>1201 Premier Exotica</tns:CltAddr01>
+						<tns:CltAddr02>Ambedkar chowk</tns:CltAddr02>
+						<tns:CltAddr03>Near Don Bosco</tns:CltAddr03>
+						<tns:City>MUMBAI</tns:City>
+						<tns:State>MUMBAI</tns:State>
+						<tns:PinCode>400070</tns:PinCode>
+						<tns:Nominee>
+							<tns:Name>sdfsdf sdfsdf</tns:Name>
+							<tns:Age>18</tns:Age>
+							<tns:Relationship>Son</tns:Relationship>
+						</tns:Nominee>
+						<tns:RegistrationZone>B</tns:RegistrationZone>
+					</tns:Client>
+					<Payment>
+						<PaymentMode />
+						<PaymentType />
+						<TxnReferenceNo />
+						<TxnAmount />
+						<TxnDate />
+						<BankCode />
+						<InstrumentAmount />
+					</Payment>
+				</Session>
+			</SessionDoc>
+		</serve>
+	</Body>
+</Envelope>

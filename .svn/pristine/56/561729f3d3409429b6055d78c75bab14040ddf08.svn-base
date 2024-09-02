@@ -1,0 +1,20 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:MotorSchedule>
+         <!--Optional:-->
+         <tem:RequestData>
+            <!--Optional:-->
+            <tem:UserID>___insurer_integration_service_user___</tem:UserID>
+            <!--Optional:-->
+            <tem:Password>___insurer_integration_service_password___</tem:Password>
+            <!--Optional:-->
+            <tem:ProposalNo>___gencon_number___</tem:ProposalNo>
+            <!--Optional:-->
+            <tem:PropDate>___pg_reference_number_2___</tem:PropDate>
+            <!--Optional:-->
+            <tem:Mode>MASTEK</tem:Mode>
+         </tem:RequestData>
+      </tem:MotorSchedule>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,23 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+.loader-wrap{position:fixed;top:0;left:0;right:0;bottom:0;z-index:150}
+.module-loader .loader-wrap{position:absolute;z-index:10}
+.loader-wrap .loader-overlay{position:absolute;left:0;top:0;right:0;bottom:0;background:#fff;opacity:1}
+.loader-wrap .loader-icon{width:45px;height:45px;position:absolute;left:50%;top:50%;margin-left:-23px;margin-top:-23px;background:url(../images/loader.svg) no-repeat 0 0 transparent;-webkit-animation:loadAnim 2s infinite linear;animation:loadAnim 2s infinite linear}@-webkit-keyframes loadAnim{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loadAnim{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+.inr{font-family:'rupee';font-size:96%;color:inherit;margin:0 1px 0 0}
+
+.mod-form-plan-cover .from-wrap .item .form-group .input-group .input-group-addon .inr {
+	font-size: 23px;
+	line-height: 25px;
+	position: relative;
+	left: 4px;
+	top: 2px;
+	color: #71818f
+}
+.mod-blog-plan-cover .from-wrap .item .form-group .input-group .input-group-addon .inr {
+	font-size: 23px;
+	line-height: 25px;
+	position: relative;
+	left: 4px;
+	top: 2px;
+	color: #71818f
+}

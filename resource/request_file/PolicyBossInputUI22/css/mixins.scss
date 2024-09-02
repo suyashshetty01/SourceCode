@@ -1,0 +1,172 @@
+@font-face {
+    font-family: Helvetica-regular-400;
+    src: url('../fonts/helvetica-now-display/HelveticaNowDisplay-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: Helvetica-medium-500;
+    src: url('../fonts/helvetica-now-display/HelveticaNowDisplay-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: Helvetica-bold-700;
+    src: url('../fonts/helvetica-now-display/HelveticaNowDisplay-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: Helvetica-bolder-800;
+    src: url('../fonts/helvetica-now-display/HelveticaNowDisplay-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: Jumper-400;
+    src: url('../fonts/jumper/JumperPersonalUseOnlyRegular.woff') format('woff');
+}
+@font-face {
+    font-family: Jumper-700;
+    src: url('../fonts/jumper/JumperPersonalUseOnlyBold.woff') format('woff');
+}
+@font-face {
+    font-family: Axure;
+    src: url('../fonts/Axure/AxureHandwriting.woff') format('woff');
+}
+ 
+//Fonts Helvetica
+$Helvetica-400: Helvetica-regular-400;
+$Helvetica-500: Helvetica-medium-500;
+$Helvetica-700: Helvetica-bold-700;
+$Helvetica-800: Helvetica-bolder-800;
+
+$Jumper-400: Jumper-400;
+$Jumper-700: Jumper-700;
+
+$Axure: Axure;
+
+$transitionCommon: 0.4s ease-in-out;
+
+$primarycolor:#1A81FF;
+$primarycolor2:#001D40; 
+
+$primaryDark: #003ACC;
+$primaryLight: #CEE0F5;
+
+$bgPrimary: #1A81FF;
+$bgLightBlue: #EEF6FF;
+
+
+//Linear Backgrounds
+$bgLefToRight: linear-gradient(270deg, #D2E7FF 0%, #F3F9FF 100%);
+$bgLightBlueGradient: linear-gradient(0deg, #FFFFFF 6.88%, #DBEBFF 96.25%);
+$bgCenteredGradient: linear-gradient(180deg, rgba(210, 231, 255, 0) 0%, #D2E7FF 50.89%, rgba(210, 231, 255, 0) 100%);
+
+//Box-shadows
+$primaryShadow: 2px 2px 10px rgba(26, 129, 255, 0.1);
+$primaryShadow40:0px 2px 20px rgba(26, 129, 255, 0.4);
+$btnShadow: 10px 10px 40px rgba(26, 129, 255, 0.3);
+
+
+$lightTextColor: #999;
+
+$bgLight: #FFF6F2;
+$bgOffWhite:#F1F1F1;
+$whiteColor: #fff;
+$bgOffWhite : #F4F3F3;
+$bgLightPrimary: #F4F9FF;
+
+$blackTransparent: rgba(0, 0, 0, 0.6);
+
+$bgnone:none;
+
+$alignCenter:center;
+$alignEnd:flex-end;
+$alignStart:flex-start; 
+
+$lightGray: #8D939A;
+$lightenText: #222;
+$extraLightText: #444; 
+$lightenGrey: #666;
+$fontcolor: #000;
+
+$darkTextShadow: #0651AD;
+
+$whiteColor:#fff;
+$blackColor:#000;
+$graybg:#2B2B2B;
+
+$errorColor: #CC1010;
+
+$bgnone:none;
+$alignCenter:center;
+$alignEnd:flex-end; 
+$alignStart:flex-start; 
+
+
+@mixin dispflex($displayflex, $justifycontent, $alignitems) {
+    display: $displayflex; 
+    justify-content: $justifycontent; 
+    align-items: $alignitems;
+}
+@mixin navFlex($alignItems){
+    align-items: $alignItems;
+}
+@mixin transition($time) {
+    transition: all $time ease-in-out;
+}
+
+
+@mixin big-desktop {
+  @media (min-width: 1400px) and  (max-width: 2500px){ @content; }
+}
+@mixin screen-up-1300 {
+  @media (min-width: 1300px) { @content; }
+}
+@mixin mini-desktop {
+    @media (max-width: 1199px) { @content; }
+}
+@mixin tab_min{
+    @media (min-width: 992px) { @content; }
+}
+@mixin tab{
+    @media (max-width: 991px) { @content; }
+}
+@mixin phone {
+    @media (max-width: 767px) { @content; }
+}
+@mixin phone-xs {
+    @media (max-width: 575px) { @content; }
+} 
+@mixin phone-xr{
+    @media (max-width: 480px) { @content; }
+}
+@mixin phone-6{
+    @media (max-width: 420px) { @content; }
+}
+@mixin phone-5s{
+  @media (max-width: 375px) { @content; }
+}
+@mixin landscape-mode{
+    @media (max-height: 425px) and (orientation: landscape) { @content; }
+}
+@mixin landscape-phone{
+    @media (max-height: 425px) and (max-width: 767px) and (orientation: landscape) { @content; }
+}
+@mixin landscape-phone-xs{
+    @media (max-height: 425px) and (max-width: 575px) and (orientation: landscape) { @content; }
+}
+
+@mixin fontSize($lineHeght , $fontSize ){ 
+    font-size: $fontSize;
+    line-height: calc(#{$lineHeght} + #{$fontSize});
+} 
+@mixin flex_box($items) {
+    $menu-items:$items; 
+    $width: (100/$menu-items) * 1%; 
+    max-width:$width; 
+    flex:0 0 $width;
+}
+@mixin animation($animation , $animation_name) {
+    $delay:calc(1s + #{$animation});
+    animation:$animation $delay ease-in-out $animation_name;
+}
+
+//For Tag Box 
+// @mixin tag_box($bg-color){
+//     background: $bg-color;
+// }
+  

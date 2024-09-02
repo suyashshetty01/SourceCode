@@ -1,0 +1,313 @@
+[
+    {
+        "Field_Name": "product_id",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"privatePassengerCar\",\"10\":\"null\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "is_claim_exists_3",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "hidden",
+        "Field_Parent": "is_claim_exists"
+    },
+    {
+        "Field_Name": "electrical_accessory_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value" : "{\"not_empty\":\"Yes\",\"empty\":\"No\"}",
+        "Field_Group" : "Additional_Coverage",
+        "Field_Category": "hidden",
+        "Field_Parent": "electrical_accessory"
+    },
+    {
+        "Field_Name": "non_electrical_accessory_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"not_empty\":\"Yes\",\"empty\":\"No\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "hidden",
+        "Field_Parent": "non_electrical_accessory"
+    },
+
+    {
+        "Field_Name": "vehicle_ncb_current",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"0\":\"0\",\"20\":\"1\",\"25\":\"2\",\"35\":\"3\",\"45\":\"4\",\"60\":\"5\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_ncb_current"
+    },
+    {
+        "Field_Name": "vehicle_ncb_next",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"0\":\"0\",\"20\":\"1\",\"25\":\"2\",\"35\":\"3\",\"45\":\"4\",\"60\":\"5\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_ncb_next"
+    },
+    {
+        "Field_Name": "is_bifuel",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Yes\",\"external_bifuel= no and fuel type is not inbuilt \":\"No\",\"db_fueltype = inbuilt\":\"Yes\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "custom",
+        "Field_Parent": "external_bifuel"
+    },
+    {
+        "Field_Name": "is_bifuel_kit_type",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"ADD On,\"db_fueltype = inbuilt\":\"Inbuilt\",\" otherwise\":\"\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "custom",
+        "Field_Parent": "external_bifuel"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"False\",\"renew\":\"True\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"\",\"renew\":\"RolloverCar\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+	{
+        "Field_Name": "vehicle_insurance_type_3",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"False\",\"renew\":\"True\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "addon_engine_protector_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_engine_protector_cover"
+    },
+    {
+        "Field_Name": "is_financed_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Bank Name\",\"no\":\"\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "is_financed"
+    },
+    {
+        "Field_Name": "addon_ncb_protection_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_ncb_protection_cover"
+    },
+    {
+        "Field_Name": "addon_ncb_protection_cover_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_ncb_protection_cover"
+    },
+    {
+        "Field_Name": "addon_zero_dep_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_zero_dep_cover"
+    },
+    {
+        "Field_Name": "addon_zero_dep_cover_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_zero_dep_cover"
+    },
+    {
+        "Field_Name": "addon_invoice_price_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_invoice_price_cover"
+    },
+    {
+        "Field_Name": "addon_invoice_price_cover_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_invoice_price_cover"
+    },
+    {
+        "Field_Name": "addon_key_lock_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_key_lock_cover"
+    },
+    {
+        "Field_Name": "addon_key_lock_cover_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_key_lock_cover"
+    },
+    {
+        "Field_Name": "addon_personal_belonging_loss_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_personal_belonging_loss_cover"
+    },
+    {
+        "Field_Name": "addon_windshield_cover",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_windshield_cover"
+    },
+    {
+        "Field_Name": "addon_windshield_cover_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"on\",\"no\":\"off\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_windshield_cover"
+    },
+    {
+        "Field_Name": "vehicle_registration_date_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "dd",
+        "Field_Group": "Registration",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_registration_date"
+    },
+    {
+        "Field_Name": "vehicle_registration_date_3",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "MM",
+        "Field_Group": "Registration",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_registration_date"
+    },
+    {
+        "Field_Name": "vehicle_registration_date_4",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "yy",
+        "Field_Group": "Registration",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_registration_date"
+    },
+    {
+        "Field_Name": "birth_date_2",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "dd",
+        "Field_Group": "input",
+        "Field_Category": "Customer",
+        "Field_Parent": "birth_date"
+    },
+    {
+        "Field_Name": "birth_date_3",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "MM",
+        "Field_Group": "input",
+        "Field_Category": "Customer",
+        "Field_Parent": "birth_date"
+    },
+    {
+        "Field_Name": "birth_date_4",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "yy",
+        "Field_Group": "input",
+        "Field_Category": "Customer",
+        "Field_Parent": "birth_date"
+    },
+	{
+        "Field_Name": "rs_quote_id",
+        "Insurer_ID": "10",
+        "Product_Id": "1",
+        "Field_Type": "string",
+        "Field_Value": "yy",
+        "Field_Group": "Custom",
+        "Field_Category": "Policy",
+        "Field_Parent": "rs_quote_id"
+    }  
+]

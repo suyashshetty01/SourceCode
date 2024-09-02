@@ -1,0 +1,36 @@
+{
+    "DealId": "___insurer_integration_service_user___",
+    "IsRegisteredCustomer": "false",
+    "CorrelationId": "___correlationCode___",
+    "policyStartDate": "___policy_start_date___",
+    "policyEndDate": "___policy_end_date___",
+    "transactionDate": "___quote_date___",
+    "PolicyTenure": "___policy_tenure___",
+    "stampDutyChargable": "true",
+    "inwardDate": "___quote_date___",
+    "insuredDOB": "___insured_dob___",
+    "taxDetails": {
+        "gstServiceDetails": [
+            {
+                "ILGICStateName": "___gst_state___",
+                "partyStateName": "___gst_state___",
+                "taxExempted": "false"
+            }
+        ]
+    },
+    "productDetails": {
+        "ProductCode": "___sub_product_code___",
+        "planDetails": [
+            {
+                "PlanCode": "___plan_code___",
+                "RiskSIComponentDetails": [
+                    {
+                        "RiskSIComponent": "Person",
+                        "CoverDetails": 
+                            ___cover_opted___
+                    }
+                ]
+            }
+        ]
+    }
+}

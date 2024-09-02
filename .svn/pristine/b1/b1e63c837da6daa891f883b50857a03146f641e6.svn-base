@@ -1,0 +1,124 @@
+{  
+    "RegistrationNumber": "___registration_no_1______registration_no_2______registration_no_3______registration_no_4___",
+    "EngineNumber": "___engine_number___",
+    "ChassisNumber": "___chassis_number___",
+    "BusinessType": "___vehicle_insurance_type___",
+    "CustomerType": "___vehicle_registration_type___",
+    "DealId": "___insurer_integration_account_code___",
+    "PolicyStartDate": "___policy_start_date___",
+    "PolicyEndDate": "___policy_end_date___",
+    "VehicleMakeCode": "___dbmaster_insurer_vehicle_make_code___",
+    "VehicleModelCode": "___dbmaster_insurer_vehicle_model_code___",
+    "RTOLocationCode": "___dbmaster_insurer_rto_city_code___",
+    "ManufacturingYear": "___vehicle_manf_year___",
+    "DeliveryOrRegistrationDate": "___vehicle_registration_date___",
+    "FirstRegistrationDate": "___vehicle_registration_date___",
+    "ExShowRoomPrice": "___dbmaster_insurer_vehicle_exshowroom___",
+    "IsValidDrivingLicense": "___is_having_valid_dl___",
+    "IsMoreThanOneVehicle": false,
+    "IsNoPrevInsurance": "___is_policy_exist_2___",
+    "IsTransferOfNCB": false,
+    "TransferOfNCBPercent": 0,
+    "IsLegalLiabilityToPaidDriver": "___is_llpd___",
+    "IsPACoverOwnerDriver": "___is_pa_od___",
+    "IsVehicleHaveLPG": "___is__bifuel_lpg___",
+    "IsVehicleHaveCNG": "___is__bifuel_cng___",
+    "SIVehicleHaveLPG_CNG": "___external_bifuel_value___",
+    "TPPDLimit": "___tppd_amount___",
+    "IsHaveElectricalAccessories":___electrical_accessory_2___,
+    "SIHaveElectricalAccessories": "___electrical_accessory___",
+    "IsHaveNonElectricalAccessories":___non_electrical_accessory_2___,
+    "SIHaveNonElectricalAccessories": "___non_electrical_accessory___",
+    "IsPACoverUnnamedPassenger": "___pa_unnamed_passenger_si_2___",
+    "SIPACoverUnnamedPassenger": "___pa_unnamed_passenger_si___",
+    "IsLegalLiabilityToPaidEmployee": false,
+    "NoOfEmployee": 3,
+    "IsLegaLiabilityToWorkmen": false,
+    "NoOfWorkmen": 2,
+    "IsFiberGlassFuelTank": false,
+    "IsVoluntaryDeductible": "___voluntary_deductible_2___",
+    "VoluntaryDeductiblePlanName": "___voluntary_deductible___",
+    "IsAutomobileAssocnFlag": "___is_aai_member___",
+    "IsAntiTheftDisc": "___is_antitheft_fit___",
+    "IsHandicapDisc": false,
+    "IsExtensionCountry": false,
+    "IsGarageCash": false,
+    "GarageCashPlanName": 4,
+    "ZeroDepPlanName": "___addon_zero_dep_cover___",
+    "RSAPlanName": "___addon_road_assist_cover___",
+    "LossOfPersonalBelongingPlanName": "___addon_personal_belonging_loss_cover___",
+    "KeyProtectPlan": "___addon_key_lock_cover___",
+    "IsRTIApplicableflag": "___addon_invoice_price_cover___",
+    "IsConsumables":"___addon_consumable_cover___",
+    "IsEngineProtectPlus":"___addon_engine_protector_cover___",
+    "OtherLoading": 0,
+    "OtherDiscount": 0,
+    "GSTToState": "___gst_state___",
+    "Tenure": "___policy_od_tenure___",
+    "TPTenure": "___policy_tp_tenure___",
+    <!--ODONLY_START-->
+    "TPStartDate" : "___tp_start_date___",
+    "TPEndDate" : "___tp_end_date___",
+    "TPPolicyNo" : "___tp_policy_number___",
+    "TPInsurerName" : "___tp_insurer_code___",
+    <!--ODONLY_FINISH-->
+    "PACoverTenure" : "1", 
+    "CorrelationId": "___dbmaster_insurer_transaction_identifier___",
+    "CustomerDetails":
+    {
+        "CustomerType": "___vehicle_registration_type___",
+        "CustomerName": "___first_name___ ___last_name___",
+        "DateOfBirth": "___birth_date___",
+        "PinCode": "___communication_pincode___",
+        "PANCardNo": "___pan___",
+        "Email": "___email___",
+        "MobileNumber": "___mobile___",
+        "AddressLine1": "___communication_address_1___ ___communication_address_2___ ___communication_address_3___",
+        "CKYCID": "___kyc_no___",
+        "EKYCid": "",
+	"pepFlag": false,
+	"ilkycReferenceNumber": "___kyc_ref_no___",
+	"SkipDedupeLogic": "true",
+        <!--gst_details_start-->
+        "GSTDetails":
+        {
+            "GSTExemptionApplicable": "No",
+            "GSTInNumber": "___gst_no___",
+            "GSTToState": "___gst_state___",
+            "ConstitutionOfBusiness": "",
+            "CustomerType": "",
+            "PanDetails": "",
+            "GSTRegistrationStatus": ""
+        },<!--gst_details_end-->
+        "CountryCode": 100,
+        "StateCode": "___permanent_state_code___",
+        "CityCode": "___permanent_city_code___"
+    },<!--financier details start-->
+    "FinancierDetails":
+    {
+        "FinancierName": "___financial_institute_name___",
+        "BranchName": "___financial_institute_city___",
+        "AgreementType": "___financial_agreement_type___"
+    },<!--financier details end-->            
+    <!--nominee_details_start-->
+    "NomineeDetails": 
+    {
+        "NomineeType": "PA-Owner Driver",
+        "NameOfNominee": "___nominee_name___",
+        "Age": "___nominee_age___",
+        "Relationship": "___nominee_relation___"
+    },<!--nominee_details_end-->
+    <!--previous insurer details start-->
+    "PreviousPolicyDetails":
+    {
+        "previousPolicyStartDate": "___pre_policy_start_date___",
+        "previousPolicyEndDate": "___policy_expiry_date___",
+        "ClaimOnPreviousPolicy": "___is_claim_exists___",
+        "PreviousPolicyType": "___previous_insurance_type___",
+        "BonusOnPreviousPolicy": "___vehicle_ncb_current___",
+        "PreviousInsurerName": "___dbmaster_previousinsurer_code___",
+        "PreviousPolicyNumber": "___previous_policy_number___",
+        "TotalNoOfODClaims": "___totalnoofodclaims___",
+        "NoOfClaimsOnPreviousPolicy": "___noofclaimsonPreviousPolicy___"
+    }<!--previous insurer details end-->
+}

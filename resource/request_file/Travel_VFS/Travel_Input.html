@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>Travel Insurance</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script type="text/javascript" src="jscript/Travel_Input.js"></script>
+   <script type="text/javascript" src="jscript/handle_Url.js"></script>
+</head>
+
+<body>
+   <div id="loader" style="display:none">
+      <img src="images/loading.gif">
+   </div>
+   <div class="mainContainer">
+      <div class="container">
+         <div class="topBox">
+            <img src="images/io-mail.png">&nbsp;customercare@policyboss.com&nbsp;&nbsp;&nbsp;
+            <img src="images/io-call.png">&nbsp;1800-419-419-9(Toll Free)
+         </div>
+      </div>
+      <div class="mainBox">
+         <div class="container">
+            <header>
+               <div class="logo"><img src="images/logo150.png"></div>
+               <div class="mainText">
+                  <h1 class="TopHeader">SCHENGEN TRAVEL COVER</h1>
+                  <h4 class="subHeader">Whatever your travel plans, We've got you covered!</h4>
+               </div>
+            </header>
+            <section class="login-box">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="row">
+                        <div class="col-md-6 user-box">
+                           <select id="region">
+                              <option value="Europe" Selected>Schengen Countries</option>
+                           </select>
+                           <label>TRAVELLING TO <img src="images/tours.png"></label>
+                        </div>
+                        <div class="col-md-6 user-box">
+                           <select id='trip_type'>
+                              <option disabled selected>Select type</option>
+                              <option value="SINGLE">Single Trip</option>
+                              <option value="MULTI">Multiple Trip</option>
+                           </select>
+                           <label>Trip Type <img src="images/take.png"></label>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-6 user-box">
+                           <input id="start_date" class="picker" type="date" />
+                           <label>TRIP START DATE <img src="images/take.png"></label>
+                        </div>
+                        <div class="col-md-6 user-box">
+                           <div id="tripEndDate">
+                              <input id="end_date" class="picker" type="date" />
+                              <label>TRIP END DATE <img src="images/down.png"></label>
+                           </div>
+                           <div id="maxDuration">
+                              <select id="max_duration">
+                                 <option selected disabled>Max trip days</option>
+                                 <option value="30">0-30</option>
+                                 <option value="45">30-45</option>
+                                 <option value="60">45-60</option>
+                                 <option value="90">60-90</option>
+                              </select>
+                              <label>Max Duration <img src="images/down.png"></label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 hdline">
+                     <div class="user-box">
+                        <select id="members">
+                           <option id="A1C0" data-membr=1 data-adult=1 data-child=0>Adult 1</option>
+                           <option id="A2C0" data-membr=2 data-adult=2 data-child=0>Adult 2</option>
+                           <option id="A1C1" data-membr=2 data-adult=1 data-child=1>Adult 1 + Kid 1</option>
+                           <option id="A1C2" data-membr=3 data-adult=1 data-child=2>Adult 1 + Kid 2</option>
+                           <option id="A1C3" data-membr=4 data-adult=1 data-child=3>Adult 1 + Kid 3</option>
+                           <option id="A1C4" data-membr=5 data-adult=1 data-child=4>Adult 1 + Kid 4</option>
+                           <option id="A2C1" data-membr=3 data-adult=2 data-child=1>Adult 2 + Kid 1</option>
+                           <option id="A2C2" data-membr=4 data-adult=2 data-child=2>Adult 2 + Kid 2</option>
+                           <option id="A2C2" data-membr=5 data-adult=2 data-child=3>Adult 2 + Kid 3</option>
+                           <option id="A2C2" data-membr=6 data-adult=2 data-child=4>Adult 2 + Kid 4</option>
+                        </select>
+                        <label>TRAVELLERS <img src="images/traveller.png"></label>
+                     </div>
+                     <div id="add_detail" class="btnBox" onclick="popup_dob('show')">
+                        <button class="btnRed">ADD MEMBER DETAILS</button>
+                     </div>
+                  </div>
+               </div>
+               <span id="errMsg" style="color:red;"></span>
+            </section>
+         </div>
+         <div class="footerBtn">
+            <div class="container">
+               <div align="center"><button class="btnMain" onclick="validateForm()">Get Quotes</button></div>
+            </div>
+         </div>
+      </div>
+      <footer class="footer">
+         <div class="container">
+            <div align="center">&copy;2021. PolicyBoss.com </div>
+         </div>
+      </footer>
+   </div>
+   <div id="popup_dob" class="overlay">
+      <div class="popup">
+         <h2><img src="images/io-family.png">&nbsp;HOW MANY PEOPLE ARE TRAVELLING?</h2>
+         <span class="close" onclick="popup_dob('hide')">&times;</span>
+         <div>
+            <div id="travellers">
+               <div class="row">
+                  <div class="col-6 user-box">
+                     <select id="">
+                        <option>Self</option>
+                        <option>Spouse</option>
+                     </select>
+                     <label>TRAVELLER 1</label>
+                  </div>
+                  <div class="col-6 user-box">
+                     <input id="M1DOB" class="picker Dob" type="date" />
+                     <label>Date of Birth</label>
+                  </div>
+               </div>
+            </div>
+            <!-- <div id="errDob" style="color:red;text-align: center;padding-top: 10px;"></div> -->
+            <div class="row">
+               <div class="col btnBox" style="text-align: center;">
+                  <button class="btnBlue" onclick="validateDob()">DONE</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    <div id="popup_dob" class="overlay PremInitiVerify" style="display: none;">
+      <div class="popup premVerifyPop">
+		<div class="validationMsg">
+		
+		</div>
+        <div class="row">
+        <div class="col btnBox closeValidPopup" style="text-align: center;">
+            <button class="btnBlue">OK</button>
+        </div>
+		</div>
+      </div>
+   </div>
+</body>
+
+</html>

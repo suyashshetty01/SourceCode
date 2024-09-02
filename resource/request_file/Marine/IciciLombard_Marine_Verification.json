@@ -1,0 +1,30 @@
+{
+    "CorrelationId": "___dbmaster_insurer_transaction_identifier___",
+    "DealId": "___insurer_integration_agent_code___",
+    "isTaggingRequired": true,
+    "isMappingRequired": true,
+    "PaymentEntry": {
+        "onlineDAEntry":
+                {
+                    "AuthCode": "___pg_reference_number_1___",
+                    "MerchantID": "___pg_reference_number_2___",
+                    "TransactionId": "___transaction_id___",
+                    "ReceiptDate": "___current_date___",
+                    "PaymentAmount": "___transaction_amount___",
+                    "InstrumentDate": "___current_date___",
+                    "CustomerID": "___customer_id___"
+                }
+    },
+    "PaymentMapping": {
+        "customerProposal": [{
+                "CustomerID": "___customer_id___",
+                "ProposalNo": "___proposal_num___"       
+            }]
+    },
+    "PaymentTagging": {
+        "customerProposal": [{
+                "CustomerID": "___customer_id___",
+                "ProposalNo": "___proposal_num___"       
+            }]
+    }
+}

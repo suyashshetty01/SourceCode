@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Header/>
+    <S:Body>
+        <ns2:GET_PDF xmlns:ns2="http://web.com/">
+            <policyNo>___policy_number___</policyNo>
+            <ltype>POLSCHD</ltype>
+        </ns2:GET_PDF>
+    </S:Body>
+</S:Envelope>

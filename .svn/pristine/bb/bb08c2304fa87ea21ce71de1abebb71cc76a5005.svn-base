@@ -1,0 +1,139 @@
+@font-face{
+	font-family:"Poppins-Bold";
+	src:url("../Fonts/Poppins-Bold.otf");
+}
+@font-face{
+	font-family:"Poppins-Regular";
+	src:url("../Fonts/Poppins-Regular.otf");
+}
+body{font-family:Poppins-Regular;font-size: 16px;height: 100vh;}
+.container{box-shadow: 0 0 8px grey;padding: 15px;}
+.logo{height: 100px;padding: 20px 40px;}
+h1{font-family: Poppins-Bold;margin: 5px 60px;text-align: center;}
+.radioBtn,.insurer{margin: 10px 0;}
+.radioBtn label,.insurer label{cursor: pointer;}
+.col-md-3{padding: 0;cursor: pointer;}
+input,textarea{border: none;border-bottom: 1px solid #c3c3c3;color: #5a5a5a;font-size: 14px;background-color: transparent;}
+.VDetails label{width: 100%;position: absolute;top: 0px;left: 15px;font-size: 14px;color: gray;}
+.insurer label {left: 0;}
+label{font-size: 14px;color: #666666;}
+.VDetails .col-md-6,.VDetails .col-md-12{margin: 20px 0 10px;}
+.VDetails input{width: 95%;}
+textarea{width: 100%;}
+input:focus,textarea:focus,button:focus{outline: none;}
+button{	background-color: #42abe7;border: 1px solid #42abe7;color: white;margin: 5px;border-radius: 5px;
+	font-size: 20px;padding: 4px 20px;font-family: 'Poppins-Bold';	}
+button p{font-size: 14px;margin: 0;margin: 4px 0px -7px;}
+.radioBtn .button{background-color: #42abe7;width: 125px;font-size: 14px;text-align: center;padding: 5px;color: white;}
+.insurer .button {background-color: #e0e0e0;padding: 0 !important;width: 125px;font-size: 14px;text-align: center;}
+.radioBtn hr{margin: 8px;background-color: white;}
+.box{display: flex;}
+.box div{margin: 0 5px;}
+.box input{width: 60px !important;text-align: center;text-transform: uppercase;}
+.box button {background-color: #42abe7;width: 70px !important;color: white;padding: 0 4px;border-radius: 3px;position: relative;
+	font-size: 14px;font-family: 'Poppins-Regular';margin: 0;}
+.insurer{height: 45px;margin: 10px 0 20px !important;}
+.insurer img{width: 100%;}
+
+/*Toggle Switch*/
+.txt{color: gray;padding: 0;margin-right: 8px;font-size: 12px;font-weight: normal;}
+.toggle {position: relative !important;top: 0 !important;left: 0 !important;display : inline-block;width: 65px !important;
+	height: 26px;background-color: #c2c2c2;border-radius: 20px;border: 2px solid #c2c2c2;}
+/* After slide changes */
+.toggle:after {content: '';position: absolute;width: 22px;height: 22px;border-radius: 50%;background-color: white;top: 0px;
+left: 1px;transition:  all 0.5s;}
+/* Toggle text */
+p {padding: 4px;margin-bottom: 0;font-weight: bold;font-size: 10px;color: white;}
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {left: 38px;}
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {background-color: #42abe7;border: 2px solid #42abe7;}
+/* Checkbox vanished */
+.checkbox {display : none;}
+
+.inputBox{border-bottom: 1px solid #c3c3c3;height: 50px;align-items: center;}
+.inputBox label {margin-bottom: 0px;color: #5a5a5a;font-size: 14px;}
+.inputBox select{width: 100%;border: none;font-weight: normal !important;font-size: 14px !important;color: #4d4d4d;}
+
+.ErrorMsg{border-bottom:2px solid red !important;}
+.Popup_thank {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: '';
+  background: rgb(227 227 227 / 66%);
+  z-index: 1;
+}
+.popup {width: 100%;height: 100%;/* padding: 0; *//* transform: translate(-50%, -50%) scale(0.5); *//* position: absolute; *//* top: 50%; *//* left: 50%; *//* box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.5); *//* border-radius: 5px; *//* background: #fff; *//* text-align: center; *//* z-index: 3; */display: flex;justify-content: center;align-items: center;}
+
+.popup h1 {
+    font-size: 15px;
+    margin-block-end: 0;
+}
+.popup .closeBtn {
+display: inline-block;
+position: absolute;
+bottom: 20px;
+right: 20px;
+font-weight: bold;
+text-decoration: none;
+color: #333;
+line-height: 10px;
+}
+
+.qr-container{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+.popupContainer1{
+	width: 27%;
+    margin: 163px auto;
+    background: #ffff;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-animation: rotateHorz 0.3s 0.3s backwards;
+    animation: rotateHorz 0.3s 0.3s backwards;
+}
+.popupHeading1{padding: 10px; background: #f9f9f9;border-radius: 5px 5px 0px 0px;border-bottom: 2px solid #2196f3;font-weight: bold;color: #2196f3}
+.popupSection1{padding: 10px;background: #fff;border-radius: 0px 0px 5px 5px;height: 82%;overflow-y: auto;}
+.popClose1{right: 2%;font-size: 24px;top: -5px;color: #747474;cursor: pointer;float:right;}
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
+	body{background-image: linear-gradient(white 50%, #fff);}
+	.container{box-shadow: none;padding: 0;margin-bottom: 60px;}
+	.bgImg{position: fixed;left: 0;bottom: 35px;background-color: #fff;width: 100%;}
+	.bgImg img { width: 100%;}
+	.col-md-6{padding: 8px;}
+	.logo{height: 50px;padding: 7px 15px;}
+	.logo img{width: 100px;}
+	h1{margin: 0;font-size: 20px;}
+	h6{font-size: 14px;margin-top: 10px;}
+	.col-md-3{width: 50%;}
+	.col-4{padding: 0;}
+	.radioBtn,.insurer{margin: 15px 0 10px;}
+	.radioBtn .col-md-6,.insurer .col-md-6{width: 50%}
+	.VDetails .col-md-6, .VDetails .col-md-12{padding: 0;}
+	.VDetails input{width: 100%;}
+	.VDetails label{left: 0;}
+	.VDetails .vehicle{padding: 0 15px;}
+	/*button{width: 100%;position: fixed;bottom: 0;left: 0;border-radius: 0;margin: 0;}*/
+    .button{width: 100%;position: fixed;bottom: 0;left: 0;border-radius: 0;margin: 0;}
+	input:focus + label{font-size: 9px!important;}
+	.radioBtn .button,.insurer .button{width: 85px;font-size: 12px;padding: 3px;}
+	.radioBtn hr {margin: 4px;}
+	.insurer{height: 30px;}
+
+	/*Page Two*/
+	.vehicle .col-md-4{width: 33.33%;padding: 5px;}
+	.row{margin: 0; display:block; background-color:#fff;}
+	.row.vehicle {margin: 0 10px;}
+	.popupContainer1 {width: 80%;margin: 195px auto;}
+}

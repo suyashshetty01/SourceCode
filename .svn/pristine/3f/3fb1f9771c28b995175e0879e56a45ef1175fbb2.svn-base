@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://premiumwrapper.motor.itgi.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://premiumwrapper.motor.itgi.com" xmlns:intf="http://premiumwrapper.motor.itgi.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on May 13, 2010 (11:31:29 IST)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://premiumwrapper.motor.itgi.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getMotorPremium">
+    <complexType>
+     <sequence>
+      <element name="policyHeader" type="impl:PolicyHeader"/>
+      <element name="policy" type="impl:Policy"/>
+      <element name="partner" type="impl:Partner"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="PolicyHeader">
+    <sequence>
+     <element name="messageId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="VehicleCoverage">
+    <sequence>
+     <element name="coverageId" nillable="true" type="xsd:string"/>
+     <element name="number" nillable="true" type="xsd:string"/>
+     <element name="sumInsured" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfVehicleCoverage">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="impl:VehicleCoverage"/>
+    </sequence>
+   </complexType>
+   <complexType name="Vehicle">
+    <sequence>
+     <element name="aaiExpiryDate" nillable="true" type="xsd:string"/>
+     <element name="aaiNo" nillable="true" type="xsd:string"/>
+     <element name="capacity" nillable="true" type="xsd:string"/>
+     <element name="engineCpacity" nillable="true" type="xsd:string"/>
+     <element name="exShPurPrice" nillable="true" type="xsd:string"/>
+     <element name="grossVehicleWeight" nillable="true" type="xsd:string"/>
+     <element name="grossVehicleWt" nillable="true" type="xsd:string"/>
+     <element name="itgiRiskOccupationCode" nillable="true" type="xsd:string"/>
+     <element name="itgiZone" nillable="true" type="xsd:string"/>
+     <element name="make" nillable="true" type="xsd:string"/>
+     <element name="regictrationCity" nillable="true" type="xsd:string"/>
+     <element name="registrationDate" nillable="true" type="xsd:string"/>
+     <element name="registrationState" nillable="true" type="xsd:string"/>
+     <element name="seatingCapacity" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+     <element name="vehicleBody" nillable="true" type="xsd:string"/>
+     <element name="vehicleClass" nillable="true" type="xsd:string"/>
+     <element name="vehicleCoverage" nillable="true" type="impl:ArrayOfVehicleCoverage"/>
+     <element name="vehicleInsuranceCost" nillable="true" type="xsd:string"/>
+     <element name="vehicleSubclass" nillable="true" type="xsd:string"/>
+     <element name="yearOfManufacture" nillable="true" type="xsd:string"/>
+     <element name="zcover" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Policy">
+    <sequence>
+     <element name="agent" nillable="true" type="xsd:string"/>
+     <element name="contractType" nillable="true" type="xsd:string"/>
+     <element name="expiryDate" nillable="true" type="xsd:string"/>
+     <element name="inceptionDate" nillable="true" type="xsd:string"/>
+     <element name="previousPolicyEndDate" nillable="true" type="xsd:string"/>
+     <element name="tieup" nillable="true" type="xsd:string"/>
+     <element name="vehicle" nillable="true" type="impl:Vehicle"/>
+    </sequence>
+   </complexType>
+   <complexType name="Partner">
+    <sequence>
+     <element name="partnerBranch" nillable="true" type="xsd:string"/>
+     <element name="partnerCode" nillable="true" type="xsd:string"/>
+     <element name="partnerSubBranch" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="getMotorPremiumResponse">
+    <complexType>
+     <sequence>
+      <element name="getMotorPremiumReturn" type="impl:PremiumDetails"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="CoveragePremiumDetails">
+    <sequence>
+     <element name="coverageName" nillable="true" type="xsd:string"/>
+     <element name="coveragePremium" nillable="true" type="xsd:string"/>
+     <element name="odPremium" nillable="true" type="xsd:string"/>
+     <element name="tpPremium" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ErrorDetails">
+    <sequence>
+     <element name="errorCode" nillable="true" type="xsd:string"/>
+     <element name="errorMessage" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PremiumDetails">
+    <sequence>
+     <element maxOccurs="unbounded" name="coveragePremiumDetail" nillable="true" type="impl:CoveragePremiumDetails"/>
+     <element name="discountLoading" nillable="true" type="xsd:string"/>
+     <element name="discountLoadingAmt" nillable="true" type="xsd:string"/>
+     <element maxOccurs="unbounded" name="error" nillable="true" type="impl:ErrorDetails"/>
+     <element name="gst" nillable="true" type="xsd:string"/>
+     <element name="premiumPayable" nillable="true" type="xsd:string"/>
+     <element name="serviceTax" nillable="true" type="xsd:string"/>
+     <element name="totalODPremium" nillable="true" type="xsd:string"/>
+     <element name="totalPremimAfterDiscLoad" nillable="true" type="xsd:string"/>
+     <element name="totalPremium" nillable="true" type="xsd:string"/>
+     <element name="totalTPPremium" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMotorPremiumResponse">
+
+      <wsdl:part element="impl:getMotorPremiumResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMotorPremiumRequest">
+
+      <wsdl:part element="impl:getMotorPremium" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MotorPremiumWebService">
+
+      <wsdl:operation name="getMotorPremium">
+
+         <wsdl:input message="impl:getMotorPremiumRequest" name="getMotorPremiumRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMotorPremiumResponse" name="getMotorPremiumResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MotorPremiumWebServiceSoapBinding" type="impl:MotorPremiumWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMotorPremium">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMotorPremiumRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMotorPremiumResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MotorPremiumWebServiceService">
+
+      <wsdl:port binding="impl:MotorPremiumWebServiceSoapBinding" name="MotorPremiumWebService">
+
+         <wsdlsoap:address location="http://220.227.8.74/portaltest/services/MotorPremiumWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

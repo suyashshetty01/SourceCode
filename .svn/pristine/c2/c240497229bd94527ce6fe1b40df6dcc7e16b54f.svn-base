@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+        <!-- Favicon-->
+        <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
+        <link href="/adminpanel/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
+        <link href="/adminpanel/plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
+        <link href="/adminpanel/plugins/animate-css/animate.css" rel="stylesheet" />
+
+        <!-- Morris Chart Css-->
+        <link href="/adminpanel/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link href="/adminpanel/css/style.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/adminpanel/css/themes/all-themes.css" rel="stylesheet" />
+
+        <!-- Jquery Core Js -->
+
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="../plugins/jquery-countto/jquery.countTo.js"></script>
+        <!-- Bootstrap Core Js -->
+        <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+        <!-- Include Required Prerequisites -->
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <body>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+                    <p><b>Date Range</b></p>
+                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                        <span></span> <b class="caret"></b>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+                    <p><b>Product</b></p>
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                        <button type="button" class="btn bg-green waves-effect active" onclick="GenerateChart('Car');">Private Car</button>
+                        <button type="button" class="btn bg-red waves-effect" onclick="GenerateChart('TW');">Two Wheeler</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" id="waitloader" style="display:none;padding:5px" >
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only">100% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="sale_report">
+                <!--<div class="block-header">
+                    <h2 id="productTitle">ONLINE SALE</h2>
+                </div>-->
+
+                <!-- Widgets -->
+                <div class="row clearfix"  id="quote_widget">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-pink hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">search</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">SEARCH</div>
+                                <div id="Search" class="number count-to" data-from="0" data-to="0" data-speed="1000" data-fresh-interval="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-cyan hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">mail</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">PAYMENTLINK</div>
+                                <div id="Link" class="number count-to" data-from="0" data-to="0" data-speed="1000" data-fresh-interval="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">publish</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">PROPOSAL</div>
+                                <div id="Proposal" class="number count-to" data-from="0" data-to="0" data-speed="5" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-orange hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">gavel</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">POLICY</div>
+                                <div id="Policy" class="number count-to" data-from="0" data-to="0" data-speed="2000" data-fresh-interval="1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tabstart -->
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>VEHICLE REPORT</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#vehicle_make" data-toggle="tab">Manufacture</a></li>
+                                <li role="presentation"><a href="#cc_slab" data-toggle="tab">Cubic Capacity</a></li>
+                                <li role="presentation"><a href="#fuel" data-toggle="tab">Fuel</a></li>
+                                <li role="presentation"><a href="#vehicle_age_year" data-toggle="tab">Vehicle Age Year</a></li>
+                                <li role="presentation" ><a href="#rto_state" data-toggle="tab">Rto State</a></li>                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="vehicle_make">
+                                    <div id="report_vehicle_make" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="cc_slab">
+                                    <div id="report_cc_slab" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="fuel">
+                                    <div id="report_fuel" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="vehicle_age_year">
+                                    <div id="report_vehicle_age_year" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="rto_state">
+                                    <div id="report_rto_state" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tab start -->
+            <!-- tabstart -->
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>EXITING POLICY REPORT</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#ins_type" data-toggle="tab">Insurance Type</a></li>
+                                <li role="presentation"><a href="#claim" data-toggle="tab">Claim</a></li>
+                                <li role="presentation"><a href="#ncb" data-toggle="tab">NCB</a></li>
+                                <li role="presentation"><a href="#existing_insurer" data-toggle="tab">Existing Insurer</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="ins_type">
+                                    <div id="report_ins_type" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="claim">
+                                    <div id="report_claim" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="ncb">
+                                    <div id="report_ncb" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="existing_insurer">
+                                    <div id="report_existing_insurer" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tab start -->
+            <!-- tabstart -->
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>POSP AGENT REPORT</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#agent" data-toggle="tab">Posp</a></li>
+                                <li role="presentation"><a href="#agent_city" data-toggle="tab">Agent City</a></li>
+                                <li role="presentation"><a href="#executive" data-toggle="tab">LM Executive</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="agent">
+                                    <div id="report_agent" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="agent_city">
+                                    <div id="report_agent_city" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="executive">
+                                    <div id="report_executive" style="min-width: 310px; max-width: 900px; height: auto; margin: 0 auto"></div>
+                                </div>                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tab start -->
+        </div>
+        <script>
+            var Report_Data = null;
+            function getQS(name, url) {
+                if (!url)
+                    url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                        results = regex.exec(url);
+                if (!results)
+                    return null;
+                if (!results[2])
+                    return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            function GetReport(datefrom, dateto) {
+                $('#waitloader').show();
+                $.get('/report/dashboard?datefrom=' + datefrom + '&dateto=' + dateto, function (res) {
+                    //$('#waitloader').hide();
+                    Report_Data = res;
+                    GenerateChart('Car');
+                });
+            }
+            function GenerateChart(product) {
+                $('#productTitle').html('REPORT ::'+product);
+                
+                $('#waitloader').show();
+                // $('#Search').attr('data-to', Report_Data[product].Summary.Search.total);
+                // $('#Proposal').attr('data-to', Report_Data[product].Summary.Proposal.total);
+                // $('#Policy').attr('data-to', Report_Data[product].Summary.Sale.total);
+
+                $('#Search').html(Report_Data[product].Summary.Total.total);
+                $('#Proposal').html(Report_Data[product].Summary.Proposal.total);
+                $('#Policy').html(Report_Data[product].Summary.Sale.total);
+
+                //$('.count-to').countTo();
+
+                $.each(Report_Data[product], function (index, value) {
+                    console.log('data', index, value);
+                    if ($('#' + index).length > 0) {
+                        var categories = [];
+                        var PolicyBoss = [];
+                        var Finmart = [];
+                        var ASR = [];
+                        var PB_Emp_App = [];
+
+                        $.each(value, function (index1, value1) {
+                            console.log('data1', index1, value1);
+                            categories.push(index1);
+                            PolicyBoss.push(value1.PolicyBoss);
+                            Finmart.push(value1.Finmart);
+                        });
+                        console.log('Final', categories, PolicyBoss, Finmart, ASR, PB_Emp_App);
+                        var objChart = {
+                            chart: {
+                                type: 'bar'
+                            },
+                            title: {
+                                text: index.toString().toUpperCase(),
+                            },
+                            xAxis: {
+                                categories: categories
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: 'Total search'
+                                },
+                                stackLabels: {
+                                    style: {
+                                        color: 'red',
+                                        fontWeight: 'bolder'
+                                    },
+                                    enabled: true
+                                }
+                            },
+                            legend: {
+                                reversed: true
+                            },
+                            plotOptions: {
+                                bar: {
+                                    dataLabels: {
+                                        enabled: true
+                                    }},
+                                series: {
+                                    stacking: 'normal'
+                                }
+                            },
+                            series: [{
+                                    name: 'PolicyBoss',
+                                    data: PolicyBoss
+                                }, {
+                                    name: 'Finmart',
+                                    data: Finmart
+                                }]
+                        };
+                        create_graph(index, objChart);
+                    }
+                });
+                $('#waitloader').hide();
+            }
+            function create_graph(index, objChart) {
+                Highcharts.chart('report_' + index, objChart);
+
+            }
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //var start = moment().subtract(10, 'days');
+                var start = moment();
+                var end = moment();
+
+                function cb(start, end) {
+                    $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+                    console.log(start.format('YYYY-MM-DD') + '::' + end.format('YYYY-MM-DD'));
+                    GetReport(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+                }
+
+                $('#reportrange').daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    }
+                }, cb);
+
+                cb(start, end);
+
+            });
+        </script>
+    </body>
+</html>
+
+
+
+

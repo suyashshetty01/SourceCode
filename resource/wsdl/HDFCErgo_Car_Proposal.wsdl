@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="xmlstring">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="xmlstringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlstringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrevPolicyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBreakinInspectionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PGTransNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBreakinInspectionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBreakinInspectionStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBreakinProposalDataFinalPremium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PGTransNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBreakinProposalDataFinalPremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBreakinProposalDataFinalPremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_Dynamic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrevPolicyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_DynamicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_DynamicResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_Extract">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrevPolicyNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VehicleRegistratonNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_ExtractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_ExtractResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_Premium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPremiumInputXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_PremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_PremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GenerateRWTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RWXMLDetails" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GenerateRWTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_GenerateRWTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_UpdateAddressDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalInputAddressDetails" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_UpdateAddressDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_UpdateAddressDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GetRenewalPlans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrevPolicyNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VehicleRegistrationNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GetRenewalPlansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_GetRenewalPlansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_Extract">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalInputXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_ExtractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICTWRenewal_ExtractResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_Premium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalInputXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_PremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICTWRenewal_PremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_GenerateRWTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalInputXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICTWRenewal_GenerateRWTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICTWRenewal_GenerateRWTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalInputXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HEGICMotorRenewal_GenerateRWTransactionDirectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HEGICMotorRenewal_GenerateRWTransactionDirectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="xmlstringSoapIn">
+    <wsdl:part name="parameters" element="tns:xmlstring" />
+  </wsdl:message>
+  <wsdl:message name="xmlstringSoapOut">
+    <wsdl:part name="parameters" element="tns:xmlstringResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBreakinInspectionStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBreakinInspectionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBreakinProposalDataFinalPremium" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBreakinProposalDataFinalPremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_Dynamic" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_DynamicResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_Extract" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_ExtractResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_Premium" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_PremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GenerateRWTransaction" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GenerateRWTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_UpdateAddressDetails" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_UpdateAddressDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GetRenewalPlans" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GetRenewalPlansResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_Extract" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_ExtractResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_Premium" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_PremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_GenerateRWTransaction" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICTWRenewal_GenerateRWTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectSoapIn">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GenerateRWTransactionDirect" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectSoapOut">
+    <wsdl:part name="parameters" element="tns:HEGICMotorRenewal_GenerateRWTransactionDirectResponse" />
+  </wsdl:message>
+  <wsdl:message name="xmlstringHttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="xmlstringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PGTransNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PGTransNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+    <wsdl:part name="VehicleRegistratonNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumHttpGetIn">
+    <wsdl:part name="RenewalPremiumInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionHttpGetIn">
+    <wsdl:part name="RWXMLDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsHttpGetIn">
+    <wsdl:part name="RenewalInputAddressDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+    <wsdl:part name="VehicleRegistrationNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractHttpGetIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumHttpGetIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionHttpGetIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectHttpGetIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="xmlstringHttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="xmlstringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewalHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PGTransNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinInspectionStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PGTransNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBreakinProposalDataFinalPremiumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_DynamicHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+    <wsdl:part name="VehicleRegistratonNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_ExtractHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumHttpPostIn">
+    <wsdl:part name="RenewalPremiumInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_PremiumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionHttpPostIn">
+    <wsdl:part name="RWXMLDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsHttpPostIn">
+    <wsdl:part name="RenewalInputAddressDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_UpdateAddressDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="PrevPolicyNo" type="s:string" />
+    <wsdl:part name="VehicleRegistrationNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GetRenewalPlansHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractHttpPostIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_ExtractHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumHttpPostIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_PremiumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionHttpPostIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICTWRenewal_GenerateRWTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectHttpPostIn">
+    <wsdl:part name="RenewalInputXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HEGICMotorRenewal_GenerateRWTransactionDirectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="xmlstring">
+      <wsdl:input message="tns:xmlstringSoapIn" />
+      <wsdl:output message="tns:xmlstringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <wsdl:input message="tns:HEGICMotorRenewalSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <wsdl:input message="tns:GetBreakinInspectionStatusSoapIn" />
+      <wsdl:output message="tns:GetBreakinInspectionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <wsdl:input message="tns:GetBreakinProposalDataFinalPremiumSoapIn" />
+      <wsdl:output message="tns:GetBreakinProposalDataFinalPremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <wsdl:input message="tns:HEGICMotorRenewal_DynamicSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_DynamicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <wsdl:input message="tns:HEGICMotorRenewal_ExtractSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_ExtractSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <wsdl:input message="tns:HEGICMotorRenewal_PremiumSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_PremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <wsdl:input message="tns:HEGICMotorRenewal_UpdateAddressDetailsSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_UpdateAddressDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <wsdl:input message="tns:HEGICMotorRenewal_GetRenewalPlansSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GetRenewalPlansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <wsdl:input message="tns:HEGICTWRenewal_ExtractSoapIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_ExtractSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <wsdl:input message="tns:HEGICTWRenewal_PremiumSoapIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_PremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICTWRenewal_GenerateRWTransactionSoapIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_GenerateRWTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectSoapIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="xmlstring">
+      <wsdl:input message="tns:xmlstringHttpGetIn" />
+      <wsdl:output message="tns:xmlstringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <wsdl:input message="tns:HEGICMotorRenewalHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <wsdl:input message="tns:GetBreakinInspectionStatusHttpGetIn" />
+      <wsdl:output message="tns:GetBreakinInspectionStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <wsdl:input message="tns:GetBreakinProposalDataFinalPremiumHttpGetIn" />
+      <wsdl:output message="tns:GetBreakinProposalDataFinalPremiumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <wsdl:input message="tns:HEGICMotorRenewal_DynamicHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_DynamicHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <wsdl:input message="tns:HEGICMotorRenewal_ExtractHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_ExtractHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <wsdl:input message="tns:HEGICMotorRenewal_PremiumHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_PremiumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <wsdl:input message="tns:HEGICMotorRenewal_UpdateAddressDetailsHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_UpdateAddressDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <wsdl:input message="tns:HEGICMotorRenewal_GetRenewalPlansHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GetRenewalPlansHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <wsdl:input message="tns:HEGICTWRenewal_ExtractHttpGetIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_ExtractHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <wsdl:input message="tns:HEGICTWRenewal_PremiumHttpGetIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_PremiumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICTWRenewal_GenerateRWTransactionHttpGetIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_GenerateRWTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectHttpGetIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="xmlstring">
+      <wsdl:input message="tns:xmlstringHttpPostIn" />
+      <wsdl:output message="tns:xmlstringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <wsdl:input message="tns:HEGICMotorRenewalHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <wsdl:input message="tns:GetBreakinInspectionStatusHttpPostIn" />
+      <wsdl:output message="tns:GetBreakinInspectionStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <wsdl:input message="tns:GetBreakinProposalDataFinalPremiumHttpPostIn" />
+      <wsdl:output message="tns:GetBreakinProposalDataFinalPremiumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <wsdl:input message="tns:HEGICMotorRenewal_DynamicHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_DynamicHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <wsdl:input message="tns:HEGICMotorRenewal_ExtractHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_ExtractHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <wsdl:input message="tns:HEGICMotorRenewal_PremiumHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_PremiumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <wsdl:input message="tns:HEGICMotorRenewal_UpdateAddressDetailsHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_UpdateAddressDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <wsdl:input message="tns:HEGICMotorRenewal_GetRenewalPlansHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GetRenewalPlansHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <wsdl:input message="tns:HEGICTWRenewal_ExtractHttpPostIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_ExtractHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <wsdl:input message="tns:HEGICTWRenewal_PremiumHttpPostIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_PremiumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <wsdl:input message="tns:HEGICTWRenewal_GenerateRWTransactionHttpPostIn" />
+      <wsdl:output message="tns:HEGICTWRenewal_GenerateRWTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <wsdl:input message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectHttpPostIn" />
+      <wsdl:output message="tns:HEGICMotorRenewal_GenerateRWTransactionDirectHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="xmlstring">
+      <soap:operation soapAction="http://tempuri.org/xmlstring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <soap:operation soapAction="http://tempuri.org/GetBreakinInspectionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <soap:operation soapAction="http://tempuri.org/GetBreakinProposalDataFinalPremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Dynamic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Extract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Premium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GenerateRWTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_UpdateAddressDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GetRenewalPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <soap:operation soapAction="http://tempuri.org/HEGICTWRenewal_Extract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <soap:operation soapAction="http://tempuri.org/HEGICTWRenewal_Premium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <soap:operation soapAction="http://tempuri.org/HEGICTWRenewal_GenerateRWTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <soap:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GenerateRWTransactionDirect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="xmlstring">
+      <soap12:operation soapAction="http://tempuri.org/xmlstring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetBreakinInspectionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <soap12:operation soapAction="http://tempuri.org/GetBreakinProposalDataFinalPremium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Dynamic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Extract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_Premium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GenerateRWTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_UpdateAddressDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GetRenewalPlans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <soap12:operation soapAction="http://tempuri.org/HEGICTWRenewal_Extract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <soap12:operation soapAction="http://tempuri.org/HEGICTWRenewal_Premium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <soap12:operation soapAction="http://tempuri.org/HEGICTWRenewal_GenerateRWTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <soap12:operation soapAction="http://tempuri.org/HEGICMotorRenewal_GenerateRWTransactionDirect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="xmlstring">
+      <http:operation location="/xmlstring" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <http:operation location="/HEGICMotorRenewal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <http:operation location="/GetBreakinInspectionStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <http:operation location="/GetBreakinProposalDataFinalPremium" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <http:operation location="/HEGICMotorRenewal_Dynamic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <http:operation location="/HEGICMotorRenewal_Extract" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <http:operation location="/HEGICMotorRenewal_Premium" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <http:operation location="/HEGICMotorRenewal_GenerateRWTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <http:operation location="/HEGICMotorRenewal_UpdateAddressDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <http:operation location="/HEGICMotorRenewal_GetRenewalPlans" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <http:operation location="/HEGICTWRenewal_Extract" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <http:operation location="/HEGICTWRenewal_Premium" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <http:operation location="/HEGICTWRenewal_GenerateRWTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <http:operation location="/HEGICMotorRenewal_GenerateRWTransactionDirect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="xmlstring">
+      <http:operation location="/xmlstring" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal">
+      <http:operation location="/HEGICMotorRenewal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinInspectionStatus">
+      <http:operation location="/GetBreakinInspectionStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBreakinProposalDataFinalPremium">
+      <http:operation location="/GetBreakinProposalDataFinalPremium" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Dynamic">
+      <http:operation location="/HEGICMotorRenewal_Dynamic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Extract">
+      <http:operation location="/HEGICMotorRenewal_Extract" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_Premium">
+      <http:operation location="/HEGICMotorRenewal_Premium" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransaction">
+      <http:operation location="/HEGICMotorRenewal_GenerateRWTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_UpdateAddressDetails">
+      <http:operation location="/HEGICMotorRenewal_UpdateAddressDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GetRenewalPlans">
+      <http:operation location="/HEGICMotorRenewal_GetRenewalPlans" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Extract">
+      <http:operation location="/HEGICTWRenewal_Extract" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_Premium">
+      <http:operation location="/HEGICTWRenewal_Premium" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICTWRenewal_GenerateRWTransaction">
+      <http:operation location="/HEGICTWRenewal_GenerateRWTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HEGICMotorRenewal_GenerateRWTransactionDirect">
+      <http:operation location="/HEGICMotorRenewal_GenerateRWTransactionDirect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://202.191.196.210/uat/onlineproducts/newmotorcp/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://202.191.196.210/uat/onlineproducts/newmotorcp/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://202.191.196.210/uat/onlineproducts/newmotorcp/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://202.191.196.210/uat/onlineproducts/newmotorcp/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

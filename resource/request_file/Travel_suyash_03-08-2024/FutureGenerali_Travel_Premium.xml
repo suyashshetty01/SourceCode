@@ -1,0 +1,128 @@
+<Root>
+    <Uid>___timestamp___</Uid>
+    <VendorCode>___insurer_integration_service_password___</VendorCode>
+    <VendorUserId />
+    <PolicyHeader>
+        <PolicyStartDate>___travel_start_date___ 00:00:00</PolicyStartDate>
+        <PolicyEndDate>___travel_end_date___ 23:59:59</PolicyEndDate>
+        <AgentCode>___insurer_integration_agent_code___</AgentCode>
+        <BranchCode>___insurer_integration_location_code___</BranchCode>
+        <MajorClass>TVL</MajorClass>
+        <ContractType>___contract_type___</ContractType>
+        <METHOD>ENQ</METHOD>
+        <PolicyIssueType>I</PolicyIssueType>
+        <PolicyNo />
+        <ClientID />
+        <ReceiptNo />
+    </PolicyHeader>
+    <POS_MISP>
+        <Type></Type>
+        <PanNo></PanNo>
+    </POS_MISP>
+    <Client>
+        <ClientType></ClientType>
+        <CreationType></CreationType>
+        <Salutation>___salutation___</Salutation>
+        <FirstName>___first_name___</FirstName>
+        <LastName>___last_name___</LastName>
+        <DOB>___birth_date___</DOB>
+        <Gender>___gender___</Gender>
+        <MaritalStatus />
+        <Occupation>SVCM</Occupation>
+        <PANNo />
+        <GSTIN />
+        <AadharNo />
+        <CKYCNo />
+        <EIANo />
+        <Address1>
+            <AddrLine1></AddrLine1>
+            <AddrLine2 />
+            <AddrLine3 />
+            <Landmark />
+            <Pincode/>
+            <City></City>
+            <State></State>
+            <Country>IND</Country>
+            <AddressType>R</AddressType>
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo>___mobile___</MobileNo>
+            <EmailAddr/>
+        </Address1>
+        <Address2>
+            <AddrLine1 />
+            <AddrLine2 />
+            <AddrLine3 />
+            <Landmark />
+            <Pincode/>
+            <City />
+            <State />
+            <Country />
+            <AddressType />
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo />
+            <EmailAddr />
+        </Address2>
+    </Client>
+    <Receipt>
+        <UniqueTranKey />
+        <CheckType />
+        <BSBCode />
+        <TransactionDate />
+        <ReceiptType />
+        <Amount />
+        <TCSAmount />
+        <TranRefNo />
+        <TranRefNoDate />
+    </Receipt>
+    <Risk>
+        <SubProductName>___trip_type___</SubProductName>
+        <FamilyType>___family_type___</FamilyType>
+        <VistingCountries>
+            <Countries>
+                <Countries>___visiting_country___</Countries>
+                <Continent>___continent___</Continent>
+            </Countries>
+        </VistingCountries>
+        <CoverageName/>
+        <CoverageValue/>
+        <PlanName/>
+        <PlanValue/>
+        <VisaName/>
+        <VisaValue/>
+        <PurposeName/>
+        <PurposeValue/>
+        <DateOfDeparture>___travel_start_date___</DateOfDeparture>
+        <DateOfreturn>___travel_end_date___</DateOfreturn>
+        <TripDuration>___travel_days___</TripDuration>
+        <!--InsurersDetail_Start-->
+        <Insured>
+            <Name>___member_array_first_name___ ___member_array_last_name___</Name>
+            <DOB>___member_array_birth_date___</DOB>
+            <Gender/>
+            <RelationShip>___member_array_relation___</RelationShip>
+            <PassportNo/>
+            <OccupationName />
+            <OccupationValue/>
+            <NomineeName/>
+            <NomineeRelationShip/>
+        </Insured>
+        <!--InsurersDetail_End-->
+        <Sponsor>
+            <Name />
+            <DOB />
+            <EmailId />
+            <Phone />
+            <Address />
+            <Relation />
+        </Sponsor>
+        <University>
+            <Name />
+            <Address />
+            <EmailId />
+        </University>
+    </Risk>
+</Root>

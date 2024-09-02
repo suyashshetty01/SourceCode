@@ -1,0 +1,169 @@
+{  
+   "ProposalDetailObj":{  
+      "Quote_Number":"",
+      "Proposer_Salutation":"___salutation___",
+      "Proposer_First_Nm":"___first_name___",
+      "Proposer_Middle_Nm":"",
+      "Proposer_Last_Nm":"___last_name___",
+      "Proposer_Email":"___email___",
+      "Proposer_Mobile":"___mobile___",
+      "Proposer_DOB":"___birth_date___",
+      "Proposer_Gender":"___gender___",
+      "Proposer_MaritalStatus": "",
+      "Proposer_AnnualIncome":"___annual_income___",
+      "Proposer_Nationality":"Indian",
+      "Proposer_PanNumber":"",
+      "Proposer_Address1":"___permanent_address_1___",
+      "Proposer_Address2":"___permanent_address_2___",
+      "Proposer_Address3":"___permanent_address_3___",
+      "Proposer_Area":"___city___",
+      "Proposer_PinCode":"___permanent_pincode___",
+      "Proposer_LandineNumber":"",
+      "Bank_AccountNumber": "",
+      "Sourcing_br_Sol_ID":"1",
+      "Product_Cd":"4211",
+      "Scheme_Cd":"421110000400",
+      "Master_Policy_No":"100200089904/00/00",
+      "Plan_Cd":"GRP002",
+      "BA_Number":"___crn___",
+      "SumInsured_Type":"___si_type___",
+      "Member_Type_Cd":"___member_type___",
+      "Policy_From":"___policy_start_date___",
+      "COI_Number":"",
+      "Policy_Tenure":"___policy_tenure___",
+      "Proposer_Suminsured":"___health_insurance_si___"
+   },
+   "MemberDetailObj":[<!--InsurersDetail_Start-->
+      {  
+         "Member_No":"___member_array_inc___",
+         "Member_Salutation":"___member_array_salutation___",
+         "Member_First_Nm":"___member_array_first_name___",
+         "Member_Last_Nm":"___member_array_last_name___",
+         "Member_Gender":"___member_array_gender___",
+         "Member_DOB":"___member_array_birth_date___",
+         "Member_Relation_Cd":"___member_array_relation___",
+         "Member_Occupation_Cd":"",
+         "Member_Suminsured":"",
+         "Member_MaritalStatus":"___member_array_marital_status___",
+         "Member_Height":"___member_array_height___",
+         "Member_Weight":"___member_array_weight___",
+         "Nominee_Nm":"___nominee_name___",
+         "Nominee_Relation_Cd":"___topup_nominee_rel___",
+         "DailySmoking_Quantity":"___member_array_question_1_details___",
+         "HardLiquorConsumed_Quantity":"___member_array_question_3_details___",
+         "WineConsumed_Quantity":"___member_array_question_5_details___",
+         "BeerConsumed_Quantity":"___member_array_question_4_details___",
+         "MasalaGutka_Quantity":"___member_array_question_2_details___",
+         "Details_of_Disability":"",
+         "Details_of_Injury":"",
+         "Previous_Policy_No":"",
+         "Previous_Insurer_Cd":"",
+         "Previous_Policy_StartDate":"",
+         "Previous_Policy_EndDate":"",
+         "Previous_Suminsured":"",
+         "Previous_IsClaim":0,
+         "Monthly_Income":"",
+         "LoadingGCI":0,
+         "LoadingGPA":0,
+         "Plan_Cd":""
+      }
+      <!--InsurersDetail_End-->
+   ],
+   "MedicalLifeStyleObj":[<!--InsurersQues_Start--> 
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q001",
+        "Answer": "___member_array_question_7_details___",
+        "Remarks": "___member_array_question_7_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q003",
+        "Answer": "___member_array_question_8_details___",
+        "Remarks": "___member_array_question_8_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q004",
+        "Answer": "___member_array_question_9_details___",
+        "Remarks": "___member_array_question_9_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q005",
+        "Answer": "___member_array_question_10_details___",
+        "Remarks": "___member_array_question_10_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q006",
+        "Answer": "___member_array_question_11_details___",
+        "Remarks": "___member_array_question_11_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q008",
+        "Answer": "___member_array_question_12_details___",
+        "Remarks": "___member_array_question_12_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q011",
+        "Answer": "___member_array_question_6_details___",
+        "Remarks": "___member_array_question_6_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q012",
+        "Answer": "___member_array_question_13_details___",
+        "Remarks": "___member_array_question_13_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q013",
+        "Answer": "___member_array_question_14_details___",
+        "Remarks": "___member_array_question_14_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q014",
+        "Answer": "___member_array_question_15_details___",
+        "Remarks": "___member_array_question_15_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q016",
+        "Answer": "___member_array_question_16_details___",
+        "Remarks": "___member_array_question_16_details___"
+    },
+    {
+        "Member_No": "___member_array_inc___",
+        "Question_Cd": "Q020",
+        "Answer": "___member_array_question_17_details___",
+        "Remarks": "___member_array_question_17_details___"
+    }
+    <!--InsurersQues_End-->
+    ],
+   "PreExistingObj":[ ],
+   "OptionalCoverObj":[ ],
+   "PaymentObj":{  
+      "Payer_Code":"___crn___",
+      "Payer_Type":"CUSTOMER",
+      "Payer_Name":"___first_name___ ___last_name___",
+      "Payer_Relation":"R001",
+      "Collection_Amount":"___final_premium___",
+      "Collection_Receive_Date":"___policy_received_date___",
+      "Collection_Mode":"online collection",
+      "Collection_SubType":"PAY U",
+      "Cheque_Type":"",
+      "Instrument_Number":"",
+      "Instrument_Date":"___policy_received_date___",
+      "IFSC_Code":"",
+      "Mobile_Number":"___mobile___",
+      "Email_Id": "___email___",
+      "Bank_MICRCode":"",
+      "Bank_Account_Number":"",
+      "Merchant_Id":"141806",
+      "Merchant_Name":"PAY U"
+   }
+}

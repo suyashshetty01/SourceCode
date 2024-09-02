@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>POSP :: Enrollment :: Summary</title>
+        <!-- Favicon-->
+        <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script src="//www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
+        <link href="/adminpanel/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
+        <link href="/adminpanel/plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
+        <link href="/adminpanel/plugins/animate-css/animate.css" rel="stylesheet" />
+
+        <!-- Morris Chart Css-->
+        <link href="/adminpanel/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link href="/adminpanel/css/style.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/adminpanel/css/themes/all-themes.css" rel="stylesheet" />
+
+        <!-- Jquery Core Js -->
+
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="../plugins/jquery-countto/jquery.countTo.js"></script>
+        <!-- Bootstrap Core Js -->
+        <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+        <!-- Include Required Prerequisites -->
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+        <style>
+            .tabcontent {
+                width		: 90%;
+                height		: 350px;
+                font-size	: 13px;
+                top: -30px;
+                left: -30px;
+
+            }	</style>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+                    <h1>POSP-Enrollment</h1>
+                </div>
+            </div>            
+            <div class="row clearfix" id="waitloader" style="display:none;padding:5px" >
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only">100% Complete</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title">POSP-Enrollment</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <!--
+                                0: 'All',
+            1: 'Finmart',
+            5: 'Posp-I',
+            2: 'Campaign-SM',
+            3: 'Campaign-Nochiket',
+            6: 'MISP-Dealership',
+            4: 'Campaign-Sagar'
+                                -->
+                                <li role="presentation" class="active"><a href="#tab_All" data-toggle="tab" id="title_All">All</a></li>
+                                <li role="presentation" ><a href="#tab_Finmart" data-toggle="tab" id="title_Finmart">Finmart</a></li>
+                                <li role="presentation"><a href="#tab_Posp-I" data-toggle="tab" id="title_Posp-I">POSP-I</a></li>
+                                <li role="presentation"><a href="#tab_Camp-SM" data-toggle="tab" id="title_Camp-SM">Camp-SM</a></li>
+                                <li role="presentation"><a href="#tab_Camp-Nochiket" data-toggle="tab" id="title_Camp-Nochiket">Camp-Nochiket</a></li>
+                                <li role="presentation"><a href="#tab_Camp-Sagar" data-toggle="tab" id="title_Camp-Sagar">Camp-Sagar</a></li>
+                                <li role="presentation"><a href="#tab_MISP-Dealership" data-toggle="tab" id="title_MISP-Dealership">MISP-Dealership</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tab_All">
+                                    <div id="chart_All" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_Finmart">
+                                    <div id="chart_Finmart" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_Posp-I">
+                                    <div id="chart_Posp-I" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tab_Camp-SM">
+                                    <div id="chart_Camp-SM" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tab_Camp-Nochiket">
+                                    <div id="chart_Camp-Nochiket" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tab_Camp-Sagar">
+                                    <div id="chart_Camp-Sagar" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tab_MISP-Dealership">
+                                    <div id="chart_MISP-Dealership" class="tabcontent" style="min-width: 310px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>                                                                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tabstart -->
+
+
+        </div>
+        <script>
+            var Report_Data = null;
+            function getQS(name, url) {
+                if (!url)
+                    url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                        results = regex.exec(url);
+                if (!results)
+                    return null;
+                if (!results[2])
+                    return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            function GetReport(datefrom, dateto) {
+                $('#waitloader').show();
+                $.get('/report/pospsummary', function (res) {
+                    //$('#waitloader').hide();
+                    Report_Data = res;
+                    $('#title_All').html('All (Total:' + Report_Data.All.Total + ')');
+
+                    GenerateChart();
+
+                });
+            }
+            function GenerateChart() {
+                $('#waitloader').show();
+
+                $.each(Report_Data, function (index, value) {
+                    console.log('data', index, value);
+                    var chartname = 'chart_' + index;
+                    var charttitle = 'title_' + index;
+
+                    if ($('#' + chartname).length > 0 && index !== 'Total') {
+                        $('#' + charttitle).html(index + '(#' + Report_Data[index]['Total'] + ')');
+
+                        var chartData = [];
+                        $.each(value, function (index1, value1) {
+                            if (index1 != 'Total') {
+                                console.log('data1', index, index1, value1);
+                                var jsonStr = JSON.parse('{"status":"' + index1 + '","'+index+'":' + value1 + '}');
+                                chartData.push(jsonStr);
+                            }
+                        });
+                        console.log('Final', chartData);
+                        var chart = AmCharts.makeChart(chartname, {
+                            "type": "pie",
+                            "theme": "light",
+                            autoMargins: false,
+                            marginTop: 0,
+                            marginBottom: 0,
+                            marginLeft: 0,
+                            marginRight: 0,
+                            "innerRadius": "30%",
+                            "gradientRatio": [-0.4, -0.4, -0.4, -0.4, -0.4, -0.4, 0, 0.1, 0.2, 0.1, 0, -0.2, -0.5],
+                            "dataProvider": chartData,
+                            //"balloonText": "[[value]]",
+                            "valueField": index,
+                            "titleField": "status",
+                            //"labelText": "",
+                            "labelText": "[[percents]]%",
+                            /*"balloon": {
+                             "drop": true,
+                             "adjustBorderColor": false,
+                             "color": "#FFFFFF",
+                             "fontSize": 16
+                             },*/
+                            "export": {
+                                "enabled": true
+                            },
+                            "legend": {
+                                "position": "absolute",
+                                "maxColumns": 3,
+                                "top": 260,
+                                "align": "center"
+                            },
+                            "responsive": {
+                                "enabled": false,
+                                "rules": [
+                                    // at 400px wide, we hide legend
+                                    {
+                                        "maxWidth": 400,
+                                        "overrides": {
+                                            "legend": {
+                                                "enabled": true
+                                            },
+                                            "valueAxes": {
+                                                "inside": true,
+                                                "labelsEnabled": true
+                                            }
+                                        }
+                                    },
+
+                                    // at 300px or less, we move value axis labels inside plot area
+                                    // the legend is still hidden because the above rule is still applicable
+                                    {
+                                        "maxWidth": 300,
+                                        "overrides": {
+                                            "legend": {
+                                                "enabled": true
+                                            },
+                                            "valueAxes": {
+                                                "inside": true,
+                                                "labelsEnabled": true
+                                            }
+                                        }
+                                    },
+
+                                    // at 200 px we hide value axis labels altogether
+                                    {
+                                        "maxWidth": 200,
+                                        "overrides": {
+                                            "legend": {
+                                                "enabled": true
+                                            },
+                                            "valueAxes": {
+                                                "inside": true,
+                                                "labelsEnabled": true
+                                            }
+                                        }
+                                    }
+
+                                ]
+                            }
+                        });
+                    }
+                });
+                $('#waitloader').hide();
+            }
+            
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //var start = moment().subtract(10, 'days');
+                var start = moment();
+                var end = moment();
+
+                function cb(start, end) {
+                    $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+                    console.log(start.format('YYYY-MM-DD') + '::' + end.format('YYYY-MM-DD'));
+                    GetReport(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+                }
+
+                $('#reportrange').daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    }
+                }, cb);
+
+                cb(start, end);
+
+            });
+            function IndianMoneyFormat(x) {
+                x = Math.round(x - 0);
+                x = x.toString();
+                var lastThree = x.substring(x.length - 3);
+                var otherNumbers = x.substring(0, x.length - 3);
+                if (otherNumbers !== '')
+                    lastThree = ',' + lastThree;
+                var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+                return res;
+            }
+        </script>
+    </body>
+</html>
+
+
+
+

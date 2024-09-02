@@ -1,0 +1,243 @@
+<Root>
+    <Uid>___timestamp___</Uid><!--___custom___-->
+    <VendorCode>___insurer_integration_service_password___</VendorCode><!--webagg-->
+    <VendorUserId>___insurer_integration_service_password___</VendorUserId><!--webagg-->
+    <PolicyHeader>
+        <PolicyStartDate>___policy_start_date___ 00:00:00</PolicyStartDate><!--03/06/2017 00:00:00-->
+        <PolicyEndDate>___policy_end_date___ 00:00:00</PolicyEndDate><!--02/06/2018 00:00:00-->
+        <AgentCode>___insurer_integration_agent_code___</AgentCode><!--60000272-->
+        <BranchCode>___insurer_integration_location_code___</BranchCode><!--14-->
+        <MajorClass>MOT</MajorClass>
+        <ContractType>___product_id___</ContractType>
+        <METHOD>ENQ</METHOD>
+        <PolicyIssueType>I</PolicyIssueType>
+        <PolicyNo></PolicyNo>
+        <ClientID />
+        <ReceiptNo />
+    </PolicyHeader>
+    <POS_MISP>
+		<Type>___is_posp_2___</Type>
+		<PanNo>___posp_pan_no___</PanNo>
+    </POS_MISP>
+    <Client>
+        <ClientType>___vehicle_registration_type___</ClientType>
+        <CreationType>C</CreationType>
+        <Salutation>MR</Salutation>
+        <FirstName>Ajit</FirstName>
+        <LastName>Kumar</LastName>
+        <DOB>13/11/1993 00:00:00</DOB>
+        <Gender>M</Gender>
+        <MaritalStatus>S</MaritalStatus>
+        <Occupation>SVCM</Occupation>
+        <PANNo />
+        <GSTIN />
+        <AadharNo />
+        <CKYCNo />
+        <EIANo />
+        <Address1>
+            <AddrLine1>thane</AddrLine1>
+            <AddrLine2>West</AddrLine2>
+            <AddrLine3 />
+            <Landmark />
+            <Pincode>400605</Pincode>
+            <City>Thane</City>
+            <State>Maharashtra</State>
+            <Country>IND</Country>
+            <AddressType>R</AddressType>
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo>9820098200</MobileNo>
+            <EmailAddr>abc@gmail.com</EmailAddr>
+        </Address1>
+        <Address2>
+            <AddrLine1 />
+            <AddrLine2 />
+            <AddrLine3 />
+            <Landmark />
+            <Pincode />
+            <City />
+            <State />
+            <Country />
+            <AddressType>B</AddressType>
+            <HomeTelNo />
+            <OfficeTelNo />
+            <FAXNO />
+            <MobileNo>9820098200</MobileNo>
+            <EmailAddr>abc@gmail.com</EmailAddr>
+        </Address2>
+        <VIPFlag>N</VIPFlag>	
+        <VIPCategory />
+    </Client>
+        <Receipt>
+        <UniqueTranKey></UniqueTranKey>
+        <CheckType />
+        <BSBCode />
+        <TransactionDate></TransactionDate>
+        <ReceiptType></ReceiptType>
+        <Amount></Amount>
+        <TCSAmount />
+        <TranRefNo></TranRefNo>
+        <TranRefNoDate></TranRefNoDate>
+    </Receipt>
+    <Risk>
+        <RiskType>___product_id___</RiskType>
+        <Zone>___dbmaster_insurer_rto_zone_code___</Zone>
+        <Cover>___vehicle_insurance_subtype___</Cover>
+        <Vehicle>
+            <TypeOfVehicle />
+            <VehicleClass>___product_id_2___</VehicleClass>
+            <RTOCode>___dbmaster_insurer_rto_code___</RTOCode><!--MH03-->
+            <Make>___dbmaster_insurer_vehicle_make_name___</Make>
+            <ModelCode>___dbmaster_insurer_vehicle_code___</ModelCode>
+            <RegistrationNo>___registration_no___</RegistrationNo><!--___registration_no___  MH03GH1234-->
+            <RegistrationDate>___vehicle_registration_date___ 00:00:00</RegistrationDate>
+            <ManufacturingYear>___vehicle_manf_year___</ManufacturingYear>
+            <FuelType>___dbmaster_insurer_vehicle_fueltype___</FuelType>
+            <CNGOrLPG>
+                <InbuiltKit>___is_external_bifuel___</InbuiltKit>
+                <IVDOfCNGOrLPG>___external_bifuel_value___</IVDOfCNGOrLPG><!--0 in case of inbuilt and not vaialble external-->
+            </CNGOrLPG>
+            <BodyType>___dbmaster_insurer_vehicle_insurer_bodytype___</BodyType><!--hard coded-->
+            <EngineNo>TESTENGINEE123</EngineNo><!--hard coded-->
+            <ChassiNo>TESTCHASSIS876123</ChassiNo><!--hard coded-->
+            <CubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</CubicCapacity>
+            <SeatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</SeatingCapacity>
+            <IDV>___vehicle_expected_idv___</IDV><!--___vehicle_idv___-->
+            <GrossWeigh />
+            <CarriageCapacityFlag />
+            <ValidPUC>Y</ValidPUC>
+            <TrailerTowedBy></TrailerTowedBy>
+            <TrailerRegNo></TrailerRegNo>
+            <NoOfTrailer></NoOfTrailer>
+            <TrailerValLimPaxIDVDays />
+            <TrailerChassisNo />
+            <TrailerMfgYear />
+            <SchoolBusFlag />
+        </Vehicle>
+        <InterestParty>
+            <Code />
+            <BankName />
+        </InterestParty>
+        <AdditionalBenefit>
+            <Discount>___own_damage_disc_rate___</Discount>
+            <ElectricalAccessoriesValues>___electrical_accessory___</ElectricalAccessoriesValues>
+            <NonElectricalAccessoriesValues>___non_electrical_accessory___</NonElectricalAccessoriesValues>
+            <FibreGlassTank />
+            <GeographicalArea />
+            <PACoverForUnnamedPassengers>___pa_unnamed_passenger_si___</PACoverForUnnamedPassengers>
+            <LegalLiabilitytoPaidDriver>___is_llpd_2___</LegalLiabilitytoPaidDriver>
+            <LegalLiabilityForOtherEmployees />
+            <LegalLiabilityForNonFarePayingPassengers>___dbmaster_insurer_vehicle_seatingcapacity___</LegalLiabilityForNonFarePayingPassengers>
+            <UseForHandicap />
+            <AntiThiefDevice></AntiThiefDevice>
+            <NCB>___vehicle_ncb_next___</NCB>
+            <RestrictedTPPD></RestrictedTPPD>
+            <PrivateCommercialUsage />
+            <CPAYear>___is_cpa_year___</CPAYear>
+            <CPADisc />
+            <IMT23 />
+            <CPAReq>___is_pa_od___</CPAReq><!--hard coded-->
+            <CPA>
+                <CPANomName>Legal Hair</CPANomName><!--hard coded-->
+                <CPANomAge>21</CPANomAge><!--hard coded-->
+                <CPANomAgeDet>Y</CPANomAgeDet><!--hard coded-->
+                <CPANomPerc>100</CPANomPerc><!--hard coded-->
+                <CPARelation>SPOU</CPARelation><!--hard coded-->
+                <CPAAppointeeName />
+                <CPAAppointeRel />
+            </CPA>
+            <NPAReq>N</NPAReq><!--hard coded-->
+            <NPA>
+                <NPAName />
+                <NPALimit />
+                <NPANomName />
+                <NPANomAge />
+                <NPANomAgeDet />
+                <NPARel />
+                <NPAAppinteeName />
+                <NPAAppinteeRel />
+            </NPA>
+            <ZNCBRSRCV />
+            <ZNOFEMPLY />
+            <ZLMTPERPD />
+            <ZADDLPAPD />
+            <ZTPPER />
+            <ZCMPTPPA/>
+            <ZLMTTPPD />
+            <ZPREMISE />
+            <ZVINTAGE />
+            <XCESSLAB />
+            <XCESCDE />
+            <ZSCARSI />
+            <ZSCARIND />
+            <ZAANO />
+            <ZEMBASSY />
+            <ZSPECRAL />
+            <ZRALTRAIL />
+            <ZDRVTTN />
+            <EXPDTE />
+            <ZOVRTFLG />
+            <ZIMT44ID />
+            <ZPAPDPRM />
+            <ZNOPPM />
+            <ZIMT34ID />
+        </AdditionalBenefit>
+        <AddonReq>___addon_flag___</AddonReq>
+        <Addon>
+            <CoverCode>___addon_package_name___</CoverCode>
+        </Addon>
+        <!--OD_ONLY_START_2-->
+        <PreviousTPInsDtls>
+            <PreviousInsurer>___dbmaster_insurername___</PreviousInsurer>
+            <TPPolicyNumber>___previous_policy_number___</TPPolicyNumber>
+            <TPPolicyEffdate>___tp_start_date___</TPPolicyEffdate>
+            <TPPolicyExpiryDate>___tp_end_date___</TPPolicyExpiryDate>
+        </PreviousTPInsDtls>
+        <!--OD_ONLY_FINISH_2-->
+        <PreviousInsDtls>
+            <UsedCar>N</UsedCar><!--hard coded-->
+            <UsedCarList>
+                <PurchaseDate />
+                <InspectionRptNo />
+                <InspectionDt />
+            </UsedCarList>
+            <RollOver>___vehicle_insurance_type___</RollOver>
+            <RollOverList>
+                <PolicyNo>abc123</PolicyNo><!--hard coded in case of renew abc123-->
+                <InsuredName>___dbmaster_insurername___</InsuredName><!--from data base   Bajaj Allianz General Insurance Co. Ltd.-->
+                <PreviousPolExpDt>___policy_expiry_date___ 23:59:59</PreviousPolExpDt><!--hard coded in case of renew-->
+                <ClientCode>___dbmaster_previousinsurer_code___</ClientCode><!--from data base 40012604-->
+                <Address1>def</Address1><!--hard coded in case of renew-->
+                <Address2>def</Address2><!--hard coded in case of renew-->
+                <Address3>def</Address3><!--hard coded in case of renew-->
+                <Address4>def</Address4><!--hard coded in case of renew-->
+                <Address5>def</Address5><!--hard coded in case of renew-->
+                <PinCode>400053</PinCode><!--hard coded in case of renew-->
+                <InspectionRptNo />
+                <InspectionDt />
+                <NCBDeclartion></NCBDeclartion>
+                <ClaimInExpiringPolicy>___is_claim_exists___</ClaimInExpiringPolicy>
+                <NCBInExpiringPolicy>___vehicle_ncb_current___</NCBInExpiringPolicy>
+                <PreviousPolStartDt />
+                <TypeOfDoc />
+                <NoOfClaims />
+                
+            </RollOverList>
+            <NewVehicle>___vehicle_insurance_type_2___</NewVehicle>
+            <NewVehicleList>
+                <InspectionRptNo />
+                <InspectionDt />
+            </NewVehicleList>
+        </PreviousInsDtls>
+        <ZLLOTFLG />
+        <GARAGE />
+        <ZREFRA />
+        <ZREFRB />
+        <ZIDVBODY />
+        <COVERNT />
+        <CNTISS />
+        <ZCVNTIME />
+        <AddressSeqNo />
+    </Risk>
+</Root>

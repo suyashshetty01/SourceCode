@@ -1,0 +1,231 @@
+<TravelDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <UserID>___insurer_integration_service_user___</UserID>
+    <ClientDetails>
+        <ClientType/>
+        <Salutation />
+        <ForeName />
+        <LastName />
+        <MidName />
+        <DOB>___member_1_birth_date___</DOB>
+        <Gender />
+        <OccupationID />
+        <MaritalStatus />
+        <Nationality />
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1 />
+                <Address2 />
+                <Address3 />
+                <CityID />
+                <DistrictID />
+                <StateID />
+                <AreaID />
+                <NearestLandmark />
+                <Country />
+                <Pincode />
+                <MobileNo />
+                <PhoneNo />
+                <Email />
+                <PanNo />
+                <Aadhaar />
+            </CommunicationAddress>
+            <PermanentAddress>
+                <IsPermanentSameasCommAddr>false</IsPermanentSameasCommAddr>
+                <Address>
+                    <Address1 />
+                    <Address2 />
+                    <Address3 />
+                    <CityID />
+                    <DistrictID />
+                    <StateID />
+                    <AreaID />
+                    <NearestLandmark />
+                    <Country />
+                    <Pincode />
+                </Address>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <InsuredDetail>
+        <RelationshipWithProposerID />
+        <PassportNumber />
+        <NameofNominee />
+        <RelationshipWithNomineeID />
+        <VisitingCountries />
+        <IsUnderMedication>false</IsUnderMedication>
+        <PreExistingIllness />
+        <SufferingSince />
+        <Salutation/>
+        <ForeName />
+        <LastName />
+        <MidName />
+        <Gender>___member_1_gender2___</Gender>
+        <DateofBirth>___member_1_birth_date___</DateofBirth>
+        <OccupationID />
+        <MobileNo>___mobile___</MobileNo>
+        <PhoneNo />
+        <Email>___email___</Email>
+    </InsuredDetail>
+    <!--SpouseDetail_Start-->
+    <SpouseDetails>
+        <FirstName />
+        <DOB>___member_2_birth_date___</DOB>
+        <PassportNo />
+        <RelationshipwithInsuredID />
+        <NomineeName />
+        <NomineeRelationshipID />
+    </SpouseDetails>
+    <!--SpouseDetail_End-->
+    <ChildDetailList>
+        <!--KidsDetail_Start-->
+        <ChildDetails>
+            <ChildName />
+            <DOB>___member_array_birth_date___</DOB>
+            <PassportNo />
+            <NomineeName />
+            <NomineeRelationshipID />
+            <IsUnderMedication>false</IsUnderMedication>
+            <PreExistingMC />
+            <SufferingSince />
+        </ChildDetails>
+        <!--KidsDetail_End-->
+    </ChildDetailList>
+    <UniversityDetails>
+        <UniversityName />
+        <UniversityCountryId />
+        <UniversityStateName />
+        <CityName />
+        <PhoneNumber />
+        <MobileNumber />
+        <EmailId />
+        <Fax />
+    </UniversityDetails>
+    <CourseDetails>
+        <CourseDuration />
+        <TutionFeePerSem />
+        <NoOfSems />
+    </CourseDetails>
+    <HomeBurglaryAddress>
+        <IsSameAsCommAddr>true</IsSameAsCommAddr>
+        <Address>
+            <Address1 />
+            <Address2 />
+            <Address3 />
+            <CityID />
+            <DistrictID />
+            <StateID />
+            <AreaID />
+            <NearestLandmark />
+            <Country />
+            <Pincode />
+            <MobileNo />
+            <PhoneNo />
+            <Email />
+            <Fax />
+        </Address>
+    </HomeBurglaryAddress>
+    <SponsorDetails>
+        <SponsorName />
+        <IsSponserAddressSameasCommAddress>false</IsSponserAddressSameasCommAddress>
+        <SponserAddress>
+            <Address1 />
+            <Address2 />
+            <Address3 />
+            <CityID />
+            <DistrictID />
+            <StateID />
+            <NearestLandmark />
+            <Country />
+            <Pincode />
+            <MobileNo />
+            <PhoneNo />
+            <Email />
+            <Fax />
+        </SponserAddress>
+    </SponsorDetails>
+    <DoctorDetails>
+        <IsDoctorDetails>false</IsDoctorDetails>
+        <Name />
+        <Address>
+            <Address1 />
+            <Address2 />
+            <Address3 />
+            <CityID />
+            <DistrictID />
+            <StateID />
+            <AreaID />
+            <NearestLandmark />
+            <Country />
+            <Pincode />
+            <MobileNo />
+            <PhoneNo />
+            <Email />
+            <Fax />
+        </Address>
+    </DoctorDetails>
+    <Policy>
+        <BusinessType>1</BusinessType>
+        <AgentCode>Direct</AgentCode>
+        <AgentName>Direct</AgentName>
+        <Branch_Name>Direct</Branch_Name>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <ProductCode>___product_code___</ProductCode>
+        <OtherSystemName>0</OtherSystemName>
+    </Policy>
+    <RiskDetails>
+        <IsIndianCitizen>true</IsIndianCitizen>
+        <IsOverSeasCitizen>false</IsOverSeasCitizen>
+        <IsOCI>false</IsOCI>
+        <IsNONOCI>false</IsNONOCI>
+        <IsResidingInIndia>false</IsResidingInIndia>
+        <PermanentResidenceCountry />
+        <OCINumber />
+        <PassportIssuingCountry />
+        <IsInsuredOnImmigrantVisa>true</IsInsuredOnImmigrantVisa>
+        <IsTravelInvolvesSportingActivities>false</IsTravelInvolvesSportingActivities>
+        <SportsActivitiesID />
+        <IsSufferingFromPEMC>false</IsSufferingFromPEMC>
+        <PreExistDiseaseID />
+        <IsVisitingUSACanada>___isUSACanada___</IsVisitingUSACanada>
+        <VisitingCountriesID />
+        <JourneyStartDate>___policy_start_date___</JourneyStartDate>
+        <JourneyEndDate>___policy_end_date___</JourneyEndDate>
+        <TravelDays>___travel_days___</TravelDays>
+        <DateOfBirth>___member_1_birth_date___</DateOfBirth>
+        <CoverageTypeID>___coverage_id___</CoverageTypeID>
+        <IsAddOnCover>false</IsAddOnCover>
+        <MaxDaysPerTrip>___max_days___</MaxDaysPerTrip>
+        <NoOfYears />
+        <SeniorCitizenPlanID />
+        <PlanName>___Plan_Code___</PlanName>
+        <AddOnBnifitsOpted>false</AddOnBnifitsOpted>
+    </RiskDetails>
+    <LstTravelCoverDetails>
+        <LstTravelCovers>
+            <CoverageName />
+            <CoverageDisplayName />
+            <StandardLimit />
+            <SilverLimit />
+            <GoldLimit />
+            <PlatinumLimit />
+            <BasicLimit />
+            <EliteLimit />
+            <PlusLimit />
+            <StandardDeductible />
+            <SilverDeductible />
+            <GoldDeductible />
+            <PlatinumDeductible />
+            <BasicDeductible />
+            <IsStandardPlan>false</IsStandardPlan>
+            <IsSilverPlan>false</IsSilverPlan>
+            <IsGoldPlan>false</IsGoldPlan>
+            <IsPlatinumPlan>false</IsPlatinumPlan>
+            <IsBasicPlan>false</IsBasicPlan>
+            <IsElitePlan>false</IsElitePlan>
+            <IsPlusPlan>false</IsPlusPlan>
+        </LstTravelCovers>
+    </LstTravelCoverDetails>
+    <ErrorMessages />
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+</TravelDetails>

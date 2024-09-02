@@ -1,0 +1,253 @@
+<HealthDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ClientDetails>
+        <ClientTypeID>0</ClientTypeID>
+        <DOB>___member_1_birth_date___</DOB>
+        <Email>___email___</Email>
+        <ForeName>___first_name___</ForeName>
+        <Gender>___member_1_gender_code___</Gender>
+        <LastName>___last_name___</LastName>
+        <MaritalStatusID>1952</MaritalStatusID>
+        <MidName />
+        <MobileNo>___mobile___</MobileNo>
+        <Nationality>Indian</Nationality>
+        <OccupationID>26</OccupationID>
+        <PhoneNo />
+        <Salutation>Mr.</Salutation>
+        <AnnualIncome>10000</AnnualIncome>
+        <StateID />
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1>Address1</Address1>
+                <Address2>Address2</Address2>
+                <Address3>Address3</Address3>
+                <CityID>238881</CityID>
+                <Country>Indian</Country>
+                <DistrictID>321</DistrictID>
+                <Email>___email___</Email>
+                <Fax/>
+                <MobileNo>___mobile___</MobileNo>
+                <NearestLandmark/>
+                <PanNo/>
+                <PhoneNo/>
+                <Pincode>___permanent_pincode___</Pincode>
+                <AreaID/>
+                <StateID>21</StateID>
+                <City/>
+                <District/>
+                <Area/>
+                <State/>
+            </CommunicationAddress>
+            <PermanentAddress>
+                <Address>
+                    <Address1 />
+                    <Address1 />
+                    <Address1 />
+                    <CityID />
+                    <Country>Indian</Country>
+                    <DistrictID />
+                    <NearestLandmark />
+                    <Email>___email___</Email>
+                    <Fax />
+                    <MobileNo>___mobile___</MobileNo>
+                    <PanNo />
+                    <PhoneNo>___mobile___</PhoneNo>
+                    <Pincode>___permanent_pincode___</Pincode>
+                    <AreaID />
+                    <StateID>21</StateID>
+                    <City />
+                    <District />
+                    <Area />
+                    <State />
+                </Address>
+                <IsPermanentSameasCommAddr>true</IsPermanentSameasCommAddr>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <InsuredDetailsList>
+        <!--InsurersDetail_Start-->
+        <InsuredDetail>
+            <RelationshipWithProposerID>___member_array_relation___</RelationshipWithProposerID>
+            <RelationshipWithProposer>___member_array_relation_name___</RelationshipWithProposer>
+            <IsAnyPreExistingIllness>No</IsAnyPreExistingIllness>
+            <Salutation>___member_array_salutation___</Salutation>
+            <FirstName>___member_array_first_name___</FirstName>
+            <LastName>___member_array_last_name___</LastName>
+            <MiddleName />
+            <Gender>___member_array_gender_code___</Gender>
+            <Age>___member_array_age___</Age>
+            <DOB>___member_array_birth_date___</DOB>
+            <MaritalStatusID>___member_array_marital_status___</MaritalStatusID>
+            <MaritalStatus></MaritalStatus>
+            <OccupationID>26</OccupationID>
+            <Height>155</Height>
+            <Weight>55</Weight>
+            <SpecialConditions />
+            <PreExistingDisease>
+                <IsExistingIllness>false</IsExistingIllness>
+                <DiseaseList>
+                    <DiseaseDetail>
+                        <DiseaseID />
+                        <SufferingSince />
+                        <OtherDisease />
+                    </DiseaseDetail>
+                </DiseaseList>
+                <IsInsuredConsumetobacco />
+                <HasAnyPreClaimOnInsured />
+                <DetailsOfPreClaimOnInsured />
+                <HasAnyPreHealthInsuranceCancelled />
+                <DetailsOfPrevInsuranceCancelled />
+            </PreExistingDisease>
+            <OtherInsuranceList />
+            <SumInsured>___health_insurance_si___</SumInsured>
+            <NationalityId>Indian</NationalityId>
+            <NewlyAddedMember>false</NewlyAddedMember>
+        </InsuredDetail>
+        <!--InsurersDetail_End-->
+    </InsuredDetailsList>
+    <lstStandardRiskDetails />
+    <Policy>
+        <Tenure>___policy_tenure___</Tenure>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <AgentID>___insurer_integration_agent_code___</AgentID>
+        <AgentName>___insurer_integration_agent_code___</AgentName>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <Branch_Name>Reliance</Branch_Name>
+        <BusinessType>1</BusinessType>
+        <ProductCode>2824</ProductCode>
+        <ExternalSystemID>0</ExternalSystemID>
+        <BranchName>BranchName</BranchName>
+        <IsQuickQuote>false</IsQuickQuote>
+        <isVolunderyDiscount>true</isVolunderyDiscount>
+    </Policy>
+    <UploadDetails>
+        <DocumentType />
+    </UploadDetails>
+    <RiskDetails>
+        <PlanID>84</PlanID>
+        <DOBofSeniorMost>___elder_member_birth_date___</DOBofSeniorMost>
+        <MemberCount>___member_count___</MemberCount>
+        <Age>___elder_member_age___</Age>
+        <MaxAge>___elder_member_age___</MaxAge>
+        <CoverTypeID>___health_insurance_type___</CoverTypeID>
+        <SumInsured>___health_insurance_si___</SumInsured>
+        <PaymentBy>Proposer</PaymentBy>
+        <IsServiceTaxExemptionApplicable>false</IsServiceTaxExemptionApplicable>
+        <ServiceTaxExemptionID />
+        <Tenure>___policy_tenure___</Tenure>
+        <ProposerDOB>___birth_date___</ProposerDOB>
+        <IsAnyEmployeeOfRelianceADAGroup />
+        <CompanyNameID />
+        <EmployeeCode />
+        <EmailID>___email___</EmailID>
+        <Iscrosssell />
+        <CrossSellPolicyNo />
+        <HealthExtension>
+            <lstAddonDetails>
+                <AddonDetails>
+                    <AddOnName></AddOnName>
+                    <IsSelected>false</IsSelected>
+                </AddonDetails>
+            </lstAddonDetails>
+        </HealthExtension>
+        <NoofMembersAbove21>___member_above21___</NoofMembersAbove21>
+        <NoofMembersBelow21>___member_below21___</NoofMembersBelow21>
+        <PreviousCumulativeBonus />
+        <PreviousCumulativeBonusrate />
+        <CumulativeBonus/>
+        <CumulativeBonusrate />
+        <ChangeinCoverageType>false</ChangeinCoverageType>
+        <AdditionofMemberatRenewal>false</AdditionofMemberatRenewal>
+        <DeletionofMemberatRenewal>false</DeletionofMemberatRenewal>
+    </RiskDetails>
+    <Premium>
+        <BasicPremium />
+        <TotalPremium />
+        <EducationalCess />
+        <EducationalCessPercentage />
+        <FinalPremium />
+        <NetPremium />
+        <SalesTax />
+        <SalesTaxPercentage />
+        <SecondaryAndHigherEducationalCess />
+        <SecondaryAndHigherEducationalCessPercentage />
+        <ServiceTax />
+        <ServiceTaxPercentage />
+        <Surcharge />
+        <SurchargePercentage />
+        <LstTaxComponentDetails />
+    </Premium>
+    <LstPortability />
+    <LstHWPlanPremium />
+    <LstDiscount />
+    <ErrorMessages>
+        <ErrMessages />
+    </ErrorMessages>
+    <LstEMIPremium />
+    <PreviousInsuranceDetails>
+        <PrevInsuranceID />
+        <PrevYearPolicyNo />
+        <PrevYearPolicyStartDate />
+        <PrevYearPolicyEndDate />
+    </PreviousInsuranceDetails>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <AutherityCode>___autherity_code___</AutherityCode>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+    <CoverDetails />
+    <IsQuickquote>false</IsQuickquote>
+    <ValidateFlag>false</ValidateFlag>
+    <lstChargeableAddonsHI>
+        <ChargeableAddonsHI>
+            <ChargeableAddOnCoverIDHI>0</ChargeableAddOnCoverIDHI>
+            <ChargeableAddonsIdHI>1</ChargeableAddonsIdHI>
+            <ChargeableAddonsDescHI>More Time</ChargeableAddonsDescHI>
+            <IsChargeableAddonHI>___chargable_addon_time___</IsChargeableAddonHI>
+            <ChargeableLoadingAmount>0</ChargeableLoadingAmount>
+            <ChargeableLoadingRate>0</ChargeableLoadingRate>
+        </ChargeableAddonsHI>
+        <ChargeableAddonsHI>
+            <ChargeableAddOnCoverIDHI>0</ChargeableAddOnCoverIDHI>
+            <ChargeableAddonsIdHI>2</ChargeableAddonsIdHI>
+            <ChargeableAddonsDescHI>More Cover</ChargeableAddonsDescHI>
+            <IsChargeableAddonHI>___chargable_addon_cover___</IsChargeableAddonHI>
+            <ChargeableLoadingAmount>0</ChargeableLoadingAmount>
+            <ChargeableLoadingRate>0</ChargeableLoadingRate>
+        </ChargeableAddonsHI>
+        <ChargeableAddonsHI>
+            <ChargeableAddOnCoverIDHI>0</ChargeableAddOnCoverIDHI>
+            <ChargeableAddonsIdHI>3</ChargeableAddonsIdHI>
+            <ChargeableAddonsDescHI>More Global</ChargeableAddonsDescHI>
+            <IsChargeableAddonHI>___chargable_addon_global___</IsChargeableAddonHI>
+            <ChargeableLoadingAmount>0</ChargeableLoadingAmount>
+            <ChargeableLoadingRate>0</ChargeableLoadingRate>
+        </ChargeableAddonsHI>
+    </lstChargeableAddonsHI>
+    <lstFreeAddonsHI>
+        <FreeAddonsHI>
+            <FreeAddOnCoverID>0</FreeAddOnCoverID>
+            <FreeAddonsIdHI>1</FreeAddonsIdHI>
+            <FreeAddonsDescHI>More Time</FreeAddonsDescHI>
+            <IsFree>___free_addon_time___</IsFree>
+            <LoadingAmount>0</LoadingAmount>
+            <LoadingRate>0</LoadingRate>
+        </FreeAddonsHI>
+        <FreeAddonsHI>
+            <FreeAddOnCoverID>0</FreeAddOnCoverID>
+            <FreeAddonsIdHI>2</FreeAddonsIdHI>
+            <FreeAddonsDescHI>More Cover</FreeAddonsDescHI>
+            <IsFree>___free_addon_cover___</IsFree>
+            <LoadingAmount>0</LoadingAmount>
+            <LoadingRate>0</LoadingRate>
+        </FreeAddonsHI>
+        <FreeAddonsHI>
+            <FreeAddOnCoverID>0</FreeAddOnCoverID>
+            <FreeAddonsIdHI>3</FreeAddonsIdHI>
+            <FreeAddonsDescHI>More Global</FreeAddonsDescHI>
+            <IsFree>___free_addon_global___</IsFree>
+            <LoadingAmount>0</LoadingAmount>
+            <LoadingRate>0</LoadingRate>
+        </FreeAddonsHI>
+    </lstFreeAddonsHI>
+    <lstHealthInfinityResponsAddonBMI />
+</HealthDetails>

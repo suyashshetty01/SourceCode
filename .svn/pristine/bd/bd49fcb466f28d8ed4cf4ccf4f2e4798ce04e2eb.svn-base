@@ -1,0 +1,67 @@
+{
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 9,
+    "IsActive": 1,
+    "Agent_Code": "Direct",
+    "Location_Code": "9202",
+    "Service_User": "100002",
+    "Service_Password": "Pass@123",
+    "Payment_Gateway_URL": "http://220.226.197.206:91/API/Service/PolicyMakeLiveExternal",
+    "Name": "Liberty::Car",
+    "Lib_Class": "LibertyVideoconMotor",
+    "Method_List": [ 
+        {
+            "Method_Id": 9,
+            "Method_Name": "Reliance_Car_IDV",
+            "Method_Type_ID": 1,
+            "Method_Action": "PremiumCalulationForMotor",
+            "Method_Request_File": "Reliance_Car_Premium.xml",
+            "Method_Calling_Type": "Rest",
+            "WSDL_URL": null,
+            "Service_URL": "http://220.226.197.206:91/API/Service/",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "Idv",
+            "Product_Id": 1,
+            "Insurer_Id": 9
+        }, 
+        {
+            "Method_Id": 9,
+            "Method_Name": "Reliance_Car_IDV",
+            "Method_Type_ID": 1,
+            "Method_Action": "PremiumCalulationForMotor",
+            "Method_Request_File": "Reliance_Car_Premium.xml",
+            "Method_Calling_Type": "Rest",
+            "WSDL_URL": null,
+            "Service_URL": "http://220.226.197.206:91/API/Service/",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 9
+        }
+    ],
+    "Plan_List": [ 
+        {
+            "Plan_Id": 9,
+            "Plan_Name": "Basic",
+            "Plan_Addon_List": {
+                "addon_zero_dep_cover": "no",
+                "addon_road_assist_cover": "no",
+                "addon_engine_protector_cover": "no",
+                "addon_key_lock_cover": "no",
+                "addon_consumable_cover": "no",
+                "addon_passenger_assistance_cover": "no"
+            },
+            "Is_Active": true
+        }
+    ]
+}

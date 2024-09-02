@@ -1,0 +1,57 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "quickQuote",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        "ProductCode": "___Plan_Code___",
+        "ProductVersion": "1.0",
+        "ArogyaPolicyType": "___policy_type___",
+        "EffectiveDate": "___policy_start_date___",
+        "ExpiryDate": "___policy_end_date___T23:59:59",
+        "PremiumFrequency":"___policy_tenure___",
+        "SanjeevaniFFCategory": "___get_member_type___",
+        <!--FamilyFloaterCat_Start-->
+        "AdditionalChildren": "___additional_children___",
+        <!--FamilyFloaterCat_End-->
+        "NonFloaterDiscount": "",
+        "GSTType": "SGST",
+        "AgreementCode": "___agreement_code___",
+        "SBIGBranchCode": "HO",
+        "SBIGBranchStateCode": "MH",
+        "PolicyCustomerList": [
+            {
+                "State": "MH",
+                "Mobile": "___mobile___",
+                "Email": "___email___"
+            }
+        ],
+        "PolicyLobList": [
+            {
+                "ProductCode": "___Plan_Code___",
+                "PolicyRiskList": [
+                    <!--InsurersDetail_Start-->
+                    {
+                        "ProductElementCode": "R10007",
+                        "DateOfBirth": "___member_array_birth_date___",
+                        "ArgInsuredRelToProposer": "___member_array_rel___",
+                        "ArogyaOccupation":"847",
+                        "IsSmoker": "0",
+                        "Questionnaire2b": "0",
+                        "TobaccoLoading": "0",
+                        "AlcoholQuantity": "0",
+                        "PolicyCoverageList": [
+                            {
+                                "ProductElementCode": "HVSC01",
+                                "SanjeevaniSumInsured": "___health_insurance_si_2___"
+                            }
+                        ]
+                    }
+                    <!--InsurersDetail_End-->
+                ]
+            }
+        ]
+    }
+}

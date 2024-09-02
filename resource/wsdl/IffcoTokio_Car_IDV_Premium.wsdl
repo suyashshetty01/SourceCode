@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getIDV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getIDVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getIDVResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPremium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="VehicleClassCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPremiumMultiYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="VehicleClassCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPremiumMultiYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPremiumMultiYearResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VehicleModelCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTOLocationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolicyStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstRegistrationDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanTypesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getIDVSoapIn">
+    <wsdl:part name="parameters" element="tns:getIDV" />
+  </wsdl:message>
+  <wsdl:message name="getIDVSoapOut">
+    <wsdl:part name="parameters" element="tns:getIDVResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:getPremium" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:getPremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearSoapIn">
+    <wsdl:part name="parameters" element="tns:getPremiumMultiYear" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearSoapOut">
+    <wsdl:part name="parameters" element="tns:getPremiumMultiYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getIDVHttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getIDVHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumHttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+    <wsdl:part name="VehicleClassCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearHttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+    <wsdl:part name="VehicleClassCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesHttpGetIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="BusinessType" type="s:string" />
+    <wsdl:part name="VehicleModelCode" type="s:string" />
+    <wsdl:part name="RTOLocationCode" type="s:string" />
+    <wsdl:part name="PolicyStartDate" type="s:string" />
+    <wsdl:part name="FirstRegistrationDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getIDVHttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getIDVHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumHttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+    <wsdl:part name="VehicleClassCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearHttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+    <wsdl:part name="VehicleClassCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPremiumMultiYearHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesHttpPostIn">
+    <wsdl:part name="AgentCode" type="s:string" />
+    <wsdl:part name="BusinessType" type="s:string" />
+    <wsdl:part name="VehicleModelCode" type="s:string" />
+    <wsdl:part name="RTOLocationCode" type="s:string" />
+    <wsdl:part name="PolicyStartDate" type="s:string" />
+    <wsdl:part name="FirstRegistrationDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="getIDV">
+      <wsdl:input message="tns:getIDVSoapIn" />
+      <wsdl:output message="tns:getIDVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <wsdl:input message="tns:getPremiumSoapIn" />
+      <wsdl:output message="tns:getPremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <wsdl:input message="tns:getPremiumMultiYearSoapIn" />
+      <wsdl:output message="tns:getPremiumMultiYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Date parameters should be passed in dd/MM/yyyy format.</wsdl:documentation>
+      <wsdl:input message="tns:GetPlanTypesSoapIn" />
+      <wsdl:output message="tns:GetPlanTypesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="getIDV">
+      <wsdl:input message="tns:getIDVHttpGetIn" />
+      <wsdl:output message="tns:getIDVHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <wsdl:input message="tns:getPremiumHttpGetIn" />
+      <wsdl:output message="tns:getPremiumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <wsdl:input message="tns:getPremiumMultiYearHttpGetIn" />
+      <wsdl:output message="tns:getPremiumMultiYearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Date parameters should be passed in dd/MM/yyyy format.</wsdl:documentation>
+      <wsdl:input message="tns:GetPlanTypesHttpGetIn" />
+      <wsdl:output message="tns:GetPlanTypesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="getIDV">
+      <wsdl:input message="tns:getIDVHttpPostIn" />
+      <wsdl:output message="tns:getIDVHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <wsdl:input message="tns:getPremiumHttpPostIn" />
+      <wsdl:output message="tns:getPremiumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <wsdl:input message="tns:getPremiumMultiYearHttpPostIn" />
+      <wsdl:output message="tns:getPremiumMultiYearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">All Date parameters should be passed in dd/MM/yyyy format.</wsdl:documentation>
+      <wsdl:input message="tns:GetPlanTypesHttpPostIn" />
+      <wsdl:output message="tns:GetPlanTypesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getIDV">
+      <soap:operation soapAction="http://tempuri.org/getIDV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <soap:operation soapAction="http://tempuri.org/getPremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <soap:operation soapAction="http://tempuri.org/getPremiumMultiYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <soap:operation soapAction="http://tempuri.org/GetPlanTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getIDV">
+      <soap12:operation soapAction="http://tempuri.org/getIDV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <soap12:operation soapAction="http://tempuri.org/getPremium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <soap12:operation soapAction="http://tempuri.org/getPremiumMultiYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getIDV">
+      <http:operation location="/getIDV" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <http:operation location="/getPremium" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <http:operation location="/getPremiumMultiYear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <http:operation location="/GetPlanTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getIDV">
+      <http:operation location="/getIDV" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremium">
+      <http:operation location="/getPremium" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremiumMultiYear">
+      <http:operation location="/getPremiumMultiYear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTypes">
+      <http:operation location="/GetPlanTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://202.191.196.210/uat/onlineproducts/wscalculate/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://202.191.196.210/uat/onlineproducts/wscalculate/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://202.191.196.210/uat/onlineproducts/wscalculate/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://202.191.196.210/uat/onlineproducts/wscalculate/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

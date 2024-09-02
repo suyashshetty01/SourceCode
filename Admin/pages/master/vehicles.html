@@ -1,0 +1,412 @@
+<style>
+    .DTFC_LeftBodyWrapper{
+        top: -14px !important;
+    }
+    th, td { white-space: nowrap; }
+    .selected{
+        background-color: #673AB7
+    }
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: white;
+    }
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}	
+#SummaryContent
+{
+   width: 130%;
+   margin-left: -70px;
+}
+</style>﻿  
+<div class="container-fluid">
+    <!--<div class="block-header">
+        <h2>
+            Vehicles
+            <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+        </h2>
+    </div>-->
+    <!-- Basic Examples -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Mapping Dashboard
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>               
+                <div class="body">
+                    <table width="100%" class="table table-bordered  vehicle_grid_search ">
+                        <tbody class="col-sm-12" >
+                            <tr>
+                                <td width="20%"><select id="Col_Product" name="Col_Product" class="form-control show-tick" onchange="PopulateMake();"><option value="1">Car</option><option value="10">Two Wheeler</option></select></td>
+                                <td width="20%"><select id="Col_Make" name="Col_Make" class="form-control show-tick" data-live-search="true" ><option value="">Select Make</option></select></td>
+                                <td width="20%"><select id="Col_Model" name="Col_Model" class="form-control show-tick" data-live-search="true"><option value="">Select Model</option></select></td>
+                                <td width="20%"><select id="Col_Variant" name="Col_Variant"  class="form-control show-tick" data-live-search="true"><option value="">Select Variant</option></select></td>                                
+                                <td width="20%"><button class="btn btn-info waves-effect" type="submit" id="btnSearchVehicle" onclick="GetInsurerStatusCount('PB_Vehicle');">PB Summary</button>
+                                <button class="btn btn-info waves-effect" type="submit" id="btnSearchVehicle" onclick="GetInsurerStatusCount('Insurer_Vehicle');">Insurer Summary</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select id="Col_Insurer" name="Col_Insurer" class="form-control show-tick" multiple="multiple">
+                                        <option value="">Select Insurer</option>
+                                    </select>
+                                </td>
+                                <td colspan="2">
+                                    <select id="Col_Status" name="Col_Status" class="form-control show-tick" >
+                                        <option>Select Status</option>
+                                        <option value="1">Pending</option>
+                                        <option value="2">Exact Mapped</option>
+                                        <option value="4">Near Mapped</option>
+                                        <option value="5">Exact or Near Mapped</option>
+                                        <option value="3">Not Supported</option>
+                                    </select>
+                                </td>
+                                <td> 
+                                    <button class="btn btn-primary waves-effect" type="submit" id="btnSearchVehicle" onclick="Search_Vehicle();">SEARCH</button>
+                                    <button class="btn btn-warning waves-effect" type="submit" id="btnResetSearch" onclick="Reset_Search()">RESET</button>
+                                    <button class="btn btn-success waves-effect" type="submit" id="btnAddVehicle" onclick="Vehicle_Add_Edit(-1);">ADD VEHICLE</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered  table-striped table-hover vehicle_grid dataTable" style="font-size: smaller">
+                        <thead>
+                            <tr id="tr_top_vehicle">                                                                                                          
+                            </tr>
+                        </thead>                                                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Basic Examples -->
+    <!--start vehicle action -->
+    <div id='vehicle_action' style="display:none">
+        <ul class="header-dropdown m-r--5" style="list-style: none;margin:0px">
+            <li class="dropdown" style="list-style: none;margin:0px">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="list-style: none;margin:0px">
+                    <i class="material-icons" style="font-size: 14px;">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-left">
+                    <li><a href="javascript:void(0);" onclick="javascript:Validate_Premium('___index___');">Search Premium</a></li>
+                    <li><a href="javascript:void(0);" onclick="javascript:Vehicle_Add_Edit('___index___');">Edit Vehicle</a></li>
+                    <li><a href="javascript:void(0);" onclick="javascript:Delete_Vehicle('___index___');">Delete Vehicle</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div> 
+    <!--end vehicle action -->
+    <div class="modal fade" id="mdMapping" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" ><span id="Insurer_Name"></span><span id="defaultModalLabel"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" value="" id="Vehicle_ID" name="Vehicle_ID" />
+                    <input type="hidden" value="" id="Insurer_ID" name="Insurer_ID" />
+                    <input type="hidden" value="" id="Insurer_Vehicle_ID" name="Insurer_Vehicle_ID" />
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table">
+                            <tbody class="col-sm-12">
+                                <tr>
+                                    <td width="15%">
+                                        <button class="btn btn-success waves-effect" type="submit" id="btnMapp" onclick="Mapping_Proceed(2);">MAP EXACT</button>
+                                    </td>
+                                    <td width="15%">
+                                        <button class="btn btn-primary waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(4);">NEAR MAPPING</button>
+                                    </td>
+                                    <td width="40%">&nbsp;</td>                                    
+                                    <td width="15%"><button class="btn btn-danger waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(1);">REMOVE MAP</button></td>
+                                    <td width="15%"><button class="btn btn-warning waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(3);">NOT SUPPORT</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered  table-hover vehicle_mapping_grid dataTable" style="font-size: smaller">                                             
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mdPremiumPop" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" ><span id="Insurer_Name"></span><span id="defaultModalLabel"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="card">                        
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabPremium" data-toggle="tab" id="title_all_search">PREMIUM LIST</a></li>
+                                <li role="presentation" ><a href="#tabLogs" data-toggle="tab" id="title_car_search">API LOGS</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabPremium" >
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <input type="hidden" name="hdnsrn" id="hdnsrn" />
+                                        <button class="btn btn-primary waves-effect" id="btnReload" onclick=" $('#ifrpremium').attr('src', $('#ifrpremium').attr('src') + '&v=' + Math.random());">Reload Premium</button>                                        
+                                        <button class="btn btn-primary waves-effect" id="btnlogs" onclick="retriveApiLog();">Fetch Logs</button>
+                                        <iframe style="width:100%;height: 500px" src="#" id="ifrpremium" />
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabLogs">
+                                    <div class="body table-responsive">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr id="quotelistheader"  class="bg-purple" >
+                                                    <th>ID</th>
+                                                    <th>Insurer</th>
+                                                    <th>Plan Name</th>
+                                                    <th>IDV</th>                                                    
+                                                    <th>Final</th>
+                                                    <th>Status</th>                                                                
+                                                    <th>Time</th>                                                                
+                                                    <th>Detail</th>
+                                                </tr>
+                                            </thead>                
+                                            <tbody id="rowTemplate">
+                                                <tr style="display:none" class="___Row_Color___" >
+                                                    <th scope="row"   >___Service_Log_Id___</th>
+                                                    <td>___Insurer_Name___</td>
+                                                    <td>___Plan_Name___</td>
+                                                    <td>___IDV___</td>                                                    
+                                                    <td>___Final___</td>
+                                                    <td><button id="btn_err____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                                                data-placement="bottom" title="Exception Details" data-content="">___Status___</button></td>                                
+                                                    <td>___Time___</td>                                
+                                                    <td><a href="javascript:void(0);" onclick="ServiceLogView('___Service_Log_Id___');">View</a></td>
+                                                </tr>                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mdLog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Log Viewer</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table ">
+                    <thead><tr><th>Field </a></th><th>Action</th></tr></thead>
+                    <tbody>
+                        <tr><td>LM Request</td><td><a href="/service_logs/___Service_Log_Id___/LM_Custom_Request" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Request</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Request" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Response</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Response" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Response_Core</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Response_Core" target="_BLANK">View</a></td>
+                        <tr><td>Premium_Breakup</td><td><a href="/service_logs/___Service_Log_Id___/Premium_Breakup" target="_BLANK">View</a></td>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">                    
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mdAddEditVehiclePop" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" >Vehicle Management</h4>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="header">
+                        <h2>Vehicle <span id="actionVehicle">Edit</h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <form id="frm_vehicle" method="POST"> 
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float" >
+                                        <div class="form-line">
+                                            <select id="Product_Id_New" name="Product_Id_New" class="form-control show-tick" ><option value="1">Car</option><option value="10">Two Wheeler</option></select>
+                                        </div>
+                                    </div>
+                                </div>                                  
+                            </div>
+                            <div class="row clearfix">                                
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float" >
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="Make_Name" name="Make_Name" required>
+                                            <label class="form-label">Make</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="Model_Name" name="Model_Name" required>
+                                            <label class="form-label">Model</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="Variant_Name" name="Variant_Name" required>
+                                            <label class="form-label">Variant</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select id="Fuel_ID" name="Fuel_ID" class="form-control show-tick">
+                                            <option>Select Status</option>
+                                            <option value="1">Petrol</option>
+                                            <option value="2">Diesel</option>
+                                            <option value="3">Petrol-CNG</option>
+                                            <option value="4">Petrol-LPG</option>
+                                            <option value="5">Electric</option>
+                                        </select>                                
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control" id="ExShoroomPrice" name="ExShoroomPrice" required>
+                                            <label class="form-label">Ex-Showroom</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control" id="Cubic_Capacity"  name="Cubic_Capacity" required>
+                                            <label class="form-label">Cubic Capacity</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="number" class="form-control" id="Seating_Capacity"  name="Seating_Capacity" required>
+                                            <label class="form-label">Seating Capacity</label>
+                                        </div>
+                                    </div>                    
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float" >
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="Edit_Vehicle_ID" name="Edit_Vehicle_ID" required>
+                                            <label class="form-label" >Vehicle ID</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary waves-effect" type="submit" onclick="AddEditVehicle();">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+            <div class="modal-footer">                    
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mdSummaryPop" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content" id="SummaryContent">
+            <div class="modal-header">
+                <h4 class="modal-title" >Summary</h4>
+            </div>
+            <div id="chartdiv">
+            </div>
+            <div class="modal-footer">                    
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Custom Js -->
+<script src="../../js/admin.js"></script>
+<!--script src="../../js/pages/tables/jquery-datatable.js"></script-->
+<script src="../../js/pages/master/vehicles.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/3.2.4/js/dataTables.fixedColumns.min.js"></script>
+<script src="http://cdn.datatables.net/plug-ins/1.10.16/api/fnMultiFilter.js"></script>
+<!--start Amchart script-->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+
+<!--end-->
+<script>
+        AmCharts.themes.light={
+	themeName:"light",
+	AmChart:{color:"#000000",backgroundColor:"#FFFFFF"},
+	AmCoordinateChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"]},
+	AmStockChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"]},
+	AmSlicedChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"],outlineAlpha:1,outlineThickness:2,labelTickColor:"#000000",labelTickAlpha:0.3},
+	AmRectangularChart:{zoomOutButtonColor:'#000000',zoomOutButtonRollOverAlpha:0.15,zoomOutButtonImage:"lens"},AxisBase:{axisColor:"#000000",axisAlpha:0.3,gridAlpha:0.1,gridColor:"#000000"},ChartScrollbar:{backgroundColor:"#000000",backgroundAlpha:0.12,graphFillAlpha:0.5,graphLineAlpha:0,selectedBackgroundColor:"#FFFFFF",selectedBackgroundAlpha:0.4,gridAlpha:0.15},ChartCursor:{cursorColor:"#000000",color:"#FFFFFF",cursorAlpha:0.5},AmLegend:{color:"#000000"},AmGraph:{lineAlpha:0.9},GaugeArrow:{color:"#000000",alpha:0.8,nailAlpha:0,innerRadius:"40%",nailRadius:15,startWidth:15,borderAlpha:0.8,nailBorderAlpha:0},GaugeAxis:{tickColor:"#000000",tickAlpha:1,tickLength:15,minorTickLength:8,axisThickness:3,axisColor:'#000000',axisAlpha:1,bandAlpha:0.8},TrendLine:{lineColor:"#c03246",lineAlpha:0.8},
+        AreasSettings:{alpha:0.8,color:"#4CAF50",colorSolid:"#003767",unlistedAreasAlpha:0.4,unlistedAreasColor:"#000000",outlineColor:"#FFFFFF",outlineAlpha:0.5,outlineThickness:0.5,rollOverColor:"#3c5bdc",rollOverOutlineColor:"#FFFFFF",selectedOutlineColor:"#FFFFFF",selectedColor:"#f15135",unlistedAreasOutlineColor:"#FFFFFF",unlistedAreasOutlineAlpha:0.5},LinesSettings:{color:"#000000",alpha:0.8},ImagesSettings:{alpha:0.8,labelColor:"#000000",color:"#000000",labelRollOverColor:"#3c5bdc"},ZoomControl:{buttonFillAlpha:0.7,buttonIconColor:"#a7a7a7"},SmallMap:{mapColor:"#000000",rectangleColor:"#f15135",backgroundColor:"#FFFFFF",backgroundAlpha:0.7,borderThickness:1,borderAlpha:0.8},PeriodSelector:{color:"#000000"},PeriodButton:{color:"#000000",background:"transparent",opacity:0.7,border:"1px solid rgba(0, 0, 0, .3)",MozBorderRadius:"5px",borderRadius:"5px",margin:"1px",outline:"none",boxSizing:"border-box"},PeriodButtonSelected:{color:"#000000",backgroundColor:"#b9cdf5",border:"1px solid rgba(0, 0, 0, .3)",MozBorderRadius:"5px",borderRadius:"5px",margin:"1px",outline:"none",opacity:1,boxSizing:"border-box"},PeriodInputField:{color:"#000000",background:"transparent",border:"1px solid rgba(0, 0, 0, .3)",outline:"none"},DataSetSelector:{color:"#000000",selectedBackgroundColor:"#b9cdf5",rollOverBackgroundColor:"#a8b0e4"},DataSetCompareList:{color:"#000000",lineHeight:"100%",boxSizing:"initial",webkitBoxSizing:"initial",border:"1px solid rgba(0, 0, 0, .3)"},DataSetSelect:{border:"1px solid rgba(0, 0, 0, .3)",outline:"none"}};AmCharts.themes.light={themeName:"light",AmChart:{color:"#000000",backgroundColor:"#FFFFFF"},
+        AmCoordinateChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"]},
+        AmStockChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"]},
+        AmSlicedChart:{colors:["#4CAF50","#2196F3","#FF9800","#FFEB3B","#cd82ad","#2f4074","#448e4d","#b7b83f","#b9783f","#b93e3d","#913167"],
+            outlineAlpha:1,outlineThickness:2,labelTickColor:"#000000",labelTickAlpha:0.3},AmRectangularChart:{zoomOutButtonColor:'#000000',zoomOutButtonRollOverAlpha:0.15,zoomOutButtonImage:"lens"},AxisBase:{axisColor:"#000000",axisAlpha:0.3,gridAlpha:0.1,gridColor:"#000000"},ChartScrollbar:{backgroundColor:"#000000",backgroundAlpha:0.12,graphFillAlpha:0.5,graphLineAlpha:0,selectedBackgroundColor:"#FFFFFF",selectedBackgroundAlpha:0.4,gridAlpha:0.15},ChartCursor:{cursorColor:"#000000",color:"#FFFFFF",cursorAlpha:0.5},AmLegend:{color:"#000000"},AmGraph:{lineAlpha:0.9},GaugeArrow:{color:"#000000",alpha:0.8,nailAlpha:0,innerRadius:"40%",nailRadius:15,startWidth:15,borderAlpha:0.8,nailBorderAlpha:0},GaugeAxis:{tickColor:"#000000",tickAlpha:1,tickLength:15,minorTickLength:8,axisThickness:3,axisColor:'#000000',axisAlpha:1,bandAlpha:0.8},TrendLine:{lineColor:"#c03246",lineAlpha:0.8},
+        AreasSettings:{alpha:0.8,color:"#4CAF50",colorSolid:"#003767",unlistedAreasAlpha:0.4,unlistedAreasColor:"#000000",outlineColor:"#FFFFFF",outlineAlpha:0.5,outlineThickness:0.5,rollOverColor:"#3c5bdc",rollOverOutlineColor:"#FFFFFF",selectedOutlineColor:"#FFFFFF",selectedColor:"#f15135",unlistedAreasOutlineColor:"#FFFFFF",unlistedAreasOutlineAlpha:0.5},LinesSettings:{color:"#000000",alpha:0.8},ImagesSettings:{alpha:0.8,labelColor:"#000000",color:"#000000",labelRollOverColor:"#3c5bdc"},ZoomControl:{buttonFillAlpha:0.7,buttonIconColor:"#a7a7a7"},SmallMap:{mapColor:"#000000",rectangleColor:"#f15135",backgroundColor:"#FFFFFF",backgroundAlpha:0.7,borderThickness:1,borderAlpha:0.8},PeriodSelector:{color:"#000000"},PeriodButton:{color:"#000000",background:"transparent",opacity:0.7,border:"1px solid rgba(0, 0, 0, .3)",MozBorderRadius:"5px",borderRadius:"5px",margin:"1px",outline:"none",boxSizing:"border-box"},PeriodButtonSelected:{color:"#000000",backgroundColor:"#b9cdf5",border:"1px solid rgba(0, 0, 0, .3)",MozBorderRadius:"5px",borderRadius:"5px",margin:"1px",outline:"none",opacity:1,boxSizing:"border-box"},PeriodInputField:{color:"#000000",background:"transparent",border:"1px solid rgba(0, 0, 0, .3)",outline:"none"},DataSetSelector:{color:"#000000",selectedBackgroundColor:"#b9cdf5",rollOverBackgroundColor:"#a8b0e4"},DataSetCompareList:{color:"#000000",lineHeight:"100%",boxSizing:"initial",webkitBoxSizing:"initial",border:"1px solid rgba(0, 0, 0, .3)"},DataSetSelect:{border:"1px solid rgba(0, 0, 0, .3)",outline:"none"}
+	};
+                                $(function () {
+                                    PopulateMotorInsurer();
+                                    PopulateMake();
+                                    getTotalInsurerVehicleCount(1);
+                                    getTotalInsurerVehicleCount(10);
+                                });
+</script>

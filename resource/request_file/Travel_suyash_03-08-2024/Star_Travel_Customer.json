@@ -1,0 +1,35 @@
+{
+    "APIKEY": "___insurer_integration_service_user___",
+    "SECRETKEY": "___insurer_integration_service_password___",
+    "policyTypeName": "OMPIND",
+    "travelStartOn": "___policy_start_date___",
+    "travelEndOn": "___policy_end_date___",
+    "proposerName": "___first_name___ ___middle_name___ ___last_name___",
+    "proposerEmail": "___email___",
+    "proposerPhone": "___mobile___",
+    "proposerAddressOne": "___permanent_address_1___",
+    "proposerAddressTwo": "___permanent_address_2___ ___permanent_address_3___",
+    "proposerAreaId": "___areaID___",
+    "gstIdNumber": "",
+    "proposerDob": "___birth_date___",
+    "planId": ___dbmaster_pb_plan_code___,
+    "placeOfVisit": "___placeOfVisit___",
+    "travelDeclaration": 1,
+    "travelPurposeId": ___travelPurposeId___,
+    "physicianName": "___physicianName___",
+    "physicianContactNumber": "___physicianContactNumber___",
+    <!--InsurersDetail_Start-->
+    "insureds[___member_array_inc___]": {
+        "name": "___member_array_first_name___ ___member_array_last_name___",
+        "dob": "___member_array_birth_date___",
+        "sex": "___member_array_gender2___",
+        "relationshipId": ___member_array_relation___,
+        "illness": "___member_array_illness___",
+        "passportNumber": "___member_array_passport___",
+        "passportExpiry": "___member_array_passport_exp___",
+        "visaType": ___travelPurposeId___,
+        "assigneeName": "___member_array_nominee_name___",
+        "assigneeRelationshipId": "___member_array_nominee_id___"
+    }
+    <!--InsurersDetail_End-->
+}

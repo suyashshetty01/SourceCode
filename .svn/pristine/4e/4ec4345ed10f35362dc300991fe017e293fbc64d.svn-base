@@ -1,0 +1,18 @@
+{
+    "user_code": "landmark",
+    "make": "___dbmaster_insurer_vehicle_make_name___",
+    "model_variant": "___dbmaster_insurer_vehicle_model_name___ - ___dbmaster_insurer_vehicle_variant_name___",
+    "vehicle_model_code": "___dbmaster_insurer_vehicle_model_code___",
+    "frm_model_variant": "___dbmaster_insurer_vehicle_model_name___ - ___dbmaster_insurer_vehicle_variant_name___ / ___dbmaster_insurer_vehicle_fueltype___ / ___dbmaster_insurer_vehicle_cubiccapacity___ CC",
+    "rto_location_code": "___dbmaster_insurer_rto_city_code___",
+    "frm_rto": "___registration_no_1______registration_no_2___-___dbmaster_insurer_rto_city_name___(___dbmaster_insurer_rto_state_name___)",
+    "ex_show_room": "___dbmaster_insurer_vehicle_exshowroom___",
+    "mobile_no": "___mobile___",
+    "date_of_reg": ___date_of_registration___,
+    "product_id": "___product_id_car___",
+    "sel_policy_type": "___vehicle_insurance_subtype___",
+    "no_previous_insurer_chk": ___is_policy_exist___,
+    "no_prev_ins": "___is_previous_insurer___",
+    "prev_exp_date_comp": ___prev_policy_expiry_date___,
+    "IMDShortcode_Dev": "PBLM"
+}

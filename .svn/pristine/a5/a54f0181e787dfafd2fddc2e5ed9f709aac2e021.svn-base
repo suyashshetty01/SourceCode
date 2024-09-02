@@ -1,0 +1,107 @@
+<Root>  
+    <Policy> 
+        <Status>Successful</Status>
+        <NewDataSet>
+            <Table>
+                <LdrErrLvl>0</LdrErrLvl>
+                <PolNo>V0042294</PolNo>
+            </Table>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>CPA</Code>
+                <Description>Compulsory PA owner driver</Description>
+                <Type>TP </Type>
+                <BOValue>100.00</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>Gross Premium</Code>
+                <Description>Gross Premium</Description>
+                <Type>OD </Type>
+                <BOValue>9730.00</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>Gross Premium</Code>
+                <Description>Gross Premium</Description>
+                <Type>TP </Type>
+                <BOValue>2963.00</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>IDV</Code>
+                <Description>IDV</Description>
+                <Type>OD </Type>
+                <BOValue>11537.55</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>IDV</Code>
+                <Description>IDV</Description>
+                <Type>TP </Type>
+                <BOValue>2863.00</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>MOTADON</Code>
+                <Description>MOTADON</Description>
+                <Type>OD </Type>
+                <BOValue>500.00</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>NCB</Code>
+                <Description>NCB</Description>
+                <Type>OD </Type>
+                <BOValue>-2307.51</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>PLAN2</Code>
+                <Description>PLAN-2</Description>
+                <Type>OD </Type>
+                <BOValue>500.00</BOValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>PrmDue</Code>
+                <Description>PrmDue</Description>
+                <Type>OD </Type>
+                <BOValue>11189.50</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>PrmDue</Code>
+                <Description>PrmDue</Description>
+                <Type>TP </Type>
+                <BOValue>3407.45</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>ServTax</Code>
+                <Description>ServTax</Description>
+                <Type>OD </Type>
+                <BOValue>1459.50</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+            <Table1>
+                <RskNo>1</RskNo>
+                <Code>ServTax</Code>
+                <Description>ServTax</Description>
+                <Type>TP </Type>
+                <BOValue>444.45</BOValue>
+                <DBValue>0.00</DBValue>
+            </Table1>
+        </NewDataSet>
+        <VehicleIDV>351433</VehicleIDV>
+    </Policy>
+</Root>

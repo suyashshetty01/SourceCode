@@ -1,0 +1,18 @@
+{
+  "AgentCode": "___insurer_integration_agent_code___",
+  "TravellingRegionId": ___travelling_region_id___,
+  "IsAnnualMultiTrip": ___is_annual_multi_trip___,
+  "MaxAnnualTravelDays": ___maximum_duration___,
+  "TravelDays": ___travel_days___,
+  "DepartureDate":"___policy_start_date___T00:00:00",
+  "PlanDetail": [
+    {
+      "QuoteSequenceNo": 1,
+      "PlanName": null,
+      "AdultCount": ___adult_count___,
+      "ChildCount": ___child_count___,
+      "InsuredAge": ___member_1_age_1___,
+      "TripTypeId": ___trip_type_id___
+    }
+  ]
+}

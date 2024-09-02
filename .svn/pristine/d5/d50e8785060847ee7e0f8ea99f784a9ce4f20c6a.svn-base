@@ -1,0 +1,141 @@
+body{padding: 0;margin:0;font-family: arial;background-color: #eaeaea;}
+.Leads{margin: 10px 15px;}
+.Leads h4{margin-bottom: 10px;}
+.contactDetails{margin-bottom: 10px;}
+.threeColGrid{display: grid;grid-template-columns: 32% 32% 32%;grid-gap: 2%;}
+.contactDetails .threeColGrid div{color: white;padding:10px 5px;}
+.contactDetails .threeColGrid div img{float: right;vertical-align: middle;}
+.contactDetails .threeColGrid div:nth-child(1){background-color: #0123ff;}
+.contactDetails .threeColGrid div:nth-child(2){background-color: #ff8500;}
+.contactDetails .threeColGrid div:nth-child(3){background-color: #01ba1f;}
+.progress {height: 2px;margin: 8px 0px 2px;overflow: hidden;padding: 0px !important;background-color: rgba(0, 0, 0,0.4) !important;}
+.progress-bar {float: left;width: 0%;height: 100%;background-color: white !important;}
+.txt{font-size: 12px;}
+.renewalReminder .twoColGrid{display: grid;grid-template-columns: 49% 49%;grid-gap: 2%;}
+.renewalReminder .twoColGrid div{box-shadow: 0px 0px 5px #c1c1c1;padding: 10px;display: flex;border-radius: 2px;background-color: white;}
+.renewalReminder .twoColGrid div img{float: right;margin: auto;}
+.renewalReminder .twoColGrid div p{margin: auto;font-size: 12px;padding: 2px;font-weight: bold;}
+.circle{height: 40px;width: 40px;border-radius: 50% !important;font-size: 12px;font-weight: bold;align-items: center;justify-content: center;cursor: pointer;padding: 5px !important;}
+.twoColGrid div:nth-child(1) .circle{border: 3px solid #f76578;}
+.twoColGrid div:nth-child(2) .circle{border: 3px solid #5754ff;}
+.twoColGrid div:nth-child(3) .circle{border: 3px solid #6eccba;}
+.twoColGrid div:nth-child(4) .circle{border: 3px solid #f2b390;}
+.twoColGrid div:nth-child(5) .circle{border: 3px solid #e3d95d;}
+.twoColGrid div:nth-child(6) .circle{border: 3px solid #54a055;}
+.twoColGrid div:nth-child(7) .circle{border: 3px solid #f76371;}
+.twoColGrid div:nth-child(8) .circle{border: 3px solid #6bf1e6;}
+.twoColGrid div:nth-child(9) .circle{border: 3px solid #5d5fff;}
+.twoColGrid div:nth-child(10) .circle{border: 3px solid #b4505a;}
+.twoColGrid div:nth-child(11) .circle{border: 3px solid #fee253;}
+.twoColGrid div:nth-child(12) .circle{border: 3px solid #f66a6d;}
+#contactInfo .info{height: auto;background: white;width: 95%;height:70%;overflow-y:auto;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);padding: 5px;}
+#contactInfo{height: 100%;width: 100%;position: fixed;top: 0;left: 0;z-index: 1;background-color: rgba(0, 0, 0,0.3);
+    overflow: hidden;display: none;}
+.succesTitle{width: 93.5%;padding: 10px;background-color: #036ca5;color: white;}
+.closebutton{width: 15%;cursor: pointer;padding: 5px;background-color: white;color: #036ca5;margin: 0px auto;border-radius: 7px;
+	border: 2px solid #036ca5;font-size: 15px;}
+.info table{font-size: 11px;border-bottom: 1px solid #fff;}
+.info table a{color: black;text-decoration: none;}
+.info table i{font-size: 15px;}
+.info h5{margin: 10px 5px;font-size: 15px;}
+.info table td{padding: 6px 0px;border-top: 1px solid #b9b9b9;}
+.info table th{text-align: center;padding: 7px 0px;border-top: 1px solid #b9b9b9;}
+.info .sendbutton{background: #00b0ed;color: white;padding: 3px 7px;border-radius: 2px; border: 1px solid #00b0ed;font-size: 12px;}
+.pagination {display: inline-block;margin-top: 15px;}
+.pagination a {
+	color: black;
+	float: left;
+	padding: 1px 5px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid #ddd;
+	font-size: 11px;
+	margin: 2px;
+	}
+.pagination a.active {background-color: #00b0ed;color: white;border: 1px solid #00b0ed;}
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.right{text-align: right;}
+.close{float: right;cursor: pointer;}
+
+#dataPackage .info1{height:100%;background: white;width:98%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);padding: 5px;font-size:13px;overflow-y:auto}
+#dataPackage{height: 100%;width: 100%;position: fixed;top: 0;left: 0;z-index: 1;background-color: rgba(0, 0, 0,0.3);
+    overflow: hidden;display:none;}
+.boxPackage{padding:5px 10px;}
+ul.options-list {
+       margin: 0;
+      display: block;
+    list-style: none;
+    font-family: Arial;
+    text-align: left;
+    padding:0px;
+}
+ul.options-list li {
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+   cursor: pointer;
+    border: 1px solid #DDDDDD;
+    margin: 10px 16px;
+}
+ul.options-list li.select{
+        background-color: #c0c0c0;
+}
+.inputCls{
+	border: 1px solid rgb(201, 201, 201);
+    width: 28%;
+    padding: 5px 5px;
+    border-radius: 3px;
+}
+input:focus {
+ border-color:none;
+}
+
+.Leadtxt{font-size:14px;padding:20px 0px !important;}
+.leadPlans button{text-align: center;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(201, 201, 201);
+    padding: 8px 12px;
+    border-radius: 3px;}
+	.leadPlans{text-align:center;}
+	.leadPlans td{border:1px solid rgb(237, 237, 237)}
+	.leadPlans td{border-top:0px solid transparent !important;}
+	.buynowbutton{
+		background-color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
+    padding: 6px 15px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 25px 0px;
+	}
+	.totalAmtDiv{font-size:13px;}
+	
+	#package1,#package2,#package3,#package4{width:14px;height:14px;}
+	.buy_now_btn{margin: 14px 0px 6px;padding: 6px 10px;background: rgb(255, 0, 0);border: 2px solid rgb(255, 0, 0);color: rgb(255, 255, 255);font-weight: 600;border-radius: 3px;}
+	.buy_now_mainbtn{margin: 14px 0px 6px;padding: 6px 10px;background: rgb(255, 0, 0);border: 2px solid rgb(255, 0, 0);color: rgb(255, 255, 255);font-weight: 600;border-radius: 3px;}
+	
+	.sync_contact_calling_section{width: 100%;height: 100%;position: fixed;background:#eaeaea;z-index: 99;display:none;}
+	.sync_contact_calling_block{margin:8px 15px;height: 560px;overflow-y: auto;padding-bottom: 20px;}
+	.contact_calling_div{background: rgb(255, 255, 255);padding: 3px 8px;border-radius: 10px;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);}
+	.contact_calling_div p{font-size: 13px;padding: 0px 4px;}
+	.btn_submit{background: rgb(1, 186, 31);border: 1px solid rgb(1, 186, 31);color: rgb(255, 255, 255);font-size: 16px;padding: 10px 20px;border-radius: 8px;font-weight: bold;}
+	.close_contact_calling{float: right;margin: -24px -4px;font-size: 25px;font-weight: bold;}
+	
+	
+	.more_details_section{width: 100%;height: 100%;z-index: 999;background: rgb(0,0,0,0.4);position: fixed;display:none;}
+	.more_details_block{top: 50%;left: 50%;transform: translate(-50%,-50%);position: absolute;background: rgb(255, 255, 255);padding: 8px;width:92%;}
+	.close_details_popup{float: right;display: inline-block;font-size: 20px;font-weight: 700;}
+	.details_table{border:1px solid #c9c9c9;;width:100%;border-collapse:collapse}
+	.details_table td,.details_table th{border:1px solid #c9c9c9;padding:6px}
+	.details_table td{font-weight:normal;text-align:center;}
+	.details_table th{text-align:left;width:50%}
+	
+	.btn_no{margin-left: -5px;border-radius: 0px;border-bottom-right-radius:3px;border-top-right-radius:3px;background:#fff;border:1px solid #949494;padding:4px;}
+	.btn_yes{border-radius: 0px;border-bottom-left-radius:3px;border-top-left-radius:3px;border:1px solid #949494;background:#fff;padding:4px;}
+	.active_click{background:gray;color:#fff;border:1px solid gray}
+	
+	
+	
+	
+	
+	

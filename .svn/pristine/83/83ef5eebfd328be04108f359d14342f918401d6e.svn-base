@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <title>Magic FinMart</title>
+	
+
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+
+	
+	<script src="js/dashboard.js"></script>
+	 
+	 <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+    </style>
+</head>
+
+<body style="font-family:Open Sans;">	
+<style>
+    .pointsstyle {
+        font-size: 20px;
+    }
+
+    .affix {
+        top: 0 !important;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+
+        .affix + .quoteList_container {
+            padding-top: 70px !important;
+        }
+
+    .sticky_btn {
+        display: grid;
+        grid-row-gap: 10px;
+        grid-template-columns: 1fr;
+        position: fixed;
+        right: 3%;
+        bottom: 18% !important;
+        z-index: 10;
+    }
+
+    .srch_by {
+        padding-top: 20px;
+        text-align: center !important;
+    }
+
+        .srch_by select {
+            width: 118px;
+            border-bottom: 1px solid #c0c0c0;
+        }
+
+    .con1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid #eee;
+    }
+
+    .a_date {
+        text-align: center;
+    }
+
+    .dwn_policy {
+        text-align: center;
+        float: right;
+    }
+
+        .dwn_policy i {
+            color: #1c2955;
+            padding: 5px;
+            font-size: 22px;
+        }
+
+    .download {
+        float: right;
+        margin: 8px;
+    }
+
+    .progress .progress-bar {
+        background: rgb(28, 41, 85) !important;
+    }
+
+    .quoteTabData {
+        width: 18%;
+        padding: 10px;
+        color: #999;
+    }
+
+    .fieldName {
+        color: #999;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    .Datacolor {
+        color: #333;
+        font-size: 13px;
+    }
+
+    .title {
+        font-size: 12px;
+        color: #333;
+    }
+
+    .con.parta {
+        grid-template-columns: 1fr 30px !important;
+        text-align: center;
+    }
+
+    .con.partb {
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .con.partc {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .Car_insurer_container {
+        height: 500px;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    .header_Maindiv {
+        position: fixed;
+        font-weight: bold;
+        background: #fff;
+        width: 82%;
+        height: 57px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .quote_list_Div {
+        height: 409px;
+        margin-top: 58px;
+    }
+
+    .PaginationDiv {
+        height: 33px;
+    }
+
+    .pagination {
+        display: inline-block;
+        margin-left: 32%;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 0px 15px;
+            margin-top: -15px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+    .current {
+        background-color: rgb(28, 41, 85);
+        color: #fff;
+        border: 1px solid rgb(28, 41, 85);
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+
+    #tbl_quote_list tr {
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dashboardcontnr {
+        margin: 0px auto;
+        font-family: Lato-Regular !important;
+    }
+
+    .dashboardcontnr_RM {
+        margin: 0px auto;
+        font-family: Lato-Regular !important;
+    }
+
+    .headertitle {
+        text-align: center;
+    }
+
+    .dashtable {
+        margin: 0px;
+    }
+
+    .displaygrid {
+        display: grid;
+        grid-template-columns: repeat(11,1fr);
+        background: gray;
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .displaygriddata {
+        display: grid;
+        grid-template-columns: repeat(11,1fr);
+        color: #333;
+        text-align: center;
+        padding: 8px;
+    }
+
+        .displaygriddata:nth-child(odd) {
+            background: #efecec;
+        }
+
+    .closepopup {
+        float: right;
+        margin: 8px;
+    }
+
+    .MoreInformation {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        color: gray;
+        font-size: 14px;
+        cursor: auto;
+    }
+
+    .leftdata {
+        font-size: 14px;
+        margin: 4px;
+        color: #333;
+    }
+
+    .rightdata {
+        font-weight: bold;
+        margin: 4px;
+    }
+
+    .MoreInfopopup, .Actnpopup {
+        display: none;
+        position: fixed; /* Sit on top of the page content */
+        background: rgba(0,0,0,0.7);
+        box-shadow: 0px 0px 5px 1px #e5e5e5;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        cursor: pointer;
+
+    }
+
+    .MoreInfoScreen, .ActionScreen {
+        max-width: 50%;
+        margin: 0px auto;
+        background: #fff;
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        box-sizing: border-box;
+        border: 1px solid #c1c1c1;
+        box-shadow: 0px 0px 5px 1px #7d7d7dc9;
+        margin-top: 7%;
+        overflow-y: auto;
+    }
+    .ActionScreen {
+        height:80% !important;
+    }
+     .dashtable {
+        margin-top: 0px;
+    }
+
+    .leftdata .selectbx {
+        margin: 0px;
+        padding: 0px;
+        cursor: pointer;
+        cursor: pointer;
+    }
+
+    .tickit_error {
+        height: 400px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        color: #333 !important;
+        padding: 200px;
+        display: none;
+    }
+
+    .RM_error {
+        height: 400px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        color: #333 !important;
+        padding: 200px;
+        /*display: none;*/
+    }
+
+
+    .openMoreInfo, .openPopup {
+        cursor: pointer;
+    }
+
+    .HeaderFilterSecton {
+        padding-top: 100px;
+    }
+
+
+    .HeaderContent {
+        width: 100%;
+        padding: 5px;
+    }
+
+        .HeaderContent label {
+            font-weight: normal;
+        }
+
+    .ContentSectn {
+        padding-left: 15px;
+        padding-right: 15px;
+        display: inline-block;
+    }
+
+    .ticketIdcheckbx {
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        margin: 0px !important;
+        cursor: pointer;
+    }
+    
+
+    .inlineblockDiv {
+        display: inline-block;
+        margin-left: 25px;
+    }
+
+        .inlineblockDiv select {
+            padding: 4px;
+            border-width: 0px;
+            border-bottom: 1px solid #a59e9e;
+        }
+
+    .ticketIdInput {
+        border-width: 0px;
+        margin-left: 10px;
+        border-bottom: 1px solid gray;
+        display: none;
+    }
+
+    .bydateRadio {
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        margin: 0px !important;
+        cursor: pointer;
+    }
+
+    .radioBtnmargin {
+        margin-left: 15px;
+    }
+
+    .tofromDiv {
+        margin-right: 10%;
+        margin-top: 5px;
+        display: none;
+    }
+
+        .tofromDiv input {
+            border-width: 0px;
+            border-bottom: 1px solid #a59e9e;
+            width: 20%;
+            cursor: pointer;
+        }
+
+    .headerSearchFilter {
+        display: grid;
+        grid-template-columns: 20% 1fr 30%;
+    }
+    .submitbtn_actn{width:40%;text-align:center;padding:10px 28px 10px 28px;margin:0px auto;color:#fff;background:#ca0b0b;font-size:18px;cursor: pointer;bottom:0px;}
+    .mainpopupcont {
+            overflow-y:auto;
+        }
+
+    .headerFilterapply {
+        text-align: center;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .ApplyFilt {
+        margin: 0px 10px;
+        padding: 10px 8px;
+        background: gray;
+        color: #fff;
+        width: 25%;
+    }
+    .headerSearchByTxt {
+        font-weight: bold;
+        font-size: 17px;
+        text-align: right;
+        line-height: 35px;
+        margin: 0px !important;
+    }
+
+    .drpsrhStatus {
+        cursor: pointer;
+    }
+
+    .convbot-close {
+        display: none !important;
+    }
+
+    #mydashboardULList {
+        margin-left: 25px;
+        margin-right: 25px;
+        color: #333;
+        font-size: 14px;
+    }
+
+        #mydashboardULList ul {
+            list-style-type: none;
+            border-bottom: 1px solid #e2d5d5;
+        }
+
+            #mydashboardULList ul li {
+                margin-left: 50px;
+            }
+
+    .bottomBordr {
+        border-bottom: 2px solid #000000;
+        font-weight: bold;
+    }
+
+    .ticketnavlist, .ticketnavlist1 {
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .RM_dashboard {
+        padding-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .maindiv_tickiting {
+        margin-bottom: 50px;
+    }
+
+    .MblSectn, .filterSec {
+        display: none;
+    }
+
+    @@media (max-width: 768px) {
+        #mydashboardULList {
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top:20px;
+        }
+        .ActionScreen {
+        height:100% !important;
+    }
+        .submitbtn_actn {
+            width: 100%;
+        }
+        .headerSearchFilter {
+            display: none;
+        }
+
+        .headerSearchByTxt {
+            text-align: left;
+        }
+
+        .radioBtnmargin {
+            display: none;
+        }
+
+        .mblresblock {
+            margin-left: 10px;
+            border-left: 1px solid #c9c9c9;
+            border-right: 1px solid #c9c9c9;
+        }
+
+        .inlineblockDiv {
+            margin-left: 10px;
+        }
+
+            .inlineblockDiv select {
+                border-bottom: 0px solid transparent;
+            }
+
+        .headerSearchByTxt {
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        .ContentSectn {
+            font-size: 13px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        #mydashboardULList ul li {
+            margin-left: 10%;
+        }
+
+        .headerFilterapply {
+            width: 100%;
+        }
+
+        .dashboardcontnr {
+            display: none !important;
+        }
+
+        .MblSectn {
+            display: block;
+            margin-bottom: 100px;
+        }
+
+        .card-row {
+            margin: 10px;
+        }
+
+        .card_col {
+            width: 47%;
+            margin: 5px;
+            float: left;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.20);
+            background: rgb(255, 255, 255);
+            padding: 6px;
+            font-size: 13px;
+        }
+
+        .data_right, .data_left {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom:1px solid #c9c9c9;
+        }
+
+        .Id_data, .Actn_data {
+            cursor: pointer;
+            cursor: pointer;
+        }
+
+        .Actn_data {
+            text-align: right;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #contact, .soc-link, #footerMenu, #copyright, .footer_border {
+            display: none;
+        }
+
+        .MoreInfoScreen, .ActionScreen {
+            max-width: 99%;
+            margin-top: 25%;
+        }
+
+        .mainpopupcont {
+            padding: 12px;
+        }
+
+        .MoreInformation {
+            grid-template-columns: 100px 70%;
+        }
+
+        .filterSec, .radioBtnmargin {
+            display: inline-block;
+        }
+
+        .radioBtnmargin {
+            margin-left: 10%;
+        }
+
+        .tofromDiv {
+            margin-right: 10%;
+            margin-top: 5px;
+            display: none;
+            text-align: center;
+        }
+
+        .date_dt {
+            font-weight: normal;
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            display: inline;
+        }
+
+        .tofromDiv input {
+            border-width: 0px;
+            border-bottom: 1px solid #a59e9e;
+            width: 26%;
+            cursor: pointer;
+        }
+
+        .statuscls {
+            padding: 4px;
+            border-width: 0px;
+            border-bottom: 1px solid #a59e9e;
+            width: 65%;
+            margin-top: 8px;
+        }
+
+        .status_dt {
+            margin-bottom: 20px;
+            padding-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .ticketIdcheckbx, .bydateRadio {
+            width: 18px;
+            height: 18px;
+        }
+
+        .ticketIdInput {
+            width: 100%;
+            display: none;
+            margin-top: 8px;
+        }
+
+        .headerFilterapply {
+            background: #0c0c0c;
+            height: 40px;
+            position: fixed;
+            left: 0;
+            width: 100%;
+            color:#fff;
+            padding:5px;
+        }
+
+        .radioBtnmargin label {
+            font-weight: normal;
+        }
+
+        .ticket_id {
+            margin-bottom: 20px;
+        }
+        /*-------------- Popup ----------*/
+        .FilterPop {
+            display: none;
+            position: fixed; /* Sit on top of the page content */
+            background: rgba(0,0,0,0.7);
+            box-shadow: 0px 0px 5px 1px #e5e5e5;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .mainFiltPopup {
+            max-width: 100%;
+            margin: 0px auto;
+            background: #fff;
+            animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+            box-sizing: border-box;
+            border: 1px solid #c1c1c1;
+            box-shadow: 0px 0px 5px 1px #7d7d7dc9;
+            margin-top: 20%;
+            overflow-y: auto;
+        }
+
+        .FiltContainerpop {
+            padding: 10px;
+        }
+
+        .CloseFiltpop {
+            color: #000000;
+            font-size: 18px;
+            text-align: right;
+            margin: 5px;
+        }
+
+        .FiltContainerpop .dateFilter h4, .status_ttl {
+            font-size: 14px;
+            font-weight: bold;
+            display: inline;
+        }
+        .ui-datepicker{
+            z-index:9999;
+        }
+            .popupScreen{width:100%;}
+            .submitbtn {
+    margin: 0px auto; 
+}
+            .MoreInfopopup, .Actnpopup {
+    z-index: 9999;overflow-y:auto;
+    
+}
+            .MoreInfoScreen, .ActionScreen {
+    max-width: 100%;
+    margin-top: 0%;
+}
+            .tickit_error {  padding: 0px;}
+    }
+</style>
+
+<div class="maindiv_tickiting">
+    <div class="HeaderFilterSecton">
+        <div class="HeaderContent">
+            <div class="headerSearchFilter" >
+                <div class="headerSearchByTxt"><p>Search By :</p></div>
+                <div class="ContentSectn">
+                    <div style="padding:4px;">
+                        <label>By Date  </label>
+                        <span class="radioBtnmargin">
+                            <input type="radio" name="bydate" checked class="bydateRadio readonly" onclick="hidetofromDiv();">
+                            <label>CurrentDate</label>
+                        </span>
+                        <span class="radioBtnmargin">
+                            <input type="radio" name="bydate" class="bydateRadio readonly" onclick="showtofromDiv();">
+                            <label>Datewise</label>
+                        </span>
+                        <div class="inlineblockDiv mblresblock">
+                            <select id="drpsrhStatus" class="readonly">
+                                <option value="">Select Status</option>
+                                
+                                <option value="Open">Open</option>
+                                <option value="InProgress">InProgress</option>
+                                <option value="Closed">Closed</option>
+                                <option value="Resolved">Resolved</option>
+                                <option value="Release">Release</option>
+                                <option value="Cancel">Cancel</option>
+                                <option value="SendInsurer">Send to Insurer</option>
+                                <option value="ReceivedInsurer">Received from Insurer</option>
+                                <option value="SendCustomer">Send to Customer</option>
+                                <option value="ReceivedCustomer">Received to Customer</option>
+                            </select>
+                        </div>
+                        <div class="inlineblockDiv">
+                            <input type="checkbox" id="chk_ticket" class="ticketIdcheckbx" onclick="showticketIdInput();">
+                            <label>Ticket ID</label>&nbsp;&nbsp;
+                            <input type="checkbox" id="chk_CRN" class="ticketIdcheckbx" onclick="showCRNInput();">
+                            <label>CRN</label>
+                            <span><input type="text"  onkeypress="return Checkalphanumeric(event);" id="srh_ticketid" class="ticketIdInput"></span>
+                            <span class="srh_ticketid" style="margin-left:20px;color:red;display:table"></span>
+                        </div>
+                        <div class="tofromDiv">
+                            <label>From &nbsp; </label>
+                            <input type="text" autocomplete="off" class="readonly" id="Fromdatepicker">
+                            <label>To &nbsp; </label>
+                            <input type="text" autocomplete="off" class="readonly" id="Todatepicker">
+                        </div>
+                    </div>
+                </div>
+                <div class="headerFilterapply">
+                    <div class="ApplyFilt" onclick="ApplyFilter();">Apply</div>
+                </div>
+				<div class="headerFilterapply">
+                    <div  class="ApplyFilt"onclick="CreateTicket();">Create Ticket</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mydashboardULList">
+        <ul>
+            <li class="ticketnavlist bottomBordr" onclick="Ticket_switcher('tickets');">Reported by me</li>
+            <li class="ticketnavlist1 le" onclick="Ticket_switcher('mytickets');">My Ticket</li>
+            <li class="filterSec OpenFiltPopup">Filter</li>
+        </ul>
+    </div>
+
+    <div class="MblSectn">
+        <div class="card-row mblticketlst">
+            
+        </div>
+
+
+        <div class="FilterPop">
+            <div class="mainFiltPopup">
+                <div class="CloseFiltpop">
+                    <div class="CloseFiltpop">&#x2716;</div>
+                </div>
+                <div class="FiltContainerpop">
+                    <div class="dateFilter">
+                        <h4>By Date :</h4>
+                        <div class="date_dt">
+                            <span class="radioBtnmargin">
+                                <input type="radio" name="bydatembl" checked class="bydateRadio readonly" onclick="hidetofromDiv();">
+                                <label>CurrentDate</label>
+                            </span>
+                            <span class="radioBtnmargin">
+                                <input type="radio" name="bydatembl" class="bydateRadio readonly" onclick="showtofromDiv();">
+                                <label>Datewise</label>
+                            </span>
+                            <div class="tofromDiv">
+                                <label>From &nbsp; </label>
+                                <input type="text" autocomplete="off" class="readonly" id="Fromdatepickermbl">
+                                <label>To &nbsp; </label>
+                                <input type="text" autocomplete="off" class="readonly" id="Todatepickermbl">
+                            </div>
+                        </div>
+                        <div class="status_dt">
+                            <span class="status_ttl">Select Status :</span>
+                            <span>
+                                <select id="drpsrhStatusmbl" class="statuscls readonly">
+                                    <option value="">Select Status</option>
+                                   
+                                    <option value="Open">Open</option>
+                                    <option value="InProgress">InProgress</option>
+                                    <option value="Closed">Closed</option>
+                                    <option value="Resolved">Resolved</option>
+                                    <option value="Reopened">Reopened</option>
+                                    <option value="Release">Release</option>
+                                    <option value="Cancel">Cancel</option>
+                                    <option value="SendInsurer">Send to Insurer</option>
+                                    <option value="ReceivedInsurer">Received from Insurer</option>
+                                    <option value="SendCustomer">Send to Customer</option>
+                                    <option value="ReceivedCustomer">Received to Customer</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="ticket_id">
+                            <div class="inlineblockDiv">
+                                <input type="checkbox" name="rd" id="chk_ticketmbl" class="ticketIdcheckbx" onclick="showticketIdInputmbl();">
+                                <label>Ticket ID</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="rd" id="chk_CRNmbl" class="ticketIdcheckbx" onclick="showCRNInputmbl();">
+                                <label>CRN</label>
+                                <span><input type="text" placeholder="" onkeypress="return Checkalphanumeric(event);" id="srh_ticketidmbl" class="ticketIdInput"></span>
+                                <span class="srh_ticketid" style="margin-left:20px;color:red;display:table"></span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="headerFilterapply">
+                    <div onclick="ApplyFilter();">Apply</div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboardcontnr">
+        <div class="headertitle">
+            <h2> </h2>
+        </div>
+        <div class="dashtable">
+
+            <div class="displaygrid">
+                <div>Ticket Id</div>
+                <div>Product</div>
+                <div>Category</div>
+                <div>Subcategory</div>
+                <!-- <div>From</div>
+                <div>To</div> -->
+                <div>Created By</div>
+                <div>Created On</div>
+                <!-- <div>Modified_on</div> -->
+                <div>CRN</div>
+                <div>Mobile No</div>
+                <!-- <div>Vehicle No</div> -->
+                <div>Remark</div>
+                <div>Status</div>
+                <div>Action</div>
+            </div>
+
+            <div id="QuoteLoader" class="loaderdiv" style="text-align:center;">
+                <img src="../images/loader.gif" style="height: 100px;">
+            </div>
+            <div class="tickitlist">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="Actnpopup">
+        <div class="ActionScreen">
+            <div class="Closepopup">
+                <span class="closepopup" onclick="Closepopup();">&#x2716;</span>
+            </div>
+            <div class="mainpopupcont">
+                <div class="MoreInformation">
+                    <div class="rightdata">Ticket Id</div>
+                    <div class="leftdata" id="txtAct_Ticket_id"></div>
+                    <div class="rightdata">Product</div>
+                    <div class="leftdata" id="txtAct_Product"></div>
+                    <div class="rightdata">Category</div>
+                    <div class="leftdata" id="txtAct_Category"></div>
+                    <div class="rightdata">SubCategory</div>
+                    <div class="leftdata" id="txtAct_SubCategory"></div>
+
+                    <div class="rightdata">From</div>
+                    <div class="leftdata" id="txtAct_from"></div>
+                    <div class="rightdata">To</div>
+                    <div class="leftdata" id="txtAct_to"></div>
+                    <div class="rightdata">Status</div>
+                    <div class="leftdata" id="txtAct_Status">
+                        <select class="selectbx" id="drpStatus" onchange="StatusUpdate();">
+                            <option value="0">Select Status</option>
+                           
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Reopened">Reopened</option>
+                            <option value="Release">Release</option>
+                            <option value="Cancel">Cancel</option>
+                            <option value="SendInsurer">Send to Insurer</option>
+                            <option value="ReceivedInsurer">Received from Insurer</option>
+                            <option value="SendCustomer">Send to Customer</option>
+                            <option value="ReceivedCustomer">Received to Customer</option>
+                        </select>
+
+                    </div>
+                    <div class="rightdata divSubCatlevel2" style="display:none;">SubCategory Level2</div>
+                    <div class="leftdata divSubCatlevel2" style="display:none;" id="txtAct_SubCategorylevel2">
+                        <select class="selectbx" id="drpSubCategorylevel2"></select>
+                    </div>
+
+                    <div class="rightdata">Created by</div>
+                    <div class="leftdata" id="txtAct_Created_by"></div>
+                    <div class="rightdata">Created on</div>
+                    <div class="leftdata" id="txtAct_Created_on"></div>
+                    <div class="rightdata">Modified on</div>
+                    <div class="leftdata" id="txtAct_Modified_on"></div>
+                    <div class="rightdata">CRN</div>
+                    <div class="leftdata" id="txtAct_CRN"></div>
+                    <div class="rightdata">Mobile No</div>
+                    <div class="leftdata" id="txtAct_Mobile"></div>
+                    <div class="rightdata">Vehicle No</div>
+                    <div class="leftdata" id="txtAct_Vehicle"></div>
+                    <div class="rightdata">Ss Id</div>
+                    <div class="leftdata" id="txtAct_ss_id"></div>
+                    <div class="rightdata">Remark</div>
+                    <div class="leftdata"><textarea class="remark" id="txtAct_remark" rows="4" name="comment" form="usrform" placeholder="Remark..."></textarea></div>
+
+                </div>
+            </div>
+            <div>
+                <div class="submitbtn_actn" onclick="btn_submitForm();">Submit</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="MoreInfopopup">
+        <div class="MoreInfoScreen">
+            <div class="Closepopup">
+                <span class="closepopup" onclick="Closepopup();">&#x2716;</span>
+            </div>
+            <div class="mainpopupcont">
+                <div class="MoreInformation">
+                    <div class="rightdata">Ticket Id</div>
+                    <div class="leftdata" id="txt_Ticket_id"></div>
+                    <div class="rightdata">Product</div>
+                    <div class="leftdata" id="txt_Product"></div>
+                    <div class="rightdata">Category</div>
+                    <div class="leftdata" id="txt_Category"></div>
+                    <div class="rightdata">SubCategory</div>
+                    <div class="leftdata" id="txt_SubCategory"></div>
+                    <div class="rightdata">From</div>
+                    <div class="leftdata" id="txt_from"></div>
+                    <div class="rightdata">To</div>
+                    <div class="leftdata" id="txt_to"></div>
+                    <div class="rightdata">Status</div>
+                    <div class="leftdata" id="txt_Status">
+                    </div>
+                    <div class="rightdata">Created by</div>
+                    <div class="leftdata" id="txt_Created_by"></div>
+                    <div class="rightdata">Created on</div>
+                    <div class="leftdata" id="txt_Created_on"></div>
+                    <div class="rightdata">Modified_on</div>
+                    <div class="leftdata" id="txt_Modified_on"></div>
+                    <div class="rightdata">CRN</div>
+                    <div class="leftdata" id="txt_CRN1"></div>
+                    <div class="rightdata">Mobile No</div>
+                    <div class="leftdata" id="txt_Mobile"></div>
+                    <div class="rightdata">Vehicle No</div>
+                    <div class="leftdata" id="txt_Vehicle"></div>
+                    <div class="rightdata">Remark</div>
+                    <div class="leftdata" id="txt_Remark"></div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="Popup" id="ResultPopup" style="display:none;">
+        <div class="popupScreen">
+            <div class="mainpopupresult" style="padding:10px;">
+
+            </div>
+            <div>
+                <div class="submitbtn" onclick="okbtn();" id="okbtn">OK</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tickit_error">
+    No Record found.
+</div>
+<script src="dashboard.js"></script>
+
+</body>	

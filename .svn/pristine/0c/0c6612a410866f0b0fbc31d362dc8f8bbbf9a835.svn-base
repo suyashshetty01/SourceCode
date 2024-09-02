@@ -1,0 +1,157 @@
+<Session>
+    <SessionData xmlns="http://schemas.cordys.com/bagi/b2c/emotor/bpm/1.0">
+        <Index>2</Index>
+        <InitTime>___bhartiaxa_current_datetime___</InitTime><!--Mon, 17 Jul 2017 19:11:27 GMT-->
+        <UserName>___insurer_integration_service_user___</UserName><!--landmark-->
+        <Password>___insurer_integration_service_password___</Password><!--AZg3Q1SktWKLz0Os/H0MlAxFfI75pjnpKjn9xrV9vimyyS7/5Ilil/ftcP5oHxC7IFYLVF0C3MAJcIznwrZvDA==-->
+        <OrderNo>___bhartiaxa_order_no___</OrderNo><!--VDJD987596-->
+        <QuoteNo>___bhartiaxa_quote_no___</QuoteNo><!--QRN201707170001903-->
+        <Route>INT</Route>
+        <Contract>MTR</Contract>
+        <Channel />
+        <TransactionType>Quote</TransactionType>
+        <TransactionStatus>Fresh</TransactionStatus>
+        <ID />
+        <UserAgentID />
+        <Source />
+    </SessionData>
+    <tns:Vehicle xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:TypeOfBusiness>___vehicle_insurance_type___</tns:TypeOfBusiness><!--TR-->
+        <tns:AccessoryInsured>___is_electrical_accessory___</tns:AccessoryInsured><!--N-->
+        <tns:AccessoryValue>___electrical_accessory___</tns:AccessoryValue><!--0-->
+        <tns:BiFuelKit>
+            <tns:IsBiFuelKit>___is_external_bifuel___</tns:IsBiFuelKit><!--N-->
+            <tns:BiFuelKitValue>___external_bifuel_value___</tns:BiFuelKitValue><!--0-->
+            <tns:ExternallyFitted>___is_external_bifuel___</tns:ExternallyFitted><!--N-->
+        </tns:BiFuelKit>
+        <tns:DateOfRegistration>___vehicle_registration_date___T00:00:00.000</tns:DateOfRegistration><!--2016-07-19T00:00:00.000-->
+        <tns:DateOfManufacture>___vehicle_manf_date___T00:00:00.000</tns:DateOfManufacture><!--2016-01-01T00:00:00.000-->
+        <tns:RiskType>___vehicle_insurance_subtype_2___</tns:RiskType><!--FPV-->
+        <tns:Make>___dbmaster_insurer_vehicle_make_name___</tns:Make><!--MARUTI-->
+        <tns:Model>___dbmaster_insurer_vehicle_model_name___</tns:Model><!--WAGONR (PETROL)-->
+        <tns:FuelType>___dbmaster_insurer_vehicle_fueltype___</tns:FuelType><!--P-->
+        <tns:Variant>___dbmaster_insurer_vehicle_variant_name___</tns:Variant><!--1.1 LXI-->
+        <tns:IDV>___vehicle_expected_idv___</tns:IDV><!--285004.8-->
+        <tns:AntiTheftDevice>___is_antitheft_fit___</tns:AntiTheftDevice><!--Y-->
+        <tns:EngineNo>___engine_number___</tns:EngineNo><!--fghgf456gffddf-->
+        <tns:ChasisNo>___chassis_number___</tns:ChasisNo><!--fh456yfghg-->
+        <tns:DriveExperiance>0</tns:DriveExperiance>
+        <tns:NoOfDrivers />
+        <tns:ParkingType />
+        <tns:AnnualMileage />
+        <tns:YoungestDriverAge>0</tns:YoungestDriverAge>
+        <tns:PaidDriver>___is_llpd_2___</tns:PaidDriver><!---->
+        <tns:VehicleAge>___vehicle_age_year___</tns:VehicleAge><!--2-->
+        <tns:CC>___dbmaster_insurer_vehicle_cubiccapacity___</tns:CC><!--1061-->
+        <tns:SeatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</tns:SeatingCapacity><!--5-->
+        <tns:PlaceOfRegistration>___dbmaster_insurer_rto_city_name___</tns:PlaceOfRegistration><!--(MH01) Mumbai-Tardeo-->
+        <tns:VehicleExtraTag01></tns:VehicleExtraTag01><!---->
+        <tns:RegistrationNo>___registration_no_1______registration_no_2______registration_no_3______registration_no_4___</tns:RegistrationNo><!--MH01fg3423-->
+        <tns:ExShowroomPrice>___dbmaster_insurer_vehicle_exshowroom___</tns:ExShowroomPrice><!--356256-->
+        <tns:PAOwnerDriverTenure>1</tns:PAOwnerDriverTenure><!--___policy_tp_tenure___-->
+        <tns:PUC>Y</tns:PUC>
+    </tns:Vehicle>
+    <tns:Quote xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:ExistingPolicy>
+            <!--ODONLY_START-->
+            <tns:TPPolicyType>Comprehensive</tns:TPPolicyType><!--Comprehensive-->
+            <tns:TPPolicyNo>___tp_policy_number___</tns:TPPolicyNo>
+            <tns:TPInsuranceCompany>___tp_insurer_code___</tns:TPInsuranceCompany>
+            <tns:TPPolicyTenure>___tp_policy_tenure___</tns:TPPolicyTenure><!--1-->
+            <tns:TPStartDate>___tp_start_date___T00:00:00.000</tns:TPStartDate>
+            <tns:TPEndDate>___tp_end_date___T00:00:00.000</tns:TPEndDate>
+            <!--ODONLY_FINISH-->
+            <tns:Claims>___is_claim_exists___</tns:Claims><!--2-->
+            <tns:PolicyType>Comprehensive</tns:PolicyType>
+            <tns:EndDate>___policy_expiry_date___T23:59:59.000</tns:EndDate><!--2017-07-18T23:59:59.000-->
+            <tns:NCB>___vehicle_ncb_next___</tns:NCB><!--0-->
+            <tns:PolicyNo>___previous_policy_number___</tns:PolicyNo>
+            <tns:InsuranceCompany>___dbmaster_insurername___</tns:InsuranceCompany><!--SBI-->
+        </tns:ExistingPolicy>
+        <tns:PolicyStartDate>___policy_start_date___T00:00:00.000</tns:PolicyStartDate><!--2017-07-19T00:00:00.000-->
+        <tns:Deductible>___voluntary_deductible___</tns:Deductible><!--7500-->
+        <tns:PAFamilySI>___pa_unnamed_passenger_si___</tns:PAFamilySI><!--100000-->
+        <tns:OutstandingLoanAmount>___oslc_si___</tns:OutstandingLoanAmount><!--200000-->
+        <tns:AgentNumber />
+        <tns:DealerId />
+        <tns:Premium>
+            <tns:Discount />
+        </tns:Premium>
+        <tns:SelectedCovers>
+            <tns:CarDamageSelected>True</tns:CarDamageSelected>
+            <tns:TPLiabilitySelected>True</tns:TPLiabilitySelected>
+            <tns:PADriverSelected>True</tns:PADriverSelected>
+            <tns:CosumableCoverSelected>___addon_consumable_cover___</tns:CosumableCoverSelected>
+            <tns:RoadsideAssistanceSelected>___addon_road_assist_cover___</tns:RoadsideAssistanceSelected>
+            <tns:ZeroDepriciationSelected>___addon_zero_dep_cover___</tns:ZeroDepriciationSelected>
+            <tns:InvoicePriceSelected>___addon_invoice_price_cover___</tns:InvoicePriceSelected>
+            <tns:KeyReplacementSelected>___addon_key_lock_cover___</tns:KeyReplacementSelected>
+            <tns:HospitalCashSelected>___addon_hospital_cash_cover___</tns:HospitalCashSelected>
+            <tns:MedicalExpensesSelected>___addon_medical_expense_cover___</tns:MedicalExpensesSelected>
+            <tns:AmbulanceChargesSelected>___addon_ambulance_charge_cover___</tns:AmbulanceChargesSelected>
+            <tns:PAFamilyPremiumSelected>___pa_unnamed_passenger_si_2___</tns:PAFamilyPremiumSelected>
+            <tns:EngineGearBoxProtectionSelected>___addon_engine_protector_cover___</tns:EngineGearBoxProtectionSelected>
+            <tns:HydrostaticLockSelected>___addon_hydrostatic_lock_cover___</tns:HydrostaticLockSelected>
+            <tns:NoClaimBonusSameSlabSelected>___addon_ncb_protection_cover___</tns:NoClaimBonusSameSlabSelected>
+            <tns:OutstandingLoanCoverSelected>___is_oslc___</tns:OutstandingLoanCoverSelected>
+        </tns:SelectedCovers>
+        <tns:PolicyTenure>___policy_tenure___</tns:PolicyTenure>
+        <tns:CoverType>LO</tns:CoverType>
+        <tns:IsExistingPA>false</tns:IsExistingPA> 
+        <tns:PADeclaration>NO</tns:PADeclaration>
+        <tns:PolicyEndDate>___policy_end_date___T23:59:59.000</tns:PolicyEndDate><!--2018-07-18T23:59:59.000-->
+    </tns:Quote>
+    <tns:Client xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:ClientType>___vehicle_registration_type___</tns:ClientType><!--Individual-->
+        <tns:CltDOB>___birth_date___</tns:CltDOB><!--19990705-->
+        <tns:FinancierDetails>
+            <tns:IsFinanced>___is_financed___</tns:IsFinanced><!--0-->
+            <tns:InstitutionName>___financial_institute_name___</tns:InstitutionName>
+            <tns:InstitutionCity>___financial_institute_city___</tns:InstitutionCity>
+        </tns:FinancierDetails>
+        <tns:GivName>___first_name___ ___middle_name___</tns:GivName><!--Manish-->
+        <tns:ClientExtraTag01>___dbmaster_insurer_rto_state_name___</tns:ClientExtraTag01><!--MAHARASHTRA-->
+        <tns:CityOfResidence>___dbmaster_insurer_rto_city_name___</tns:CityOfResidence><!--MUMBAI-->
+        <tns:EmailID>___email___</tns:EmailID><!--anand.manish92@gmail.com-->
+        <tns:MobileNo>___mobile___</tns:MobileNo><!--9798192909-->
+        <tns:Salut>___salutation___</tns:Salut>
+        <tns:SurName>___last_name___</tns:SurName><!--Anand-->
+        <tns:CltSex>___gender___</tns:CltSex>
+        <tns:Marryd>___marital___</tns:Marryd>
+        <tns:Occupation>___occupation___</tns:Occupation><!--007-->
+        <tns:CltAddr01>___communication_address_1___</tns:CltAddr01><!--1201 Premier Exotica-->
+        <tns:CltAddr02>___communication_address_2___</tns:CltAddr02><!--Ambedkar chowk-->
+        <tns:CltAddr03>___communication_address_3___</tns:CltAddr03><!--Near Don Bosco-->
+        <tns:City>___communication_city___</tns:City><!--MUMBAI-->
+        <tns:State>___communication_state___</tns:State><!--MAHARASHTRA-->
+        <tns:PinCode>___communication_pincode___</tns:PinCode><!--400070-->
+        <tns:Nominee>
+            <tns:Name>___nominee_name___</tns:Name>
+            <tns:Age>___nominee_age___</tns:Age>
+            <tns:Relationship>___nominee_relation___</tns:Relationship><!--Father-->
+            <tns:Appointee>___appointee_name___</tns:Appointee>
+            <tns:AppointeeRelation>___appointee_relation___</tns:AppointeeRelation>
+        </tns:Nominee>
+        <tns:RegistrationZone>___dbmaster_insurer_rto_zone_code___</tns:RegistrationZone><!--A-->
+        <tns:GstinNo>___gst_no___</tns:GstinNo>
+        <tns:IsDrviningLicencePresent>___is_pa_od_license___</tns:IsDrviningLicencePresent>
+    </tns:Client>
+    <Payment>
+        <PaymentMode />
+        <PaymentType />
+        <TxnReferenceNo />
+        <TxnAmount />
+        <TxnDate />
+        <BankCode ></BankCode>
+        <InstrumentAmount />
+    </Payment>
+    <!--POS_CONFIG_START-->
+    <tns:POSP  xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:PospFlag>___is_posp_2___</tns:PospFlag>
+        <tns:PospName>___posp_first_name___ ___posp_last_name___</tns:PospName>
+        <tns:PospContactNo>___posp_mobile_no___</tns:PospContactNo>
+        <tns:PanNo>___posp_pan_no___</tns:PanNo>
+        <tns:AadharNo>___posp_aadhar___</tns:AadharNo>
+    </tns:POSP>
+    <!--POS_CONFIG_FINISH-->
+</Session>

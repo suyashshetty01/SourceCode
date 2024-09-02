@@ -1,0 +1,114 @@
+{"level":"warn","message":"uncaughtException { MongoError: failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 0 to 65.0.176.149:27017 timed out]\n    at Pool.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\topologies\\server.js:336:35)\n    at emitOne (events.js:96:13)\n    at Pool.emit (events.js:188:7)\n    at Connection.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\pool.js:280:12)\n    at Connection.g (events.js:291:16)\n    at emitTwo (events.js:106:13)\n    at Connection.emit (events.js:191:7)\n    at Socket.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\connection.js:197:10)\n    at Socket.g (events.js:291:16)\n    at emitNone (events.js:86:13)\n    at Socket.emit (events.js:185:7)\n    at Socket._onTimeout (net.js:339:8)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  name: 'MongoError',\n  message: 'failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 0 to 65.0.176.149:27017 timed out]' }","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"uncaughtException { MongoError: failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 1 to 65.0.176.149:27017 timed out]\n    at Pool.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\topologies\\server.js:336:35)\n    at emitOne (events.js:96:13)\n    at Pool.emit (events.js:188:7)\n    at Connection.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\pool.js:280:12)\n    at Connection.g (events.js:291:16)\n    at emitTwo (events.js:106:13)\n    at Connection.emit (events.js:191:7)\n    at Socket.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\connection.js:197:10)\n    at Socket.g (events.js:291:16)\n    at emitNone (events.js:86:13)\n    at Socket.emit (events.js:185:7)\n    at Socket._onTimeout (net.js:339:8)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  name: 'MongoError',\n  message: 'failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 1 to 65.0.176.149:27017 timed out]' }","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"uncaughtException { MongoError: failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 2 to 65.0.176.149:27017 timed out]\n    at Pool.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\topologies\\server.js:336:35)\n    at emitOne (events.js:96:13)\n    at Pool.emit (events.js:188:7)\n    at Connection.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\pool.js:280:12)\n    at Connection.g (events.js:291:16)\n    at emitTwo (events.js:106:13)\n    at Connection.emit (events.js:191:7)\n    at Socket.<anonymous> (D:\\Suyash Files\\Admin\\SourceCode\\node_modules\\mongoose\\node_modules\\mongodb-core\\lib\\connection\\connection.js:197:10)\n    at Socket.g (events.js:291:16)\n    at emitNone (events.js:86:13)\n    at Socket.emit (events.js:185:7)\n    at Socket._onTimeout (net.js:339:8)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  name: 'MongoError',\n  message: 'failed to connect to server [65.0.176.149:27017] on first connect [MongoError: connection 2 to 65.0.176.149:27017 timed out]' }","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"warn","message":"Db.prototype.authenticate method will no longer be available in the next major release 3.x as MongoDB 3.6 will only allow auth against users in the admin db and will no longer allow multiple credentials on a socket. Please authenticate using MongoClient.connect with auth credentials.","timestamp":"10:28:55 AM"}
+{"level":"error","message":"(node:15680) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): MongoError: E11000 duplicate key error collection: lm-api-qa.sync_contacts index: Sync_Contact_Id_1 dup key: { : null }","timestamp":"10:28:55 AM"}
+{"level":"error","message":"(node:15680) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): MongoError: Index with name: Posp_Id_1 already exists with different options","timestamp":"10:28:55 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:31:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:31:23 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:54:39 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:56:20 AM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"10:56:24 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"10:56:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:02:05 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:02:39 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:03:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:05:56 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:06:45 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:07:07 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:12:55 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:13:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:13:16 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:15:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:15:38 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:16:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:18:45 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:18:47 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:18:49 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:22:03 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:22:05 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:22:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:28:29 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:28:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:28:34 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:30:41 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:30:43 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:31:08 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:33:00 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:33:01 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:33:04 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:34:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:34:59 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:38:15 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:40:11 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:40:12 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:40:25 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:41:55 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:41:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:42:06 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:43:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:43:31 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:43:42 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:44:51 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:44:53 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:45:07 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:46:28 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:46:30 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:53:53 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:57:00 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:57:02 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:57:57 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:59:11 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"11:59:13 AM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:00:06 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:01:43 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:01:44 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:01:47 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:08:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:08:12 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:08:15 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:24:10 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:24:11 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"12:25:24 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::ffff:127.0.0.1 undefined","timestamp":"1:39:29 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"2:47:10 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"3:57:06 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:3000/getBlogs?type=%27NEWS%27 ::1 string","timestamp":"3:57:09 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:3000/getBlogs?type=%27NEWS%27 ::1 string","timestamp":"3:57:09 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"3:57:18 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"3:57:40 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"3:58:11 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"3:59:57 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:00:44 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:28:30 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:29:20 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:32:00 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:32:20 PM"}
+{"level":"error","message":"LOG REFERER YTD undefined ::1 undefined","timestamp":"4:32:25 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:42:17 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:42:36 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"5:58:52 PM"}
+{"level":"error","message":"LOG REFERER YTD http://localhost:7000/ ::1 string","timestamp":"6:03:54 PM"}

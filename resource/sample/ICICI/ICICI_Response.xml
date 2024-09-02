@@ -1,0 +1,62 @@
+<PrivateCarPremiumResponse>
+	<CorelationId>6809b1c2-20b5-4e39-ae96-1395564acee5</CorelationId>
+	<Error>
+		<Code>0</Code>
+		<Message></Message>
+	</Error>
+	<PremiumPrivateCarPackage>
+		<Model>wagon r lxi</Model>
+		<CurrentShowroomPrice>356256</CurrentShowroomPrice>
+		<IDV>338443</IDV>
+		<Date>2017-06-08</Date>
+		<PremiumSchedule>
+			<PackagePremium desc="Package Premium (G = C + F + L)" total="14286">
+				<OwnDamagePremium desc="Total Own Damage Premium (C = A - B)" total="11323">
+					<ODPremium desc="Sub Total (A)" total="11323">
+						<BasicPremium desc="Basic Premium">11323</BasicPremium>
+						<ElectricalAccessoriesPremium desc="Electrical Accessories Premium">0</ElectricalAccessoriesPremium>
+						<Non-electricalAccessoriesPremium desc="Non-electrical Accessories Premium">0</Non-electricalAccessoriesPremium>
+						<ZeroDepreciation desc="Zero Depreciation">0</ZeroDepreciation>
+						<RoadSideAssistancePremium desc="Road Side Assistance Premium">0</RoadSideAssistancePremium>
+						<Consumables desc="Consumables">0</Consumables>
+						<ReturnToInvoice desc="Return to invoice">0</ReturnToInvoice>
+						<GarageCash desc="Garage Cash">0</GarageCash>
+						<NoClaimBonusProtection desc="No claim bonus protection">0</NoClaimBonusProtection>
+						<Bi-fuelKitPremium desc="Bi-fuel Kit Premium">0</Bi-fuelKitPremium>
+						<GeographicExtensionPremium desc="Geographic Extension Premium">0</GeographicExtensionPremium>
+						<FiberGlassTankPremium desc="Fiber Glass Tank Premium">0</FiberGlassTankPremium>
+					</ODPremium>
+					<ODDiscount desc="Total Discount (B)" total="0">
+						<Anti-theftDiscount desc="Anti-theft Discount">0</Anti-theftDiscount>
+						<VoluntaryDiscount desc="Voluntary Discount">0</VoluntaryDiscount>
+						<AutomobileMembershipDiscount desc="Automobile Membership Discount">0</AutomobileMembershipDiscount>
+						<HandicappedDiscount desc="Handicapped Discount">0</HandicappedDiscount>
+						<DeductforNCB desc="Deduct 0% for NCB">0</DeductforNCB>
+					</ODDiscount>
+				</OwnDamagePremium>
+				<LiabilityPremium desc="Total Liability Premium (F = D + E)" total="2963">
+					<TPPremium desc="Total(D)" total="2863">
+						<TPPD desc="Basic Premium including premium for TPPD vehicle">2863</TPPD>
+						<LiabilityForBi-FuelKit desc="Liability For Bi-Fuel Kit">0</LiabilityForBi-FuelKit>
+					</TPPremium>
+					<PALiability desc="Total (E)" total="100">
+						<PAforUnnamedPassenger desc="PA for Unnamed Passenger">0</PAforUnnamedPassenger>
+						<CompulsoryPACoverforOwnerDriver desc="Compulsory PA Cover for Owner Driver">100</CompulsoryPACoverforOwnerDriver>
+						<LegalLiabilityToPaidDriver desc="Legal Liability To Paid Driver">0</LegalLiabilityToPaidDriver>
+						<LegalLiabilitytoPaidEmployee desc="Legal Liability to Paid Employee">0</LegalLiabilitytoPaidEmployee>
+						<GeographicExtensionLiability desc="Geographic Extension Liability">0</GeographicExtensionLiability>
+					</PALiability>
+				</LiabilityPremium>
+				<Loading desc="Total Loading (L)" total="0">
+					<BreakinLoading desc="Break in Loading">0</BreakinLoading>
+					<OtherLoading desc="Other Loading">0</OtherLoading>
+				</Loading>
+			</PackagePremium>
+			<SpecialDiscount>0</SpecialDiscount>
+			<AccidentalHospCover>0</AccidentalHospCover>
+			<NetPremium desc="Net Premium (H)">14286</NetPremium>
+			<Tax desc="Service Tax (I)">2000</Tax>
+			<TotalPremium desc="Total Premium Payable (H + I)">16429</TotalPremium>
+		</PremiumSchedule>
+	</PremiumPrivateCarPackage>
+</PrivateCarPremiumResponse>

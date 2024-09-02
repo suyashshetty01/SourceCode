@@ -1,0 +1,329 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Motor Policyboss</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.policyboss.com/Motor/assets/styles/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="loading" style="display:none">
+		<img src="Images/loading.gif" style="height: 90px;">
+	</div>
+	<div class="error_message" style="display:none">
+		<div class="error_container">
+			<div class="ErrpopupSection1">
+				<span class="errorText"></span>
+				<button class="OK_Btn closeErrorPopup">OK</button>
+			</div>
+		</div>
+	</div> 
+	<div  class="ConfDetPopupQT">
+		<div  class="popPremiScreen">
+			<div class="logo"><img src="Images/PB.png"></div>
+			<h1 class="text-center popupheading">SAVE UPTO <span style="font-size: 30px">&nbsp;80%</span>&nbsp; ON YOUR CAR INSURANCE OD PREMIUM*</h1>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6" id="left">
+					<h3 style="color: #2196f3;">Car Insurance Premium Starting<br><span style="font-size: 23px;color: black;">@ Rs. 2,072*</span> Per Year</h3>
+					<div id="leftContent">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Instant_Policy.png" class="center">
+								</div>
+								<span>Instant Policy</span>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Lowest_Premium.png" class="center">
+								</div>
+								<span>Lowest Premium</span>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Claim_Support.png" class="center">
+								</div>
+								<span>Claim Support</span>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Zero_Depreciation.png" class="center">
+								</div>
+								<span>Zero Depreciation</span>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Engine_Protection.png" class="center">
+								</div>
+								<span>Engine Protection</span>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="circle">
+									<img src="Images/Roadside_Assistance.png" class="center">
+								</div>
+								<span>Roadside Assistance</span>
+							</div>
+						</div>
+						<p style="font-size: 10px;text-align: center;">*Third Party Premium Excluding Tax for Less than 1000 CC Car</p>
+						<div class="row" id="companyInfo">
+							<p style="text-align: center;">Licensed By : IRDAI  CoR No : 216 | Broker Code: DB 089/03</p>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<img src="Images/customer_icon.png">
+								<label style="color: #757575;font-weight: 100;">5 Lakh + Customers</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<img src="Images/Insurers.png">
+								<label style="color: #757575;font-weight: 100;">30+ Insurers</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<img src="Images/braches.png">
+								<label style="color: #757575;font-weight: 100;">24+ Branches</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<img src="Images/experiance.png">
+								<label style="color: #757575;font-weight: 100;">20+ Years of Experience</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6" id="right">
+					<div  class="QTpopup_txt" style="text-align: center">
+						<div>
+							<p><b id ="QTClientName"></b></p>
+							<!--<p>We recommend some options for your car insurance.-->
+							<p>Click to see your custom quote, by simply verifying the following.</p>
+						</div>
+						<div >
+							<form  novalidate="" class="ng-valid ng-touched ng-dirty">
+								<div  class="grid-container">
+									<div  style="display: flex;margin: 8px 0px;">
+										<label  style="width:75px;"><b >Vehicle : </b>
+										</label>
+										<div  class="row_wrap">
+											<div  class="inp_field one_col"> <span  class="input" id="spn_spanvalue">
+		                                        <input  autocomplete="off" class="inpErr makePopup ng-untouched ng-pristine ng-valid" formcontrolname="vehicle" id="spanvalue" placeholder="Vehicle Make,Model &amp; Variant" readonly="" type="text">
+												<input type="hidden" class="hiddenVehicleId" id="Vehicle_Id">
+		                                        </span>
+											</div>
+										</div>
+									</div>
+									<div class="ErrorSpanvalue errorTxt">
+									</div>
+									<div  style="display: flex;margin: 8px 0px;">
+										<label  style="width:75px;"><b >RTO : </b>
+										</label>
+										<div class="row_wrap">
+											<div class="inp_field one_col">
+												<span class="input"><input type="text" id="Registvalue" placeholder="Place of Registraion" readonly autocomplete="off" class="inpErr regitPopup"></span>    
+												<input type="hidden" class="hiddenRTOId" id="RTO_Id">
+											</div>
+										</div>
+									</div>
+									<div class="ErrorRegistvalue errorTxt" style="padding-bottom: 5px">
+									</div>
+									<div  class="QTClaimStatus">
+										<div><b >Previous Year Claim?</b></div>
+										<br>
+										<label  class="QTcontainer">
+											<input class="QTClaimYes ng-valid ng-dirty ng-touched" formcontrolname="QTClaim" id="QTradio_no" name="QTClaim" type="radio" value="claim"><span>Yes</span>
+										</label>
+										<label  class="QTcontainer">
+											<input checked="checked" class="QTnoClaimNo ng-valid ng-dirty ng-touched" formcontrolname="QTClaim" id="QTradio_no" name="QTClaim" type="radio" value="noclaim"><span>No</span>
+										</label>
+									</div>
+									<div  class="QTncbNo" style="margin-top: 10px;">
+										<label ><b>Last Year NCB:</b>
+										</label>
+										<br>
+										<label  class="QTncbContainer">
+											<input  checked="checked" class="QTncbNo ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="0" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>0% (less than 1 year)</div>
+										</label>
+										<label  class="QTncbContainer">
+											<input  class="ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="20" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>20% (1 year age)</div>
+										</label>
+										<label  class="QTncbContainer">
+											<input  class="ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="25" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>25% (2 years age)</div>
+										</label>
+										<label  class="QTncbContainer">
+											<input  class="ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="35" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>35% (3 years age)</div>
+										</label>
+										<label  class="QTncbContainer">
+											<input  class="ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="45" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>45% (4 years age)</div>
+										</label>
+										<label  class="QTncbContainer">
+											<input  class="ng-valid ng-dirty ng-touched" formcontrolname="QTncbClaim" value="50" id="QTradio_btn" name="QTncbContaint" type="radio">
+											<div>50% (5 years age &amp; More)</div>
+										</label>
+									</div>
+									<div style="text-align: center;">
+										<button type="button" class="premi_ok_btn" onclick="calculateQuote()">View Lowest Quotes</button>
+									</div>
+									<p style="font-size: 11px;text-align: center;margin-top: 10px;">By clicking, you agree to our <strong><a href="https://www.policyboss.com/privacy-policy" target="_blank" >Privacy policy</a>, <a href="https://www.policyboss.com/terms-condition" target="_blank">Terms of Use</a></strong> & authorise PolicyBoss to access your credit report.</p>
+									<p style="font-size: 9px;text-align: right;margin: 0;">*T & C Apply</p>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<h5 style="text-align: center;">Wide Range of Insurers to Choose From:</h5>
+				<div class="swiper-container insurer_logo">
+				    <div class="swiper-wrapper">
+				    <div class="swiper-slide"><img src="Images/HDFC.png"></div>
+				      <div class="swiper-slide"><img src="Images/icici.png"></div>
+				      <div class="swiper-slide"><img src="Images/TataAIG.png"></div>
+				      <div class="swiper-slide"><img src="Images/Bajaj.png"></div>
+				      <div class="swiper-slide"><img src="Images/bharti.png"></div>
+				      <div class="swiper-slide"><img src="Images/Future.png"></div>
+				      <div class="swiper-slide"><img src="Images/Liberty.png"></div>
+				      <div class="swiper-slide"><img src="Images/digit.png"></div>
+				      <div class="swiper-slide"><img src="Images/Royal.png"></div>
+				      <div class="swiper-slide"><img src="Images/new-india.png"></div>
+				      <div class="swiper-slide"><img src="Images/Iffco.png"></div>
+				      <div class="swiper-slide"><img src="Images/Reliance.png"></div>
+				      <div class="swiper-slide"><img src="Images/universalsompopng.png"></div>
+				      <div class="swiper-slide"><img src="Images/RahejaQBE.png"></div>
+				      <div class="swiper-slide"><img src="Images/edelweiss-genral-insurance.png"></div>
+				      <div class="swiper-slide"><img src="Images/Oriental.png"></div>
+
+				    </div>
+				</div>
+			</div>
+			<div class="disclaimer">
+				<p>-Registered By-</p>
+				<img src="Images/logo-1.jpg">
+				<p>-Payment By-</p>
+				<img src="Images/logo-2.jpg">
+				<p>-Secured By-</p>
+				<img src="Images/logo-3.jpg">
+				<p style="margin-top: 5px;"><strong>FOR MORE DETAILS ON RISK FACTORS, TERMS AND CONDITIONS PLEASE READ SALES BROCHURE CAREFULLY BEFORE PURCHASING THE INSURANCE POLICY/CONCLUDING A SALE.</strong></p>
+				<p>Branch Offices:<br>
+				Ahmedabad | Aurangabad | Bangalore | Bhopal | Chandigarh | Chennai | Cochin | Goa | Hyderabad | Indore | Jaipur | Kolkata | Lucknow | Ludhiana | Mumbai | Mumbai-Dombivili | Nagpur | Nashik | New Delhi | Pune | Raipur | Rajkot | Surat | Thane | Thiruvananthapuram | Vadodara</p>
+				<p><strong>LANDMARK INSURANCE BROKERS PRIVATE LIMITED<br>
+				CIN U66030PN2002PTC017009</strong></p>
+				<p id="text">IRDAI CoR No: 216 | Broker Code: DB 089/03 | Valid From 13/10/2018 till 12/10/2021 (originally licensed on 13/10/2003 and renewed thereafter) | Category: Direct (Life & General) | A member of IBAI</p>
+				<p>Regd. Off: 1187/22, 4th Floor (above ICICI Bank ATM), Venkatesh Meher, Ghole Road, Shivaji Nagar, Pune (Maharashtra) – 411005.</p>
+				<p>Website: <a href="https://www.policyboss.com/" target="_blank">www.policyboss.com</a> | Toll Free: <a href="tel:18004194199">1800-419-419-9</a>*</p>
+				<p>* Working hours: 9:30 a.m. to 6:30 p.m. (Monday to Saturday)</p>
+			</div>
+		</div>
+	</div>
+	<div class="Make_section">
+		<div class="Make_wrap">
+			<div class="popHeader">
+				<span class="closePop" onclick="closePop();">&#x2716;</span>
+				<div class="searchBox">
+					<div class="search_Icon"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+					<span class="srch"><input type="text" onkeyup='mySearch(event.target.value)' id="mySearch" placeholder="Search..."/></span>
+				</div>
+			</div>
+			<div class="make-content">
+				<div class="makeDv popup">
+					<div class="lricon">
+						<div class="faIconrt" id ="makeDv"> <i class="fa fa-angle-right" id="makeDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1"id="vehicleName"></p>
+					<div class="makegrid">
+					</div>
+				</div>
+				<div class="modelDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+						<div class="faIconrt" id ="modelDv"> <i class="fa fa-angle-right" id="modelDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1" id="vehicleName"></p>
+					<div class="Modelgrid">
+					</div>
+				</div>
+				<div class="FuelDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+						<div class="faIconrt" id ="FuelDv"> <i class="fa fa-angle-right" id="FuelDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1" id="vehicleName"></p>
+					<div class="fuelgrid">
+					</div>
+				</div>
+				<div class="varDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1"id="vehicleName"></p>
+					<div class="vargrid">
+						<div class="alignvarName">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="regist_Pop">
+		<div class="regist_wrap">
+			<div class="popHeader">
+				<span class="closePop">&#x2716;</span>
+				<div class="searchBox">
+					<div class="search_Icon"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+					<span class="srch"><input type="text" onkeyup='mySearch1(event.target.value)' id="mySearch1" placeholder="Search..."/></span>
+				</div>
+			</div>
+			<div class="regist-content">
+				<div class="InnerDiv popup">
+					<div class="lricon">
+						<div class="faIconrt" id="InnerDiv"> <i class="fa fa-angle-right" id="InnerDiv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="shortgrid">   
+					</div>
+				</div>
+				<div class="nextSec popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="shortgrid1">
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+	    	slidesPerView: 4,
+	    	spaceBetween: 10,
+	    	loop:true,
+	    	autoplay: {
+	       		delay: 1500,
+	        	disableOnInteraction: false,
+	    	},
+	    });
+	</script>
+</body>
+
+</html>

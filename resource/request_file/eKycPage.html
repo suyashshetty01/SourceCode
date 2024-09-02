@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Policy Boss | eKyc</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="icon" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/favicon-32x32.png">
+    <link rel="icon" sizes="96x96" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/favicon-96x96.png">
+    <link rel="icon" sizes="150x150" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/ms-icon-150x150.png">
+    <link rel="icon" sizes="36x36" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-36x36.png">
+    <link rel="icon" sizes="48x48" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-48x48.png">
+    <link rel="icon" sizes="72x72" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-72x72.png">
+    <link rel="icon" sizes="96x96" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-96x96.png">
+    <link rel="icon" sizes="144x144" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-144x144.png">
+    <link rel="icon" sizes="192x192" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/android-icon-192x192.png">
+    <link rel="apple-touch-icon" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/apple-icon-precomposed.png">
+    <link rel="ms-icon" sizes="70x70" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/ms-icon-70x70.png">
+    <link rel="ms-icon" sizes="144x144" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/ms-icon-144x144.png">
+    <link rel="ms-icon" sizes="150x150" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/ms-icon-150x150.png">
+    <link rel="ms-icon" sizes="310x310" href="https://origin-cdnh.policyboss.com/website/UI22/images/favicon/ms-icon-310x310.png">
+
+
+    <!--car -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+        integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css"
+        integrity="sha512-/Ae8qSd9X8ajHk6Zty0m8yfnKJPlelk42HTJjOHDWs1Tjr41RfsSkceZ/8yyJGLkxALGMIYd5L2oGemy/x1PLg==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css"
+        integrity="sha512-g2SduJKxa4Lbn3GW+Q7rNz+pKP9AWMR++Ta8fgwsZRCUsawjPvF/BxSMkGS61VsR9yinGoEgrHPGPn2mrj8+4w==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet"> -->
+
+
+    <link href="https://origin-cdnh.policyboss.com/website/UI22/css/health-insurance/styles/pb_tooltip.scss" rel="stylesheet"
+    />
+    <link href="https://origin-cdnh.policyboss.com/website/UI22/css/health-insurance/styles/style.css" rel="stylesheet" />
+    <link href="https://origin-cdnh.policyboss.com/website/UI22/css/health-insurance/styles/globalvar.css" rel="stylesheet" />
+    <link href="https://origin-cdnh.policyboss.com/website/UI22/css/health-insurance/styles/mdtimepicker.css" rel="stylesheet"
+    />
+
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">-->
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+
+    <style>
+        #ekycFullNameDiv,
+        #ekycMobileDiv,
+        #ekycAadharDiv,
+        #ekycPanDiv,
+        #ekycDobDiv,
+        #ekycUploadAadharDiv,
+        #ekycUploadPanDiv,
+        #ekycNoDiv {
+            display: grid;
+            grid-template-columns: 0.3fr 1fr;
+            margin: 10px 0px;
+        }
+        
+        .file-upload-wrap {
+            position: relative;
+        }
+        
+        .file-upload-wrap .form-control:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        
+        .file-upload-wrap .browse-file-name {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: #fff;
+            z-index: 1;
+            pointer-events: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: rgba(68, 68, 68, 0.6);
+        }
+        
+        .file-upload-wrap .browse-file-name.file-uploaded {
+            color: #222;
+        }
+        
+        .file-upload-wrap .browse-btn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            z-index: 2;
+            min-height: 45px;
+            min-width: 110px;
+            padding: 8px 20px;
+            border-radius: 12px;
+            pointer-events: none;
+            background: rgba(26, 129, 255, 0.1);
+            color: #1A81FF;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            font-family: Helvetica-medium-500;
+            font-size: 16px;
+        }
+        
+        .file-upload-wrap .verifying-detail-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+        }
+        
+        .file-upload-wrap .field-icon-box {
+            display: none;
+        }
+        
+        @media (max-width: 480px) {
+            .file-upload-wrap {
+                margin-bottom: 0px;
+            }
+            .header_errTxt {
+                word-wrap: break-word;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .file-upload-wrap .browse-btn {
+                min-width: 70px;
+                padding: 5px 5px;
+                font-size: 13px;
+            }
+            .header_errTxt {
+                word-wrap: break-word;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+        }
+        
+        @media (max-width: 420px) {
+            .file-upload-wrap .browse-btn {
+                top: 5px;
+                right: 5px;
+                min-height: 35px;
+                min-width: 80px;
+                padding: 5px 20px;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+            .radio-select-box .radio-box {
+                margin-right: 5px;
+            }
+            .header_errTxt {
+                word-wrap: break-word;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .file-upload-wrap .browse-btn {
+                min-width: 70px;
+                padding: 5px 5px;
+                font-size: 13px;
+            }
+        }
+        
+        .labelStyle {
+            color: #999;
+            font-size: 16px;
+        }
+        
+        .ekycErrMsg {
+            color: red;
+            font-size: 15px;
+        }
+        
+        .searchTypeDiv {
+            grid-template-columns: 0.5fr 1fr;
+        }
+        
+        .loading-txt {
+            -webkit-user-select: none;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+            font-size: 15px;
+        }
+        
+        .forShadowCss {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        @media (max-width: 768px) {
+            .loading-txt {
+                left: 23% !important;
+                top: 45% !important;
+                transform: none !important;
+            }
+            .loading-proposal-txt {
+                left: 35% !important;
+            }
+            .forShadowCss {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999; background-color: rgba(0, 0, 0, 0.48); display: none;">
+        <img src="https://www.policyboss.com/UI22/images/icons/loading.gif" style="height: 120px; position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+    </div>
+
+    <div class="modal-dialog modal-dialog-centered forShadowCss" style="border-radius: 5px;">
+        <div class="modal-content" style="border: none;">
+            <div class="modal-body">
+                <div class="modal-heading">
+                    <div class="modal-title" style="text-align: center;">
+                        <h3 class="font-24 title-text">KYC Required</h3>
+                    </div>
+                </div>
+                <div class="modal-bottom-section" style="overflow-wrap: anywhere;">
+                    <div id="ekycForm" style="margin-top: 40px;">
+                        <div style="display: grid;margin: 10px 0px;" class="searchTypeDiv">
+                            <div class="labelStyle">Search Type &nbsp;</div>
+                            <div class="input-field-box">
+                                <div class="car-registration-info-box">
+                                    <div class="radio-input-field-box">
+                                        <div class="radio-select-box">
+                                            <div class="radio-box">
+                                                <input type="radio" class="radio-custom" id="check-item-58" name="car-registration" onclick="ekycType(event.currentTarget,'Pan','eKyc')"
+                                                />
+                                                <label class="radio-custom-label font-18 text-extralight" for="check-item-58">PAN </label>
+                                            </div>
+                                            <div class="radio-box">
+                                                <input type="radio" class="radio-custom" name="car-registration" id="check-item-59" onclick="ekycType(event.currentTarget,'Aadhar','eKyc')">
+                                                <label class="radio-custom-label font-18 text-extralight" for="check-item-59">Aadhar</label>
+                                            </div>
+                                            <!-- <div class="radio-box">
+                                                <input type="radio" class="radio-custom" name="car-registration"
+                                                    id="check-item-60"
+                                                    onclick="ekycType(event.currentTarget,'Both','eKyc')">
+                                                <label class="radio-custom-label font-18 text-extralight"
+                                                    for="check-item-60">Both</label>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="ekycSearchTypeErr ekycErrMsg" id="ekycSearchTypeErr"></span>
+
+                            </div>
+                        </div>
+
+                        <div style="display: none;" id="ekycFullNameDiv">
+                            <div class="labelStyle">FullName &nbsp;</div>
+                            <div>
+                                <input type="text" name="ekycFullName" maxlength="55" onkeypress="KeyPressEvent(event,'Text')" class="input-field border-thick font-18 js-input-group"
+                                    id="ekycFullName" placeholder="FullName" />
+
+                                <span class="ekycFullNameErr ekycErrMsg" id="ekycFullNameErr"></span>
+                            </div>
+                        </div>
+
+                        <div style="display: none;" id="ekycMobileDiv">
+                            <div class="labelStyle">Mobile &nbsp;</div>
+                            <div>
+                                <input type="text" name="ekycMobile" maxlength="10" pattern="[1-9]{1}[0-9]{9}" onkeypress="KeyPressEvent(event,'Mobile')"
+                                    onkeyup="ValidateNumber(event)" class="input-field border-thick font-18 js-input-group number-field"
+                                    id="ekycMobile" inputmode="numeric" onKeyPress="if(this.value.length==10) return false;"
+                                    placeholder="Mobile Number" />
+                                <span class="ekycMobileErr ekycErrMsg" id="ekycMobileErr"></span>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="ekycAadharDiv">
+                            <div class="labelStyle">Aadhar &nbsp;</div>
+                            <div style="display: grid;grid-template-columns: 1fr;">
+                                <input type="text" name="ekycAadhar" maxlength="12" onkeypress="KeyPressEvent(event,'Number')" onkeyup="ValidateNumber(event)"
+                                    class="input-field border-thick font-18 js-input-group" id="ekycAadhar" inputmode="numeric"
+                                    placeholder="Aadhar Number" />
+                                <span class="ekycAadharErr ekycErrMsg" id="ekycAadharErr"></span>
+                            </div>
+                        </div>
+
+                        <div style="display: none;" id="ekycPanDiv">
+                            <div class="labelStyle">PAN No. &nbsp;</div>
+                            <div style="display: grid;grid-template-columns: 1fr;">
+                                <input type="text" name="ekycPan" maxlength="10" pattern="[1-9]{1}[0-9]{9}" onkeypress="KeyPressEvent(event,'AlphaNumeric')"
+                                    class="input-field border-thick font-18 js-input-group" id="ekycPan" placeholder="PAN Number"
+                                    style="text-transform: uppercase;" />
+                                <span class="ekycPanErr ekycErrMsg" id="ekycPanErr"></span>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="ekycDobDiv">
+                            <div class="labelStyle ekycDobLabel">DOB &nbsp;</div>
+                            <div class="input-field-box">
+                                <div class="field-icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/datepicker-icon.svg" alt="datepicker">
+                                </div>
+                                <input type="text" class="datepicker-field input-field border-thick js-input-group ekycDob" name="ekycDob" placeholder="Date of birth"
+                                    id="ekycDob" onclick="selectekycDob();" autocomplete="off" />
+                                <span class="ekycDobErr ekycErrMsg" id="ekycDobErr"></span>
+                            </div>
+                        </div>
+                        <div id="ekycUploadAadharDiv" class="show_iffco_doc" style="display:none;">
+                            <div class="labelStyle eKycDocLabel">Upload Aadhar</div>
+                            <div class="input-field-box">
+                                <div class="input-field-box file-upload-wrap">
+                                    <input class="input-field border-thick font-18 js-input-group form-control" type="file" id="eKycAadharDoc" name="eKycDoc"
+                                        accept=".pdf, .jpg, .jpeg" onchange="geteKycFiles(event)">
+                                    <span class="browse-file-name input-field border-thick font-18 text-extralight eKycDocspan" id="eKycDocspan">Browse a file </span>
+                                    <button type="button" class="browse-btn main-btn">Browse</button>
+                                </div>
+                                <span class="ekycUploadDocErr ekycErrMsg" id="ekycUploadAadharErr"></span>
+                            </div>
+                        </div>
+                        <div id="ekycUploadPanDiv" class="show_iffco_doc" style="display:none;">
+                            <div class="labelStyle eKycDocLabel">Upload Pan </div>
+                            <div class="input-field-box">
+                                <div class="input-field-box file-upload-wrap">
+                                    <input class="input-field border-thick font-18 js-input-group form-control" type="file" id="eKycPanDoc" name="eKycDoc" accept=".pdf, .jpg, .jpeg"
+                                        onchange="geteKycFiles(event)">
+                                    <span class="browse-file-name input-field border-thick font-18 text-extralight eKycDocspan" id="eKycDocspan">Browse a file </span>
+                                    <button type="button" class="browse-btn main-btn">Browse</button>
+                                </div>
+                                <span class="ekycUploadDocErr ekycErrMsg" id="ekycUploadPanErr"></span>
+                            </div>
+                        </div>
+                        <span style="text-align: center;color: red;" class="ekycPopupMsg"></span>
+                        <div style="text-align: center;" class="submitEkycBtnDiv">
+                            <a class="main-btn cursor_pointer" onclick="submitEkyc('popup')" style="cursor:pointer">CREATE KYC</a>
+                        </div>
+                        <div style="display:none" id="ekycNoDiv">
+                            <div class="labelStyle ekycNoLabel">EKYC NUMBER</div>
+                            <div class="input-field-box" onclick="copyKycNo()">
+                                <div class="field-icon-box" id="copydivImg" style="cursor:pointer!important;">
+                                    <!--<img src="D:\office_zip_files\RAVI\Copy-ekycNo.png" alt="CopyMsg">-->
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/Copy-ekycNo.png" alt="CopyekycNo">
+                                </div>
+                                <input type="text" name="ekycNumber" readonly class="input-field border-thick font-18 js-input-group" id="ekycNumber"
+                                    placeholder="EKYC Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ekycResponseDiv" class="font-16" style="text-align: center;margin: 10px 0px;color: red;">
+                        <span style="color: green;display: none;" id="ekycResponseDivErr"></span>
+                        <span style="display: none;" id="edelweissKycNo" class="font-16"></span><br>
+                        <span style="display: none;" id="edelweissKycUrl" class="font-16" onclick="closeEkyc()"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var eKycPanDoc_file;
+        var eKycAadharDoc_file;
+        var eKYCfile_name;
+        var ekycSearchType;
+        var checkMobile;
+        var kyc_no;
+        var uploadedeKYCFile;
+        function copyKycNo() {
+            var test = $('#ekycNumber').val();
+            navigator['clipboard'].writeText(test);
+            $('#ekycResponseDivErr').show().html('EKYC Number is copied');
+        }
+        function ekycType(event, data, source) {
+            if (source == 'eKyc') {
+                $('#ekycPan,#ekycDob,#ekycAadhar,#ekycSearchType,#ekycMobile,#eKycAadharDoc,#eKycPanDoc,#ekycFullName').removeClass('has-error', 'border-thick');
+                $('#ekycPanErr,#ekycDobErr,#ekycAadharErr,#ekycSearchTypeErr,#ekycMobileErr, #ekycUploadAadharErr, #ekycUploadPanErr,#ekycFullNameErr').html('');
+                this.ekycSearchType = data;
+                $('#ekycMobileDiv,#ekycAadharDiv,#ekycPanDiv,#ekycDobDiv,#ekycUploadAadharDiv, #ekycUploadPanDiv').hide();
+                if (data == 'Both') {
+                    $('#ekycAadharDiv,#ekycPanDiv').show();
+                } else {
+                    $('#ekyc' + data + 'Div').show();
+                }
+                if (data === 'Aadhar' || data === 'Pan' || data == 'Both') {
+                    $('#ekycDobDiv').show();
+                    $('#ekycMobileDiv').show();
+                    $('#ekycFullNameDiv').show();
+                    if (data === 'Aadhar') {
+                        // $('#ekycUploadAadharDiv').show();
+                    }
+                    if (data === 'Pan') {
+                        // $('#ekycUploadPanDiv').show();
+                    }
+                    if (data === 'Both') {
+                        // $('#ekycUploadAadharDiv, #ekycUploadPanDiv').show();
+                    }
+                }
+            }
+        };
+
+        function KeyPressEvent(event, type) {
+            let pattern;
+            switch (type) {
+                case 'Text': pattern = /[a-zA-Z ]/; break;
+                case 'OnlyText': pattern = /[a-zA-Z]/; break;
+                case 'Number': pattern = /[0-9\+\-\ ]/; break;
+                case 'AlphaNumeric': pattern = /[a-zA-Z0-9]/; break;
+                case 'Address': pattern = /[a-zA-Z0-9\-,\(\) ]/; break;
+                case 'Pincode': pattern = /[0-9]/; break;
+                case 'Mobile': pattern = /[0-9\+\-\ ]/; break;
+                // case 'PAN':    pattern = /[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}/; break;
+            }
+            const inputChar = String.fromCharCode(event.charCode);
+            if (event.keyCode !== 8 && !pattern.test(inputChar)) { event.preventDefault(); }
+        };
+
+        function ValidateNumber(event) {
+            if (!(/^[0-9]*$/.test(event.target.value))) {
+                event.target.value = "";
+            }
+        };
+
+        function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            //newurl = "http://localhost:3000";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa-")) {
+                newurl = url.includes('https') ? "https://qa-horizon.policyboss.com:3443" : "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www.") || url.includes("cloudfront") || url.includes("origin-cdnh") || url.includes("policyboss")) {
+                newurl = url.includes('https') ? "https://horizon.policyboss.com:5443" : "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+            // return "http://localhost:3000";
+        }
+
+
+        function selectekycDob() {
+
+            $(".ekycDob").datepicker({
+                format: "dd-mm-yyyy",
+                todayHighlight: true,
+                autoclose: true,
+                startView: 2,
+                yearRange: "-4:+0",
+                changeYear: true,
+                changeMonth: true,
+                startDate: moment().subtract(100, 'years').toDate(),
+                endDate: moment().subtract(18, 'years').toDate(),
+                onSelect: function (dob) {
+                    // $('#ekycAadhar').removeClass('has-error', 'border-thick');
+                    // $('#ekycAadhar').next(".valerr").hide();
+                }
+            }).datepicker('show');
+        };
+        function CheckPattern(Input, Type) {
+            let pattern;
+            switch (Type) {
+                case 'Text': pattern = new RegExp('^[a-zA-Z ]+$'); break;
+                case 'OnlyText': pattern = new RegExp('^[a-zA-Z]+$'); break;
+                case 'Number': pattern = new RegExp('^[0-9]*$'); break;
+                case 'FullName': pattern = new RegExp('^[A-Za-z]+[ ]{1}[A-Za-z]+$'); break;
+                case 'AlphaNumeric': pattern = new RegExp('^[a-zA-Z0-9 ]+$'); break;
+                case 'Address': pattern = new RegExp('^[a-zA-Z0-9-,./ ]+$'); break;
+                case 'District': pattern = new RegExp('^[a-zA-Z\(\) ]+$'); break;
+                case 'PassportNumber': pattern = new RegExp("[A-Z]{1}[0-9]{7}"); break;
+                case 'Pan': pattern = new RegExp('[A-Z]{5}[0-9]{4}[A-Z]{1}'); break;
+            }
+            if (pattern.test(Input) == false) { return false; }
+        };
+
+        function checkMobile(input) {
+            var pattern = new RegExp('^([6-9]{1}[0-9]{9})$');
+            var dvid = "dv" + $(input).attr('id');
+            if (pattern.test(input.val()) == false) {
+                $('#' + dvid).addClass('Error');
+                return false;
+            } else {
+                $('#' + dvid).removeClass('Error');
+                return true;
+            }
+        }
+
+        function geteKycFiles(event) {
+            var file = event.target.files[0].name;
+            if (window.outerWidth > 575) {
+                if (file && file.length > 21) {
+                    $(event.target).closest('.file-upload-wrap').find('.browse-file-name').contents()[0].nodeValue = file.substring(0, 20) + '...';
+                } else {
+                    $(event.target).closest('.file-upload-wrap').find('.browse-file-name').contents()[0].nodeValue = file;
+                }
+            } else {
+                if (file && file.length > 15) {
+                    $(event.target).closest('.file-upload-wrap').find('.browse-file-name').contents()[0].nodeValue = file.substring(0, 14) + '...';
+                } else {
+                    $(event.target).closest('.file-upload-wrap').find('.browse-file-name').contents()[0].nodeValue = file;
+                }
+            }
+            if (event.target.files.length != 0) {
+                // this.uploadedeKYCFile[0] = event.target.files[0];
+                this.eKYCfile_name = event.target.id;
+            }
+            //  else {
+            //     this.uploadedeKYCFile.pop();
+            // }
+        };
+
+        submitEkyc = async (src) => {
+            $('#ekycResponseDivErr').hide().html("");
+            $('#ekycNoDiv').hide();
+            var err = 0;
+            var req = {};
+            $('#erreKycNo').hide();
+            if (src === 'popup') {
+                if (this.ekycSearchType !== undefined && this.ekycSearchType !== '' && this.ekycSearchType !== null) {
+                    $('#ekycSearchTypeErr').html('');
+                    $('#ekycSearchType').removeClass('has-error', 'border-thick');
+                    if (this.ekycSearchType == 'Pan' || this.ekycSearchType == 'Aadhar' || this.ekycSearchType === 'Both') {
+                        var name = $('#ekycFullName').val().trim();
+                        if (name == "" || name.length < 3 || this.CheckPattern(name, 'Text') == false) {
+                            $('#ekycFullNameErr').html('Please enter the Name');
+                            $('#ekycFullName').addClass('has-error', 'border-thick'); err++;
+                        } else {
+                            const MyName = name.split(" ");
+                            if (MyName.length < 2 || MyName[1] == "") {
+                                $('#ekycFullName').addClass('has-error', 'border-thick');
+                                err++;
+                                $('#ekycFullNameErr').html('Please enter the FullName');
+                            } else {
+                                $('#ekycFullName').removeClass('has-error', 'border-thick');
+                                $('#ekycFullName-error').html('');
+                                $('#ekycFullNameErr').html('')
+                                req["search_type"] = this.ekycSearchType;
+                                req["fullName"] = $('#ekycFullName').val();
+                            }
+                        }
+                    }
+                    else {
+                        $('#ekycMobile').removeClass('has-error', 'border-thick');
+                        $('#ekycMobile-error').html('');
+                        $('#ekycMobileErr').html('')
+                        req["search_type"] = "MOBILE";
+                        req["mobile"] = $('#ekycMobile').val();
+                    }
+
+
+                    if (this.ekycSearchType == 'Pan' || this.ekycSearchType == 'Aadhar' || this.ekycSearchType === 'Both') {
+                        if ($('#ekycMobile').val().length == 0 || this.checkMobile($('#ekycMobile')) == false) {
+                            $('#ekycMobile').addClass('has-error', 'border-thick');
+                            err++;
+                            $('#ekycMobileErr').html('Enter valid mobile number')
+                        } else {
+                            $('#ekycMobile').removeClass('has-error', 'border-thick');
+                            $('#ekycMobile-error').html('');
+                            $('#ekycMobileErr').html('')
+                            req["search_type"] = "MOBILE";
+                            req["mobile"] = $('#ekycMobile').val();
+                        }
+                    }
+                    if (this.ekycSearchType == 'Aadhar' || this.ekycSearchType == 'Both') {
+                        var aadharNoPattern = /^\d{12}$/;
+                        if ($('#ekycAadhar').val().match(aadharNoPattern) != null) {
+                            $('#ekycAadhar').removeClass('has-error', 'border-thick');
+                            $('#ekycAadharErr').html('');
+                        } else {
+                            $('#ekycAadhar').addClass('has-error', 'border-thick');
+                            err++
+                            $('#ekycAadharErr').html('Enter valid aadhar number');
+                        }
+                        req["search_type"] = "AADHAR";
+                        req["Aadhaar"] = $('#ekycAadhar').val();
+                    }
+                    if (this.ekycSearchType == 'Pan' || this.ekycSearchType == 'Both') {
+                        var pan = $("#ekycPan").val().toString().toUpperCase();
+                        var pattern = /[a-zA-Z]{3}[PCHFATBLJG]{1}[a-zA-Z]{1}[0-9]{4}[a-zA-Z]{1}$/;
+                        if (pan.match(pattern) != null) {
+                            // if (this.summary['Proposal_Request']['pan']) {
+                            //     if (pan == this.summary['Proposal_Request']['pan']) {
+                            //         $("#ekycPan").removeClass('has-error', 'border-thick');
+                            //         $('#ekycPanErr').html('');
+                            //     } else {
+                            //         $("#ekycPan").addClass('has-error', 'border-thick');
+                            //         err++;
+                            //         $('#ekycPanErr').html('PAN number differs from proposal form.');
+                            //     }
+                            // } else {
+                            $("#ekycPan").removeClass('has-error', 'border-thick');
+                            $('#ekycPanErr').html('');
+                            // }
+                        } else {
+                            $("#ekycPan").addClass('has-error', 'border-thick');
+                            err++;
+                            $('#ekycPanErr').html('Enter valid PAN number');
+                        }
+                        req["search_type"] = "PAN";
+                        req["PAN"] = $("#ekycPan").val().toUpperCase();
+                    }
+                    if (this.ekycSearchType == 'Pan' || this.ekycSearchType == 'Aadhar' || this.ekycSearchType === 'Both') {
+                        if ($('#ekycDob').val() == '' || $('#ekycDob').val() == null || $('#ekycDob').val() == undefined) {
+                            $('#ekycDob').addClass('has-error', 'border-thick');
+                            err++;
+                            // if (this.summary['Quote_Request'].vehicle_registration_type.toLowerCase() === "corporate") {
+                            //     $('#ekycDobErr').html('Enter date of incorporation');
+                            // } else {
+                            $('#ekycDobErr').html('Enter date of birth');
+                            // }
+                        } else {
+                            $('#ekycDob').removeClass('has-error', 'border-thick');
+                            $('#ekycDobErr').html('');
+                            // if (this.summary['Quote_Request'].vehicle_registration_type.toLowerCase() === "corporate") {
+                            //     req['date_of_incorporation'] = moment($('#ekycDob').val(), 'DD-MM-YYYY').format('DD/MM/YYYY');
+                            // } else {
+                            req["DOB"] = moment($('#ekycDob').val(), 'DD-MM-YYYY').format('DD/MM/YYYY');
+                            // }
+                        }
+                        //Ekyc upload document validation start
+                        // if (this.ekycSearchType = 'Aadhar' || this.ekycSearchType === 'Both') {
+                        //     if ($('#eKycAadharDoc').val() == '' || $('#eKycAadharDoc').val() == null || $('#eKycAadharDoc').val() == undefined) {
+                        //         $('#eKycAadharDoc').addClass('has-error', 'border-thick');
+                        //         err++;
+                        //         $('#ekycUploadAadharErr').html('Please select document');
+                        //     } else {
+                        //         let a = await this.toBase64('eKycAadharDoc');
+                        //         if (a) {
+                        //             $('#eKycAadharDoc').removeClass('has-error', 'border-thick');
+                        //             $('#ekycUploadAadharErr').html('');
+                        //             req['aadhar_image'] = this.eKycAadharDoc_file;
+                        //             var extension = $('#eKycAadharDoc').val().split(".");
+                        //             req['aadhar_file_name'] = $('#eKycAadharDoc')[0].files[0].name;
+                        //             req['aadhar_file_extension'] = extension[extension.length - 1];
+                        //         } else {
+                        //             $('#eKycAadharDoc').addClass('has-error', 'border-thick');
+                        //             err++;
+                        //             $('#ekycUploadAadharErr').html('Please select document');
+                        //         }
+                        //     }
+                        // }
+                        // if (this.ekycSearchType === 'Pan' || this.ekycSearchType === 'Both') {
+                        //     if ($('#eKycPanDoc').val() == '' || $('#eKycPanDoc').val() == null || $('#eKycPanDoc').val() == undefined) {
+                        //         $('#eKycPanDoc').addClass('has-error', 'border-thick');
+                        //         err++;
+                        //         $('#ekycUploadPanErr').html('Please select document');
+                        //     } else {
+                        //         let a = await this.toBase64('eKycPanDoc');
+                        //         if (a) {
+                        //             $('#eKycPanDoc').removeClass('has-error', 'border-thick');
+                        //             $('#ekycUploadPanErr').html('');
+                        //             req['pan_image'] = this.eKycPanDoc_file;
+                        //             var extension = $('#eKycPanDoc').val().split(".");
+                        //             req['pan_file_name'] = $('#eKycPanDoc')[0].files[0].name;
+                        //             req['pan_file_extension'] = extension[extension.length - 1];
+                        //         } else {
+                        //             $('#eKycPanDoc').addClass('has-error', 'border-thick');
+                        //             err++;
+                        //             $('#ekycUploadPanErr').html('Please select document');
+                        //         }
+                        //     }
+                        // }
+                        /* Old single doc code
+                        if($('#eKycDoc').val() == '' || $('#eKycDoc').val() ==null || $('#eKycDoc').val() == undefined){
+                          $('#eKycDoc').addClass('has-error', 'border-thick');
+                          err++;
+                          $('#ekycUploadDocErr').html('Please select document');
+                        }else{
+                          let a = await this.toBase64('eKycDoc');
+                          if(a){
+                            $('#eKycDoc').removeClass('has-error', 'border-thick');
+                            $('#ekycUploadDocErr').html('');
+                            if(this.ekycSearchType == 'Pan'){
+                              req['upload_pan'] = this.eKycDoc_file;
+                              //formData.append('upload_pan',this.uploadedeKYCFile['0'], this.uploadedeKYCFile['0'].name);
+                            }else{
+                              req['upload_aadhar'] = this.eKycDoc_file;
+                              //formData.append('upload_aadhar',this.uploadedeKYCFile['0'], this.uploadedeKYCFile['0'].name);
+                            }
+                          }else{
+                            $('#eKycDoc').addClass('has-error', 'border-thick');
+                            err++;
+                            $('#ekycUploadDocErr').html('Please select document');
+                          }
+                        }
+                        */
+                        //Ekyc upload document validation end
+                    }
+                }
+                else {
+                    err++
+                    $('#ekycSearchType').addClass('has-error', 'border-thick');
+                    $('#ekycSearchTypeErr').html('Select search type');
+                }
+            }
+            if (this.ekycSearchType === 'Both') {
+                req['search_type'] = 'BOTH';
+            }
+
+            if (err == 0) {
+                // req['client_key'] = "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9";
+                // req['secret_key'] = "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW";
+                req['insurer_id'] = "5";
+                // req['product_id'] = "";
+                $('.loading').show();
+                $.ajax({
+                    type: "POST",
+                    url: GetUrl() + "/kyc_details/hdfc_fetch_kyc_details_onload",
+                    data:req,
+                    // data: JSON.stringify(req),
+                    // dataType: "json",
+                    // contentType: "application/json; charset=utf-8",
+                    success: function (res) {
+                        //res = {"Insurer":"HDFC","Msg":{"KYC_Pan_No":"","KYC_Number":"5645634","KYC_FullName":"","KYC_Ref_No":"","KYC_Redirect_URL":"https://d2o9bppzfmewo0.cloudfront.net/login","KYC_Insurer_ID":"","KYC_Status":"FETCH_FAIL"},"Status":"FETCH_SUCCESS"}
+                        $('.loading').hide();
+                        console.log(res);
+                        if (res && res.hasOwnProperty('KYC_Status') && res['KYC_Status'] && res['KYC_Status'] == 'FETCH_SUCCESS') {
+                            if (res && res.hasOwnProperty('KYC_Number') && res['KYC_Number']) {
+                                console.log(res['KYC_Number']);
+                                $('#ekycNumber').val(res['KYC_Number']);
+                                $('#ekycNoDiv').show();
+
+                            }
+                        }
+                        else if (res && res.hasOwnProperty('KYC_Status') && res['KYC_Status'] && res['KYC_Status'] == 'FETCH_FAIL') {
+                            if (res && res.hasOwnProperty('KYC_Redirect_URL') && res['KYC_Redirect_URL']) {
+                                window.open(res['KYC_Redirect_URL'], '_blank');
+                            }
+                        }
+                        else if (res) {
+                            console.log(res);
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                        $('.loading').hide();
+                    }
+                });
+
+            }
+        }
+
+
+        toBase64 = id => new Promise((resolve, reject) => {
+            var file = document.querySelector('#' + id).files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(this[id + '_file'] = reader.result);
+            reader.onerror = error => reject(false);
+        });
+    // $(".loading-txt").removeClass('loading-proposal-txt');
+    // if (window.location.pathname.includes('/quotes')) {
+    //   $(".load-span-txt").text("We are fetching your premiums");
+    // } else if (window.location.pathname.includes('/proposal')) {
+    //   $(".load-span-txt").text("Please Wait..!");
+    //   $(".loading-txt").addClass('loading-proposal-txt');
+    // }
+    </script>
+
+</body>
+
+</html>

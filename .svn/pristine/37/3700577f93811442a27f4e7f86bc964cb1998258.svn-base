@@ -1,0 +1,33 @@
+{  
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 1,
+    "IsActive": 1,
+    "Agent_Code": "",
+    "Location_Code": "1901",//for mumbai 
+    "Service_User": "bajajwebservice@policyboss.com",
+    "Service_Password": "password",
+    "Payment_Gateway_URL": "",
+    "Name": "BajajAllianz::Motor",
+    "Lib_Class": "BajajAllianzMotor",
+    "Method_List": [         
+        {
+            "Method_Id": 7,
+            "Method_Name": "calculateMotorPremiumSig",
+            "Method_Type_ID": 2,
+            "Method_Action": "",
+            "Method_Request_File": "",
+            "Method_Calling_Type": "",
+            "WSDL_URL": null,
+            "Service_URL":"http://webservices.bajajallianz.com:8001/WebServicePolicy/WebServicePolicyPort",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "",
+            "Product_Id": 1,
+            "Insurer_Id": 1
+        }
+    ]
+}

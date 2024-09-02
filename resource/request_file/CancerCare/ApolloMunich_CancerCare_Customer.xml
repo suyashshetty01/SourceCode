@@ -1,0 +1,150 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ProposalCapture xmlns="http://www.apollomunichinsurance.com/B2BService">
+         <ProposalCaptureServiceRequest>
+            <Action xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">Create</Action>
+            <Partner xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">
+               <PartnerCode xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_agent_code___</PartnerCode>
+               <Password xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_password___</Password>
+               <UserName xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_user___</UserName>
+            </Partner>
+            <Prospect xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">
+               <Application xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">
+                  <CrossSellCommonCode xsi:nil="true"/>
+                  <Namefor80D>___first_name___ ___last_name___</Namefor80D>
+                  <NomineeAddress>
+                     <AddressLine1>___permanent_address_1___</AddressLine1>
+                     <AddressLine2>___permanent_address_2___</AddressLine2>
+                     <AddressLine3>___permanent_address_3___</AddressLine3>
+                     <CountryCode>IN</CountryCode>
+                     <District xsi:nil="true"/>
+                     <PinCode>___permanent_pincode___</PinCode>
+                     <StateCode>___communication_state_code___</StateCode>
+                     <TownCode>___communication_district_code___</TownCode>
+                  </NomineeAddress>
+                  <NomineeName>___nominee_name___</NomineeName>
+                  <NomineeTitleCode></NomineeTitleCode>
+                  <Proposer>
+                     <Address>
+                        <Address>
+                           <AddressLine1>___permanent_address_1___</AddressLine1>
+                           <AddressLine2>___permanent_address_2___</AddressLine2>
+                           <AddressLine3>___permanent_address_3___</AddressLine3>
+                           <CountryCode>IN</CountryCode>
+                           <District xsi:nil="true"/>
+                           <PinCode>___permanent_pincode___</PinCode>
+                           <StateCode>___communication_state_code___</StateCode>
+                           <TownCode>___communication_district_code___</TownCode>
+                        </Address>
+                     </Address>
+                     <BirthDate>___member_1_birth_date___</BirthDate>
+                     <ClientCode xsi:nil="true"/>
+                     <ContactInformation>
+                        <ContactNumber>
+                           <ContactNumber>
+                              <Number>___mobile___</Number>
+                              <Type>7</Type>
+                           </ContactNumber>
+                        </ContactNumber>
+                        <Email>___email___</Email>
+                     </ContactInformation>
+                     <Dependants xsi:nil="true"/>
+                     <FirstName>___first_name___</FirstName>
+                     <GenderCode>___gender___</GenderCode>
+                     <GstinNumber>___gst_no___</GstinNumber>
+                     <IDProofNumber>___pan___</IDProofNumber>
+                     <IDProofTypeCode>IDNO2</IDProofTypeCode>
+                     <LastName>___last_name___</LastName>
+                     <LifeStyleHabits xsi:nil="true"/>
+                     <MaritalStatusCode>___marital___</MaritalStatusCode>
+                     <MiddleName>___middle_name___</MiddleName>
+                     <NationalityCode>IN</NationalityCode>
+                     <PreviousInsurer xsi:nil="true"/>
+                     <Product xsi:nil="true"/>
+                     <RelationshipCode>___proposer_relationship_code___</RelationshipCode>
+                     <SmokerFlag>___smoker_flag___</SmokerFlag>
+                  </Proposer>
+                  <RelationToNomineeCode>___nominee_code___</RelationToNomineeCode>
+                  <RuralFlag>0</RuralFlag>
+                  <TPANameCode>FHPL</TPANameCode>
+               </Application>
+               <BrandCode xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">ApolloMunich</BrandCode>
+               <Client xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">
+                  <Address>
+                     <Address>
+                        <AddressLine1>___permanent_address_1___</AddressLine1>
+                        <AddressLine2>___permanent_address_2___</AddressLine2>
+                        <AddressLine3>___permanent_address_3___</AddressLine3>
+                        <CountryCode>IN</CountryCode>
+                        <District xsi:nil="true"/>
+                        <PinCode>___permanent_pincode___</PinCode>
+                        <StateCode>___communication_state_code___</StateCode>
+                        <TownCode>___communication_district_code___</TownCode>
+                     </Address>
+                  </Address>
+                  <Age>___member_1_age___</Age>
+                  <AnnualIncome>___annual_income___</AnnualIncome>
+                  <BirthDate>___member_1_birth_date___</BirthDate>
+                  <ClientCode>PolicyHolder</ClientCode>
+                  <ContactInformation>
+                     <ContactNumber>
+                        <ContactNumber>
+                           <Number>___mobile___</Number>
+                           <Type>7</Type>
+                        </ContactNumber>
+                     </ContactNumber>
+                     <Email>___email___</Email>
+                  </ContactInformation>
+                  <Dependants xsi:nil="true"/>
+                  <FamilySize>1</FamilySize>
+                  <FirstName>___first_name___</FirstName>
+                  <GenderCode>___gender___</GenderCode>
+                  <GstinNumber>___gst_no___</GstinNumber>
+                  <Height>___height___</Height>
+                  <IDProofNumber>___pan___</IDProofNumber>
+                  <IDProofTypeCode>IDNO2</IDProofTypeCode>
+                  <LastName>___last_name___</LastName>
+                  <LifeStyleHabits>
+                     <BeerBottle>0</BeerBottle>
+                     <LiquorPeg>0</LiquorPeg>
+                     <Pouches>0</Pouches>
+                     <Smoking>0</Smoking>
+                     <WineGlass>0</WineGlass>
+                     <YearOfStartAlcohal>0</YearOfStartAlcohal>               
+                     <YearOfStartPouches>0</YearOfStartPouches>                   
+                     <YearOfStartSmoking>0</YearOfStartSmoking>
+                  </LifeStyleHabits>
+                  <MaritalStatusCode>___marital___</MaritalStatusCode>
+                  <MiddleName>___middle_name___</MiddleName>
+                  <NationalityCode>IN</NationalityCode>
+                  <OccuptionCode>___occupation___</OccuptionCode>
+                  <PreviousInsurer xsi:nil="true"/>
+                  <Product>
+                     <Product>
+                        <BasePremiumAmount>___net_premium___</BasePremiumAmount>
+                        <ClientCode>PolicyHolder</ClientCode>
+                        <DiscountAmount>0.00</DiscountAmount>
+                        <GrossPremiumAmount>___final_premium___</GrossPremiumAmount>
+                        <ProductCode>___dbmaster_plan_code___</ProductCode>
+                        <ProductGroup>1</ProductGroup>
+                        <ProductLine>2</ProductLine>
+                        <ProductType>1</ProductType>
+                        <ProductVersion>1</ProductVersion>
+                        <SACCode>1</SACCode>
+                        <SumAssured>___cancer_care_si___</SumAssured>
+                        <TaxAmount>___service_tax___</TaxAmount>
+                     </Product>
+                  </Product>
+                  <ProfessionCode xsi:nil="true"/>
+                  <RelationshipCode>___member_relationship_code___</RelationshipCode>
+                  <SmokerFlag>___smoker_flag___</SmokerFlag>
+                  <TitleCode>___salutation___</TitleCode>
+                  <Weight>___weight___</Weight>
+               </Client>
+               <MedicalInformations xsi:nil="true" xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects"/>
+               <TotalPremiumAmount xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___final_premium___</TotalPremiumAmount>
+            </Prospect>
+         </ProposalCaptureServiceRequest>
+      </ProposalCapture>
+   </soap:Body>
+</soap:Envelope>

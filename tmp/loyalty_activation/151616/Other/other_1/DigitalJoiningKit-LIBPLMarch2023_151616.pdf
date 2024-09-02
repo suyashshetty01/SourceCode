@@ -1,0 +1,1121 @@
+{
+	"info": {
+		"_postman_id": "7bbdb359-70ee-417c-ad0f-91ea80549d67",
+		"name": "TATA GCV [LIVE]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28848955"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"tata_token\", pm.response.json().access_token)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "XSRF-TOKEN=20423132-9ee8-4504-ad5a-ca7d78b1a49c"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://foyer.tataaig.com/write",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "54qqhf0pbk1jghrpajm8vjas8",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "1lg9d2a3lrns333hgs5mdnd8or6l1iesd02qtofb8r3vgnc53asn",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://foyer-tataaig.auth.ap-south-1.amazoncognito.com/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"foyer-tataaig",
+						"auth",
+						"ap-south-1",
+						"amazoncognito",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quote GCV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"TATA MOTORS\",\r\n    \"vehicle_model\": \"LPS 4018\",\r\n    \"vehicle_variant\": \"UNIPOLAR FLAT BED FULL CANOPY TRAILER\",\r\n    \"make_code\": 450,\r\n    \"model_code\": 11805,\r\n    \"variant_code\": 116513,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 40200,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+					"protocol": "https",
+					"host": [
+						"foyer",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"gcv-motor",
+						"v1",
+						"quote"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tata_token}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"TATA MOTORS LTD\",\r\n    \"vehicle_model\": \"2518\",\r\n    \"vehicle_variant\": \"CHASSIS\",\r\n    \"make_code\": 450,\r\n    \"model_code\": 11778,\r\n    \"variant_code\": 116337,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 25000,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+							"protocol": "https",
+							"host": [
+								"foyer",
+								"tataaig",
+								"com"
+							],
+							"path": [
+								"gcv-motor",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 05:26:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4914"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "b17b109a-7aa9-4731-a517-7623b6055782"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "expect-ct",
+							"value": "max-age=0"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "4914"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "x-amzn-Remapped-connection",
+							"value": "close"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "WWuJFE44hcwEWOw="
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1332-xL8D/wOlFnPS/HhX1woAsyVYg1k\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-661f5d6d-2af5419612c781cb2a7493ab"
+						},
+						{
+							"key": "x-amzn-Remapped-date",
+							"value": "Wed, 17 Apr 2024 05:26:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message_txt\": \"Quotation converted to proposal successfully\",\n    \"data\": [\n        {\n            \"data\": {\n                \"policy_id\": \"P300333235558\",\n                \"quote_id\": \"Q300333214506\",\n                \"encrypted_quote_id\": \"cdde2610f5e6f04f3df7b6dd0a003f2f:32155ba03f901e8ea0e3e079af978ff1\",\n                \"product_id\": \"M300000000004\",\n                \"product_group_id\": \"PG300000000001\",\n                \"par_product_id\": \"M300000000004\",\n                \"proposal_id\": \"PR300040272953\",\n                \"discount_id\": \"\",\n                \"document_id\": \"DT300040281686\",\n                \"quote_no\": \"QT/24/6301508090\",\n                \"policy_start_date\": \"2024-04-19\",\n                \"policy_end_date\": \"2025-04-18\",\n                \"prev_pol_end_date\": \"2024-04-18\",\n                \"prev_pol_start_date\": \"2023-04-19\",\n                \"mobile_no\": \"9999999999\",\n                \"man_year\": \"2020\",\n                \"q_producer_code\": \"1091260169\",\n                \"proposer_type\": \"Individual\",\n                \"product_code\": \"3189\",\n                \"business_type\": \"Roll Over\",\n                \"business_type_no\": \"03\",\n                \"pol_plan_variant\": \"PackagePolicy\",\n                \"proposer_pincode\": \"421301\",\n                \"pol_start_date\": \"2024-04-19\",\n                \"pol_end_date\": \"2025-04-18\",\n                \"dor\": \"2020-01-01\",\n                \"dor_first\": \"\",\n                \"vehicle_make\": \"TATA MOTORS LTD\",\n                \"vehicle_model\": \"2518\",\n                \"customer_mobileno\": \"9999999999\",\n                \"vehicle_variant\": \"CHASSIS\",\n                \"min_idv_body\": 63750,\n                \"max_idv_body\": 255000,\n                \"min_idv_chassis\": 1060290,\n                \"max_idv_chassis\": 2120580,\n                \"regno_1\": \"MH\",\n                \"regno_2\": \"05\",\n                \"regno_3\": \"ZZ\",\n                \"regno_4\": \"9999\",\n                \"place_reg\": \"KALYAN\",\n                \"place_reg_no\": \"103\",\n                \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\n                \"claim_last\": \"No\",\n                \"claim_last_count\": \"\",\n                \"claim_last_amount\": \"\",\n                \"pre_pol_ncb\": \"\",\n                \"segment\": \"TRUCK\",\n                \"segment_code\": 7,\n                \"cc\": 5883,\n                \"sc\": 3,\n                \"systemBodyIDVYearOne\": 127500,\n                \"systemChasisIDVYearOne\": 1413720,\n                \"body_idv\": \"0\",\n                \"chassis_idv\": \"0\",\n                \"BH_regno\": \"false\",\n                \"special_regno\": \"No\",\n                \"premium_break_up\": {\n                    \"total_od_premium\": {\n                        \"od\": {\n                            \"cng_lpg_od_prem\": 0,\n                            \"trailer_od_prem\": 0,\n                            \"geography_extension_od_prem\": 0,\n                            \"od_sgst_value\": \"325.00\",\n                            \"od_cgst_value\": \"325.00\",\n                            \"od_ugst_value\": 0,\n                            \"od_igst_value\": 0,\n                            \"basic_od\": \"4516.72\",\n                            \"total_od\": \"3613.38\",\n                            \"net_od\": \"3613.38\"\n                        },\n                        \"loading_od\": {\n                            \"cover_lapm_prem\": 0,\n                            \"imported_customduty_prem\": 0,\n                            \"theft_conversion_prem\": \"\",\n                            \"vech_fitted_fiber_fule_prem\": 0\n                        },\n                        \"discount_od\": {},\n                        \"total_od\": \"3613.38\"\n                    },\n                    \"total_addOns\": {\n                        \"dep_reimburse_prem\": 0,\n                        \"return_invoice_prem\": 0,\n                        \"ncb_protection_prem\": 0,\n                        \"emi_protector_prem\": 0,\n                        \"personal_loss_prem\": 0,\n                        \"key_replace_prem\": 0,\n                        \"engine_secure_prem\": 0,\n                        \"tyre_secure_prem\": \"\",\n                        \"rim_guard_prem\": 0,\n                        \"consumbale_expense_prem\": 0,\n                        \"repair_glass_prem\": 0,\n                        \"rsa_prem\": 0,\n                        \"emer_medical_prem\": 0,\n                        \"emer_transp_prem\": 0,\n                        \"add_towing_prem\": 0,\n                        \"loss_of_income_prem\": 0,\n                        \"total_addon\": 0\n                    },\n                    \"total_tp_premium\": {\n                        \"basic_tp\": \"43950.00\",\n                        \"own_premises_tp_prem\": 0,\n                        \"trailer_tp_prem\": 0,\n                        \"cng_lpg_tp_prem\": 0,\n                        \"geography_extension_tp_prem\": 0,\n                        \"pa_unnamed_no\": \"\",\n                        \"pa_paid_no\": 0,\n                        \"ll_paid_no\": 0,\n                        \"pa_paid_drive_prem\": 0,\n                        \"ll_paid_drive_prem\": 0,\n                        \"cpa_prem\": 0,\n                        \"addi_pa_owner_drive_prem\": 0,\n                        \"addi_pa_emp_drive_unname_prem\": 0,\n                        \"addi_tppd_prem\": 0,\n                        \"total_tp\": \"43950.00\",\n                        \"tp_sgst_value\": \"2637.00\",\n                        \"tp_cgst_value\": \"2637.00\",\n                        \"tp_ugst_value\": 0,\n                        \"tp_igst_value\": 0\n                    },\n                    \"other_tp_sgstval\": 0,\n                    \"other_tp_cgstval\": 0,\n                    \"other_tp_ugstval\": 0,\n                    \"other_tp_igstval\": 0,\n                    \"net_premium\": \"47563.00\",\n                    \"total_gstval\": \"5924.00\",\n                    \"premium_value\": 53487,\n                    \"loss_of_equip_prem\": 0,\n                    \"ll_pass_prem\": 0,\n                    \"ll_nonfare_not_emp_prem\": 0,\n                    \"ll_fare_prem\": 0,\n                    \"ll_workmens_prem\": 0,\n                    \"ll_load_unload_prem\": 0,\n                    \"use_vech_both_prem_tp\": 0,\n                    \"vech_use_driving_tp_prem\": 0\n                }\n            },\n            \"pol_dlts\": {\n                \"q_dealer_code\": \"0030240001\",\n                \"vehicle_fuel\": \"DIESEL\",\n                \"vehicle_cc\": \"5883\",\n                \"vehicle_price\": \"3082440\",\n                \"vehicle_idv\": 1541220,\n                \"vehicle_seating\": 3,\n                \"tppd_prem\": 0,\n                \"cng_lpg_tp_prem\": 0,\n                \"basic_tp\": \"43950.00\",\n                \"detariff\": 85,\n                \"basic_od\": \"4516.72\",\n                \"od_rate\": \"0.26\",\n                \"cng_lpg_od_prem\": 0,\n                \"electrical_prem\": 0,\n                \"basis_of_rating\": \"Tagic\",\n                \"non_electrical_prem\": 0,\n                \"q_branch_name\": \"MUMBAI\",\n                \"q_emp_code\": \"1091260169\",\n                \"q_user_id\": \"1091260169\",\n                \"total_addon\": 0,\n                \"total_od\": \"3613.38\",\n                \"od_tenure\": \"1\",\n                \"tp_tenure\": \"1\",\n                \"service_fault_code\": \"\",\n                \"service_fault_msg\": \"\",\n                \"has_break_in\": \"No\",\n                \"break_in_days\": 0,\n                \"emer_medical_prem\": 0,\n                \"veh_age\": 4,\n                \"repair_glass_prem\": 0,\n                \"total_idv\": 1541220,\n                \"rsa_prem\": 0,\n                \"net_premium\": \"47563.00\",\n                \"compulsory_excess\": 1500,\n                \"electrical_idv1\": 0,\n                \"add_towing_prem\": 0,\n                \"add_towing_vech_prem\": 0,\n                \"vehicle_user_idv1\": 0,\n                \"trailer_tp_prem\": 0,\n                \"trailer_od_prem\": 0,\n                \"own_premises_od_prem\": 0,\n                \"own_premises_tp_prem\": 0,\n                \"non_electrical_idv1\": 0,\n                \"geography_extension_tp_prem\": 0,\n                \"key_si\": 0,\n                \"geography_extension_od_prem\": 0,\n                \"cng_lpg_idv1\": 0,\n                \"vehicle_system_idv1\": 1541220,\n                \"curr_ncb\": 20,\n                \"curr_ncb_perc\": \"903.34\",\n                \"emergency_expense_si\": \"\",\n                \"personal_loss_si\": \"\",\n                \"key_replace_si\": 0,\n                \"vehicle_wheels\": 10,\n                \"vehicle_body\": \"OPEN\",\n                \"proposer_district\": \"KALYAN\",\n                \"proposer_city\": \"KALYAN\",\n                \"proposer_state\": \"MAHARASHTRA\",\n                \"refferal\": \"N\",\n                \"refferalMsg\": \"\",\n                \"inspectionMsg\": \"\",\n                \"inspectionData\": [],\n                \"selfInspection\": false,\n                \"thirdPartyInspection\": false,\n                \"inspectionOverride\": false,\n                \"self_inspection_link\": \"\",\n                \"inspectionFlag\": \"N\",\n                \"q_mobile_no\": \"18004194199\",\n                \"system_discount\": 85,\n                \"product_name\": \"Commercial Vehicle\",\n                \"quote_expiry_days\": \"1\",\n                \"deviation_discount\": 0,\n                \"total_discount\": 85,\n                \"is_posp\": \"N\",\n                \"q_agent_pan\": \"\",\n                \"policy_id\": \"P300333235558\",\n                \"sol_id\": \"\",\n                \"sp_code\": \"\"\n            },\n            \"quote_stage\": \"completed\",\n            \"quote_datetime\": \"2024-04-17 05:26:10\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "parital build",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tata_token}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"MAHINDRA\",\r\n    \"vehicle_model\": \"SUPRO\",\r\n    \"vehicle_variant\": \"CARGO VAN BS4 Partially Built\",\r\n    \"make_code\": 418,\r\n    \"model_code\": 11772,\r\n    \"variant_code\": 131119,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 1815,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+							"protocol": "https",
+							"host": [
+								"foyer",
+								"tataaig",
+								"com"
+							],
+							"path": [
+								"gcv-motor",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 06:27:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4916"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "d4239b34-2673-46f3-b137-61bab782330b"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "expect-ct",
+							"value": "max-age=0"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "4916"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "x-amzn-Remapped-connection",
+							"value": "close"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "WaKA0HB4BcwEWJQ="
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1334-0I9LdjZlYWwFkDjzyzX+DDupFgE\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6620bd38-61467e550adbd8e443f83e86"
+						},
+						{
+							"key": "x-amzn-Remapped-date",
+							"value": "Thu, 18 Apr 2024 06:27:05 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message_txt\": \"Quotation converted to proposal successfully\",\n    \"data\": [\n        {\n            \"data\": {\n                \"policy_id\": \"P300333963296\",\n                \"quote_id\": \"Q300333942240\",\n                \"encrypted_quote_id\": \"90a0e7d95c9c2949ce389d10bd679f59:c57a409d7996ef9543ef0a7aa40a3d35\",\n                \"product_id\": \"M300000000004\",\n                \"product_group_id\": \"PG300000000001\",\n                \"par_product_id\": \"M300000000004\",\n                \"proposal_id\": \"PR300040449863\",\n                \"discount_id\": \"\",\n                \"document_id\": \"DT300040458607\",\n                \"quote_no\": \"QT/24/6301549863\",\n                \"policy_start_date\": \"2024-04-19\",\n                \"policy_end_date\": \"2025-04-18\",\n                \"prev_pol_end_date\": \"2024-04-18\",\n                \"prev_pol_start_date\": \"2023-04-19\",\n                \"mobile_no\": \"9999999999\",\n                \"man_year\": \"2020\",\n                \"q_producer_code\": \"1091260169\",\n                \"proposer_type\": \"Individual\",\n                \"product_code\": \"3189\",\n                \"business_type\": \"Roll Over\",\n                \"business_type_no\": \"03\",\n                \"pol_plan_variant\": \"PackagePolicy\",\n                \"proposer_pincode\": \"421301\",\n                \"pol_start_date\": \"2024-04-19\",\n                \"pol_end_date\": \"2025-04-18\",\n                \"dor\": \"2020-01-01\",\n                \"dor_first\": \"\",\n                \"vehicle_make\": \"MAHINDRA\",\n                \"vehicle_model\": \"SUPRO\",\n                \"customer_mobileno\": \"9999999999\",\n                \"vehicle_variant\": \"CARGO VAN BS4 Partially Built\",\n                \"min_idv_body\": 24225,\n                \"max_idv_body\": 96900,\n                \"min_idv_chassis\": 171322,\n                \"max_idv_chassis\": 342644,\n                \"regno_1\": \"MH\",\n                \"regno_2\": \"05\",\n                \"regno_3\": \"ZZ\",\n                \"regno_4\": \"9999\",\n                \"place_reg\": \"KALYAN\",\n                \"place_reg_no\": \"103\",\n                \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\n                \"claim_last\": \"No\",\n                \"claim_last_count\": \"\",\n                \"claim_last_amount\": \"\",\n                \"pre_pol_ncb\": \"\",\n                \"segment\": \"PICK UP VAN\",\n                \"segment_code\": 11,\n                \"cc\": 909,\n                \"sc\": 2,\n                \"systemBodyIDVYearOne\": 48450,\n                \"systemChasisIDVYearOne\": 228429,\n                \"body_idv\": \"0\",\n                \"chassis_idv\": \"0\",\n                \"BH_regno\": \"false\",\n                \"special_regno\": \"No\",\n                \"premium_break_up\": {\n                    \"total_od_premium\": {\n                        \"od\": {\n                            \"cng_lpg_od_prem\": 0,\n                            \"trailer_od_prem\": 0,\n                            \"geography_extension_od_prem\": 0,\n                            \"od_sgst_value\": \"52.00\",\n                            \"od_cgst_value\": \"52.00\",\n                            \"od_ugst_value\": 0,\n                            \"od_igst_value\": 0,\n                            \"basic_od\": \"716.84\",\n                            \"total_od\": \"573.47\",\n                            \"net_od\": \"573.47\"\n                        },\n                        \"loading_od\": {\n                            \"cover_lapm_prem\": 0,\n                            \"imported_customduty_prem\": 0,\n                            \"theft_conversion_prem\": \"\",\n                            \"vech_fitted_fiber_fule_prem\": 0\n                        },\n                        \"discount_od\": {},\n                        \"total_od\": \"573.47\"\n                    },\n                    \"total_addOns\": {\n                        \"dep_reimburse_prem\": 0,\n                        \"return_invoice_prem\": 0,\n                        \"ncb_protection_prem\": 0,\n                        \"emi_protector_prem\": 0,\n                        \"personal_loss_prem\": 0,\n                        \"key_replace_prem\": 0,\n                        \"engine_secure_prem\": 0,\n                        \"tyre_secure_prem\": \"\",\n                        \"rim_guard_prem\": 0,\n                        \"consumbale_expense_prem\": 0,\n                        \"repair_glass_prem\": 0,\n                        \"rsa_prem\": 0,\n                        \"emer_medical_prem\": 0,\n                        \"emer_transp_prem\": 0,\n                        \"add_towing_prem\": 0,\n                        \"loss_of_income_prem\": 0,\n                        \"total_addon\": 0\n                    },\n                    \"total_tp_premium\": {\n                        \"basic_tp\": \"16049.00\",\n                        \"own_premises_tp_prem\": 0,\n                        \"trailer_tp_prem\": 0,\n                        \"cng_lpg_tp_prem\": 0,\n                        \"geography_extension_tp_prem\": 0,\n                        \"pa_unnamed_no\": \"\",\n                        \"pa_paid_no\": 0,\n                        \"ll_paid_no\": 0,\n                        \"pa_paid_drive_prem\": 0,\n                        \"ll_paid_drive_prem\": 0,\n                        \"cpa_prem\": 0,\n                        \"addi_pa_owner_drive_prem\": 0,\n                        \"addi_pa_emp_drive_unname_prem\": 0,\n                        \"addi_tppd_prem\": 0,\n                        \"total_tp\": \"16049.00\",\n                        \"tp_sgst_value\": \"963.00\",\n                        \"tp_cgst_value\": \"963.00\",\n                        \"tp_ugst_value\": 0,\n                        \"tp_igst_value\": 0\n                    },\n                    \"other_tp_sgstval\": 0,\n                    \"other_tp_cgstval\": 0,\n                    \"other_tp_ugstval\": 0,\n                    \"other_tp_igstval\": 0,\n                    \"net_premium\": \"16622.00\",\n                    \"total_gstval\": \"2030.00\",\n                    \"premium_value\": 18652,\n                    \"loss_of_equip_prem\": 0,\n                    \"ll_pass_prem\": 0,\n                    \"ll_nonfare_not_emp_prem\": 0,\n                    \"ll_fare_prem\": 0,\n                    \"ll_workmens_prem\": 0,\n                    \"ll_load_unload_prem\": 0,\n                    \"use_vech_both_prem_tp\": 0,\n                    \"vech_use_driving_tp_prem\": 0\n                }\n            },\n            \"pol_dlts\": {\n                \"q_dealer_code\": \"0030240001\",\n                \"vehicle_fuel\": \"DIESEL\",\n                \"vehicle_cc\": \"909\",\n                \"vehicle_price\": \"553758\",\n                \"vehicle_idv\": 276879,\n                \"vehicle_seating\": 2,\n                \"tppd_prem\": 0,\n                \"cng_lpg_tp_prem\": 0,\n                \"basic_tp\": \"16049.00\",\n                \"detariff\": 85,\n                \"basic_od\": \"716.84\",\n                \"od_rate\": \"0.26\",\n                \"cng_lpg_od_prem\": 0,\n                \"electrical_prem\": 0,\n                \"basis_of_rating\": \"Tagic\",\n                \"non_electrical_prem\": 0,\n                \"q_branch_name\": \"MUMBAI\",\n                \"q_emp_code\": \"1091260169\",\n                \"q_user_id\": \"1091260169\",\n                \"total_addon\": 0,\n                \"total_od\": \"573.47\",\n                \"od_tenure\": \"1\",\n                \"tp_tenure\": \"1\",\n                \"service_fault_code\": \"\",\n                \"service_fault_msg\": \"\",\n                \"has_break_in\": \"No\",\n                \"break_in_days\": 0,\n                \"emer_medical_prem\": 0,\n                \"veh_age\": 4,\n                \"repair_glass_prem\": 0,\n                \"total_idv\": 276879,\n                \"rsa_prem\": 0,\n                \"net_premium\": \"16622.00\",\n                \"compulsory_excess\": 500,\n                \"electrical_idv1\": 0,\n                \"add_towing_prem\": 0,\n                \"add_towing_vech_prem\": 0,\n                \"vehicle_user_idv1\": 0,\n                \"trailer_tp_prem\": 0,\n                \"trailer_od_prem\": 0,\n                \"own_premises_od_prem\": 0,\n                \"own_premises_tp_prem\": 0,\n                \"non_electrical_idv1\": 0,\n                \"geography_extension_tp_prem\": 0,\n                \"key_si\": 0,\n                \"geography_extension_od_prem\": 0,\n                \"cng_lpg_idv1\": 0,\n                \"vehicle_system_idv1\": 276879,\n                \"curr_ncb\": 20,\n                \"curr_ncb_perc\": \"143.37\",\n                \"emergency_expense_si\": \"\",\n                \"personal_loss_si\": \"\",\n                \"key_replace_si\": 0,\n                \"vehicle_wheels\": 4,\n                \"vehicle_body\": \"CLOSED\",\n                \"proposer_district\": \"KALYAN\",\n                \"proposer_city\": \"KALYAN\",\n                \"proposer_state\": \"MAHARASHTRA\",\n                \"refferal\": \"N\",\n                \"refferalMsg\": \"\",\n                \"inspectionMsg\": \"\",\n                \"inspectionData\": [],\n                \"selfInspection\": false,\n                \"thirdPartyInspection\": false,\n                \"inspectionOverride\": false,\n                \"self_inspection_link\": \"\",\n                \"inspectionFlag\": \"N\",\n                \"q_mobile_no\": \"18004194199\",\n                \"system_discount\": 85,\n                \"product_name\": \"Commercial Vehicle\",\n                \"quote_expiry_days\": \"1\",\n                \"deviation_discount\": 0,\n                \"total_discount\": 85,\n                \"is_posp\": \"N\",\n                \"q_agent_pan\": \"\",\n                \"policy_id\": \"P300333963296\",\n                \"sol_id\": \"\",\n                \"sp_code\": \"\"\n            },\n            \"quote_stage\": \"completed\",\n            \"quote_datetime\": \"2024-04-18 06:27:05\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "fully build",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tata_token}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"EICHER MOTORS\",\r\n    \"vehicle_model\": \"PRO 2095\",\r\n    \"vehicle_variant\": \"DIESEL FULLY BUILT\",\r\n    \"make_code\": 384,\r\n    \"model_code\": 11719,\r\n    \"variant_code\": 147504,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 11280,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+							"protocol": "https",
+							"host": [
+								"foyer",
+								"tataaig",
+								"com"
+							],
+							"path": [
+								"gcv-motor",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 06:28:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4912"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "34fba2af-b78c-44ba-b224-0be24907bc31"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "expect-ct",
+							"value": "max-age=0"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "4912"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "x-amzn-Remapped-connection",
+							"value": "close"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "WaKNZGlQBcwEOjQ="
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1330-dtXHdX1j1S7NCccSvKVzcz3EkQs\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6620bd88-45b8755c39269c5f0a380192"
+						},
+						{
+							"key": "x-amzn-Remapped-date",
+							"value": "Thu, 18 Apr 2024 06:28:27 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message_txt\": \"Quotation converted to proposal successfully\",\n    \"data\": [\n        {\n            \"data\": {\n                \"policy_id\": \"P300333964866\",\n                \"quote_id\": \"Q300333943811\",\n                \"encrypted_quote_id\": \"512adb427ec6296ddd23d0c1a5bf1c19:9806f034c1baffb386c42e178eeeb571\",\n                \"product_id\": \"M300000000004\",\n                \"product_group_id\": \"PG300000000001\",\n                \"par_product_id\": \"M300000000004\",\n                \"proposal_id\": \"PR300040450276\",\n                \"discount_id\": \"\",\n                \"document_id\": \"DT300040459020\",\n                \"quote_no\": \"QT/24/6301549960\",\n                \"policy_start_date\": \"2024-04-19\",\n                \"policy_end_date\": \"2025-04-18\",\n                \"prev_pol_end_date\": \"2024-04-18\",\n                \"prev_pol_start_date\": \"2023-04-19\",\n                \"mobile_no\": \"9999999999\",\n                \"man_year\": \"2020\",\n                \"q_producer_code\": \"1091260169\",\n                \"proposer_type\": \"Individual\",\n                \"product_code\": \"3189\",\n                \"business_type\": \"Roll Over\",\n                \"business_type_no\": \"03\",\n                \"pol_plan_variant\": \"PackagePolicy\",\n                \"proposer_pincode\": \"421301\",\n                \"pol_start_date\": \"2024-04-19\",\n                \"pol_end_date\": \"2025-04-18\",\n                \"dor\": \"2020-01-01\",\n                \"dor_first\": \"\",\n                \"vehicle_make\": \"EICHER MOTORS\",\n                \"vehicle_model\": \"PRO 2095\",\n                \"customer_mobileno\": \"9999999999\",\n                \"vehicle_variant\": \"DIESEL FULLY BUILT\",\n                \"min_idv_body\": 0,\n                \"max_idv_body\": 0,\n                \"min_idv_chassis\": 883841,\n                \"max_idv_chassis\": 1767683,\n                \"regno_1\": \"MH\",\n                \"regno_2\": \"05\",\n                \"regno_3\": \"ZZ\",\n                \"regno_4\": \"9999\",\n                \"place_reg\": \"KALYAN\",\n                \"place_reg_no\": \"103\",\n                \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\n                \"claim_last\": \"No\",\n                \"claim_last_count\": \"\",\n                \"claim_last_amount\": \"\",\n                \"pre_pol_ncb\": \"\",\n                \"segment\": \"TRUCK\",\n                \"segment_code\": 7,\n                \"cc\": 2960,\n                \"sc\": 3,\n                \"systemBodyIDVYearOne\": 0,\n                \"systemChasisIDVYearOne\": 1178455,\n                \"body_idv\": \"0\",\n                \"chassis_idv\": \"0\",\n                \"BH_regno\": \"false\",\n                \"special_regno\": \"No\",\n                \"premium_break_up\": {\n                    \"total_od_premium\": {\n                        \"od\": {\n                            \"cng_lpg_od_prem\": 0,\n                            \"trailer_od_prem\": 0,\n                            \"geography_extension_od_prem\": 0,\n                            \"od_sgst_value\": \"366.00\",\n                            \"od_cgst_value\": \"366.00\",\n                            \"od_ugst_value\": 0,\n                            \"od_igst_value\": 0,\n                            \"basic_od\": \"5085.03\",\n                            \"total_od\": \"4068.02\",\n                            \"net_od\": \"4068.02\"\n                        },\n                        \"loading_od\": {\n                            \"cover_lapm_prem\": 0,\n                            \"imported_customduty_prem\": 0,\n                            \"theft_conversion_prem\": \"\",\n                            \"vech_fitted_fiber_fule_prem\": 0\n                        },\n                        \"discount_od\": {},\n                        \"total_od\": \"4068.02\"\n                    },\n                    \"total_addOns\": {\n                        \"dep_reimburse_prem\": 0,\n                        \"return_invoice_prem\": 0,\n                        \"ncb_protection_prem\": 0,\n                        \"emi_protector_prem\": 0,\n                        \"personal_loss_prem\": 0,\n                        \"key_replace_prem\": 0,\n                        \"engine_secure_prem\": 0,\n                        \"tyre_secure_prem\": \"\",\n                        \"rim_guard_prem\": 0,\n                        \"consumbale_expense_prem\": 0,\n                        \"repair_glass_prem\": 0,\n                        \"rsa_prem\": 0,\n                        \"emer_medical_prem\": 0,\n                        \"emer_transp_prem\": 0,\n                        \"add_towing_prem\": 0,\n                        \"loss_of_income_prem\": 0,\n                        \"total_addon\": 0\n                    },\n                    \"total_tp_premium\": {\n                        \"basic_tp\": \"27186.00\",\n                        \"own_premises_tp_prem\": 0,\n                        \"trailer_tp_prem\": 0,\n                        \"cng_lpg_tp_prem\": 0,\n                        \"geography_extension_tp_prem\": 0,\n                        \"pa_unnamed_no\": \"\",\n                        \"pa_paid_no\": 0,\n                        \"ll_paid_no\": 0,\n                        \"pa_paid_drive_prem\": 0,\n                        \"ll_paid_drive_prem\": 0,\n                        \"cpa_prem\": 0,\n                        \"addi_pa_owner_drive_prem\": 0,\n                        \"addi_pa_emp_drive_unname_prem\": 0,\n                        \"addi_tppd_prem\": 0,\n                        \"total_tp\": \"27186.00\",\n                        \"tp_sgst_value\": \"1631.00\",\n                        \"tp_cgst_value\": \"1631.00\",\n                        \"tp_ugst_value\": 0,\n                        \"tp_igst_value\": 0\n                    },\n                    \"other_tp_sgstval\": 0,\n                    \"other_tp_cgstval\": 0,\n                    \"other_tp_ugstval\": 0,\n                    \"other_tp_igstval\": 0,\n                    \"net_premium\": \"31254.00\",\n                    \"total_gstval\": \"3994.00\",\n                    \"premium_value\": 35248,\n                    \"loss_of_equip_prem\": 0,\n                    \"ll_pass_prem\": 0,\n                    \"ll_nonfare_not_emp_prem\": 0,\n                    \"ll_fare_prem\": 0,\n                    \"ll_workmens_prem\": 0,\n                    \"ll_load_unload_prem\": 0,\n                    \"use_vech_both_prem_tp\": 0,\n                    \"vech_use_driving_tp_prem\": 0\n                }\n            },\n            \"pol_dlts\": {\n                \"q_dealer_code\": \"0030240001\",\n                \"vehicle_fuel\": \"DIESEL\",\n                \"vehicle_cc\": \"2960\",\n                \"vehicle_price\": \"2356908\",\n                \"vehicle_idv\": 1178455,\n                \"vehicle_seating\": 3,\n                \"tppd_prem\": 0,\n                \"cng_lpg_tp_prem\": 0,\n                \"basic_tp\": \"27186.00\",\n                \"detariff\": 75,\n                \"basic_od\": \"5085.03\",\n                \"od_rate\": \"0.43\",\n                \"cng_lpg_od_prem\": 0,\n                \"electrical_prem\": 0,\n                \"basis_of_rating\": \"Tagic\",\n                \"non_electrical_prem\": 0,\n                \"q_branch_name\": \"MUMBAI\",\n                \"q_emp_code\": \"1091260169\",\n                \"q_user_id\": \"1091260169\",\n                \"total_addon\": 0,\n                \"total_od\": \"4068.02\",\n                \"od_tenure\": \"1\",\n                \"tp_tenure\": \"1\",\n                \"service_fault_code\": \"\",\n                \"service_fault_msg\": \"\",\n                \"has_break_in\": \"No\",\n                \"break_in_days\": 0,\n                \"emer_medical_prem\": 0,\n                \"veh_age\": 4,\n                \"repair_glass_prem\": 0,\n                \"total_idv\": 1178455,\n                \"rsa_prem\": 0,\n                \"net_premium\": \"31254.00\",\n                \"compulsory_excess\": 1000,\n                \"electrical_idv1\": 0,\n                \"add_towing_prem\": 0,\n                \"add_towing_vech_prem\": 0,\n                \"vehicle_user_idv1\": 0,\n                \"trailer_tp_prem\": 0,\n                \"trailer_od_prem\": 0,\n                \"own_premises_od_prem\": 0,\n                \"own_premises_tp_prem\": 0,\n                \"non_electrical_idv1\": 0,\n                \"geography_extension_tp_prem\": 0,\n                \"key_si\": 0,\n                \"geography_extension_od_prem\": 0,\n                \"cng_lpg_idv1\": 0,\n                \"vehicle_system_idv1\": 1178455,\n                \"curr_ncb\": 20,\n                \"curr_ncb_perc\": \"1017.01\",\n                \"emergency_expense_si\": \"\",\n                \"personal_loss_si\": \"\",\n                \"key_replace_si\": 0,\n                \"vehicle_wheels\": 4,\n                \"vehicle_body\": \"OPEN\",\n                \"proposer_district\": \"KALYAN\",\n                \"proposer_city\": \"KALYAN\",\n                \"proposer_state\": \"MAHARASHTRA\",\n                \"refferal\": \"N\",\n                \"refferalMsg\": \"\",\n                \"inspectionMsg\": \"\",\n                \"inspectionData\": [],\n                \"selfInspection\": false,\n                \"thirdPartyInspection\": false,\n                \"inspectionOverride\": false,\n                \"self_inspection_link\": \"\",\n                \"inspectionFlag\": \"N\",\n                \"q_mobile_no\": \"18004194199\",\n                \"system_discount\": 75,\n                \"product_name\": \"Commercial Vehicle\",\n                \"quote_expiry_days\": \"1\",\n                \"deviation_discount\": 0,\n                \"total_discount\": 75,\n                \"is_posp\": \"N\",\n                \"q_agent_pan\": \"\",\n                \"policy_id\": \"P300333964866\",\n                \"sol_id\": \"\",\n                \"sp_code\": \"\"\n            },\n            \"quote_stage\": \"completed\",\n            \"quote_datetime\": \"2024-04-18 06:28:26\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "cabin and full body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tata_token}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"ASHOK LEYLAND\",\r\n    \"vehicle_model\": \"3116\",\r\n    \"vehicle_variant\": \"CABIN AND FULL BODY MAV 8X2\",\r\n    \"make_code\": 373,\r\n    \"model_code\": 11613,\r\n    \"variant_code\": 113215,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 31000,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+							"protocol": "https",
+							"host": [
+								"foyer",
+								"tataaig",
+								"com"
+							],
+							"path": [
+								"gcv-motor",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 06:29:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4935"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "8a93a462-aa29-49a9-b8b9-021207a397e1"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "expect-ct",
+							"value": "max-age=0"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "4935"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "x-amzn-Remapped-connection",
+							"value": "close"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "WaKZ4HD3BcwEA1Q="
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1347-6WJDCT0Yr4VfiTVBCVBUPOefPRY\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6620bdd8-1b2aad6e139073e6484a614e"
+						},
+						{
+							"key": "x-amzn-Remapped-date",
+							"value": "Thu, 18 Apr 2024 06:29:47 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message_txt\": \"Quotation converted to proposal successfully\",\n    \"data\": [\n        {\n            \"data\": {\n                \"policy_id\": \"P300333966311\",\n                \"quote_id\": \"Q300333945256\",\n                \"encrypted_quote_id\": \"d2f7b11cb7d3e6b1ee50b6ad06761a71:ba750170bbb9ff1054117b9d8e1bbdb4\",\n                \"product_id\": \"M300000000004\",\n                \"product_group_id\": \"PG300000000001\",\n                \"par_product_id\": \"M300000000004\",\n                \"proposal_id\": \"PR300040450608\",\n                \"discount_id\": \"\",\n                \"document_id\": \"DT300040459352\",\n                \"quote_no\": \"QT/24/6301550077\",\n                \"policy_start_date\": \"2024-04-19\",\n                \"policy_end_date\": \"2025-04-18\",\n                \"prev_pol_end_date\": \"2024-04-18\",\n                \"prev_pol_start_date\": \"2023-04-19\",\n                \"mobile_no\": \"9999999999\",\n                \"man_year\": \"2020\",\n                \"q_producer_code\": \"1091260169\",\n                \"proposer_type\": \"Individual\",\n                \"product_code\": \"3189\",\n                \"business_type\": \"Roll Over\",\n                \"business_type_no\": \"03\",\n                \"pol_plan_variant\": \"PackagePolicy\",\n                \"proposer_pincode\": \"421301\",\n                \"pol_start_date\": \"2024-04-19\",\n                \"pol_end_date\": \"2025-04-18\",\n                \"dor\": \"2020-01-01\",\n                \"dor_first\": \"\",\n                \"vehicle_make\": \"ASHOK LEYLAND\",\n                \"vehicle_model\": \"3116\",\n                \"customer_mobileno\": \"9999999999\",\n                \"vehicle_variant\": \"CABIN AND FULL BODY MAV 8X2\",\n                \"min_idv_body\": 76500,\n                \"max_idv_body\": 306000,\n                \"min_idv_chassis\": 847560,\n                \"max_idv_chassis\": 1695120,\n                \"regno_1\": \"MH\",\n                \"regno_2\": \"05\",\n                \"regno_3\": \"ZZ\",\n                \"regno_4\": \"9999\",\n                \"place_reg\": \"KALYAN\",\n                \"place_reg_no\": \"103\",\n                \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\n                \"claim_last\": \"No\",\n                \"claim_last_count\": \"\",\n                \"claim_last_amount\": \"\",\n                \"pre_pol_ncb\": \"\",\n                \"segment\": \"TANKER\",\n                \"segment_code\": 59,\n                \"cc\": 5883,\n                \"sc\": 3,\n                \"systemBodyIDVYearOne\": 153000,\n                \"systemChasisIDVYearOne\": 1130080,\n                \"body_idv\": \"0\",\n                \"chassis_idv\": \"0\",\n                \"BH_regno\": \"false\",\n                \"special_regno\": \"No\",\n                \"premium_break_up\": {\n                    \"total_od_premium\": {\n                        \"od\": {\n                            \"cng_lpg_od_prem\": 0,\n                            \"trailer_od_prem\": 0,\n                            \"geography_extension_od_prem\": 0,\n                            \"od_sgst_value\": \"295.00\",\n                            \"od_cgst_value\": \"295.00\",\n                            \"od_ugst_value\": 0,\n                            \"od_igst_value\": 0,\n                            \"basic_od\": \"4091.39\",\n                            \"total_od\": \"3273.11\",\n                            \"net_od\": \"3273.11\"\n                        },\n                        \"loading_od\": {\n                            \"cover_lapm_prem\": 0,\n                            \"imported_customduty_prem\": 0,\n                            \"theft_conversion_prem\": \"\",\n                            \"vech_fitted_fiber_fule_prem\": 0\n                        },\n                        \"discount_od\": {},\n                        \"total_od\": \"3273.11\"\n                    },\n                    \"total_addOns\": {\n                        \"dep_reimburse_prem\": 0,\n                        \"return_invoice_prem\": 0,\n                        \"ncb_protection_prem\": 0,\n                        \"emi_protector_prem\": 0,\n                        \"personal_loss_prem\": 0,\n                        \"key_replace_prem\": 0,\n                        \"engine_secure_prem\": 0,\n                        \"tyre_secure_prem\": \"\",\n                        \"rim_guard_prem\": 0,\n                        \"consumbale_expense_prem\": 0,\n                        \"repair_glass_prem\": 0,\n                        \"rsa_prem\": 0,\n                        \"emer_medical_prem\": 0,\n                        \"emer_transp_prem\": 0,\n                        \"add_towing_prem\": 0,\n                        \"loss_of_income_prem\": 0,\n                        \"total_addon\": 0\n                    },\n                    \"total_tp_premium\": {\n                        \"basic_tp\": \"43950.00\",\n                        \"own_premises_tp_prem\": 0,\n                        \"trailer_tp_prem\": 0,\n                        \"cng_lpg_tp_prem\": 0,\n                        \"geography_extension_tp_prem\": 0,\n                        \"pa_unnamed_no\": \"\",\n                        \"pa_paid_no\": 0,\n                        \"ll_paid_no\": 0,\n                        \"pa_paid_drive_prem\": 0,\n                        \"ll_paid_drive_prem\": 0,\n                        \"cpa_prem\": 0,\n                        \"addi_pa_owner_drive_prem\": 0,\n                        \"addi_pa_emp_drive_unname_prem\": 0,\n                        \"addi_tppd_prem\": 0,\n                        \"total_tp\": \"43950.00\",\n                        \"tp_sgst_value\": \"2637.00\",\n                        \"tp_cgst_value\": \"2637.00\",\n                        \"tp_ugst_value\": 0,\n                        \"tp_igst_value\": 0\n                    },\n                    \"other_tp_sgstval\": 0,\n                    \"other_tp_cgstval\": 0,\n                    \"other_tp_ugstval\": 0,\n                    \"other_tp_igstval\": 0,\n                    \"net_premium\": \"47223.00\",\n                    \"total_gstval\": \"5864.00\",\n                    \"premium_value\": 53087,\n                    \"loss_of_equip_prem\": 0,\n                    \"ll_pass_prem\": 0,\n                    \"ll_nonfare_not_emp_prem\": 0,\n                    \"ll_fare_prem\": 0,\n                    \"ll_workmens_prem\": 0,\n                    \"ll_load_unload_prem\": 0,\n                    \"use_vech_both_prem_tp\": 0,\n                    \"vech_use_driving_tp_prem\": 0\n                }\n            },\n            \"pol_dlts\": {\n                \"q_dealer_code\": \"0030240001\",\n                \"vehicle_fuel\": \"DIESEL\",\n                \"vehicle_cc\": \"5883\",\n                \"vehicle_price\": \"2566163\",\n                \"vehicle_idv\": 1283080,\n                \"vehicle_seating\": 3,\n                \"tppd_prem\": 0,\n                \"cng_lpg_tp_prem\": 0,\n                \"basic_tp\": \"43950.00\",\n                \"detariff\": 85,\n                \"basic_od\": \"4091.39\",\n                \"od_rate\": \"0.26\",\n                \"cng_lpg_od_prem\": 0,\n                \"electrical_prem\": 0,\n                \"basis_of_rating\": \"Tagic\",\n                \"non_electrical_prem\": 0,\n                \"q_branch_name\": \"MUMBAI\",\n                \"q_emp_code\": \"1091260169\",\n                \"q_user_id\": \"1091260169\",\n                \"total_addon\": 0,\n                \"total_od\": \"3273.11\",\n                \"od_tenure\": \"1\",\n                \"tp_tenure\": \"1\",\n                \"service_fault_code\": \"\",\n                \"service_fault_msg\": \"\",\n                \"has_break_in\": \"No\",\n                \"break_in_days\": 0,\n                \"emer_medical_prem\": 0,\n                \"veh_age\": 4,\n                \"repair_glass_prem\": 0,\n                \"total_idv\": 1283080,\n                \"rsa_prem\": 0,\n                \"net_premium\": \"47223.00\",\n                \"compulsory_excess\": 1500,\n                \"electrical_idv1\": 0,\n                \"add_towing_prem\": 0,\n                \"add_towing_vech_prem\": 0,\n                \"vehicle_user_idv1\": 0,\n                \"trailer_tp_prem\": 0,\n                \"trailer_od_prem\": 0,\n                \"own_premises_od_prem\": 0,\n                \"own_premises_tp_prem\": 0,\n                \"non_electrical_idv1\": 0,\n                \"geography_extension_tp_prem\": 0,\n                \"key_si\": 0,\n                \"geography_extension_od_prem\": 0,\n                \"cng_lpg_idv1\": 0,\n                \"vehicle_system_idv1\": 1283080,\n                \"curr_ncb\": 20,\n                \"curr_ncb_perc\": \"818.28\",\n                \"emergency_expense_si\": \"\",\n                \"personal_loss_si\": \"\",\n                \"key_replace_si\": 0,\n                \"vehicle_wheels\": 10,\n                \"vehicle_body\": \"CLOSED\",\n                \"proposer_district\": \"KALYAN\",\n                \"proposer_city\": \"KALYAN\",\n                \"proposer_state\": \"MAHARASHTRA\",\n                \"refferal\": \"N\",\n                \"refferalMsg\": \"\",\n                \"inspectionMsg\": \"\",\n                \"inspectionData\": [],\n                \"selfInspection\": false,\n                \"thirdPartyInspection\": false,\n                \"inspectionOverride\": false,\n                \"self_inspection_link\": \"\",\n                \"inspectionFlag\": \"N\",\n                \"q_mobile_no\": \"18004194199\",\n                \"system_discount\": 85,\n                \"product_name\": \"Commercial Vehicle\",\n                \"quote_expiry_days\": \"1\",\n                \"deviation_discount\": 0,\n                \"total_discount\": 85,\n                \"is_posp\": \"N\",\n                \"q_agent_pan\": \"\",\n                \"policy_id\": \"P300333966311\",\n                \"sol_id\": \"\",\n                \"sp_code\": \"\"\n            },\n            \"quote_stage\": \"completed\",\n            \"quote_datetime\": \"2024-04-18 06:29:45\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "unipolar and full body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tata_token}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source\": \"P\",\r\n    \"vehicle_usage_type\": \"Stone Carrier\",\r\n    \"vehicle_usage_type_code\": \"Unknown\",\r\n    \"q_producer_code\": \"1091260169\",\r\n    \"q_producer_email\": \"nagaur_insmo@indusind.com\",\r\n    \"sol_id\": \"\",\r\n    \"sp_code\": \"\",\r\n    \"q_office_location\": \"\",\r\n    \"proposer_type\": \"Individual\",\r\n    \"email\": \"policybossUAT@testIDV.com\",\r\n    \"mobile_no\": \"9999999999\",\r\n    \"product_id\": \"M300000000004\",\r\n    \"proposer_pincode\": \"421301\",\r\n    \"business_type\": \"Roll Over\",\r\n    \"business_type_no\": \"3\",\r\n    \"dor_first\": \"\",\r\n    \"dor\": \"2020-01-01\",\r\n    \"pol_plan_variant\": \"PackagePolicy\",\r\n    \"pol_plan\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"pol_start_date\": \"2024-04-19\",\r\n    \"prev_pol_end_date\": \"2024-04-18\",\r\n    \"prev_pol_start_date\": \"2023-04-19\",\r\n    \"man_year\": 2020,\r\n    \"special_regno\": \"No\",\r\n    \"regno_1\": \"MH\",\r\n    \"regno_2\": \"05\",\r\n    \"regno_3\": \"ZZ\",\r\n    \"regno_4\": \"9999\",\r\n    \"no_past_policy\": \"No\",\r\n    \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\r\n    \"prev_dep\": \"No\",\r\n    \"prev_engine\": \"No\",\r\n    \"prev_tyre\": \"No\",\r\n    \"prev_rti\": \"No\",\r\n    \"prev_cnglpg\": \"No\",\r\n    \"claim_last\": \"No\",\r\n    \"claim_last_amount\": \"\",\r\n    \"claim_last_count\": \"\",\r\n    \"pre_pol_ncb\": \"\",\r\n    \"pre_pol_protect_ncb\": \"NA\",\r\n    \"vehicle_class\": \"\",\r\n    \"vehicle_sub_class\": \"A1 GCV Public carriers other than 3 wheelers\",\r\n    \"vehicle_sub_class_no\": \"201\",\r\n    \"vehicle_make\": \"TATA MOTORS\",\r\n    \"vehicle_model\": \"LPS 4018\",\r\n    \"vehicle_variant\": \"UNIPOLAR FLAT BED FULL CANOPY TRAILER\",\r\n    \"make_code\": 450,\r\n    \"model_code\": 11805,\r\n    \"variant_code\": 116513,\r\n    \"place_reg\": \"KALYAN\",\r\n    \"place_reg_no\": \"103\",\r\n    \"gvw\": 40200,\r\n    \"sub_body_type\": \"null\",\r\n    \"nature_goods\": \"Non-Hazardous\",\r\n    \"vehicle_carrying\": \"1\",\r\n    \"vehicle_built_type\": \"\",\r\n    \"vehicle_color\": \"\",\r\n    \"vehicle_city\": \"\",\r\n    \"vehicle_mobility\": \"\",\r\n    \"route_from\": \"\",\r\n    \"route_to\": \"\",\r\n    \"vehicle_permit\": \"\",\r\n    \"body_idv\": 0,\r\n    \"chassis_idv\": 0,\r\n    \"cng_lpg_cover\": \"No\",\r\n    \"cng_lpg_si\": \"\",\r\n    \"electrical_cover\": \"No\",\r\n    \"non_electrical_cover\": \"No\",\r\n    \"electrical_si\": \"\",\r\n    \"non_electrical_si\": \"\",\r\n    \"electrical_desc\": \"Sound systeam\",\r\n    \"non_electrical_desc\": \"cover\",\r\n    \"add_vehicle_towing\": \"No\",\r\n    \"add_vehicle_towing_amount\": \"\",\r\n    \"trailer_attach\": \"No\",\r\n    \"trailer_no\": \"\",\r\n    \"trailer_idv1\": 0,\r\n    \"trailer_idv2\": \"\",\r\n    \"trailer_idv\": \"\",\r\n    \"total_idv\": \"\",\r\n    \"system_discount\": \"\",\r\n    \"uw_loading\": \"\",\r\n    \"uw_discount\": \"\",\r\n    \"uw_remarks\": \"\",\r\n    \"antitheft_cover\": \"No\",\r\n    \"voluntary_amount\": \"\",\r\n    \"tppd_discount\": \"No\",\r\n    \"own_premises\": \"No\",\r\n    \"vehicle_blind\": \"No\",\r\n    \"confined_ownsite\": \"No\",\r\n    \"ncb_protection\": \"No\",\r\n    \"ncb_no_of_claims\": 0,\r\n    \"tyre_secure\": \"No\",\r\n    \"tyre_secure_options\": \"\",\r\n    \"engine_secure\": \"No\",\r\n    \"engine_secure_options\": \"\",\r\n    \"dep_reimburse\": \"No\",\r\n    \"dep_reimburse_claims\": \"\",\r\n    \"add_towing\": \"No\",\r\n    \"add_towing_amount\": \"\",\r\n    \"return_invoice\": \"No\",\r\n    \"consumbale_expense\": \"No\",\r\n    \"rsa\": \"No\",\r\n    \"loss_equipments\": \"No\",\r\n    \"key_replace\": \"No\",\r\n    \"key_replace_si\": 0,\r\n    \"emergency_expense\": \"No\",\r\n    \"emergency_expense_si\": \"\",\r\n    \"aoa_si\": \"\",\r\n    \"aoy_si\": \"\",\r\n    \"emergency_medical\": \"No\",\r\n    \"emergency_medical_si\": \"\",\r\n    \"personal_loss\": \"No\",\r\n    \"personal_loss_si\": \"\",\r\n    \"add_tppd\": \"No\",\r\n    \"add_tppd_si\": \"\",\r\n    \"loss_income\": \"No\",\r\n    \"loss_income_days\": \"\",\r\n    \"emi_protector\": \"No\",\r\n    \"emi_protector_si\": \"\",\r\n    \"rim_guard\": \"No\",\r\n    \"rim_guard_si\": 0,\r\n    \"add_transport\": \"No\",\r\n    \"add_transport_si\": \"\",\r\n    \"repair_glass\": \"No\",\r\n    \"ll_paid\": \"No\",\r\n    \"ll_paid_no\": 0,\r\n    \"ll_pass\": \"No\",\r\n    \"ll_pass_no\": \"\",\r\n    \"ll_pass_fare\": \"No\",\r\n    \"ll_pass_fare_no\": \"\",\r\n    \"ll_pass_non_fare\": \"No\",\r\n    \"ll_pass_non_fare_no\": \"\",\r\n    \"ll_pass_non_fare_emp\": \"No\",\r\n    \"ll_pass_non_fare_emp_no\": \"\",\r\n    \"ll_operator\": \"No\",\r\n    \"ll_operator_no\": \"\",\r\n    \"ll_wc\": \"No\",\r\n    \"ll_wc_no\": \"\",\r\n    \"ll_pass_accident\": \"No\",\r\n    \"ll_pass_accident_no\": \"\",\r\n    \"load_fibre\": \"No\",\r\n    \"load_tuition\": \"No\",\r\n    \"cover_lamps\": \"No\",\r\n    \"load_imported\": \"No\",\r\n    \"commerical_private\": \"No\",\r\n    \"liability_theft\": \"\",\r\n    \"theft_conversion\": \"No\",\r\n    \"idemnity_hirer_36\": \"No\",\r\n    \"hired_hirer_35\": \"No\",\r\n    \"overturning_load\": \"No\",\r\n    \"imposed_excess\": \"\",\r\n    \"idemnity_hirer_44\": \"No\",\r\n    \"idemnity_hirer_45\": \"No\",\r\n    \"geography_extension\": \"No\",\r\n    \"geography_extension_bang\": \"\",\r\n    \"geography_extension_bhutan\": \"\",\r\n    \"geography_extension_nepal\": \"\",\r\n    \"geography_extension_maldives\": \"\",\r\n    \"geography_extension_pak\": \"\",\r\n    \"geography_extension_lanka\": \"\",\r\n    \"add_pa\": \"No\",\r\n    \"add_pa_si\": \"\",\r\n    \"add_pa_unnamed\": \"No\",\r\n    \"add_pa_unnamed_si\": \"\",\r\n    \"cvplying_cluster\": \"\",\r\n    \"pa_owner\": \"false\",\r\n    \"pa_owner_tenure\": \"\",\r\n    \"pa_owner_declaration\": \"Insured has standalone PA cover >= 15 lakhs\",\r\n    \"pa_unnamed\": \"No\",\r\n    \"pa_unnamed_no\": \"\",\r\n    \"pa_unnamed_si\": \"\",\r\n    \"pa_paid\": \"No\",\r\n    \"pa_paid_no\": 0,\r\n    \"pa_paid_si\": 0,\r\n    \"fleetCode\": 0,\r\n    \"fleetName\": \"\",\r\n    \"fleetOpted\": \"false\",\r\n    \"optionForCalculation\": \"Yearly\",\r\n    \"quote_id\": \"\",\r\n    \"__finalize\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "https://foyer.tataaig.com/gcv-motor/v1/quote",
+							"protocol": "https",
+							"host": [
+								"foyer",
+								"tataaig",
+								"com"
+							],
+							"path": [
+								"gcv-motor",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 18 Apr 2024 06:31:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4947"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "06ca2889-6622-4740-a911-503afc971b99"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "expect-ct",
+							"value": "max-age=0"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "4947"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "x-amzn-Remapped-connection",
+							"value": "close"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "WaKleFNLBcwEeeg="
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1353-nFfj/r0E5g78WR5qUEAEFhFhHKc\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6620be22-22ea65761b811dc219e4ad74"
+						},
+						{
+							"key": "x-amzn-Remapped-date",
+							"value": "Thu, 18 Apr 2024 06:31:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message_txt\": \"Quotation converted to proposal successfully\",\n    \"data\": [\n        {\n            \"data\": {\n                \"policy_id\": \"P300333967468\",\n                \"quote_id\": \"Q300333946412\",\n                \"encrypted_quote_id\": \"aedf1ca159e2e833273c9da96bbebed2:8bdc8dba70f9decaff63ab9cb301a9a8\",\n                \"product_id\": \"M300000000004\",\n                \"product_group_id\": \"PG300000000001\",\n                \"par_product_id\": \"M300000000004\",\n                \"proposal_id\": \"PR300040450875\",\n                \"discount_id\": \"\",\n                \"document_id\": \"DT300040459619\",\n                \"quote_no\": \"QT/24/6301550140\",\n                \"policy_start_date\": \"2024-04-19\",\n                \"policy_end_date\": \"2025-04-18\",\n                \"prev_pol_end_date\": \"2024-04-18\",\n                \"prev_pol_start_date\": \"2023-04-19\",\n                \"mobile_no\": \"9999999999\",\n                \"man_year\": \"2020\",\n                \"q_producer_code\": \"1091260169\",\n                \"proposer_type\": \"Individual\",\n                \"product_code\": \"3189\",\n                \"business_type\": \"Roll Over\",\n                \"business_type_no\": \"03\",\n                \"pol_plan_variant\": \"PackagePolicy\",\n                \"proposer_pincode\": \"421301\",\n                \"pol_start_date\": \"2024-04-19\",\n                \"pol_end_date\": \"2025-04-18\",\n                \"dor\": \"2020-01-01\",\n                \"dor_first\": \"\",\n                \"vehicle_make\": \"TATA MOTORS\",\n                \"vehicle_model\": \"LPS 4018\",\n                \"customer_mobileno\": \"9999999999\",\n                \"vehicle_variant\": \"UNIPOLAR FLAT BED FULL CANOPY TRAILER\",\n                \"min_idv_body\": 70125,\n                \"max_idv_body\": 280500,\n                \"min_idv_chassis\": 642765,\n                \"max_idv_chassis\": 1285530,\n                \"regno_1\": \"MH\",\n                \"regno_2\": \"05\",\n                \"regno_3\": \"ZZ\",\n                \"regno_4\": \"9999\",\n                \"place_reg\": \"KALYAN\",\n                \"place_reg_no\": \"103\",\n                \"prev_pol_type\": \"Package (1 year OD + 1 Year TP)\",\n                \"claim_last\": \"No\",\n                \"claim_last_count\": \"\",\n                \"claim_last_amount\": \"\",\n                \"pre_pol_ncb\": \"\",\n                \"segment\": \"SEMI TRAILER\",\n                \"segment_code\": 57,\n                \"cc\": 5883,\n                \"sc\": 3,\n                \"systemBodyIDVYearOne\": 140250,\n                \"systemChasisIDVYearOne\": 857020,\n                \"body_idv\": \"0\",\n                \"chassis_idv\": \"0\",\n                \"BH_regno\": \"false\",\n                \"special_regno\": \"No\",\n                \"premium_break_up\": {\n                    \"total_od_premium\": {\n                        \"od\": {\n                            \"cng_lpg_od_prem\": 0,\n                            \"trailer_od_prem\": 0,\n                            \"geography_extension_od_prem\": 0,\n                            \"od_sgst_value\": \"358.00\",\n                            \"od_cgst_value\": \"358.00\",\n                            \"od_ugst_value\": 0,\n                            \"od_igst_value\": 0,\n                            \"basic_od\": \"4965.38\",\n                            \"total_od\": \"3972.30\",\n                            \"net_od\": \"3972.30\"\n                        },\n                        \"loading_od\": {\n                            \"cover_lapm_prem\": 0,\n                            \"imported_customduty_prem\": 0,\n                            \"theft_conversion_prem\": \"\",\n                            \"vech_fitted_fiber_fule_prem\": 0\n                        },\n                        \"discount_od\": {},\n                        \"total_od\": \"3972.30\"\n                    },\n                    \"total_addOns\": {\n                        \"dep_reimburse_prem\": 0,\n                        \"return_invoice_prem\": 0,\n                        \"ncb_protection_prem\": 0,\n                        \"emi_protector_prem\": 0,\n                        \"personal_loss_prem\": 0,\n                        \"key_replace_prem\": 0,\n                        \"engine_secure_prem\": 0,\n                        \"tyre_secure_prem\": \"\",\n                        \"rim_guard_prem\": 0,\n                        \"consumbale_expense_prem\": 0,\n                        \"repair_glass_prem\": 0,\n                        \"rsa_prem\": 0,\n                        \"emer_medical_prem\": 0,\n                        \"emer_transp_prem\": 0,\n                        \"add_towing_prem\": 0,\n                        \"loss_of_income_prem\": 0,\n                        \"total_addon\": 0\n                    },\n                    \"total_tp_premium\": {\n                        \"basic_tp\": \"44242.00\",\n                        \"own_premises_tp_prem\": 0,\n                        \"trailer_tp_prem\": 0,\n                        \"cng_lpg_tp_prem\": 0,\n                        \"geography_extension_tp_prem\": 0,\n                        \"pa_unnamed_no\": \"\",\n                        \"pa_paid_no\": 0,\n                        \"ll_paid_no\": 0,\n                        \"pa_paid_drive_prem\": 0,\n                        \"ll_paid_drive_prem\": 0,\n                        \"cpa_prem\": 0,\n                        \"addi_pa_owner_drive_prem\": 0,\n                        \"addi_pa_emp_drive_unname_prem\": 0,\n                        \"addi_tppd_prem\": 0,\n                        \"total_tp\": \"44242.00\",\n                        \"tp_sgst_value\": \"2655.00\",\n                        \"tp_cgst_value\": \"2655.00\",\n                        \"tp_ugst_value\": 0,\n                        \"tp_igst_value\": 0\n                    },\n                    \"other_tp_sgstval\": 0,\n                    \"other_tp_cgstval\": 0,\n                    \"other_tp_ugstval\": 0,\n                    \"other_tp_igstval\": 0,\n                    \"net_premium\": \"48214.00\",\n                    \"total_gstval\": \"6026.00\",\n                    \"premium_value\": 54240,\n                    \"loss_of_equip_prem\": 0,\n                    \"ll_pass_prem\": 0,\n                    \"ll_nonfare_not_emp_prem\": 0,\n                    \"ll_fare_prem\": 0,\n                    \"ll_workmens_prem\": 0,\n                    \"ll_load_unload_prem\": 0,\n                    \"use_vech_both_prem_tp\": 0,\n                    \"vech_use_driving_tp_prem\": 0\n                }\n            },\n            \"pol_dlts\": {\n                \"q_dealer_code\": \"0030240001\",\n                \"vehicle_fuel\": \"DIESEL\",\n                \"vehicle_cc\": \"5883\",\n                \"vehicle_price\": \"1994539\",\n                \"vehicle_idv\": 997270,\n                \"vehicle_seating\": 3,\n                \"tppd_prem\": 0,\n                \"cng_lpg_tp_prem\": 0,\n                \"basic_tp\": \"44242.00\",\n                \"detariff\": 80,\n                \"basic_od\": \"4965.38\",\n                \"od_rate\": \"0.35\",\n                \"cng_lpg_od_prem\": 0,\n                \"electrical_prem\": 0,\n                \"basis_of_rating\": \"Tagic\",\n                \"non_electrical_prem\": 0,\n                \"q_branch_name\": \"MUMBAI\",\n                \"q_emp_code\": \"1091260169\",\n                \"q_user_id\": \"1091260169\",\n                \"total_addon\": 0,\n                \"total_od\": \"3972.30\",\n                \"od_tenure\": \"1\",\n                \"tp_tenure\": \"1\",\n                \"service_fault_code\": \"\",\n                \"service_fault_msg\": \"\",\n                \"has_break_in\": \"No\",\n                \"break_in_days\": 0,\n                \"emer_medical_prem\": 0,\n                \"veh_age\": 4,\n                \"repair_glass_prem\": 0,\n                \"total_idv\": 997270,\n                \"rsa_prem\": 0,\n                \"net_premium\": \"48214.00\",\n                \"compulsory_excess\": 1500,\n                \"electrical_idv1\": 0,\n                \"add_towing_prem\": 0,\n                \"add_towing_vech_prem\": 0,\n                \"vehicle_user_idv1\": 0,\n                \"trailer_tp_prem\": 0,\n                \"trailer_od_prem\": 0,\n                \"own_premises_od_prem\": 0,\n                \"own_premises_tp_prem\": 0,\n                \"non_electrical_idv1\": 0,\n                \"geography_extension_tp_prem\": 0,\n                \"key_si\": 0,\n                \"geography_extension_od_prem\": 0,\n                \"cng_lpg_idv1\": 0,\n                \"vehicle_system_idv1\": 997270,\n                \"curr_ncb\": 20,\n                \"curr_ncb_perc\": \"993.08\",\n                \"emergency_expense_si\": \"\",\n                \"personal_loss_si\": \"\",\n                \"key_replace_si\": 0,\n                \"vehicle_wheels\": 14,\n                \"vehicle_body\": \"OPEN\",\n                \"proposer_district\": \"KALYAN\",\n                \"proposer_city\": \"KALYAN\",\n                \"proposer_state\": \"MAHARASHTRA\",\n                \"refferal\": \"N\",\n                \"refferalMsg\": \"\",\n                \"inspectionMsg\": \"\",\n                \"inspectionData\": [],\n                \"selfInspection\": false,\n                \"thirdPartyInspection\": false,\n                \"inspectionOverride\": false,\n                \"self_inspection_link\": \"\",\n                \"inspectionFlag\": \"N\",\n                \"q_mobile_no\": \"18004194199\",\n                \"system_discount\": 80,\n                \"product_name\": \"Commercial Vehicle\",\n                \"quote_expiry_days\": \"1\",\n                \"deviation_discount\": 0,\n                \"total_discount\": 80,\n                \"is_posp\": \"N\",\n                \"q_agent_pan\": \"\",\n                \"policy_id\": \"P300333967468\",\n                \"sol_id\": \"\",\n                \"sp_code\": \"\"\n            },\n            \"quote_stage\": \"completed\",\n            \"quote_datetime\": \"2024-04-18 06:31:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Proposal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"proposer_salutation\": \"Mr\",\n  \"proposer_fname\": \"DINESH\",\n  \"proposer_mname\": \"LAKAHMAYYA\",\n  \"proposer_lname\": \"MALLEPULA\",\n  \"proposer_email\": \"policybosstesting@gmail.com\",\n  \"proposer_mobile\": \"9999999999\",\n  \"proposer_gender\": \"Male\",\n  \"proposer_dob\": \"16/04/2001\",\n  \"proposer_marital\": \"Single\",\n  \"proposer_aadhaar\": \"\",\n  \"proposer_occupation\": \"OTHER\",\n  \"proposer_occupation_other\": \"OTHER\",\n  \"proposer_pan\": \"GOQPM3169N\",\n  \"proposer_gstin\": \"\",\n  \"proposer_add1\": \"TEST TEST TEST\",\n  \"proposer_add2\": \"400077-MUMBAI\",\n  \"proposer_add3\": \"\",\n  \"customer_name\": \"\",\n  \"vehicle_chassis\": \"bv768kj98096987990\",\n  \"vehicle_engine\": \"MAKGM252GBN211106\",\n  \"vehicle_puc_expiry\": \"\",\n  \"vehicle_puc\": \"\",\n  \"vehicle_puc_declaration\": false,\n  \"pre_insurer_name\": \"BHARTI AXA GENERAL INSURANCE COMPANY LIMITED\",\n  \"pre_insurer_no\": \"978978978\",\n  \"pre_insurer_code\": \"BHARTI AXA\",\n  \"pre_insurer_address\": \"\",\n  \"financier_type\": \"\",\n  \"financier_name\": \"\",\n  \"financier_address\": \"\",\n  \"nominee_name\": \"TEST TEST\",\n  \"nominee_relation\": \"Brother\",\n  \"nominee_age\": \"20\",\n  \"declaration\": \"Yes\",\n  \"upload_status\": \"uploadlater\",\n  \"proposal_id\": \"PR300040327816\",\n  \"quote_no\": \"QT/24/6301525154\",\n  \"product_id\": \"M300000000004\",\n  \"__finalize\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "https://foyer.tataaig.com/gcv-motor/v1/proposal",
+					"protocol": "https",
+					"host": [
+						"foyer",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"gcv-motor",
+						"v1",
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CKYC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proposal_no\": \"PR/24/6300493047\",\r\n    \"id_num\": \"GOQPM3169N\",\r\n    \"id_type\": \"PAN\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://foyer.tataaig.com/ckyc/verify?product=motor",
+					"protocol": "https",
+					"host": [
+						"foyer",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"ckyc",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "motor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CKYC Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "g8hoqi8TBA2mBpxgMohdTcWxAfv6JsJ6wLztOWm4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"T\":\"2D9D1BC5A837E7A2741C6121317E9EE6CE1D32145CBCF7084FA4493ECDA2C2804969A5473610BC2AB4FC034359C11D55F99F8AEC736D84F0EFD531DFE24FFC74F0923F1288A83121B8045A8AAA4D9F920B4D737E3A1134B824E23B1F0561D97AEA647554A31570720BDB6E4CE3D8813A1138ABF16F2A23A8E6BAB012DD07B768019A5B583351F6D36C1F6F26B5C8D474D2F701E664A96F73806EE3A5235DEFFD76CF4106F7F074A55258D75B1DDEFD38\",\r\n    \"product_code\":\"3121\",\r\n    \"proposal_id\":\"PR/24/6300004200\",\r\n    \"p_ckyc_pan\":\"GOQPM3169N\",\r\n    \"p_ckyc_no\":\"50028364756606\",\r\n    \"p_ckyc_id_type\":\"update\",\r\n    \"p_ckyc_id_no\":\"\",\r\n    \"timestamp\":\"2024-04-08T08:56:08.869Z\",\r\n    \"kyc_status\":\"SUCCESS\"\r\n}"
+				},
+				"url": {
+					"raw": "https://pipuat.tataaiginsurance.in/tagichubms/ws/v1/ws/getws/kycdet",
+					"protocol": "https",
+					"host": [
+						"pipuat",
+						"tataaiginsurance",
+						"in"
+					],
+					"path": [
+						"tagichubms",
+						"ws",
+						"v1",
+						"ws",
+						"getws",
+						"kycdet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tagic Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\n//     \"payment_mode\": \"onlinePayment\",\n//     \"online_payment_mode\": \"UPI\",\n//     \"payer_type\": \"Customer\",\n//     \"payer_id\": \"\",\n//     \"payer_pan_no\": \"AABCS6519A\",\n//     \"payer_relationship\": \"\",\n//     \"payer_name\": \"sagar pisal\",\n//     \"email\": \"sagarpisal@waywealth.com\",\n//     \"mobile_no\": \"9999999999\",\n//     \"deposit_in\": \"Bank\",\n//     \"pan_no\": \"\",\n//     \"payment_id\": [\n//         \"f7bc133a66b8f496bfe1d62d81b99146:24e982d8950be2e202ac273be056c576\"\n//     ],\n//     \"returnurl\": \"https://www.tataaig.com/\"\n// }\n{\n    \"payment_mode\": \"onlinePaymen\",\n    \"online_payment_mode\": \"UPI\",\n    \"payer_type\": \"Customer\",\n    \"payer_id\": \"\",\n    \"payer_pan_no\": \"GOQPM3169N\",\n    \"payer_relationship\": \"\",\n    \"payer_name\": \"DINESH MALLEPULA\",\n    \"email\": \"policyboss@test.com\",\n    \"mobile_no\": \"9999999999\",\n    \"deposit_in\": \"Bank\",\n    \"pan_no\": \"\",\n    \"payment_id\": [\n        \"c8966b0672303488888fd93663547e6f:d97d94da5ff78970dce18b29b3c96d55\"\n    ],\n    \"returnurl\": \"http://qa-horizon.policyboss.com/transaction-status/392957/1134154/73380\"\n}"
+				},
+				"url": {
+					"raw": "https://foyer.tataaig.com/payment/online?product=motor",
+					"protocol": "https",
+					"host": [
+						"foyer",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"payment",
+						"online"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "motor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Verfication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "euo2LL5PEc8IvEGwjvAdO16r6MNskqpNQpKihMse"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payment_id\": \"5f79183ed34b7ab78767281fcf440721:0f9ce6bb5630140bebadff1fd7a6c933\"\r\n}"
+				},
+				"url": {
+					"raw": "https://uatapigw.tataaig.com/payment/verify?product=motor",
+					"protocol": "https",
+					"host": [
+						"uatapigw",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"payment",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "motor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_document_download_policy_ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tata_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://uatapigw.tataaig.com/motor/v1/policy-download/0b6a899c08abf7f42bcb66b2656de396:c7511c1cdd3e57b27eac485c0ad08e0e",
+					"protocol": "https",
+					"host": [
+						"uatapigw",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"motor",
+						"v1",
+						"policy-download",
+						"0b6a899c08abf7f42bcb66b2656de396:c7511c1cdd3e57b27eac485c0ad08e0e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_document_download_policy_no",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJPN0RIMkhcLzIwR2R3dERXUXRheSszSU5VREdSMVgyd05BNjhlM2tQTEl5bz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0ZHZqZ2RiczJibDUxNnJsMDNqaDVvbGk1aiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiaHR0cHM6XC9cL2FwaS5pb3J0YS5pblwvd3JpdGUiLCJhdXRoX3RpbWUiOjE2NjE0MzA1MzQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfWEhKZWZ1amhxIiwiZXhwIjoxNjYxNDMyMzM0LCJpYXQiOjE2NjE0MzA1MzQsInZlcnNpb24iOjIsImp0aSI6Ijg1NWY2NDFhLTc4MGYtNDc5OS04ZGEwLTAwZWNjZWM5OTRmNCIsImNsaWVudF9pZCI6IjRkdmpnZGJzMmJsNTE2cmwwM2poNW9saTVqIn0.3Ajd7u_loSonWL4S7km1GvOJu-LdRzOv-jBjrYOvDIzwHSMf9rw53wq3w0xpM9PYfbt8zUN10ktMyhtzAVGZKMQdtRVhJrD6Gb4EnYrk3x1O0GrBwf4Mx3YNERHHbtIdIPfiSeW9yd-U_osyiZBdocYe4LGmzCZH4qSbIMwxsYpxdi9T_u8ae9cmBEragn7bK4iYRtahfNyBTr5fOZJ6RtwpC7s7-jWSnknq218GB_71YkH2Git4ZRWVMaSVsJdzlxv_TpOnGEbXt9BjMmMltYc_BAKoGvcWoiBkuTmvZ1yBLjG9OduvWqq-MzewMkimVXHzhwanU4ya8hOwzkLj1A"
+					}
+				],
+				"url": {
+					"raw": "https://uatapigw.tataaig.com/motor/v1/new-policy-download/6300004981-00",
+					"protocol": "https",
+					"host": [
+						"uatapigw",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"motor",
+						"v1",
+						"new-policy-download",
+						"6300004981-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify_inspection_status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJraWQiOiJPN0RIMkhcLzIwR2R3dERXUXRheSszSU5VREdSMVgyd05BNjhlM2tQTEl5bz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0ZHZqZ2RiczJibDUxNnJsMDNqaDVvbGk1aiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiaHR0cHM6XC9cL2FwaS5pb3J0YS5pblwvd3JpdGUiLCJhdXRoX3RpbWUiOjE2NjE0MzA1MzQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoLTFfWEhKZWZ1amhxIiwiZXhwIjoxNjYxNDMyMzM0LCJpYXQiOjE2NjE0MzA1MzQsInZlcnNpb24iOjIsImp0aSI6Ijg1NWY2NDFhLTc4MGYtNDc5OS04ZGEwLTAwZWNjZWM5OTRmNCIsImNsaWVudF9pZCI6IjRkdmpnZGJzMmJsNTE2cmwwM2poNW9saTVqIn0.3Ajd7u_loSonWL4S7km1GvOJu-LdRzOv-jBjrYOvDIzwHSMf9rw53wq3w0xpM9PYfbt8zUN10ktMyhtzAVGZKMQdtRVhJrD6Gb4EnYrk3x1O0GrBwf4Mx3YNERHHbtIdIPfiSeW9yd-U_osyiZBdocYe4LGmzCZH4qSbIMwxsYpxdi9T_u8ae9cmBEragn7bK4iYRtahfNyBTr5fOZJ6RtwpC7s7-jWSnknq218GB_71YkH2Git4ZRWVMaSVsJdzlxv_TpOnGEbXt9BjMmMltYc_BAKoGvcWoiBkuTmvZ1yBLjG9OduvWqq-MzewMkimVXHzhwanU4ya8hOwzkLj1A"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"proposal_no\": \"PR/21/6200009078\",\n\t\"ticket_no\": \"1536714\"\n}"
+				},
+				"url": {
+					"raw": "https://uatapigw.tataaig.com/motor/v1/verify-inspection-status",
+					"protocol": "https",
+					"host": [
+						"uatapigw",
+						"tataaig",
+						"com"
+					],
+					"path": [
+						"motor",
+						"v1",
+						"verify-inspection-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gcv token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"tata_token\", pm.response.json().token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/postservicecall/tataAigMarine/getToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"postservicecall",
+						"tataAigMarine",
+						"getToken"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

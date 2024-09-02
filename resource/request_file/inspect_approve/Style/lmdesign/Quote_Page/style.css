@@ -1,0 +1,191 @@
+.topheader {
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+}
+
+    .topheader span {
+        color: #fff;
+        font-size: 20px;
+        padding-top: 15px;
+    }
+
+    .topheader div {
+        float: right;
+    }
+
+.header {
+    height: 50px;
+}
+
+.menutxt {
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+    color: #ff0000;
+    position:;
+    padding-top: 12px;
+    padding-right: 15px;
+}
+
+.backgimg {
+    background-image: url('../../../Images/lmdesign/Digital-Filtered1.jpg');
+    width: 100%;
+    height: 100%;
+}
+
+.box ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box li {
+    list-style: none;
+    width: 50%;
+    float: left;
+}
+
+    .box li div {
+        margin: 20px;
+        height: 180px;
+    }
+
+.box i {
+    font-size: 100px;
+    margin-top: 40px;
+}
+
+.icon {
+    text-align: center;
+}
+
+.jj {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.health, .bike, .car, .travel, .term, .other {
+    background: #fff !important;
+}
+
+    .health a {
+        color: #61bb46 !important;
+    }
+
+    .term a {
+        color: #fdb827 !important;
+    }
+
+    .bike a {
+        color: #009ddc !important;
+    }
+
+    .car a {
+        color: #e03a3e !important;
+    }
+
+    .travel a {
+        color: #f5821f !important;
+    }
+
+    .other a {
+        color: #963d97 !important;
+    }
+
+    .health:hover {
+        background: #61bb46 !important;
+    }
+
+    .term:hover {
+        background: #fdb827 !important;
+    }
+
+    .bike:hover {
+        background: #009ddc !important;
+    }
+
+    .car:hover {
+        background: #e03a3e !important;
+    }
+
+    .travel:hover {
+        background: #f5821f !important;
+    }
+
+    .other:hover {
+        background: #963d97 !important;
+    }
+
+        .health a:hover, .bike a:hover, .car a:hover, .travel a:hover, .term a:hover, .other a:hover,
+        .health:hover a, .bike:hover a, .car:hover a, .travel:hover a, .term:hover a, .other:hover a {
+            color: #fff !important;
+        }
+
+.comparebox {
+    background-color: #78c6f4;
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.heading {
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 20px;
+}
+
+#compare input {
+    margin: 0 auto;
+    float: none;
+    width: 90%;
+}
+
+.links a {
+    color: #000;
+}
+
+.mobile3box {
+    background-color: #fff;
+    height: 90%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#select {
+    background-color: #78c6f4;
+    height: 10%;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.select li {
+    list-style: none;
+    width: 32%;
+    float: left;
+}
+
+    .select li div {
+        margin: 20px;
+        height: 50px;
+        text-align: center;
+        padding-top: 0px;
+        background-color: #f1f1f1;
+    }
+
+.submitbtn {
+    background-color: #0054a5;
+    margin-top: 15px;
+    width: 150px;
+}
+
+#line {
+    background-color: #78c6f4;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 5px;
+    text-align: center;
+}

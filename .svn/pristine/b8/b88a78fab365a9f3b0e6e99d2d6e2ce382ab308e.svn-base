@@ -1,0 +1,30 @@
+{
+    "CorrelationId": "___pg_reference_number_1___",
+    "DealId": "___insurer_integration_account_code___",
+    "isTaggingRequired": true,
+    "isMappingRequired": true,
+    "PaymentEntry": {
+        "onlineDAEntry":
+                {
+                    "AuthCode": "___pg_reference_number_2___",
+                    "MerchantID": "___pg_reference_number_3___",
+                    "TransactionId": "___pg_reference_number_1___",
+                    "ReceiptDate": "___proposal_date___",
+                    "PaymentAmount": "___transaction_amount___",
+                    "InstrumentDate": "___proposal_date___",
+                    "CustomerID": "___pg_reference_number_4___"
+                }
+    },<!--TW_START-->
+    "PaymentMapping": {
+        "customerProposal": [{
+                "CustomerID": "___pg_reference_number_4___",
+                "ProposalNo": "___policy_id___"       
+            }]
+    },<!--TW_FINISH-->
+    "PaymentTagging": {
+        "customerProposal": [{
+                "CustomerID": "___pg_reference_number_4___",
+                "ProposalNo": "___policy_id___"       
+            }]
+    }
+}

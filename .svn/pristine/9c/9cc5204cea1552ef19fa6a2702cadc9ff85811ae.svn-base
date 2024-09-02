@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Magic FinMart</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/style.css" rel='stylesheet' type='text/css' media="all">
+</head>
+<body>
+<div class="container main">
+	<div class="col-md-12 col-sm-12 col-xs-12 header">
+		<h1><a href="index.html">HEALTH INSURANCE</a></h1>
+		<div class="menu">
+			<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
+			<!--<nav>  
+				<a href="#" class="active scroll">HOME</a> 
+				<a href="#" class="scroll">MY ACCOUNT</a>  
+				<a href="#" class="scroll">MPS</a>  
+				<a href="#" class="scroll">POSP ENROLLMENT</a> 
+				<a href="#" class="scroll">SHARE DATA</a>
+				<a href="#" class="scroll">CHANGE PASSWORD</a> 
+				<a href="#" class="scroll">LOG-OUT</a> 
+			</nav>-->
+		</div>
+	</div>
+	
+	<div class="col-md-12 col-sm-12 col-xs-12 headertitle">
+		<ul class="list-inline">
+			<li><a href="#">INPUT</a></li>
+			<li><a href="#">QUOTE</a></li>
+			<li><a href="#">BUY</a></li>
+		</ul>
+	</div>
+	<div class="col-md-12 col-sm-12 col-xs-12 type">
+		<div class="type1">
+			<ul class="list-login" style="width:80%; margin:0 auto;">
+				<li>NO. OF MEMBERS</li>	
+				<li>
+					<div class="vehicle">
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_selected.png"></div>
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_selected.png"></div>
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_unselected.png"></div>
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_unselected.png"></div>
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_unselected.png"></div>
+						<div class="col-md-2 col-sm-2 col-xs-2"><img class="img-responsive" src="images/mipmap-hdpi/user_unselected.png"></div>
+					</div>  
+					<div class="clearfix"></div>
+					<div class="vehicle">
+						<input class="form-control" placeholder="" maxlength="1"  />
+						<input class="form-control" placeholder="" maxlength="1"  />
+						<input class="form-control" placeholder="" maxlength="1"  />
+						<input class="form-control" placeholder="" maxlength="1"  />
+						<input class="form-control" placeholder="" maxlength="1"  />
+						<input class="form-control" placeholder="" maxlength="1"  />
+					</div>  
+				</li>
+			</ul>
+			<div>&nbsp;</div>
+			
+			<div><p><b>COVER REQUIRED</b></p></div>
+			<div class="col-md-12 col-sm-12 col-xs-12 cover">
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>1 LAC</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>2 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>3 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>5 LACS</p></div>
+			</div>
+			<div class="col-md-12 col-sm-12 col-xs-12 cover">
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>6 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>8 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>10 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>15 LACS</p></div>
+			</div>
+			<div class="col-md-12 col-sm-12 col-xs-12 cover">
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>20 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>25 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>50 LACS</p></div>
+				<div class="col-md-3 col-sm-3 col-xs-3"><p>100 LACS</p></div>
+			</div>
+		
+			<div>&nbsp;</div>
+			
+			<div class="agile-form " id="health">
+				<form action="#" method="get">
+					<div class="agile-lname">
+						<p>AMOUNT</p>
+						<input type="text" name="number" label="W6" placeholder="">
+					</div>
+					<div class="agile-lname">
+						<p>PINCODE</p>
+						<input type="text" name="number" placeholder="">
+					</div>
+					<div class="clearfix"></div>
+					<div class="agile-lname">
+						<p> CUSTOMER NAME</p>
+						<input type="text" name="username" placeholder="">
+					</div>
+					<div class="agile-lname">
+						<p>MOBILE</p>
+						<input type="text" name="number" placeholder="">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+		</div>
+		<div class="quotes"><a href="#">GET QUOTES</a></div>
+	</div>
+</div>
+<script src='bootstrap/js/jquery-2.2.3.min.js'></script>
+<!--navbar-->
+
+	<script>
+		(function($){
+		// Menu Functions
+		$(document).ready(function(){
+		$('#menuToggle').click(function(e){
+		var $parent = $(this).parent('.menu');
+		$parent.toggleClass("open");
+		var navState = $parent.hasClass('open') ? "hide" : "show";
+		$(this).attr("title", navState + " navigation");
+		// Set the timeout to the animation length in the CSS.
+		setTimeout(function(){
+		console.log("timeout set");
+		$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+		}, 200);
+		e.preventDefault();
+		});
+		});
+		})(jQuery);
+	</script>
+<!--// navbar-->
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

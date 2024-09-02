@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Become a POSP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+		
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="">
+		<meta property="og:description" content="Become a POSP">
+		<meta property="og:image" content="https://www.policyboss.com/Images/shield-icons.png">
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		
+ 
+        <link rel="stylesheet" href="https://projects.verou.me/awesomplete/awesomplete.css" />
+		<style>
+		.awesomplete{width: 100%;}
+		.awesomplete > ul > li {font-size: 13px;}
+		.awesomplete > ul > li[aria-selected="true"] {background-color: #465ca5 !important;}
+		.awesomplete > ul > li:hover {background-color:#c4ebfd !important;}
+		</style>
+    </head>
+    <body style="background-color: rgb(232 232 232);">
+        <div class="container">
+            <div class="header">
+                <img src="Images/logo.png">
+                <h1><b>Unique Opportunity</b></h1>
+                <h2><b> to Join Family of over 5000+<br> Certified POSP&#39;s</b></h2>
+            </div>
+            <div class="text">
+                <p>Now, you too can earn from home, even during lockdown, by simply signing up and registering as an authorised Point of Sale Person (PoSP) of Landmark Insurance Brokers.</p>
+                <p>All you need is a smart phone, internet connection, learning aptitude, ability to sell and hard work.</p>
+                <p>Let&#39;s Get Started</p>
+                <div class="flex">
+                    <div style="flex-basis: 55%;">
+                        <div><span style="background-color: #e8f5fb;color: #4d5d98;border-radius: 15px 15px 0px 0px;padding: 10px 30px;font-weight: bold;">Key Highlights</span></div>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><img src="Images/key_1.png"></td>
+                                <td>Single and Fully Digital Transaction Platform for Insurance Products Viz. Motor Insurance (Car/2w), Health Insurance (Individual, Family) & Life Insurance</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_2.png"></td>
+                                <td>Paperless System with End to End Digital Execution. No branch visits</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_3.png"></td>
+                                <td>Get Training and Certification as per IRDAI norms</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_4.png"></td>
+                                <td>Choice of Insurance Companies across Products</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_5.png"></td>
+                                <td>Instant Policy Delivery</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_6.png"></td>
+                                <td>Transparent Remuneration Structure basis Successful Solicitation</td>
+                            </tr>
+                            <tr>
+                                <td><img src="Images/key_7.png"></td>
+                                <td>Self&#45;Learning Module for Enhanced Product Learning</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="flex-basis: 45%;">
+                        <div class="contactForm">
+                            <div class="heading">Join Now</div>
+                            <div>
+                                <form name="myForm" id="myForm" method="post" action="">
+                                    <div>
+                                        <input type="text" autocomplete="off" id="name" name="name" placeholder="Name">
+                                    </div>
+                                    <div>
+                                        <input type="text" autocomplete="off" id="number" name="number" placeholder="Contact No." minlength="10" maxlength="10" onkeypress='return restrictAlphabets(event)'>
+                                    </div>
+                                    <div>
+                                        <input type="email" name="email" autocomplete="off" id="email" placeholder="Email Id">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="city"  autocomplete="off" id="city" placeholder="City" onkeydown="CheckCtyVal();">
+                                        <input type="hidden" id="hdCity_ID" name="hdCity_ID">
+                                        <input type="hidden" id="hdPincode" name="hdPincode">
+                                        <input type="hidden" id="hdCity_name" name="hdCity_name">
+                                        <input type="hidden" id="hdState_name" name="hdState_name">
+                                    </div>
+									<div>
+                                        <input type="text" autocomplete="off" id="pan" name="pan" placeholder="Pan Card No.(Optional)*" minlength="10" maxlength="10" >
+                                    </div>
+                                    <div>
+                                        <input type="text" name="aadhaar" autocomplete="off" id="aadhaar" placeholder="Aadhaar Card No.(Optional)*" minlength="12" maxlength="12" onkeypress='return restrictAlphabets(event)'>
+                                    </div>									
+                                    <div style="margin: auto;text-align: center;" ><input type="button" name="submit" value="submit" id="btn_smt" onclick="btn_Submit();">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>All you need to know about becoming<br>
+                    <span style="color: #465ca5;">a PoSP (Point of Sale Person)</span></h3>
+                <hr>
+                <h4><b>What is PoSP?</b></h4>
+                <p>As per the insurance regulator of India, IRDAI, a PoSP is a certified insurance individual who can solicit insurance business for authorised PoSP products as an extension of the insurance broker.</p>
+                <p>Unlike regular insurance agent, a PoSP can sell insurance products from multiple companies, without any restrictions and across approved insurance categories too, like term life plans, motor insurance, health insurance plans and more.</p>
+                <h4><b>Benefits of Becoming a PoSP</b></h4>
+                <div class="benifit">
+                    <div>
+                        <img src="Images/benefit_1.png"><br>
+                        Be Your Own Boss and Work from Home
+                    </div>
+                    <div>
+                        <img src="Images/benefit_2.png"><br>
+                        Join the Digital Way of Doing Business
+                    </div>
+                    <div>
+                        <img src="Images/benefit_3.png"><br>
+                        Learn and Earn, with right guidance, at the right time, when you need it most.
+                    </div>
+                    <div>
+                        <img src="Images/benefit_5.png"><br>
+                        Technology led solicitation approach
+                    </div>
+                    <div>
+                        <img src="Images/benefit_4.png"><br>
+                        Partner &gt; Excel &gt; Grow
+                    </div>
+                </div>
+                <h4 style="text-align: center;margin: 20px;"><b>The Choice Is Now All Yours,<br>So Let&#39;s Make the Most of the Opportunity Together!</b></h4>
+            </div>
+            <!-- <div class="footer">
+                <p style="font-family: Times new roman;text-align: justify;">Landmark Insurance Brokers Private Limited (&quot;LIBPL&quot;) is Licensed by the Insurance Regulatory and Development Authority of India (&quot;IRDAI&quot;) to act as Direct Broker (Life & General). This insurance advertisement has been brought out to provide general information on various insurance solutions facilitated by LIBPL, as an Insurance Broker. Prospective Client/s are advised to go through all comparable products in offer before taking an investment decision. <strong>FOR MORE DETAILS ON RISK FACTORS, TERMS AND CONDITIONS PLEASE READ SALES BROCHURE CAREFULLY BEFORE PURCHASING THE INSURANCE POLICY/CONCLUDING A SALE.</strong> In the event of any conflict between the terms and conditions contained in this advertisement and those contained in the policy document, the terms and conditions contained in the policy document shall prevail. Income Tax benefit is applicable as per the prevailing Tax Laws in India. </p>
+                <p style="text-align: center;"><strong>Landmark Insurance Brokers Pvt. Ltd.<br>
+                        CIN U66030PN2002PTC017009<br>
+                        IRDAI CoR No.216 &#124; Broker Code: DB 089/03 &#124; Valid From 13/10/2018 till 12/10/2021 (originally licensed on 13/10/2003 and renewed thereafter)<br>
+                        Category: Direct (Life & General) &#124; A member of IBAI<br>
+                        Regd. Off:</strong> 1187/22, 4th Floor (Above ICICI Bank ATM), Venkatesh Meher, Ghole Road, Shivaji Nagar, Pune (Maharashtra) - 411 005.</p>
+                <p style="text-align: center;"><strong><a href="tel:18004194199" style="color: #545d62;text-decoration: none;">1800 419 419 9 (Toll-Free)</a> &#124; <a href="https://www.policyboss.com" target="_blank" style="color: #545d62;text-decoration: none;">www.policyboss.com</a> &#124; <a href="mailto:customercare@policyboss.com" target="_top" style="color: #545d62;text-decoration: none;">customercare@policyboss.com</a></strong></p>
+            </div> -->
+			
+			
+			<div id="footerMenu">
+    <div class="row" style="margin:0 !important">
+        <div class="col-md-offset-1 col-md-2 col-xs-6">
+            <h2>Products</h2>
+            <ul>
+                <li><a href="/car-insurance"class="car-insurance">Car Insurance</a></li>
+                <li><a href="/two-wheeler-insurance" class="two-wheeler-insurance">Bike Insurance</a></li>
+                <li><a href="/commercial-vehicle-insurance/commercial-vehicle-insurance.html" class="commercial-vehicle-insurance" title="Commercial Vehicle Insurance">Commercial Vehicle Insurance</a></li>
+                <li><a href="/health" class="health-insurance">Health Insurance</a></li>
+                <li><a href="https://www.policyboss.com/cyber-insurance/input" class="health-insurance">Cyber Security</a></li>
+                <li><a href="/travel-insurance" class="travel-insurance">Travel Insurance</a> </li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-xs-6" id="colmobile">
+            <h2>About PolicyBoss</h2>
+            <ul>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/from-cmd-desk">MD's Desk</a></li>
+                <li><a href="/board-of-director">Board of Director</a></li>
+                <li><a href="/feedback">Feedback / Complaint Register</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="/downloads">Downloads</a></li>
+                <li><a href="/infographics">Infographics</a></li>
+                <li><a href="/insurance-knowledge-center">Knowledge Center</a></li>
+                <li><a href="/blog">Insurance Blog</a></li>
+                <li><a href="https://www.policyboss.com/posp">Become a POSP</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="/videos">Insurance Video</a></li>
+                <li><a href="/claim-settlement-information">Claim Process</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <h2>Legal</h2>
+            <ul>
+                <li><a href="/public-notice">Notice</a></li>
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/pdf-files/legal/CSR POLICY.pdf" target="_blank">CSR</a></li>
+                <li>
+                    <a class="randomtxt" style="cursor:pointer">Annual Return</a>
+                    <ul class="txtLink">
+                        <li><a style="color:blue !important" href="https://www.policyboss.com/pdf-files/legal/AnnualReturn/2018-2019.pdf" target="_blank">2018-2019</a></li>
+                    </ul>
+                </li>
+                <li><a href="/code-of-conduct">Company Code of Conduct</a></li>
+                <li><a href="/pdf-files/legal/IRDAI_Broker_Code of Conduct.pdf" target="_blank">IRDAI Broker Code of Conduct</a></li>
+                <li><a href="/terms-condition">Terms & Conditions</a></li>
+                <li><a href="/cancellation-refund">Cancellation & Refund Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+    <ul class="soc-link">
+        <li><a href="https://www.facebook.com/policyboss" target="_blank"><img class="img-responsive" src="Images/facebook.png" alt="facebook" /></a></li>
+        <li><a href="https://www.youtube.com/user/policyboss" target="_blank"><img class="img-responsive" src="Images/youtube.png" alt="youtube" /></a></li>
+        <li><a href="https://www.linkedin.com/company/policyboss/" target="_blank"><img class="img-responsive" src="Images/linkedin.png" alt="linkedin" /></a></li>
+        <li><a href="https://plus.google.com/u/0/+PolicyBossCom" target="_blank"><img class="img-responsive" src="Images/google-plus.png" alt="google-plus" /></a></li>
+        <li><a href="https://twitter.com/Policyboss" target="_blank"><img class="img-responsive" src="Images/twitter.png" alt="twitter" /></a></li>
+        <li><a href="https://www.instagram.com/policyboss" target="_blank"><img class="img-responsive" src="Images/insta.png" alt="instagram" /></a></li>
+    </ul>
+</div>
+<div id="contact">
+    <div class="footerContainer">
+        <div class="col-xs-12">
+            <div><p>-Registered By-</p></div>
+            <div><a href="https://www.irdai.gov.in" target="_blank"><img border="0" src="Images/logo-1.jpg" alt="IRDAI Logo"></a></div>
+        </div>
+        <div class="col-xs-12">
+            <div><p>-Payment By-</p></div>
+            <div><img src="Images/logo-3.jpg" alt="PAYMENT GETWAY"></div>
+        </div>
+        <div class="col-xs-12">
+            <div><p>-Secured By-</p></div>
+            <div><img src="Images/logo-2.jpg" alt="WEB SECURITY"></div>
+        </div>
+        <div style="padding-top:10px;">
+            <p style="text-transform:uppercase; font-weight:bold;">For more details on risk factors, terms and conditions please read sales brochure carefully before purchasing the insurance policy/concluding a sale.</p>
+            <p>
+                <b>Branch Offices:</b> <br>
+                Ahmedabad | Aurangabad | Bangalore | Bhopal | Chandigarh | Chennai | Cochin | Goa | Hyderabad | Indore | Jaipur <br>
+                Kolkata | Lucknow | Ludhiana | Mumbai | Mumbai-Dombivili | Nagpur | Nashik | New Delhi | Pune | Raipur | Rajkot | Surat | Thane | Thiruvananthapuram | Vadodara 
+            </p>
+            <p>
+                <b>Landmark Insurance Brokers Pvt. Ltd.</b><br>
+                <b>CIN U66030PN2002PTC017009 </b><br>
+                IRDAI CoR No: <a href="~/pdf-files/legal/IRDA-License-2018-2021.pdf" target="_blank" style="color:#333">216</a> | Broker Code: DB 089/03 | Valid From 13/10/2018 till 12/10/2021 (originally licensed on 13/10/2003 and renewed thereafter) | Category: Direct (Life & General) | A member of IBAI <br>
+                Regd. Off: 1187/22, 4th Floor (above ICICI Bank ATM), Venkatesh Meher, Ghole Road, Shivaji Nagar, Pune (Maharashtra) – 411005.
+            </p>
+            <p>Website: <a href="/" style="color:black;">www.policyboss.com</a> | Toll Free: 1800-419-419-9*</p>
+            <p>* Working hours: 9:30 a.m. to 6:30 p.m. (Monday to Saturday)</p>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+    <div class="footerContainer" style="background: rgb(22 46 72);color: rgb(255 255 255);font-size: 12px;">
+        <div>Copyright &copy; 2017</div>
+    </div>
+</div>
+
+			
+			
+			
+			
+			
+			
+			
+        </div>
+        <div id="successful">
+            <div class="button">
+                <div class="succesTitle"></div>
+                <div style="padding:15px; "><span style="font-size: 30px;">Thank You!</span><br></div>
+                <div class="closebutton">OK</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/awesomplete.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+
+    </body>
+
+</html>

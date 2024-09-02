@@ -1,0 +1,259 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body xmlns:typ="http://iims.services/types/">
+        <typ:calculatePremiumMasterElement>
+            <typ:userCode>POLICYBOSS</typ:userCode>
+            <typ:rolecode>SUPERUSER</typ:rolecode>
+            <typ:PRetCode>0</typ:PRetCode>
+            <typ:userId/>
+            <typ:stakeCode>BROKER</typ:stakeCode>
+            <typ:roleId/>
+            <typ:userroleId/>
+            <typ:branchcode/>
+            <typ:PRetErr/>
+            <typ:polBranchCode/>
+            <typ:productName>PRIVATE CAR</typ:productName>
+            <typ:policyHoldercode>PO00129265</typ:policyHoldercode>
+            <typ:eventDate>11/11/2016</typ:eventDate>
+            <typ:netPremium/>
+            <typ:termUnit>G</typ:termUnit>
+            <typ:grossPremium/>
+            <typ:policyType/>
+            <typ:polInceptiondate>11/11/2016</typ:polInceptiondate>
+            <typ:polStartdate>11/11/2016</typ:polStartdate>
+            <typ:polExpirydate>10/11/2017</typ:polExpirydate>
+            <typ:branchCode/>
+            <typ:term>1</typ:term>
+            <typ:polEventEffectiveEndDate/>
+            <typ:productCode>PC</typ:productCode>
+            <typ:policyHolderName>SRIKANT GAUTAM</typ:policyHolderName>
+            <typ:productId>194398713122007</typ:productId>
+            <typ:serviceTax/>
+            <typ:status/>
+            <typ:cbDetails/>
+            <typ:sumInsured/>
+            <typ:updateDate/>
+            <typ:policyId/>
+            <typ:polDetailLastUpdateDate/>
+            <typ:quoteNo/>
+            <typ:policyNo/>
+            <typ:policyDetailid/>
+            <typ:documentLink/>
+            <typ:polLastUpdateDate/>
+            <typ:properties>
+                <typ:value>PolicyBoss</typ:value>
+                <typ:name>channelcode</typ:name>
+            </typ:properties>
+            <typ:risks>
+                <typ:riskCode>VEHICLE</typ:riskCode>
+                <typ:riskSuminsured>0</typ:riskSuminsured>
+                <typ:covers>
+                    <typ:productCode>PC</typ:productCode>
+                    <typ:policyDetailid/>
+                    <typ:coverCode>PACKAGE</typ:coverCode>
+                    <typ:productId/>
+                    <typ:coverExpiryDate/>
+                    <typ:properties>
+                        <typ:value/>
+                        <typ:name/>
+                    </typ:properties>
+                </typ:covers>
+                <typ:properties>
+                    <typ:value>N</typ:value>
+                    <typ:name>New Vehicle</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>2015</typ:value>
+                    <typ:name>Year of Manufacture</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>MH</typ:value>
+                    <typ:name>Registration No (1)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>01</typ:value>
+                    <typ:name>Registration No (2)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>AA</typ:value>
+                    <typ:name>Registration No (3)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>5961</typ:value>
+                    <typ:name>Registration No (4)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>01/04/2015</typ:value>
+                    <typ:name>Date of Sale</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>01/04/2015</typ:value>
+                    <typ:name>Date of Registration</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>CHEVROLET</typ:value>
+                    <typ:name>Make</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>BEAT</typ:value>
+                    <typ:name>Model</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>1.2LSBS-IV</typ:value>
+                    <typ:name>Variant</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>B</typ:value>
+                    <typ:name>Vehicle Zone for Private Car</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>Petrol</typ:value>
+                    <typ:name>Type of Fuel</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>N</typ:value>
+                    <typ:name>In Built Bi-fuel System fitted</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Bi-fuel System Value</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>01/01/2029</typ:value>
+                    <typ:name>Registration Validity Date</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>Mumbai West,Regional Transport Officer, 111-D, Ambiwali Village, Near Manish Nagar, Varsova Road, Andheri(W),  Mumbai - 400063</typ:value>
+                    <typ:name>Name and Address of Registration Authority</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>5</typ:value>
+                    <typ:name>(*)Seating Capacity</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>1199</typ:value>
+                    <typ:name>(*)Cubic Capacity</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>452890</typ:value>
+                    <typ:name>Vehicle Invoice Value</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>15</typ:value>
+                    <typ:name>Vehicle Age in Months</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>N</typ:value>
+                    <typ:name>Whether trailer attached to the vehicle</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Number of Trailers Attached</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Total IDV of the Trailer Attached</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>N</typ:value>
+                    <typ:name>Extra Electrical/ Electronic fittings</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Value of Music System</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Value of AC/Fan</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Value of Lights</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Value of Other Fittings</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Total Value of Extra Electrical/ Electronic fittings</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>N</typ:value>
+                    <typ:name>Non-Electrical/ Electronic fittings</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Value of Non- Electrical/ Electronic fittings</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Additional Towing Coverage Required</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Additional Towing Coverage Amount</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>Y</typ:value>
+                    <typ:name>Do You Hold Valid Driving License</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>LMOTORVEH</typ:value>
+                    <typ:name>License Type of Owner Driver</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>295670</typ:value>
+                    <typ:name>Insureds declared Value (IDV)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>IDV of Accessories</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>295670</typ:value>
+                    <typ:name>Total IDV</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>20</typ:value>
+                    <typ:name>NCB Applicable Percentage</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>Cholamandalam</typ:value>
+                    <typ:name>Name of Previous Insurer</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>PPN999797446</typ:value>
+                    <typ:name>Previous Policy Number</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>Delhi-North</typ:value>
+                    <typ:name>Address of the Previous Insurer</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>22/04/2016</typ:value>
+                    <typ:name>Expiry date of previous Policy</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>1000</typ:value>
+                    <typ:name>Policy Excess (Rs)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Imposed Excess (Rs)</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Voluntary Excess for PC</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>0</typ:value>
+                    <typ:name>Loading amount for OD</typ:name>
+                </typ:properties>
+                <typ:properties>
+                    <typ:value>50</typ:value>
+                    <typ:name>OD discount (%)</typ:name>
+                </typ:properties>
+            </typ:risks>
+        </typ:calculatePremiumMasterElement>
+    </soapenv:Body>
+</soapenv:Envelope>

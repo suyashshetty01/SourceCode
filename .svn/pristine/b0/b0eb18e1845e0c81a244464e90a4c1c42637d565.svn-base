@@ -1,0 +1,499 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+body {margin:0px; padding:0px; font-family:'Open Sans', sans-serif; font-size:14px; font-weight:400; color:#333; background:url(../Images/SalesDatacomp/backgroundImage.jpg) repeat;}
+
+
+.mainContainer {margin:auto; max-width:980px; padding:30px 10px 0px 10px !important;}
+
+.container4logoNnavigations {float:left; width:100%; padding-bottom:35px;}
+
+#logoContainer {float:left; padding-top:12px;}
+#logoContainer img {border:none; display:block;}
+
+#headerBanner {float:left; margin-left:25px; margin-top:-30px; max-width:700px; height:96px; text-align:right; overflow:hidden;}
+
+/*****************************NAVIGATION START*****************************/
+#navigationContainer {float:right; margin-top:25px; font-size:14px; clear:both;}
+
+/* menu icon */
+#menu-icon {display:none;  /* hide menu icon initially */}
+
+#nav, #nav li {margin:0; padding:0;}
+#nav li {list-style:none; float:left; margin-left:2px;}
+
+/* nav link */
+#nav a {padding:4px 10px; display:block; text-decoration:none; color:#2f3a47; border-bottom:solid 2px #ecebeb;}
+#nav a:hover {background:#f8f8f8;}
+
+
+#nav a.colorHome {border-bottom:solid 2px #33b5e6;}
+#nav a.colorHome:hover {color:#fefefe; background:#33b5e6;}
+
+#nav a.colorProductPurchase {border-bottom:solid 2px #0a6a8f;}
+#nav a.colorProductPurchase:hover {color:#fefefe; background:#0a6a8f;}
+
+#nav a.colorCustomerServices {border-bottom:solid 2px #f00;}
+#nav a.colorCustomerServices:hover {color:#fefefe; background:#f00;}
+
+#nav a.colorChannelLocator {border-bottom:solid 2px #e75d5d;}
+#nav a.colorChannelLocator:hover {color:#fefefe; background:#e75d5d;}
+
+#nav a.colorUpdateSubscription {border-bottom:solid 2px #75a801;}
+#nav a.colorUpdateSubscription:hover {color:#fefefe; background:#75a801;}
+
+#nav a.colorAdvancePayment {border-bottom:solid 2px #f1a733;}
+#nav a.colorAdvancePayment:hover {color:#fefefe; background:#f1a733;}
+
+#nav a.colorContactUs {border-bottom:solid 2px #5eb28f;}
+#nav a.colorContactUs:hover {color:#fefefe; background:#5eb28f;}
+
+/* nav dropdown */
+#nav ul {background:#fff;  padding:2px;  position:absolute;  border:solid 1px #75a801;  display:none;  /* hide dropdown */ width:200px;}
+#nav ul li {float:none;  margin:0;  padding:0; border:0;}
+#nav ul li a {border:0;}
+#nav ul li a:hover {color:#fefefe; border:0; background:#75a801;}
+#nav li:hover > ul {display:block;  /* show dropdown on hover */}
+/*****************************NAVIGATION END*****************************/
+
+
+
+.clearBoth {float:left; width:100%; clear:both;}
+
+
+
+#container4steps {display:block; padding:10px; overflow:hidden; border-radius:5px; border:solid 1px #0f8d21; clear:both;
+	background:#eee;background:linear-gradient(#fff, #ccc); /* Standard syntax (must be last) */
+}
+#container4steps .head {float:left; width:100%; text-align:center; font-size:24px; color:#000; font-weight:600;}
+
+#container4stepsThreeBox {float:left; width:100%; padding-bottom:15px; text-align:center;}
+#container4stepsThreeBox .box {float:left; width:290px; min-height:100px; text-align:center; margin-right:44px;}
+#container4stepsThreeBox .box img { display:inline-block; margin:20px 0px 0px 0px;}
+#container4stepsThreeBox .box .text {float:left; width:100%; font-size:14px; line-height:20px; color:#000;}
+#container4steps .text {float:left; width:100%; padding:10px 0px 5px 0px; text-align:center; font-size:14px; line-height:20px;}
+#container4steps .text a:link {text-decoration:underline; color:#000; font-weight:600;}
+#container4steps .text a:visited {text-decoration:underline; color:#000; font-weight:600;}
+#container4steps .text a:hover {text-decoration:none; color:#000; font-weight:600;}
+
+
+#bottomText4steps {float:left; width:100%; padding:10px 0px 35px 0px; text-align:center; font-size:14px; line-height:20px;}
+#bottomText4steps a:link {text-decoration:underline; color:#000; font-weight:600;}
+#bottomText4steps a:visited {text-decoration:underline; color:#000; font-weight:600;}
+#bottomText4steps a:hover {text-decoration:none; color:#000; font-weight:600;}
+
+
+
+#container4colorBox {float:left; width:100%; text-align:center; color:#fff; margin-bottom:35px; overflow:hidden;}
+.colorBox {float:left; margin:0px 9px 0px 0px; width:238px; display:inline-block; border-radius:5px; overflow:hidden;}
+.colorBox:last-child {float:left; margin:0px; width:238px; display:inline-block; border-radius:5px; overflow:hidden;}
+
+.colorBox_image {float:left; width:100%; height:78px; padding:30px 0px 7px 0px; text-align:center; overflow:hidden;}
+.colorBox_head {float:left; width:100%; height:45px; font-size:24px; font-weight:700; line-height:45px; text-align:center;}
+.colorBox_text {float:left; width:100%; height:80px; font-size:14px; font-weight:400; line-height:20px; text-align:center;}
+.colorBox img {border:none;}
+
+.colorBox a.link {float:left; width:100%; height:38px; padding-top:12px; text-align:center;}
+.colorBox a.link:hover {box-shadow:0px 0px 10px #000;}
+
+.colorBox_head a:link {text-decoration:none; color:#fff;}
+.colorBox_head a:visited {text-decoration:none; color:#fff;}
+.colorBox_head a:hover {text-decoration:none; color:#fff;}
+
+.color_1 {background-color:#e75d5d;}
+.color_2 {background-color:#f1a733;}
+.color_3 {background-color:#5eb28f;}
+.color_4 {background-color:#33b5e6;}
+
+
+.linkColor_1 {background-color:#cc4646;}
+.linkColor_2 {background-color:#d58a15;}
+.linkColor_3 {background-color:#479a77;}
+.linkColor_4 {background-color:#18A0D3;}
+
+
+
+#container4bottomTextNlinks {float:left; width:100%;}
+
+
+#leftSliderContainer {float:left; width:325px; height:287px; padding:13px 0px 0px 13px; background:url(../Images/SalesDatacomp/pcBackground.png) no-repeat;}
+
+ul.bjqs{position:relative; list-style:none; padding:0; margin:0; overflow:hidden; display:none;}
+li.bjqs-slide{position:absolute; display:none;}
+
+
+
+#rightTextNlinksContainer {float:left; margin-left:32px; width:610px; min-height:300px;}
+
+#rightTextNlinksContainer .header {float:left; width:100%; font-size:48px; color:#000;}
+
+#rightTextNlinksContainer .textInfo {float:left; width:100%; font-size:16px; line-height:22px; color:#333;}
+
+#rightTextNlinksContainer ul {float:left; margin:10px 0px; padding:0px; clear:both;}
+#rightTextNlinksContainer ul li {float:left; margin:0px; padding:10px 0px 10px 45px; width:230px; min-height:33px; font-size:18px; font-weight:700; line-height:33px;
+								 list-style:none; background:url(../Images/SalesDatacomp/bulletsImage.png) left center no-repeat;}
+#rightTextNlinksContainer ul li a:link {text-decoration:none; color:#000;}
+#rightTextNlinksContainer ul li a:visited {text-decoration:none; color:#000;}
+#rightTextNlinksContainer ul li a:hover {text-decoration:underline; color:#000;}
+
+
+
+
+
+#containr4footer {float:left; margin-top:20px; width:100%; min-height:60px; border-top:solid 1px #555;}
+#footer_innerContainer {margin:auto; width:980px; min-height:60px;}
+#footer_innerContainer .bottomText {float:left; margin-top:22px; font-size:14px; font-weight:400; color:#000;}
+#footer_innerContainer .bottomText span {color:#33b5e6; font-weight:700;}
+
+#footer_innerContainer .bottomLinks {float:right; margin-top:22px; font-size:14px; font-weight:400;}
+#footer_innerContainer .bottomLinks a:link {text-decoration:none; color:#000;}
+#footer_innerContainer .bottomLinks a:visited {text-decoration:none; color:#000;}
+#footer_innerContainer .bottomLinks a:hover {text-decoration:underline; color:#000;}
+
+
+
+
+
+
+.innerTopHeading {float:left; width:100%; font-size:32px; color:#000;}
+
+#innerWhiteContainerDiv {float:left; margin-top:10px; max-width:868px; padding:25px 55px; background:#fff; border:solid 1px #555; border-radius:5px;}
+
+.container4innerPagesInputs {float:left; width:100%; padding-bottom:15px; min-height:40px; clear:both;}
+
+
+.commonLeftDiv {float:left; width:234px; padding:5px 55px 0px 0px; text-align:right; font-size:14px; line-height:20px; color:#000;}
+span.redStar {color:#f00; padding-left:4px;}
+
+.commonLeftDiv1 {float:left; width:234px; padding:5px 55px 0px 0px; text-align:right; font-size:14px; line-height:20px; color:#000;}
+.commonLeftDiv1 span.redStar {color:#f00; padding-left:4px;color:Red;}
+
+.commonRightDiv {float:left; width:579px; text-align:left; font-size:14px;}
+
+
+.buttonsContainer {float:left; height:28px; border:solid 1px #555; border-radius:5px; overflow:hidden;}
+
+.buttonsContainer1 {float:left; height:56px; border:solid 1px #555; border-radius:5px; overflow:hidden;}
+
+.buttonsContainer a {float:left; margin-left:-1px; padding:0px 10px; font-size:14px; line-height:28px; border-left:solid 1px #555; background:#fff;}
+.buttonsContainer a:link {text-decoration:none; color:#333;}
+.buttonsContainer a:visited {text-decoration:none; color:#333;}
+.buttonsContainer a:hover {text-decoration:none; color:#000; background:#f5f5f5;}
+.buttonsContainer a.active {float:left; padding:0px 10px; font-size:14px; line-height:28px; color:#fff; background:#33b5e6; cursor:default;}
+
+
+.commonRightDiv span.lableSpan {float:left; padding:0px 10px; font-family:'Open Sans', sans-serif; font-size:14px; line-height:30px;}
+.commonRightDiv span.lableSpan a:link {text-decoration:underline; color:#e75d5d;}
+.commonRightDiv span.lableSpan a:visited {text-decoration:underline; color:#e75d5d;}
+.commonRightDiv span.lableSpan a:hover {text-decoration:none; color:#e75d5d;}
+
+.commonRightDiv input.inputSize_big {float:left; width:240px; height:28px; padding:0px 10px; font-family:'Open Sans', sans-serif; line-height:28px; border:solid 1px #aaa;}
+.commonRightDiv input.inputSize_normal {float:left; width:170px; height:28px; padding:0px 10px; font-family:'Open Sans', sans-serif; line-height:28px; border:solid 1px #aaa;}
+.commonRightDiv input.inputSize_small {float:left; width:130px; height:28px; padding:0px 10px; font-family:'Open Sans', sans-serif; line-height:28px; border:solid 1px #aaa;}
+
+.commonRightDiv select.selectSize_big {float:left; width:278px; height:30px; padding:0px 0px 0px 10px; font-family:'Open Sans', sans-serif; font-size:14px; line-height:28px; color:#333; border:solid 1px #aaa; border-radius:3px;}
+.commonRightDiv select.selectSize_normal {float:left; width:192px; height:30px; padding:0px 0px 0px 10px; font-family:'Open Sans', sans-serif; font-size:14px; line-height:28px; color:#333; border:solid 1px #aaa; border-radius:3px;}
+
+
+
+
+.commonRightDiv a.formButtons {float:left; margin-right:10px; height:28px; padding:0px 15px; line-height:28px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px;}
+.commonRightDiv a.formButtons:link {text-decoration:none; color:#fff;}
+.commonRightDiv a.formButtons:visited {text-decoration:none; color:#fff;}
+.commonRightDiv a.formButtons:hover {text-decoration:none; color:#33b5e6; background:#fff;}
+
+.commonRightDiv  .btnCheck {margin-right:10px; height:28px; line-height:28px; color:White; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.commonRightDiv  .btnCheck:hover {text-decoration:none;cursor:pointer; color:#33b5e6; background:#fff;}
+
+
+
+
+.fillDetailsDiv {float:left; width:575px; padding:10px; border:solid 1px #33b5e6; border-radius:5px; overflow:hidden;}
+
+.fillDetailsDiv .header {float:left; width:100%; min-height:25px; padding-bottom:20px; font-size:16px; color:#33b5e6; background:url(../Images/SalesDatacomp/productSelected.png) left top no-repeat;}
+.fillDetailsDiv .header span {float:left; margin-left:20px; line-height:25px; font-weight:700;}
+
+
+
+
+
+.fillDetailsDiv .innerContainer {float:left; width:100%; padding-bottom:10px; overflow:hidden;}
+
+.fillDetailsDiv .innerContainer .leftText {float:left; width:260px; height:30px; padding:5px 10px 0px 0px; text-align:right; font-size:14px;}
+
+.fillDetailsDiv .innerContainer .textFields {float:left; width:155px; min-height:30px; padding-right:10px;}
+.fillDetailsDiv .innerContainer .textFields input {float:left; width:145px; height:28px; padding:0px 5px; line-height:28px; border:solid 1px #aaa;}
+
+.fillDetailsDiv .innerContainer .textFields select.selectSize_normal {float:left; width:192px; height:30px; padding:0px 0px 0px 10px; font-family:'Open Sans', sans-serif; font-size:14px; line-height:28px; color:#333; border:solid 1px #aaa; border-radius:3px;}
+
+.fillDetailsDiv .innerContainer .rightText {float:left; width:122px; height:30px; font-size:12px; color:#aaa; line-height:30px;}
+.fillDetailsDiv .innerContainer .rightText a:link {text-decoration:underline; color:#e75d5d;}
+.fillDetailsDiv .innerContainer .rightText a:visited {text-decoration:underline; color:#e75d5d;}
+.fillDetailsDiv .innerContainer .rightText a:hover {text-decoration:none; color:#e75d5d;}
+
+.fillDetailsDiv .innerContainer .buttonDiv {float:left; width:100%; padding-top:15px; text-align:center; border-top:solid 1px #ccc;}
+.fillDetailsDiv .innerContainer .buttonDiv a {margin-right:130px; height:28px; line-height:28px; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.fillDetailsDiv .innerContainer .buttonDiv a:link {text-decoration:none; color:#fff;}
+.fillDetailsDiv .innerContainer .buttonDiv a:visited {text-decoration:none; color:#fff;}
+.fillDetailsDiv .innerContainer .buttonDiv a:hover {text-decoration:none; color:#33b5e6; background:#fff;}
+
+.fillDetailsDiv .innerContainer .buttonDiv .btnGetDetail {height:28px; line-height:28px; color:White; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.fillDetailsDiv .innerContainer .buttonDiv .btnGetDetail:hover {text-decoration:none;cursor:pointer; color:#33b5e6; background:#fff;}
+
+.container4innerPagesInputs .commonRightDiv .btnGetDetail {margin-right:130px; height:28px; line-height:28px; color:White; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.container4innerPagesInputs .commonRightDiv .btnGetDetail:hover {text-decoration:none;cursor:pointer; color:#33b5e6; background:#fff;}
+
+
+
+
+
+
+
+
+.fillDetailsDiv_centerCont {display:block; padding:0px 135px; overflow:hidden; clear:both;}
+
+.fillDetailsDiv_center {margin:auto; width:575px; padding:10px; border:solid 1px #33b5e6; border-radius:5px; overflow:hidden; clear:both;}
+
+
+
+.fillDetailsDiv_center .header {float:left; width:100%; min-height:25px; padding-bottom:20px; font-size:16px; color:#33b5e6; background:url(../Images/SalesDatacomp/productSelected.png) left top no-repeat;}
+.fillDetailsDiv_center .header span {float:left; margin-left:20px; line-height:25px; font-weight:700;}
+
+
+.fillDetailsDiv_center .innerContainer {float:left; width:100%; padding-bottom:10px; overflow:hidden;}
+
+.fillDetailsDiv_center .innerContainer .leftText {float:left; width:275px; min-height:30px; padding:5px 10px 0px 0px; text-align:right;}
+
+.fillDetailsDiv_center .innerContainer .textFields {float:left; width:155px; min-height:30px; padding-right:10px;}
+.fillDetailsDiv_center .innerContainer .textFields input {float:left; width:145px; height:28px; padding:0px 5px; line-height:28px; border:solid 1px #aaa;}
+
+.fillDetailsDiv_center .innerContainer .rightText {float:left; width:122px; height:30px; font-size:12px; color:#555; line-height:30px;}
+.fillDetailsDiv_center .innerContainer .rightText a:link {text-decoration:underline; color:#e75d5d;}
+.fillDetailsDiv_center .innerContainer .rightText a:visited {text-decoration:underline; color:#e75d5d;}
+.fillDetailsDiv_center .innerContainer .rightText a:hover {text-decoration:none; color:#e75d5d;}
+
+.fillDetailsDiv_center .innerContainer .buttonDiv {float:left; width:100%; padding-top:15px; text-align:center; border-top:solid 1px #ccc;}
+.fillDetailsDiv_center .innerContainer .buttonDiv a {height:28px; line-height:28px; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.fillDetailsDiv_center .innerContainer .buttonDiv a:link {text-decoration:none; color:#fff;}
+.fillDetailsDiv_center .innerContainer .buttonDiv a:visited {text-decoration:none; color:#fff;}
+.fillDetailsDiv_center .innerContainer .buttonDiv a:hover {text-decoration:none; color:#33b5e6; background:#fff;}
+
+.fillDetailsDiv_center .innerContainer .btnGetDetail {margin:auto; height:28px; line-height:28px; color:White; padding:0px 20px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px; display:inline-block;}
+.fillDetailsDiv_center .innerContainer .btnGetDetail:hover {text-decoration:none;cursor:pointer; color:#33b5e6; background:#fff;}
+
+
+
+
+
+
+
+.infoDetailsDiv {float:left; width:575px; padding:10px; border:solid 1px #ccc; border-radius:5px; margin-top:10px; overflow:hidden;}
+
+.infoDetailsDiv .header {float:left; width:100%; min-height:25px; padding-bottom:20px; font-family:Georgia, serif; font-size:20px; color:#000;}
+
+
+.infoDetailsDiv .innerContainer {float:left; width:100%; padding-bottom:5px; overflow:hidden;}
+
+.infoDetailsDiv .innerContainer .leftText {float:left; width:260px; min-height:25px; color:#333; padding:0px 10px 0px 0px; text-align:right; line-height:25px;}
+
+.infoDetailsDiv .innerContainer .rightText {float:left; width:287px; min-height:25px; color:#000; font-weight:700; line-height:25px; word-wrap:break-word;}
+.infoDetailsDiv .innerContainer .rightText input {float:left; width:150px; height:25px; padding:0px 10px; font-family:'Open Sans', sans-serif; font-weight:700; color:#000; line-height:25px; border:solid 1px #aaa;}
+
+
+
+.container4paymentsDiv {float:left; width:100%; min-height:100px; text-align:center; overflow:hidden; clear:both;}
+
+.paymentsDiv {display:inline-block; vertical-align:top; margin:0px 21px;}
+
+/*********************************/
+.container4paymentsDiv .paymentType_1 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_1.png) center center no-repeat;}
+.container4paymentsDiv .selected_1 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_1selected.png) center center no-repeat;}
+
+.container4paymentsDiv .paymentType_2 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_2.png) center center no-repeat;}
+.container4paymentsDiv .selected_2 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_2selected.png) center center no-repeat;}
+
+.container4paymentsDiv .paymentType_3 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_3.png) center center no-repeat;}
+.container4paymentsDiv .selected_3 {width:140px; height:140px; padding-bottom:15px; background:url(../Images/SalesDatacomp/paymentOpt_3selected.png) center center no-repeat;}
+/*********************************/
+
+#balancePayment {float:left; width:100%; padding-top:35px;}
+#balancePayment span {background:url(../Images/SalesDatacomp/rupeeIcon.png) left center no-repeat #fff; height:25px; line-height:24px; padding:0px 5px 0px 18px; border-radius:3px; box-shadow:2px 2px 5px #999; display:inline-block;}
+
+
+.bottomButtonsDiv {float:left; width:100%; padding-top:20px; text-align:center;}
+
+.bottomButtonsDiv a {display:inline-block; margin:0px 5px; height:28px; padding:0px 15px; line-height:28px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px;}
+.bottomButtonsDiv a:link {text-decoration:none; color:#fff;}
+.bottomButtonsDiv a:visited {text-decoration:none; color:#fff;}
+.bottomButtonsDiv a:hover {text-decoration:none; color:#33b5e6; background:#fff;}
+
+.bottomButtonsDiv .btnbuy {display:inline-block; margin-left:10px; height:28px;color:White; padding:0px 15px; line-height:28px; background:#33b5e6; border:solid 1px #33b5e6; border-radius:5px;}
+.bottomButtonsDiv .btnbuy:hover {text-decoration:none;cursor:pointer; color:#33b5e6; background:#fff;}
+
+
+.container4successPagesText {float:left; width:100%; min-height:30px; clear:both;}
+
+.container4successPagesText .commonLeftDiv {float:left; width:234px; padding:5px 20px 0px 0px; text-align:right; font-size:14px; line-height:20px; color:#000;}
+.container4successPagesText .commonRightDiv {float:left; width:579px; text-align:left; font-size:14px;}
+
+
+.successHead {float:left; width:100%; font-size:18px; font-weight:700; text-align:center; border-bottom:solid 1px #555; padding-bottom:20px;}
+.successHead img {display:inline-block; padding-bottom:10px; clear:both;}
+
+.successTextInfo {float:left; width:100%; padding-top:30px; padding-bottom:10px; font-size:14px; color:#000; font-weight:700;}
+.successTextInfo span {color:#33b5e6;}
+
+.commonRightDiv span.successSpan {float:left; font-size:14px; line-height:30px; color:#000; font-weight:700;}
+
+
+.setbox{margin-left:-15%;}
+
+
+
+
+#container4FlipingMenu {display:none;}
+
+
+
+
+.paperfoldButton {font-size:16px; background:#33b5e6; display:inline-block; width:100%; padding:10px 0px; overflow:hidden; border-radius:5px;}
+.paperfoldButton span {padding:10px; color:#fff; line-height:25px;}
+.paperfoldPannel {background:#fff; border:solid 1px #ccc; padding:10px; display:none;}
+
+span.icon_minus {float:right; margin-right:10px; width:26px; height:26px; padding:0px !important; background:url(../Images/SalesDatacomp/icon_-.png) no-repeat right center;}
+span.icon_plus {float:right; margin-right:10px; width:26px; height:26px; padding:0px !important; background:url(../Images/SalesDatacomp/icon_plus.png) no-repeat right center;}
+
+
+#innerWhiteContainerDiv4contactUs {float:left; margin-top:10px; max-width:980px; min-height:200px;}
+
+.cu_headOfficeContainer {display:block; overflow:hidden; width:100%; margin-bottom:10px; border-radius:5px; background:#fff; box-shadow:0px 2px 5px #ccc;}
+
+.cu_header {float:left; width:100%; padding:10px 0px; display:block; background:#000; font-size:18px; line-height:25px;}
+.cu_header .office_S {float:right; margin-right:10px; font-size:14px; color:#fff;}
+.cu_header span {float:left; padding:0px 10px; color:#fff;}
+
+
+.cu_headOfficeContainer #color_1 {background-color:#33b5e6;}
+.cu_branchOfficeContainer #color_2 {background-color:#0a6a8f;}
+.cu_branchOfficeContainer #color_3 {background-color:#75a801;}
+.cu_branchOfficeContainer #color_4 {background-color:#f1a733;}
+.cu_branchOfficeContainer #color_5 {background-color:#5eb28f;}
+
+.cu_text {float:left; width:100%; padding:10px 0px; font-size:14px; line-height:20px; color:#555;}
+.cu_text p {display:block; margin:0; padding:5px 10px; font-size:15px; line-height:22px;}
+
+.cu_contactDetails {display:block; padding:10px;}
+.cu_contactDetails .cu_commonCont {float:left; width:100%; line-height:30px;}
+.cu_contactDetails .cu_commonCont img {float:left; margin-right:10px;}
+.cu_contactDetails .cu_commonCont span.cu_commonLeft {float:left; width:85px;}
+.cu_contactDetails .cu_commonCont b {float:left; margin:0px 5px;}
+.cu_contactDetails .cu_commonCont span.cu_commonRight {float:left; font-weight:bold;}
+
+.cu_contactDetails .cu_commonCont span.cu_commonRight a:link{text-decoration:none; color:#555;}
+.cu_contactDetails .cu_commonCont span.cu_commonRight a:visited{text-decoration:none; color:#555;}
+.cu_contactDetails .cu_commonCont span.cu_commonRight a:hover{text-decoration:underline; color:#555;}
+
+
+.cu_branchOfficeContainer {float:left; width:235px; margin:0px 5px 10px 5px; background:#fff; border-radius:5px; overflow:hidden; box-shadow:0px 2px 3px #ccc;}
+.cu_branchOfficeContainer .cu_text {float:left; width:100%; padding:10px 0px; font-size:13px; line-height:18px; color:#555;}
+.cu_branchOfficeContainer .cu_text p {display:block; margin:0; padding:5px 10px; height:95px; font-size:15px; line-height:22px;}
+.cu_branchOfficeContainer .cu_commonCont {float:left; width:100%; line-height:15px; margin-bottom:20px;}
+.cu_branchOfficeContainer .cu_commonCont img {float:left; margin-right:0px; margin-top:-8px;}
+.cu_branchOfficeContainer .cu_commonCont span.cu_commonLeft {float:left; width:auto;}
+.cu_branchOfficeContainer .cu_commonCont span.cu_commonRight {float:left; width:220px; font-weight:bold; overflow:hidden; text-overflow:ellipsis;}
+
+
+#infoTextBOL {display:block; padding:10px 18px; border-top:solid 1px #555;}
+
+
+
+.paymentImgButton {display:inline-block; margin:5px; width:150px; height:145px;} 
+.sideButton {padding-left:30px;}
+
+
+@media screen and (max-width:1000px) {
+	.colorBox {float:none; display:inline-block; margin:0px 5px 10px 5px;}
+	.colorBox:last-child {float:none; display:inline-block; margin:0px 5px 10px 5px;}
+	#footer_innerContainer {float:left; width:100%;}
+	#footer_innerContainer .bottomText {padding:10px;}
+	#footer_innerContainer .bottomLinks {float:left; margin:0; padding:10px;}
+	.innerTopHeading {padding-bottom:10px; font-size:28px;}
+	#innerWhiteContainerDiv {float:none; min-height:inherit; padding:25px 20px; overflow:hidden;}
+	.commonLeftDiv {width:100%; padding:5px 0px; text-align:left;}
+	.commonRightDiv {width:100%;}
+	.fillDetailsDiv {float:none; width:auto; overflow:hidden; clear:both;}
+	.fillDetailsDiv .innerContainer .buttonDiv {text-align:center;}
+	.fillDetailsDiv .innerContainer .buttonDiv a {margin:0;}
+	.fillDetailsDiv_1 {float:none; width:auto; overflow:hidden; clear:both;}
+	.infoDetailsDiv,.fillDetailsDiv_center {float:none; width:auto; overflow:hidden; clear:both;}
+	.container4successPagesText .commonLeftDiv {text-align:left; padding-top:15px;}
+	#headerBanner {display:none;}
+	.infoDetailsDiv .innerContainer .leftText {text-align:left;}
+		.cu_branchOfficeContainer {width:auto;}
+	.cu_branchOfficeContainer .cu_text p {height:auto; padding-bottom:20px;}
+	.cu_branchOfficeContainer .cu_commonCont span.cu_commonRight {width:auto;}
+}
+
+
+@media screen and (max-width:908px) {
+
+	/* nav-wrap */
+	#navigationContainer {position:relative; margin:21px 0px 0px 0px; clear:none;}
+
+	/* menu icon */
+	#menu-icon {color:#000; width:42px; height:26px; background:url(../Images/SalesDatacomp/menu-icon.png) no-repeat 10px center; border-radius:5px;
+		padding:10px 10px 0 42px;  cursor:pointer;  border:solid 2px #585858;  display:block;  /* show menu icon */	}
+	#menu-icon.active {background:#fff url(../Images/SalesDatacomp/menuClose.png) no-repeat 10px center; border-radius:5px 5px 0px 0px; border-bottom-color:#fff;}
+	
+	/* main nav */
+	#nav {clear:both; position:absolute; margin-left:-91px; top:38px; width:175px; z-index:10000; padding:5px; border-radius:5px 0px 5px 5px; box-shadow:-2px 2px 5px #424242;
+		background:#fff; border:solid 2px #585858; display:none;  /* visibility will be toggled with jquery */}
+
+	#nav li {clear:both; float:none; margin:0px;}
+	#nav a, #nav ul a {font:inherit; background:none; display:block; padding:7px 0px 5px 5px; color:#333; border:none;}
+	
+	/* dropdown */
+	#nav ul {width:auto; position:static; display:block; border:none; background:inherit;}
+	#nav ul li {padding:0px 0 3px 15px; background:url(../Images/SalesDatacomp/menuArrow.png) left center no-repeat;}
+
+
+
+	#leftSliderContainer {display:none;}
+	#rightTextNlinksContainer {margin-left:0px; width:100%;}
+	.commonLeftDiv img {float:left;}
+	#container4steps {display:none;}
+
+	#container4FlipingMenu {display:block;}
+	.fillDetailsDiv_centerCont {padding:0px;}
+	.fillDetailsDiv_center .innerContainer .leftText {text-align:left;}
+}
+
+@media screen and (min-width:908px) {
+	/* ensure #nav is visible on desktop version */
+	#nav {display:block !important;}
+}
+
+
+@media screen and (max-width:532px) {
+	.colorBox {width:150px;}
+	.colorBox:last-child {width:150px;}
+	.colorBox_head {font-size:16px;}
+	.colorBox_text {display:none;}
+	.colorBox a.link {display:none;}
+	.fillDetailsDiv_center .innerContainer .leftText {text-align:left; width:100%;}
+    .sideButton {float:left; padding:10px 0px;}
+}
+
+
+@media screen and (max-width:445px) {
+	#logoContainer img {width:195px;}
+	.mainContainer {padding:30px 10px 0px 10px;}
+	.container4logoNnavigations {padding-bottom:25px;}
+	#navigationContainer {margin:13px 0px 0px 0px; clear:none;}
+	.innerTopHeading {margin-top:10px;}
+	.fillDetailsDiv .innerContainer .leftText {text-align:left;}
+	.fillDetailsDiv .innerContainer .buttonDiv {text-align:left;}
+	.infoDetailsDiv .innerContainer .leftText {text-align:left; width:100%;}
+	.fillDetailsDiv_center .innerContainer .buttonDiv {text-align:center;}
+}

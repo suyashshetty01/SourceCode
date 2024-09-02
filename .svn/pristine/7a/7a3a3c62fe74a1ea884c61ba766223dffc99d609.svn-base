@@ -1,0 +1,99 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+    <s:Header>
+        <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IChequeSubmissionDetailPushToSS/SaveTravelCS</Action>
+    </s:Header>
+    <s:Body>
+        <SaveTravelCS xmlns="http://tempuri.org/">
+            <PersonalTitle>___salutation_text___</PersonalTitle>
+            <ClientName>___contact_name___</ClientName>
+            <HolderAddress>___permanent_address_1___, ___permanent_address_2___, ___permanent_address_3___</HolderAddress>
+            <HolderCity>___permanent_city___</HolderCity>
+            <HolderPincode>___permanent_pincode___</HolderPincode>
+            <PhoneO>___mobile___</PhoneO>
+            <PhoneR>___mobile___</PhoneR>
+            <Mobile>___mobile___</Mobile>
+            <EMail>___email___</EMail>
+            <Nominee>___nominee_name___</Nominee>
+            <NomineeRelation>___nominee_relation_text___</NomineeRelation>
+            <nomineeAge/>
+            <ContactPerson>___contact_name___</ContactPerson>
+            <ContactNo>___mobile___</ContactNo>
+            <GST />
+            <PANNO />
+            <AadharNo />
+            <ClientType>Individual</ClientType>
+            <Designation />
+            <Region>___posp_agent_city___</Region>
+            <Source>___erp_source___</Source>
+            <BusinessGroup>LANDMARK</BusinessGroup>
+            <CaseType>LandMark</CaseType>
+            <ProductName>___erp_product_name___</ProductName>
+            <PolicyCategory>___travel_insurance_type___</PolicyCategory>
+            <BussClass>___erp_plan_name___</BussClass>
+            <InceptionDate>___travel_start_date___</InceptionDate>
+            <ExpiryDate>___travel_end_date___</ExpiryDate>
+            <POSPId>___posp_erp_id___</POSPId>
+            <Executive1>___posp_reporting_agent_uid___</Executive1>
+            <Executive2 />
+            <InsCompany>___insurerco_name___</InsCompany>
+            <BusinessLockAt>Mumbai</BusinessLockAt>
+            <Premium>___premium_breakup_final_premium___</Premium>
+            <SumInsured>0</SumInsured>
+            <ChqForwardingDate>___current_date___</ChqForwardingDate>
+            <PolicyIsseudate>___current_date___</PolicyIsseudate>
+            <PolicyNo>___pg_policy_number___</PolicyNo>
+            <ProposalNo />
+            <ChqMode>NEFT</ChqMode>
+            <ChqDate>___current_date___</ChqDate>
+            <CustBankName />
+            <ChqNo/>
+            <InFavourOf>___insurerco_name___</InFavourOf>
+            <ChqAmount>___premium_breakup_final_premium___</ChqAmount>
+            <ODPremium>___premium_breakup_net_premium___</ODPremium>
+            <LiabBasicPremium>0</LiabBasicPremium>
+            <LiabCNG>0</LiabCNG>
+            <LiabPaOwnerDR>0</LiabPaOwnerDR>
+            <LiabPaPassenger>0</LiabPaPassenger>
+            <Terrorism>0</Terrorism>
+            <StampDuty>0</StampDuty>
+            <Other>0</Other>
+            <AddOnPremium>0</AddOnPremium>
+            <STax>18</STax>
+            <ServiceTax>___premium_breakup_service_tax___</ServiceTax>
+            <TripType>___trip_type___</TripType>
+            <TotalMember>___member_count___</TotalMember>
+            <MemberGender>___gender___</MemberGender>
+            <MemberDOB>___birth_date___</MemberDOB>
+            <TravelCountry>___travel_destination___</TravelCountry>
+            <PlanningforUSA>___hasUSCanada___</PlanningforUSA>
+            <DateofTravelStart>___travel_start_date___</DateofTravelStart>
+            <DateofTravelEND>___travel_end_date___</DateofTravelEND>
+            <PassportNo>___member_1_passport___</PassportNo>
+            <PassportExpiryDate>___member_1_passport_expiry___</PassportExpiryDate>
+            <PlanName>___erp_plan_name___</PlanName>
+            <POSPMode>ONLINE</POSPMode>
+            <IsPosp>NonPOSP</IsPosp>
+            <POSPCategory>___posp_category___</POSPCategory>
+            <POSPCode />
+            <POSPSourceId>___posp_sources___</POSPSourceId>
+            <NomineeDOB>___nominee_birth_date___</NomineeDOB>
+            <MStatusID>2</MStatusID>
+            <PospProduct>___erp_posp_product___</PospProduct>
+            <FinAppId>___posp_fba_id___</FinAppId>
+            <QT />
+            <BirthDate>___birth_date___</BirthDate>
+            <IsCasePOSP>0</IsCasePOSP>
+            <FSMID>0</FSMID>
+            <SubPOSPID>0</SubPOSPID>
+            <SubPOSPName />
+            <PB_SSID>___ss_id___</PB_SSID>
+            <PB_CRN>___crn___</PB_CRN>
+            <IsSaleViaSyncContact/>
+            <IsTeleAssisted/>
+            <GetWhatsAppUpdates>___is_whatsapp_allow___</GetWhatsAppUpdates>
+            <WhatsAppNo>___whatsapp_mobile___</WhatsAppNo>
+            <EInsuranceACNo/>
+            <EInsuranceACProvider/>
+        </SaveTravelCS>
+    </s:Body>
+</s:Envelope>

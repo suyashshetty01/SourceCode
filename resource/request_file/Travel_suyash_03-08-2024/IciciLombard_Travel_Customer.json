@@ -1,0 +1,48 @@
+{
+    "PolicyStartDate": "___policy_start_date___",
+    "DealId": "___insurer_integration_agent_code___",
+    "TravelDays": "___travel_days___",
+    "PolicyType": "___policy_type___",
+    "CountryFrom": "INDIA",
+    "CountryFromCode": 100,
+    "CountryTo": "___travel_country___",
+    "CountryToCode": ___travel_country_code___,
+    "LocationFrom": "___permanent_city___",
+    "LocationFromCode": ___permanent_city_code___,
+    "LocationTo": "___travel_city___",
+    "LocationToCode": ___travel_city_code___,
+    "Trip": "___trip_type___",
+    "TypeOfVisa": "___visa_type___",
+    "MaxTripDuration": "___max_days___",
+    "PremiumAmountCustomer": ___final_premium___,
+    "PlanCode": ___dbmaster_pb_plan_id___,
+    "PlanName": "___dbmaster_pb_plan_name___",
+    "InsuredDetails": [ <!--InsurersDetail_Start-->
+        {
+            "InsuredName": "___member_array_first_name___ ___member_array_last_name___",
+            "InsuredDOB": "___member_array_birth_date___",
+            "RelationshipWithApplicant": "___member_array_relation___",
+            "Gender": "___member_array_gender_2___",
+            "InsuredOccupation": "___member_array_occupation___",
+            "PassportNumber": "___member_array_passport___",
+            "MobileNumber": "___mobile___",
+            "PreExistingDisease": "___member_array_illness___",
+            "NomineeName": "___member_array_nominee_name___"
+        }
+        <!--InsurersDetail_End-->
+    ],
+    "CustomerDetails": {
+        "CustomerType": "Individual",
+        "CustomerName": "___first_name___ ___last_name___",
+        "DateOfBirth": "___birth_date___",
+        "PinCode": "___permanent_pincode___",
+        "PANCardNo": "",
+        "Email": "___email___",
+        "MobileNumber": "___mobile___",
+        "AddressLine1": "___permanent_address_1___ ___permanent_address_2___ ___permanent_address_3___",
+        "CountryCode": "100",
+        "StateCode": "___permanent_state_code___",
+        "CityCode": "___permanent_city_code___"
+    },
+    "CorrelationId": "___correlationCode___"
+}

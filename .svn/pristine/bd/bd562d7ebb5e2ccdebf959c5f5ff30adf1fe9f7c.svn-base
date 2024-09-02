@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Commercial Insurance Policy Online - PolicyBoss</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	
+</head>
+<body>
+	
+	<div class="row heading">
+		<div class="col-md-6">
+			<img src="Images/call.png"><span><a href="tel:18004194199">Toll Free 1800-419-419-9</a></span>
+			<span id="mail"><img src="Images/mail.png"><span><a href="mailto:corpsale@landmarkinsurance.in">corpsale@landmarkinsurance.in</a></span></span>
+		</div>
+		<div class="col-md-6 shape">
+			<div><img src="Images/clock.png"><span>Mon-Sat: 9:30 to 6:30</span></div>
+		</div>
+	</div>
+	<div class="row Navigation">
+		<div class="col-md-6 col-sm-6">
+			<a href="http://policyboss.com/" target="_blank"><img src="Images/PB_logo.png"></a>
+		</div>
+		<div class="col-md-6 col-sm-6 " style="margin: auto;">
+			<ul id="deskMenu">
+				<a href="#"><li>Home</li></a>
+				<a href="#services"><li>About Us</li></a>
+				<a href="#Products"><li>Products</li></a>
+				<a href="#Contact"><li>Contact Us</li></a>
+			</ul>
+			<div class="menu">
+				<i class="fa fa-bars" id="menuBar"></i>
+				<div class="sideMenu" id="sideMenu">
+					<p style="text-align: right;"><i class="fa fa-close Menuclose"></i></p>
+					<ul>
+						<a href="#"><li>Home</li></a>
+						<a href="#services"><li>About Us</li></a>
+						<a href="#Products"><li>Products</li></a>
+						<a href="#Contact"><li>Contact Us</li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="bg"></div>
+		<div class="text">
+			<h1>No Matter What I Do,<br>My Insurance Rates<br>Always Go Up</h1>
+			<h6>It's one of the most frustrating things about insurance. It seems like no matter how safe you are or how well you perform, you never end up winning</h6>
+			<h5>That's where we Step In -<u style="text-transform: uppercase;">Trusted Advisory Matters!</u></h5>
+		</div>
+	</div>
+	<div class="services" id="services">
+		<div class="row">
+			<div class="col-md-6 title">
+				<h5>What We Do For You -</h5>
+				<h3>Help plan and execute a De-Risking Program, based on 3 Principles</h3>
+			</div>
+			<div class="col-md-6">
+				<p>Given the current business needs of developing and implementing a multi-year strategy, we recommend a simple 3 step process that will help us understand where the hidden risk exists in your business, what are the best possible options to hedge or avoid those risks and how do you prep for future.</p>
+			</div>
+		</div>
+		<div class="row Principles">
+			<div class="col-md-4">
+				<span>01</span>
+				<div>
+					<h3>Get Clarity</h3>
+					<p>Business dynamics have changed a lot over last few years, and with this dynamism, comes a lot of ambiguity. The protection of your business interests is best possible when there's clarity in terms of where you stand today, where you're headed, and what stands in way. It's a critical step in deciding the best fit strategy.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<span>02</span>
+				<div>
+					<h3>Drive Change</h3>
+					<p>Next step is to develop a multi-year strategy and a Gameplan that details how we going to do it with clearly assigned accountabilities and key milestones to be achieved.</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<span>03</span>
+				<div>
+					<h3>Measure Progress</h3>
+					<p>Identify and setup key performance and business impact metrics for active progress tracking.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p style="">Everything that we have done to this point is to Ensure you have Business Insurance and Health care program that is aligned with your company's long term goals.</p>
+			</div>
+		</div>
+	</div>
+	<div class="Strategy">
+		<div class="row">
+			<div class="col-md-12 title">
+				<h5>Ensure Your Company's Insurance Plans Right -</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h5><img src="Images/statistic.png"> Develop A Risk Reduction Strategy</h5>
+				<ul>
+					<li>Multi Year Strategy to minimize total cost of risk</li>
+					<li>Active Risk Ownership for minimal operational dependency</li>
+					<li>Identity and prioritize acting on the "controllable" part of Risk</li>
+				</ul>
+			</div>
+			<div class="col-md-12">
+				<h5><img src="Images/worker.png"> Build A Culture of Safety</h5>
+				<ul>
+					<li>Prerequisite: Environment where safety comes first</li>
+					<li>Identify insurance levers for accurate hedge or protection, as required</li>
+					<li>Plan all Asset and Liability tenets for business support when required in event of a converse business development</li>
+				</ul>
+			</div>
+			<div class="col-md-12">
+				<h5><img src="Images/risks.png"> Own Your Risk</h5>
+				<ul>
+					<li>Given Dynamic business environment, define all heads under the Total Cost of Risk</li>
+					<li>Knowing cost of risk and it's dynamics help choose the right risk mitigating mechanisms</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="Products" id="Products">
+		<div class="bg"></div>
+		<div class="text">
+			<div class="row">
+				<div class="col-md-12 title">
+					<h5>Our Services -</h5>
+					<h3>PRODUCTS</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 trade_Credit">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/Credit_Card.png"></div>
+							<div class="col-md-9"><h4>Trade Credit Insurance</h4></div>
+						</div>	
+					</div>
+				</div>
+				<div class="col-md-6 Business">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/check-mark.png"></div>
+							<div class="col-md-9"><h4>Business Insurance</h4></div>
+						</div>
+					</div>	
+				</div>
+				<div class="col-md-6 ShopORoffice">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/shop_and_office.png"></div>
+							<div class="col-md-9"><h4>Shop and Office Insurance</h4></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 cyber">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/Cyber.png"></div>
+							<div class="col-md-9"><h4>Cyber Insurance</h4></div>	
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 director">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/directors.png"></div>
+							<div class="col-md-9"><h4>Directors & Officers Liability</h4></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 commercial">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/market.png"></div>
+							<div class="col-md-9"><h4>Commercial General Liability</h4></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 professional">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/Professional.png"></div>
+							<div class="col-md-9"><h4>Professional Indemnity</h4></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 employee">
+					<div class="transparent_bg"></div>
+					<div class="text">
+						<div class="row">
+							<div class="col-md-3"><img src="Images/employee.png"></div>
+							<div class="col-md-9"><h4>Employee Benefits</h4></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup">
+		<div class="trade_Credit">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Trade Credit Insurance</h3>
+			<p>COVID 19 has left a deep business impact with a large number of companies having their Accounts Receivables negatively as cash flows have been affected as a result of a downturned market.</p>
+			<p>Smart companies that had opted for Trade Credit Insurance were able to minimize this risk, and it could be one of the solutions you are looking for.</p>
+
+			<h6>What is Trade Credit Insurance?</h6>
+			<p>Insurance that offers protection to a company against losses from non-payment or delayed payments, ensuring cash flow is moving.</p>
+
+			<h6>Do you need Trade Credit Insurance?</h6>
+			<p>Accounts Receivables generally represent around 40% of a company's assets. Generally, companies insure all physical assets, however 40% of the total assets still remain at risk with roughly one in 10 invoices becoming delinquent.</p>
+			<p>Post-COVID, these risks have only grown further and stand to pose a threat, if not protected right.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>Benefits of Trade Credit Insurance</h6>
+				<p>Primarily, benefit is to protect your company from a client unable to pay for a variety of reasons including deferred pay, bankruptcy, etc. </p>
+				<p>Here are some additional benefits.</p>
+				<ol>
+					<li>Having your company's receivables insured could find positive response from Banks and lending institutions and help secure financing </li>
+					<li>Enhanced credit support by actively monitoring your receivables source's financial stability and correct use of this data could help your determine extent of credit lines to clients, boosting your collections' strategy </li>
+				</ol>
+				<h6>When to buy Trade Credit insurance?</h6>
+				<p>In general, businesses that have dynamic collections and spread-out collection cycles opt for Trade Credit Insurance supported with business forecasts accounting at Political/Economic/Social/Trade (PEST) impact levels.</p>
+				<p>However, post-COVID, a large number of businesses are now opting to evaluate trade credit insurance to ensure no large asset such as accounts receivable remains uninsured should there by any immediate event or unforeseen downturn impact business operations.</p>
+				<h6>How does it all work?</h6>
+				<p>Firstly, we determine what you would like to have coverage for. </p> 
+				<p>Firms can evaluate their business and determine if they wish to protect single client/ source, specific industries, small or large client/ source clusters, and define coverage for the entire base. </p>
+				<p>Relevant insurance options can then be customized to your company's specific needs.</p>
+			</div>
+		</div>
+		<div class="Business">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Business Insurance</h3>
+			<p>From big brands to sole traders, we offer solutions, not just answers, to protect right.</p>
+			<p>In today's business dynamics, your insurance cover should be specific to you and your business's risks. Whether you are a startup selling products online from your small office - home office(SOHO) or a large enterprise, nature and complexity of  risks associated with every type of business have only grown in recent times. This underlines the need to have the right protection in place. </p>
+			<p>We have a team of commercial insurance specialists who have been helping businesses like yours to choose the right size, right fit insurance covers you and your business need.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<p>Business insurance protects your business from an array of risks such as:</p>
+				<ul>
+					<li>Loss, theft and damage to equipment</li>
+					<li>Property damage </li>
+					<li>Business interruption </li> 
+					<li>Employee sickness or injury in the workplace </li>
+					<li>Public injury or property damage caused by your business</li>
+					<li>Third Party business or financial loss caused by your work</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ShopORoffice">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Shop or Office  Insurance</h3>
+			<p>Our team of experienced staff offers insurance advice for shop and office requirements and act basis deep understanding of the risks and challenges associated with your specific business.</p>
+			<p>In recent times, it is now mandatory to have Employer's Liability if you have any staff, esp. if you're a small business owner viz. Medical Practitioners ( General Physician clinic / Dental clinic / Child Care & Maternity Clinic / Physiotherapy clinic & more), Shops ( Kiraana / General Stores, Hardware Store, Electrical Equipment Store & more), Service (Salon & Beauty Parlor, Repair Service, Florist, Delivery, Transportation & Logistics, Real Estate Broker & Agents), Travel & Tourism, Food & Beverages ( Hotel, Spa, Bakery, Eatery, Fast Food Joint, Dine-Ins and Takeaways, Resorts) and more such businesses</p>
+			<p>Buildings and Contents Insurance is another cover that has been explored more in recent times.</p>
+			<p>We are driven by our commitment to help you assess any additional insurance cover you may need, so you have a tailored package that safeguards you against a wide range of risks to your business.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>Shop and Office Insurance can include:</h6>
+				<p>Business insurance protects your business from an array of risks such as:</p>
+				<ul>
+					<li>Public and Products Liability</li>
+					<li>Employer's Liability</li>
+					<li>Accidental Damage</li>
+					<li>Theft </li>
+					<li>Fire, flood, storm and accidental damage to your buildings, contents, stock and business equipment</li>
+					<li>Shop frontage, glass & signage</li>
+					<li>Goods in Transit</li>
+					<li>Business Interruption</li>
+					<li>Legal Expenses</li>
+					<li>Content All Risk</li>
+					<li>Equipment Breakdown</li>
+				</ul>
+				<h6>The Above Coverage can be extended/customized for Your Business As You Need.</h6>
+			</div>
+		</div>
+		<div class="cyber">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Cyber  Insurance</h3>
+			<h6>What Is Cyber Insurance?</h6>
+			<p>In today's digital economy, with rapid digitisation and increased digital usage, there is an even stronger need for businesses to safeguard their digital presence and properties from threats like hacking, data theft and system infringement. With complexity of Ad/Ransom ware, password attacks and distributed denial of service attacks (DDOS) increasing with each passing there is an increasing need to protect beyond pure IT safeguards viz. firewalls and anti-virus software.</p>
+			<p>This is where Cyber and data insurance can help to protect and support your business or key leadership / senior management, in the event of a cybercrime.</p>
+
+			<h6>Do I Need Cyber Insurance?</h6>
+			<p>For most businesses today, having digital presence in form of a website/ mobile app/ social media handles, having personal data about customers, suppliers or employees are all part of day to day business. There is a reliance on technology not just for support but for all businesses operations. If any of these sound familiar, then you have a cyber and data exposure that you may wish to protect.</p>
+			<p>Cyber insurance ensures business support in the event your systems are accessed online by malicious hackers and they cause damage. Data element covers the physical loss of the data, in the event data gets corrupted or lost whether electronically or otherwise.</p>
+			<p>Cyber and data insurance offers protection against a wide range of cyber threats that are ever evolving and continue to pose a threat to your overall business well being. Besides accounting for IT forensics to identify and eliminate any viruses on your systems, the covers included can also ensure financial assistance for a loss of profits or the re-instatement of your data, legal assistance to help guide you through the process of notifying the relevant authorities, as well as understanding your liabilities and PR to allow you to control the communications following a data breach to help protect your business against the aftermath of Cybercrime.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>What Level of Cyber Cover Do You Need?</h6>
+				<p>The amount of cyber liability insurance you need is generally dependent on the amount and type of IT infrastructure you have and data you hold. Businesses that are predominantly online, with a lot of software and larger amounts of personal and sensitive data will inevitably require higher levels of cover.</p>
+				<p>So it's important to consider the main trading channels your business uses and the type of personal information you hold. What would be the impact if your systems were compromised and your data was stolen, and how long would it take you to get back up and running?</p>
+				<h6>Benefits of Cyber Insurance</h6>
+				<ul>
+					<li>Protection from a range of cyber threats and cyber crime to ensure minimal business impact in case of a disruptive event</li>
+					<li>Accounting for cost of recovery of your systems and data</li>
+					<li>Accounting for legal costs and reputational damage </li>
+					<li>Accounting for loss of income while you get business back as usual</li>
+					<li>Accounting for informing all individuals whose data may have been exposed and regulatory bodies if needed.</li>
+				</ul>
+				<p>Damage control can be extremely costly, so if you're unsure then you can have it discussed with us.</p>
+				<p>Contact us today to explore the right fit Cyber Insurance cover to safeguard your business against the growing menace of cyber crimes.</p>
+			</div>
+		</div>
+		<div class="director">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Directors & Officers Liability Insurance</h3>
+			<h6>What Is Directors & Officers Liability Insurance?</h6>
+			<p>An insurance cover that offers personal liability cover for company directors, officers and managers, it's designed to protect the insured from claims that may arise from decisions and actions taken within the scope of their regular duties.</p>
+			<h6>Do You Need D&O cover?</h6>
+			<p>Today, individual directors of a business can be prosecuted for acting outside the capacity of their role, particularly if there are financial or legal implications.</p>
+			<p>Directors and officers insurance can protect you and your business against wrongful acts committed by a key person within the business. As a company executive, your key management and company personnel could be held personally and legally liable for claims that arise from your business decisions and actions.</p>
+			<p>If a key manager acted outside of the remit of their role, they could be pursued for compensation by shareholders, regulators, employees or other third parties.</p>
+			<p>D&O insurance covers legal defence costs as well as cover any compensation awarded as a result of an unsuccessful legal defence.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>How to get best fit D&O Cover for your Business?</h6>
+				<p>Directors and officers insurance is typically purchased as a stand-alone policy, in addition to your business insurance policy, to protect key individuals within your business.</p> 
+				<p>To explore a custom directors and officers cover tailored to your requirements, Act Now, Contact Us.</p>
+			</div>
+		</div>
+		<div class="commercial">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Commercial General Liability Insurance</h3>
+			<h6>What Is Commercial General Liability Insurance?</h6>
+			<p>As a business, you are exposed to liabilities of varying natures  viz.  employee disputes, damage to premises, taxation proceedings, criminal prosecution defence, commercial tenancy agreements and other such business events. Commercial General Liability (CGL) Insurance offers protection to your business from such events that may result in legal proceedings and have an adverse impact on your business operations.</p>
+
+			<h6>Do You Need CGL insurance?</h6>
+			<p>Though not mandatory, CGL insurance would ensure protection from any unexpected legal proceedings against you. Any business at any time could be subject to legal prosecution and costs can rise rapidly.</p> 
+			<p>CGL insurance can be factored stand-alone as an additional extra, or included along with other relevant covers with your business insurance policy</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>What Level of CGL cover do You need?</h6>
+				<p>In normal practice, given the size of your business, you are offered a limit under CGL insurance and for a defined period of time. The degree of risk in would define the ability to choose a higher or lower limit, basis your business's protection requirement.</p>
+			</div>
+		</div>
+		<div class="professional">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Professional Indemnity</h3>
+			<h6>What is professional indemnity insurance?</h6>
+			<p>An insurance cover designed to protect your business in the event that your work results in financial losses for your customers.</p>
+			<p>In normal business practice, you would be liable to compensate should your actions result in your customers clients losing money. Professional indemnity insurance can offer protection against these eventualities, and safeguard your interests to ensure peace of mind.</p>
+
+			<h6>What does professional indemnity insurance cover?</h6>
+			<p>Professional indemnity insurance covers your professional liability should something go wrong with the work that you do.</p>
+			<p>Professional indemnity claims could arise as a result of your business activities for e.g. incorrect medical diagnosis or inaccurate graphic designs that don't adhere to the brief or a business strategy that resulted in financial loss, etc.</p>
+			<p>Any financial loss incurred by your customers due to any action of yours would be covered as listed in the scope of product construct.</p>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>Who needs professional indemnity insurance?</h6>
+				<p>Strongly recommended for professionals who are in the business of advisory and consultancy services or manage client's data, business process or intellectual property.</p>
+			</div>
+		</div>
+		<div class="employee">
+			<p style="text-align: right;"><i class="fa fa-close close"></i></p>
+			<h3>Employee Benefits Insurance</h3>
+			<p>Gone are the days when businesses used to consider insurance with limited benefits to offer under Employee benefits. In today's competitive age, businesses have been innovating to develop custom employee benefits programme that not just covers the indirect pay of your workforce, it's also a tool that helps you duly compensate and retain as well as attract talent basis your comfort.</p>
+			<p>Right from health insurance covers for employees covering their immediate family and in-laws to employee's pet insurance, companies are innovating to create the most relevant employee benefit covers for their employees, especially in post-COVID times.</p>
+			<p>Traditionally an employee benefit programme would include all or any of the following:</p>
+			<ul>
+				<li>Employees Health insurance (Medi-claim) - GHI</li>
+				<li>Employees Life insurance - GTL</li>
+				<li>Employees Retirement plans </li>
+				<li>Employees Personal Accident (Disability) insurance - GPA</li>
+			</ul>
+			<p style="text-align: right;"><span class="moreText">Read More...</span></p>
+			<div class="ReadMore">
+				<h6>What are the benefits of Employee Benefits Insurance?</h6>
+				<p><strong>Health and wellness</strong><br>
+				More and more companies have employee wellness programs today and the ability to customise are endless with examples  ranging from getting fully body checkup done from a preferred hospital to a gym membership to solutions that include physical, mental and financial wellness.</p>
+
+				<p><strong>Health Insurance & Healthcare</strong><br>
+				Healthcare benefits, as part of employee health insurance can also be customized basis requirements with some of the innovations seen of late being coverage of physiotherapy and chiropractic sessions, to including fertility treatments and psychological support.</p>
+
+				<p>Other types of insurance benefits for employees cover parental leave or injury.</p>
+
+				<p><strong>Personal finance & Pension planning</strong><br>
+				post-COVID, there has been an obvious stress about personal finances with fall in household income due to the challenges and restrictions in business operations. This has led to a large majority of employers to seriously start thinking of employee financial wellness.</p>
+
+				<p>Retirement planning options are hence being sought after customization possibilities to suit all levels of employees.</p>
+
+				<p>To explore curating an employee benefits programme that offer both width and depth of options in terms of a comprehensive solution, let's get started today. Contact us and let's get started.</p>
+			</div>
+		</div>
+	</div>
+	<div class="contact" id="Contact">
+		<div class="row">
+			<div class="col-md-12 title">
+				<h5>Please Note -</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>The information provided herein above for various types of insurance covers, have been compiled basis information gathered from various sources, based on our past working experience etc. In the event of any error etc., please bring the same to our notice and we shall take necessary steps to rectify the same. The details, situations listed above may not hold true for each business and one should take an independent assessment and decision based of his/her/its own situation and requirement. The above is meant only for general information and understanding purposes. We as IRDAI registered direct insurance brokers will use our best efforts in extending all necessary assistance in your insurance needs. Insurance covers/solutions are subject to the terms and conditions of the insurance policy offered by the respective insurers in India. </p>
+			</div>
+		</div>
+	</div>
+	<div class="contact" id="Contact">
+		<div class="row">
+			<div class="col-md-12 title" style="text-align: center;">
+				<h5>Contact Us -</h5>
+				<h3>We Alway Here To Helps You</h3>
+			</div>
+		</div>
+		<div class="row form">
+			<div class="col-md-6 map" style="padding: 0">
+				<div class="mapouter">
+					<div class="gmap_canvas">
+						<iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=330&amp;hl=en&amp;q=Ashok Silk Mills Compound, 202 L.B.S Marg, Ghatkopar (West),&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+						<a href="https://www.fridaynightfunkin.net/">FNF Download</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<form class="text" style="padding: 15px;">
+					<div class="row">
+						<div class="col-md-6">
+							<input type="text" name="" placeholder="Name" id="contact_name"
+							maxlength="50" autocomplete="nope" onkeyup="forceText(event)">
+						</div>
+						<div class="col-md-6">
+							<input inputmode="numeric" name="" placeholder="Mobile No" id="mobile"
+							maxlength="10" autocomplete="nope" onkeyup="forceNumeric(event)">
+						</div>
+						<div class="col-md-6">
+							<input type="email" name="" placeholder="Email ID" id="email">
+						</div>
+						<div class="col-md-6">
+							<select id="product">
+								<option value="0" disabled selected>Product</option>
+								<option value="Business Insurance">Business Insurance</option>
+								<option value="Commercial General Liability Insurance">Commercial General Liability Insurance</option>
+								<option value="Cyber Insurance">Cyber Insurance</option>
+								<option value="Directors & Officers Liability Insurance">Directors & Officers Liability Insurance</option>
+								<option value="Employee Benefits Insurance">Employee Benefits Insurance</option>
+								<option value="Fire Insurance">Fire Insurance</option>
+								<option value="GMC">GMC</option>
+								<option value="Marine Insurance">Marine Insurance</option>
+								<option value="Professional Indemnity">Professional Indemnity</option>
+								<option value="Shop or Office Insurance">Shop or Office Insurance</option>
+								<option value="Trade Credit Insurance">Trade Credit Insurance</option>
+							</select>
+						</div>
+						<div class="col-md-12">
+							<textarea rows="4" cols="65" placeholder="Message" id="message"
+							maxlength="250"></textarea>
+						</div>
+						<span class="req_field_error" id="req_field"></span>
+					</div>
+					<button type="button" onclick="validateForm()" >Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="social_Media">
+		           	<a href="https://www.facebook.com/policyboss" target="_blank"><img src="Images/facebook.png"></a>
+					<a href="https://www.youtube.com/user/policyboss" target="_blank"><img src="Images/youtube.png"></a>
+					<a href="https://www.linkedin.com/company/policyboss/" target="_blank"><img src="Images/linkedin.png"></a>
+					<a href="https://plus.google.com/u/0/+PolicyBossCom" target="_blank"><img src="Images/Google_Plus.png"></a>
+					<a href="https://twitter.com/Policyboss" target="_blank"><img src="Images/twitter.png"></a>
+					<a href="https://www.instagram.com/policyboss" target="_blank"><img src="Images/instagram.png"></a>
+				</p>
+				<p style="margin: 5px 0;">-Registered By-</p>
+            	<div>
+            		<a href="https://www.irdai.gov.in" target="_blank"><img border="0" src="Images/logo-1.jpg" alt="IRDAI Logo"></a>
+            	</div>
+            	<p style="margin: 5px 0;">-Payment By-</p>
+            	<div>
+            		<img src="Images/logo-3.jpg" alt="PAYMENT GETWAY">
+            	</div>
+        		<p style="margin: 5px 0;">-Secured By-</p>
+            	<div>
+            		<img src="Images/logo-2.jpg" alt="WEB SECURITY">
+            	</div>
+        		<div style="padding-top:10px;">
+            		<p style="text-transform:uppercase; font-family: Poppins-Medium;">For more details on risk factors, terms and conditions please read sales brochure carefully before purchasing the insurance policy/concluding a sale.</p>
+		            <p>
+		                <b>Branch Offices:</b> <br>
+		                Ahmedabad | Aurangabad | Bangalore | Bhopal | Chandigarh | Chennai | Cochin | Goa | Hyderabad | Indore | Jaipur <br>
+		                Kolkata | Lucknow | Ludhiana | Mumbai | Mumbai-Dombivili | Nagpur | Nashik | New Delhi | Pune | Raipur | Rajkot | Surat | Thane | Thiruvananthapuram | Vadodara 
+		            </p>
+		            <p>
+		                <b>LANDMARK INSURANCE BROKERS PRIVATE LIMITED</b><br>
+		                <b>CIN U66030PN2002PTC017009 </b><br>
+		                IRDAI CoR No: <a href="/pdf-files/legal/IRDA-License-2018-2021.pdf" target="_blank" style="color:white">216</a> | Broker Code: DB 089/03 | Valid From 13/10/2018 till 12/10/2021 (originally licensed on 13/10/2003 and renewed thereafter) | Category: Direct (Life &amp; General) | A member of IBAI <br>
+		                Regd. Off: 1187/22, 4th Floor (above ICICI Bank ATM), Venkatesh Meher, Ghole Road, Shivaji Nagar, Pune (Maharashtra) - 411005.
+		            </p>
+		            <p>Website: <a href="http://policyboss.com/" style="color:white;" target="_blank">www.policyboss.com</a> | Toll Free: <a href="tel:18004194199">1800-419-419-9*</a><br>* Working hours: 9:30 a.m. to 6:30 p.m. (Monday to Saturday)</p>
+		        </div>
+		        <hr>
+		        <p>Copyright@2021</p>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

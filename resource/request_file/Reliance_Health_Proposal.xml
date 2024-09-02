@@ -1,0 +1,167 @@
+<HealthDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ClientDetails>
+        <ClientTypeID>0</ClientTypeID>
+        <DOB>___birth_date___</DOB>
+        <Email>___email___</Email>
+        <ForeName>___first_name___</ForeName>
+        <Gender>___gender___</Gender>
+        <LastName>.</LastName>
+        <MaritalStatusID>1951</MaritalStatusID>
+        <MidName />
+        <MobileNo>___mobile___</MobileNo>
+        <OccupationID>___occupation___</OccupationID>
+        <PhoneNo />
+        <Salutation>___salutation___</Salutation>
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1>Ghatkopar</Address1>
+                <Address2>Pantnagar</Address2>
+                <Address3 />
+                <CityID>238881</CityID>
+                <Country>India</Country>
+                <DistrictID>321</DistrictID>
+                <Email>___email___</Email>
+                <Fax />
+                <MobileNo>___mobile___</MobileNo>
+                <NearestLandmark />
+                <PanNo />
+                <PhoneNo />
+                <Pincode>400086</Pincode>
+                <AreaID />
+                <StateID>21</StateID>
+            </CommunicationAddress>
+            <PermanentAddress>
+                <Address>
+                    <Address1>Ghatkopar</Address1>
+                    <Address2>Pantnagar</Address2>
+                    <Address3 />
+                    <CityID>238881</CityID>
+                    <Country>India</Country>
+                    <DistrictID>321</DistrictID>
+                    <NearestLandmark />
+                    <Pincode>400086</Pincode>
+                    <AreaID />
+                    <StateID>21</StateID>
+                </Address>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <InsuredDetailsList>
+        <InsuredDetail>
+            <RelationshipWithProposerID>345</RelationshipWithProposerID>
+            <Salutation>Mr.</Salutation>
+            <FirstName>Amol</FirstName>
+            <LastName>Patil</LastName>
+            <Gender>Male</Gender>
+            <Age>28</Age>
+            <DOB>18/01/1989</DOB>
+            <MaritalStatusID>1</MaritalStatusID>
+            <OccupationID>14</OccupationID>
+            <Height>170</Height>
+            <Weight>65</Weight>
+            <PreExistingDisease>
+                <IsExistingIllness>false</IsExistingIllness>
+                <DiseaseList />
+                <IsInsuredConsumetobacco />
+                <HasAnyPreClaimOnInsured />
+                <DetailsOfPreClaimOnInsured />
+                <HasAnyPreHealthInsuranceCancelled />
+            </PreExistingDisease>
+            <OtherInsuranceList />
+        </InsuredDetail>
+    </InsuredDetailsList>
+    <Policy>
+        <Tenure>1</Tenure>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <AgentID>Direct</AgentID>
+        <AgentName>Direct</AgentName>
+        <Branch_Code>9202</Branch_Code>
+        <BusinessType>1</BusinessType>
+        <ProductCode>2828</ProductCode>
+        <ExternalSystemID>0</ExternalSystemID>
+        <BranchName>BranchName</BranchName>
+    </Policy>
+    <UploadDetails>
+        <DocumentType />
+    </UploadDetails>
+    <RiskDetails>
+        <PlanID>1</PlanID>
+        <DOBofSeniorMost>18/01/1989</DOBofSeniorMost>
+        <MemberCount>1</MemberCount>
+        <MaxAge>28</MaxAge>
+        <CoverTypeID>1</CoverTypeID>
+        <SumInsured>300000</SumInsured>
+        <IsServiceTaxExemptionApplicable>false</IsServiceTaxExemptionApplicable>
+        <ServiceTaxExemptionID />
+        <IsAnyEmployeeOfRelianceADAGroup />
+        <CompanyNameID />
+        <EmployeeCode />
+        <EmailID>patilamol251@gmail.com</EmailID>
+        <Iscrosssell />
+        <CrossSellPolicyNo />
+        <NoofMembersAbove21>1</NoofMembersAbove21>
+        <NoofMembersBelow21>0</NoofMembersBelow21>
+        <Category></Category>
+        <PreviousCumulativeBonus />
+        <PreviousCumulativeBonusrate />
+        <CumulativeBonus />
+        <CumulativeBonusrate />
+        <ChangeinCoverageType>false</ChangeinCoverageType>
+        <AdditionofMemberatRenewal>false</AdditionofMemberatRenewal>
+        <DeletionofMemberatRenewal>false</DeletionofMemberatRenewal>
+    </RiskDetails>
+    <NomineeDetails>
+        <FirstName>Ajay Sutar</FirstName>
+        <Salutation>Mr.</Salutation>
+        <MiddleName />
+        <LastName>.</LastName>
+        <DOB>09/01/1992</DOB>
+        <NomineeRelationshipID>0</NomineeRelationshipID>
+        <NomineeRelationshipOther />
+        <NomineeAddress>
+            <Address1>Ghatkopar, pantnagar</Address1>
+            <Address2></Address2>
+            <Address3 />
+            <CityID>0</CityID>
+            <Country>India</Country>
+            <DistrictID>321</DistrictID>
+            <NearestLandmark />
+            <Pincode>400086</Pincode>
+            <AreaID />
+            <StateID>21</StateID>
+        </NomineeAddress>
+    </NomineeDetails>
+    <Premium>
+        <BasicPremium />
+        <TotalPremium />
+        <EducationalCess />
+        <EducationalCessPercentage />
+        <FinalPremium />
+        <NetPremium />
+        <SalesTax />
+        <SalesTaxPercentage />
+        <SecondaryAndHigherEducationalCess />
+        <SecondaryAndHigherEducationalCessPercentage />
+        <ServiceTax />
+        <ServiceTaxPercentage />
+        <Surcharge />
+        <SurchargePercentage />
+    </Premium>
+    <LstDiscount />
+    <ErrorMessages>
+        <ErrMessages />
+    </ErrorMessages>
+    <LstHealthCoverDetails />
+    <PreviousInsuranceDetails>
+        <PrevInsuranceID />
+        <PrevYearPolicyNo />
+        <PrevYearPolicyStartDate />
+        <PrevYearPolicyEndDate />
+    </PreviousInsuranceDetails>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+    <CoverDetails />
+    <IsQuickquote>false</IsQuickquote>
+</HealthDetails>

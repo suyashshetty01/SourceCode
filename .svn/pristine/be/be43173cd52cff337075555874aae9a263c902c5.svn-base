@@ -1,0 +1,146 @@
+$(document).ready(function(){
+	$('.submit').click(function(){
+		$(this).addClass('active');
+		/*$('form').validate({
+		  	debug:true,
+		  	rules: {
+				username: {
+					lettersonly: true,
+					minlength: 3
+				},
+				crn: {
+					digits: true
+				},
+				product: {
+					lettersonly: true,
+					minlength: 3
+				},
+				amount: {
+					digits: true
+				}
+			},
+			messages: {
+				username: {
+		    		lettersonly: "plz enter letters only",
+		    		minlength: "Please enter at least 3 characters"
+		    	},
+		    	crn: {
+		    		digits: "plz enter numbers only"
+		    	},
+		    	product: {
+		    		lettersonly: "plz enter letters only",
+		    		minlength: "Please enter at least 3 characters"
+		    	},
+		    	amount: {
+		    		digits: "plz enter numbers only"
+		    	}
+			},
+			errorPlacement: function(error, element) {
+	            if (element.type == 'checkbox') {
+	                error.appendTo(element.parent());
+	            }
+	           else if ( element.is(":radio") ){
+	                error.insertAfter( element);
+	            }
+	            else {
+	                error.insertAfter(element);
+	            }
+	        },
+	        highlight: function (element) {
+	            $(element).next().addClass('error')
+	            $(element).css("border","1px solid #2165cd")
+	        },
+	        unhighlight: function (element) {
+	            $(element).next().removeClass('error')
+	            $(element).css("border","1px solid #797979")
+	        }
+	    });*/
+		submitForm();
+			
+	});
+	getBalanceDetails();
+	
+});
+var ss_id, udid, crn, merchant_id;
+function getBalanceDetails(){
+	ss_id = getUrlVars()["ss_id"];
+	udid = getUrlVars()["User_Data_Id"];
+
+    $.ajax({
+		type: "GET",
+		//url: 'http://localhost:3000/wallets/getAccountDetail/' + ss_id,
+		url: 'http://qa-horizon.policyboss.com:3000/wallets/getAccountDetail/' + ss_id,		
+		success: function (response) {
+			console.log(response);
+			res = response.replace("<pre>","");
+			res = res.replace("</pre>","");
+			res = JSON.parse(res);
+			if(res.rsps.hasOwnProperty('data')){
+				console.log(res.rsps.data['balance']);
+				$("#balance").text(res.rsps.data['balance']);
+				merchant_id = res.rsps.data['payoutMerchantId'];
+				
+				crn = getUrlVars()["crn"];
+				var customerName = getUrlVars()["customer_name"];
+				var premiumAmount = getUrlVars()["premium_amount"];
+				
+				if(getUrlVars()["product_id"] == "1" ){
+					productName = "Car";
+				}else if(getUrlVars()["product_id"] == "10" ){
+					productName = "Bike";
+				}else if(getUrlVars()["product_id"] == "12"){
+					productName = "CV";
+				}else{
+					productName = "Health";
+				}
+				$("#username").val(customerName);
+				$("#crn").val(crn);
+				$("#product").val(productName);
+				$("#amount").val(premiumAmount);
+			
+			}
+		},
+		error: function (result) {
+			console.log(result);
+		}
+	});
+}
+
+var getUrlVars = function () {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+function submitForm(){	
+	$.ajax({
+		type: "GET",
+		//url: 'http://localhost:3000/wallets/executePaymentTransfer/' + udid + "/" + merchant_id,
+		url: 'http://qa-horizon.policyboss.com:3000/wallets/executePaymentTransfer/' + udid + "/" + merchant_id,		
+		success: function (response) {
+			console.log(response);
+			res = response.replace("<pre>","");
+			res = res.replace("</pre>","");
+			res = JSON.parse(res);
+			console.log(res);
+			if(res.rsps.pg_post['status'] == "success"){
+				var url = res.rsps.pg_url;
+				var form = $('<form action="' + url + '" method="post" style="display:none;">' +
+				  '<input type="text" name="status" value="' + res.rsps.pg_post.status + '" />' +
+				  '<input type="text" name="amount" value="' + res.rsps.pg_post.amount + '" />' +
+				  '<input type="text" name="txnid" value="' + res.rsps.pg_post.txnid + '" />' +				  
+				  '</form>');
+				$('body').append(form);
+				form.submit();				
+			}
+		},
+		error: function (result) {
+			console.log(result);
+		}
+	});
+}

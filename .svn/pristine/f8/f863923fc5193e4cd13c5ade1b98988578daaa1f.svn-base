@@ -1,0 +1,213 @@
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	padding:0;
+	margin:0;
+	font-family:sans-serif;
+}
+header .ticketHeader{background:#00476e;padding:10px;text-align:left;font-weight: 700;font-size:15px;text-transform:uppercase;color:#fff;padding-left:5px;}
+header .fa-long-arrow-left{color:#fff;display:inline-block;font-size:20px;float:left;padding:11px;}
+
+.contentBlog{padding:12px;font-size:14px; padding-top: 45px;}
+.fieldiv{margin:15px 0px;}
+.fieldiv label{color:#00476e;font-weight:normal;text-transform:uppercase;}
+.fieldiv select ,input{width:100%;padding:0px 5px;border-width:0px;border-bottom: 1px solid #aeadad;}
+.contentBlog .submitBtn{font-size:16px;color:#fff;background:#00476e;text-align:center;width:100%;border:2px solid #00476e;padding:5px;bottom: 0px;left: 0px;position: fixed;font-weight: 700;text-transform: uppercase;}
+.crnTxt{display: grid;grid-template-columns: 1fr 1fr}
+
+/* Ticket Input Page CSS */
+header .addContent{background:rgb(220, 220, 220);padding:2px;color:#333;}
+.searchgrid{display:grid;grid-template-columns:100px 1fr;padding:3px;font-size:14px;}
+.fa-search,.fa-ticket{font-size:18px;}
+.tickCard{padding:6px;font-size:13px;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);margin:4px;border-radius:6px;}
+.ticketDesc{display:grid;grid-template-columns:1fr 1fr;}
+.desctitle{color:gray;text-transform:uppercase;font-size:13px;}
+.Desc{margin:6px 0px;}
+.commentadd{border-top:1px solid #c0c0c0;display:grid;grid-template-columns:1fr 1fr;padding:4px;}
+.fa-file-text,.fa-plus-square{font-size:16px;color:#333;}
+.srchInput{width:80%;padding:2px;}
+
+
+
+/* Popup -CSS */
+.CommentPopup {
+        position: fixed;
+        width: 100%;
+        background: rgba(250, 250, 250, 0.2);
+        height: 100%;
+        z-index: 9999;
+        display: none;
+    }
+	.popupScreen {
+        width: 100%;
+		bottom: 0%;
+		left:0%;
+		position: absolute;
+        background: #fff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+    }
+	
+	.popupclose {
+        color: #fff !important;
+        font-size: 25px;
+        font-weight: 700;
+        float: right;
+        position: absolute;
+        right: 3px;
+        top: -5px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+	.popup_txt{padding:6px;font-size:14px;color:#333}
+	.commntPopHeader{background: #00476e;padding: 8px;}
+	.commntPopHeader h4{color:#fff;font-weight:600; margin:1px;}
+	.popup_txt div{padding:5px;}
+	.popup_txt div p{margin-bottom:5px;}
+	.popup_txt div p span{font-weight:bold;}
+	/* ---------- */
+	.AddPopup {
+        position: fixed;
+        width: 100%;
+        background: rgba(250, 250, 250, 0.2);
+        height: 100%;
+        z-index: 9999;
+        display: none;
+    }
+	.addpopScreen {
+        width: 92%;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+        background: #fff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        max-height: 500px;
+    }
+	
+	.addpopupclose {
+        color: #fff !important;
+        font-size: 25px;
+        font-weight: 700;
+        float: right;
+        position: absolute;
+        right: 3px;
+        top: -5px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+	.addpopup_txt{padding:8px;font-size:14px;color:#333}
+	.uploadImg div{text-align:center;font-weight:600;padding:5px;}
+	.uploadImg input{border-bottom:0px;}
+	.addComment input{margin:8px 0px;}
+	.ImgSubmit{padding:8px 20px;margin:8px;color:#fff;text-align:center;background:#00476e;border:2px solid #00476e;cursor:pointer;width:35%}
+	.statusImgSubmit{padding:8px 20px;margin:2px;color:#fff;text-align:center;background:#00476e;border:2px solid #00476e;cursor:pointer;}
+	.SubmitDiv{text-align:center;}
+  /*Status popup*/
+  .StatusPopup {
+        position: fixed;
+        width: 100%;
+        background: rgba(250, 250, 250, 0.2);
+        height: 100%;
+        z-index: 9999;
+        display: none;
+    }
+	.StatuspopScreen {
+        width: 92%;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+        background: #fff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        max-height: 500px;
+    }
+	.StatusPopHeader{background: #43b1e8;padding: 8px;}
+	.StatusPopHeader h4{color:#fff;font-weight:600; margin:1px;}
+	.Statuspopup_txt{padding:8px;font-size:14px;color:#333}
+	
+	
+	 /*Upload popup*/
+  .UploadPopup {
+        position: fixed;
+        width: 100%;
+		height:100%;
+        background: rgba(250, 250, 250, 0.2);
+        height: 100%;
+        z-index: 9999;
+        display: none;
+    }
+	.UploadpopScreen {
+        width: 100%;
+		height:100%;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+        background: #fff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+    }
+	.UploadPopHeader{background: #43b1e8;padding: 8px;}
+	.UploadPopHeader h4{color:#fff;font-weight:600; margin:1px;}
+	.Uploadpopup_txt{padding:8px;font-size:14px;color:#333}
+	
+	.Error {border-bottom: 1px solid red !important;}
+	.radiobtn_err{display:none; color:red;}
+	.SubmitDivs{position: fixed;left: 0;width: 100%;bottom: 0px;text-align: center;}
+	.UploadComment{top: 11%;position: fixed;width: 100%;padding: 8px;font-size: 14px;}
+	#camera--trigger1{border-radius: 50%;width: 60px;height: 60px;background:#43b1e8;color: #fff;text-align: center;z-index: 9999;border: 2px solid #43b1e8;font-size: 12px;}
+	.PicBtn{display:inline-block;width:48%;background:#00476e;color:#fff}
+	#myFileInput{display:none;}
+	.btnClass{border-radius: 50%;width: 60px;height: 60px;background:#43b1e8;color: #fff;text-align: center;z-index: 9999;border: 2px solid #43b1e8;font-size: 12px;}
+	
+		.MyLoader{position: absolute;z-index: 9;background:rgba(220, 216, 216, 0.7);width: 100%;height: 100%;text-align: center;display:none;}
+		.MyLoader img{width: 80px;left: 50%;top: 50%;transform: translate(-50%,-50%);position: absolute;}
+	
+	.sticky_btn {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    z-index: 10;
+}
+
+.refresh_quote {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.refresh_quote img {
+    width: 100%;
+}
+.container_fluid{position: fixed;width: 100%}
+.navItem{background:rgb(0, 71, 109);padding: 10px;font-size: 14px;}
+.navItem nav{display: grid;grid-template-columns: 30px 1fr;text-align: center;}
+.navItem nav a {color: rgb(223, 223, 223);text-decoration: none;opacity: 0.5;font-weight: 600;font-size: 15px;font-family: "Roboto-Regular", arial, sans-serif;}
+.Input_nav{padding-top: 3px;}
+.DashboardnavItem{background:rgb(0, 71, 109);padding: 13px 8px;font-size: 14px;text-transform: uppercase;}
+.DashboardnavItem nav{display: grid;grid-template-columns: 1fr 1fr 1fr;text-align: center;}
+.DashboardnavItem nav a {color: rgb(223, 223, 223);text-decoration: none;opacity: 0.5;font-weight: 600;padding:8px;font-size: 14px;font-family: "Roboto-Regular", arial, sans-serif;}
+
+
+.ActiveItem{color: #fff !important;opacity: 1 !important;}
+.ActivenavItem{border-bottom: 2px solid #fff;color: #fff !important;opacity: 1 !important;}
+
+.commentGrid{display:grid;grid-template-columns:80px 1fr}
+.commentGrid div{border-bottom:1px solid #00476e;}
+.showImg{width: 65px;
+    padding:4px 10px !important;
+    border: 1px solid #009fe3;border-bottom:1px solid #009fe3 !important;background:#009fe3;text-align:center;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);color:#fff;}
+	.showImg a{text-decoration:none;color:#fff;}
+.commentDiv{justify-content: left;
+    align-items: center;
+    display: flex;}
+
+
+#tbl_Doc{display:none;}

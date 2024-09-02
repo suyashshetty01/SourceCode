@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Two Wheeler</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,user-scalable=no"
+    />
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+ 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity= "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  </head>
+  <style>
+    .Error {
+      border-bottom: 1px solid #fd3a00;
+    }
+
+    .errorTxt {
+      font-size: 9pt;
+      color: red;
+      padding-left: 0%;
+    }
+  </style>
+
+  <body>
+    <div class="Popup_thank">
+      <div class="popup">
+        <span class="close" style="display: none">x</span>
+        <img class="loader" src="Image/loading.gif" style="height: 90%" />
+        <h1 class="loader_text" style="display: none"></h1>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="Image/PB_logo.png" align="right" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" style="margin: auto">
+          <h1>TWO WHEELER SATP QUICK</h1>
+          <img src="Image/Bike.png" width="100%" />
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div class="">
+            <div
+              style="
+                text-align: center;
+                margin-bottom: 20px;
+                background-color: #264a96;
+                color: white;
+                padding: 5px;
+              "
+            >
+              <p style="margin-bottom: 0">You have completed payment.</p>
+            </div>
+            <div class="VDetails">
+              <div class="row" style="margin: 0">
+                <div class="vehicle">
+                  <p class="text">Vehicle</p>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input
+                        autocomplete="off"
+                        class="makePopup"
+                        id="vehMake"
+                        placeholder="Make"
+                        readonly=""
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <input
+                        autocomplete="off"
+                        class="modelPopup"
+                        id="vehModel"
+                        placeholder="Model"
+                        readonly=""
+                        type="text"
+                      />
+					  <input type="hidden" class="vehModelID"  id="vehModelID"/>
+                    </div>
+                    <div class="col-md-4">
+                      <input
+                        autocomplete="off"
+                        class="varientPopup"
+                        formcontrolname="vehicle"
+                        id="vehVariant"
+                        placeholder="Variant"
+                        readonly=""
+                        type="text"
+                      />
+                      <input type="hidden" class="vehVariantID"  id="vehVariantID"/>
+                      <input type="hidden" class="vehVariantCC"  id="vehVariantCC"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <span
+                        id="errVehMake"
+                        style="display: none"
+                        class="errorTxt"
+                      ></span>
+                    </div>
+                    <div class="col-md-4">
+                      <span
+                        id="errVehModel"
+                        style="display: none"
+                        class="errorTxt"
+                      ></span>
+                    </div>
+                    <div class="col-md-4">
+                      <span
+                        id="errVehVarient"
+                        style="display: none"
+                        class="errorTxt"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name=""
+                    id="regDate"
+                    onfocus="(this.type='date')"
+                    onblur="(this.type='text')"
+                    onclick="setdefaultdate();"
+                    required
+                    style="text-transform: uppercase"
+                  />
+                  <label for="regDate">Registration Date</label>
+                  <span
+                    id="errRegDate"
+                    style="display: none"
+                    class="errorTxt"
+                  ></span>
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name=""
+                    id="engNumber"
+                    maxlength="20"
+                    minlength="6"
+                    required
+                    style="text-transform: uppercase"
+                  />
+                  <label for="engNumber">Engine Number</label>
+                  <span
+                    id="ErrEngineNumber"
+                    style="display: none"
+                    class="errorTxt"
+                  ></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name=""
+                    id="chassisNumber"
+                    maxlength="20"
+                    minlength="6"
+                    required
+                    style="text-transform: uppercase"
+                  />
+                  <label for="chassisNumber">Chassis Number</label>
+                  <span
+                    id="ErrChassisNumber"
+                    style="display: none"
+                    class="errorTxt"
+                  ></span>
+                </div>
+              </div>
+              <div style="text-align: center">
+                <button class="submit" onclick="validateForm()">SUBMIT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Make_section">
+      <div class="Make_wrap">
+        <div class="popHeader">
+          <span class="closePop" onclick="closePop();">&#x2716;</span>
+          <div class="searchBox">
+            <div class="search_Icon">
+              <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;
+            </div>
+            <span class="srch">
+              <input
+                type="text"
+                onkeyup="mySearch(event.target.value)"
+                id="mySearch"
+                placeholder="Search..."
+              />
+            </span>
+          </div>
+        </div>
+        <div class="make-content">
+          <div class="makeDv">
+            <p class="vehicleDetails makeSpan" id="vehicleName"></p>
+            <div class="makegrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model_section">
+      <div class="Make_wrap">
+        <div class="popHeader">
+          <span class="closePop" onclick="closePop();">&#x2716;</span>
+          <div class="searchBox">
+            <div class="search_Icon">
+              <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;
+            </div>
+            <span class="srch">
+              <input
+                type="text"
+                onkeyup="mySearch(event.target.value)"
+                id="mySearch"
+                placeholder="Search..."
+              />
+            </span>
+          </div>
+        </div>
+        <div class="make-content">
+          <div class="modelDv">
+            <p class="vehicleDetails modelSpan" id="vehicleName"></p>
+            <div class="Modelgrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="varient_section">
+      <div class="Make_wrap">
+        <div class="popHeader">
+          <span class="closePop" onclick="closePop();">&#x2716;</span>
+          <div class="searchBox">
+            <div class="search_Icon">
+              <i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;
+            </div>
+            <span class="srch">
+              <input
+                type="text"
+                onkeyup="mySearch(event.target.value)"
+                id="mySearch"
+                placeholder="Search..."
+              />
+            </span>
+          </div>
+        </div>
+        <div class="make-content">
+          <div class="varDv">
+            <p class="vehicleDetails varientSpan" id="vehicleName"></p>
+            <div class="vargrid">
+              <div class="alignvarName"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var dateObj = {};
+      var CONST_HORIZON_URL;
+      var VehicleDivClassMake;
+      var VehicleDivClassModel;
+      var pgID = 0;
+      var fsData;
+      var vehicleMake = [
+        {
+          ID: 1,
+          Make_Name: "KTM",
+          logo: "KTM",
+        },
+        {
+          ID: 2,
+          Make_Name: "YAMAHA",
+          logo: "YAMAHA",
+        },
+        {
+          ID: 3,
+          Make_Name: "HERO MOTOCORP",
+          logo: "HERO_MOTOCORP",
+        },
+        {
+          ID: 4,
+          Make_Name: "DUCATI",
+          logo: "DUCATI",
+        },
+        {
+          ID: 5,
+          Make_Name: "SUZUKI",
+          logo: "SUZUKI",
+        },
+        {
+          ID: 6,
+          Make_Name: "BAJAJ",
+          logo: "BAJAJ",
+        },
+        {
+          ID: 7,
+          Make_Name: "KAWASAKI",
+          logo: "KAWASAKI",
+        },
+        {
+          ID: 8,
+          Make_Name: "EKO",
+          logo: "EKO",
+        },
+        {
+          ID: 9,
+          Make_Name: "GLOBAL",
+          logo: "GLOBAL",
+        },
+        {
+          ID: 10,
+          Make_Name: "HARLEY DAVIDSON",
+          logo: "HARLEY_DAVIDSON",
+        },
+        {
+          ID: 11,
+          Make_Name: "HAYABUSA",
+          logo: "HAYABUSA",
+        },
+        {
+          ID: 12,
+          Make_Name: "HERO HONDA",
+          logo: "HERO_HONDA",
+        },
+        {
+          ID: 13,
+          Make_Name: "HONDA MOTORS",
+          logo: "HONDA_MOTORS",
+        },
+        {
+          ID: 14,
+          Make_Name: "LML",
+          logo: "LML",
+        },
+        {
+          ID: 15,
+          Make_Name: "MAHINDRA",
+          logo: "MAHINDRA",
+        },
+        {
+          ID: 16,
+          Make_Name: "PIAGGIO",
+          logo: "PIAGGIO",
+        },
+        {
+          ID: 17,
+          Make_Name: "ROYAL ENFIELD",
+          logo: "ROYAL_ENFIELD",
+        },
+        {
+          ID: 18,
+          Make_Name: "TRIUMPH",
+          logo: "TRIUMPH",
+        },
+        {
+          ID: 19,
+          Make_Name: "TVS",
+          logo: "TVS",
+        },
+        {
+          ID: 20,
+          Make_Name: "VIBGYOR",
+          logo: "VIBGYOR",
+        },
+        {
+          ID: 21,
+          Make_Name: "KINETIC",
+          logo: "KINETIC",
+        },
+        {
+          ID: 22,
+          Make_Name: "AMPERE",
+          logo: "AMPERE",
+        },
+        {
+          ID: 23,
+          Make_Name: "HERO ELECTRIC",
+          logo: "HERO_ELECTRIC",
+        },
+        {
+          ID: 24,
+          Make_Name: "UM BIKES",
+          logo: "UM_BIKES",
+        },
+        {
+          ID: 25,
+          Make_Name: "BMW",
+          logo: "BMW",
+        },
+        {
+          ID: 26,
+          Make_Name: "APRILIA",
+          logo: "APRILIA",
+        },
+        {
+          ID: 27,
+          Make_Name: "FAB MOTORS",
+          logo: "FAB_MOTORS",
+        },
+        {
+          ID: 28,
+          Make_Name: "BENELLI",
+          logo: "BENELLI",
+        },
+        {
+          ID: 29,
+          Make_Name: "CAGIVA",
+          logo: "CAGIVA",
+        },
+        {
+          ID: 30,
+          Make_Name: "ELECTROTHERM",
+          logo: "ELECTROTHERM",
+        },
+        {
+          ID: 31,
+          Make_Name: "HERO",
+          logo: "HERO",
+        },
+        {
+          ID: 32,
+          Make_Name: "HUSQVARNA",
+          logo: "HUSQVARNA",
+        },
+      ];
+      $(document).ready(function () {
+        siteURL = window.location.href;
+        CONST_HORIZON_URL = "http://horizon.policyboss.com:5000";
+        if (siteURL.includes("request_file")) {
+          CONST_HORIZON_URL = "http://localhost:3000";
+        } else if (siteURL.includes("qa")) {
+          CONST_HORIZON_URL = "http://qa-horizon.policyboss.com:3000";
+        } else if (
+          siteURL.includes("www") ||
+          siteURL.includes("origin-cdnh") ||
+          siteURL.includes("cloudfront")
+        ) {
+          CONST_HORIZON_URL = siteURL.includes("https")
+            ? "https://horizon.policyboss.com:5443"
+            : "http://horizon.policyboss.com:5000";
+        }
+        calculate_dates();
+        $("#regDate").attr({ min: dateObj.reg_min, max: dateObj.reg_max });
+        $(".makegrid").empty();
+        for (var i in vehicleMake) {
+          $(".makegrid").append(
+            "<div class='center-align' onclick='modelselect(" +
+              JSON.stringify(vehicleMake[i]) +
+              ");' id='make1_" +
+              vehicleMake[i]["Make_Name"] +
+              "' make=" +
+              vehicleMake[i]["Make_Name"] +
+              ">" +
+              "<div class='Logodiv'>" +
+              "<img src='http://origin-cdnh.policyboss.com/fmweb/TW_Quick/logo/" +
+              vehicleMake[i]["logo"] +
+              ".png' width='100%'>" +
+              "</div>" +
+              "<div class='logoName'> <span id='" +
+              vehicleMake[i]["Make_Name"] +
+              "'>" +
+              vehicleMake[i]["Make_Name"] +
+              "</span>" +
+              "</div>" +
+              "</div>"
+          );
+        }
+        $(".makePopup").click(function () {
+          var x = $(".makePopup").position();
+          $(".Make_section").css("top", x.top);
+          $(".Make_section").slideDown(500, function () {
+            $(".Make_section").slideDown(500);
+          });
+          $("#mySearch").val("");
+        });
+        $(".modelPopup").click(function () {
+          if (VehicleDivClassMake === "makeDv") {
+            var x = $(".modelPopup").position();
+            $(".model_section").css("top", x.top);
+            $(".model_section").slideDown(500, function () {
+              $(".model_section").slideDown(500);
+            });
+            $("#mySearch").val("");
+          }
+        });
+        $(".varientPopup").click(function () {
+          if (VehicleDivClassModel === "modelDv") {
+            var x = $(".varientPopup").position();
+            $(".varient_section").css("top", x.top);
+            $(".varient_section").slideDown(500, function () {
+              $(".varient_section").slideDown(500);
+            });
+            $("#mySearch").val("");
+          }
+        });
+
+        $("input").focus(function () {
+          var element = $(this).next();
+          var id = $(this).attr("id");
+          var type = $(this).attr("type");
+          element.css({ top: "-15px", color: "#757575", "font-size": "10px" });
+        });
+        $("input").blur(function () {
+          if (!$(this).val()) {
+            var element = $(this).next();
+            element.css({ top: "3px", color: "gray", "font-size": "14px" });
+          }
+        });
+        $(".close").click(function () {
+          $(".Popup_thank").fadeOut();
+        });
+        pgID = isNaN(getUrlVars()["pg_id"]) ? 0 : getUrlVars()["pg_id"] - 0;
+        if (pgID > 0) {
+			$(".Popup_thank").fadeIn();
+          $.ajax({
+			type: "GET",
+            url: GetUrl() + "/standalone_payments/data/" + pgID,
+            dataType: "json",
+            success: function (data, e) {
+			$(".loader").fadeOut();
+              if (data && data.Msg && data.Msg.fastlane_data && data.Msg.fastlane_data.VehicleCity_Id && data.Status && data.Status == "Success") {
+                fsData = data.Msg;
+				$(".Popup_thank").fadeOut();  
+              } else {
+                $(".loader").fadeOut();
+                $(".close").fadeIn();
+                $(".loader_text").fadeIn();
+                $(".loader_text").html(
+                  "Something went wrong. Try again in a moment"
+                );
+              }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+              $(".loader").fadeOut();
+              $(".close").fadeIn();
+              $(".loader_text").fadeIn();
+              $(".loader_text").html(
+                "Something went wrong. Try again in a moment"
+              );
+            },
+          });
+        } else {
+          $(".Popup_thank").fadeIn();
+          //$('.close').fadeIn();
+          $(".loader").fadeOut();
+          $(".loader_text").fadeIn();
+          $(".loader_text").html("Payment ID Invalid");
+        }
+      });
+      var getUrlVars = function () {
+        var vars = [],
+          hash;
+        var hashes = window.location.href
+          .slice(window.location.href.indexOf("?") + 1)
+          .split("&");
+        for (var i = 0; i < hashes.length; i++) {
+          hash = hashes[i].split("=");
+          vars.push(hash[0]);
+          vars[hash[0]] = hash[1];
+        }
+        return vars;
+      };
+      function GetUrl() {
+        var url = window.location.href;
+        var newurl;
+        //newurl = "http://qa.policyboss.com";
+        if (url.includes("request_file")) {
+          // newurl = "http://qa-horizon.policyboss.com:3000";
+          newurl = "http://localhost:3000";
+        } else if (url.includes("qa")) {
+          newurl = "http://qa-horizon.policyboss.com:3000";
+        } else if (
+          url.includes("www") ||
+          url.includes("origin-cdnh") ||
+          url.includes("cloudfront")
+        ) {
+          newurl = "http://horizon.policyboss.com:5000";
+        } else {
+          newurl = "http://localhost:3000";
+        }
+        return newurl;
+      }
+	  function GetAdminUrl() {
+        var url = window.location.href;
+        var newurl;
+        //newurl = "http://qa.policyboss.com";
+        if (url.includes("request_file")) {
+          // newurl = "http://qa-horizon.policyboss.com";
+          newurl = "http://localhost:3000";
+        } else if (url.includes("qa")) {
+          newurl = "http://qa-horizon.policyboss.com";
+        } else if (
+          url.includes("www") ||
+          url.includes("origin-cdnh") ||
+          url.includes("cloudfront")
+        ) {
+          newurl = "http://horizon.policyboss.com";
+        } else {
+          newurl = "http://localhost:7000";
+        }
+        return newurl;
+      }
+      function validateForm() {
+        var err = 0;
+        var vehMake = $("#vehMake").val();
+        var vehVariantID = $(".vehVariantID").val();
+        var vehVariantCC = $(".vehVariantCC").val();
+        var vehModel = $("#vehModel").val();
+        var vehVariant = $("#vehVariant").val();
+        var regDate = $("#regDate").val();
+        var engNumber = $("#engNumber").val();
+        var chassisNumber = $("#chassisNumber").val();
+
+        $("#vehMake").removeClass("Error");
+        $("#vehModel").removeClass("Error");
+        $("#vehVariant").removeClass("Error");
+        $("#regDate").removeClass("Error");
+        $("#engNumber").removeClass("Error");
+        $("#chassisNumber").removeClass("Error");
+        $("#errVehMake,#errVehModel,#errVehVarient,#errRegDate")
+          .hide()
+          .html("");
+
+        if (vehMake == "" || vehMake == null || vehMake == undefined) {
+          $("#vehMake").addClass("Error");
+          $("#errVehMake").show().html("Please Select Make");
+          err++;
+        }
+        if (vehModel == "" || vehModel == null || vehModel == undefined) {
+          $("#vehModel").addClass("Error");
+          $("#errVehModel").show().html("Please Select Model");
+          err++;
+        }
+        if (
+          (vehVariant == "" || vehVariant == null || vehVariant == undefined) &&
+          (vehVariantID == "" ||
+            vehVariantID == null ||
+            vehVariantID == undefined)
+        ) {
+          $("#vehVariant").addClass("Error");
+          $("#errVehVarient").show().html("Please Select Variant");
+          err++;
+        }
+
+        if (regDate == "" || regDate == null || regDate == undefined) {
+          $("#regDate").addClass("Error");
+          $("#errRegDate").show().html("Please Enter Registration date");
+          err++;
+        }
+
+        var pattern = new RegExp("^[a-zA-Z0-9]*$");
+        var onlyTextPattern = new RegExp("^[a-zA-Z]+$");
+        $("#ErrEngineNumber,#ErrChassisNumber").hide().html("");
+        if (
+          engNumber === "" ||
+          engNumber === "0" ||
+          engNumber === null ||
+          engNumber.length < 6
+        ) {
+          err++;
+          $("#engNumber").addClass("Error");
+          $("#ErrEngineNumber").show().html("Please Enter Engine Number");
+        } else if (
+          pattern.test(engNumber) == false ||
+          onlyTextPattern.test(engNumber) == true
+        ) {
+          err++;
+          $("#engNumber").addClass("Error");
+          $("#ErrEngineNumber").show().html("Please Enter Valid Engine Number");
+        }
+
+        if (
+          chassisNumber === "" ||
+          chassisNumber === "0" ||
+          chassisNumber === null ||
+          chassisNumber.length < 6
+        ) {
+          err++;
+          $("#chassisNumber").addClass("Error");
+          $("#ErrChassisNumber").show().html("Please Enter Chassis Number");
+        } else if (
+          pattern.test(chassisNumber) == false ||
+          onlyTextPattern.test(chassisNumber) == true
+        ) {
+          err++;
+          $("#chassisNumber").addClass("Error");
+          $("#ErrChassisNumber")
+            .show()
+            .html("Please Enter Valid Chassis Number");
+        }
+
+        if (err == 0) {
+			var data1 = {
+                  standalone_payment_id: fsData.standalone_payment_id,
+                  vehicle_reg_no: fsData.vehicle_reg_no,
+                  Horizon_Status: "FASTLANE_DONE",
+                  fastlane_data: {
+                    Ip_Address: "127.0.0.1",
+                    Calling_Source: "PB-BETA",
+                    Product_Id_Request: 10,
+                    Ss_Id: 0,
+                    Channel: "DIRECT-DIRECT",
+                    Vehicle_Class: "2W",
+                    Product_Id: 10,
+                    Variant_Id: $('#vehVariantID').val(),
+                    Variant_Name: $('#vehVariant').val(),
+                    VehicleCity_Id: fsData.fastlane_data.VehicleCity_Id,
+                    FastLaneId: 0,
+                    Make_ID: 0,
+                    Model_ID: $('#vehModelID').val(),
+                    Fuel_ID: 1,
+                    Make_Name: $('#vehMake').val(),
+                    Model_Name: $('#vehModel').val(),
+                    Fuel_Type: "PETROL",
+                    Seating_Capacity: 2,
+                    Cubic_Capacity: $('#vehVariantCC').val(),
+                    Manufacture_Year: moment($('#regDate').val(),'YYYYY-MM-DD').format('YYYY'),
+                    Color: "PEARL AMAZING WHITE",
+                    Registration_Number: fsData.vehicle_reg_no,
+                    RTO_Code: fsData.fastlane_data.VehicleCity_Id,
+                    RTO_Name: fsData.fastlane_data.RTO_Name,
+                    Chassis_Number: $('#chassisNumber').val(),
+                    Engin_Number: $('#engNumber').val(),
+                    Registration_Date: moment($('#regDate').val(),'YYYYY-MM-DD').format('DD/MM/YYYY'),
+                    Purchase_Date: moment($('#regDate').val(),'YYYYY-MM-DD').format('DD/MM/YYYY'),
+                    Error_Message: "",
+                    Source: "Fastlane",
+                    Is_LM: "no",
+                    FastlanePostResponse: "",
+                    Call_Execution_Time: 1632906060.83,
+                    Created_On: "2021-09-29T09:01:00.415Z",
+                    FastLane_Execution_Time: 0.401,
+                    status: "Success",
+                    Match_Mode: "MAPPING",
+                    ModelName: $('#vehModel').val(),
+                    FuelName: "PETROL",
+                    CarVariantName: $('#vehVariant').val(),
+                    VariantId: $('#vehVariantID').val(),
+                    CityofRegitration: fsData.fastlane_data.CityofRegitration,
+                    CityofRegitrationId: fsData.fastlane_data.VehicleCity_Id,
+                    ManufactureYear: moment($('#regDate').val(),'YYYYY-MM-DD').format('MMM'),
+                    PoExpiryDuration: "TodayTomorrow",
+                    RegistrationDate: moment($('#regDate').val(),'YYYYY-MM-DD').format('DD/MM/YYYY'),
+                    PD_VehicleCity_Id: fsData.fastlane_data.VehicleCity_Id,
+                    ModelID: $('#vehModelID').val(),
+                    citycamal: fsData.fastlane_data.citycamal,
+                    Year: moment($('#regDate').val(),'YYYYY-MM-DD').format('YYYY'),
+                  }
+                };
+                $.ajax({
+                  type: "POST",
+                  data: JSON.stringify(data1),
+                  url: GetUrl() + "/postservicecall/standalone_payments/save_logs",
+                  contentType: "application/json;charset=utf-8",
+				  dataType: "json",
+				  success: function (resp, e) {
+					$(".loader").fadeOut();
+                    if (resp && resp.Status && resp.Status === "Success") {
+						$(".Popup_thank").fadeOut();
+						var pg_url = GetAdminUrl()+'/standalone_payment_status/'+fsData.vehicle_reg_no+'/'+fsData.standalone_payment_id;
+						post(pg_url, fsData.pg_post, 'POST');
+					  //
+                    } else {
+                      var EMsg = "Data Already Updated";
+                      $(".Popup_thank").fadeIn();
+                      $(".close").fadeIn();
+                      $(".loader").fadeOut();
+                      $(".loader_text").html(EMsg);
+                      $(".loader_text").fadeIn();
+                    }
+                  },
+                  error: function (thrownError) {
+                    var EMsg = "Error In Service";
+                    $(".Popup_thank").fadeIn();
+                    $(".close").fadeIn();
+                    $(".loader").fadeOut();
+                    $(".loader_text").html(EMsg);
+                    $(".loader_text").fadeIn();
+                  },
+                });
+        }
+      }
+      function mySearch(val) {
+        var value = val;
+        value = value.toLowerCase();
+        $(".makegrid *,.Modelgrid *,.vargrid *").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          $(".Logodiv").css("display", "block");
+          $(".Logodiv img").css("display", "block");
+        });
+      }
+      function closePop() {
+        $(".Make_section").slideUp(500, function () {
+          $(".Make_section").hide();
+        });
+        $(".model_section").slideUp(500, function () {
+          $(".model_section").hide();
+        });
+        $(".varient_section").slideUp(500, function () {
+          $(".varient_section").hide();
+        });
+      }
+
+      function modelselect(make) {
+        VehicleDivClassMake = "makeDv";
+        $(".Make_section").hide();
+        $("#mySearch").val("");
+        makename = make.Make_Name;
+        $(".makeSpan").text(makename);
+        $("#vehMake").val(makename);
+        $("#vehModel").val("");
+        $(".modelSpan").text("");
+        $("#vehVariant").val("");
+        $(".varientSpan").text("");
+        $.get(
+          CONST_HORIZON_URL +
+            "/vehicles/getmodel_variant/10" +
+            "/" +
+            make.Make_Name,
+          function (res) {
+            var modelArray = res;
+            $(".Modelgrid").empty();
+            for (var i in modelArray) {
+              $(".Modelgrid").append(
+                "<div class='modelGridDiv center-align' onclick='variantmodel(" +
+                  JSON.stringify(modelArray[i]) +
+                  ");' id='model_" +
+                  modelArray[i]["Model_ID"] +
+                  "'>" +
+                  "<div class='modelGridDiv logoName'>" +
+                  "<span class='modelGridDiv' id='Modelval" +
+                  modelArray[i]["Model_ID"] +
+                  "'>" +
+                  modelArray[i]["_id"] +
+                  "</span>" +
+                  "</div>" +
+                  "</div>"
+              );
+            }
+          }
+        );
+      }
+      function variantmodel(model) {
+        VehicleDivClassModel = "modelDv";
+        $(".model_section").hide();
+        $(".modelSpan").text(model._id);
+        $("#vehModel").val(model._id);
+		$("#vehModelID").val(model.Model_ID);
+        $("#mySearch").val("");
+        $("#vehVariant").val("");
+        $("#varientSpan").val("");
+        var UpdatedFuelList = [];
+        var varientArray = [];
+        var model_id = model.Model_ID;
+        var url = siteURL.includes("https:")
+          ? "/vehicles/beta_GetFuelVariant" + "/" + model_id + "/10"
+          : "/vehicles/GetFuelVariant?Model_ID=" + model_id + "&Product_Id=10";
+        $.get(CONST_HORIZON_URL + url, function (res) {
+          var variantrArray = res;
+          var fuelList = res["FuelList"];
+          varientArray = res["VariantList"];
+          UpdatedFuelList = fuelList;
+          //console.log("UpdatedFuelList" + JSON.stringify(UpdatedFuelList));
+          var tempFuel = "PETROL";
+          var FilterVariantList = [];
+          for (var i = 0; i < varientArray.length; i++) {
+            if (
+              varientArray[i].Fuel_Name.toString()
+                .toLowerCase()
+                .indexOf(tempFuel.toLowerCase()) > -1
+            ) {
+              FilterVariantList.push(varientArray[i]);
+            }
+          }
+          //console.log(FilterVariantList);
+          $(".alignvarName").show();
+          $(".alignvarName").empty();
+          for (var i in FilterVariantList) {
+            $(".alignvarName").append(
+              "<div class='VariName center-align' style='text-align: left;' id='Variant_val_" +
+                FilterVariantList[i]["Vehicle_ID"] +
+                "' onclick='FinalVariant(" +
+                JSON.stringify(FilterVariantList[i]) +
+                ");'>" +
+                FilterVariantList[i]["Variant_Name"] +
+                " " +
+                "(" +
+                FilterVariantList[i]["Cubic_Capacity"] +
+                "CC)" +
+                "</div>"
+            );
+          }
+        });
+      }
+	  function post(path, params, method) {
+                if (method.toString().toLowerCase() == 'get' && jQuery.isEmptyObject(params)) {
+                    window.location.href = path;
+                } else {
+                    method = method || "post"; // Set method to post by default if not specified.
+
+                    // The rest of this code assumes you are not using a library.
+                    // It can be made less wordy if you use one.
+                    var form = document.createElement("form");
+                    form.setAttribute("method", method);
+                    form.setAttribute("action", path);
+
+                    for (var key in params) {
+                        if (params.hasOwnProperty(key)) {
+                            var hiddenField = document.createElement("input");
+                            hiddenField.setAttribute("type", "hidden");
+                            hiddenField.setAttribute("name", key);
+                            hiddenField.setAttribute("value", params[key]);
+                            form.appendChild(hiddenField);
+                        }
+                    }
+
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            }
+      function FinalVariant(finalVarient) {
+        $(".varient_section").hide();
+        $("#mySearch").val("");
+        varientname =
+          finalVarient.Variant_Name +
+          " (" +
+          finalVarient.Cubic_Capacity +
+          "CC)";
+        $(".varientSpan").text(varientname);
+        $("#vehVariant").val(varientname);
+        $(".vehVariantID").val(finalVarient.Vehicle_ID);
+        $(".vehVariantCC").val(finalVarient.Cubic_Capacity);
+      }
+      function setdefaultdate() {
+        $("#regDate").attr({ value: dateObj.default });
+      }
+      function calculate_dates() {
+        var date_info = {
+          reg_min: { type: "year", operatn: "sub", years: 25 },
+          reg_max: { type: "month", operatn: "sub", months: 6 },
+          default: { type: "year", operatn: "sub", years: 1 },
+        };
+
+        for (const [key, value] of Object.entries(date_info)) {
+          var result = new Date();
+          if (value.type === "day") {
+            result.setDate(result.getDate() + value.days);
+          } else if (value.type === "month") {
+            result.setMonth(result.getMonth() - value.months);
+          } else {
+            result.setFullYear(result.getFullYear() - value.years);
+          }
+          dateObj[key] = result.toISOString().split("T")[0];
+        }
+        //console.log(dateObj);
+      }
+    </script>
+  </body>
+</html>

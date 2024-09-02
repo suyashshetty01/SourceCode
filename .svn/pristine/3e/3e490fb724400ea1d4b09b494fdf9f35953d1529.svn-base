@@ -1,0 +1,10 @@
+{
+    "manufacturercode": ___dbmaster_insurer_vehicle_make_code___,
+    "BusinessType": "___vehicle_insurance_type___",
+    "rtolocationcode": ___dbmaster_insurer_rto_city_code___,
+    "DeliveryOrRegistrationDate": "___vehicle_registration_date___",
+    "PolicyStartDate": "___policy_start_date___",
+    "DealID": "___insurer_integration_account_code___",
+    "vehiclemodelcode": ___dbmaster_insurer_vehicle_model_code___,
+    "correlationId": "___timestamp___"
+}

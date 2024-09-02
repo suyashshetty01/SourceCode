@@ -1,0 +1,11 @@
+{
+    "authenticationDetails": {
+        "agentId": "___insurer_integration_service_user___",
+        "apikey": "___insurer_integration_service_password___",
+        "partner": "string"
+    },
+    "isOTPVerified": "Yes",
+    "premium": "___final_premium_verified___",
+    "quoteId": "___insurer_customer_identifier___",
+    "strEmail": "___email___"
+}

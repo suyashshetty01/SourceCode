@@ -1,0 +1,357 @@
+﻿.TermFieldset {
+    border: 1px solid #857f7f !important;
+    margin: 0;
+    xmin-width: 0;
+    padding: 10px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #fff;
+    padding-left: 10px !important;
+}
+
+.TermLegend {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    width: 18%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 5px 5px 10px;
+    background-color: #337ab7;
+    color: #fff;
+}
+.chklabel {
+    margin-left: 5px;
+    display: inline;
+}
+
+.form-label-new {
+    color: #bababa;
+}
+
+#HyperTension {
+    display: none;
+}
+
+#DiabetesReflexive {
+    display: none;
+}
+
+#Defence {
+    display: none;
+}
+
+#OccupationReflexive {
+    display: none;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.inputUppercase {
+    text-transform: uppercase !important;
+}
+
+.ErrorText {
+    color: red;
+}
+
+.Error {
+    border: solid 1px red !important;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+    color: #000;
+}
+
+.ui-dialog {
+    top: 287px !important;
+    left: 844px !important;
+    position: absolute;
+}
+
+.ui-autocomplete-input {
+    width: 520px !important;
+    position: relative;
+    display: inline-block;
+}
+
+.error_msg1 {
+    margin-top: -39px !important;
+    color: red;
+    font-size: 13px !important;
+}
+
+.error_msg2 {
+    margin-top: -13px !important;
+    color: red;
+    font-size: 13px !important;
+}
+
+.error_msg {
+    margin-top: 7px !important;
+    color: red;
+    font-size: 13px !important;
+}
+
+.error_msgM {
+    margin-top: 5px !important;
+    color: red;
+    font-size: 13px !important;
+}
+
+input:focus {
+    border-color: green;
+}
+
+.selectbox-highlight, .selectbox-highlight-db {
+    text-transform: uppercase;
+}
+
+/*.form-input-new {
+            text-transform: capitalize;
+        }*/
+
+.buy-info {
+    margin: 10px 0;
+    height: auto;
+}
+
+.MedicalQuestion {
+    border: 1px solid #bdbebf;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.MedicalQuestion1 {
+    /*border: 1px solid #2e6da4;*/
+    /*padding: 5px;*/
+    padding-bottom: 0px;
+    margin: 10px;
+    margin-bottom: -13px;
+    border-radius: 5px;
+}
+
+/* Accordion CSS */
+.height-box-dropdown {
+    margin-bottom: 41px !important;
+}
+
+.height-box {
+    margin-bottom: 14px !important;
+}
+
+.panel-title > a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content: ' \002D';
+    padding-right: 5px;
+    background: #dadada;
+    padding: 0px 5px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: -2px;
+}
+
+.panel-title > a.collapsed:before {
+    float: right !important;
+    content: ' \002B';
+    background: #dadada;
+    padding: 0px 5px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: -2px;
+}
+
+.panel-title > a:hover,
+.panel-title > a:active,
+.panel-title > a:focus {
+    text-decoration: none;
+}
+
+.panel-heading {
+    background: #ebe8e8;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.common {
+    display: grid;
+    grid-template-columns: 20px 1fr
+}
+
+.panel input[type=checkbox] {
+    width: 15px !important;
+}
+
+input[type='checkbox'] {
+    display: inline;
+}
+
+.AccBorder {
+    border: 1px solid #c7c5c5;
+    width: 98%;
+}
+
+.desc {
+    border: 1px solid #c9c9c9;
+    width: 50%;
+    border-radius: 10px;
+    padding: 5px;
+}
+/* Accordion CSS */
+
+/*Popup OTP*/
+/*------- CSS for Ticket - Start ------------*/
+
+.Popup {
+    position: fixed; /* Sit on top of the page content */
+    box-shadow: 0 0 1px 1px #e5e5e5;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+    color: #333 !important;
+    text-align: left !important;
+    display: none;
+}
+
+.popupScreen {
+    max-width: 30%;
+    margin: 0px auto;
+    background: #fff;
+    animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #c1c1c1;
+    box-shadow: 1px 10px 10px 10px #797474c9;
+    margin-top: 20%;
+    color: #333 !important;
+    text-align: left !important;
+}
+
+.mainpopupcont {
+    padding: 30px;
+}
+
+.ErrorMsg {
+    margin-left: -20px;
+    color: red;
+}
+
+.ErrorMsg1 {
+    margin-left: -154px;
+    color: red;
+}
+
+.form-group.label-floating.is-focused label.control-label, .form-group.label-floating:not(.is-empty) label.control-label, .form-group.label-static label.control-label {
+    font-size: 12px !important;
+}
+
+.form-control {
+    font-size: 13px !important;
+}
+
+/*------- CSS for Ticket - End ------------*/
+/*    OTP Popup    */
+.SubFOSPopup {
+    position: fixed;
+    box-shadow: 0 0 1px 1px #e5e5e5;
+    width: 100%;
+    background: rgba(8, 67, 121, 0.5);
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    font-family: Arial !important;
+}
+
+.SubFOSScreen {
+    width: 30%;
+    top: 40%;
+    left: 50%;
+    padding: 7px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 3px;
+    animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.FOSHeader h4 {
+    margin: 0px;
+    font-size: 18px;
+}
+
+.MainContentBlog h6 {
+    font-size: 15px;
+}
+
+.MainContentBlog p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.MainContentBlog .otp_txtbx input {
+    width: 50%;
+    margin: 0px;
+    border-bottom: 1px solid #999;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.verifybx, .verifybx button {
+    display: inline-block;
+}
+
+.verify {
+    background: #2196F3;
+    color: #fff;
+    cursor: pointer;
+    margin: 14px;
+}
+
+.resend {
+    background: red;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+.closepopup {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.radioBtn label {
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    float: right;
+    margin-left: 30px;
+}
+
+.radioBtn input[type="radio"] {
+    width: 5%;
+}
+.hobbiesLabel {
+    font-weight: normal !important
+}

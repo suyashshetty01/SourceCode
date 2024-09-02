@@ -1,0 +1,131 @@
+{
+	"enquiryId": "CDG11505-01",
+	"security": {
+		"webUserId": "___insurer_integration_service_user___",
+		"password": "___insurer_integration_service_password___"
+	},
+	"vehicle": {
+		"isVehicleNew": false,
+		"idv": ___vehicle_expected_idv___,
+		"mainCode": "1500101275",
+		"licensePlate": "___dbmaster_pb_vehiclecity_rtocode___AA1234",
+		"vehicleIdentificationNumber": "",
+		"engineNumber": "___engine_number___",
+		"permitAgency": "___dbmaster_pb_vehiclecity_rtocode___",
+		"manufactureDate": "___vehicle_manf_date___",
+		"initialRegistrationDate": "___vehicle_registration_date___",
+		"hypothecation": {
+			"isHypothecation": false,
+			"hypothecationAgency": "",
+			"hypothecationCIty": ""
+	},
+	"permitUsageType": "PUBLIC",
+    "vehicleType": "PASSENGER",
+    "usageType": "KFZOT",
+    "trailer": {
+      "make": "",
+      "bodyType": "",
+      "licensePlate": ""
+    }
+  },
+  	"previousInsurer": {
+		"previousInsurerCode": "113",
+		"previousInsurerPolicyNumber": "",
+		"previousInsurerPolicyExpiryDate": "___policy_expiry_date___",
+		"claimInLastYear": ___is_claim_exists___,
+		"previousNoClaimBonus": "___vehicle_ncb_current_1___"
+	},
+	"contract": {
+		"insuranceProductCode": "___vehicle_insurance_subtype_2___",
+		"startDate": "___policy_start_date___",
+		"endDate": "___policy_end_date___",
+		"term": ___policy_tenure___,
+		"salesChannel": "ABSA",
+		"questions": {
+      "wantTrailerInsured": false,
+      "employeesInsured": 0,
+      "driversInsured": 0
+		},
+		"coverages": {
+			"baseCover": {
+				"thirdPartyLiabilityCover": {
+					"selection": true,
+					"insuredAmount": 750000
+				},
+				"ownDamageCover": {
+					"selection": true,
+					"plan": "PLAN_D"
+				},
+				"theftCover": {
+					"selection": false
+				},
+				"fireCover": {
+					"selection": false
+				}
+			},
+			"addOnCover": {
+				"partsDepreciationCover": {
+					"selection": ___addon_zero_dep_cover___,
+					"plan": "PLAN_E",
+					"numberOfClaimsCovered": "TWO",
+					"coPay": 0
+				},
+				"engineAndGearBoxProtectionCover": {
+					"selection": false
+				},
+				"consumableCover": {
+					"selection": false
+				},
+				"breakdownAssistanceCover": {
+					"selection": false,
+					"plan": "PLAN_C"
+				},
+				"returnToInvoiceCover": {
+					"selection": false,
+					"coPay": 0
+				},
+				"rimDamageCover": {
+					"selection": false
+				},
+				"tyreProtectCover": {
+					"selection": false,
+					"tyreType": "OTHERS"
+				}
+			},
+			"additionalCover": {
+				"otherDriverCover": {
+					"selection": false
+				},
+				"paUnnamedPersonCover": {
+					"selection": ___pa_unnamed_passenger_si_2___,
+					"insuredAmount": ___pa_unnamed_passenger_si___
+				},
+				"paOwnerDriverCover": {
+					"selection": true,
+					"insuredAmount": 200000
+				},
+				"legalLiabilityCover": {
+                                         "selection": false,
+                                         "tyreType": null
+                                }
+			},
+			"accessoriesCover": {
+				"electricalCover": {
+					"selection": false,
+					"insuredAmount": 0
+				},
+				"nonElectricalCover": {
+					"selection": false,
+					"insuredAmount": 0
+				},
+				"cngCover": {
+					"selection": ___is_external_bifuel___,
+					"insuredAmount": ___external_bifuel_value___
+				}
+			}
+		},
+		"voluntaryDeductible": "___voluntary_deductible_2___"
+	},
+	"pinCode": "400001"
+		
+}

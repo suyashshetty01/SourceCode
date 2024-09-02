@@ -1,0 +1,67 @@
+{
+    "bookingId": "___bookingId___",
+    "type": "I",
+    "purpose": "___travel_purpose___",
+    "customer": {
+        "firstName": "___first_name___",
+        "lastName": "___last_name___",
+        "address": {
+            "line1": "___permanent_address_1___",
+            "line2": "___permanent_address_2___",
+            "line3": "___permanent_address_3___",
+            "state": "___state_code___",
+            "city": "___permanent_city___",
+            "country": "IND",
+            "pinCode": "___permanent_pincode___"
+        },
+        "documents": [
+            {
+                "type": "PPT",
+                "id": "___member_1_passport___"
+            }
+        ],
+        "dob": "___birth_date___",
+        "mobile": "___mobile___",
+        "email": "___email___",
+        "type": "N"
+    },
+    "insuredPersons": [
+        <!--InsurersDetail_Start-->
+        {
+        "firstName": "___member_array_first_name___",
+        "lastName": "___member_array_last_name___",
+        "address": {
+            "line1": "___permanent_address_1___",
+            "line2": "___permanent_address_2___",
+            "line3": "___permanent_address_3___",
+            "state": "___state_code___",
+            "city": "___permanent_city___",
+            "country": "IND",
+            "pinCode": "___permanent_pincode___"
+        },
+        "documents": [
+            {
+                "type": "PPT",
+                "id": "___member_array_passport___"
+            }
+        ],
+        "dob": "___member_array_birth_date___",
+        "mobile": "___mobile___",
+        "email": "___email___",
+        "paxId": "___member_array_inc___",
+        "nominee": {
+            "name": "___member_array_nominee_name___"
+        },
+        "gender": "___member_array_gender_2___",
+        "type": "N"
+    }
+    <!--InsurersDetail_End-->
+    ],
+            "insuredPersonsCount": "___member_count___",
+            "bookingDate": "___current_date___",
+            "packageName": "___dbmaster_plan_code___",
+            "geography": "___region_code___",
+            "travelEndDate": "___policy_end_date___",
+            "travelStartDate": "___policy_start_date___",
+            "countryTravel": "___placeOfVisit___"
+    }

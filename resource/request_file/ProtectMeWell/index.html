@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>ProtectMeWell</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+          <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Bootstrap Css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            .ErrorMsg {color: red;font-size: 11px;}
+            .loader{width: 100%;height: 100%;background: rgba(255,255,255,0.6);z-index: 999;position: fixed;display:none;}
+            .loader img{transform: translate(-50%, -50%);top: 50%;left: 50%;position: fixed;width: 15%;}
+        </style>
+    </head>
+
+
+
+    <body>
+        <div class="loader" id="FormLoader">
+            <img src="images/loader.gif">
+        </div>
+        <div id="index_panel">
+            <div class="container">
+                <div class="card m-2">
+                    <div class="card-body">
+                        <!--<form id="uploadForm" name="uploadForm" enctype="multipart/form-data" method="post"  action="http://horizon.policyboss.com:5000/protectmewell_initiate" >-->
+                        <div class="header text-center m-2 p-1">
+                            <b>personal details</b>
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="name">Full name of customer:</label>
+                                        <input type="text" class="form-control" id="customerName" onkeypress="preventNumbers(event);">
+                                        <span id="ErCustomerName" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="gender">Gender:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="optradio" value="M">Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="optradio" value="F">Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="optradio" value="T">Other
+
+                                        </div>
+                                        <span id="ErGender" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="status">Marital Status:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="statusradio" value="M">Married &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="statusradio" value="U">Unmarried
+
+                                        </div>
+                                        <span id="ErMaritalStatus" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="status">Education:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="education" value="C">Matriculate
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="education" value="G">Bachelors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="education" value="M">Masters +
+
+                                        </div>
+                                        <span id="ErEducation" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="location">Location:</label>
+                                        <select class="form-control" id="sel1">
+                                            <option value="Mumbai">Mumbai</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Chennai">Chennai</option>
+                                            <option value="Kolkata">Kolkata</option>
+                                            <option value="Bengaluru">Bengaluru</option>
+                                            <option value="Hyderabad">Hyderabad</option>
+                                            <option value="Pune">Pune</option>
+                                            <option value="Others">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="age">Age:</label>
+                                        <input type="text" class="form-control" onkeypress="preventLetters(event);" id="age">
+                                        <span id="ErAge" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="retirement">Retirement at:</label>
+                                        <input type="text" class="form-control" onkeypress="preventLetters(event);" id="retirementAt">
+                                        <span id="ErRetirement" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+
+                                </div>
+								
+								<div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="email">Email:</label>
+                                        <input type="text" class="form-control" id="email">
+                                        <span id="Eremail" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="mobile">Mobile</label>
+                                        <input type="text" class="form-control" onkeypress="preventLetters(event);" id="mobile" maxlength="10";>
+                                        <span id="Ermobile" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="header text-center m-2 p-1">
+                            <b>FAMILY DETAILS</b>
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="dependency">Spouse Dependency:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="depradio" value="Y">Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="depradio" value="N">No
+
+                                        </div>
+                                        <span id="ErDependency" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="spouse_Age">Spouse age:</label>
+                                        <input type="text" class="form-control" onkeypress="preventLetters(event);" id="spouseAge">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="spouse_Age">Dependent Children & Ages:</label>
+                                        <input type="text" id="depend_child_age" class="form-control" maxlength="1" onkeypress="preventLetters(event);">
+                                        <span id="ErChildDependency" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                    <div class="child_age" style="margin-bottom:5px;">
+
+                                    </div>
+                                    <span id="ErChildAge" style="display:none;" class="ErrorMsg"></span>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="spouse_Age">Dependent Parents & Ages:</label>
+                                        <div class="form-check">
+                                            <!--                                            <label class="form-check-label" for="father_check">-->
+                                            <input type="checkbox" id="father_check"  class="form-check-input" value="">Father
+
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span id="Fatherage_textspn" class="inputsubPanel_father">Age : <input type="text" class="input_txt_box"  onkeypress="preventLetters(event);" id="fatherAge"></span>
+                                            <p id="ErFatherDependency" style="display:none;" class="ErrorMsg"></p>
+                                            <!--                                            </label>-->
+                                        </div>
+                                        <br>
+                                        <div class="form-check">
+
+                                            <input type="checkbox" id="mother_check"  class="form-check-input" value="">Mother
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span id="Motherage_textspn" class="inputsubPanel_mother">Age : <input type="text"
+                                                                                                                   class="input_txt_box" onkeypress="preventLetters(event);" id="motherAge"></span>
+                                            <p id="ErMotherDependency" style="display:none;" class="ErrorMsg"></p>
+
+                                        </div>
+                                        <span id="ErParentsDependency" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header text-center m-2 p-1">
+                            <b>FINANCIAL DETAILS</b>
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="occupation">Customer Occupation:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="occupationradio" value="S">Salaried
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="occupationradio" value="B">Self-Employed
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="occupationradio" value="U">Unemployed
+
+                                        </div>
+                                        <span id="ErSelfOccupation" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="retirement">Annual Income in Lakhs:</label>
+                                        <div class="assets_grid">
+                                            <div>
+                                                <label class="label_cls" for="Job">Job &nbsp;: &nbsp;</label>
+                                                <input type="text" class="input_txt_box" id="jobIncome" onkeypress="preventLetters(event);">
+                                                <p id="ErJobIncome" style="display:none;" class="ErrorMsg"></p>
+                                            </div>
+                                            <div>
+                                                <label class="label_cls" for="Others">Others &nbsp;: &nbsp;</label>
+                                                <input type="text" class="input_txt_box" id="otherIncome" onkeypress="preventLetters(event);">
+                                                <p id="ErOthersIncome" style="display:none;" class="ErrorMsg"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="home">Home:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="rentradio" value="N">I Rent house
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="rentradio" value="Y">I Own a House
+
+                                        </div>
+                                        <span id="ErHome" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="loan_avail">Home Loan Availed:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="loanavail" value="Y">Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="loanavail" value="N">No
+
+                                        </div>
+                                        <span id="ErLoanAvailed" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="other_loan">Any Other Loans ? :</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="otherLoan" value="Y">Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="otherLoan" value="N">No
+
+                                        </div>
+                                        <span id="ErOtherLoans" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="spouse_occ">Spouse Occupation:</label>
+                                        <div class="form-check">
+
+                                            <input type="radio" class="form-check-input" name="spouse_occupation" value="S">Salaried
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="spouse_occupation" value="B">Self-Employed
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" class="form-check-input" name="spouse_occupation" value="U">Unemployed
+
+                                        </div>
+                                        <span id="ErSpouseOccupation" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="annual_inc">Spouse's Annual Income:</label>
+                                        <input type="text" class="form-control" id="SpouseIncome" onkeypress="preventLetters(event);">
+                                        <span id="ErSpouseIncome" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="aseets">Assets (in Lakhs):</label>
+                                        <div class="assets_grid">
+                                            <div>
+                                                <label class="label_cls" for="Financial">Financial &nbsp;: &nbsp;</label>
+                                                <input type="text" class="input_txt_box" id="FinancialAssert" onkeypress="preventLetters(event);">
+                                                <p id="ErFinancial" style="display:none;" class="ErrorMsg"></p>
+                                            </div>
+                                            <div>
+                                                <label class="label_cls" for="Real_Estate">Real Estate &nbsp;: &nbsp;</label>
+                                                <input type="text" class="input_txt_box" id="RealEstateAssert" onkeypress="preventLetters(event);">
+                                                <p id="ErRealEstate" style="display:none;" class="ErrorMsg"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="investment">Investment for Retirement:</label>
+                                        <input type="text" class="form-control" id="RetirementInvest" onkeypress="preventLetters(event);">
+                                        <span id="ErRetirementInvest" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label class="label_cls" for="expenses">Annual Household Expenses:</label>
+                                        <input type="text" class="form-control" id="HouseholdExpense" onkeypress="preventLetters(event);">
+                                        <span id="ErHouseholdExpense" style="display:none;" class="ErrorMsg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12 col-12 text-center m-3">
+                            <input type="checkbox" class="form-check-input my-0" style="width:18px;height:18px;" value="t&C" id="agree">&nbsp;&nbsp;I
+                            agree to all <a href="#" data-toggle="modal" data-target="#myModal">Terms and Conditions</a>
+                            <p id="ErAgree" style="display:none;" class="ErrorMsg"></p>
+                        </div>
+                        <div style="display:none" id="ErMsg" class="col-md-12 col-12 text-center m-3">
+                            <span class="ErrorMsg"> Please Enter Mandatory Field</span>
+                        </div>
+                        <div class="text-center">
+                            <!--<button type="button" data-toggle="modal" data-target="#ThankYouModal" class="btn btn-primary m-2" onclick="validateForm();">Generate Recommendation</button>-->
+
+                            <button type="button" class="btn btn-primary m-2" onclick="validateForm();">Generate Recommendation</button>
+                        </div>
+
+
+
+
+
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Terms and Conditions</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        ProtectMeWell™ intends to provide clear and unbiased information about the financial products listed on this website. The
+                                        information and data are generic in nature. Our efforts are to offer unbiased, accurate
+                                        and responsible data to the best of our ability. The need-based analysis provided
+                                        by us on this website maybe believed to be reliable, but ProtectMeWell™ does not
+                                        accept any responsibility (or liability) for errors of fact or opinion. Visitors
+                                        and Users have the right to choose the product/s that in their opinion suits them
+                                        the most and are advised to use their discretion at all times in such matters. It
+                                        is hereby informed to all that Protect Me Well™ is not the intermediary/sub-intermediary
+                                        of the entities whose products are dealt with in this website. Though endeavour is
+                                        made to make correct need based analysis on the basis of the information provided
+                                        by the entities whose products are dealt with in this website and the information
+                                        provided by the Users, it is made abundantly clear that ProtectMeWell™, its directors,
+                                        shareholders, officers and employees and ProtectMeWell™ are in no way responsible
+                                        to or liable for any one for his/her investment decision, and every prospect/ investor
+                                        shall be solely responsible for the consequences of his/her decision.
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Agree</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Modal -->
+                        <div class="modal" id="ThankYouModal" style="display:none">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal body -->
+                                    <div class="modal-body text-center rounded">
+                                        <h2>Thank You</h2>
+                                        <p id="protect_me_txt">Great , We are Done!</p>
+                                        <button class="btn btn-info" id="btn_pdf"><a href="" target="_blank" class="text-white" id="protect_me_pdf" >Download</a></button>
+
+                                    </div>
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="closebtn" onclick="closepopup();">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--</form>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var siteURL = "";
+            function GetUrl() {
+                var url = window.location.href;
+                //alert(url.includes("health"));
+                var newurl;
+                newurl = "http://qa.policyboss.com";
+                if (url.includes("request_file")) {
+                    //newurl = "http://qa-horizon.policyboss.com:3000";
+                    newurl = "http://localhost:3000";
+                } else if (url.includes("qa")) {
+                    newurl = "http://qa-horizon.policyboss.com:3000";
+                } else if (url.includes("www") || url.includes("cloudfront")) {
+                    newurl = "http://horizon.policyboss.com:5000";
+                }
+                return newurl;
+            }
+            $(document).ready(function () {
+                siteURL = window.location.href;
+                $("#FormLoader").show();
+                setFormData();
+                $(".form-control").change(function () {
+                    var dvid = $(this).attr('id');
+                    var value = $(this).val().trim();
+                    var error_id = $('#' + dvid).next().attr('id');
+                    if (value !== "") {
+                        $('#' + error_id).hide().text("");
+                    }
+                });
+                $('input:radio[name="optradio"]').change(function () {
+                    $('#ErGender').hide().text("");
+                });
+                $('input:radio[name="statusradio"]').change(function () {
+                    $('#ErMaritalStatus').hide().text("");
+                });
+                $('input:radio[name="education"]').change(function () {
+                    $('#ErEducation').hide().text("");
+                });
+                $('input:radio[name="depradio"]').change(function () {
+                    $('#ErDependency').hide().text("");
+                });
+                $('input:radio[name="occupationradio"]').change(function () {
+                    $('#ErSelfOccupation').hide().text("");
+                });
+                $('input:radio[name="rentradio"]').change(function () {
+                    $('#ErHome').hide().text("");
+                });
+                $('input:radio[name="loanavail"]').change(function () {
+                    $('#ErLoanAvailed').hide().text("");
+                });
+                $('input:radio[name="otherLoan"]').change(function () {
+                    $('#ErOtherLoans').hide().text("");
+                });
+                $('input:radio[name="spouse_occupation"]').change(function () {
+                    $('#ErSpouseOccupation').hide().text("");
+                });
+                $("#agree").click(function () {
+                    $('#ErAgree').hide().text("");
+                });
+            });
+
+
+            $("#father_check").click(function () {
+                if (this.checked) {
+                    $('#Fatherage_textspn').show();
+                } else {
+                    $('#Fatherage_textspn').hide();
+                }
+                $('#ErParentsDependency').text("").hide();
+            });
+
+
+            $("#mother_check").click(function () {
+                if (this.checked) {
+                    $('#Motherage_textspn').show();
+                } else {
+                    $('#Motherage_textspn').hide();
+                }
+                $('#ErParentsDependency').text("").hide();
+            });
+
+
+            function preventLetters(evt) {
+                if (evt.which < 48 || evt.which > 57)
+                {
+                    evt.preventDefault();
+                }
+            }
+            function closepopup() {
+                $("#ThankYouModal").hide();
+            }
+            var childrenAges = "";
+            var udid = "";
+            //var email = "";
+            //var mobile = "";
+            var ip_address = "";
+			var shortcode = "";
+			var sourceType = "";
+            $("#depend_child_age").keyup(function () {
+                //alert(this.value);
+                childrenAges = "";
+                var child_cnt = parseInt(this.value);
+                var html = "";
+                $('.child_age').empty();
+                if (child_cnt > 0 && child_cnt <= 8) {
+                    $("#ErChildDependency").hide().html("");
+                    $("#ErChildAge").hide().html("");
+                    for (i = 1; i <= child_cnt; i++) {
+                        html += '<input type="text" id="child_age_' + i + '" class="input_txt_box" style="width:60px;" onkeypress="preventLetters(event);" maxlength="3" onblur="return validateAge(this.value);"> &nbsp;&nbsp;';
+
+                    }
+                    $('.child_age').append(html);
+                    $('.child_age').show();
+                } else {
+                    if (child_cnt === 0) {
+                        $("#ErChildDependency").hide().html("");
+                        $("#ErChildAge").hide().html("");
+                    } else {
+                        $("#ErChildDependency").show().html("Select child count upto 6");
+                        $("#ErChildAge").hide().html("");
+                    }
+                }
+            });
+            function validateAge(age) {
+
+                if (age > 100 || age === "") {
+                    $("#ErChildAge").show().html("Please Enter Valid Age");
+                    return false;
+                } else {
+                    childrenAges += age + "|";
+                    $("#ErChildAge").hide().html("");
+                    return true;
+                }
+            }
+
+
+            function preventNumbers(evt) {
+                if (!(evt.which < 48 || evt.which > 57))
+                {
+                    evt.preventDefault();
+                }
+            }
+
+
+            function validateForm() {
+                console.log($("#depend_child_age").val());
+                Error = 0;
+                var customerName = $("#customerName").val();
+                if ($("#customerName").val() === null || $("#customerName").val() === "" || $("#customerName").val() === undefined) {
+                    Error++;
+                    $("#ErCustomerName").show().html("Please Enter Valid Name");
+                } else {
+                    $("#ErCustomerName").hide().html("");
+                }
+
+                if ($("input[name=optradio]:checked").val() === null || $("input[name=optradio]:checked").val() === "" || $("input[name=optradio]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErGender").show().html("Please Select Gender");
+                } else {
+                    $("#ErGender").hide().html("");
+                }
+
+                if ($("input[name=statusradio]:checked").val() === null || $("input[name=statusradio]:checked").val() === "" || $("input[name=statusradio]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErMaritalStatus").show().html("Please Select Marital Status");
+                } else {
+                    $("#ErMaritalStatus").hide().html("");
+                }
+
+                if ($("input[name=education]:checked").val() === null || $("input[name=education]:checked").val() === "" || $("input[name=education]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErEducation").show().html("Please Select Education");
+                } else {
+                    $("#ErEducation").hide().html("");
+                }
+
+                if ($("#retirementAt").val() === "" || $("#retirementAt").val() < 18 || $("#retirementAt").val() > 100) {
+                    Error++;
+                    $("#ErRetirement").show().html("Please Enter Valid Retirement Age");
+                } else {
+                    $("#ErRetirement").hide().html("");
+                }
+
+                if ($("#age").val() === "" || $("#age").val() < 18 || $("#age").val() > 100) {
+                    Error++;
+                    $("#ErAge").show().html("Please Enter Valid Age");
+                } else {
+                    $("#ErAge").hide().html("");
+                }
+                console.log($('#sel1 option:selected').text());
+
+                if ($("input[name=depradio]:checked").val() === null || $("input[name=depradio]:checked").val() === "" || $("input[name=depradio]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErDependency").show().html("Please Select Spouse Dependency");
+                } else {
+                    $("#ErDependency").hide().html("");
+                }
+
+                var Father_check = document.getElementById("father_check");
+                var Mother_check = document.getElementById("mother_check");
+                if ((!Father_check.checked) && (!Mother_check.checked)) {
+                    Error++;
+                    $("#ErParentsDependency").show().html("Please Select Parents Dependency");
+                } else {
+                    $("#ErParentsDependency").hide().html("");
+                }
+                if (Father_check.checked) {
+                    if ($("#fatherAge").val() === "" || $("#fatherAge").val() === null || $("#fatherAge").val() === undefined) {
+                        Error++;
+                        $("#ErFatherDependency").show().html("Please Enter Valid Father Age");
+                    } else {
+                        if ($("#fatherAge").val() < 18 || $("#fatherAge").val() > 100) {
+                            Error++;
+                            $("#ErFatherDependency").show().html("Please Enter Valid Father Age");
+                        } else {
+                            $("#ErFatherDependency").hide().html("");
+                        }
+                    }
+
+                } else {
+                    $("#ErFatherDependency").hide().html("");
+                }
+                if (Mother_check.checked) {
+                    if ($("#motherAge").val() === "" || $("#motherAge").val() === null || $("#motherAge").val() === undefined) {
+                        Error++;
+                        $("#ErMotherDependency").show().html("Please Enter Valid Mother Age");
+                    } else {
+                        if ($("#motherAge").val() < 18 || $("#motherAge").val() > 100) {
+                            Error++;
+                            $("#ErMotherDependency").show().html("Please Enter Valid Mother Age");
+                        } else {
+                            $("#ErMotherDependency").hide().html("");
+                        }
+                    }
+                } else {
+                    $("#ErMotherDependency").hide().html("");
+                }
+                if ($("input[name=occupationradio]:checked").val() === null || $("input[name=occupationradio]:checked").val() === "" || $("input[name=occupationradio]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErSelfOccupation").show().html("Please Select Customer Occupation");
+                } else {
+                    $("#ErSelfOccupation").hide().html("");
+                }
+                if ($("input[name=rentradio]:checked").val() === null || $("input[name=rentradio]:checked").val() === "" || $("input[name=rentradio]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErHome").show().html("Please Select Home Type");
+                } else {
+                    $("#ErHome").hide().html("");
+                }
+                if ($("input[name=otherLoan]:checked").val() === null || $("input[name=otherLoan]:checked").val() === "" || $("input[name=otherLoan]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErOtherLoans").show().html("Please Select Any Other Loans");
+                } else {
+                    $("#ErOtherLoans").hide().html("");
+                }
+                if ($("input[name=loanavail]:checked").val() === null || $("input[name=loanavail]:checked").val() === "" || $("input[name=loanavail]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErLoanAvailed").show().html("Please Select Home Loan Availed");
+                } else {
+                    $("#ErLoanAvailed").hide().html("");
+                }
+                if ($("input[name=spouse_occupation]:checked").val() === null || $("input[name=spouse_occupation]:checked").val() === "" || $("input[name=spouse_occupation]:checked").val() === undefined) {
+                    Error++;
+                    $("#ErSpouseOccupation").show().html("Please Select Spouse Occupation");
+                } else {
+                    $("#ErSpouseOccupation").hide().html("");
+                }
+                if ($("#jobIncome").val() !== null || $("#jobIncome").val() !== "" || $("#jobIncome").val() !== undefined) {
+                    if ($("#jobIncome").val() < 0 || $("#jobIncome").val() > 100) {
+                        Error++;
+                        $("#ErJobIncome").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErJobIncome").hide().html("");
+                    }
+                } else {
+                    $("#ErJobIncome").hide().html("");
+                }
+                if ($("#otherIncome").val() !== null || $("#otherIncome").val() !== "" || $("#otherIncome").val() !== undefined) {
+                    if ($("#otherIncome").val() < 0 || $("#otherIncome").val() > 100) {
+                        Error++;
+                        $("#ErOthersIncome").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErOthersIncome").hide().html("");
+                    }
+                } else {
+                    $("#ErOthersIncome").hide().html("");
+                }
+                if ($("#SpouseIncome").val() !== null || $("#SpouseIncome").val() !== "" || $("#SpouseIncome").val() !== undefined) {
+                    if ($("#SpouseIncome").val() < 0 || $("#SpouseIncome").val() > 100) {
+                        Error++;
+                        $("#ErSpouseIncome").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErSpouseIncome").hide().html("");
+                    }
+                } else {
+                    $("#ErSpouseIncome").hide().html("");
+                }
+                if ($("#HouseholdExpense").val() !== null || $("#HouseholdExpense").val() !== "" || $("#HouseholdExpense").val() !== undefined) {
+                    if ($("#HouseholdExpense").val() < 0 || $("#HouseholdExpense").val() > 100) {
+                        Error++;
+                        $("#ErHouseholdExpense").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErHouseholdExpense").hide().html("");
+                    }
+                } else {
+                    $("#ErHouseholdExpense").hide().html("");
+                }
+                if ($("#RetirementInvest").val() !== null || $("#RetirementInvest").val() !== "" || $("#RetirementInvest").val() !== undefined) {
+                    if ($("#RetirementInvest").val() < 0 || $("#RetirementInvest").val() > 100) {
+                        Error++;
+                        $("#ErRetirementInvest").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErRetirementInvest").hide().html("");
+                    }
+                } else {
+                    $("#ErRetirementInvest").hide().html("");
+                }
+                if ($("#FinancialAssert").val() !== null || $("#FinancialAssert").val() !== "" || $("#FinancialAssert").val() !== undefined) {
+                    if ($("#FinancialAssert").val() < 0 || $("#FinancialAssert").val() > 100) {
+                        Error++;
+                        $("#ErFinancial").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErFinancial").hide().html("");
+                    }
+                } else {
+                    $("#ErFinancial").hide().html("");
+                }
+                if ($("#RealEstateAssert").val() !== null || $("#RealEstateAssert").val() !== "" || $("#RealEstateAssert").val() !== undefined) {
+                    if ($("#RealEstateAssert").val() < 0 || $("#RealEstateAssert").val() > 100) {
+                        Error++;
+                        $("#ErRealEstate").show().html("Please Enter Amount less then 100");
+                    } else {
+                        $("#ErRealEstate").hide().html("");
+                    }
+                } else {
+                    $("#ErRealEstate").hide().html("");
+                }
+                var isAgree = document.getElementById("agree");
+                if (isAgree.checked) {
+                    $("#ErAgree").hide().html("");
+                } else {
+                    Error++;
+                    $("#ErAgree").show().html("Please agree to Terms and Conditions");
+                }
+                if (childrenAges !== "" || ($("#depend_child_age").val() !== "0" && $("#depend_child_age").val() !== "")) {
+                    childrenAges = childrenAges.substring(0, childrenAges.length - 1);
+                    if (childrenAges.split("|").length === parseInt($("#depend_child_age").val())) {
+                        $("#ErChildAge").hide().html("");
+                    } else {
+                        Error++;
+                        $("#ErChildAge").show().html("Please Enter Valid Age");
+                    }
+                } else {
+                    $("#ErChildAge").hide().html("");
+                }
+                if ($("#email").val() === null || $("#email").val() === "" || $("#email").val() === undefined) {
+                    Error++;
+                    $("#Eremail").show().html("Please Enter Valid Email ID");
+                } else {
+					if (emailValid($("#email").val())) { $("#Eremail").hide().html(""); }
+					else { Error++; $("#Eremail").show().html("Please Enter Valid Email ID"); }
+                }
+                if ($("#mobile").val() === null || $("#mobile").val() === "" || $("#mobile").val() === undefined) {
+                    Error++;
+                    $("#Ermobile").show().html("Please Enter Valid Mobile No.");
+                } else {
+					if (mobileValid($("#mobile").val())) { $("#Ermobile").hide().html(""); }
+					else { Error++; $("#Ermobile").show().html("Please Enter Valid Mobile No."); }
+                }
+                if (Error === 0) {
+                    $("#ErMsg").hide();
+					$("#FormLoader").show();
+                    generatePlan();
+                } else {
+                    $("#ErMsg").show();
+                }
+            }
+            function generatePlan() {
+                var dependentParents = "";
+                if (document.getElementById("mother_check").checked === true && document.getElementById("father_check").checked === true) {
+                    dependentParents = "B";
+                } else {
+                    if (document.getElementById("mother_check").checked === true) {
+                        dependentParents = "M";
+                    } else {
+                        dependentParents = "F";
+                    }
+                }
+                var formData = {
+                    "agree": "Y",
+                    "annual_income_other": parseInt($("#otherIncome").val()) === 0 ? 0 : parseInt($("#otherIncome").val() + "00000"),
+                    "annual_income_self": parseInt($("#jobIncome").val()) === 0 ? 0 : parseInt($("#jobIncome").val() + "00000"),
+                    "annual_income_spouse": parseInt($("#SpouseIncome").val()) === 0 ? 0 : parseInt($("#SpouseIncome").val() + "00000"),
+                    "current_household_expenses": parseInt($("#HouseholdExpense").val()) === 0 ? 0 : parseInt($("#HouseholdExpense").val() + "00000"),
+                    "current_investment_for_retirement": parseInt($("#RetirementInvest").val()) === 0 ? 0 : parseInt($("#RetirementInvest").val() + "00000"),
+                    "dependent_children": $("#depend_child_age").val() === "" ? 0 : parseInt($("#depend_child_age").val()),
+                    "dependent_children_ages": childrenAges,
+                    "dependent_parents": dependentParents,
+                    "education": $("input[name=education]:checked").val(),
+                    "email": $("#email").val(),
+                    "father_age": $("#fatherAge").val() === "" ? 0 : parseInt($("#fatherAge").val()),
+                    "father_dependent": document.getElementById("father_check").checked === true ? "Y" : "N",
+                    "gender": $("input[name=optradio]:checked").val(),
+                    "home_loan_availed": $("input[name=loanavail]:checked").val(),
+                    "home_owned": $("input[name=rentradio]:checked").val(),
+                    "home_purchase_age": "",
+                    "location": $('#sel1 option:selected').text(),
+                    "marital_status": $("input[name=statusradio]:checked").val(),
+                    "mobile": $("#mobile").val(),
+                    "mother_age": $("#motherAge").val() === "" ? 0 : parseInt($("#motherAge").val()),
+                    "mother_dependent": document.getElementById("mother_check").checked === true ? "Y" : "N",
+                    "name": $("#customerName").val(),
+                    "occupation_self": $("input[name=occupationradio]:checked").val(),
+                    "occupation_spouse": $("input[name=spouse_occupation]:checked").val(),
+                    "other_loans_availed": $("input[name=otherLoan]:checked").val(),
+                    "pdfAvailable": "N",
+                    "retirement_age": parseInt($("#retirementAt").val()),
+                    "spouse_age": $("#spouseAge").val() === "" ? 0 : parseInt($("#spouseAge").val()),
+                    "spouse_dependent": $("input[name=depradio]:checked").val(),
+                    "starting_age": parseInt($("#age").val()),
+                    "total_financial_assets": parseInt($("#FinancialAssert").val()) === 0 ? 0 : parseInt($("#FinancialAssert").val() + "00000"),
+                    "total_real_estate_assets": parseInt($("#RealEstateAssert").val()) === 0 ? 0 : parseInt($("#RealEstateAssert").val() + "00000"),
+                    "udid": udid,
+                    "ip_address": ip_address,
+					"short_code": shortcode,
+					"source_type": sourceType
+                };
+                console.log(formData);
+
+                /*$('#uploadForm').ajaxSubmit({
+                 data: formData,
+                 error: function (xhr) {
+                 //status('Error: ' + xhr.status);
+                 },
+                 success: function (response) {
+                 console.log(response);
+                 $("#ThankYouModal").show();
+                 $('#ThankYouModal').css("background", "rgb(0,0,0,0.4)");
+                 //response.url = "http://qa-horizon.policyboss.com:3000/pdf-files/policy/TataAIGMotor_TW_064001017755361100000000.pdf";
+                 //$("#protect_me_pdf").attr("href", response.url);
+                 //$("#protect_me_txt").text("Kindly Download your PDF");
+                 if (response.msg === 'success') {
+                 $("#protect_me_pdf").attr("href", response.url);
+                 $("#protect_me_txt").text("Great , We are Done!");
+                 } else {
+                 $("#btn_pdf").hide();
+                 $("#protect_me_pdf").attr("href", "");
+                 $("#protect_me_txt").text("Sorry request fail");
+                 }
+                 
+                 }
+                 });*/
+                var obj_horizon_data = Horizon_Method_Convert("/protectmewell_initiate", formData, "POST");
+                $.ajax({
+                    type: "POST",
+                    data: siteURL.indexOf('https') === 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(formData),
+                    url: siteURL.indexOf('https') === 0 ? obj_horizon_data['url'] : GetUrl() + "/protectmewell_initiate",
+
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+						$("#FormLoader").hide();
+                        console.log(response);
+                        $("#ThankYouModal").show();
+                        $('#ThankYouModal').css("background", "rgb(0,0,0,0.4)");
+                        //response.url = "http://qa-horizon.policyboss.com:3000/pdf-files/policy/TataAIGMotor_TW_064001017755361100000000.pdf";
+                        //$("#protect_me_pdf").attr("href", response.url);
+                        //$("#protect_me_txt").text("Kindly Download your PDF");
+                        if (response.msg === 'success') {
+                            $("#btn_pdf").show();
+                            $("#protect_me_pdf").attr("href", response.url);
+                            $("#protect_me_txt").text("Great , We are Done!");
+                        } else {
+                            $("#btn_pdf").hide();
+                            $("#protect_me_pdf").attr("href", "");
+                            $("#protect_me_txt").text("Sorry request fail");
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+            function setFormData() {
+                ip_address = "";
+                udid = "";
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    data: "",
+                    url: "https://api.ipify.org/?format=json",
+
+                    success: function (response) {
+						ip_address = response.ip;
+						var data_code = "";
+						if(window.location.href.includes('?')) {
+							if(((window.location.href.split("?")[1]).split("&")[1]).split("=")[1] == "pb") {
+								sourceType = "pb";
+								var User_Data_Id = ((window.location.href.split("?")[1]).split("=")[1]).split("_")[0];
+								udid = User_Data_Id;
+								data_code = ((window.location.href.split("?")[1]).split("=")[1]).split("_")[0];
+								
+								var method_name = "/getDataOnFormLoad/" + data_code;
+								var url_link = "/getDataOnFormLoad/" + data_code;
+								
+							}else {
+								sourceType = "lead";
+								shortcode = "";
+								var ShortCode = ((window.location.href.split("?")[1]).split("&")[0]).split("=")[1];
+								shortcode = ShortCode;
+								data_code = ((window.location.href.split("?")[1]).split("&")[0]).split("=")[1];
+								
+								var method_name = "/getDataOnFormLoad/" + data_code;
+								var url_link = "/getDataOnFormLoad/" + data_code;
+								
+							}
+							$.ajax({
+								type: 'GET',
+								dataType: 'json',
+								data: siteURL.indexOf('https') === 0 ? {'method_name': method_name + "/" + response.ip + "/" + sourceType} : "",
+								url: siteURL.indexOf('https') === 0 ? GeteditUrl() + '/horizon-method.php' : GetUrl() + url_link + "/" + response.ip + "/" + sourceType,
+								success: function (data) {
+									console.log(data);
+									$("#customerName").val(data.Name);
+									$("#email").val(data.Email);
+									$("#mobile").val(data.Mobile);
+									if(sourceType == "pb") {
+										$("#email").prop("readonly", true);
+										$("#mobile").prop("readonly", true);
+									}else {
+										$("#email").prop("readonly", false);
+										$("#mobile").prop("readonly", true);
+									}
+									
+									if(data.Age != "" && data.Age != undefined) {
+										$("#age").val(data.Age);
+									}
+									
+									if(data.Gender != "" && data.Gender != undefined) {
+										$("input[name=optradio][value=" + data.Gender + "]").attr('checked', true);
+									}
+									if(data.Marital != undefined && data.Marital != "") {
+										$("input[name=statusradio][value=" + data.Marital.split("")[0] + "]").attr('checked', true);
+									}
+									if(data.Location != "" && data.Location != undefined) {
+										if(sourceType == "pb") {
+											var location = data.Location.split(" ")[3];
+											var res = location.slice(0, 1);
+											var res1 = location.slice(1, location.length);
+											var str = res + res1.toLowerCase();
+											var isCityPresent = false;
+											for (var i = 0; i < document.getElementById('sel1').length; i++) {
+												if (document.getElementById('sel1')[i].value === str) {
+													isCityPresent = true;
+													document.getElementById('sel1').value = str;
+												}
+											};
+											if (isCityPresent == false) {
+											}
+										}else {											
+											var location = data.Location.split(" ")[3];
+											var res = location.slice(0, 1);
+											var res1 = location.slice(1, location.length);
+											var str = res + res1.toLowerCase();
+											
+											if(str != "") {
+													
+												var isCityPresent = false;
+												for (var i = 0; i < document.getElementById('sel1').length; i++) {
+													if (document.getElementById('sel1')[i].value === str) {
+														isCityPresent = true;
+														document.getElementById('sel1').value = str;
+													}
+												}
+												;
+												if (isCityPresent == false) {
+													document.getElementById('sel1').value = "Others";
+												}
+											}
+										}
+									}
+									$("#FormLoader").hide();
+								},
+								error: function (err) {
+									$("#FormLoader").hide();
+									console.log(err);
+								}
+							});
+						}else {
+							sourceType = "direct";
+							$("#email").prop("readonly", false);
+							$("#mobile").prop("readonly", false);
+							$("#FormLoader").hide();
+						}
+                    },
+                    error: function (err) {
+						$("#FormLoader").hide();
+                        console.log(err);
+                    }
+                });
+            }
+            function Horizon_Method_Convert(method_action, data, type) {
+                var obj_horizon_method = {
+                    'url': (type === "POST") ? "/horizon-method.php" : "/horizon-method.php?method_name=" + method_action,
+                    "data": {
+                        request_json: JSON.stringify(data),
+                        method_name: method_action,
+                        client_id: "2"
+                    }
+                };
+                return obj_horizon_method;
+            }
+            function GeteditUrl() {
+                var url = window.location.href;
+                //alert(url.includes("health"));
+                var newurl;
+                newurl = "http://qa.policyboss.com";
+                if (url.includes("localhost")) {
+                    newurl = "http://localhost:3000";
+                } else if (url.includes("qa")) {
+                    newurl = "http://qa.policyboss.com";
+                } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                    newurl = "https://www.policyboss.com";
+                }
+                return newurl;
+            }			
+			function emailValid(_email) {
+				var regEmail = /^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i;
+				return regEmail.test(_email);
+			}
+			function mobileValid(_Mobile) {
+				var regMobile = new RegExp("^[6-9]{1}[0-9]{9}$");
+				return regMobile.test(_Mobile);
+			}
+
+        </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,770 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <title>Ticketing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script> -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Headerstyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="ticket_maindiv">
+        <div class="MyLoader">
+            <div><img src="images/search-loader.gif"></div>
+        </div>
+        <div class="StatusPopup">
+            <div class="StatuspopScreen">
+                <div class="StatusPopHeader">
+                    <div class="addpopupclose" onclick="location.reload()">&times;</div>
+                    <h4>SUMMARY</h4>
+                </div>
+                <div class="ticket_Error" style="text-align:center;padding:5px;font-size:14px;margin: 7px;" id="ticket_err">
+                </div>
+                <div class="Statuspopup_txt">
+                    <div class="" style="margin:5px;">
+                        <span style="font-weight:700">Ticket Id  </span> :
+                        <span id="spn_ticket_id"></span>
+                    </div>
+					<div class="clsInsurerName" style="margin:5px;"> <span style="font-weight:700">Insurer Name  </span> : 
+                            <span id="insurer_name"></span></div>
+					<div class="clsProductName" style="margin:5px;"> <span style="font-weight:700">Product Name  </span> : 
+                            <span id="product_name"></span></div>
+                    <div class="" style="margin:5px;"> <span style="font-weight:700">Category </span> : <span id="spn_Category"></span></div>
+                    <div class="" style="margin:5px;"> <span style="font-weight:700">SubCategory  </span> : <span id="spn_SubCategory"></span></div>
+                    <div class="" style="margin:5px;"> <span style="font-weight:700">Created On   </span> : <span id="spn_created_on"></span></div>
+                    <div class="uploadImg" style="margin:7px;" id="txt_statusmsg"></div>
+					<div id="endNote" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; font-size: large;"><span class="boldFont"><b>Note : </b></span><span id="endrsmtNote"></span></div>
+                </div>
+                <div class="SubmitDiv">
+                    <button class="statusImgSubmit" id="statusClosed">OK</button>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="UploadPopup">
+            <div class="UploadpopScreen">
+                <div class="UploadPopHeader">
+                    <div class="addpopupclose">&times;</div>
+                    <h4>My Comment</h4>
+                </div>
+                <div class="Uploadpopup_txt">
+                    <div class="uploadImg">
+                        <div>Upload Image</div>
+
+                        <div id="cameraDIV">
+                            <!-- Camera sensor -->
+                            <canvas id="camera--sensor" style="display:none;height: 481px;margin-top: 25px;"></canvas>
+                            <!-- <!-- Camera view -->
+                            <video id="camera--view" autoplay playsinline style="width: 100%;height: 400px;margin-top: 25px;"></video>
+                            <!-- <!-- Camera output -->
+                            <img src="//:0" alt="" id="camera--output">
+                            <!-- <!-- Camera trigger -->
+
+
+                        </div>
+                    </div>
+                    <div class="UploadComment">
+                        <!-- <input type="text" id="txt_Comment" placeholder="Comment .."> -->
+                    </div>
+                    <div style="text-align:center;">
+                        <button id="camera--trigger1" onclick="cameraClicked();">Captured</button>
+                    </div>
+
+                    <div class="SubmitDivs">
+                        <div class="ImgSubmit" id="upload" style="width:100%">Upload</div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="Ticketcontent">
+            <!-- <header> -->
+            <!-- <i class="fa fa-long-arrow-left" onclick="GetTicket();" aria-hidden="true"></i> -->
+            <!-- <div class="ticketHeader">Raise a ticket</div> -->
+            <!-- </header> -->
+            <div class="container_fluid">
+                <div class="navItem">
+                    <nav>
+                        <a class="Dashboardnav" style="opacity: 1;" onclick="GetTicket()">
+                            <img src="images/list-(1).png" id="menu1" alt="" style="width:20px;float: left;color: #FFF;">
+                        </a>
+                        <a class="Inputnav ActiveItem"><div class="Input_nav">INPUT</div></a>
+                    </nav>
+                </div>
+            </div>
+
+             <form style="padding-top: 30px;" method="post" action="http://horizon.policyboss.com:5000/finmart_raiseticket" id="uploadForm" enctype="multipart/form-data">
+
+
+            <div class="contentBlog" style="padding-top: 45px;">
+
+                <!-- <div class="fieldiv  agentField" style="display:none;"> -->
+                <!-- <label>Email</label> -->
+                <!-- <div> -->
+                <!-- <input type="text" id="Email" placeholder="Enter Email No" class="ctl_readonly"> -->
+                <!-- </div> -->
+                <!-- </div> -->
+
+                <div class="fieldiv">
+                    <label>Categories</label>
+                    <div>
+                        <select id="Category" onchange="MainCategory();"></select>
+                    </div>
+                </div>
+                <div class="fieldiv">
+                    <label>Sub Categories</label>
+                    <div>
+                        <select id="SubCategory" onchange="SubCategory_Change();">
+                            <option selected>-- Select SubCategory --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fieldiv  clsPincode" style="display:none;">
+                    <label>Pincode</label>
+                    <div>
+                        <input type="text" id="Pincode" placeholder="Enter Pincode">
+                    </div>
+                </div>
+                <div class="fieldiv cls_donthaveCRN agentField">
+                    <label>Mobile No</label>
+                    <div>
+                        <input type="text" id="Mobile_No" placeholder="Enter Mobile No" class="ctl_readonly">
+                    </div>
+                </div>
+                <div class="fieldiv  agentField">
+                    <label>Email</label>
+                    <div>
+                        <input type="text" id="Email" placeholder="Enter Email Id">
+                    </div>
+                </div>
+                <div class="fieldiv agentField" style="margin-bottom:26px;">
+                    <label>Agent Name</label>
+                    <div>
+                        <input type="text" id="txt_agent_name" placeholder="Enter Agent Name">
+                    </div>
+                </div>
+                <div class="fieldiv">
+                    <label>Upload Document</label>
+
+                    <div style="display: inline-block;float: right;"><button type="button" style="background: rgb(0, 159, 227);border: 2px solid rgb(0, 159, 227);color: rgb(255, 255, 255);padding: 2px 12px;" id="" onclick="Upload_doc();">Upload</button></div>
+
+                    <input type="hidden" id="file_name" value="">
+                    <input type="hidden" id="file_path" value="">
+                    <!-- <input id="profile" name="profile" type="file" > -->
+                </div>
+                <div class="fieldiv">
+
+
+                    <div type="label" id="txt_fileUpload">No File Attached</div>
+
+                </div>
+                <div class="fieldiv" style="margin-bottom:26px;">
+                    <label>Message</label>
+                    <div>
+                        <input type="text" id="txt_remark" placeholder="Enter Message">
+                    </div>
+                </div>
+
+                <div class="submitBtn" onclick=" return SubmitForm();">
+                    Submit
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="warningmsg" style="display:none;padding-top: 169px;">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;"
+            id="warningerror">
+            ss_id, fba_id, app_version is mandatory
+        </h3>
+        <h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+        <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 700;font-size: 16px;" id="error_query_str"></div>
+    </div>
+    <script>
+        var ss_id, fba_id, ip_address, app_version, mac_address, mobile_no, srn, client_id = 2, editmodify, header, sub_fba_id, landing_page = "";
+        //var Name = "Khushbu Gite";
+        var UDID = "";
+        //var agent_email ="khushbu.gite@policyboss.com";
+        var supportagentid = "";
+        var is_CRN = false;
+        var Is_NoCRN = false;
+        var filePicker_1 = "";
+        var filePicker_2 = "";
+        var filePicker_3 = "";
+        var filePicker_4 = "";
+        var extension_1 = "";
+        var extension_2 = "";
+        var extension_3 = "";
+        var extension_4 = "";
+        var radiobtnchked = false;
+        var CRN_chk = true;
+        var categoryproduct = [];
+        var siteURL = "";
+        var timestamp = "";
+
+
+        $(document).ready(function () {
+            siteURL = window.location.href;
+            stringparam();
+            GetCategory();
+            $(".addpopupclose").click(function () {
+                $(".AddPopup").hide();
+                $(".UploadPopup").hide();
+            });
+            $("#statusClosed").click(function () {
+                location.reload();
+            });
+            $("#upload").click(function () {
+                $(".UploadPopup").hide();
+            });
+
+
+            $("#UploadPic").click(function () {
+                $("#myFileInput").slideDown();
+            })
+
+
+        });
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+
+        function stringparam() {
+            ss_id = getUrlVars()["ss_id"];
+            fba_id = getUrlVars()["fba_id"];
+            ip_address = getUrlVars()["ip_address"];
+            app_version = getUrlVars()["app_version"];
+            mac_address = getUrlVars()["mac_address"];
+            SRN = getUrlVars()["SRN"];
+            client_id = getUrlVars()["ClientID"];
+            editmodify = getUrlVars()["Edit"];
+            header = getUrlVars()["header"];
+            Product_id = getUrlVars()["product_id"];
+            sub_fba_id = getUrlVars()["sub_fba_id"];
+            agent_email = getUrlVars()["email"];
+            UDID = getUrlVars()["UDID"];
+            landing_page = getUrlVars()["landing_page"];
+
+
+
+            if (landing_page === "login_page") {
+                $('.crn_detail').hide();
+                $('.agentField').show();
+                $('.cls_mobileno').show();
+            }
+        }
+        function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+        }
+        function GeteditUrl() {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            newurl = "http://qa.policyboss.com";
+            if (url.includes("localhost")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+        function GetCategory() {
+            $.ajax({
+                type: "GET",
+                //url: GetUrl() + "/tickets/getticketing_category/0",
+                data: siteURL.indexOf("https") == 0 ? { method_name: "/tickets/getticketing_category/0/Finmart", client_id: "2" } : "",
+                url: siteURL.indexOf("https") == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + "/tickets/getticketing_category/0/app",
+                dataType: "json",
+                success: function (data) {
+
+                    $("#Category").empty();
+                    //console.log(data);
+                    var optionhtml1 = '<option value="' + 0 + '">' + "--Select Category--" + '</option>';
+                    $("#Category").append(optionhtml1);
+
+                    var loginarr = ["11", "12"];
+                    $.each(data, function (i) {
+                        var optionhtml = "";
+                        if (landing_page === "login_page" && loginarr.indexOf(data[i]["key"].split(":")[0]) >= 0) {
+
+                            optionhtml = '<option value="' + data[i]["key"] + '">' + data[i]["value"] + '</option>';
+
+                        } else if (landing_page != "login_page" && loginarr.indexOf(data[i]["key"].split(":")[0]) === -1) {
+                            optionhtml = '<option value="' + data[i]["key"] + '">' + data[i]["value"] + '</option>';
+                        }
+                        //var optionhtml = '<option value="' + data[i]["key"] + '">' + data[i]["value"] + '</option>';
+                        $("#Category").append(optionhtml);
+                    });
+                },
+                error: function (result) {
+                    console.log(result);
+                }
+            });
+        }
+
+        function GetSubCategory(Category_id) {
+            var product = 0;
+            $.ajax({
+                type: 'GET',
+                //url: GetUrl() + "/tickets/getticketingSubCategory/" + Category_id + "/0",
+                data: siteURL.indexOf("https") == 0 ? { method_name: "/tickets/getticketingSubCategory/" + Category_id + "/0", client_id: "2" } : "",
+                url: siteURL.indexOf("https") == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + "/tickets/getticketingSubCategory/" + Category_id + "/0",
+                dataType: "json",
+                success: function (data) {
+
+                    $("#SubCategory").empty();
+                    console.log(data);
+                    if (data.length > 1) {
+                        var optionhtml1 = '<option value="' + 0 + '">' + "--Select SubCategory--" + '</option>';
+                        $("#SubCategory").append(optionhtml1);
+                    }
+                    var arr = [];
+
+                    $.each(data, function (i) {
+                        var subcategory = data[i].error_code !== "" ? data[i].value + " (" + data[i].error_code + ") " : data[i].value;
+
+                        $('#SubCategory').get(0).options[$('#SubCategory').get(0).options.length] = new Option(data[i].value, data[i].key);
+
+                    });
+
+                },
+                error: function (result) {
+                    console.log(result);
+                }
+            });
+        }
+        function MainCategory() {
+            $('#Category_Name').val($("#Category option:selected").text());
+            var category = $('#Category').val();
+            if (category !== 0) {
+                category = $('#Category').val().split(':')[0];
+                GetSubCategory(category);
+            }
+        }
+        function SubCategory_Change() {
+            var sub_category = $("#SubCategory option:selected").text();
+            if (sub_category === "Pincode not available") {
+                $('.clsPincode').show();
+            } else {
+                $('.clsPincode').hide();
+            }
+        }
+        function DONTHAVECRN() {
+            $('.cls_crn').hide();
+            $('.cls_donthaveCRN').show();
+            $('.ctl_readonly').attr('readonly', false);
+            $('#Product').attr("disabled", false);
+            $('#txt_CRN').val("");
+            $('#Vehicle_No').val("");
+            $('#Mobile_No').val("");
+            $('#Product').val("0");
+            is_CRN = false;
+            Is_NoCRN = true;
+            radiobtnchked = true;
+            $('.radiobtn_err').hide();
+        }
+        function HAVECRN() {
+            $('.cls_crn').show();
+            $('.cls_donthaveCRN').show();
+            $('.ctl_readonly').attr('readonly', true);
+            $('#Product').attr("disabled", true);
+            is_CRN = true;
+            Is_NoCRN = false;
+            radiobtnchked = true;
+            $('.radiobtn_err').hide();
+        }
+        function productChange() {
+            var Product = $('#Product').val();
+            $("#SubCategory").val("0");
+            $("#Category").val("0");
+            if (Product !== "0") {
+                $('#ErProduct').hide();
+                $('#ErProduct').text("");
+            }
+            if (Product === "2") {
+                $('#div_Vehicle_No').hide();
+            } else {
+                $('#div_Vehicle_No').show();
+            }
+        }
+
+        function GetCRN() {
+            var CRN = $('#txt_CRN').val();
+            var Reg = /^[0-9]+$/;
+            if (Reg.test(CRN)) {//&& CRN.length == 7
+
+                $("#ErProduct").hide().html("");
+                $("#ErMobile_No").hide().html("");
+                $("#ErVehicle_No").hide().html("");
+                $('#ErCRN').hide().html("");
+                $.ajax({
+                    type: "GET",
+                    //url: GetUrl()+"/tickets/getCRNdetails/" + CRN ,
+                    data: siteURL.indexOf("https") == 0 ? { method_name: "/tickets/getCRNdetails/" + CRN, client_id: "2" } : "",
+                    url: siteURL.indexOf("https") == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + "/tickets/getCRNdetails/" + CRN,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data !== "" && data.length > 0) {
+                            CRN_chk = true;
+                            is_CRN = true;
+                            var array = $.map(data[0], function (value, index) {
+                                return [value];
+                            });
+
+                            console.log(array);
+                            var productid = array[0];
+                            $('#Product').val(productid);
+                            if (data[0]['Product'] === 2) {
+                                $('#Vehicle_No').val("");
+                                $('#Vehicle_No').hide();
+                            } else {
+                                $('#Vehicle_No').val(data[0]["Vehicle_No"]);
+                                $('#Vehicle_No').show();
+                            }
+                            $('#CRN_owner').val(data[0]['ss_id']);
+                            $('#CRN_fba_id').val(data[0]['fba_id']);
+                            $('#channel').val(data[0]['channel']);
+                            $('#subchannel').val(data[0]['subchannel']);
+                            $('#Mobile_No').val(data[0]["Mobile_No"]);
+                            $('#Transaction_On').val(data[0]["transaction_on"]);
+                        } else {
+                            CRN_chk = false;
+                            //is_CRN = false;
+                            $('#ErCRN').show().html("No details.");
+                            $('#Vehicle_No').val("");
+                            $('#Product').val("");
+                            $('#Mobile_No').val("");
+                        }
+                    },
+                    error: function (result) {
+                        console.log(result);
+                    }
+                });
+            } else {
+                $('#ErCRN').show().html("Enter valid CRN.");
+                $('#Vehicle_No').val("");
+                $('#Product').val("");
+                $('#Mobile_No').val("");
+            }
+
+        }
+
+        function SubmitForm() {
+            $('.MyLoader').show();
+            var Error_count = 0;
+            var emailpattern = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            var pattern = new RegExp('^([6-9]{1}[0-9]{9})$');
+            var name = new RegExp('^([A-Za-z ])$');
+            var number = /^[0-9]+$/;
+
+            if ($("#Mobile_No").val() !== null || $("#Mobile_No").val() !== "") {
+                if (pattern.test($("#Mobile_No").val()) === false || $("#Mobile_No").val().length !== 10) {
+                    Error_count++;
+                    $('#Mobile_No').addClass('Error');
+                } else {
+                    $('#Mobile_No').removeClass('Error');
+                }
+            } else {
+                Error_count++;
+                $('#Mobile_No').addClass('Error');
+            }
+
+            if ($("#Email").val() !== null || $("#Email").val() !== "") {
+                if (emailpattern.test($("#Email").val()) === false) {
+                    Error_count++;
+                    $('#Email').addClass('Error');
+                } else {
+                    $('#Email').removeClass('Error');
+                }
+            } else {
+                Error_count++;
+                $('#Email').addClass('Error');
+            }
+
+            if ($("#txt_agent_name").val() === null || $("#txt_agent_name").val() === "") {
+                Error_count++;
+                $('#txt_agent_name').addClass('Error');
+            } else {
+                if (name.test($("#txt_agent_name").val()) === false && $("#txt_agent_name").val().length >= 40) {
+                    Error_count++;
+                    $('#txt_agent_name').addClass('Error');
+                } else {
+                    $('#txt_agent_name').removeClass('Error');
+                }
+            }
+
+            if ($("#Category").val() === null || $("#Category").val() === "" || $("#Category").val() === "0") {
+                Error_count++;
+                $('#Category').addClass('Error');
+            } else {
+                $('#Category').removeClass('Error');
+            }
+
+            if ($("#SubCategory").val() === null || $("#SubCategory").val() === "" || $("#SubCategory").val() === "0") {
+                Error_count++;
+                $('#SubCategory').addClass('Error');
+            } else {
+                $('#SubCategory').removeClass('Error');
+            }
+
+            if ($("#txt_remark").val() === null || $("#txt_remark").val() === "") {
+                Error_count++;
+                $('#txt_remark').addClass('Error');
+            } else {
+                $('#txt_remark').removeClass('Error');
+            }
+            if ($("#SubCategory").val() === "69" && $("#Category").val().split(':')[0] === "11") {
+                if (number.test($("#Pincode").val()) === false || $("#Pincode").val().length !== 6) {
+                    Error_count++;
+                    $('#Pincode').addClass('Error');
+                } else {
+                    $('#Pincode').removeClass('Error');
+                }
+            }
+
+            if (Error_count == 0) {
+                RaiseTicket();
+            } else {
+                $('.MyLoader').hide();
+            }
+            return false;
+        }
+
+        function RaiseTicket() {
+
+
+            var e = document.getElementById("SubCategory");
+            var subcategory = e.options[e.selectedIndex].outerText;
+            var objdata = {
+                "Ticket_Id": "",
+                "Product": "FL",
+                "Category": $("#Category option:selected").text(),
+                "SubCategory": subcategory,
+                "Status": "Open",
+                "Created_On": "",
+                "CRN": "",
+                "Mobile_No": $('#Mobile_No').val(),
+                "Vehicle_No": "",
+                "Remark": $('#txt_remark').val(),
+                "ss_id": 0,
+                "CRN_owner": "",
+                "CRN_fba_id": "",
+                "channel": "",
+                "subchannel": "",
+                "Transaction_On": "",
+                "file_name": $('#file_name').val(),
+                "file_path": $('#file_path').val(),
+                "Source": "app",
+                "rm_email_id": "",
+                "Agent_Name": $('#txt_agent_name').val(),
+                "Is_Customer": 1,
+                "Agent_Email": $("#Email").val(),
+                "Pincode": $('#Pincode').val(),
+                "RM_Email_Id": ""
+            };
+            $('#uploadForm').ajaxSubmit({
+                data: objdata,         
+                error: function (xhr) {
+                    $(".StatusPopup").show();
+                    $('.Statuspopup_txt').hide();
+                    $('#ticket_err').text(xhr);
+                },
+                success: function (response) {
+                    $('.MyLoader').hide();
+                    console.log(response);
+                    $(".StatusPopup").show();
+                    if (response["Status"] === "Success") {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                        $('#spn_ticket_id').text(response['Ticket_Id']);
+                        $('#spn_created_on').text(response['Created_On']);
+                        if (response["CRN"] !== "") {
+                            $('#spn_CRN').text(response["CRN"]);
+                            $('#spn_tranaction_on').text(response['Transaction_On']);
+                            $('.clsCRN').show();
+                        } else {
+                            $('.clsCRN').hide();
+                        }
+						
+						if (response["Insurer_Name"] !== "" && response["Insurer_Name"] !== undefined) {
+                            $('#insurer_name').text(response["Insurer_Name"]);
+                            $('.clsInsurerName').show();
+                        } else {
+                            $('.clsInsurerName').hide();
+                        }
+						
+						if (response["Product_Name"] !== "" && response["Product_Name"] !== undefined) {
+                            $('#product_name').text(response["Product_Name"]);
+                            $('.clsProductName').show();
+                        } else {
+                            $('.clsProductName').hide();
+                        }
+						
+						if (response.Category === "Endorsement"){
+							$("#endNote").show();
+							$("#endrsmtNote").text("Endorsement TAT - 7 - 10 Working Days");
+						} else if (response["SubCategory"] === "PG Dropoff - Amount deducted but customer does not redirected to PolicyBoss"){
+							$("#endNote").show();
+							$("#endrsmtNote").text("Policy TAT - 48 hours");
+						}else{
+							$("#endNote").hide();
+						}
+                        $('#spn_Category').text(response["Category"]);
+                        $('#spn_SubCategory').text(response["SubCategory"]);
+                    } else {
+                        $(".StatusPopup").show();
+                        $('.Statuspopup_txt').hide();
+                        $('#ticket_err').text(response["Msg"]);
+                    }
+                }
+            });
+
+        }
+
+        function RaiseTicket_bak() {
+
+            var e = document.getElementById("SubCategory");
+            var subcategory = e.options[e.selectedIndex].outerText;
+            var objdata = {
+                "Ticket_Id": "",
+                "Product": $("#Product option:selected").text(),
+                "Category": $("#Category option:selected").text(),
+                "SubCategory": subcategory,
+                "SubCategory_level2": "",
+                "From": Name + "(" + UDID + ")",
+                "To": Name + "(" + UDID + ")",
+                "Status": "Open",
+                "Created_By": Name + "(" + UDID + ")",
+                "Created_On": "",
+                "CRN": $("#txt_CRN").val(),
+                "Mobile_No": $('#Mobile_No').val(),
+                "Vehicle_No": $('#Vehicle_No').val(),
+                "Remark": $('#txt_remark').val(),
+                "ss_id": ss_id,
+                "CRN_owner": $("#CRN_owner").val(),
+                "Agent_Email": agent_email,
+                "fba_id": fba_id,
+                "CRN_fba_id": $("#CRN_fba_id").val(),
+                "channel": $("#channel").val(),
+                "subchannel": $("#subchannel").val(),
+                "timestamp": create_UUID(),
+                "file_name": $('#file_name').val(),
+                "file_path": $('#file_path').val(),
+                "Agent_Name": $('#txt_agent_name').val()
+            };
+
+            console.log(JSON.stringify(objdata));
+
+            var obj_horizon_data = Horizon_Method_Convert("/finmart_raiseticket", objdata, "POST");
+
+            $.ajax({
+                type: "POST",
+                //data : objdata,
+                //url: GetUrl() + "/tickets/raiseticket",
+                data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(objdata),
+                url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/finmart_raiseticket",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $('.MyLoader').hide();
+                    console.log(response);
+                    $(".StatusPopup").show();
+                    if (response["Status"] === "Success") {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                    } else {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                    }
+                }
+            });
+
+        }
+
+
+
+
+        function GetTicket() {
+            window.location.href = "../Ticketing/ticketinput.html?ss_id=" + ss_id + "&fba_id=" + fba_id + "&app_version=" + app_version;
+        }
+
+        function create_UUID() {
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (dt + Math.random() * 16) % 16 | 0;
+                dt = Math.floor(dt / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+        function Upload_doc() {
+            var guid = create_UUID();
+            console.log(guid);
+            Android.Upload_doc(guid);
+        }
+        function uploadImagePath(uploadedPath) {
+
+            var objRes = uploadedPath;
+            var data = objRes.split('|');
+            var file_name = "";
+            var file_path = "";
+            $('#txt_fileUpload').text("File Uploaded Success");
+            if (data[0] !== null && data[0] !== "") {
+                $('#file_name').val(data[0].replace(/\s/g, ""));
+            }
+            if (data[1] !== null && data[1] !== "") {
+                $('#file_path').val(data[1]);
+
+            }
+
+        }
+
+        //code 2
+    </script>
+</body>
+
+</html>

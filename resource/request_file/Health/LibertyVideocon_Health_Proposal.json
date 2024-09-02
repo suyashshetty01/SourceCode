@@ -1,0 +1,275 @@
+{
+    "ProposerObj": [
+        {
+            "Quote_Number": "___quote_number___",
+            "Proposer_Salutation": "___salutation___",
+            "Proposer_FName": "___first_name___",
+            "Proposer_MName": "___middle_name___",
+            "Proposer_LName": "___last_name___",
+            "Proposer_Email": "___email___",
+            "Proposer_Mobile": "___mobile___",
+            "Proposer_DOB": "___birth_date___",
+            "Proposer_Gender": "___gender___",
+            "Proposer_MaritalStatus": "___marital___",
+            "Proposer_AnnualIncome": "___annual_income___",
+            "Proposer_Nationality": "Indian",
+            "Proposer_PanNumber": "___pan___",
+            "Proposer_Address1": "___permanent_address_1___",
+            "Proposer_Address2": "___permanent_address_2___",
+            "Proposer_Address3": "___permanent_address_3___",
+            "Proposer_Area": "___dbmaster_pb_city_name___, ___communication_state___",
+            "Proposer_PinCode": "___permanent_pincode___",
+            "Proposer_LandineNumber": "___mobile___",
+            "Aggregator_URL": "___aggregator_url___",
+            "Aggregator_KYC_Req_No":"___kyc_ref_no___",
+            "IC_KYC_No":"___kyc_no___"
+        }
+    ],
+
+    "ProposedInsuredobj": [<!--InsurersDetail_Start-->
+        {
+            "Member_No": "___member_array_inc___",
+            "Member_Salutation": "___member_array_salutation___",
+            "Member_FName": "___member_array_first_name___",
+            "Member_LName": "___member_array_last_name___",
+            "Member_Gender": "___member_array_gender___",
+            "Member_MaritalStatus": "___member_array_marital_status___",
+            "Member_Height": "___member_array_height___",
+            "Member_Weight": "___member_array_weight___",
+            "Monthly_Income": "___annual_income___",
+            "Nominee_Name": "___member_array_nominee_name___",
+            "Nominee_RelationCode": "___member_array_nominee_rel___",
+            "DailySmoking_Quantity": "___member_array_question_819_details___",
+            "HardLiquorConsumed_Quantity": "___member_array_question_820_details___",
+            "WineConsumed_Quantity": "___member_array_question_821_details___",
+            "BeerConsumed_Quantity": "___member_array_question_822_details___",
+            "MasalaGutka_Quantity": "___member_array_question_823_details___",
+            "Details_of_Disability": "0",
+            "Details_of_Injury": "0",
+            "PreviousPolicyNo": "",
+            "PreviousInsurerCode": "",
+            "PreviousPolicyStartDate": "",
+            "PreviousPolicyEndDate": "",
+            "PreviousSuminsured": "",
+            "PreviousIsClaim": ""
+        }<!--InsurersDetail_End-->
+    ],
+    "MedicalLifeStyleobj": [<!--MedicalLifeStyleDetail_Start-->
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q009",
+            "Answer": "___member_array_question_780_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q019",
+            "Answer": "___member_array_question_781_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q007",
+            "Answer": "___member_array_question_782_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q013",
+            "Answer": "___member_array_question_783_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q014",
+            "Answer": "___member_array_question_784_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q005",
+            "Answer": "___member_array_question_785_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q008",
+            "Answer": "___member_array_question_786_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q004",
+            "Answer": "___member_array_question_787_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q012",
+            "Answer": "___member_array_question_788_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q010",
+            "Answer": "___member_array_question_789_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q001",
+            "Answer": "___member_array_question_790_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q018",
+            "Answer": "___member_array_question_791_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q003",
+            "Answer": "___member_array_question_792_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q011",
+            "Answer": "___member_array_question_793_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q017",
+            "Answer": "___member_array_question_794_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q002",
+            "Answer": "___member_array_question_795_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q006",
+            "Answer": "___member_array_question_796_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q015",
+            "Answer": "___member_array_question_797_details___",
+            "Remarks": "No"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "Question_Code": "Q016",
+            "Answer": "___member_array_question_798_details___",
+            "Remarks": "No"
+        }<!--MedicalLifeStyleDetail_End-->                    
+    ],
+    "PreExistingObj": [<!--PreExistingDetail_Start-->   
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE001",
+            "Remarks": "___member_array_question_799_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE002",
+            "Remarks": "___member_array_question_800_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE003",
+            "Remarks": "___member_array_question_801_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE004",
+            "Remarks": "___member_array_question_802_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE005",
+            "Remarks": "___member_array_question_803_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE006",
+            "Remarks": "___member_array_question_804_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE007",
+            "Remarks": "___member_array_question_805_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE008",
+            "Remarks": "___member_array_question_806_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE009",
+            "Remarks": "___member_array_question_807_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE010",
+            "Remarks": "___member_array_question_808_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE011",
+            "Remarks": "___member_array_question_809_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE012",
+            "Remarks": "___member_array_question_810_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE013",
+            "Remarks": "___member_array_question_811_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE014",
+            "Remarks": "___member_array_question_812_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE015",
+            "Remarks": "___member_array_question_813_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE016",
+            "Remarks": "___member_array_question_814_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE017",
+            "Remarks": "___member_array_question_815_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE018",
+            "Remarks": "___member_array_question_816_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE019",
+            "Remarks": "___member_array_question_817_details___"
+        },
+        {
+            "Member_No": "___member_array_inc___",
+            "PED_Code": "PE020",
+            "Remarks": "___member_array_question_818_details___"
+        }<!--PreExistingDetail_End-->  
+    ]
+}

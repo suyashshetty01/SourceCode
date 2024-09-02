@@ -1,0 +1,262 @@
+[
+    
+    {
+
+        "Field_Name": "product_id",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"2311\",\"10\":\"2312\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+
+        "Field_Name": "product_id_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"PRIVATE CAR\",\"10\":\"Two Wheeler\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+	 {
+
+        "Field_Name": "product_id_3",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"PC\",\"10\":\"TW\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+	{
+
+        "Field_Name": "product_id_4",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"194398713122007\",\"10\":\"194731914122007\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+	{
+        "Field_Name" : "pa_paid_driver_si_2",
+		"Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group" : "Additional_Coverage",
+        "Field_Category" : "input",
+		"Field_Parent": "pa_paid_driver_si"
+    },
+	{
+        "Field_Name" : "pa_named_passenger_si_2",
+		"Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "pa_named_passenger_si"
+    },
+	{
+        "Field_Name" : "pa_named_passenger_csi",
+		"Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type" : "integer",
+        "Field_Value": "",
+        "Field_Group": "Vehicle",
+        "Field_Category": "custom",
+        "Field_Parent": "pa_named_passenger_csi"
+    },
+	{
+        "Field_Name" : "pa_unnamed_passenger_csi",
+		"Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type" : "integer",
+        "Field_Value": "",
+        "Field_Group": "Vehicle",
+        "Field_Category": "custom",
+        "Field_Parent": "pa_unnamed_passenger_csi"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961d9"),
+        "Field_Name": "pa_unnamed_passenger_si_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "pa_unnamed_passenger_si"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961da"),
+        "Field_Name": "is_llpd",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Y\",\"no\":\"N\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961db"),
+        "Field_Name": "is_llpd_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961dc"),
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"Y\",\"renew\":\"N\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961dd"),
+        "Field_Name": "external_bifuel_type_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "external_bifuel_type"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961de"),
+        "Field_Name": "is_antitheft_fit",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Y\",\"no\":\"N\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_antitheft_fit"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961df"),
+        "Field_Name": "non_electrical_accessory_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "non_electrical_accessory"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961e0"),
+        "Field_Name": "electrical_accessory_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "electrical_accessory"
+    },
+    {
+        "_id": ObjectId("5933adaf213dae4c9264232f"),
+        "Field_Name": "addon_package_name",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "text",
+        "Field_Value": "",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_package_name"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961e2"),
+        "Field_Name": "nia_policy_excess",
+        "Field_Value": "nia_policy_excess",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "custom",
+        "Field_Group": "Policy",
+        "Field_Category": "vehicle",
+        "Field_Parent": "nia_policy_excess"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961e3"),
+        "Field_Name": "nia_total_idv",
+        "Field_Value": "nia_total_idv",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "custom",
+        "Field_Group": "Policy",
+        "Field_Category": "vehicle",
+        "Field_Parent": "nia_total_idv"
+    },
+    {
+        "_id": ObjectId("5933adff213dae4c92642330"),
+        "Field_Id": "",
+        "Field_Name": "vehicle_manf_date_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "date",
+        "Field_Value": "yyyy",
+        "Field_Group": "Customer",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_manf_date"
+    },
+    {
+        "_id": ObjectId("5933ae84213dae4c92642331"),
+        "Field_Name": "external_bifuel_value_2",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "external_bifuel_value"
+    },
+    {
+        "_id": ObjectId("5933a5c143bc5a19a0c961e4"),
+        "Field_Name": "nia_total_accessories",
+        "Field_Value": "nia_total_accessories",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "custom",
+        "Field_Group": "Policy",
+        "Field_Category": "vehicle",
+        "Field_Parent": "nia_total_accessories"
+    },
+	{
+		"Field_Name": "policyHoldercode",
+        "Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type": "custom",
+        "Field_Value": "{}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "policyHoldercode"
+	},
+	{
+        "Field_Name" : "is_financed_2",
+		"Insurer_ID": "12",
+        "Product_Id": "1",
+        "Field_Type" : "list_key",
+        "Field_Value" : "{\"yes\":\"FINANCIER\",\"no\":\"\"}",
+        "Field_Group" : "Vehicle",
+        "Field_Category" : "input",
+		 "Field_Parent": "is_financed"
+    },
+]

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl" xmlns:ns2="http://com/bajajallianz/motWebPolicy/WebServicePolicy.wsdl/types/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <SOAP-ENV:Body>
+        <ns1:calculateMotorPremiumSig>
+            <pUserId>bajajwebservice@policyboss.com</pUserId>
+            <pPassword>newpas12</pPassword>
+            <pVehicleCode>38164225</pVehicleCode>
+            <pCity>MUMBAI</pCity>
+            <pWeoMotPolicyIn_inout>
+                <ns2:vehicleTypeCode>22</ns2:vehicleTypeCode>
+                <ns2:vehicleSubtype>2.3 VTi AUTO TRANSMISSION</ns2:vehicleSubtype>
+                <ns2:elecAccTotal>0</ns2:elecAccTotal>
+                <ns2:addLoadingOn></ns2:addLoadingOn>
+                <ns2:nonElecAccTotal>0</ns2:nonElecAccTotal>
+                <ns2:polType>1</ns2:polType>
+                <ns2:registrationNo></ns2:registrationNo>
+                <ns2:partnerType></ns2:partnerType>
+                <ns2:ncb>0</ns2:ncb>
+                <ns2:prvClaimStatus>0</ns2:prvClaimStatus>
+                <ns2:registrationDate>20-JUL-2017</ns2:registrationDate>
+                <ns2:miscVehType>0</ns2:miscVehType>
+                <ns2:fuel>P</ns2:fuel>
+                <ns2:chassisNo>12378956</ns2:chassisNo>
+                <ns2:contractId>0</ns2:contractId>
+                <ns2:yearManf>2017</ns2:yearManf>
+                <ns2:spDiscRate></ns2:spDiscRate>
+                <ns2:cubicCapacity>2254</ns2:cubicCapacity>
+                <ns2:regiLocOther>MUMBAI</ns2:regiLocOther>
+                <ns2:addLoading></ns2:addLoading>
+                <ns2:vehicleSubtypeCode>8</ns2:vehicleSubtypeCode>
+                <ns2:prvPolicyRef>123123123</ns2:prvPolicyRef>
+                <ns2:vehicleMake>HONDA</ns2:vehicleMake>
+                <ns2:autoMembership></ns2:autoMembership>
+                <ns2:termStartDate>05-Jul-2017</ns2:termStartDate>
+                <ns2:carryingCapacity>5</ns2:carryingCapacity>
+                <ns2:termEndDate>04-AUG-2018</ns2:termEndDate>
+                <ns2:hypo></ns2:hypo>
+                <ns2:branchCode>9906</ns2:branchCode>
+                <ns2:prvNcb>0</ns2:prvNcb>
+                <ns2:vehicleMakeCode>107</ns2:vehicleMakeCode>
+                <ns2:vehicleIdv>0</ns2:vehicleIdv>
+                <ns2:prvInsCompany>0</ns2:prvInsCompany>
+                <ns2:engineNo>98765314</ns2:engineNo>
+                <ns2:product4digitCode>1801</ns2:product4digitCode>
+                <ns2:color></ns2:color>
+                <ns2:vehicleModel>ACCORD</ns2:vehicleModel>
+                <ns2:vehicleType>Private Car</ns2:vehicleType>
+                <ns2:prvExpiryDate></ns2:prvExpiryDate>
+                <ns2:tpFinType></ns2:tpFinType>
+                <ns2:deptCode>18</ns2:deptCode>
+                <ns2:vehicleModelCode>33</ns2:vehicleModelCode>
+                <ns2:registrationLocation>MUMBAI</ns2:registrationLocation>
+                <ns2:zone>A</ns2:zone>
+            </pWeoMotPolicyIn_inout>
+            <accessoriesList_inout/>
+            <paddoncoverList_inout>
+                <ns2:WeoMotGenParamUser/>
+                <ns2:WeoMotGenParamUser/>
+                <ns2:WeoMotGenParamUser/>
+                <ns2:WeoMotGenParamUser/>
+                <ns2:WeoMotGenParamUser/>
+                <ns2:WeoMotGenParamUser/>
+            </paddoncoverList_inout>
+            <motExtraCover>
+                <ns2:sideCarValue xsi:nil="true"/>
+                <ns2:covernoteNo xsi:nil="true"/>
+                <ns2:noOfTrailers xsi:nil="true"/>
+                <ns2:subImdcode xsi:nil="true"/>
+                <ns2:covernoteDate xsi:nil="true"/>
+                <ns2:cngValue>0</ns2:cngValue>
+                <ns2:fibreGlassValue xsi:nil="true"/>
+                <ns2:voluntaryExcess>0</ns2:voluntaryExcess>
+                <ns2:totalTrailerValue xsi:nil="true"/>
+                <ns2:extraField1 xsi:nil="true"/>
+                <ns2:sumInsuredTotalNamedPa xsi:nil="true"/>
+                <ns2:geogExtn xsi:nil="true"/>
+                <ns2:noOfPersonsLlo>0</ns2:noOfPersonsLlo>
+                <ns2:noOfEmployeesLle xsi:nil="true"/>
+                <ns2:extraField2 xsi:nil="true"/>
+                <ns2:extraField3 xsi:nil="true"/>
+                <ns2:sumInsuredPa>0</ns2:sumInsuredPa>
+                <ns2:noOfPersonsPa>0</ns2:noOfPersonsPa>
+            </motExtraCover>
+            <pQuestList_inout/>
+            <pDetariffObj_inout/>
+            <premiumDetailsOut_out/>
+            <premiumSummeryList_out/>
+            <pError_out/>
+            <pErrorCode_out></pErrorCode_out>
+            <pTransactionId_inout></pTransactionId_inout>
+            <pTransactionType></pTransactionType>
+            <pContactNo></pContactNo>
+        </ns1:calculateMotorPremiumSig>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

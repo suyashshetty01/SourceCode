@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body xmlns:ns1="http://iims.services/types/">
+      <ns1:fetchDocumentNameElement>
+         <ns1:userCode>POLICYBOSS</ns1:userCode>
+         <ns1:docs>
+            <ns1:value/>
+            <ns1:name/>
+         </ns1:docs>
+         <ns1:indexType>
+            <ns1:index/>
+            <ns1:type/>
+         </ns1:indexType>
+         <ns1:policyId>54913620611112016</ns1:policyId>
+      </ns1:fetchDocumentNameElement>
+   </soapenv:Body>
+</soapenv:Envelope>

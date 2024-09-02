@@ -1,0 +1,29 @@
+{
+    "quote_id": "___insurer_customer_identifier___",
+    "rm_code": "___rm_code___",
+    "pro_policy_start_dt": "___policy_start_date___",
+    "remarks": "fqwed",
+    "gstin_no": "___gstin___",
+    "producer_rm_name": "fqwef",
+    "producer_rm_email_id": "___email___",
+    "organization_type": "",
+    "organization_name": "",
+    "PAN_CardNumber":"___pan___",
+    "isKYCVerified": true,
+    "kyc_data": {
+        "req_id": "___kyc_ref_no___",
+        "success": "___kyc_success___",
+        "error_message": null,
+        "ckyc_remarks": "OK",
+        "result": {
+            "FATHERS_NAME": "",
+            "KYC_DATE": "___kyc_date___",
+            "UPDATED_DATE": "___kyc_date___",
+            "registered_name": "___kyc_registered_name___",
+            "age": "___kyc_age___",
+            "ckyc_number": "___kyc_no___",
+            "p_address": ___kyc_c_address___,
+            "c_address": ___kyc_p_address___
+        }
+    }
+}

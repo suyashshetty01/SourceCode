@@ -1,0 +1,112 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:GetUWDecision>
+            <tem:strXML> 
+                <![CDATA[
+                <APPLICATION_FORM>
+                    <CUST_PIVOTAL_APP_ID>___customer_id___</CUST_PIVOTAL_APP_ID>
+                    <CUST_NATIONALITY>Indian</CUST_NATIONALITY>
+                    <CUST_SUM_INSURED>___health_insurance_si___</CUST_SUM_INSURED>
+                    <CONT_PLAN_ID>___planCode___</CONT_PLAN_ID>
+                    <CUST_RENEW_FLAG>N</CUST_RENEW_FLAG>
+                    <PIV_RENEW_TYPE />
+                    <PARENT_APP_ID />
+                    <PREV_CONT_PLAN_ID />
+                    <MB_IS_PORTABILITY>No</MB_IS_PORTABILITY>
+                    <SOURCE_SYSTEM>Landmark</SOURCE_SYSTEM>
+                    <CHANNEL>TPD</CHANNEL>
+                    <SUB_CHANNEL />
+                    <CITY_NAME>MUMBAI</CITY_NAME>
+                    <AGENT_CODE>BR00330027</AGENT_CODE>
+                    <AGENT_DOJ />
+                    <AGENT_EDUCATION />
+                    <AGENT_WORK_SCHEDULE />
+                    <CUST_EDUCATION/>
+                    <CUST_OCCUPATION>___member_1_occupation___</CUST_OCCUPATION>
+                    <CONT_BUPA_BRANCH_LOC>NOC</CONT_BUPA_BRANCH_LOC>
+                    <PERMANENT_CITY_NAME>MUMBAI</PERMANENT_CITY_NAME>
+                    <CUST_IS_PEP>___proposer_pep___</CUST_IS_PEP>
+                    <CUST_PIN_CODE>___permanent_pincode___</CUST_PIN_CODE>
+                    <CUST_IS_DEDUCTIBLE></CUST_IS_DEDUCTIBLE>
+                    <PA_COVER>0</PA_COVER>
+                    <PA_OCCUPATION>NO</PA_OCCUPATION>
+                    <CI_COVER>0</CI_COVER>
+                    <IS_EXISTING_POLICY>NO</IS_EXISTING_POLICY>
+                    <INSURED_DETAILS>
+                    <!--InsurersDetail_Start-->
+                        <INSURED_DETAIL>
+                            <PIV_MBR_ID>___member_array_id___</PIV_MBR_ID>
+                            <MBR_MBRSHP_NO />
+                            <WDMS_DEDUPE_MBR_ID />
+                            <MBR_DOB>___member_array_dob___</MBR_DOB>
+                            <MBR_HEIGHT>___member_array_height___</MBR_HEIGHT>
+                            <MBR_WEIGHT>___member_array_weight___</MBR_WEIGHT>
+                            <MBR_NATIONALITY>Indian</MBR_NATIONALITY>
+                            <MBR_PROPOSER_RELATION>___member_array_relation___</MBR_PROPOSER_RELATION>
+                            <MBR_EDUCATION></MBR_EDUCATION>
+                            <MBR_OCCUPATION>___member_1_occupation___</MBR_OCCUPATION>
+                            <MBR_PAST_PROPOSAL>___member_array_question_37_details___</MBR_PAST_PROPOSAL>
+                            <MBR_IS_PEP>___member_array_pep___</MBR_IS_PEP>
+                            <MBR_SEX>___member_array_gender_3___</MBR_SEX>
+                            <FAMILY_HISTORY>No</FAMILY_HISTORY>
+                            <MBR_CURRENTLY_PREGNANT>No</MBR_CURRENTLY_PREGNANT>
+                            <TOBACCO_ANSWER>___member_array_question_39_main___</TOBACCO_ANSWER>
+                            <ALCOHOL_ANSWER>___member_array_question_40_main___</ALCOHOL_ANSWER>
+                            <SMOKING_ANSWER>___member_array_question_38_main___</SMOKING_ANSWER>
+                            <TOBACCO_QTY>___member_array_question_39_details___</TOBACCO_QTY>
+                            <ALCOHOL_QTY>___member_array_question_40_details___</ALCOHOL_QTY>
+                            <IS_DAILY_DRINKER>___member_array_question_41_details___</IS_DAILY_DRINKER>
+                            <SMOKING_QTY>___member_array_question_38_details___</SMOKING_QTY>
+                            <MBR_PA_COVER></MBR_PA_COVER>
+                            <MBR_PA_OCCUPATION />
+                            <MBR_CI_COVER />
+                            <MBR_CI_MEDICAL_QUES />
+                            <MEDICAL_SF_QUESTIONS>
+                                <SF_QUESTION_1>___member_array_question_31_details___</SF_QUESTION_1>
+                                <SF_QUESTION_2>___member_array_question_32_details___</SF_QUESTION_2>
+                                <SF_QUESTION_3>___member_array_question_33_details___</SF_QUESTION_3>
+                                <SF_QUESTION_4>___member_array_question_34_details___</SF_QUESTION_4>
+                                <SF_QUESTION_5>___member_array_question_35_details___</SF_QUESTION_5>
+                                <SF_QUESTION_6>___member_array_question_36_details___</SF_QUESTION_6>
+                                <SF_QUESTION_7>___member_array_question_37_details___</SF_QUESTION_7>
+                            </MEDICAL_SF_QUESTIONS>
+                            <ADDITIONAL_MEDICAL_DETAIL>
+                                <QUESTION></QUESTION>
+                                <SYMPTOMS>___member_array_additionalQue_1_subQue_1___</SYMPTOMS>
+                                <SYMPTOMS_DATE>___member_array_additionalQue_1_subQue_2___</SYMPTOMS_DATE>
+                                <TREATMENT>___member_array_additionalQue_1_subQue_3___</TREATMENT>
+                                <OUTCOME_TREATMENT>___member_array_additionalQue_1_subQue_4___</OUTCOME_TREATMENT>
+                                <DETAILS_OF_DOCTOR_OR_HOSPITAL>___member_array_additionalQue_1_subQue_5___</DETAILS_OF_DOCTOR_OR_HOSPITAL>
+                                <DURATION_CONDITION />
+                                <DOSAGE>___member_array_additionalQue_1_subQue_7___</DOSAGE>
+                                <HBA1C_LEVEL>___member_array_additionalQue_1_subQue_8___</HBA1C_LEVEL>
+                                <BP_DYSTOLIC>___member_array_additionalQue_1_subQue_10___</BP_DYSTOLIC>
+                                <BP_SYSTOLIC>___member_array_additionalQue_1_subQue_9___</BP_SYSTOLIC>
+                            </ADDITIONAL_MEDICAL_DETAIL>
+                            <!--___member_array_block2_Start-->
+                            <ADDITIONAL_MEDICAL_DETAIL>
+                                <QUESTION></QUESTION>
+                                <SYMPTOMS>___member_array_additionalQue_2_subQue_1___</SYMPTOMS>
+                                <SYMPTOMS_DATE>___member_array_additionalQue_2_subQue_2___</SYMPTOMS_DATE>
+                                <TREATMENT>___member_array_additionalQue_2_subQue_3___</TREATMENT>
+                                <OUTCOME_TREATMENT>___member_array_additionalQue_2_subQue_4___</OUTCOME_TREATMENT>
+                                <DETAILS_OF_DOCTOR_OR_HOSPITAL>___member_array_additionalQue_2_subQue_5___</DETAILS_OF_DOCTOR_OR_HOSPITAL>
+                                <DURATION_CONDITION />
+                                <DOSAGE>___member_array_additionalQue_2_subQue_7___</DOSAGE>
+                                <HBA1C_LEVEL>___member_array_additionalQue_1_subQue_8___</HBA1C_LEVEL>
+                                <BP_DYSTOLIC>___member_array_additionalQue_1_subQue_10___</BP_DYSTOLIC>
+                                <BP_SYSTOLIC>___member_array_additionalQue_1_subQue_9___</BP_SYSTOLIC>
+                            </ADDITIONAL_MEDICAL_DETAIL>
+                            <!--___member_array_block2_End-->
+                        </INSURED_DETAIL>
+                        <!--InsurersDetail_End-->
+                    </INSURED_DETAILS>
+                </APPLICATION_FORM>
+                ]]> 
+            </tem:strXML>
+            <!--Optional:-->
+            <tem:AccessKey>UseQlVYMBLMRfIVQoTGm8oboCDRYTlEqK58DvKTWbYdChxJppMvbc+uRDRzuL7Bar9c1Bo5v2M9pgQ4a81ifAsNT7yQOmgB2yLT9YtyddFx3g5nGt85InFIz4O7YMomapmLTlz//uAQzpooex1jm0eBNfi1o2D+TINCsrpXiI5i7BDUwGF6rZTOYqWY0L/2XbNGocRkzfV6SjdM8de9yKqiIVMCgxVuiwORIQ92ex3Nwej7EK97kVqVXGaj+fviPJ8EDn7FOE7FDo/CaGC4YJkfdnfo7grNWzXIWKuWT6wTocPv1GxoS2rIAw4IvU4hE</tem:AccessKey>
+        </tem:GetUWDecision>
+    </soapenv:Body>
+</soapenv:Envelope>

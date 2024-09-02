@@ -1,0 +1,46 @@
+<<PCVPremiumCalc>
+    <agentcode>___insurer_integration_agent_code___</agentcode>
+    <basedon_IDV_ExShowRoom>1</basedon_IDV_ExShowRoom>
+    <policy_type>C</policy_type>
+    <tp_end_date>___policy_end_date___</tp_end_date>
+    <typeofbusiness>___vehicle_insurance_type___</typeofbusiness>
+    <!--IND_START-->
+    <occupationtype>1</occupationtype>
+    <custage>Up to 35</custage> 
+    <!--IND_FINISH-->
+    <policystartdate>___policy_start_date___</policystartdate>
+    <policyenddate>___policy_end_date___</policyenddate>
+    <rtolocationcode>___dbmaster_insurer_rto_city_code___</rtolocationcode>
+    <vehiclemodelcode>___dbmaster_insurer_vehicle_model_code___</vehiclemodelcode>
+    <manufacturer_code>___dbmaster_insurer_vehicle_make_code___</manufacturer_code>
+    <purchaseregndate>___vehicle_registration_date___</purchaseregndate>
+    <exshowroomprice>___dbmaster_insurer_vehicle_exshowroom___</exshowroomprice>
+    <Sum_Insured>___vehicle_expected_idv___</Sum_Insured>
+    <electicalacc>___electrical_accessory___</electicalacc>
+    <nonelecticalacc>___non_electrical_accessory___</nonelecticalacc>
+    <nooflldrivers>___is_llpd___</nooflldrivers>
+    <paiddriversi>___pa_paid_driver_si___</paiddriversi> 
+    <noofemployees>0</noofemployees> 
+    <unnamedsi>___pa_unnamed_passenger_si___</unnamedsi>
+    <lpg_cngkit>___external_bifuel_value___</lpg_cngkit> 
+    <IsPreviousClaim>___is_claim_exists___</IsPreviousClaim> 
+    <previousdiscount>___vehicle_ncb_current___</previousdiscount>
+    <prepolstartdate>___pre_policy_start_date___</prepolstartdate>
+    <prepolicyenddate>___policy_expiry_date___</prepolicyenddate>
+    <txt_plan_type></txt_plan_type>
+    <txt_cust_type>___vehicle_registration_type___</txt_cust_type>
+    <is_pa_cover_owner_driver>___vehicle_registration_type_2___</is_pa_cover_owner_driver>
+    <num_is_zero_dept>___addon_zero_dep_cover___</num_is_zero_dept>
+    <manufacturingyear>___vehicle_manf_year___</manufacturingyear>
+    <page_calling>1</page_calling>
+    <num_is_rti>___addon_invoice_price_cover___</num_is_rti>
+    <AddOnCovers>
+        <Premium_Year>___policy_od_tenure___</Premium_Year>
+        <num_is_emr_asst_cvr>___addon_road_assist_cover___</num_is_emr_asst_cvr>
+        <num_is_emr_asst_wider_cvr>___addon_road_assist_cover___</num_is_emr_asst_wider_cvr>
+        <is_ncb_protection>___addon_ncb_protection_cover___</is_ncb_protection>
+        <is_engine_gear_box_protection>___addon_engine_protector_cover___</is_engine_gear_box_protection>
+        <is_cost_of_consumable>___addon_consumable_cover___</is_cost_of_consumable>
+        <is_loss_of_use_down_protection>___addon_losstime_protection_cover___</is_loss_of_use_down_protection>
+    </AddOnCovers>
+</PCVPremiumCalc>

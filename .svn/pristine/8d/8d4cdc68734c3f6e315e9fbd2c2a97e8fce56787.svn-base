@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetPDF>
+         <tem:PolicyNO>___policy_number___</tem:PolicyNO>
+      </tem:GetPDF>
+   </soapenv:Body>
+</soapenv:Envelope>

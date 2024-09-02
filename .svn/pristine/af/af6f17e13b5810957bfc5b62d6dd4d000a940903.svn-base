@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tem:GetSignPolicyPDF>
+            <tem:strUserId>___insurer_integration_agent_code___</tem:strUserId>
+            <tem:strPassword>___insurer_integration_location_code___</tem:strPassword>
+            <tem:strProdType>two wheeler (T)</tem:strProdType>
+            <tem:strPolicyNo>___policy_number___</tem:strPolicyNo>
+            <tem:strPolicyIssueTime>___current_date___</tem:strPolicyIssueTime>
+            <tem:strTransactionID>___transaction_id___</tem:strTransactionID>
+            <tem:strTransactionRef>___pg_reference_number_1___</tem:strTransactionRef>
+            <tem:strCustomerName>___first_name__</tem:strCustomerName>
+            <tem:strPolicyPDF>___pdf_binary_data___</tem:strPolicyPDF>
+        </tem:GetSignPolicyPDF>
+    </soapenv:Body>
+</soapenv:Envelope>

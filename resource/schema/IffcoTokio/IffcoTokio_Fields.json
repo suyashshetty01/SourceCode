@@ -1,0 +1,62 @@
+[
+	{
+		"Field_Name": "external_bifuel_type_2",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+		"Field_Type": "hidden",
+		"Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+		"Field_Group": "Vehicle",
+		"Field_Category": "input",
+		"Field_Parent": "external_bifuel_type"
+	},
+	{
+      "Field_Name" : "is_llpd",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+      "Field_Type" : "list_val",
+      "Field_Value" : "{\"yes\":\"Y\",\"no\":\"N\"}",
+      "Field_Group" : "Additional_Coverage",
+      "Field_Category" : "input",
+	  		"Field_Parent": "is_llpd"
+    },{
+		"Field_Name": "pa_unnamed_passenger_si_2",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+		"Field_Type": "hidden",
+		"Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+		"Field_Group": "Additional_Coverage",
+		"Field_Category": "input",
+		"Field_Parent": "pa_unnamed_passenger_si"
+	}, 
+	{
+        "Field_Name" : "pa_owner_driver_si_2",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+        "Field_Type" : "hidden",
+        "Field_Value": "{\"empty\":\"N\",\"not_empty\":\"Y\"}",
+		"Field_Group": "Additional_Coverage",
+		"Field_Category": "input",
+		"Field_Parent": "pa_unnamed_passenger_si"
+    },
+	{
+      "Field_Name" : "is_antitheft_fit",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+      "Field_Type" : "list_val",
+      "Field_Value" : "{\"yes\":\"Y\",\"no\":\"N\"}",
+      "Field_Group" : "Discount",
+      "Field_Category" : "input",
+		"Field_Parent": "is_antitheft_fit"
+    },
+	{
+      "Field_Name" : "is_aai_member",
+		"Insurer_ID": "7",
+		"Product_Id": "1",
+      "Field_Type" : "list_val",
+      "Field_Value" : "{\"yes\":\"Y\",\"no\":\"N\"}",
+      "Field_Group" : "Discount",
+      "Field_Category" : "input",
+		"Field_Parent": "is_aai_member"
+    }
+	
+]

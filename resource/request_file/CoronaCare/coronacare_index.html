@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title class="title"></title>
+	<meta content='width=device-width,initial-scale=1, minimum-scale=1.0' name='viewport'>
+
+	<link rel="stylesheet" href="css/CoronaCare.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+	<script src="js/CoronaCare.js"></script>
+
+</head>
+
+<body>
+	<div class="successPopup">
+		<div class="successMsg">
+			<div class="sentLink">
+				<p><i class="fa fa-check" aria-hidden="true"></i></p>
+				<p>Link sent Successfully</p>
+				<p>CRN : <span class="showCRN"></span></p>
+				<button class="btn okBtn" onclick="hidepopup()">OK</button>
+			</div>
+			<div class="ErrorLink">
+				<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
+				<p>Link can not sent</p>
+				<p>CRN : <span class="showCRN"></span></p>
+				<button class="btn ErrorBtn" onclick="hidepopup()">OK</button>
+			</div>
+
+		</div>
+	</div>
+	<section id="CoronaCare">
+		<div id="loader">
+			<img src="images/corona/search-loader.gif">
+		</div>
+		<div class="container_fluid">
+			<div class="navItem">
+				<nav>
+					<a class="Dashboardnav" onclick="showDashBoard()">
+						<img src="images/corona/list-(1).png" id="menu1" alt="" style="margin:-2px;width:20px;float: left;">
+					</a>
+					<a class="Inputnav ActiveItem"><div class="Input_nav">INPUT</div></a>
+				</nav>
+			</div>
+		</div>
+
+		<section id="InputPage">
+			<div class="container-fluid">
+				<div class="info_section">
+				<form  style="padding-top: 30px;"method="post" action="http://horizon.policyboss.com:5000/product_share/product_share_url"  id="uploadForm"  >
+				<div>
+					<img src="images/corona_care_landing.jpeg" style="width:100%;padding-top: 40px;">
+				</div>
+					<!-- <div class="info_content">
+						<h4 style="padding-top:20px;">Customer Detail : </h4>
+						<div class="grid_info_div" style="margin: 10px 0px 10px 0px;">
+							<div>
+								<label>Salutation : </label>
+								<select id="Salutation" style="width:90%;">
+									<option value="">Salutation</option>
+									<option value="Mr">Mr.</option>
+									<option value="Miss">Miss.</option>
+									<option value="Mrs">Mrs.</option>
+								</select>
+							</div>
+							<div class="selectDate">
+								<label>Name : </label>
+								<input type="text" placeholder="Name" id="Name" name="Name" onkeyup="trimValue(event)" maxlength="40" class="form-control"
+								 autocomplete="off" style="width:90%" required>
+							</div>
+						</div>
+						<div class="grid_info_div" style="margin:20px 0px;">
+							<div class="selectDate">
+								<label>Mobile : </label>
+								<input type="number" placeholder="Mobile" maxlength="10" onKeyPress="if(this.value.length==10) return false;" onkeyup="ValidateNumber(event)"
+								 pattern="[0-9]*" id="mobile" name="mobile" autocomplete="off" class="form-control" style="width:90%" required>
+							</div>
+							<div class="selectDate">
+								<label>Email : </label>
+								<input type="text" placeholder="Email" class="form-control" id="Email" style="width:85%">
+							</div>
+						</div>
+						<div id="CheckMblno" style="color:red;font-size: 11px;"></div>
+
+						<div>
+							<h4>Plan Options : </h4>
+							<table style="width:48.5%;float: left;margin-bottom:12px;">
+								<thead>
+									<tr>
+										<th>COVER AMOUNT (INR)</th>
+										<th>PREMIUM</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="radio" onclick="coverPremium(25000,253)" name="radiobtn" value="25,000"><span>25,000</span></td>
+										<td>253</td>
+									</tr>
+									<tr>
+										<td><input type="radio" onclick="coverPremium(50000,507)" name="radiobtn" value="50,000"><span>50,000</span></td>
+										<td>507</td>
+									</tr>
+									<tr>
+										<td><input type="radio" onclick="coverPremium(75000,760)" name="radiobtn" value="75,000"><span>75,000</span></td>
+										<td>760</td>
+									</tr>
+									<tr>
+										<td><input type="radio" onclick="coverPremium(100000,1014)" name="radiobtn" value="1,00,000"><span>1,00,000</span></td>
+										<td>1,014</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<table style="width:48.5%;float: right;margin-bottom:12px;">
+								<thead>
+									<tr>
+										<th>COVER AMOUNT (INR)</th>
+										<th>PREMIUM</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+											<td><input type="radio" onclick="coverPremium(125000,1267)" name="radiobtn" value="1,25,000"><span>1,25,000</span></td>
+											<td>1,267</td>
+									</tr>
+									<tr>
+											<td><input type="radio" onclick="coverPremium(150000,1520)" name="radiobtn" value="1,50,000"><span>1,50,000</span></td>
+											<td>1,520</td>
+									</tr>
+									<tr>
+											<td><input type="radio" onclick="coverPremium(175000,1774)" name="radiobtn" value="1,75,000"><span>1,75,000</span></td>
+											<td>1,774</td>
+									</tr>
+									<tr>
+											<td><input type="radio" onclick="coverPremium(200000,2027)" name="radiobtn" value="2,00,000"><span>2,00,000</span></td>
+											<td>2,027</td>
+									</tr>
+								</tbody>
+							</table>
+							<div style="color:#333;font-size: 11px;"><b> *Note : </b>Premium is excl. of GST</div>
+							<div id="CheckedRadioBtn" style="color:red;font-size: 11px;"></div>
+						</div>
+						<div>
+							<h4>Product USP : </h4>
+							<table class="ProdUSP">
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Cover start after 15 days</td>
+										<td rowspan="7" style="padding:0px !important">
+											<img src="images/corona/digit.png">
+											<img src="images/corona/image004.jpg">
+											<button class="brochure" ><a class="brochure" href="https://www.policyboss.com/CoronaCare/CoronaCarePolicyWording.pdf" style="text-decoration:none;" target="_blank">BROCHURE</a></button>
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Zero Survival period</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Get 100% of Cover amount as lumpsum on detection</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>50% lumpsum for quarantine</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>Instant policy</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>No Medical required</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>Same premium for all age group</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="form_Error" style="color:red;"></div>
+					</div>
+ 
+					<div class="footer_section">
+						<button class="SendLink" onclick="checkInformValidation()">Send Link</button>
+					</div>-->
+					
+					<div class="footer_section">
+						<button type="button" onclick="paynow();" class="SendLink" >Pay Now</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section id="warning_msg">
+			<div class="warningmsg">
+				<h3 style="text-align: center; color: red;"><u>Error</u></h3>
+				<h3 style="text-align: center;" id="warningerror">ss_id, fba_id,app_version is mandatory</h3>
+				<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+                <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 700;font-size: 16px;" id="error_query_str"></div>
+			</div>
+		</section>
+	</section>
+	<section id="Dashboard">
+		<div class="container_fluid">
+			<div class="DashboardnavItem">
+				<nav>
+						<div><a class="Quotenav ActivenavItem" onclick="quoteClick()">SENT LINK</a></div>
+						<div><a class="Applicationnav" onclick="applicationClick()">PROPOSAL</a></div>
+						<div><a class="Completenav" onclick="completeClick()">COMPLETED</a></div>
+				</nav>
+			</div>
+			<div class="searchbar">
+				<div class="grab">
+					<span class="ad_quote" onclick="showInput()">
+						<img src="images/corona/file.png"> Add Quote
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="DashboardSec">
+			<div class="info_section" id="quoteId">
+			
+			</div>
+			<div class="info_section" id="applicationId">				
+			</div>
+			<div class="info_section" id="completeId">								
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

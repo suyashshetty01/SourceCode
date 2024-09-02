@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+        <title>Finmart-Dashboard</title>
+        <link href="dashboard.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    </head>
+
+    <body>
+        <div class="more_details_section">
+            <div class="more_details_block">
+                <div style="border-bottom:1px solid #c9c9c9;padding-bottom:6px;">
+                    <h4 style="display: inline">Details</h4>
+                    <span class="close_details_popup popupClosed">&times;</span>
+                </div>
+                <div style="padding:10px 5px;font-size:13px">
+                    <table class="details_table" id="sync_more_detail">
+                        <tr>
+                            <th>Sync Contact ErpId</th>
+                            <td id="td_sync_Sync_Contact_Erp_Data_Id"></td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td id="td_sync_name"></td>
+                        </tr>
+                        <tr>
+                            <th>Contact Number</th>
+                            <td id="td_sync_mobile"></td>
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td id="td_sync_city"></td>
+                        </tr>
+                        <tr>
+                            <th>Make</th>
+                            <td id="td_sync_make"></td>
+                        </tr>
+                        <tr>
+                            <th>Model</th>
+                            <td id="td_sync_model"></td>
+                        </tr>
+                        <tr>
+                            <th>Product</th>
+                            <td id="td_sync_product"></td>
+                        </tr>
+                        <tr>
+                            <th>Policy expiry date</th>
+                            <td id="td_sync_policy_expiry_date"></td>
+                        </tr>
+                        <tr>
+                            <th>Registration no</th>
+                            <td id="td_sync_registration_no"></td>
+                        </tr>
+                        <tr>
+                            <th>Sync Name</th>
+                            <td id="td_sync_sync_name"></td>
+                        </tr>
+                        <tr>
+                            <th>YOM</th>
+                            <td id="td_sync_yom"></td>
+                        </tr>
+                        <tr>
+                            <th>Tele support yes/no ?</th>
+                            <td id="td_sync_tel_support">
+                                <input type="radio" id="tele_yes"  name="tele_support"><label for="tele_yes">Yes</label>
+                                <input type="radio" id="tele_no"  name="tele_support"><label for="tele_no">No</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Remark</th>
+                            <td ><textarea rows="3" cols="30"id="td_sync_remark" ></textarea></td>
+                        </tr>
+
+                    </table>
+                    <div style="text-align: center;padding-top: 12px;">
+                        <button id="btn_update" onclick="SyncData_Update()" >Update</button> 
+                        <button id="btn_closed"  class="popupClosed" >Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sync_contact_calling_section" >
+            <div class="sync_contact_calling_block">
+                <!-- <div class="close_contact_calling">&times;</div> -->
+                <div class="contact_calling_div">
+                    <h4 style="margin-bottom:4px;">Consent For Sync Contact Calling</h4>
+                    <p>
+                        Dear Partner, Thank you for enrolling for our Sync Contact feature. As you are aware this is a powerful tool for building your motor insurance business. And we congratulate you for realising the potential of this powerful tool. We are now offering two additional options to you to help you. You can convert these leads easily by sending SMS messages and calling these customers. We now offer to do both for you. We will call and convert these leads for you. As with all Sync Contact features this feature is also voluntary and you need to opt in for the same. If you are interested in opting for this feature please provide your consent in the form below. Thank You.
+                    </p>
+                    <p style="color:red">* Required</p>
+                </div>
+                <div class="contact_calling_div" style="margin:8px 0px;">
+                    <p>
+                        Yes I would like topt for the following additional features <span style="color:red">*</span>
+                    </p>
+
+                    <div style="display:grid;grid-template-columns:70px 1fr;margin:5px 0px;">
+                        <div style="padding:5px 0px;">
+							<button class="btn_yes " id="btn_sms_yes" onclick="CheckSMS('yes');">Yes</button>
+							<button class="btn_no" id="btn_sms_no" onclick="CheckSMS('no');">No</button>
+							<!-- <input id="chk_sms" type="checkbox" class="checkbox_check" name="c1" style="width:16px;height:16px;"> -->
+						</div>
+                        <div style="font-size:13px;">
+                            Finmart team can send SMS to my customers whose vehicle insurance is due
+                        </div>
+						
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr;margin:5px 0px;">
+                        <div style="padding:5px 0px;">
+							<button class="btn_yes" id="btn_call_yes" onclick="CheckCall('yes');" >Yes</button>
+							<button class="btn_no" id="btn_call_no" onclick="CheckCall('no');">No</button>
+							<!-- <input  id="chk_call" type="checkbox" name="c1" class="checkbox_check" style="width:16px;height:16px;"> -->
+						</div>
+                        <div style="font-size:13px;">
+                            Finmart team can call my customers whose vehicle insurance is due
+                        </div>
+                    </div>
+                    <!-- <div style="display:grid;grid-template-columns:40px 1fr;margin:5px 0px;"> -->
+                    <!-- <div style="padding:5px 0px;"><input type="checkbox" name="c1" class="checkbox_check" style="width:16px;height:16px;"></div> -->
+                    <!-- <div style="font-size:13px;"> -->
+                    <!-- Finmart team can send SMS & can Call my customers whose vehicle insurance is due -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+                <div class="contact_calling_div" style="margin:8px 0px;">
+                    <div style="display:grid;grid-template-columns:40px 1fr;margin:5px 0px;">
+                        <div style="padding:5px 0px;">
+							<input type="checkbox" id="chk_online_agreement" name="online_agreement" id="online_agreement" class="checkbox_check" style="width:16px;height:16px;">
+						</div>
+                        <div style="font-size:13px;">
+                            I hereby agree to the terms & conditions of the purchase of this policy.
+                        </div>
+                    </div>
+                </div>
+                <div class="show_errMsg" style="color:red;margin:5px;font-size:12px;"></div>
+                <div style="margin:15px 0px;text-align:center;"><button class="btn_submit" onclick="OnlineAggrementSubmit();">Submit</button></div>
+            </div>
+        </div>
+
+        <div class="Leads">
+            <div class="contactDetails">
+                <h4>My Contact Details</h4>
+                <div class="threeColGrid">
+                    <div>
+                        <span class="total_count"></span>
+                        <img src="Images/contact.png">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            </div>
+                        </div>
+                        <span class="txt">Total Contact</span>
+                    </div>
+                    <div>
+                        <span class="NoCount  landmark_count"></span>
+                        <img src="Images/link.png">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            </div>
+                        </div>
+                        <span class="txt">Total Match</span>
+                    </div>
+                    <div>
+                        <span class="NoCount  landmark_Cust_count"></span>
+                        <img src="Images/notepad.png">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            </div>
+                        </div>
+                        <span class="txt">Total Data</span>
+                    </div>
+                </div>
+            </div>
+            <div class="renewalReminder">
+                <div style="text-align:center;display:none;" id="div_buyNow" ><button class="buy_now_mainbtn">Buy Now</button></div>
+
+                <h4><div class="display_lead_count"></div></h4>
+                <div class="twoColGrid" id="append_month_contact">
+
+                </div>
+            </div>
+            <div id="contactInfo">
+                <!--   <div class="info">
+                       <i class="fa fa-times close" aria-hidden="true"></i>
+                       <h5>Renewal Reminder - January 2020</h5>
+                       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                           <tr>
+                               <th>Number</th>
+                               <th>Policy No.</th>
+                               <th>Renewal Date</th>
+                               <th>Share</th>
+                               <th>Action</th>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                           <tr>
+                               <td>9856235689</td>
+                               <td>123456789562</td>
+                               <td>12/01/2020</td>
+                               <td><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a></td>
+                               <td><span class="sendbutton">SEND</span></td>
+                           </tr>
+                       </table>
+                       <div class="right">
+                           <div class="pagination">
+                               <a href="#">&laquo;</a>
+                               <a href="#" class="active">1</a>
+                               <a href="#">2</a>
+                               <a href="#">3</a>
+                               <a href="#">&raquo;</a>
+                           </div>
+                       </div>
+                   </div>  -->
+            </div>
+        </div>
+        <!-- <div class="add_info_section1">
+                <div class="add_info_content">
+                <div class="close_info_popup" onclick="hideInfopopup()">&times;</div>
+                <input id="testpopup" name="testpopup" type="hidden" />
+                </div>
+</div> -->
+
+        <div id="dataPackage">
+            <div class="info1">
+                <i class="fa fa-times close" style="margin:10px;font-size:16px;" aria-hidden="true"></i>
+                <h3 style="margin:10px 3px;">Data Package</h3>
+                <div class="boxPackage">
+                    <p>In order to proceed further and avail the benefits of this feature,  you will require to purchase a data package, as listed below:</p>
+                    <ul class="options-list">
+                        <li><b>Package 1</b> - (0-25 @ Rs. 40 p.p.*)<br>&nbsp; <span style="font-size:11px;">* Cost excluding GST</span></li>
+                        <li><b>Package 2</b> - (26-50 @ Rs. 30 p.p.*)<br>&nbsp;<span style="font-size:11px;">* Cost excluding GST</span></li>
+                        <li><b>Package 3</b> - (51-100 @ Rs. 25 p.p.*)<br>&nbsp; <span style="font-size:11px;">* Cost excluding GST</span></li>
+                        <li><b>Package 4</b> - (101+ @ Rs. 20 p.p.*)<br>&nbsp;<span style="font-size:11px;">* Cost excluding GST</span></li>
+                    </ul>
+                    <h5>Data Package</h5>
+                    <div>
+                        <input type="text" class="inputCls policyPackage" onkeyup="policyPackage1()" placeholder="Package" id="policyPackage1"> x <input style ="border:0px;"readonly type="text" class="inputCls perPackage" placeholder="Per Package" id="perPackage1"> = <input readonly type="text" id="totalAmountPackage1" class="totalAmountPackage" style="border-width:0px;width:26%;" placeholder="Total Amount">
+                        <div class="errorMsgPackage" style="margin:7px;color:red;"></div>
+                    </div>
+                    <div style="text-align:center;"><button class="buy_now_btn">Buy Now</button></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="dashboard.js?v=09072020_1"></script>
+    </body>
+
+
+
+</html>

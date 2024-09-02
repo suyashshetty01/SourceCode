@@ -1,0 +1,299 @@
+@font-face{
+	font-family:"Poppins-Bold";
+	src:url("../Fonts/Poppins-Bold.otf");
+}
+@font-face{
+	font-family:"Poppins-Regular";
+	src:url("../Fonts/Poppins-Regular.otf");
+}
+body{font-family:Poppins-Regular;font-size: 16px;}
+.container{box-shadow: 0 0 8px grey;padding: 15px;margin-bottom: 20px;}
+.logo{height: 100px;padding: 20px 40px;}
+h1{font-family: Poppins-Bold;margin: 5px 60px;text-align: center;}
+hr{margin: 3px;background-color: #ffffff;}
+.radioBtn{margin: 10px 0;}
+
+label {
+    font-size: 12px;
+    color: #666666;
+}
+.col-md-3{padding: 0;cursor: pointer;text-align: center;}
+input,textarea,select{border: none;border-bottom: 1px solid #c3c3c3;color: #5a5a5a;font-size: 14px;background-color: transparent;}
+.VDetails label{width: 100%;position: absolute;top: 3px;left: 17px;font-size: 12px;color: gray;}
+
+.insurer label {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+}
+
+div.premium_crn {
+    position: relative;
+    top: 0;
+    font-size: 18px;
+    color: black;
+    padding: 2px 10px;
+    width: auto !important;
+    text-align: center;
+}
+.VDetails .col-md-6,.VDetails .col-md-12{margin: 20px 0 10px;}
+.VDetails input{width: 95%;}
+.VDetails select{width: 100%;}
+textarea{width: 100%;}
+#registrationNo{text-transform: uppercase;}
+input:focus,textarea:focus,button:focus,select:focus{outline: none;}
+button{background-color: #42abe7;border: 1px solid #42abe7;color: white;margin: 10px;border-radius: 5px;width: 210px;font-size: 16px;}
+button p{font-size: 14px;margin: 0;margin: 4px 0px -7px;font-weight: normal;}
+button #pay{font-size: 25px;font-weight: bold;font-family: 'Poppins-Bold';}
+.radioBtn .button{background-color: #42abe7;width: 125px;font-size: 12px;text-align: center;padding: 5px;color: white;}
+/*.radioBtn input:checked + div {background-color: #42abe7;color: white;font-weight: bold;}*/
+
+.box{
+    display: flex;
+}
+.box div{
+    margin:0 5px;
+}
+.box input{width: 65px !important;text-align: center;text-transform: uppercase;}
+.box button {
+	background-color: #42abe7;
+	width: 80px !important;
+	color: white;
+	padding: 2px 5px;
+	border-radius: 3px;
+	position: relative;
+	font-size: 14px;
+	font-family: 'Poppins-Regular';
+	margin: 0;
+	height: auto;
+	}
+.Popup_thank {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: '';
+  background: rgb(227 227 227 / 66%);
+  z-index: 1;
+}
+
+.popup {width: 100%;height: 100%;/* padding: 0; *//* transform: translate(-50%, -50%) scale(0.5); *//* position: absolute; *//* top: 50%; *//* left: 50%; *//* box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.5); *//* border-radius: 5px; *//* background: #fff; *//* text-align: center; *//* z-index: 3; */display: flex;justify-content: center;align-items: center;}
+
+.popup h1 {
+    font-size: 15px;
+    margin-block-end: 0;
+}
+.popup .closeBtn {
+display: inline-block;
+position: absolute;
+bottom: 20px;
+right: 20px;
+font-weight: bold;
+text-decoration: none;
+color: #333;
+line-height: 10px;
+}
+.loadingTxt{
+    position: absolute;
+    width: 80%;
+    height: 170px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 5px #c9c9c9;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    }
+.okBtn{
+    background-color: #42abe7;
+    color: white;
+    padding: 10px;
+    width: 70px;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    display: none;
+}
+.errorMsg{
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #bdbdbd;
+    padding: 15px 15px 25px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ebebeb;
+}
+.errorMsg h1{font-weight: 100;font-family: 'Poppins-Regular';}
+.err{border-color: red !important}
+.close{
+    font-size: 20px;
+    line-height: 1;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: none;
+    filter: alpha(opacity=20);
+    opacity: 1 !important;
+	cursor: pointer;
+    }
+
+/*Page Two*/
+.VDetails .text{font-size: 10px;color: gray;margin: 0;}
+.submit{padding: 6px;margin-top: 25px;font-size: 18px;}
+
+/* make model varient popup start */
+.Make_section,.model_section, .varient_section{width: 100%;height: 100%;color: #333!important;display: none;z-index: 999;background: rgb(49 49 49 / 17%);top: 0 !important;position: fixed;left: 0;}
+.regist_Pop{width: 500px;margin:0;}
+.Make_wrap{background: #fff;margin: 0;text-align: center;border: 1px solid #c9c9c9;-webkit-box-shadow: 0 0 3px 2px rgb(0 0 0 / 20%);position: fixed;top: 50%;left: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);width: 500px;height: 500px;}
+.search_Icon{background-color: #2196f3;padding: 5px 8px;border-radius: 5px 0px 0px 5px;}
+.fa-search{color: white;}
+.searchBox{position: relative;top: 35px;width: 80%; margin: 0 auto 23px;border: 1px solid #c1c1c1;border-radius: 5px;display: flex;}
+.srch input{border-bottom: none;width: 85%;padding: 8px 2px 2px;}
+.srch input::placeholder{font-size: 16px;color: black;}
+.closePop{position: fixed;right: 0;cursor: pointer;background: #2196f3;padding: 2px 8px;margin: 0;color: #fff;}
+.make-content{padding: 18px 2px 0;width: 98%;}
+.makeDv,.modelDv,.varDv{position: relative;width: 100%;overflow-y: auto;background-color: white;}
+.Modelgrid, .make-content .makegrid{display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;padding: 3px;overflow-y: auto;height: 340px;margin-top: 45px;align-content: start;}
+.center-align{text-align: center; padding: 4px; margin: 3px;border: 1px solid #c9c9c9;}
+.bbox_container div{width: auto;}
+.Modelgrid .Logodiv, .make-content .makegrid .Logodiv{width: 75%;margin: 0 auto;cursor: pointer;}
+.make-content .makegrid .logoName{font-size: 10px;cursor: pointer; text-transform: uppercase;}
+.vargrid{height: 340px;margin-top: 45px;overflow: auto;}
+.Make_section, .model_section, .varient_section{font-size: 14px;font-family: arial;line-height: 1.42857143;}
+.vehicleDetails{font-weight: 700}
+/* make model varient popup end */
+#btn_check{margin: 1px 2px 1px 1px;}
+.ins_img{display: flex;flex-wrap: wrap;text-align: center; height:60px;}
+.ins_img img{width: 100%;height: auto;text-align: center;}
+.cbox{height: 50px; margin: 2px;cursor: pointer }
+.eligible_show{display:none}
+
+.insurer{margin: 10px 0!important;justify-content:center!important;}
+
+.row.insurer p {
+    color: black;
+    font-size: 11px;
+}
+.insurer img{height: 65px;width: 90%;cursor: pointer;}
+.grayColor{filter: grayscale(100%);opacity: 0.5;}
+
+/*Toggle Switch*/
+.txt{color: gray;padding: 0;margin-right: 8px;font-size: 12px;font-weight: normal;}
+.toggle {position: relative !important;top: 0 !important;left: 0 !important;display : inline-block;width: 65px !important;
+	height: 26px;background-color: #c2c2c2;border-radius: 20px;border: 2px solid #c2c2c2;}
+/* After slide changes */
+.toggle:after {content: '';position: absolute;width: 22px;height: 22px;border-radius: 50%;background-color: white;top: 0px;
+left: 1px;transition:  all 0.5s;}
+/* Toggle text */
+p {padding: 4px;margin-bottom: 0;font-weight: bold;font-size: 10px;color: white;}
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {left: 38px;}
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {background-color: #42abe7;border: 2px solid #42abe7;}
+/* Checkbox vanished */
+.checkbox {display : none;}
+.vehicleInfo{
+	display: none;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.vehicleInfo .col-md-6{margin: 0;}
+.vehicleInfo label{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 0px !important;
+}
+.vehicleInfo p{
+    color: #000000;
+    padding: 0;
+    font-weight: 500;
+    font-size: 11px;
+}
+.vehicleInfo span{
+	font-family: 'Poppins-Bold';
+}
+
+.qrcode img{
+  margin: 0 auto;
+}
+.popClose1{right: 2%;font-size: 24px;top: -5px;color: #747474;cursor: pointer;float:right;}
+.qr-container{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+.popupContainer1{
+	width: 27%;
+    margin: 100px auto;
+    background: #ffff;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-animation: rotateHorz 0.3s 0.3s backwards;
+    animation: rotateHorz 0.3s 0.3s backwards;
+}
+.popupHeading1{padding: 10px; background: #f9f9f9;border-radius: 5px 5px 0px 0px;border-bottom: 2px solid #2196f3;font-weight: bold;color: #2196f3}
+.popupSection1{padding: 10px;background: #fff;border-radius: 0px 0px 5px 5px;height: 82%;overflow-y: auto;}
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
+	body{background-image: linear-gradient(white 50%, #90dbff);height: 100%;}
+	.row{margin: 0;}
+	.container{box-shadow: none;padding: 0;margin-bottom: 250px;padding-bottom: 50px;}
+	.logo{height: 80px;padding: 15px;}
+	.logo img{width: 100px;}
+	.bgImg{position: fixed;left: 0;bottom: 50px;/* background-color: #b0e5ff; *//* width: 100%; */}
+	.bgImg img { width: 170px;}
+	h1{margin: 0;font-size: 20px;}
+	.col-md-3{width: 50%;}
+	.VDetails .col-md-6,.VDetails .col-md-12{padding: 0;}
+	.radioBtn{margin: 15px 0 10px;}
+	.radioBtn .col-md-6{width: 50%}
+	.radioBtn .button{width: 85px;}
+	.VDetails input{width: 100%;}
+	button{width: 100%;position: fixed;bottom: 0;left: 0;border-radius: 0;margin: 0;height: 65px;}
+	  .popup{
+    /* width: 123%; */
+    /* padding: 58px 5%; */
+    }
+	.errorMsg{
+    width: 80%;
+}
+	.vehicle{padding: 0 15px;}
+	.VDetails label{left: 0;}
+	
+	/*Page Two*/
+	.vehicle .col-md-4{width: 33.33%;padding: 5px;}
+	.row{margin: 0;}
+	.row.vehicle {margin: 0 10px;}
+
+	/* make model vaient start */
+	.Make_wrap{width: 100% !important;height: 100%;}
+	.makeDv,.modelDv,.varDv{height: 660px;}
+	.Modelgrid, .make-content .makegrid{height: 570px;}
+	.vargrid{height:570px;}
+	/* make model vaient end */
+	#btn_check{position:initial;}
+	.switchLabel{width: 33% !important;margin-left: 40px;}
+	.vehicleInfo .col-6{ margin: 0;}
+	#qrcode-container{display:none;}
+
+
+}
+@media only screen and (min-device-width : 350px) and (max-device-width : 650px) {
+	.Modelgrid, .make-content .makegrid{height: 514px;}
+	.box div {margin: 2px;}
+	.popupContainer1 {width: 80%;margin: 110px auto;}
+}
+@media only screen and (min-device-width : 400px) and (max-device-width : 780px) {
+	.box div {margin: 5px;}
+}

@@ -1,0 +1,47 @@
+<MarineDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <IsFromProposal>false</IsFromProposal>
+    <Pincode>___dbmaster_pb_pincode___</Pincode>
+    <Policy>
+        <MasterPolicyNumber>92022924SVM00010</MasterPolicyNumber>
+        <BusinessType>1</BusinessType>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <ProductCode>24SV</ProductCode>
+    </Policy>
+    <PremiumCalculationDetails>
+       <CustomerState>___dbmaster_pb_state_id___</CustomerState>
+        <Commodity>___dbmaster_insurer_commodity_code___</Commodity>
+        <Packaging>1500</Packaging>
+        <CoverType>1278</CoverType>
+        <ConveyenceType>1422</ConveyenceType>
+        <VoyagefromCountry>1</VoyagefromCountry>
+        <VoyageToCountry>1</VoyageToCountry>
+        <CurrencyofInvoice>Indian Rupee</CurrencyofInvoice>
+        <ExchangeRate>1</ExchangeRate>
+        <InvoiceValueINR>___marine_insurance_si___</InvoiceValueINR>
+        <BasisOfValuation>11</BasisOfValuation>
+        <BasisOfValutionPercentage>0</BasisOfValutionPercentage>
+        <VoyagefromCity>___transit_from_cityName___</VoyagefromCity>
+        <VoyageToCity>___transit_to_cityName___</VoyageToCity>
+        <CommodityDescription>Commodity Description</CommodityDescription>
+        <MarineRate>3</MarineRate>
+        <FOBRate>2</FOBRate>
+        <IntermediateStorageRate>2</IntermediateStorageRate>
+    </PremiumCalculationDetails>
+    <Covers>
+        <Cover>
+            <BasicCoverOption>290</BasicCoverOption>
+            <IsChecked>true</IsChecked>
+            <CoverID>52</CoverID>
+        </Cover>
+        <Cover>
+            <IsChecked>true</IsChecked>
+            <CoverID>53</CoverID>
+        </Cover>
+    </Covers>
+   <UserID>100002</UserID>
+  <SourceSystemID>100002</SourceSystemID>
+  <AuthToken>9K6SQBEKJ3/rMEftgJI6MQ==</AuthToken>
+    <ValidationErrors />
+    <ContainsValidationErrors>false</ContainsValidationErrors>
+</MarineDetails>

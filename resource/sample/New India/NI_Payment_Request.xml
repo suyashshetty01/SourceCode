@@ -1,0 +1,12 @@
+<html>
+	<head></head>
+	<body>
+		<form id="PAYMENTFORM" name="PAYMENTFORM" method="POST" action="https://pgi.billdesk.com/pgidsk/PGIMerchantPayment">
+			<input type="hidden" value="NEWINDINSW|80700|NA|1|NA|NA|NA|INR|NA|R|LANDMARK-NA|NA|NA|F|NIA_LANDMARK|NA|NA|NA|NA|NA|58144530809012017|http://qa.policyboss.com/carinsuranceindia/NewIndiaPaymentResponse|B11EEA214B334D1D49ACB567CC4366C7C9FEB3FE02F6EE39A1452452898DDB5E" name="msg"/>
+			<input style='display:none' type='Submit' value ='Submit' />
+		</form>
+		<script>document.forms[0].submit();</script>
+	</body>
+</html>
+
+<!--Paymenet Response Field Details-->

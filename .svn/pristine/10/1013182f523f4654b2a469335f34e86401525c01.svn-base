@@ -1,0 +1,59 @@
+﻿{
+    "Insurer_ID": 4,
+    "Is_Active": 0,
+    "Agent_Code": "60000272",
+    "Location_Code": "14",
+    "Service_User": "10134025",
+    "Service_Password": "webagg",
+    "Payment_Gateway_URL": "http://fglpg001.futuregenerali.in/Ecom_NL/WEBAPPLN/UI/Common/WebAggPay.aspx",
+    "Name": "FutureGenerali::Motor",
+    "Lib_Class": "FutureGeneraliMotor",
+    "Plan_List": [ 
+        {
+            "Plan_Id": 7,
+            "Plan_Name": "Basic",
+            "Plan_Addon_List": {
+                "is_addon": "no",                    
+                "addon_package_name": ""                    
+            },
+            "Is_Active": true
+        },
+        {
+            "Plan_Id": 8,
+            "Plan_Name": "RoadSide",
+            "Plan_Addon_List": {
+                "is_addon": "yes",                    
+                "addon_package_name": "PLAN2"                    
+            },
+            "Is_Active": true
+        },
+        {
+            "Plan_Id": 9,
+            "Plan_Name": "Combine",
+            "Plan_Addon_List": {
+                "is_addon": "yes",                    
+                "addon_package_name": "PLAN1"                    
+            },
+            "Is_Active": true
+        }
+
+    ],
+    "Method_List": [ 
+        {
+            "Method_Name": "FutureGenerali_Car_Premium",
+            "Method_Action": "CreatePolicy",
+            "Method_Request_File": "FutureGenerali_Car_Premium.xml",
+            "Method_Calling_Type": "SOAP",
+            "WSDL_URL": null,
+            "Service_URL": "http://fglpg001.futuregenerali.in/bo/service.svc",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Is_Active": 1,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 7
+        }
+    ]
+}

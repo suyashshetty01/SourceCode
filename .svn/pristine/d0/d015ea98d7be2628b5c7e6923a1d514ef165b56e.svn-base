@@ -1,0 +1,24 @@
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <env:Header/>
+   <env:Body>
+      <typ:collectpremium_IssuepolResponseElement xmlns:typ="http://iims.services/types/">
+         <typ:PRetCode>1</typ:PRetCode>
+         <typ:userId xsi:nil="true"/>
+         <typ:roleId xsi:nil="true"/>
+         <typ:userroleId xsi:nil="true"/>
+         <typ:userCode xsi:nil="true"/>
+         <typ:rolecode xsi:nil="true"/>
+         <typ:stakeCode xsi:nil="true"/>
+         <typ:branchcode xsi:nil="true"/>
+         <typ:PRetErr>Proposal Issued</typ:PRetErr>
+         <typ:sourceOfCollection xsi:nil="true"/>
+         <typ:collectionNo>13020081160000037832</typ:collectionNo>
+         <typ:receivedFrom>05</typ:receivedFrom>
+         <typ:instrumentAmt xsi:nil="true"/>
+         <typ:quoteNo>1302001610808847</typ:quoteNo>
+         <typ:policyNo>13020031160100003876</typ:policyNo>
+         <typ:documentLink>http://10.91.35.21:7777/IIMS/Document.jsp?policyNumber=13020031160100003876</typ:documentLink>
+         <typ:collectionType xsi:nil="true"/>
+      </typ:collectpremium_IssuepolResponseElement>
+   </env:Body>
+</env:Envelope>

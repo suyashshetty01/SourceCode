@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title class="title"></title>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+	<link rel="stylesheet" href="bootstrap/css/renewal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="bootstrap/js/renewal.js"></script>
+	
+</head>
+
+<body>
+
+
+<div class="Inform_popup">
+    <div class="info_container">
+        <div class="info_Content">
+            <div class="info_Details">
+                <div class="title" style="color:#333">CRN : <span class="data">123456</span>
+					<div>x</div>
+				</div>
+                <table>
+					<thead>
+						<tr>
+							<th>Premium</th>
+							<th>SI</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>10,000</td>
+							<td>5,00,000</td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+        </div>
+        <br><br>
+        <div class="info_Footer">
+            <button class="Ok_btn"> Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="detail_section">
+    <div class="detail_container">
+        <div class="detailContent">
+            <div class="detHeader">
+                <div class="headTxt">Details</div>
+                <div class="close_det_popup">&times;</div>
+            </div>
+            <div class="Detailtxt">
+                <div class="detailGrid">
+                    <div class="title">First Name : <span class="data">Preeti</span></div>
+                    <div class="title">Last Name : <span class="data">Patil</span></div>
+                    <div class="title">Date of Birth : <span class="data">06-10-1992</span></div>
+					<div class="title">Gender : <span class="data">Female</span> </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="detailFooter">
+            <button class="submitLead" onclick="submitFunc()">Submit</button> 
+        </div>
+    </div>
+</div>
+
+
+	<section id="CoronaCare">
+		<div id="loader">
+			<img src="images/corona/search-loader.gif">
+		</div>
+		<div class="container_fluid">
+			<div class="navItem">
+				<nav>
+					<a class="Dashboardnav" onclick="showDashBoard()">
+						<img src="images/list-(1).png" id="menu1" alt="" style="margin:-2px;width:20px;float: left;">
+					</a>
+					<a class="Inputnav ActiveItem"><div class="Input_nav">INPUT</div></a>
+				</nav>
+			</div>
+		</div>
+
+		<section id="InputPage">
+			<div class="container-fluid">
+				<div class="info_section">
+					<div class="info_content">
+						<h4 style="padding-top:20px;">Customer Detail : </h4>
+						<div class="grid_info_div" style="margin: 10px 0px 10px 0px;">
+							<div>
+								<label>Select Previous Insurer : </label>
+								<select id="Insurelist" style="width:92%;">
+									<option value="0" disabled selected>Select Previous Insurer</option>
+									<option value="42">Aditya Birla</option>
+									<option value="34">Religare Health</option>
+								</select>
+							</div>
+							<div id="insureErr" style="color:red"></div>
+							
+							<div style="margin:10px 0px;">
+								<label>Policy Number : </label>
+								<input type="text" placeholder="Policy Number" id="Policyno" (keyup)="Validapolno()" style="width:90%" required>
+							</div>
+							<div id="policyErr" style="color:red"></div>
+							
+							<div style="margin:10px 0px;">
+								<label>Mobile : </label>
+								<input type="number" inputmode="numeric" pattern="[0-9]*" placeholder="Mobile" id="mobile" onKeyPress="if(this.value.length==10) return false;" autocomplete="off" style="width:90%" required>
+							</div>
+							<div id="mblErr" style="color:red"></div>
+							
+							<div style="margin:10px 0px;">
+								<label>Email : </label>
+								<input type="text" placeholder="Email" id="email" autocomplete="off" style="width:90%">
+							</div>
+							<div id="emailErr" style="color:red"></div>
+							
+							<div style="margin:10px 0px;" onclick="OpenCal()" >
+								<label>Date of Birth : </label>
+								<input type="text" placeholder="DOB" class="Memberdtp grab" id="DOB" style="width:90%">
+							</div>
+							<div id="dateErr" style="color:red"></div>
+							
+						</div>
+						</div>
+					</div>
+
+					<div class="footer_section">
+						<button class="SendLink" onclick="onSubmit()">Submit</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</section>
+	
+</body>
+
+</html>

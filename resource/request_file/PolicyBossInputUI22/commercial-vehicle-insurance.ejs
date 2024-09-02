@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta itemprop="title" content="Policy Boss">
+    <meta name="keywords" content="Policy Boss">
+    <meta itemprop="description" content="Policy Boss">
+    <!-- Required meta tags End -->
+    <title>Policy Boss | CV Insurance</title>
+
+    <!-- FAVICON -->
+    <% include UI22/website_header_link %>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div class="overlay-appear"></div>
+    <!-- start for worning message -->
+	<div class="warningmsg" style="display:none;padding-top: 169px;">
+                <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+                <h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;" 
+				id="warningerror">ss_id, fba_id, app_version is mandatory</h3>
+				<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+                <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 700;font-size: 16px;" id="error_query_str"></div>
+            </div>
+	<!-- end for worning message -->
+    <div class="bg-light-gradient home-bg">
+    <!----------------------------------------- Header Section ------------------------------------------>
+     <% include UI22/website_header %>
+    <!-------------------------------------- Home Banner Section ---------------------------------------->
+     <div class="home-banner-section section-padding pedding-bottom-0">
+	 <a class="dashboardIcon" style="display:none">
+		<img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/dashboard-icon.png" class="dashboardImg" id="menu1" alt="" onclick="navDashBoard()" />
+	</a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mob-order-2">
+                    <div class="banner-detail-area">
+                        <h1 class="banner-title font-36">Commercial Vehicle Insurance </h1>
+                        <div class="get-buddy-box">
+                            <p class="get-buddy-text font-20 block">Compare & Buy Best Fit Commercial Vehicle Insaurance</p>
+                            <form class="validate-form" id="landing-banner-form" style="display:none;">
+                                <div class="input-area">
+                                    <div class="input-inner-box">
+                                        <input inputmode="numeric" name="number" id="findBuddyInput" class="home-banner-input input-field js-input-group" type="tel" pattern="\d*" placeholder="Enter your mobile number" />
+                                    </div>
+                                    <button type="button" class="main-btn find-btn" id="findMyBuddyBtn">Find My iBuddy</button>
+                                </div>
+                            </form>
+                            <span class="separator block" style="display:none;">
+                                <span class="separator-text font-18 text-lightgrey">or</span>
+                            </span>
+                            <form id="view-quote-form">
+                                <div class="detail-field-box">
+                                    <div class="input-field-box">
+                                        <!-- <input type="text" class="input-field inner-placeholder" /> -->
+                                        <input type="text" class="input-field inner-placeholder js-input-group" name="registration_no" id="regno"  onfocus="onFocusInput(event,'regno')" onkeydown="formatRegNo(event,'regno');" oninput="checkRegistrationNumber(event,'regno');" onpaste="checkRegistrationNumber(event,'regno');" autocomplete="off"/>
+                                        <span class="font-18 floating-placeholder">Enter Vehicle Number</span>
+                                    </div>
+									<span class="spanErrFastlane" id="fastlane_notification_error"></span>
+                                </div>
+                                <button type="button" class="main-btn width-full block" id="doItYourselfBtn" onclick="ProductType('input','FastLane')">View Quote</button>
+                            </form>
+                            <div class="other-links-box">
+                                <div class="link-box">
+                                    <a href="javascript:void(0)" data-bs-dismiss="modal" class="font-16 link-text" onclick="openSelectCarModal('not_hidden')">Continue without Vehicle number?</a>
+   
+                                    </div>
+                                    <div class="link-box">
+                                            <a href="javascript:void(0)" class="font-16 link-text" onclick="openSelectCarModal('hidden')" data-bs-dismiss="modal">New vehicle, Click Here? </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                <div class="col-md-6 mob-order-1">
+                    <div class="home-banner-image-box">
+                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/insurance-landing-page/commercial-vehicle-banner-image.svg" alt="PolicyBoss" />
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+	</div>
+	<!--Continue without CV Number modal-->
+	<button type="button" id="triggerSelectCarDetails" class="btn-hidden" data-bs-toggle="modal" data-bs-target="#selectCarDetails" data-bs-dismiss="modal">Trigger selectCarDetails modal</button>
+
+	<!-- Select Car Detail Modal -->
+	<% include motor-popup %>
+    <!------------------------------------ insurance overview Section -------------------------------------->
+    
+    <div class="insurance-overview-section health-insurance-overview-section section-padding">
+        <div class="container">
+            <div class="insurance-overview-area text-center">
+                <div class="insurance-overview-box">
+                    <h3 class="sub-title font-36 weight-700">Commercial Vehicle Insurance & its Types</h3>
+                    <p class="font-18 insurance-overview-description" >Commercial vehicle is any type of motor vehicle which is used for transporting goods or passengers like Bus, Truck, Tempo, Auto, Taxi, Tractor. Commercial Vehicle can be of 2 Types i.e. Goods Carrying Vehicle (GCV) and Passenger Carrying Vehicle (PCV).</p>
+                </div>
+                <div class="commercial-vehicle-types">
+                   
+                    <div class="commercial-vehical-row">
+                      <div class="commercial-vehicle-col flex-50 bg-light-blue">
+                        <h2 class="font-24 weight-700">GCV</h2>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/truck-icon.svg" alt="Truck" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Truck</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/tractor-icon.svg" alt="Tractor" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Tractor</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/tanker-truck-icon.svg" alt="Tanker" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Tanker</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/crane-truck-icon.svg" alt="Crane" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">crane</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/delivery-van-icon.svg" alt="Delivery-van" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Delivery Van</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/dumper-truck-icon.svg" alt="Dumper" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Dumper</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                      </div>
+                      <div class="commercial-vehicle-col flex-50 bg-light-blue">
+                        <h2 class="font-24 weight-700">PCV</h2title-18>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/taxi-icon.svg" alt="Taxi" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Taxi</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/bus-icon.svg" alt="bus" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Bus</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box auto-icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/auto-icon.svg" alt="auto" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Auto</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/ambulance-icon.svg" alt="ambulance" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Ambulance</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="commercial-vehicle-type-row">
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/pickup-truck-icon.svg" alt="pick-up-van" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Pick Up Van</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="commercial-vehicle-type-col flex-50">
+                                <div class="vehicle-type-row">
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="icon-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/motorbike-icon.svg" alt="Delivery-scooter" />
+                                        </div>
+                                    </div>
+                                    <div class="vehicle-type-col flex-50">
+                                        <div class="inner-detail-box">
+                                            <h3 class="title-18 title-text">Delivery Scooter</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+                </div>
+               <!--------------------------------------------------------->
+                <!-- <div class="insurance-type-area">
+                    <div class="benefits-row">
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="images/icons/standalone-own-damage.png" alt="Standalone Own Damage
+                                    " />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text">	Standalone Own Damage
+
+                                    </h3>
+                                    <p class="font-18 text-extralight">Protects damages to your Bike due to Accident, Theft etc</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="images/icons/third-party.png" alt="Third Party" />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text">Third Party
+                                    </h3>
+                                    <p class="font-18 text-extralight">Protects against legal liability due to death, disability or damage to property of other party involved in accident</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="images/icons/comprehensive.png" alt="Comprehensive" />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text">Comprehensive</h3>
+                                    <p class="font-18 text-extralight">Protects damage to your own Bike and Third Party as well in case of an accident.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                <!-- <div class="insurance-overview-row">
+                    <div class="insurance-overview-col">
+                        <div class="insurance-overview-detail-box">
+                            <p class="font-18 insurance-overview-detail">
+                                Car Insurance landscape in India has, in recent years, seen maturity in product structures, ease of distribution, growth of online and increased awareness amongst consumers enlarge, that has overall contributed to the growth of the industry.
+                            </p>
+                            <p class="font-18 insurance-overview-detail"> 
+                                With the evolution and maturity in “InsurTech”, and a stricter, more transparent and customer centric regulatory environment, the customer is best placed today to make an informed choice with regards purchase of the right-fit,right-size insurance product. We at Landmark Insurance Brokers are driven by our vision in realising this growth potential, by being able to address the customer's requirements.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="insurance-overview-col">
+                        <div class="insurance-overview-video-box">
+                            <div class="video-content-box">
+                                <div class="tag-box bg-black-overlay">
+                                    <span class="tag-text">01:20</span>
+                                </div>
+                                <div class="video-box">
+                                    <div class="video-player">
+                                        <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                    </div>
+                                    <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                        <div class="icon-box ">
+                                            <img src="images/icons/play-icon.png" alt="Play">
+                                        </div>
+                                    </button>
+                                    <div class="description-box">
+                                        <p class="font-16 description-text">PolicyBoss Car Insurance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------Types of Commercial Vehicle Insurance--------------------------------------->
+    <div class="importance-section section-padding bg-light-blue">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Types of Commercial Vehicle Insurance</h2>
+            </div>
+            <div class="importance-listing-area">
+                <div class="importance-listing-box">
+                    <div class="main-row">
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/comprehensive-icon.svg" alt="Zero Depreciation">
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Comprehensive</h3>
+                                        <p class="font-18 text-extralight">Comprehensive Insurance Protects your Vehicle against damage, fire, theft, robbery, flood, earthquake etc. It also covers damages to Third Party as well.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/third-party-icon.svg" alt="Roadside Assistance">
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Third Party</h3>
+                                        <p class="font-18 text-extralight">Third Party Insurance is mandatory by law and it helps to Protect against legal liability due to death, disability or damage to property of other party involved in accident.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------Features of Commercial Vehicle Insurance section---------------------------------------->
+    <div class="features-of-cv-section section-padding ">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Features of Commercial Vehicle Insurance </h2>
+            </div>
+            <div class="benefits-listing-area">
+                <div class="benefits-row">
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/covers-both-public-icon.svg" alt="Covers both Public & Private Carriers ">
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Covers both Public & Private Carriers 
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col flex-50">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/third-party-icon.svg" alt="Covers Third Party Liabilities">
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Covers Third Party Liabilities</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col flex-50">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/healthy-care-icon.svg" alt="Personal accident Cover for owner & Driver">
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Personal accident Cover for owner & Driver </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col flex-50">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/cashless-hospital.svg" alt="Cashless Claim in case of accident">
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Cashless Claim in case of accident</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-------------------------------------- Claim Process Section ---------------------------------------->
+    <div class="claim-process-section bike-claim-process-section cv-claim-process-section section-padding bg-light-blue">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Claim Process</h2>
+            </div>
+            <div class="claim-process-listing-area">
+                <div class="claim-process-img-box">
+                    <img class="claim-process-img"  src="https://origin-cdnh.policyboss.com/website/UI22/images/claim-process.svg" alt="" />
+                </div>
+                
+                <div class="claim-process-row">
+                    <div class="claim-process-col">
+                        <div class="claim-process-box">
+                            <div class="stage-count-box">
+                               <span class="font-18 stage-title" >Stage 01</span>
+                            </div>
+                            <div class="inner-detail-box">
+                                <p class="font-15 text-extralight">Record the accident details like place, date, time, circumstances, persons involved etc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="claim-process-col">
+                        <div class="claim-process-box">
+                            <div class="stage-count-box">
+                                <span class="font-18 stage-title" >Stage 02</span>
+                             </div>
+                            <div class="inner-detail-box">
+                                <p class="font-15 text-extralight">Contact nearest police station and File an FIR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="claim-process-col">
+                        <div class="claim-process-box">
+                            <div class="stage-count-box">
+                                <span class="font-18 stage-title" >Stage 03</span>
+                             </div>
+                            <div class="inner-detail-box">
+                                <p class="font-15 text-extralight">Inform Insurance Company Immediately</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="claim-process-row reverse-claim-columns">
+                        <div class="claim-process-col">
+                            <div class="claim-process-box">
+                                <div class="stage-count-box">
+                                    <span class="font-18 stage-title" >Stage 04</span>
+                                 </div>
+                                <div class="inner-detail-box">
+                                    <p class="font-15 text-extralight">Surveyor will do the inspection of your Bike.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="claim-process-col">
+                            <div class="claim-process-box">
+                                <div class="stage-count-box">
+                                    <span class="font-18 stage-title" >Stage 05</span>
+                                 </div>
+                                <div class="inner-detail-box">
+                                    <p class="font-15 text-extralight">Submit relevant documents like policy copy, RC, driving license etc to Insurance Company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="claim-process-col">
+                            <div class="claim-process-box">
+                                <div class="stage-count-box">
+                                    <span class="font-18 stage-title" >Stage 06</span>
+                                 </div>
+                                <div class="inner-detail-box">
+                                    <p class="font-15 text-extralight">Submit relevant documents like policy copy, RC, driving license etc to Insurance Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="claim-process-row">
+                        <div class="claim-process-col">
+                            <div class="claim-process-box">
+                                <div class="stage-count-box">
+                                    <span class="font-18 stage-title" >Stage 07</span>
+                                 </div>
+                                <div class="inner-detail-box">
+                                    <p class="font-15 text-extralight">Basis the inspection of the Bike, claim will be settled</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+	<div class="error_message">
+		<div class="error_container">
+			<div class="ErrpopupSection1">
+			<div class="ErrpopupSection2">
+				Your Policy will not be issued instantly. It will be issued after inspection.</div>
+				<button class="OK_Btn" onclick="close_notifictn_popup()">OK</button>
+			</div>
+		</div>
+	</div>
+	<button type="submit" id="triggerPOSP_Validation" class="btn-hidden" data-bs-toggle="modal" data-bs-target="#POSP_Validation">Open POSP_Validation</button>
+	<div class="modal menu-popup modal-common fade" id="POSP_Validation" data-bs-keyboard="false"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="POSP_ValidationLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content wrapper-540 modal-popup-shadow">
+				<div class="modal-header headerPaadding">
+					<div class="title-box">
+						<h2 class="font-30 title-text POSP_ValidationTitle">Hey,</h2>
+					</div>
+					<button type="button" class="btn-close js_modal_close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="div_errorvalidation"></div>
+					<button type="button"  class="main-btn light-btn cursor_pointer" data-bs-dismiss="modal" aria-label="Close">Close</button>
+				</div>
+			</div>
+		</div>
+    </div>
+
+
+    <!---------------------------------------- Footer Section ------------------------------------------>
+    <% include UI22/website_footer %>
+    <div class="loading" style="display: none; position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 9999;background-color: #0000007a;" >
+        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/loading.gif" style="-webkit-user-select: none;height: 120px; position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+    </div> 
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js" integrity="sha512-yrOmjPdp8qH8hgLfWpSFhC/+R9Cj9USL8uJxYIveJZGAiedxyIxwNw4RsLDlcjNlIRR4kkHaDHSmNHAkxFTmgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/validate_init.js"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/vehicle-insurance-popup-flow.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/custom.js"></script>
+	<script src="https://origin-cdnh.policyboss.com/website/UI22/js/handle_Url.js"></script>
+	<script src="https://origin-cdnh.policyboss.com/website/UI22/js/motor.js"></script>
+	<script src="https://origin-cdnh.policyboss.com/website/UI22/js/website_validate_init.js"></script>
+</body>
+
+</html>

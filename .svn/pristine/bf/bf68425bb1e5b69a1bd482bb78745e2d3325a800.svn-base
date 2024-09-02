@@ -1,0 +1,53 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body xmlns:ns1="http://iims.services/types/">
+        <ns1:createPolicyHol_GenElement>
+            <ns1:userCode>___insurer_integration_agent_code___</ns1:userCode><!--POLICYBOSS-->
+            <ns1:rolecode>SUPERUSER</ns1:rolecode>
+            <ns1:PRetCode>1</ns1:PRetCode>
+            <ns1:userId>POLICYBOSS</ns1:userId>
+            <ns1:stakeCode>BROKER</ns1:stakeCode>
+            <ns1:roleId/>
+            <ns1:userroleId/>
+            <ns1:branchcode/>
+            <ns1:PRetErr/>
+            <ns1:startDate>___current_date___</ns1:startDate><!--11/11/2016-->
+            <ns1:stakeName/>
+            <ns1:title/>
+            <ns1:typeOfOrg/>
+            <ns1:address>___permanent_address_1___</ns1:address><!--Flat No.203,Bldg No.23,Tulsidham,Near Vasant Vihar circle-->
+            <ns1:firstName>___first_name___</ns1:firstName>
+            <ns1:partyCode/>
+            <ns1:company>NA</ns1:company>
+            <ns1:sex>___gender___</ns1:sex>
+            <ns1:address2>___permanent_city___,___permanent_state___</ns1:address2><!--Thane West, Maharashtra-->
+            <ns1:EMailid2/>
+            <ns1:partyStakeCode>POLICY-HOL</ns1:partyStakeCode>
+            <ns1:partyType>I</ns1:partyType>
+            <ns1:regNo/>
+            <ns1:midName>___middle_name___</ns1:midName>
+            <ns1:city>___permanent_city___</ns1:city>
+            <ns1:regDate/>
+            <ns1:contactType>Permanent</ns1:contactType>
+            <ns1:businessName/>
+            <ns1:status/>
+            <ns1:EMailid1>___email___</ns1:EMailid1>
+            <ns1:clientType>Corporate</ns1:clientType><!--This might change-->
+            <ns1:birthDate>___birth_date___</ns1:birthDate>
+            <ns1:lastName>___last_name___</ns1:lastName>
+            <ns1:sector>NA</ns1:sector>
+            <ns1:country/>
+            <ns1:pinCode>___permanent_pincode___</ns1:pinCode>
+            <ns1:prospectId/>
+            <ns1:state>___permanent_state_code___</ns1:state><!--___dbmaster_insurer_rto_state_code___-->
+            <ns1:address3>___permanent_address_3___</ns1:address3>
+            <ns1:phNo1/>
+            <ns1:businessAddress/>
+            <ns1:phNo2/>
+            <ns1:partyName/>
+            <ns1:panNo/>
+            <ns1:gstRegIdType></ns1:gstRegIdType>
+            <ns1:gstin>___gst_no___</ns1:gstin>
+            <ns1:uin></ns1:uin>
+        </ns1:createPolicyHol_GenElement>
+    </soapenv:Body>
+</soapenv:Envelope>

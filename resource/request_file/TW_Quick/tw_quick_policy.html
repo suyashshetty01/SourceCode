@@ -1,0 +1,2120 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Motor Policyboss</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.policyboss.com/Motor/assets/styles/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="js/moment-with-locales.min.js"></script>
+	<script src="js/bootstrap-material-datetimepicker.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<style>
+.tooltiptext {background-color: black;color: #fff;border-top:3px solid red;text-align: center;border-radius: 6px;padding: 5px 5px;position: absolute;z-index: 1;
+	top: 115%;left: 50%;margin-left: -60px;}
+.tooltiptext::after {content: "";position: absolute;bottom: 110%;left: 50%;margin-left: -5px;border-width: 5px;border-style: solid;border-color: transparent transparent black transparent;}
+.form-control {font-family: "Roboto-Regular", arial, sans-serif;display: block;width: 100%;padding: 6px 6px;font-size: 13px;line-height: 1.42857143;color: #999;
+    font-weight: 500;background-color: #fff;background-image: none;border: 0px solid #ccc;border-bottom: 0px solid #ccc;border-radius: 0px;-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.075);-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.pad {padding-left: 0px;padding-right: 0px;}
+.pad-1 {padding-left: 5px;padding-right: 5px;}
+.form-group {margin-bottom: 0px;}
+.btn-group-sm>.btn, .btn-sm{padding:5px 15px !important;margin:10px 5px !important;background: #4a91c4;color: #fff;font-size:14px;}
+.loader{width: 100%;height: 100%;background: rgba(255,255,255,0.6);z-index: 999;position: fixed;display:none;}
+.motor-occupation1 > a.active {background: #fff;color: #009ee3;border: 2px solid #009ee3;text-shadow: none;box-shadow: none;}
+.motor-occupation1 > a {outline: none !important;border: 1px solid #aeaeae;margin-top: 30px !important;text-transform: uppercase;background-color: #fff;color: #aeaeae;
+    border-radius: 0;width: 45%;padding: 1px 6px 1px 6px;margin-right: 3px;}
+.btn-default {color: #333;background-color: #fff;border-color: #ccc;}
+.btn {display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: 400;line-height: 1.42857143;text-align: center;white-space: nowrap;
+    vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;
+    -ms-user-select: none;user-select: none;background-image: none;border: 1px solid transparent;border-radius: 4px;}
+a {color: #337ab7;text-decoration: none;}
+.left {top: 50px;left: 25px;}
+</style>
+<body>
+	<div class="loading" style="display:none">
+		<img src="Images/loading.gif" style="height: 90px;">
+	</div>
+	<div class="error_message" style="display:none">
+		<div class="error_container">
+			<div class="ErrpopupSection1">
+				<span class="errorText"></span>
+				<button class="OK_Btn closeErrorPopup">OK</button>
+			</div>
+		</div>
+	</div> 
+	<div  class="ConfDetPopupQT">
+		<div  class="popPremiScreen">
+			<div class="logo"><img src="Images/PB.png"></div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6" id="right">
+					<div  class="QTpopup_txt" style="text-align: center">
+						<div>
+							<p><b id ="QTClientName"></b></p>
+							<!--<p>We recommend some options for your car insurance.-->
+							<p>Click to see your custom quote, by simply verifying the following.</p>
+						</div>
+						<div >
+							<form  novalidate="" class="ng-valid ng-touched ng-dirty">
+								<div  class="grid-container">
+									<h4 style="text-align: center;"><b>TW TP ONLY</b></h4>
+									<div class="fastlane_div">
+										<div  class="" style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >REG NO: </b></label>
+											<div class="row_wrap">											
+												<div class="inp_field one_col" id="">
+													<div class="">
+														<input id="Reg1" class="inputIsu Reg" type="text" onkeyup="fastlane_reg_no();" placeholder="MH" maxlength="2" style="padding: 10px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="Reg2" class="inputIsu Reg" type="text" placeholder="01" maxlength="2" style="padding: 10px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="Reg3" class="inputIsu Reg" type="text" placeholder="AB" maxlength="3" style="padding: 10px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="Reg4" class="inputIsu Reg" type="number" maxlength="4" placeholder="1234" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==4) return false;" style="padding: 10px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="RegistrationNo" name="RegistrationNo" type="hidden" autocomplete="nope">
+														<!--<a id="Regbtn" class="premi_ok_btn" onclick="CheckType('FastLane')" style="padding: 5px 58px !important;">GO</a>-->
+													</div>
+												</div>											
+											</div>
+										</div>
+										<div id="RegistrationNoError" class="errorTxt" style="display: none;"></div>
+									</div>
+									<div class="search_quote">
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Vehicle : </b>
+											</label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input" id="spn_spanvalue">
+														<input  autocomplete="off" class="inpErr makePopup ng-untouched ng-pristine ng-valid" formcontrolname="vehicle" id="spanvalue" placeholder="Vehicle Make,Model &amp; Variant" readonly="" type="text">
+														<input type="hidden" class="hiddenVehicleId" id="Vehicle_Id">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="ErrorSpanvalue errorTxt"></div>
+										
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >RTO : </b>
+											</label>
+											<div class="row_wrap">
+												<div class="inp_field one_col">
+													<span class="input"><input type="text" id="Registvalue" placeholder="Place of Registraion" readonly autocomplete="off" class="inpErr regitPopup"></span>    
+													<input type="hidden" class="hiddenRTOId" id="RTO_Id">
+												</div>
+											</div>
+										</div>
+										<div class="ErrorRegistvalue errorTxt" style="padding-bottom: 5px"></div>
+										
+										<div  class="" style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >REG. DATE: </b></label>
+											<div class="row_wrap">											
+												<div class="inp_field one_col" id="divDOPCRenew">
+													<div class="input" >
+														<input type="text" id="DOPCRenew" class="Datepicker DateofPurchaseofCar" style="font-size:13px;width: 100%;" onchange="myfunction();" placeholder="Registration Date">
+														<input id="DateofPurchaseofCar" name="DateofPurchaseofCar" type="hidden" value="">
+													</div>													
+												</div>											
+											</div>										
+										</div>
+										<div id="ErrDOPCRenew" class="errorTxt" style="padding-top: 10px;">	</div>
+										
+										<div style="text-align: center;">
+											<button type="button" class="premi_ok_btn" onclick="calculateQuote()">View Lowest Quotes</button>
+										</div>
+									</div>
+									
+									<div class="quote_div" style="margin-left: 33%;display:none;" >
+										<a class="btn btn-default EPYes active" id="sbi_div" >
+											<div class="sbi_image"></div>
+											<div class="premium_div">
+												<span id="sbi_premium"></span>
+											</div>
+										</a>
+										<a class="btn btn-default  EPNo" id="edelweiss_div">
+											<div class="edelweiss_image"></div>
+											<div class="premium_div">
+												<span id="edelweiss_premium"></span>
+											</div>
+										</a>
+										<div style="display:none;" class="show_msg">
+											<span class="err_msg"></span>
+										</div>
+									</div>
+									<div class="proposal_div" style="display:none;">
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Name : </b></label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input">
+														<input class="inpErr" id="full_name" placeholder="Enter Full Name" type="text" name="full_name" onkeypress="return preventNumbers(event);" >
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="Erfull_name" style="display:none;" class="errorTxt"></div>
+										
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Mobile : </b></label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input">
+														<input class="inpErr" id="mobile" placeholder="Enter Mobile Number" type="number" name="mobile" maxlength="10" onkeypress="if(this.value.length==10) return false;">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="Ermobile" style="display:none;" class="errorTxt"></div>
+									
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Email : </b></label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input">
+														<input class="inpErr" id="email" placeholder="Enter Email Id" type="text" name="email">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="Eremail" style="display:none;" class="errorTxt"></div>
+										
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Address : </b></label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input">
+														<input class="inpErr" name="address" id="address" placeholder="Enter Address" type="text">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="Eraddress" style="display:none;" class="errorTxt"></div>
+										
+										<div  style="display: flex;margin: 8px 0px;">
+											<label  style="width:75px;"><b >Code : </b></label>
+											<div  class="row_wrap">
+												<div  class="inp_field one_col"> 
+													<span  class="input">
+														<input class="inpErr" name="code" id="code" placeholder="Enter Code" type="text">
+													</span>
+												</div>
+											</div>
+										</div>
+										<div id="Ercode" style="display:none;" class="errorTxt"></div>
+										
+										<div  class="Prop_registration_no" style="margin: 8px 0px;display:none;">
+											<label  style="width:65px;"><b >REG NO: </b></label>
+											<div class="row_wrap" style="width: 87%;float: right;">											
+												<div class="inp_field one_col" id="">
+													<div class="">
+														<input id="prop_Reg1" class="inputIsu Reg" type="text" placeholder="MH" maxlength="2" style="padding: 7px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="prop_Reg2" class="inputIsu Reg" type="text" placeholder="01" maxlength="2" style="padding: 7px 10px !important; width:24%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="prop_Reg3" class="inputIsu Reg" type="text" placeholder="AB" maxlength="3" style="padding: 7px 10px !important; width:25%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="prop_Reg4" class="inputIsu Reg" type="number" maxlength="4" placeholder="1234" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==4) return false;" style="padding: 7px 10px !important; width:25%; text-transform: uppercase;text-align: center;" data-tooltip="Please Put Vehicle Number" data-tooltip-animate-function="foldin" data-tooltip-stickto="left" data-tooltip-color="black" autocomplete="nope">
+														<input id="prop_RegistrationNo" name="prop_RegistrationNo" type="hidden">
+													</div>
+												</div>											
+											</div>
+										</div>
+										<div id="Erprop_RegistrationNo" class="errorTxt" style="display: none;"></div>
+										
+										
+										<div id="ErProposalError" style="display:none;" class="errorTxt"></div>
+										<div style="text-align: center;">
+											<button type="button" class="premi_ok_btn" onclick="CustomerValidation();">Get Policy</button>
+										</div>
+									</div>
+									<p style="font-size: 11px;text-align: center;margin-top: 10px;">By clicking, you agree to our <strong><a href="https://www.policyboss.com/privacy-policy" target="_blank" >Privacy policy</a>, <a href="https://www.policyboss.com/terms-condition" target="_blank">Terms of Use</a></strong> & authorise PolicyBoss to access your credit report.</p>
+									<p style="font-size: 9px;text-align: right;margin: 0;">*T & C Apply</p>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Make_section">
+		<div class="Make_wrap">
+			<div class="popHeader">
+				<span class="closePop" onclick="closePop();">&#x2716;</span>
+				<div class="searchBox">
+					<div class="search_Icon"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+					<span class="srch"><input type="text" onkeyup='mySearch(event.target.value)' id="mySearch" placeholder="Search..."/></span>
+				</div>
+			</div>
+			<div class="make-content">
+				<div class="makeDv popup">
+					<div class="lricon">
+						<div class="faIconrt" id ="makeDv"> <i class="fa fa-angle-right" id="makeDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1"id="vehicleName"></p>
+					<div class="makegrid">
+					</div>
+				</div>
+				<div class="modelDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+						<div class="faIconrt" id ="modelDv"> <i class="fa fa-angle-right" id="modelDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1" id="vehicleName"></p>
+					<div class="Modelgrid">
+					</div>
+				</div>
+				<div class="FuelDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+						<div class="faIconrt" id ="FuelDv"> <i class="fa fa-angle-right" id="FuelDv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1" id="vehicleName"></p>
+					<div class="fuelgrid">
+					</div>
+				</div>
+				<div class="varDv popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+					</div>
+					<p class="vehicleDetails spanvalue1"id="vehicleName"></p>
+					<div class="vargrid">
+						<div class="alignvarName">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="regist_Pop">
+		<div class="regist_wrap">
+			<div class="popHeader">
+				<span class="closePop">&#x2716;</span>
+				<div class="searchBox">
+					<div class="search_Icon"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+					<span class="srch"><input type="text" onkeyup='mySearch1(event.target.value)' id="mySearch1" placeholder="Search..."/></span>
+				</div>
+			</div>
+			<div class="regist-content">
+				<div class="InnerDiv popup">
+					<div class="lricon">
+						<div class="faIconrt" id="InnerDiv"> <i class="fa fa-angle-right" id="InnerDiv1" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="shortgrid">   
+					</div>
+				</div>
+				<div class="nextSec popup">
+					<div class="lricon">
+						<div class="faIconlt"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="shortgrid1">
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+	    	slidesPerView: 4,
+	    	spaceBetween: 10,
+	    	loop:true,
+	    	autoplay: {
+	       		delay: 1500,
+	        	disableOnInteraction: false,
+	    	},
+	    });
+		
+		var vehicleMake = [
+			{
+				"ID": 1,
+				"Make_Name": "KTM",
+				"logo": "KTM"
+			},
+			{
+				"ID": 2,
+				"Make_Name": "YAMAHA",
+				"logo": "YAMAHA"
+			},
+			{
+				"ID": 3,
+				"Make_Name": "HERO MOTOCORP",
+				"logo": "HERO_MOTOCORP"
+			},
+			{
+				"ID": 4,
+				"Make_Name": "DUCATI",
+				"logo": "DUCATI"
+			},
+			  {
+				"ID": 5,
+				"Make_Name": "SUZUKI",
+				"logo": "SUZUKI"
+			  },
+			  {
+				"ID": 6,
+				"Make_Name": "BAJAJ",
+				"logo": "BAJAJ"
+			  },
+			  {
+				"ID": 7,
+				"Make_Name": "KAWASAKI",
+				"logo": "KAWASAKI"
+			  },
+			  {
+				"ID": 8,
+				"Make_Name": "EKO",
+				"logo": "EKO"
+			  },
+			  {
+				"ID": 9,
+				"Make_Name": "GLOBAL",
+				"logo": "GLOBAL"
+			  },
+			  {
+				"ID": 10,
+				"Make_Name": "HARLEY DAVIDSON",
+				"logo": "HARLEY_DAVIDSON"
+			  },
+			  {
+				"ID": 11,
+				"Make_Name": "HAYABUSA",
+				"logo": "HAYABUSA"
+			  },
+			  {
+				"ID": 12,
+				"Make_Name": "HERO HONDA",
+				"logo": "HERO_HONDA"
+			  },
+			  {
+				"ID": 13,
+				"Make_Name": "HONDA MOTORS",
+				"logo": "HONDA_MOTORS"
+			  },
+			  {
+				"ID": 14,
+				"Make_Name": "LML",
+				"logo": "LML"
+			  },
+			  {
+				"ID": 15,
+				"Make_Name": "MAHINDRA",
+				"logo": "MAHINDRA"
+			  },
+			  {
+				"ID": 16,
+				"Make_Name": "PIAGGIO",
+				"logo": "PIAGGIO"
+			  },
+			  {
+				"ID": 17,
+				"Make_Name": "ROYAL ENFIELD",
+				"logo": "ROYAL_ENFIELD"
+			  },
+			  {
+				"ID": 18,
+				"Make_Name": "TRIUMPH",
+				"logo": "TRIUMPH"
+			  },
+			  {
+				"ID": 19,
+				"Make_Name": "TVS",
+				"logo": "TVS"
+			  },
+			  {
+				"ID": 20,
+				"Make_Name": "VIBGYOR",
+				"logo": "VIBGYOR"
+			  },
+			  {
+				"ID": 21,
+				"Make_Name": "KINETIC",
+				"logo": "KINETIC"
+			  },
+			  {
+				"ID": 22,
+				"Make_Name": "AMPERE",
+				"logo": "AMPERE"
+			  },
+			  {
+				"ID": 23,
+				"Make_Name": "HERO ELECTRIC",
+				"logo": "HERO_ELECTRIC"
+			  },
+			  {
+				"ID": 24,
+				"Make_Name": "UM BIKES",
+				"logo": "UM_BIKES"
+			  },
+			  {
+				"ID": 25,
+				"Make_Name": "BMW",
+				"logo": "BMW"
+			  },
+			  {
+				"ID": 26,
+				"Make_Name": "APRILIA",
+				"logo": "APRILIA"
+			  },
+			  {
+				"ID": 27,
+				"Make_Name": "FAB MOTORS",
+				"logo": "FAB_MOTORS"
+			  },
+			  {
+				"ID": 28,
+				"Make_Name": "BENELLI",
+				"logo": "BENELLI"
+			  },
+			  {
+				"ID": 29,
+				"Make_Name": "CAGIVA",
+				"logo": "CAGIVA"
+			  },
+			  {
+				"ID": 30,
+				"Make_Name": "ELECTROTHERM",
+				"logo": "ELECTROTHERM"
+			  },
+			  {
+				"ID": 31,
+				"Make_Name": "HERO",
+				"logo": "HERO"
+			  },
+			  {
+				"ID": 32,
+				"Make_Name": "HUSQVARNA",
+				"logo": "HUSQVARNA"
+			  }
+		];
+		var CONST_HORIZON_URL;
+		var Product_id = 10;
+		var varientArray = [];
+		var filterRTO = ["MH", "GJ", "KA", "DL", "UP"];
+		var RTOList = [];
+		var VehicleDivClass;
+		var RTODivClass;
+		var QT_vehicle_id;
+		var QT_vehicle_id;
+		var divArray = [];
+		var siteURL = "";
+		var ip_respone = {};
+		var ip_address = "";
+		var StatusCount = 0;
+		var SRN = "";
+		var IsTypeFastLane = false;
+		var RegNo = "";
+		var FastLane_RegNo = "";
+		var FlagRegNoValid = 0;
+		var quotes,Service_Unique_Id_edelweiss = "",Service_Unique_Id_sbi="";
+		var sbi_final_prmium = 0, sbi_tax=0, sbi_net_premium=0;
+		var edel_final_prmium = 0, edel_tax=0, edel_net_premium=0;
+		var makename,modelname,fuelname,varientname, ip_state, ip_city;
+		var todayDate = new Date().toISOString().slice(0, 10);
+		$(document).ready(function () {
+			var maketxt;
+			var modeltxt;
+			var statetxt;
+			siteURL =  window.location.href;
+			ipinfo();
+			TwoWheelerTypeRenew();
+			if (window.location.hostname === 'qa.policyboss.com' || window.location.hostname === 'localhost')
+			{
+				CONST_HORIZON_URL = 'http://qa-horizon.policyboss.com:3000';
+			}
+			if (window.location.hostname === 'localhost')
+			{
+				CONST_HORIZON_URL = 'http://localhost:3000';
+			}
+			if (window.location.hostname.includes('www')) {
+				CONST_HORIZON_URL = 'https://horizon.policyboss.com:5443';
+			}
+			
+			if (siteURL.includes('request_file')) {
+				CONST_HORIZON_URL = 'http://localhost:3000';
+			}else if (siteURL.includes("qa")) {
+				CONST_HORIZON_URL = 'http://qa-horizon.policyboss.com:3000';
+			}
+			
+			PopulateModel();
+			$('.makegrid').empty();
+			for (var i in vehicleMake) {
+				$('.makegrid').append("<div class='center-align' onclick='modelselect(" + JSON.stringify(vehicleMake[i]) + ");' id='make1_" + vehicleMake[i]['Make_Name'] + "' make=" + vehicleMake[i]['Make_Name'] + ">" + 
+						"<div class='Logodiv'>" +
+						"<img src='Logo/" + vehicleMake[i]['logo'] + ".png' width='100%'>" +
+						"</div>" +
+						"<div class='logoName'> <span id='" + vehicleMake[i]['Make_Name'] + "'>" + vehicleMake[i]['Make_Name'] + "</span>" +
+						"</div>" +
+						"</div>"
+						)
+			}
+			$('.makePopup').click(function () {
+				var x = $(".makePopup").position();
+				$('.Make_section').css('top', x.top);
+				$(".Make_section").slideDown(500, function () {
+					$('.Make_section').slideDown(500);
+				});
+				$('#mySearch').val("");
+				$('.makegrid').children().show();
+				$('.VariName').show();
+				if (VehicleDivClass === "makeDv") {
+					$('#makeDv1').removeClass('active');
+					VehicleDivClass = "";
+					divArray = [];
+					$('.varDv').hide("slide", { direction: "right" }, 500, function () {
+						$('.makeDv').show("slide", { direction: "left" }, 500);
+						$('.FuelDv').hide("slide", { direction: "right" }, 500);
+						$('.modelDv').hide("slide", { direction: "right" }, 500);
+					});
+					//$('.faIconlt').hide();
+				}
+			});
+			$('.closePop').click(function () {
+				$(".Make_section").slideUp(500, function () {
+					$('.Make_section').hide();
+					$('.policyPopup').hide();
+					$('.bonus_per').hide();
+					$('.regist_Pop').hide();
+				})
+			});
+			
+			$('.closeErrorPopup').click(function () {
+				$('.error_message').hide();
+			});
+			$('.faIconlt').click(function () {
+				var element = $(this).closest('.popup');
+				element.hide("slide", {direction: "right"}, 500, function () {
+					element.prev().show("slide", {direction: "left"}, 500);
+				});
+				$('.stateName').show();
+				$('.VariName').show();
+				$('.modelGridDiv').show();
+				$('.makegrid,.fuelgrid').children().show();
+			});
+			
+			$('.faIconrt').click(function () {
+					var currentDiv = $(this);
+					var Divname = currentDiv[0].id;
+					
+					if(VehicleDivClass === Divname || divArray.includes(Divname) || VehicleDivClass === "FuelDv"){
+						if(divArray.indexOf(Divname) === -1){
+						divArray.push(Divname);	
+						}
+						var element = $(this).closest('.' + Divname);
+						element.hide("slide", {direction: "left"}, 500, function () {
+						element.next().show("slide", {direction: "right"}, 500);
+					});
+				}	
+			});
+	
+	
+			$('#model1').click(function () {
+				$('.modelDv').hide("slide", {direction: "left"}, 500, function () {
+					/* $('#spanvalue').val($('#Modelval').text()+","); */
+					modeltxt = $('#Modelval').text();
+					$('#spanvalue').val(maketxt + ',' + modeltxt);
+					$('#spanvalue1').val(maketxt + ',' + modeltxt);
+					$('.FuelDv').show("slide", {direction: "right"}, 200);
+
+				});
+			});
+			/* ------------------------------------------------------------------------------ */
+			$('#Petrol').click(function () {
+				$('.FuelDv').hide("slide", {direction: "left"}, 500, function () {
+					$('.varDv').show("slide", {direction: "right"}, 200);
+				});
+			});
+			$('#Variant_val').click(function () {
+				var varitxt = $('#Variant_val').text();
+				$('#spanvalue').val(maketxt + ',' + modeltxt + ',' + varitxt);
+				$('#spanvalue1').val(maketxt + ',' + modeltxt + ',' + varitxt);
+				$('.Make_section').hide();
+				$('#fuelvalue').val("PETROL");
+				$('#fuelvalue1').val("PETROL");
+			});
+			$('#Variant_val1').click(function () {
+				var varitxt = $('#Variant_val1').text();
+				$('#spanvalue').val(maketxt + ',' + modeltxt + ',' + varitxt);
+				$('#spanvalue1').val(maketxt + ',' + modeltxt + ',' + varitxt);
+				$('.Make_section').hide();
+				$('#fuelvalue').val("DIESEL");
+				$('#fuelvalue1').val("DIESEL");
+			});
+
+
+
+			/* ------ Registration Popup */
+			$('.regitPopup').click(function () {
+				$('#mySearch1').val("");
+				var x = $(".regitPopup").position();
+				$('.regist_Pop').css('top', 0);
+				$(".regist_Pop").slideDown(900, function () {
+					$('.regist_Pop').show();
+				});
+				
+					
+					$('.nextSec').hide("slide", { direction: "left" }, 500, function () {
+						$('.InnerDiv').show("slide", { direction: "right" }, 500);
+					});
+				PopulateModel();
+			});
+			$('.copyregi').click(function () {
+				var x = $(".copyregi").position();
+				$('.regist_Pop').css('top', x.top);
+				$(".regist_Pop").slideDown(900, function () {
+					$('.regist_Pop').show();
+				});
+			});
+			$('.stateback').click(function () {
+				$('.nextSec').hide("slide", {direction: "right"}, 500, function () {
+					$('.InnerDiv').show("slide", {direction: "left"}, 500);
+				});
+			});
+			$('#showMoreBtn,#showcityBtn').click(function () {
+				$('#showMoreBtn,#showcityBtn').hide();
+				$('.nodisplay').show();
+				$('#showTopBtn,#lessCityBtn').show();
+				$('.makegrid,.shortgrid').css({'overflow-y': 'scroll', 'height': '225px'});
+			});
+			$('#showTopBtn,#lessCityBtn').click(function () {
+				$('#showMoreBtn,#showcityBtn').show();
+				$('.nodisplay').hide();
+				$('#showTopBtn,#lessCityBtn').hide();
+				$('.makegrid,.shortgrid').css({'overflow-y': 'hidden', 'height': 'auto'});
+			});
+			setTimeout(function(){
+				$(".QTnoClaimNo").prop("checked", true);
+				$(".QTncbNo").prop("checked", true);
+			}, 10);
+			
+			var RtoListURL = '/rtos/list';
+			//var obj_horizon_data = Horizon_Method_Convert(RtoListURL,'',"GET");
+			$.ajax({
+				type:"GET",
+				data: "",
+				url: GetUrl() + RtoListURL,
+				dataType: "json",
+				success: function(data){ RTOList=data; //RtoListFL=data;
+					/*if (lead_res && PreSRN === undefined){
+						if(lead_res.lead_type === "sync_contacts") {
+							RtoScList(lead_res, RtoList);
+						}
+					}*/
+				}
+			});			
+			
+		});
+		
+		function TwoWheelerTypeRenew() {
+			twowheelerType = "RENEW";
+			$("#TwoWheelerType").val("RENEW");
+			$('#DOPCRenew').val('');
+
+			$('#DOPCRenew').bootstrapMaterialDatePicker({
+				time: false, clearButton: true, format: 'DD-MM-YYYY',
+				minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+				maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+				currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+				onSelect: function () { myfunction(); }
+			});
+			$('#DOPCRenew').val("");
+			$('#DOPCRenew').on('open', function (e, date) { $('#DOPCRenew').val(""); });
+		}		
+		
+		function PopulateModel() {
+			$.get(CONST_HORIZON_URL + '/vehicles/getrto/', function (res) {
+				var rtoData = res
+				var FilterRTO = [];
+					for (var i in rtoData) {
+						var rtoPrefix = rtoData[i]["VehicleCity_RTOCode"].toString().slice(0, 2);
+							if (filterRTO.indexOf(rtoPrefix) > -1) {
+								FilterRTO.push(rtoData[i]);
+								const index = rtoData.findIndex(x => x.VehicleCity_RTOCode === rtoData[i]["VehicleCity_RTOCode"]);
+								if (index > -1) {
+									rtoData.splice(index, 1);
+								}
+							}
+						}
+						for (var i in rtoData) {
+							FilterRTO.push(rtoData[i]);
+						}
+						var rtoArray = FilterRTO;
+					$('.shortgrid').empty();
+				for (var k in rtoArray) {
+				 $('.shortgrid').append(
+					"<div class='txt stateName' onclick='PlaceofReg(" + JSON.stringify(rtoArray[k]) + ");' title=" + rtoArray[k]['State_Name']
+					+ " id='" + rtoArray[k]['_id']+ "'>"+ rtoArray[k]['VehicleCity_RTOCode'].slice(0, 2) + "</div>"
+				 )
+				}
+			});
+
+		}
+		function PlaceofReg(selectedRTO){
+			VehicleDivClass = "InnerDiv";
+			$('#' + VehicleDivClass + '1').addClass('active');
+			$('#mySearch1').val("");
+			console.log(selectedRTO);
+			var RTO = selectedRTO.Rtolist;
+			RTO.sort(function (a, b) {
+					var x = a.VehicleCity_RTOCode.toLowerCase();
+					var y = b.VehicleCity_RTOCode.toLowerCase();
+					if (x < y) { return -1; }
+					if (x > y) { return 1; }
+					return 0;
+
+			});
+			RTOList = RTO;
+			$('.shortgrid1').empty();
+			for (var k in RTOList) {
+				 $('.shortgrid1').append(
+					"<div class='txt' onclick='FinalRTODisplay(" + JSON.stringify(RTOList[k]) + ");' title=" + RTOList[k]['RTO_City']
+					+ " id='" + RTOList[k]['VehicleCity_RTOCode'] + "'>" + RTOList[k]['VehicleCity_RTOCode'] + "</br>" +  RTOList[k]['RTO_City'] + "</div>"
+				 )
+			}
+			$('.InnerDiv').hide("slide", {direction: "left"}, 500, function () {
+				$('.nextSec').show("slide", {direction: "right"}, 500);
+				$('.sec_content').css({'height': '250px', 'overflow-y': 'scroll'});
+			});
+		}
+		function FinalRTODisplay(finalRTO) {
+				var RTOCode = finalRTO.VehicleCity_RTOCode;
+				var RTOCity = finalRTO.RTO_City;
+				var fullRTO = RTOCode + ' - ' + RTOCity;
+				$('#Registvalue').val(fullRTO);
+				$('#RTO_Id').val(finalRTO.VehicleCity_Id);
+				$('.regist_Pop').hide();
+				
+			}
+		function modelselect(make){
+			$('#mySearch').val("");
+			makename = make.Make_Name;
+			$('.spanvalue1').text(makename);
+			VehicleDivClass = "makeDv";
+			$('#' + VehicleDivClass + '1').addClass('active');
+			  $.get(CONST_HORIZON_URL + '/vehicles/getmodel_variant/10' + '/' + make.Make_Name, function (res) {
+				  var modelArray = res;
+				  console.log(res);
+					var makeAttr = $(this).attr('make');
+					console.log(makeAttr);
+					$('.Modelgrid').empty();
+					$('.makeDv').hide("slide", {direction: "left"}, 500, function () {
+						$('.Modelgrid').css('display', 'grid');
+						$('.modelDv').show("slide", {direction: "right"}, 500);
+						for (var i in modelArray) {
+							$('.Modelgrid').append(
+							"<div class='modelGridDiv center-align' onclick='FuelType(" + JSON.stringify(modelArray[i]) + ");' id='model_"  + modelArray[i]['Model_ID'] + "'>" +
+							"<div class='modelGridDiv logoName'>"+
+							"<span class='modelGridDiv' id='Modelval" + modelArray[i]['Model_ID'] + "'>" + modelArray[i]['_id'] + "</span>" + 
+							"</div>"+
+							"</div>"
+							)
+						}
+					});
+			  });
+			 
+		}
+
+		function FuelType(model){
+			$('#mySearch').val("");
+			VehicleDivClass = "modelDv";
+			divArray.push("makeDv");	
+			modelname = model._id
+			$('.spanvalue1').text(makename + ' / ' + modelname);
+			$('#' + VehicleDivClass + '1').addClass('active');
+			var UpdatedFuelList = [];
+			varientArray = [];
+			console.log(model);
+			var model_id = model.Model_ID;
+			var model_name = model._id;
+			var varient_list = model.Variantlist;
+			$('.modelDv').hide("slide", {direction: "left"}, 500, function () {
+				$('.FuelDv').show("slide", {direction: "right"}, 200);
+			});
+			//var url = '/vehicles/GetFuelVariant?Model_ID=' + model_id + '&Product_Id=' + Product_id; //UAT
+			//var url = '/vehicles/beta_GetFuelVariant' + '/' + model_id + '/' + Product_id  //LIVE
+			var url = siteURL.includes('https:') ? '/vehicles/beta_GetFuelVariant' + '/' + model_id + '/10' : '/vehicles/GetFuelVariant?Model_ID=' + model_id + '&Product_Id=10';
+			$.get(CONST_HORIZON_URL + url, function (res) {
+				console.log(res);
+				var variantrArray = res;
+				var fuelList = res['FuelList'];
+				varientArray = res['VariantList'];
+					if (Product_id === 1) {
+						for (var i = 0; i < fuelList.length; i++) {
+							var j = Object.keys(fuelList).length
+							UpdatedFuelList = fuelList
+							if (fuelList[i] === "PETROL") {
+								UpdatedFuelList[j] = 'EXTERNAL FITTED CNG';
+								UpdatedFuelList[j + 1] = 'EXTERNAL FITTED LPG';
+							}
+						}
+					}
+					else if (Product_id === 10) {
+						UpdatedFuelList = fuelList;
+					}
+					console.log('UpdatedFuelList' +  JSON.stringify(UpdatedFuelList));
+					$('.fuelgrid').empty();
+					for (var i in UpdatedFuelList) {
+							$('.fuelgrid').append(
+							"<div class='center-align' onclick='variantmodel(" + JSON.stringify(UpdatedFuelList[i]) + ");'>" +
+							"<div class='logoName' id= " + UpdatedFuelList[i] + ">" + UpdatedFuelList[i] +
+							"</div>"
+							)
+					}
+			});
+		}
+
+		function variantmodel(fuel){
+			$('#mySearch').val("");
+			fuelname = fuel;
+			$('.spanvalue1').text(makename + ' / ' + modelname + ' / ' + fuelname);
+			VehicleDivClass = "FuelDv";
+			$('#' + VehicleDivClass + '1').addClass('active');
+			var tempFuel = fuel;
+			if (tempFuel === "EXTERNAL FITTED CNG" || tempFuel === "EXTERNAL FITTED LPG") {
+				tempFuel = 'PETROL';
+			}
+			var FilterVariantList = [];
+			  for (var i = 0; i < varientArray.length; i++) {
+					if ((varientArray[i].Fuel_Name.toString().toLowerCase()).indexOf(tempFuel.toLowerCase()) > -1) {
+						FilterVariantList.push(varientArray[i]);
+					}
+				
+				}
+				console.log(FilterVariantList);
+				$('.alignvarName').empty();
+				for (var i in FilterVariantList) {
+							$('.alignvarName').append(
+							"<div class='VariName center-align' style='text-align: left;' id='Variant_val_"+ FilterVariantList[i]['Vehicle_ID'] +"' onclick='FinalVariant(" + JSON.stringify(FilterVariantList[i]) + ");'>" 
+							+ FilterVariantList[i]['Variant_Name'] +" " + "(" + FilterVariantList[i]['Cubic_Capacity'] + "CC)" +
+							"</div>"
+							)
+					}
+				$('.FuelDv').hide("slide", {direction: "left"}, 500, function () {
+				$('.varDv').show("slide", {direction: "right"}, 200);
+				$('.alignvarName').show();
+			});
+		}
+
+		function FinalVariant(finalVarient){
+				varientname = finalVarient.Variant_Name + ' (' + finalVarient.Cubic_Capacity + 'CC)';
+				$('.spanvalue1').text(makename + ' / ' + modelname + ' / ' + fuelname + ' / ' + varientname);
+				$('#mySearch').val("");
+				var Final_makename = finalVarient.Make_Name;
+				var Final_model = finalVarient.Model_Name;
+				var Final_Vehicle_Variant = finalVarient.Variant_Name;
+				var Final_FuelType = finalVarient.Fuel_Name;
+				var Final_cubic_capacity = finalVarient.Cubic_Capacity + " CC";
+				var Final_seating_capacity = finalVarient.Seating_Capacity + " SC";
+				$('#spanvalue').val(Final_makename + ' - ' + Final_model + ' - ' + Final_Vehicle_Variant + ' - ' + Final_FuelType + ' - ' + Final_cubic_capacity + ' - ' + Final_seating_capacity);
+				$("#Vehicle_Id").val(finalVarient.Vehicle_ID);
+				$(".Make_section").hide();
+		}
+		function mySearch(val) {
+				var value = val;
+				value = value.toLowerCase();
+				$(".makegrid *,.Modelgrid *,.vargrid *").filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					$('.Logodiv').css('display', 'block');
+					$('.Logodiv img').css('display', 'block');
+				});
+			}
+		function mySearch1(val) {
+				var value = val;
+				value = value.toLowerCase();
+				$(".shortgrid *,.shortgrid1 *").filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			}
+		function closePop() {
+				$(".Make_section").slideUp(500, function () {
+					$('.Make_section').hide();
+					$('.regist_Pop').hide();
+				})
+			}
+		var getUrlVars = function () {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for (var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		function Horizon_Method_Convert(method_action,data,type){
+			var obj_horizon_method = {
+				'url': (type=="POST")?"/TwoWheelerInsurance/call_horizon_post":"/TwoWheelerInsurance/call_horizon_get?method_name="+method_action,
+				"data":{
+					request_json: JSON.stringify(data),
+					method_name: method_action,
+					client_id:"2"
+				}
+			};
+			return obj_horizon_method;
+		}		
+		function GeteditUrl() {
+			var url = window.location.href;
+			//alert(url.includes("health"));
+			var newurl;
+			//newurl = "http://qa.policyboss.com";
+			if (url.includes("request_file")) {
+				newurl = "http://localhost:50115";
+			} else if (url.includes("qa")) {
+				newurl = "http://qa.policyboss.com";
+			} else if (url.includes("www") || url.includes("cloudfront")) {
+				newurl = "https://www.policyboss.com";
+			}
+			return newurl;
+		}
+		function GetUrl() {
+			var url = window.location.href;
+			var newurl;
+			//newurl = "http://qa.policyboss.com";
+			if (url.includes("request_file")) {
+				// newurl = "http://qa-horizon.policyboss.com:3000";
+				newurl = "http://localhost:3000";
+			} else if (url.includes("qa")) {
+				newurl = "http://qa-horizon.policyboss.com:3000";
+			} else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+				newurl = "http://horizon.policyboss.com:5000";
+			}
+			else{
+			newurl = "http://localhost:3000";
+			}
+			return newurl;
+		}
+		function calculateQuote(){
+			$(".quote_div").hide();
+			$(".proposal_div").hide();
+			$("#full_name").val("");
+			$("#mobile").val("");
+			$("#email").val("");
+			$("#address").val("");
+			$("#code").val("");
+			$("#RegistrationNoError").hide().html("");
+			var err = 0;
+			$('.error_message').hide();
+			var setVehicle = $('#spanvalue').val();
+			var setRto = $('#Registvalue').val();
+			if(setVehicle == ""){
+				err++; 
+				$('.ErrorSpanvalue').show();
+				$('.ErrorSpanvalue').text("Please Select Vehicle");
+			}else{
+				$('.ErrorSpanvalue').hide().text("");
+			}
+			if(setRto == ""){
+				err++; 
+				$('.ErrorRegistvalue').show();
+				$('.ErrorRegistvalue').text("Please Select RTO");
+			}else{
+				$('.ErrorRegistvalue').hide().text("");
+			}
+			if ($("#DateofPurchaseofCar").val() == "") { 
+				err++; 
+				$("#ErrDOPCRenew").show().html("Please Select Registration Date.");
+			}else { 
+				$("#ErrDOPCRenew").hide().html(""); 
+			}
+			var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+			var Number_Pattern = new RegExp('^[0-9]*$');
+			var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+
+			if ($("#Reg1").val() == "" || $("#Reg1").val().length != 2 || (Text_Pattern.test($("#Reg1").val()) == false)) {
+				err++; 
+				RegNoblockError('Reg1');
+			}
+			else {  $("#Reg1").removeClass('errorTxt'); }
+
+			if ($("#Reg2").val() == "" || $("#Reg2").val().length != 2 || (AlphaNum_Pattern.test($("#Reg2").val()) == false)) {
+				err++; 
+				RegNoblockError('Reg2');
+			}
+			else if(Text_Pattern.test($("#Reg2").val()) == true) {
+				err++; 
+				RegNoblockError('Reg2');
+			}
+			else {  $("#Reg2").removeClass('errorTxt');}
+
+			if ($("#Reg3").val() != "" && ($("#Reg3").val().length < 2 || $("#Reg3").val().length > 3 || (AlphaNum_Pattern.test($("#Reg3").val()) == false))) {
+				err++; 
+				RegNoblockError('Reg3');
+			}
+			else {  $("#Reg3").removeClass('errorTxt'); }
+
+			if ($("#Reg1").val() == "" || $("#Reg2").val() == "" || $("#Reg4").val() == "") {
+				err++; 
+				RegNoblockError('Reg3');
+			}
+
+			if ($("#Reg4").val() == "" || $("#Reg4").val().length != 4 || (Number_Pattern.test($("#Reg4").val()) == false)) {
+				err++; 
+				RegNoblockError('Reg4');
+			}
+			else {  $("#Reg4").removeClass('errorTxt'); }
+
+			if(err == 0){
+				$('.loading').show();
+				var rto_id = $('#RTO_Id').val();
+				var vehicle_id = $('#Vehicle_Id').val();
+				var vehicle_ncb_current = $('input[name=QTncbContaint]:checked').val();
+				SmartQuoteCalculate();				
+			}
+		}
+		
+		function SmartQuoteCalculate() {
+
+			srn = "";
+			$('#PreviousInsurer').val("0");
+			PEDFlag = "yes";
+			$('#HaveNCBCertificate').val("No");
+			$('#txttenure').val("0");
+			twowheelerType = "RENEW";
+			IsPolicyExistFlag = "no";			
+			
+			var DateofPurchaseofCar = $('#DateofPurchaseofCar').val().split('-');
+			DateofPurchaseofCar = DateofPurchaseofCar[2] + '-' + DateofPurchaseofCar[1] + '-' + DateofPurchaseofCar[0];
+			var manf_date = $('#DateofPurchaseofCar').val().split('-');
+			manf_date = manf_date[2] + '-' + manf_date[1] + '-' + "01";
+			
+			
+			var _registration_no = $("#RTO_Id").val() == null ? "" : $("#RTO_Id").val();
+
+			_registration_no = $("#Reg1").val().toUpperCase() + "-"+ $("#Reg2").val() + "-" + $("#Reg3").val().toUpperCase() + "-" + $("#Reg4").val();
+			
+			//fastlane code
+			/*if (_registration_no.length > 0) {
+				if (IsTypeFastLane == true) {
+					//_registration_no = $("#RegistrationNo").val();
+					_registration_no = (RegNo).slice("0","2") + "-" + (RegNo).slice("2","4") + "-" + (RegNo).slice("4","6") + "-" + (RegNo).slice("6");
+				} else {
+					_registration_no = ($("#Registvalue").val().split("-")[0]).slice("0","2") + "-" + ($("#Registvalue").val().split("-")[0]).slice("2","4") + "-AA-1234";
+				}
+			}
+			else {
+				_registration_no = ($("#Registvalue").val().split("-")[0]).slice("0","2") + "-" + ($("#Registvalue").val().split("-")[0]).slice("2","4") + "-AA-1234";
+			}*/
+
+			var data1 = {
+				"product_id": 10,
+				"vehicle_id": $('#Vehicle_Id').val(),
+				"rto_id": $('#RTO_Id').val(),
+				"vehicle_insurance_type": "renew",
+				"vehicle_registration_date": DateofPurchaseofCar,
+				"vehicle_manf_date": manf_date,
+				"policy_expiry_date": todayDate,
+				"prev_insurer_id": "1",
+				"vehicle_registration_type": "individual",
+				"vehicle_ncb_current": "0",
+				"is_claim_exists": "yes",
+				"method_type": "Premium",
+				"execution_async": "yes",
+				"electrical_accessory": 0,
+				"non_electrical_accessory": 0,
+				"registration_no": _registration_no,
+				"is_llpd": "no",
+				"is_antitheft_fit": "no",
+				"is_external_bifuel": "no",
+				"is_aai_member": "no",
+				"external_bifuel_type": "",
+				"external_bifuel_value": 0,
+				"pa_owner_driver_si": "0",
+				"is_pa_od": "no",
+				"is_having_valid_dl": "no",
+				"is_opted_standalone_cpa": "yes",
+				"pa_paid_driver_si": "0",
+				"first_name": "",
+				"mobile": "",
+				"email": "",
+				"crn": "0",
+				"ss_id": 0,
+				"client_id": 2,
+				"fba_id": 0,
+				"geo_lat": 0,
+				"geo_long": 0,
+				"agent_source": "quick_tw_journey",
+				"ui_source": "quick_tw_journey",
+				"app_version": "2.0",
+				"ip_address": ip_address,
+				"mac_address": "",
+				"vehicle_insurance_subtype": "0CH_1TP",
+				"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+				"is_breakin": "no",
+				"is_inspection_done": "no",
+				"is_policy_exist": "yes",
+				"is_financed": "no",
+				"is_oslc": "no",
+				"oslc_si": 0,
+				"sub_fba_id": 0,
+				"ip_city_state": ip_city + "_" + ip_state
+			}			
+			
+			if(IsTypeFastLane === true){
+				data1["is_fastlane_rto"] = "yes";
+				/*if(OrgRtoFastLane !== ''){
+					data1["regno_rtocode"] = OrgRtoFastLane.toUpperCase();
+					data1["is_fastlane_rto"] = "yes";
+				}*/	
+			}else{
+				data1["is_fastlane_rto"] = "no";
+			}
+			console.log(JSON.stringify(data1));
+			var obj_horizon_data = Horizon_Method_Convert("/quote/premium_initiate", data1, "POST");
+
+			$.ajax({
+				type: "POST",
+				data : siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) :  JSON.stringify(data1),
+				url :  siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_initiate" ,
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (data) {
+					//$('.loading').hide();
+					console.log(data);
+					SRN = data.Summary.Request_Unique_Id;
+
+					//Get_Search_Summary();
+					Get_Saved_Data();
+				},
+				error: function (data) {
+					$('.loading').hide();
+					$.alert("Cannot Proceed Now. Please Try Again!");
+					console.log(data);
+				}
+			});
+		}
+		$('.DateofPurchaseofCar').on('change', function (e, date) {
+			$("#DateofPurchaseofCar").addClass('used');
+			$("#ManufactureDate").addClass('used');
+			$("#DateofPurchaseofCar").val($(this).val());
+		});
+		$('#DOPCRenew').bootstrapMaterialDatePicker({
+			time: false,
+			clearButton: true,
+			format: 'DD-MM-YYYY',
+			minDate: moment().subtract(25, 'years'), // 25 Years Before The Current Day // moment().subtract(25, 'y'),
+			maxDate: moment().subtract(6, 'months'), // 6 Months Before The Current Day
+			currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+			onSelect: function () {
+
+				myfunction();
+			}
+		});
+		$('.Datepicker').on('change', function (e, date) {
+			var thisId = $(this).attr('id');
+			var ErthisId = $("#Err" + thisId);
+			switch (thisId) {
+				case "DOPCRenew":
+					ErrMsg = "Please Select Registration Date.";
+					$(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+					break;
+			}
+			if ($(this).val() != "") {
+				ErthisId.html("").hide();
+			} else {
+				$("#Err" + thisId).show().html(ErrMsg);
+			}
+		});
+		$('.Datepicker').on('focus', function (e, date) {
+			var thisId = $(this).attr('id');
+			switch (thisId) {
+				case "DOPCRenew":
+					$(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+					break;
+			}
+		});
+		$(function () {
+			$('#datepicker1,#datepicker2,#datepicker3,#datepicker4').datepicker({
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: 'dd-mm-yy',
+				yearRange: 'c-82:c',
+
+				onSelect: function (date) {
+					if ($("#datepicker1").val() != "") {
+						$("#datepicker1").next().next().next().css("background", "rgb(0, 158, 227)");
+					}
+					else {
+						$("#datepicker1").next().next().next().css("background", "#ccc");
+					}
+				}
+
+			});
+
+		});
+		function myfunction() {
+			if ($('#DateofPurchaseofCar').val() == "") { } else {
+				var temp = $('#DateofPurchaseofCar').val().split('-');
+
+				var minManufactureDate = parseInt(temp[1]) + '-' + parseInt(temp[2] - 2);
+				var maxManufactureDate = parseInt(temp[1]) + '-' + parseInt(temp[2]);
+
+				$('#ManufactureYear').val(parseInt(temp[2]));
+				$("#ManufactureMonth").val(parseInt(temp[1]));
+				queryDate = parseInt(temp[1]) + '-' + parseInt(temp[2]);
+				$('#ManufactureDate').bootstrapMaterialDatePicker({
+					dateFormat: 'mm-yy'
+				});
+				$('#ManufactureDate').bootstrapMaterialDatePicker('setMinDate', minManufactureDate);
+				$('#ManufactureDate').bootstrapMaterialDatePicker('setMaxDate', maxManufactureDate);
+				$('#ManufactureDate').bootstrapMaterialDatePicker('setDate', queryDate);
+				$('#ManufactureDate').parent().removeClass('is-empty');
+				$('#ErManufactureDate').hide().html("");
+			}
+		}
+		function ipinfo() {
+			$.ajax({
+				type: "GET",
+				url: "https://ipinfo.io/json",
+				dataType: "json",
+				success: function (data) {
+					ip_address = data['ip'];
+					ip_city = data["city"];
+					ip_state = data["region"];
+				},
+				error: function (result) {
+				}
+			});
+		};
+		
+		function Get_Search_Summary() {
+
+			var str1 = {
+				"search_reference_number": SRN,
+				"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+			};
+			var obj_horizon_data = Horizon_Method_Convert("/quote/premium_summary", str1, "POST");		//UAT
+
+			$.ajax({
+				type: "POST",
+				data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str1),
+				url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_summary",
+
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (response) {
+					console.log('Summary')
+					console.log(response);
+					var vehicle = response.Master.Vehicle;
+					var request = response.Request;
+					var rto = response.Master.Rto;
+					var reqistration_no = "";
+
+				}, error: function (result) {
+
+				}
+			});
+		}
+		
+		function Get_Saved_Data() {
+			$('.loading').show();
+			var str1 = {
+				"search_reference_number": SRN,
+				"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+			};
+			var obj_horizon_data = Horizon_Method_Convert("/quote/premium_list_db", str1, "POST");
+			$.ajax({
+				type: "POST",
+				data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str1),
+				url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_list_db",
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (data) {
+					if(!(data.Msg === "Not Authorized")) {
+						console.log(data);
+						
+						//Response_Global = data;
+						quotes = data;
+						
+						var CreateTime = new Date(data['Summary'].Created_On);
+						var CurrentTime = new Date();
+						var DateDiff = Date.parse(CurrentTime) - Date.parse(CreateTime);
+						console.log(DateDiff);
+						StatusCount++;
+						var is_complete = false;
+						if ((DateDiff >= 30000 || data['Summary']['Status'] === "complete")) {
+							is_complete = true;
+							$('.loading').hide();
+						}
+						var insurer_count = 0;
+						if (is_complete === false) {
+							for(var x in data.Response){
+								if(data.Response[x].Insurer_Id == 17 ){
+									insurer_count++;
+								}							
+							}
+							if(insurer_count == 0){
+								setTimeout(() => {
+									Get_Saved_Data();									
+								}, 3000);
+							}							
+						}
+						response_handler();
+					}
+					else { 
+						$('.loading').hide();
+						console.log("Quotes not available for selected Criteria");
+					}
+				},
+
+				error: function (result) {
+					// alert("Error");
+				}
+			});
+
+		}
+		function response_handler() {
+			for (var i = 0; i < quotes.Response.length ; i++) {
+				if (quotes.Response[i].Error_Code === "") {
+					//$('.quote_div').show();	
+					/*if(IsTypeFastLane == true){
+						$(".Prop_registration_no").hide();
+					}else{
+						$(".Prop_registration_no").show();
+					}*/
+					if(quotes.Response[i].Insurer_Id == 17){
+						$('.quote_div').show();	
+						$('.proposal_div').show();
+						$("#sbi_premium").text(quotes.Response[i].Premium_Breakup.final_premium);
+						Service_Unique_Id_sbi = quotes.Response[i].Service_Log_Unique_Id;
+						sbi_final_prmium = quotes.Response[i].Premium_Breakup.final_premium;
+						sbi_tax = quotes.Response[i].Premium_Breakup.service_tax;
+						sbi_net_premium = quotes.Response[i].Premium_Breakup.net_premium;
+						$(".sbi_image").empty().append('<img id="Img_17" src="https://www.policyboss.com/Images/insurer_logo/SBI_General.png" style="width:auto" alt="SBI General Insurance Co. Ltd." title="SBI General Insurance Co. Ltd.">');
+					}else if(quotes.Response[i].Insurer_Id == 46){
+						$('.quote_div').show();	
+						$('.proposal_div').show();
+						$("#edelweiss_premium").text(quotes.Response[i].Premium_Breakup.final_premium);
+						Service_Unique_Id_edelweiss = quotes.Response[i].Service_Log_Unique_Id;
+						edel_final_prmium = quotes.Response[i].Premium_Breakup.final_premium;
+						edel_tax = quotes.Response[i].Premium_Breakup.service_tax;
+						edel_net_premium = quotes.Response[i].Premium_Breakup.net_premium;
+						$(".edelweiss_image").empty().append('<img id="Img_46" src="https://www.policyboss.com/Images/insurer_logo/edelweiss.png" style="width:auto" alt="Edelweiss General Insurance Co. Ltd." title="Edelweiss General Insurance Co. Ltd.">');
+					}			
+				}
+			}
+			$('.loading').hide();			
+		}
+		$("#sbi_div").click(function(){
+			$("#sbi_div").addClass('btn-primarySelected active').removeClass('btn-UnSelected');
+			$("#edelweiss_div").addClass('btn-UnSelected').removeClass('btn-primarySelected active');
+		});
+		$("#edelweiss_div").click(function(){
+			$("#edelweiss_div").addClass('btn-primarySelected active').removeClass('btn-UnSelected');
+			$("#sbi_div").addClass('btn-UnSelected').removeClass('btn-primarySelected active');
+		});
+		function CustomerValidation(){
+
+			var Error_count = 0;
+			if ($("#full_name").val() === null || $("#full_name").val() === "" ) {
+				Error_count++;
+				$('#Erfull_name').show();
+				$('#Erfull_name').text("Please Enter Full Name");
+			} else {
+				$("#Erfull_name").hide().html("");
+			}
+			if ($("#mobile").val() === null || $("#mobile").val() === "" || checkMobile($("#mobile")) != true) {
+				Error_count++;
+				$('#Ermobile').show();
+				$('#Ermobile').text("Please Enter Mobile Number");
+			} else {
+				$('#Ermobile').hide().html("");
+			}
+			if ($("#email").val() === null || $("#email").val() === "" || checkEmail($("#email")) != true) {
+				Error_count++;
+				$('#Eremail').show();
+				$('#Eremail').text("Please Enter Email Id");
+			} else {
+				$("#Eremail").hide().html("");
+			}
+			if ($("#address").val() === null || $("#address").val() === "") {
+				Error_count++;
+				$('#Eraddress').show();
+				$('#Eraddress').text("Please Enter Address");
+			} else {
+				$("#Eraddress").hide().html("");
+			}
+			if ($("#code").val() === null || $("#code").val() === "") {
+				Error_count++;
+				$('#Ercode').show();
+				$('#Ercode').text("Please Enter Code");
+			} else {
+				$("#Ercode").hide().html("");
+			}
+			//fastlane code
+			/*if(IsTypeFastLane != true){
+				var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+				var Number_Pattern = new RegExp('^[0-9]*$');
+				var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+
+				if ($("#prop_Reg1").val() == "" || $("#prop_Reg1").val().length != 2 || (Text_Pattern.test($("#prop_Reg1").val()) == false)) {
+					Error_count++;
+					ProposalRegNoblockError('prop_Reg1');
+				}
+				else {  $("#prop_Reg1").removeClass('errorTxt'); }
+
+				if ($("#prop_Reg2").val() == "" || $("#prop_Reg2").val().length != 2 || (AlphaNum_Pattern.test($("#prop_Reg2").val()) == false)) {
+					Error_count++;
+					ProposalRegNoblockError('prop_Reg2');
+				}
+				else if(Text_Pattern.test($("#prop_Reg2").val()) == true) {
+					ProposalRegNoblockError('prop_Reg2');
+				}
+				else {  $("#prop_Reg2").removeClass('errorTxt');}
+
+				if ($("#prop_Reg3").val() != "" && ($("#prop_Reg3").val().length < 2 || $("#prop_Reg3").val().length > 3 || (AlphaNum_Pattern.test($("#prop_Reg3").val()) == false))) {
+					Error_count++;
+					ProposalRegNoblockError('prop_Reg3');
+				}
+				else {  $("#prop_Reg3").removeClass('errorTxt'); }
+
+				if ($("#prop_Reg1").val() == "" || $("#prop_Reg2").val() == "" || $("#prop_Reg4").val() == "") {
+					Error_count++;
+					ProposalRegNoblockError('prop_Reg3');
+				}
+
+				if ($("#prop_Reg4").val() == "" || $("#prop_Reg4").val().length != 4 || (Number_Pattern.test($("#prop_Reg4").val()) == false)) {
+					Error_count++;
+					ProposalRegNoblockError('prop_Reg4');
+				}
+				else {  $("#prop_Reg4").removeClass('errorTxt'); }
+			}*/
+			if(Error_count == 0){
+				$('#Erprop_RegistrationNo').html("").hide();
+				$('.loading').show();
+				var DateofPurchaseofCar = $('#DateofPurchaseofCar').val().split('-');
+				DateofPurchaseofCar = DateofPurchaseofCar[2] + '-' + DateofPurchaseofCar[1] + '-' + DateofPurchaseofCar[0];
+				var manf_date = $('#DateofPurchaseofCar').val().split('-');
+				manf_date = manf_date[2] + '-' + manf_date[1] + '-' + "01";
+				
+				var _registration_no = $("#RTO_Id").val() == null ? "" : $("#RTO_Id").val();
+				
+				_registration_no = $("#Reg1").val().toUpperCase() + "-"+ $("#Reg2").val() + "-" + $("#Reg3").val().toUpperCase() + "-" + $("#Reg4").val();
+				
+				//fastlane code
+				/*if (_registration_no.length > 0) {
+					if (IsTypeFastLane == true) {
+						_registration_no = $("#RegistrationNo").val();
+					} else {
+						_registration_no = $("#prop_Reg1").val() + $("#prop_Reg2").val() + $("#prop_Reg3").val() + $("#prop_Reg4").val();
+						//_registration_no = "MH-02-GR-2545";
+						//_registration_no = ($("#Registvalue").val().split("-")[0]).slice("0","2") + "-" + ($("#Registvalue").val().split("-")[0]).slice("2","4") + "-AA-1234";
+					}
+				}else {
+					_registration_no = $("#prop_Reg1").val() + "-"+ $("#prop_Reg2").val() + "-" + $("#prop_Reg3").val() + "-" + $("#prop_Reg4").val();
+					//_registration_no = "MH-02-GR-2545";
+					//_registration_no = ($("#Registvalue").val().split("-")[0]).slice("0","2") + "-" + ($("#Registvalue").val().split("-")[0]).slice("2","4") + "-AA-1234";
+				}*/
+				
+				var Service_Unique_Id, final_premium, tax, net_premium, insurer_id;
+				if($("#sbi_div").hasClass("active") == true){
+					Service_Unique_Id = Service_Unique_Id_sbi;
+					final_premium = sbi_final_prmium;
+					tax =  sbi_tax;
+					net_premium = sbi_net_premium;
+					insurer_id = 17;
+				}else{
+					Service_Unique_Id = Service_Unique_Id_edelweiss;
+					final_premium = edel_final_prmium;
+					tax =  edel_tax;
+					net_premium = edel_net_premium;
+					insurer_id = 46;
+				}
+				var fullName = ($("#full_name").val()).split(" ");
+				var middle_name, last_name;
+				if(fullName.length === 3 ){
+					middle_name = fullName[1];
+					last_name = fullName[2];
+				}else if(fullName.length === 2 ){
+					middle_name = "";
+					last_name = fullName[1];
+				}				
+				
+				var request = {
+					"aadhar": "",
+					"agent_source": "",
+					"api_reference_number": Service_Unique_Id,
+					"app_version": "PolicyBoss.com",
+					"birth_date": "2002-06-12",
+					"breakin_location_code": "0",
+					"channel": "DIRECT",
+					"chassis_number": randomString(15),
+					"client_id": "2",
+					"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+					"client_name": "PolicyBoss",
+					"communication_address_1": $("#address").val(),
+					"communication_address_2": "TEST",
+					"communication_address_3": "TEST",
+					"communication_city": "MUMBAI",
+					"communication_city_code": "3000000400",
+					"communication_district_code": "",
+					"communication_locality_code": "5000051510",
+					"communication_locality_code_text": "Santacruz(East)",
+					"communication_pincode": "400055",
+					"payment_code":$("#code").val(),
+					"communication_state": "MAHARASHTRA",
+					"communication_state_code": "2000000015",
+					"company_name": "",
+					"crn": quotes.Summary.PB_CRN,
+					"electrical_accessory": "0",
+					"email": $("#email").val(),
+					"engine_number": randomString(15),
+					"erp_qt": "",
+					"erp_source": "FRESH-TW",
+					"erp_uid": "",
+					"execution_async": "yes",
+					"external_bifuel_type": "",
+					"external_bifuel_value": "0",
+					"fba_id": "0",
+					"final_premium": final_premium,
+					"financial_agreement_type": "0",
+					"financial_agreement_type_text": "Select Financier Type",
+					"financial_institute_city": "",
+					"financial_institute_code": "",
+					"financial_institute_name": "",
+					"first_name": $("#full_name").val().split(" ")[0],
+					"gender": "M",
+					"geo_lat": "0",
+					"geo_long": "0",
+					"gst_no": "",
+					"idv_by_crn": "yes",
+					"insurer_id": insurer_id,
+					"ip_city_state": ip_city + "_" + ip_state,
+					"is_aai_member": "no",
+					"is_antitheft_fit": "no",
+					"is_breakin": "no",
+					"is_claim_exists": "yes",
+					"is_customer_paid": "yes",
+					"is_external_bifuel": "",
+					"is_financed": "no",
+					"is_having_valid_dl": "no",
+					"is_inspection_done": "no",
+					"is_llpd": "no",
+					"is_mobile": "no",
+					"is_mobile_verified": "yes",
+					"is_opted_standalone_cpa": "yes",
+					"is_oslc": "no",
+					"is_pa_od": "no",
+					"is_policy_exist": "yes",
+					"is_posp": "no",
+					"is_reg_addr_comm_addr_same": "yes",
+					"is_valid_pucc": "no",
+					"is_whatsapp_allow": "0",
+					"last_name": last_name,
+					"lm_agent_id": "",
+					"lm_agent_mobile": "",
+					"lm_agent_name": "",
+					"marital": "Married",
+					"marital_text": "Married",
+					"method_type": "Proposal",
+					"middle_name": middle_name,
+					"mobile": $("#mobile").val(),
+					"net_premium": net_premium,
+					"nominee_birth_date": "2003-06-11",
+					"nominee_name": "TEST TEST",
+					"nominee_relation": "Sister",
+					"nominee_relation_text": "Sister",
+					"non_electrical_accessory": "0",
+					"occupation": "Student",
+					"occupation_text": "Student",
+					"oslc_si": "0",
+					"pa_owner_driver_si": "0",
+					"pa_paid_driver_si": "0",
+					"pan": "",
+					"permanent_address_1": $("#address").val(),
+					"permanent_address_2": "TEST",
+					"permanent_address_3": "TEST",
+					"permanent_city": "MUMBAI",
+					"permanent_city_code": "3000000400",
+					"permanent_district_code": "",
+					"permanent_locality_code": "5000051510",
+					"permanent_locality_code_text": "Santacruz(East)",
+					"permanent_pincode": "400055",
+					"permanent_state": "MAHARASHTRA",
+					"permanent_state_code": "2000000015",
+					"policy_expiry_date": todayDate,
+					"policy_od_tenure": "0",
+					"policy_tenure": "1",
+					"policy_tp_tenure": "1",
+					"posp_aadhar": "0",
+					"posp_agent_city": "0",
+					"posp_category": "PolicyBoss",
+					"posp_email_id": "0",
+					"posp_erp_id": "0",
+					"posp_fba_id": "0",
+					"posp_first_name": "0",
+					"posp_gender": "0",
+					"posp_last_name": "0",
+					"posp_last_status": "0",
+					"posp_middle_name": "0",
+					"posp_mobile_no": "0",
+					"posp_pan_no": "0",
+					"posp_posp_category": "0",
+					"posp_posp_id": "0",
+					"posp_reporting_agent_name": "POLICY BOSS WEBSITE",
+					"posp_reporting_agent_uid": "508389",
+					"posp_reporting_email_id": "0",
+					"posp_reporting_mobile_number": "0",
+					"posp_sm_posp_id": "0",
+					"posp_sm_posp_name": "0",
+					"posp_sources": "0",
+					"posp_ss_id": "0",
+					"prev_insurer_id": "1",
+					"previous_policy_number": "65S4F65SF4564",
+					"product_id": "10",
+					"proposal_url": siteURL.indexOf('https') == 0 ? "http://policyboss.com/car-insurance/buynow/2/" + Service_Unique_Id + "/NonPOSP/0" : "http://qa.policyboss.com/car-insurance/buynow/2/" + Service_Unique_Id +"/NonPOSP/0",
+					"pucc_end_date": "",
+					"pucc_number": "",
+					"registration_no": _registration_no,
+					"registration_no_1": _registration_no.slice("0","2"),
+					"registration_no_2": _registration_no.slice("3","5"),
+					"registration_no_3": _registration_no.slice("6","8"),
+					"registration_no_4": _registration_no.slice("9"),
+					"rto_full": quotes.Summary.Request_Core.rto_full,
+					"rto_id": $('#RTO_Id').val(),
+					"rto_text": _registration_no.slice("0","2") + " - " + _registration_no.slice("3","5") + " " + quotes.Summary.Request_Core.rto_full.split("|")[1].split("-")[0],
+					"salutation": "MR",
+					"salutation_text": "MR",
+					"search_reference_number": quotes.Summary.Request_Unique_Id,
+					"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+					"ss_id": "0",
+					"sub_fba_id": "0",
+					"subchannel": "DIRECT",
+					"tax": tax,
+					"tp_end_date": "",
+					"tp_policy_number": "",
+					"tp_start_date": "",
+					"udid": quotes.Summary.Request_Core.udid,
+					"undefined": "formPOST",
+					"vehicle_color": "BLACK",
+					"vehicle_expected_idv": "0",
+					"vehicle_full": quotes.Summary.Request_Core.vehicle_full,
+					"vehicle_id": $('#Vehicle_Id').val(),
+					"vehicle_insurance_subtype": "0CH_1TP",
+					"vehicle_insurance_type": "renew",
+					"vehicle_make_name": quotes.Summary.Request_Core.vehicle_make_name,
+					"vehicle_manf_date": manf_date,
+					"vehicle_ncb_current": "0",
+					"vehicle_registration_date": DateofPurchaseofCar,
+					"vehicle_registration_type": "individual",
+					"vehicle_text": quotes.Summary.Request_Core.vehicle_full.split("|")[0] + ", " + quotes.Summary.Request_Core.vehicle_full.split("|")[1] + ", " + quotes.Summary.Request_Core.vehicle_full.split("|")[2],
+					"whatsapp_mobile": ""
+				}
+				if(IsTypeFastLane === true){
+					request["is_fastlane_rto"] = "yes";
+				}else{
+					request["is_fastlane_rto"] = "no";
+				}
+				update_user_data(request);
+			}			
+		}
+		
+		function update_user_data(obj) {
+			console.log(JSON.stringify(obj));
+			var request = obj;
+			obj["secret_key"] = "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW";
+			obj["client_key"] = "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9";
+			obj["data_type"] = "proposal";
+			var SaveDataURL = '/quote/save_user_data';
+			//var obj_horizon_data = Horizon_Method_Convert(SaveDataURL, obj, "POST");
+			$.ajax({
+				type: "POST",
+				data: JSON.stringify(obj),
+				url: GetUrl() + "/quote/save_user_data",
+				dataType: "json",
+				contentType: "application/json;charset=utf-8",
+				success: function (response) {
+					var res = response;
+					if (res.Msg == "Data saved") { 
+						$("#ErProposalError").hide().html("");
+						console.log("Data Saved"); 
+						console.log('proposal_request', request);
+						//var obj_horizon_data = Horizon_Method_Convert("/quote/proposal_initiate", request, "POST");
+						$.ajax({
+							type: "POST",
+							url: GetUrl() + '/quote/proposal_initiate',
+							data: JSON.stringify(request),
+							contentType: "application/json;charset=utf-8",
+							dataType: "json",
+							success: function (response) {
+								console.log(response);
+								if (response.hasOwnProperty('Status') && response.Status != null && response.Status != '' && response.Status == "VALIDATION") {
+									$('.loading').hide();
+									$("#ErProposalError").show().html(response.Msg);
+								}
+								else if (response.hasOwnProperty('Error') && response.Error.Error_Action === "UI_VALIDATION") {
+									$('.loading').hide();
+									$("#ErProposalError").show().html(response.Error.Error_Desc);
+								}
+								else {
+									$("#ErProposalError").hide().html("");
+									var proposal_id;
+									var arn = response.Service_Log_Unique_Id;
+									if (response.Proposal_Id) {
+										proposal_id = response.Proposal_Id;
+									} else {
+										proposal_id = 0;
+									}
+									var res = {};
+									console.log('proposal_initate response', response);
+									if (response.hasOwnProperty('Service_Log_Unique_Id') && arn.includes('-')) {
+										var max_count = 150;
+										setTimeout(function () {
+											get_payment_data(arn, max_count, proposal_id);
+										}, 1000);
+									}
+									else {
+										$('.loading').hide();
+										$("#ErProposalError").show().html("Technical Issue ! Cannot Initiate Proposal !");
+									}
+								}
+							},
+							error: function (request, status, errorThorwn) {
+								$('.loading').hide();
+								console.log(request);
+								console.log(status);
+								$("#ErProposalError").show().html("Technical Issue ! Cannot Initiate Proposal !");								
+							}
+						});
+					}
+				},
+				error: function (data) { $('.loading').hide(); $("#ErProposalError").show().html(data); console.log(data); }
+			});
+			return false;
+		}
+		var error_response = {};
+		function get_payment_data(arn, count, proposal_id) {
+			var srn = quotes.Summary.Request_Unique_Id;
+			var crn = quotes.Summary.PB_CRN;
+			var product_id = 10;
+			var obj = {};
+			obj["search_reference_number"] = srn;
+			obj["api_reference_number"] = arn;
+			obj["Proposal_Id"] = proposal_id;
+			obj["secret_key"] = "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW";
+			obj["client_key"] = "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9";
+			var SaveDataURL = '/quote/proposal_details';
+			//var obj_horizon_data = Horizon_Method_Convert(SaveDataURL, obj, "POST");
+			$.ajax({
+				type: "POST",
+				data: obj,
+				url: GetUrl() + "/quote/proposal_details",
+				dataType: "json",
+				success: function (response) {
+					var response_json = response;
+					if (response_json.Status === 'complete') { 
+
+						if (response_json.Error === null) {
+							$("#ErProposalError").hide().html("");
+							console.log(response_json.Payment);
+							window.location.href = response_json.Payment.proposal_confirm_url;
+							//PaymentPost(response_json.Payment.pg_url,response_json.Payment.pg_data,"POST");
+						}
+						else {
+							error_response = response_json.Error;
+							$('.loading').hide();
+							if (response_json.Error.Error_Code == "LM206" && response_json.hasOwnProperty('Payment') && response_json.Payment.Premium_Verification.Is_PG_Allowed == true) {
+								$('#ErProposalError').show().html("Status:" + response_json.Error.Error_Specific);
+							} else if (response_json.Error.Error_Code == "LM001" || response_json.Error.Error_Code == "LM002") {
+								$('#ErProposalError').show().html("Error:" + response_json.Error.Error_Specific);
+							} else {
+								$('#ErProposalError').show().html("Error:" + response_json.Error.Error_Msg);
+							}
+						}
+					}else if (count > 0) {
+						setTimeout(function () {
+							get_payment_data(arn, count--, proposal_id);
+						}, 2000);
+					}else {
+						$('.loading').hide();
+						$("#ErProposalError").show().html("Technical Issue ! Cannot Initiate Proposal !");	
+						error_response = response_json.Error;
+					}
+				}
+			});
+		}		
+		
+		function checkMobile(input) {
+			var pattern = new RegExp('^([6-9]{1}[0-9]{9})$');
+			var dvid = "Er" + $(input).attr('id');
+			if (pattern.test(input.val()) == false) { $('#' + dvid).addClass('Error'); return false; }
+			else { $('#' + dvid).removeClass('Error'); return true; }
+		};
+		function checkEmail(input) {
+			var dvid = "Er" + $(input).attr('id');
+			var re = /^(?!.*(?:''|\.\.))([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+			if (!re.test(input.val())) { $('#' + dvid).addClass('Error'); return false; }
+			else { $('#' + dvid).removeClass('Error'); return true; }
+		};
+		function preventNumbers(e) {
+			e = e || window.event;
+			var charCode = (typeof e.which == "undefined") ? e.keyCode : e.which;
+			var charStr = String.fromCharCode(charCode);
+			if (/\d/.test(charStr)) {
+				return false;
+			}
+		};
+		function preventAlphabets(evt) {
+			var charCode = (evt.which) ? evt.which : event.keyCode;
+			if ((charCode < 48 || charCode > 57))
+				return false;
+
+			return true;
+		};
+		//fastlane code
+		/*function CheckType(type) {
+			//$('.loading').show();
+			FlagRegNoValid = 0;
+			$('.ErrorSpanvalue').hide().text("");
+			$('.ErrorRegistvalue').hide().text("");
+			$("#ErrDOPCRenew").hide().html("");
+			
+			$("#DateofPurchaseofCar").val("");
+			if (type == "FastLane") {
+				IsTypeFastLane = true;
+				var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+				var Number_Pattern = new RegExp('^[0-9]*$');
+				var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+
+				if ($("#Reg1").val() == "" || $("#Reg1").val().length != 2 || (Text_Pattern.test($("#Reg1").val()) == false)) {
+					RegNoblockError('Reg1');
+				}
+				else {  $("#Reg1").removeClass('errorTxt'); }
+
+				if ($("#Reg2").val() == "" || $("#Reg2").val().length != 2 || (AlphaNum_Pattern.test($("#Reg2").val()) == false)) {
+					RegNoblockError('Reg2');
+				}
+				else if(Text_Pattern.test($("#Reg2").val()) == true) {
+					RegNoblockError('Reg2');
+				}
+				else {  $("#Reg2").removeClass('errorTxt');}
+
+				if ($("#Reg3").val() != "" && ($("#Reg3").val().length < 2 || $("#Reg3").val().length > 3 || (AlphaNum_Pattern.test($("#Reg3").val()) == false))) {
+					RegNoblockError('Reg3');
+				}
+				else {  $("#Reg3").removeClass('errorTxt'); }
+
+				if ($("#Reg1").val() == "" || $("#Reg2").val() == "" || $("#Reg4").val() == "") {
+					RegNoblockError('Reg3');
+				}
+
+				if ($("#Reg4").val() == "" || $("#Reg4").val().length != 4 || (Number_Pattern.test($("#Reg4").val()) == false)) {
+					RegNoblockError('Reg4');
+				}
+				else {  $("#Reg4").removeClass('errorTxt'); }
+
+				var RegNumber = $("#Reg1").val() + $("#Reg2").val() + $("#Reg3").val() + $("#Reg4").val();
+				FastLane_RegNo = $("#Reg1").val().toUpperCase() +'-'+ $("#Reg2").val().toUpperCase();
+				$("#RegistrationNo").val(RegNumber);
+				
+				$("#RegistrationNoError").hide().html("");
+				RegNo = $("#RegistrationNo").val().toUpperCase();
+				var pattern1 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z0-9]{2}[0-9]{4}$');//new RegExp('^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$');
+				var Result1 = pattern1.test(RegNo);
+				var pattern2 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z0-9]{3}[0-9]{4}$');
+				var Result2 = pattern2.test(RegNo);
+				var pattern3 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z0-9]{1}[0-9]{4}$');
+				var Result3 = pattern3.test(RegNo);
+				var pattern4 = new RegExp('^[A-Z]{2}[A-Za-z0-9]{2}[A-Z0-9]{2}[0-9]{4}$');
+				var Result4 = pattern4.test(RegNo);
+				var pattern5 = new RegExp('^[A-Z]{2}[0-9]{2}[0-9]{4}$');
+				var Result5 = pattern5.test(RegNo);
+
+				if (RegNo != "" && !(RegNo.length < 7 && RegNo.length > 11)) {
+					if ((RegNo.length == 10 && (Result1 == true  || Result4 == true)) || (RegNo.length == 11 && Result2 == true) || (RegNo.length == 9 && Result3 == true) || (RegNo.length == 8 && Result5 == true)) {
+						twowheelerType = "RENEW";
+						$('#RegistrationNoError').html("").hide();
+						$('.loading').show();
+						CheckRTOFromDB();
+					}
+					else {
+						RegNoError();
+					}
+				}
+				else {
+					RegNoError();
+				}
+			}
+		}*/
+		function RegNoError()
+		{
+			$("#RegistrationNo").addClass('ErrorClass');
+			var validationMsg = "Please Enter Valid Registration Number.";
+			$('#RegistrationNoError').html(validationMsg).show();
+			return false;
+		}
+		function RegNoblockError(id){
+			$("#"+id).addClass('errorTxt');
+			var validationMsg = "Please Enter Valid Registration Number.";
+			$('#RegistrationNoError').html(validationMsg).show();
+			return false;
+		}
+		function ProposalRegNoblockError(id){
+			$("#"+id).addClass('errorTxt');
+			var validationMsg = "Please Enter Valid Registration Number.";
+			$('#Erprop_RegistrationNo').html(validationMsg).show();
+			return false;
+		}
+		function CheckRTOFromDB() {
+			var Rto_No = $("#Reg1").val().toLowerCase() + $("#Reg2").val().toLowerCase();
+			if(RTOList.length > 0){
+				RTO_count = 0;
+				Fastlane_Rto_List = [];
+				for (var r in RTOList){
+					var RTO_State_Name = "";
+					if(RTOList[r].hasOwnProperty('VehicleCity_RTOCode')){
+						RTO_State_Name =(RTOList[r]['VehicleCity_RTOCode']).toLowerCase();
+						if(RTO_State_Name == Rto_No){
+							RTO_count++;
+							Fastlane_Rto_List.push(RTOList[r]);
+						}else{
+							//$("#CityofRegitration").attr('disabled', true);
+						}
+					}
+				}
+				if(RTO_count === 0){
+					$('.loading').hide();
+					$("#RegistrationNo").addClass('errorTxt');
+					var validationMsg = "Invalid RTO";
+					$('#RegistrationNoError').html(validationMsg).show();
+					return false;
+				}else{
+					GetFastLane1(RegNo);
+				}
+			}else{
+				setTimeout(CheckRTOFromDB, 5000);
+			}
+		}
+		function GetFastLane1(RegNo) {
+			var data1 = {
+				"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+				"RegistrationNumber":RegNo,
+				"product_id":10,
+				"ss_id":0
+			}
+			//var obj_horizon_data = Horizon_Method_Convert("/quote/vehicle_info",data1,"POST");
+
+			$.ajax({
+				url: GetUrl() + "/quote/vehicle_info",
+				data: JSON.stringify(data1),
+				type: "POST",
+				dataType: "json",
+				traditional: true,
+				contentType: "application/json; charset=utf-8",
+				success: function (data,e) {
+					console.log(data);
+					if (data.Variant_Id < 50000) { // Checking Invalid Car Registration Number
+						FlagRegNoValid = 1;
+					}
+					if (data != "" && FlagRegNoValid != 1 && data.ErrorMessage == "" ) {
+						$("#RegistrationNoError").show().html("Please Verify Your Details Before Proceeding").css("color", "#0b67b0 !important");
+						$('.loading').hide();
+						if (data.Make_Name == "" || data.Make_Name == null || data.Model_Name == "" || data.Model_Name == null || data.Fuel_Type == null || data.Fuel_Type == "" || data.Variant_Name == null || data.Variant_Name == "" || data.Variant_Name == 0) {
+							$(".ErrorSpanvalue").show().text("Please Select Vehicle");
+						}
+						else {							
+							$("#spanvalue").val(data.Make_Name + ' - ' + data.Model_Name + ' - ' + data.Variant_Name + ' - ' + data.Fuel_Type + ' - ' + data.Cubic_Capacity + ' CC' + ' - ' + data.Seating_Capacity + " SC");
+							$("#Vehicle_Id").val(data.Model_ID);
+						}
+
+						if (data.RTO_Name != null && data.RTO_Name != "") {
+							strcity = RegNo.slice(0, 4);
+							strcity = strcity + " - " + data.RTO_Name;
+							$("#Registvalue").val(strcity);
+							$('#RTO_Id').val(data.VehicleCity_Id);
+						}
+						else { $(".ErrorRegistvalue ").show().text("Please Select RTO"); }
+
+						$('#DOPCRenew').bootstrapMaterialDatePicker({
+							time: false, clearButton: true, format: 'DD-MM-YYYY',
+							minDate: moment().subtract(25, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+							maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+							currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+							onSelect: function () { myfunction(); }
+						});
+
+						if (data.Registration_Date != null && data.Registration_Date != "") { $("#DateofPurchaseofCar, #DOPCRenew").val(data.Registration_Date.replaceAll("/","-")); }
+						else { $("#DateofPurchaseofCar, #DOPCRenew").val("");  $("#ErDateofPurchaseofCar, #ErDOPCRenew").show().addClass('DetailsError'); }
+					}else if (FlagRegNoValid == 1 && data.Variant_Id != 0) {
+						$('.loading').hide();
+						var EMsg ="Please Enter Valid Bike Registration Number."
+						$("#RegistrationNoError").show().html(EMsg);
+						return false;
+					}else {
+						$('.loading').hide();
+						IsTypeFastLane = "False";
+						validationMsg = "Your Vehicle Details Not Found. Please Enter Manually";
+						$("#RegistrationNoError").show().html(validationMsg).css("color", "#0b67b0 !important");
+					}
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+				}
+			});
+		}
+		function randomString(length){
+			var result = '';
+			var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			for (var i = length; i > 0; --i)
+				result += chars[Math.floor(Math.random() * chars.length)];
+			return result;
+		}
+		function PaymentPost(path, params, method) {
+			if (method.toString().toLowerCase() == 'get' && params == null) {
+			  window.location.href = path;
+			}
+			else {
+			  method = method || "post"; // Set method to post by default if not specified.
+			  // The rest of this code assumes you are not using a library.
+			  // It can be made less wordy if you use one.
+			  var form = document.createElement("form");
+			  form.setAttribute("method", method);
+			  form.setAttribute("action", path);
+			  for (var key in params) {
+				if (params.hasOwnProperty(key)) {
+				  var hiddenField = document.createElement("input");
+				  hiddenField.setAttribute("type", "hidden");
+				  hiddenField.setAttribute("name", key);
+				  hiddenField.setAttribute("value", params[key]);
+
+				  form.appendChild(hiddenField);
+				}
+			  }
+			  document.body.appendChild(form);
+			  this.loading = false;
+			  form.submit();
+			}
+		}
+		
+		function fastlane_reg_no() {
+			$(".inputIsu").keyup(function () {
+				if (this.value.length == this.maxLength) {
+					$(this).next('.inputIsu').focus();
+				}
+			});
+		}
+
+	</script>
+</body>
+
+</html>

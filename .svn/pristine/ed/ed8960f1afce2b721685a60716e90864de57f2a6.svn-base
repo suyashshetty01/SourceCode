@@ -1,0 +1,164 @@
+{
+    "enquiryId": "GODIGIT_QQ_CV_PACKAGE_01",
+    "contract": {
+        "insuranceProductCode": "___vehicle_insurance_subtype_3___",
+        "subInsuranceProductCode": "PB",
+        "startDate": "___policy_start_date___",
+        "endDate": "___policy_end_date___",
+        "policyHolderType": "___vehicle_registration_type___",
+        "externalPolicyNumber": null,
+        "isNCBTransfer": null,
+        "quotationDate": null,
+        "coverages": {
+            "voluntaryDeductible": "ZERO",
+            "thirdPartyLiability": {
+                "isTPPD": ___is_tppd___
+            },
+            "ownDamage": {
+                "discount": {
+                    "userSpecialDiscountPercent": 0,
+                    "discounts": []
+                },
+                "surcharge": {
+                    "loadings": []
+                }
+            },
+            "personalAccident": {
+                "selection": "___pa_owner_driver_si_2___",
+                "insuredAmount": ___pa_owner_driver_si___,
+                "coverTerm": null
+            },
+            "accessories": {
+                "cng": {
+                    "selection": "___is_external_bifuel___",
+                    "insuredAmount": ___external_bifuel_value___
+                },
+                "electrical": {
+                    "selection": "___electrical_accessory_2___",
+                    "insuredAmount": ___electrical_accessory___
+                },
+                "nonElectrical": {
+                    "selection": "___non_electrical_accessory_2___",
+                    "insuredAmount": ___non_electrical_accessory___
+                }
+            },
+            "addons": {
+                "partsDepreciation": {
+                    "claimsCovered": null,
+                    "selection": null
+                },
+                "roadSideAssistance": {
+                    "selection": null
+                },
+                "engineProtection": {
+                    "selection": null
+                },
+                "tyreProtection": {
+                    "selection": null
+                },
+                "rimProtection": {
+                    "selection": null
+                },
+                "returnToInvoice": {
+                    "selection": null
+                },
+                "consumables": {
+                    "selection": null
+                }
+            },
+            "legalLiability": {
+                "paidDriverLL": {
+                    "selection": "___is_llpd_3___",
+                    "insuredCount": null
+                },
+                "employeesLL": {
+                    "selection": "",
+                    "insuredCount": null
+                },
+                "unnamedPaxLL": {
+                    "selection": null,
+                    "insuredCount": null
+                },
+                "cleanersLL": {
+                    "selection": "___cleaner_ll___",
+                    "insuredCount": null
+                },
+                "nonFarePaxLL": {
+                    "selection": "___non_fairing_paying_passenger___",
+                    "insuredCount": null
+                },
+                "workersCompensationLL": {
+                    "selection": "___workers_ll___",
+                    "insuredCount": null
+                }
+            },
+            "unnamedPA": {
+                "unnamedPax": {
+                    "selection": "___pa_unnamed_passenger_si_2___",
+                    "insuredAmount": ___pa_unnamed_passenger_si___,
+                    "insuredCount": null
+                },
+                "unnamedPaidDriver": {
+                    "selection": "___pa_unnamed_paid_driver___",
+                    "insuredAmount": ___pa_paid_driver_si___,
+                    "insuredCount": null
+                },
+                "unnamedHirer": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedPillionRider": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedCleaner": {
+                    "selection": "___pa_unnamed_cleaner___",
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedConductor": {
+                    "selection": "___pa_unnamed_conductor___",
+                    "insuredAmount": null,
+                    "insuredCount": null
+                }
+            },
+            "isIMT23": ___is_imt23___
+        }
+    },
+    "vehicle": {
+        "isVehicleNew": ___vehicle_insurance_type___,
+        "vehicleMaincode": "___dbmaster_insurer_vehicle_code___",
+        "licensePlateNumber": "___registration_no_1______registration_no_2______registration_no_3______registration_no_4___",
+        "vehicleIdentificationNumber": null,
+        "engineNumber": null,
+        "manufactureDate": "___vehicle_manf_date___",
+        "registrationDate": "___vehicle_registration_date___",
+        "vehicleIDV": {
+            "idv": ___vehicle_expected_idv___,
+            "defaultIdv": ___vehicle_normal_idv___,
+            "minimumIdv": ___vehicle_min_idv___,
+            "maximumIdv": ___vehicle_max_idv___
+        },
+        "usageType": "KFZOT",
+        "permitType": "___permit_type___",
+        "motorType": ""
+    },
+    "previousInsurer": {
+        "isPreviousInsurerKnown": ___is_policy_exist___,
+        "previousInsurerCode": "___dbmaster_previousinsurer_code___",
+        "previousPolicyNumber": null,
+        "previousPolicyExpiryDate": "___policy_expiry_date___",
+        "isClaimInLastYear": ___is_claim_exists___,
+        "originalPreviousPolicyType": null,
+        "previousPolicyType": null,
+        "previousNoClaimBonus": "___vehicle_ncb_current_1___",
+        "previousNoClaimBonusValue": null,
+        "currentThirdPartyPolicy": null
+    },
+    "pospInfo": {
+        "isPOSP": "___is_posp___"
+    },
+    "pincode": "411001"
+}

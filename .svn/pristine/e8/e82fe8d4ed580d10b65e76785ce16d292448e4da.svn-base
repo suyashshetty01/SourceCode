@@ -1,0 +1,85 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <serve xmlns="http://schemas.cordys.com/gateway/Provider">
+            <SessionDoc>
+                <Session>
+                    <SessionData>
+                        <Index>1</Index>
+                        <InitTime>Thu, 01 Mar 2018 18:49:43 GMT</InitTime>
+                        <UserName>___insurer_integration_service_user___</UserName>
+                        <Password>___insurer_integration_service_password___</Password>
+                        <OrderNo>NA</OrderNo>
+                        <QuoteNo>NA</QuoteNo>
+                        <Route>INT</Route>
+                        <Contract>EHL</Contract>
+                        <Channel />
+                        <TransactionType>Quote</TransactionType>
+                        <TransactionStatus>Fresh</TransactionStatus>
+                        <ID />
+                        <UserAgentID />
+                        <Source />
+                    </SessionData>
+                    <Quote>
+                        <AgentNumber />
+                        <DealerId />
+                        <PolicyStartDate>___policy_start_date___T00:00:00:000</PolicyStartDate>
+                        <PolicyEndDate>___policy_end_date___T23:59:59:000</PolicyEndDate>
+                        <FamilyType>___family_type_code___</FamilyType>
+                        <TypeOfBusiness>NB</TypeOfBusiness>
+                        <SumInsured>___health_insurance_si___</SumInsured>
+                        <ProductCode>___Plan_Code___</ProductCode>
+                        <ExistingPolicy></ExistingPolicy>
+                    </Quote>
+                    <Client>
+                        <CityOfResidence>Mumbai</CityOfResidence>
+                        <ClientType>Individual</ClientType>
+                        <SurName />
+                        <GivName>___first_name___</GivName>
+                        <Salut />
+                        <CltDOB>___birth_date___</CltDOB>
+                        <CltSex />
+                        <Marryd />
+                        <CltAddr01 />
+                        <CltAddr02 />
+                        <CltAddr03 />
+                        <City>Mumbai</City>
+                        <State>Maharashtra</State>
+                        <PinCode />
+                        <MobileNo>___mobile___</MobileNo>
+                        <LandLineNo />
+                        <Occupation />
+                        <EmailID>___email___</EmailID>
+                        <TPClientRefNo>172386</TPClientRefNo>
+                        <MonthlyIncome>0</MonthlyIncome>
+                        <AnnualIncome>0</AnnualIncome>
+                        <LoanEMI>0</LoanEMI>
+                        <Investments>0</Investments>
+                        <Childrenfees>0</Childrenfees>
+                        <UtilityPayments>0</UtilityPayments>
+                        <ProvisionParents>0</ProvisionParents>
+                        <ProvisionExpenses>0</ProvisionExpenses>
+                        <MemberDetails></MemberDetails>
+                        <FinancierDetails>
+                            <IsFinanced></IsFinanced>
+                            <InstitutionName />
+                            <InstitutionCity />
+                        </FinancierDetails>
+                        <ClientExtraTag01 />
+                        <ClientExtraTag02 />
+                        <ClientExtraTag03 />
+                        <ClientExtraTag04 />
+                        <ClientExtraTag05 />
+                        <PrimaryInsuredDetails>
+                            <IsPrimaryInsured>Y</IsPrimaryInsured>
+                            <FirstName />
+                            <RelationShipWithInsured />
+                        </PrimaryInsuredDetails>
+                        <IsIllness>N</IsIllness>
+                        <IsHospitalized>N</IsHospitalized>
+                        <IsMedication>N</IsMedication>
+                    </Client>
+                </Session>
+            </SessionDoc>
+        </serve>
+    </Body>
+</Envelope>

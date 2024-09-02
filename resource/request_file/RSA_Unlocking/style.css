@@ -1,0 +1,73 @@
+@font-face{
+	font-family:"BLACKJAR";
+	src:url("fonts/BLACKJAR.TTF");
+}
+@font-face{
+	font-family:"Poppins-Light";
+	src:url("fonts/Poppins-Light.otf");
+}
+@font-face{
+	font-family:"Poppins-Medium";
+	src:url("fonts/Poppins-Medium.otf");
+}
+body{padding: 0;margin: 0;background-color: #68b4ff;background-image: url(Images/bottom_2.png),url(Images/bottom.png);background-position: bottom right,bottom left;background-repeat: no-repeat,no-repeat;}
+.container{width: 500px;height: auto;margin: 0 auto;/* background-color: #68b4ff; */text-align: center;font-family: Poppins-Light;padding: 10px;/* background-image: url(Images/bottom_2.png),url(Images/bottom.png); *//* background-position: bottom right,bottom left; *//* background-repeat: no-repeat,no-repeat; */}
+.contain{display: block;}
+.logo{height: 31px;padding: 10px 40px;}
+p{margin: 0;font-size: 18px;}
+h1{font-family:BLACKJAR;text-align: center;color: white;text-shadow: 3px 0px 1px #004e9d;margin: 0;font-size: 55px;}
+.inputForm{background-color: #b2d9ff;width: 400px;margin: 35px auto;padding: 15px;border-radius: 10px;}
+.inputForm p{font-size: 15px;}
+form{padding-top: 15px;}
+input{border: 1px solid #0043c8;border-radius: 5px;padding: 5px;margin: 10px 3px;width: 58%;font-size: 17px;}
+input:focus{outline: none;}
+.inputGrid{display: grid;grid-template-columns: 20% 80%;width: 60%;margin: 5px auto;border: 1px solid #0043c8;border-radius: 6px;height: 45px;background-color: #ffffff;}
+.inputGrid img{background-color: #0043c9;border-radius: 6px 0px 0px 6px;}
+.inputGrid input{border: none;margin: 0;width: 94%;font-size: 20px;border-radius: 0px 5px 5px 0px;
+text-transform: uppercase;}
+.inputGrid input::placeholder{font-size: 18px;}
+button{color: white;background-color: #0157ae;border-radius: 5px;border: 1px solid white;margin: 10px;font-size: 20px;font-weight: bold;padding: 5px 10px;cursor: pointer;}
+button:focus{outline: none;}
+::placeholder{color: gray;font-size: 10px;}
+.grid{display: grid;grid-template-columns: 50% 50%;}
+.grid input{width: 90%;}
+.bottom{margin-top: 50px;height: 110px;}
+.bottom p{font-size: 13px;}
+.wrong-input{border: 1px solid red;}
+.right-input{border:1px solid #0043c8;}
+.error{color:red;font-size: 10px;margin: -6px auto 0px;}
+.message{color: #ffffff;height: 580px;position: relative;display: none;text-align: center;font-family: Poppins-Light;}
+.message h2{margin: 0;font-size: 50px;font-family: Poppins-Medium;}
+.message hr{background-color: #004283;border: none;height: 2px;}
+.message hr:nth-child(2){margin-top: -4px;width: 40%;}
+.message hr:nth-child(3){width: 25%;}
+.message p{font-size: 20px;}
+.SuccessfulMsg{position: absolute;/* height: 100%; */width: 100%;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.center{position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);}
+
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px){
+	body{background-size: 24%, 100%;}
+	.container{width: 95%;}
+	.logo{padding: 5px 10px;}
+	.logo img{width: 100px;}
+	p{font-size: 14px;}
+	.inputForm{width: 300px;margin: 20px auto;padding: 15px;}
+	.icons{width: 80%;}
+	input{padding: 7px 5px;width: 80%;margin: 5px auto;}
+	.inputGrid{width: 84%;margin: 5px auto;}
+	.grid{grid-template-columns: 100%;}
+	.grid input{width: 80%;}
+	.bottom {margin-top: 10px;height: 60px;}
+	.bottom p{font-size: 10px;margin: 20px;}
+	.message{color: #ffffff;height: 690px;position: relative;display: none;text-align: center;font-family: Poppins-Light;}
+.message h2{font-size: 30px;}
+.message hr{background-color: #004283;border: none;height: 1px;}
+.message hr:nth-child(2){margin-top: -4px;width: 70%;}
+.message hr:nth-child(3){width: 50%;}
+.message p{font-size: 13px;}
+	.SuccessfulMsg{left: 15%;transform: translate(-15%, -60%);}
+}

@@ -1,0 +1,254 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:27:30 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:27:30 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"10:27:30 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"10:27:30 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:27:30 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:27:30 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:27:30 AM"}
+{"level":"info","message":"Start premium_summary","timestamp":"12:29:14 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"12:29:14 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"12:29:14 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"12:29:14 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"12:29:14 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":1}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Make_Name\":1,\"Model_Name\":1}}]","timestamp":"12:29:59 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":1}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Make_Name\":1,\"Model_Name\":1}}]","timestamp":"12:31:49 PM"}
+{"level":"info","message":"[{\"$match\":{\"Product_Id_New\":1,\"Product_Sub_Category_Code\":null}},{\"$group\":{\"_id\":{\"Model_ID\":\"$Model_ID\",\"Make_Name\":\"$Make_Name\",\"Model_Name\":\"$Model_Name\"}}},{\"$project\":{\"_id\":0,\"Model_ID\":\"$_id.Model_ID\",\"Make_Name\":\"$_id.Make_Name\",\"Model_Name\":\"$_id.Model_Name\"}},{\"$sort\":{\"Model_ID\":1}}]","timestamp":"12:34:15 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"1:18:15 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"1:18:15 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"1:18:15 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"1:18:15 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"1:18:15 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"1:20:15 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"1:20:15 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"1:20:15 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"2:36:32 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"2:36:32 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"2:36:32 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:36:32 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"2:36:32 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"2:36:52 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"2:36:52 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"2:36:52 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"2:36:52 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:36:52 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"2:37:00 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"2:37:00 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"2:37:00 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:37:00 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"2:37:00 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"2:37:04 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"2:37:04 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"2:37:04 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"2:37:04 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"2:37:04 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:31:28 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:31:28 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:31:28 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:31:28 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:31:28 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:31:32 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:31:32 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:31:32 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:31:32 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:31:32 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:32:08 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:32:08 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:32:08 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:32:08 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:32:08 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:32:15 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:32:15 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:32:15 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:32:15 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:32:15 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:34:15 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:34:16 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:34:16 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:44:02 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:44:02 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:44:02 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:44:02 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:44:02 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:44:08 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:44:08 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:44:08 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:44:08 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:44:08 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:44:12 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:44:12 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:44:12 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:44:12 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:44:12 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:44:19 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:44:19 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:44:19 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:44:19 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:44:19 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:45:13 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:45:13 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:45:13 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:45:13 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:45:13 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:46:49 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:46:49 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:46:49 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:46:49 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:46:49 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:05 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:05 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:05 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:05 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:06 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:07 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:08 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:08 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:08 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:08 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:11 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:11 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:11 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:11 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:11 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:16 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:16 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:16 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:16 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:16 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:22 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:22 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:22 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:22 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:22 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:38 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:38 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:38 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:38 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:38 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:46 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:46 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:46 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:46 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:46 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:47:53 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:47:53 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:47:53 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:47:53 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:47:53 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:48:05 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:48:05 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:48:05 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:48:05 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:48:05 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:48:27 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:48:27 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:48:27 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:48:27 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:48:27 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:48:30 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:48:30 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:48:30 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:48:30 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:48:30 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:48:45 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:48:45 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:48:45 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:48:45 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:48:45 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:00 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:00 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:00 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:00 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:00 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:05 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:05 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:05 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:05 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:05 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:07 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:07 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:07 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:07 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:07 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:12 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:12 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:12 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:12 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:12 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:16 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:16 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:16 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:16 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:16 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:27 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:27 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:27 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:27 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:27 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:34 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:34 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:34 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:34 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:34 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:37 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:37 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:37 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:37 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:37 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:40 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:40 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:40 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:40 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:40 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:45 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:45 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:45 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:45 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:45 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:50 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:50 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:50 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:50 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:50 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:49:54 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:49:54 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:49:54 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:49:54 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:49:54 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:13 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:13 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:13 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:13 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:13 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:16 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:16 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:16 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:16 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:16 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:20 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:20 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:20 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:20 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:20 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:26 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:26 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:26 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:26 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:26 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:32 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:32 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:32 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:32 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:32 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:39 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:39 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:39 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:39 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:39 PM"}
+{"level":"info","message":"Start premium_list_db","timestamp":"6:50:57 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:50:57 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:50:57 PM"}
+{"level":"info","message":"The file was saved!","timestamp":"6:50:57 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:50:57 PM"}
+{"level":"info","message":"Start premium_summary","timestamp":"6:52:57 PM"}
+{"level":"info","message":"Waiting premium_summary","timestamp":"6:52:57 PM"}
+{"level":"info","message":"Finish premium_summary","timestamp":"6:52:57 PM"}

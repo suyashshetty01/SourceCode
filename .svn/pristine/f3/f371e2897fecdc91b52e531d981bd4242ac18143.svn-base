@@ -1,0 +1,329 @@
+{  
+    "Discount": "50",
+    "Loading": "",
+    "objVehicleDetails":{ 
+        "MakeModelVarient":"___dbmaster_insurer_vehicle_make_name___|___dbmaster_insurer_vehicle_model_name___|___dbmaster_insurer_vehicle_variant_name___|___dbmaster_insurer_vehicle_cubiccapacity___CC",
+    	  "RtoLocation":"___dbmaster_insurer_rto_district_name___|___reg_no_1______reg_no_2___",
+    	  "RegistrationDate":"___vehicle_registration_date___",
+    	  "Registration_Number1":"___registration_no_1___",
+    	  "Registration_Number2":"___registration_no_2___",
+          "Registration_Number3":"___registration_no_3___",
+          "Registration_Number4":"___registration_no_4___",
+          "ManufacturingYear":"___vehicle_manf_year___",
+          "ManufacturingMonth":"___vehicleManfMonth___",
+	      "FuelType":"___dbmaster_insurer_vehicle_fueltype___",
+	      "BodyType":"___dbmaster_insurer_vehicle_insurer_bodytype___",
+	      "TypeofModification":"",
+         "ModifiedIDV":"___vehicle_expected_idv___",
+          "EngineNumber": "___engine_number___",
+       "ChassisNumber": "___chassis_number___",
+       "AverageVehicleUsageId": "",
+        "VehicleColorID": "___vehicleColor___",    
+       "Sector": "",
+       "TaxExemption": "",
+         "PUCNumber": "___pucc_number___",
+       "PUCEndDate": "___pucc_end_date___"
+   },
+   "objClientAddress":{
+        "Address1": "___communication_address_1___",
+        "Address2": "___communication_address_2___",
+        "Address3": "___communication_address_3___",
+        "Area": "___area_locality___",
+        "City": "___communication_city___",    
+        "State": "___communication_state___",
+        "Country": "INDIA",
+        "Pincode": "___communication_pincode___"
+     },
+    "objRegistrationAddress":{
+        "Address1": "___permanent_address_1___",
+        "Address2": "___permanent_address_2___",
+        "Address3": "___permanent_address_3___",
+        "Area": "___permanent_locality___",
+        "City": "___permanent_city___",    
+        "State": "___permanent_state___",
+        "Country": "INDIA",
+        "Pincode": "___permanent_pincode___"
+     },
+    "objClientDetails":{
+        "ClientType":"___client_type___",
+        "CorporateName":"___company_name___",
+        "MobileNumber": "___mobile___",
+        "EmailId": "___email___",
+        "Client_ForAttention": "",
+        "TIN":"",
+        "Client_FirstName": "___first_name___",
+        "LastName": "___last_name___",
+        "Client_DOB": "___birth_date___",
+        "InsuredOccupation": "___occupation___",
+        "Gender": "___gen___",   
+        "Salutation":"___reb_salutation___",
+        "PANNumber":"___pan___",
+        "GSTINNumber":"___gst_no___",
+        "OtherInformationOne":"",
+        "OtherInformationTwo":"",
+        "IsEIANoExists":"false",
+        "EIANo":""
+     },
+    "objVehicleHypoth":{
+        "FinancierType": "___financier_type___",
+        "Financier_Address": "___financier_address___",
+        "Financier_Name": "___financier_name___"
+    },
+    "objPolicy":{ 
+        "QuoteID": "___rbe_quote_id___",
+        "QuoteNo": "___rbe_quote_no___", 
+        "Policyid":"___policy_id___",
+        "PolicyStartDate":"___policy_start_date___",
+        "PolicyEndDate":"___Policy_end_date___",
+        <!-- TP details start-->
+        "TPPolicyStartDate":"___tp_policy_start_date___",
+        "TPPolicyEndDate":"___tp_policy_end_date___",
+        "TPPolicyNo":"___tp_policyNumber___",
+        "TPInsurerID":"___tp_insurer_id___",
+        "TPInsurerAddress":"___tp_insurer_address___",
+        <!-- TP details ends-->
+         "ProductCode":"___product_code___",
+         "ProductName":"___product_name___",
+         "TraceID":"___trace_id___",
+         "UserName":"___insurer_integration_service_user___",   
+         "TPSourceName":"___insurer_integration_service_password___",
+        "strODEndDate":"___str_od_date___",
+         "BusinessTypeID":"___businessTypeId___",
+         "CoverType":"___cover_type___",
+         "Tennure":___tennureType___,
+         "IsVehicleHypothicated": ___is_hypothicated___,
+        "IsRegAddressSameasCorrAddress":"___same_Comm_Reg_addr___"
+    },<!--previous insurer details start-->
+        "objPreviousInsurance": {
+        "PrevPolicyType": "___PrevPlcyType___",
+        "PrevPolicyStartDate": "___pre_policy_start_date___",
+        "PrevPolicyEndDate": "___policy_expiry_date___",
+        "PrevPolicyNo": "___previous_policy_number___",
+        "PrevInsurerAddress": "___dbmaster_insurer_rto_city_name___",
+        "NatureOfLoss": "___ntr_of_loss___",
+        "PrevInsuranceCompanyID": "___dbmaster_previousinsurer_code___",
+        "PrevNCB": "___vehicle_ncb_current___",
+        "IsClaimedLastYear": "___isClaimExists___",
+        "prevPolicyCoverType": "___prevPlcyCvrType___",
+        "CurrentNCBHidden": "___vehicle_ncb_next___"
+    },<!--previous insurer details end-->
+     "objCovers":[ 
+        { 
+            "CoverID":"9",
+            "CoverName":"Basic - OD",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":true,
+            "objCoverDetails":null
+        },
+        <!-- TP cover details start-->
+        {
+            "CoverID": "10",
+            "CoverName": "Basic - TP",
+            "CoverType": "LiabilityPackage",
+            "IsChecked": true,
+            "objCoverDetails": null,
+            "PackageName": "LiabilityPackage"
+        },
+        {
+            "CoverID": "42",
+            "CoverName": "Geographical Extension - TP",
+            "CoverType": "LiabilityPackage",
+            "IsChecked": false,
+            "objCoverDetails": null,
+            "PackageName": "LiabilityPackage"
+        },
+        {
+            "CoverID": "73",
+            "CoverName": "PA - Owner",
+            "CoverType": "LiabilityPackage",
+            "IsChecked": ___pa_owner_cover___,
+            "objCoverDetails": {
+                "PHBooleanField1": "___pa_owner_field1___",
+                "PHBooleanField2": "___pa_owner_field2___",
+                "PHintFeild1": "___nominee_age___",
+                "PHNumericFeild1": "___pa_tenure___",
+                "PHNumericFeild2": "___pa_owner_driver_si___",
+                "PHVarcharFeild1": "___nominee_name___",
+                "PHVarcharFeild2": "___nominee_relation___",
+                "PHVarcharFeild4": "___appointee_name___",
+                "PHVarcharFeild5": "___appointee_relation___"
+            },
+            "PackageName": "LiabilityPackage"
+        },
+        {
+            "CoverID": "87",
+            "CoverName": "TPPD",
+            "CoverType": "LiabilityPackage",
+            "IsChecked": ___is_tppd_val___,
+            "objCoverDetails": null,
+            "PackageName": "LiabilityPackage"
+        },
+        {
+            "CoverID": "94",
+            "CoverName": "PA - Unnamed Person",
+            "CoverType": "LiabilityPackage",
+            "IsChecked": ___is_pa_unnamed_passenger___,
+            "objCoverDetails": {
+                "PHNumericFeild1": "___dbmaster_insurer_vehicle_seatingcapacity___",
+                "PHNumericFeild2": "___pa_unnamed_passenger_si___"
+            },
+            "PackageName": "LiabilityPackage"
+        },
+        <!-- TP cover details ends-->
+        { 
+            "CoverID":"41",
+            "CoverName":"Geographical Extension - OD",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":false,
+            "objCoverDetails":null
+        },
+        { 
+            "CoverID":"33",
+            "CoverName":"Electrical or electronic accessories",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":___is_electrical_accessory___,
+            "objCoverDetails":{ 
+                "PHNumericFeild1":"___electrical_accessory___",
+                "PHVarcharFeild1":"Test",
+                    "PHNumericFeild2":"",
+                    "PHVarcharFeild2":""
+            }
+        },
+        { 
+            "CoverID":"70",
+            "CoverName":"Non Electrical Accessories",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":___is_non_electrical_accessory___,
+            "objCoverDetails":{ 
+               "PHNumericFeild1":"___non_electrical_accessory___",
+               "PHVarcharFeild1":"Testnonelectrical",
+                  "PHNumericFeild2":"",
+                  "PHVarcharFeild2":""
+           }
+        },
+        { 
+            "CoverID":"108",
+            "CoverName":"Fibre Glass Fuel Tank",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":false,
+            "objCoverDetails":null
+        },
+        {
+            "CoverID":107,
+            "CoverName":"Side Car",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":false,
+            "objCoverDetails":{
+                "PHNumericFeild1":"1000"
+            }
+        },
+        {
+            "CoverID":109,
+            "CoverName":"Loss of Accessories",
+            "CoverType":"ODPackage",
+            "PackageName":"ODPackage",
+            "IsChecked":false,
+            "objCoverDetails":{
+                "PHNumericFeild1":"2100000"
+            }
+        },
+        { 
+            "CoverID":"91",
+            "CoverName":"Voluntary Deductibles",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":___is_voluntary_deductible___,
+            "objCoverDetails":{ 
+                "PHNumericFeild1":"___voluntary_deductible___"         
+            }      
+        },
+        { 
+            "CoverID":"43",
+            "CoverName":"Handicap",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":false,
+            "objCoverDetails":null
+        },
+        { 
+            "CoverID":"110",
+            "CoverName":"Installation of Anti-Theft Device",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":___is_antitheft___,
+            "objCoverDetails":null
+        },
+        { 
+            "CoverID":"111",
+            "CoverName":"Imported Vehicles Without Custom Duties",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":false,
+            "objCoverDetails":null
+        },
+        { 
+            "CoverID":"112",
+            "CoverName":"Driving Tuitions Usage",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":false,
+            "objCoverDetails":null
+        },
+        { 
+            "CoverID":"113",
+            "CoverName":"Automobile Association Member",
+            "CoverType":"Discount",
+            "PackageName":"Discount",
+            "IsChecked":false,
+            "objCoverDetails":{ 
+               "PHVarcharFeild1":"test",
+               "PHDateField1":"2020-11-20"
+            }
+        }    
+],
+"ListGeoExtCountryList":[ 
+      { 
+         "ChkId":33,
+         "ChkName":"PAKISTAN",
+         "SelectedValue":false
+      
+},
+      { 
+         "ChkId":34,
+         "ChkName":"BHUTAN",
+         "SelectedValue":false
+      
+},
+      { 
+         "ChkId":35,
+         "ChkName":"NEPAL",
+         "SelectedValue":false
+      
+},
+      { 
+         "ChkId":36,
+         "ChkName":"MALDIVES",
+         "SelectedValue":false
+      
+},
+      { 
+         "ChkId":37,
+         "ChkName":"SRILANKA",
+         "SelectedValue":false
+      
+},
+      { 
+         "ChkId":38,
+         "ChkName":"BANGLADESH",
+         "SelectedValue":false
+      
+}
+   
+]
+}

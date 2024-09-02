@@ -1,0 +1,98 @@
+<form id="view-quote-form">
+    <div class="tab-pane fade" id="do-it-yourself-3" role="tabpanel" aria-labelledby="tab-yourself-3">
+        <div class="health-insurance-content">
+            <label for="" class="label font-20">Add Members</label>
+            <div class="inner-field-row">
+                <div class="inner-field-col">
+                    <div class="member-count-input-field input-field border-thick">
+                        <div class="member-count-inner-box">
+                            <div class="member-title-box">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/adult-icon.png" alt="Adult" />
+                                </div>
+                                <span class="font-18 member-title">Adult</span>
+                            </div>
+                            <div class="counter-input-box">
+                                <button class="value-change-btn" type="button" onclick="FuncAdult(-1)">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/minus-icon.svg" alt="Minus" />
+                                 </button>
+                                <input type="number" id="adult_count" class="normal-input number-count-input" value="1" readonly />
+                                <button class="value-change-btn" type="button" onclick="FuncAdult(1)">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/plus-icon.svg" alt="plus" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="mem_1_input" name="mem_1_input" />
+                <input type="hidden" id="mem_2_input" name="mem_2_input" />
+                <input type="hidden" id="mem_3_input" name="mem_3_input" />
+                <input type="hidden" id="mem_4_input" name="mem_4_input" />
+                <input type="hidden" id="mem_5_input" name="mem_5_input" />
+                <input type="hidden" id="mem_6_input" name="mem_6_input" />
+
+                <input type="hidden" id="gen_1_input" name="gen_1_input" />
+                <input type="hidden" id="gen_2_input" name="gen_2_input" />
+                <input type="hidden" id="gen_3_input" name="gen_3_input" />
+                <input type="hidden" id="gen_4_input" name="gen_4_input" />
+                <input type="hidden" id="gen_5_input" name="gen_5_input" />
+                <input type="hidden" id="gen_6_input" name="gen_6_input" />
+
+                <input type="hidden" id="hdCity_ID" name="hdCity_ID">
+                <input type="hidden" id="hdPincode" name="hdPincode">
+                <input type="hidden" id="hdCity_name" name="hdCity_name">
+                <input type="hidden" id="hdState_name" name="hdState_name">
+                <input type="hidden" id="hdState_Code" name="hdState_Code">
+                <div class="inner-field-col">
+                    <div class="member-count-input-field input-field border-thick">
+                        <div class="member-count-inner-box">
+                            <div class="member-title-box">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/child-icon.png" alt="Child" />
+                                </div>
+                                <span class="font-18 member-title">Child</span>
+                            </div>
+                            <div class="counter-input-box">
+                                <button class="value-change-btn" type="button" onclick="FuncChild(-1)">
+                                     <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/minus-icon.svg" alt="Plus" />
+                                </button>
+                                <input type="number" id="child_count" class="normal-input number-count-input" value="0" readonly />
+                                <button class="value-change-btn" type="button" onclick="FuncChild(1)">
+                                      <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/plus-icon.svg" alt="Minus" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inner-field-col">
+                    <div class="input-field-box">
+                        <input type="text" class="btn input-field dropdown-toggle select-dropdown border-thick inner-placeholder inner-placeholder-dropdown-input eldest_age"
+                            readonly id="dropdownMenuButton12" data-bs-toggle="dropdown" aria-expanded="false" name="member_age_input" autocomplete="off">
+                        <span class="font-16 floating-placeholder spnElderAge">Eldest Member Age</span>
+                        <span id="dropdownMenuButton12-error" class="help-block" style="display:none">Member Age is required.</span>
+                        <div class="dropdown-menu dropdown-menu-box select-dropdown-box" aria-labelledby="dropdownMenuButton12" id="memAgeDropdown">
+                            <div class="dropdown-content-wrapper">
+                                <ul id="mem_age_list" class="dropdown-list-row select-dropdown-box-ul js-dropdown-field">
+                                    <li class="dropdown-list-col select-dropdown-box-li">
+                                        <a href="javascript:void(0)" class="dropdown-list-link select-dropdown-box-link">30</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner-field-col">
+                    <div class="input-field-box">
+                        <input id="pincode" name="pincode" inputmode="numeric" pattern="[0-9]*" maxlength="6" class="input-field inner-placeholder border-thick"
+                            onkeypress="KeyPressEvent(event,'Pincode')" onkeyup="forceNumeric(event)" autocomplete="off">
+                        <span id="pincode_number_field-error" class="help-block" style="display:none">Pincode is required.</span>
+                        <span class="font-16 floating-placeholder">Pincode</span>
+                    </div>
+                </div>
+            </div>
+            <span id="errorTxt" class="help-block" style="display:none">Please fill required data.</span>
+        </div>
+        <a onclick="validateForm();" class="submit-btn view-quote-btn main-btn width-full" style="cursor:pointer">View Quote</a>
+    </div>
+</form>

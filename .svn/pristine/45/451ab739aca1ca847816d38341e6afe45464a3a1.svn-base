@@ -1,0 +1,39 @@
+{
+    "enquiryId": "___enquiryId___",
+    "partnerName": "AGENT",
+    "contract": {
+        "subInsuranceProductCode": "___subInsuranceProductCode___",
+        "nonAbsProductCode": "___nonABSProductCode___",
+        "policyType": "___policyType___",
+        "imd": "___imd___",
+        "startDate": "___policy_start_date___",
+        "expiryDate": "___policy_end_date___",
+        "zone": null,
+        "policyPeriod": ___policy_tenure___,
+        "sumInsured": ___health_insurance_si___
+    },
+    "persons": [ 
+        <!--InsurersDetail_Start-->
+        {
+            "age": "___member_array_age___",
+            "addresses": [
+                {
+                    "pincode": "___permanent_pincode___",
+                    "zone": "___zone___"
+                }
+            ],
+            "relationship": "___member_array_rel___",
+            "coverages": [
+                {
+                    "coverType": "___coverType1___",
+                    "sumInsuredAmount": "___health_insurance_si___"
+                },
+                {
+                    "coverType": "___coverType2___",
+                    "sumInsuredAmount": "___health_insurance_si___"
+                }
+            ]
+        } 
+        <!--InsurersDetail_End-->
+    ]
+}

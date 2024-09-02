@@ -1,0 +1,16 @@
+{
+    "APIKEY": "___insurer_integration_service_user___",
+    "SECRETKEY": "___insurer_integration_service_password___",
+    "policyTypeName": "___Plan_Code___",
+    "planId": "___Plan_Id___",
+    "postalCode": "___permanent_pincode___",
+    "period": "___policy_tenure___",
+    "sumInsuredId": "___health_insurance_si_id___", 
+    "schemeId": "___scheme_id___",
+    <!--InsurersDetail_Start-->
+    "insureds[___member_array_inc___]": {
+        "dob": "___member_array_birth_date___",
+        "sumInsuredId": "___health_insurance_si_id___"
+    }
+    <!--InsurersDetail_End-->
+}

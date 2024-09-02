@@ -1,0 +1,59 @@
+{
+    "Requests": {
+        "Request_Id": "",
+        "Request_Unique_Id": "",
+        "Request_Json": "",
+        "CreatedOn": "",
+        "Total_Execution_Time": ""
+    },
+    "Logs": {
+        "Log_Id": "",
+        "Log_Unique_Id": "",
+        "Request_Id": "",
+        "Insurer_Request": "",
+        "Insurer_Response": "",
+        "LM_Response": "",
+        "Status": [
+            "Pending",
+            "Success",
+            "Error"
+        ],
+        "Error_Code": "",
+        "IsActive": 1,
+        "CreatedOn": "",
+        "Product_Id": "",
+        "Insurer_Id": "",        
+        "Method_Type": ["IDV", "Premium", "Proposal", "Customer", "Verification", "PDF"],
+        "Call_Execution_Time": ""
+    },
+    "Premiums": {
+        "Premium_Id": "",
+        "Product_Id": "",
+        "Search_Criteria": "",
+        "Net_Premium": "",
+        "Service_Tax": "",
+        "Final_Premium": "",
+        "Premium_Breakup": ""
+    },
+    "IDV": {
+        "Idv_Id": "",
+        "Vehicle_Id": "",
+        "Insurer_Id": "",
+        "Rto_Id": "",
+        "Vehicle_Age_Month": "",
+        "Idv_Normal": "",
+        "Idv_Min": "",
+        "Idv_Max": "",
+        "Exshowroom": "",
+        "CreatedOn": ""                
+    },
+    "Errors_Schema": {
+        "Error_Code": "",
+        "Error_Name": "",
+        "Error_Type": ["Pre", "Post"],
+        "Error_Action": ["Tech_API_Fix", "UI_Validation", "Operation_Mapping", "Insurer_Inform"],
+        "Error_Identifier": [],
+        "Error_Msg": "",
+        "CreatedOn": ""
+    }
+}

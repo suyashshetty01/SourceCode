@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta itemprop="title" content="Policy Boss">
+    <meta name="keywords" content="Policy Boss">
+    <meta itemprop="description" content="Policy Boss">
+    <!-- Required meta tags End -->
+    <title>Policy Boss | My Profile</title>
+
+    <!-- FAVICON -->
+    <% include partials/website_header_link %>
+</head>
+
+<body>
+    <!-- <div class="loader"></div> -->
+    <div class="overlay-appear"></div>
+<!----------------------------------------- Header Section ------------------------------------------>
+<% include partials/website_header %>
+    <!----------------------------------- Profile Information Section --------------------------------------->
+    <div class="profile-info-section">
+        <div class="container">
+            <div class="profile-info-area">
+                <div class="profile-photo-box">
+                    <div class="image-box">
+                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/user-big.png" alt="" />
+                    </div>
+                </div>
+                <div class="profile-info-detail-area">
+                    <span class="profile-name font-20" id="profileAgentName"></span>
+                    <div class="detail-listing">
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">SS ID</span>
+                            <span class="font-16 text-extralight detail-listing-value" id="profileAgentSsid"></span>
+                        </div>
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">ERP ID</span>
+                            <span class="font-16 text-extralight detail-listing-value" id="profileErp_id"></span>
+                        </div>
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">Plan</span>
+                            <span class="font-16 text-extralight detail-listing-value" ></span>
+                        </div>
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">RM Name</span>
+                            <span class="font-16 text-extralight detail-listing-value" id="profileAgent_rm_name"></span>
+                        </div>
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">RM Mobile</span>
+                            <span class="font-16 text-extralight detail-listing-value" id="profileAgent_rm_mobile"></span>
+                        </div>
+                        <div class="detail-listing-box">
+                            <span class="font-16 text-999 detail-listing-title">RM Email</span>
+                            <span class="font-16 text-extralight detail-listing-value" id="profileAgent_rm_email"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-detail-listing">
+        <div class="container">
+            <div class="info-detail-listing-row">
+                <div class="info-detail-listing-col">
+                    <div class="info-detail-listing-box">
+                        <div class="title-box flex-box">
+                            <h2 class="font-24 text-extralight title-text">Personal Information</h2>
+                            <a href="posp-form.html" title="Edit" class="edit-box flex-box text-primary" style="display:none;">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/pen-icon.svg" alt="Edit Information">
+                                </div>
+                                Edit
+                            </a>
+                        </div>
+                        <div class="personal-detail-info">
+                            <div class="policy-info-listing">
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Mobile</h3>
+                                        <a href="tel:+919321332485" title="+91 9321332485" class="policy-info-listing-text font-16 text-extralight" id="profileAgentMobile"></a>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">DOB</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profileAgentDOB"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Email</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profileAgentEmail"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Address</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Pan Card</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">City</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profileAgentCity"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Aadhaar Card</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Pincode</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Appointment Letter</h3>
+                                        <button class="pdf-box unstyled-btn" type="button" title="Appointment Letter">
+                                            <div class="inner-content">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-pdf-icon.svg" alt="Download PDF" />
+                                                <p class="font-18 pdf-title primary-text">Appointment Latter.pdf </p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">POSP Certificate</h3>
+                                        <button class="pdf-box unstyled-btn" type="button" title="POSP Certificate">
+                                            <div class="inner-content">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-pdf-icon.svg" alt="Download PDF" />
+                                                <p class="font-18 pdf-title primary-text">POSP Certificate.pdf</p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-detail-listing-col">
+                    <div class="info-detail-listing-box">
+                        <div class="title-box flex-box">
+                            <h2 class="font-24 text-extralight title-text">Bank Details</h2>
+                            <a href="posp-form.html" title="Edit" class="edit-box flex-box text-primary" style="display:none;">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/pen-icon.svg" alt="Edit Information">
+                                </div>
+                                Edit
+                            </a>
+                        </div>
+                        <div class="personal-detail-info">
+                            <div class="policy-info-listing">
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Bank Name</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profile_bank"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Bank Account No</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profile_account"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">IFSC Code</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight" id="profile_ifsc"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Branch</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-detail-listing-box">
+                        <div class="title-box flex-box">
+                            <h2 class="font-24 text-extralight title-text">Nominee Details</h2>
+                            <a href="posp-form.html" title="Edit" class="edit-box flex-box text-primary" style="display:none;">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/pen-icon.svg" alt="Edit Information">
+                                </div>
+                                Edit
+                            </a>
+                        </div>
+                        <div class="personal-detail-info">
+                            <div class="policy-info-listing">
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Name</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Relation</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Bank Name</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Bank Account No</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">IFSC Code</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                                <div class="policy-info-listing-col">
+                                    <div class="policy-info-listing-box">
+                                        <h3 class="policy-info-listing-title font-16">Branch</h3>
+                                        <p class="policy-info-listing-text font-16 text-extralight"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-detail-listing-col">
+                    <div class="info-detail-listing-box">
+                        <h2 class="font-24 text-extralight title-text info-detail-main-title">Escalation Matrix</h2>
+                        <div class="inner-row">
+                            <div class="inner-col">
+                                <div class="inner-box">
+                                    <div class="level-box">
+                                        Level 1
+                                    </div>
+                                    <div class="inner-detail-listing">
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Name</h3>
+                                            <p class="policy-info-listing-text font-18 text-extralight">Ishan Bhatnagar</p>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Email</h3>
+                                            <a href="mailto:ishan009@gmail.com" class="policy-info-listing-text font-18 text-extralight" title="ishan009@gmail.com">ishan009@gmail.com</a>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Mobile Number</h3>
+                                            <a href="tel:+910011223344" class="policy-info-listing-text font-18 text-extralight" title="+91 0011223344">+91 0011223344</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-col">
+                                <div class="inner-box">
+                                    <div class="level-box">
+                                        Level 2
+                                    </div>
+                                    <div class="inner-detail-listing">
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Name</h3>
+                                            <p class="policy-info-listing-text font-18 text-extralight">Pranav Sharma</p>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Email</h3>
+                                            <a href="mailto:pranavsharma120@gmail.com" class="policy-info-listing-text font-18 text-extralight" title="pranavsharma120@gmail.com">pranavsharma120@gmail.com</a>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Mobile Number</h3>
+                                            <a href="tel:+917676007896" class="policy-info-listing-text font-18 text-extralight" title="+91 7676007896">+91 7676007896</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-col">
+                                <div class="inner-box">
+                                    <div class="level-box">
+                                        Level 3
+                                    </div>
+                                    <div class="inner-detail-listing">
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Name</h3>
+                                            <p class="policy-info-listing-text font-18 text-extralight">Dhruv Venkatesan</p>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Email</h3>
+                                            <a href="mailto:dhruve90v@gmail.com" class="policy-info-listing-text font-18 text-extralight" title="dhruve90v@gmail.com">dhruve90v@gmail.com</a>
+                                        </div>
+                                        <div class="inner-listing-box">
+                                            <h3 class="policy-info-listing-title font-18 text-999">Mobile Number</h3>
+                                            <a href="tel:+919898658251" class="policy-info-listing-text font-18 text-extralight" title="+91 9898658251">+91 9898658251</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://origin-cdnh.policyboss.com/website/UI22/js/jquery-3.6.0.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
+    <!-- <script src="https://origin-cdnh.policyboss.com/website/UI22/js/validate_init.js"></script> -->
+    <!-- <script src="https://origin-cdnh.policyboss.com/website/UI22/js/custom.js"></script> -->
+	<!-- <script src="https://origin-cdnh.policyboss.com/website/UI22/js/handle_Url.js"></script> -->
+	<script src="https://origin-cdnh.policyboss.com/website/UI22/js/my_profile.js"></script>
+
+    <script>
+        $('.language-dropdown-select').select2({});
+    </script>
+</body>
+
+</html>

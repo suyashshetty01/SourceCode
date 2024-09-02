@@ -1,0 +1,29 @@
+<TINS_XML_DATA>
+   <Header>
+      <Version>1.0</Version>
+      <SourceId>LTA</SourceId>
+      <MessageId>___messageTrans_Id___</MessageId>
+   </Header>
+   <Segment>
+      <TransactionType>GenerateDoc</TransactionType>
+      <TransactionId>___messageTrans_Id___</TransactionId>
+      <PolicyIn>
+         <GDSCode>LTA</GDSCode>
+         <AgencyPCC>010001</AgencyPCC>
+         <AgencyCode>93124429</AgencyCode>
+         <IATACntryCd>4</IATACntryCd>
+         <GDSProductCode>___GDSProductCode___</GDSProductCode>
+         <InceptionDate>___InceptionDate___</InceptionDate>
+         <PolicyNumber>___dbmaster_insurer_transaction_identifier___</PolicyNumber>
+         <TransactionNo>0</TransactionNo>
+         <Agent>G1hyd8172xml</Agent>
+         <Remark2>0031415000</Remark2>
+      </PolicyIn>
+      <Insured>
+         <SequenceNo>0</SequenceNo>
+         <LastNm>___last_name___</LastNm>
+         <PlanCode>___PlanCode___</PlanCode>
+         <EmailAddr>___email___</EmailAddr>
+      </Insured>
+   </Segment>
+</TINS_XML_DATA>

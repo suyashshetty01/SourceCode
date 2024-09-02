@@ -1,0 +1,373 @@
+<style>
+    .DTFC_LeftBodyWrapper{
+        top: -14px !important;
+    }
+    th, td { white-space: nowrap; }
+    .selected{
+        background-color: #673AB7
+    }
+    .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: white;
+    }
+</style>﻿  
+<div class="container-fluid">
+    <!--<div class="block-header">
+        <h2>
+            Vehicles
+            <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+        </h2>
+    </div>-->
+    <!-- Basic Examples -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Mapping Dashboard
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>               
+                <div class="body">
+                    <table width="100%" class="table table-bordered  rto_grid_search ">
+                        <tbody class="col-sm-12" >
+                            <tr>
+                                <td width="25%"><select id="Col_RTOCode" name="Col_RTOCode" class="form-control show-tick" data-live-search="true" ><option value="">Select RTO Code</option></select></td>
+                                <td width="25%"><select id="Col_RTOCity" name="Col_RTOCity" class="form-control show-tick" data-live-search="true"><option value="">Select RTO City</option></select></td>
+                                <td width="25%"><select id="Col_State" name="Col_State"  class="form-control show-tick" data-live-search="true"><option value="">Select State</option></select></td>                                
+                                <td width="25%"><select id="Col_Zone" name="Col_Zone"  class="form-control show-tick" data-live-search="true"><option value="">Select Zone</option></select></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select id="Col_Insurer" name="Col_Insurer" class="form-control show-tick" multiple="multiple">
+                                        <option value="">Select Insurer</option>
+                                    </select>
+                                </td>
+                                <td colspan="2">
+                                    <select id="Col_Status" name="Col_Status" class="form-control show-tick" >
+                                        <option>Select Status</option>
+                                        <option value="1">Pending</option>
+                                        <option value="2">Exact Mapped</option>                                        
+                                        <option value="3">Not Supported</option>
+                                    </select>
+                                </td>
+                                <td> 
+                                    <button class="btn btn-primary waves-effect" type="submit" id="btnSearchRto" onclick="Search_Rto();">SEARCH</button>
+                                    <button class="btn btn-warning waves-effect" type="submit" id="btnResetSearch">RESET</button>
+                                    <button class="btn btn-success waves-effect" type="submit" id="btnAddRto" onclick="Rto_Add_Edit(-1);">ADD RTO</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered  table-striped table-hover rto_grid dataTable" style="font-size: smaller">
+                        <thead>
+                            <tr id="tr_top_rto">                                                                                                         
+                            </tr>
+                        </thead>                                                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Basic Examples -->
+    <!--start vehicle action -->
+    <div id='rto_action' style="display:none">
+        <ul class="header-dropdown m-r--5" style="list-style: none;margin:0px">
+            <li class="dropdown" style="list-style: none;margin:0px">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="list-style: none;margin:0px">
+                    <i class="material-icons" style="font-size: 14px;">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-left">
+                    <li><a href="javascript:void(0);" onclick="javascript:Validate_Premium('___index___');">Search Premium</a></li>
+                    <li><a href="javascript:void(0);" onclick="javascript:Vehicle_Add_Edit('___index___');">Edit Vehicle</a></li>
+                    <li><a href="javascript:void(0);" onclick="javascript:Delete_Vehicle('___index___');">Delete Vehicle</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div> 
+    <!--end vehicle action -->
+    <div class="modal fade" id="mdMapping" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" ><span id="Insurer_Name"></span><span id="defaultModalLabel"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" value="" id="Rto_ID" name="Rto_ID" />
+                    <input type="hidden" value="" id="Insurer_ID" name="Insurer_ID" />
+                    <input type="hidden" value="" id="Insurer_Rto_ID" name="Insurer_Rto_ID" />
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <table class="table">
+                            <tbody class="col-sm-12">
+                                <tr>
+                                    <td width="15%">
+                                        <button class="btn btn-success waves-effect" type="submit" id="btnMapp" onclick="Mapping_Proceed(2);">MAP EXACT</button>
+                                    </td>
+                                    <!--<td width="15%">
+                                        <button class="btn btn-primary waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(4);">NEAR MAPPING</button>
+                                    </td>!-->
+                                    <td width="40%">&nbsp;</td>                                    
+                                    <td width="15%"><button class="btn btn-danger waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(1);">REMOVE MAP</button></td>
+                                    <td width="15%"><button class="btn btn-warning waves-effect" type="submit" id="btnUnMapp" onclick="Mapping_Proceed(3);">NOT SUPPORT</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered  table-hover rto_mapping_grid dataTable" style="font-size: smaller">                                             
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mdPremiumPop" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" ><span id="Insurer_Name"></span><span id="defaultModalLabel"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="card">                        
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabPremium" data-toggle="tab" id="title_all_search">PREMIUM LIST</a></li>
+                                <li role="presentation" ><a href="#tabLogs" data-toggle="tab" id="title_car_search">API LOGS</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabPremium" >
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <input type="hidden" name="hdnsrn" id="hdnsrn" />
+                                        <button class="btn btn-primary waves-effect" id="btnReload" onclick=" $('#ifrpremium').attr('src', $('#ifrpremium').attr('src') + '&v=' + Math.random());">Reload Premium</button>                                        
+                                        <button class="btn btn-primary waves-effect" id="btnlogs" onclick="retriveApiLog();">Fetch Logs</button>
+                                        <iframe style="width:100%;height: 500px" src="#" id="ifrpremium" />
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabLogs">
+                                    <div class="body table-responsive">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr id="quotelistheader"  class="bg-purple" >
+                                                    <th>ID</th>
+                                                    <th>Insurer</th>
+                                                    <th>Plan Name</th>
+                                                    <th>IDV</th>                                                    
+                                                    <th>Final</th>
+                                                    <th>Status</th>                                                                
+                                                    <th>Time</th>                                                                
+                                                    <th>Detail</th>
+                                                </tr>
+                                            </thead>                
+                                            <tbody id="rowTemplate">
+                                                <tr style="display:none" class="___Row_Color___" >
+                                                    <th scope="row"   >___Service_Log_Id___</th>
+                                                    <td>___Insurer_Name___</td>
+                                                    <td>___Plan_Name___</td>
+                                                    <td>___IDV___</td>                                                    
+                                                    <td>___Final___</td>
+                                                    <td><button id="btn_err____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                                                data-placement="bottom" title="Exception Details" data-content="">___Status___</button></td>                                
+                                                    <td>___Time___</td>                                
+                                                    <td><a href="javascript:void(0);" onclick="ServiceLogView('___Service_Log_Id___');">View</a></td>
+                                                </tr>                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mdLog" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="defaultModalLabel">Log Viewer</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table ">
+                    <thead><tr><th>Field </a></th><th>Action</th></tr></thead>
+                    <tbody>
+                        <tr><td>LM Request</td><td><a href="/service_logs/___Service_Log_Id___/LM_Custom_Request" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Request</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Request" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Response</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Response" target="_BLANK">View</a></td>
+                        <tr><td>Insurer_Response_Core</td><td><a href="/service_logs/___Service_Log_Id___/Insurer_Response_Core" target="_BLANK">View</a></td>
+                        <tr><td>Premium_Breakup</td><td><a href="/service_logs/___Service_Log_Id___/Premium_Breakup" target="_BLANK">View</a></td>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">                    
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mdAddEditRtoPop" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" >RTO Management</h4>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="header">
+                        <h2>RTO <span id="actionRto">Edit</h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <form id="frm_vehicle" method="POST"> 
+                            <!--<div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float" >
+                                        <div class="form-line">
+                                            <select id="Product_Id_New" name="Product_Id_New" class="form-control show-tick" ><option value="1">Car</option><option value="10">Two Wheeler</option></select>
+                                        </div>
+                                    </div>
+                                </div>                                  
+                            </div>!-->
+                            <div class="row clearfix">                                
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float" >
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="VehicleCity_RTOCode" name="VehicleCity_RTOCode" required>
+                                            <label class="form-label">RTO Code</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="RTO_City" name="RTO_City" required>
+                                            <label class="form-label">RTO City</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="State_Name" name="State_Name" required>
+                                            <label class="form-label">State</label>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" id="VehicleTariff_Zone" name="VehicleTariff_Zone" required>
+                                                <label class="form-label">Zone</label>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--<div class="col-sm-6">
+                                        <div class="form-group">
+                                            <select id="Fuel_ID" name="Fuel_ID" class="form-control show-tick">
+                                                <option>Select Status</option>
+                                                <option value="1">Petrol</option>
+                                                <option value="2">Diesel</option>
+                                                <option value="3">Petrol-CNG</option>
+                                                <option value="4">Petrol-LPG</option>
+                                                <option value="5">Electric</option>
+                                            </select>                                
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="number" class="form-control" id="ExShoroomPrice" name="ExShoroomPrice" required>
+                                                <label class="form-label">Ex-Showroom</label>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="number" class="form-control" id="Cubic_Capacity"  name="Cubic_Capacity" required>
+                                                <label class="form-label">Cubic Capacity</label>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <input type="number" class="form-control" id="Seating_Capacity"  name="Seating_Capacity" required>
+                                                <label class="form-label">Seating Capacity</label>
+                                            </div>
+                                        </div>                    
+                                    </div> !-->
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-float" >
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" id="Edit_VehicleCity_ID" name="Edit_VehicleCity_ID" required>
+                                                <label class="form-label" >Vehicle City ID</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary waves-effect" type="submit" onclick="AddEditVehicle();">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+            <div class="modal-footer">                    
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Js -->
+<script src="../../js/admin.js"></script>
+<!--script src="../../js/pages/tables/jquery-datatable.js"></script-->
+<script src="../../js/pages/master/rtos.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/3.2.4/js/dataTables.fixedColumns.min.js"></script>
+<script src="http://cdn.datatables.net/plug-ins/1.10.16/api/fnMultiFilter.js"></script>
+<script>
+                                    $(function () {
+                                        PopulateMotorInsurer();
+                                        PopulateRTOCode();
+                                        PopulateRTOCity();
+                                        PopulateRTOState();
+                                        PopulateRTOZone();
+                                    });
+</script>

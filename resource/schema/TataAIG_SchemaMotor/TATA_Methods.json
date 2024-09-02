@@ -1,0 +1,33 @@
+{
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 11,
+    "Is_Active": 1,
+    "User_Code": "POLICYBOSS",
+    "Product_Id": "",
+    "Service_User": "3051994444",
+    "Service_Password": "",
+    "Payment_Gateway_URL": "https://webpos.tataaiginsurance.in/pguat/pgrequest.jsp",
+    "Name": "",
+    "Lib_Class": "",
+    "Method_List": [         
+        {
+            "Method_Id": 7,
+            "Method_Name": "",
+            "Method_Type_ID": 2,
+            "Method_Action": "",
+            "Method_Request_File": "",
+            "Method_Calling_Type": "",
+            "WSDL_URL": null,
+            "Service_URL": "https://connectbeta.tataaiginsurance.in/integration/Motor/PrivateCar?wsdl",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "Is_Active": true,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 11
+        }
+    ]
+}

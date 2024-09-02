@@ -1,0 +1,20 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:GetPremiumForHCV3>
+      <tem:sProductCode>___planCode___</tem:sProductCode>
+      <tem:iDurationType>___policy_tenure___</tem:iDurationType>
+      <tem:cHCBIncluded>78</tem:cHCBIncluded>
+      <tem:iNoOfMembersCovered>___member_count___</tem:iNoOfMembersCovered>
+      <tem:sDobCollection>___members_dob___</tem:sDobCollection>
+      <tem:cGender>___proposer_gender___</tem:cGender>
+      <tem:sStateName>___state___</tem:sStateName>
+      <tem:sCityName>___city___</tem:sCityName>
+      <tem:sEffectiveDate>___policy_start_date___</tem:sEffectiveDate>
+      <tem:iDiscLoading>0</tem:iDiscLoading>
+      <tem:iMemberLoading>___member_loading___</tem:iMemberLoading>
+      <tem:sAccessCode>ZqqS+8zc2WCnw2qeEdPScfQIXFrnkTNU6yXzA0x9QfKi/ZJS59hIzlDdWFXb+pOCBd5kQYsJ2k0rB+5D2C8PUtSyzze6bX2J+0vBO0rVm+pZl+zxEkIkBLO+8hgpp+JHfHq8PveL2wxx9WW+FSekXchcCgId4QL0e4njRIxWT8RljHDzxO7Lo47PItK7L8kycOdkhlqGqMra0EV8UoQZC3xF4i0p6FNMK4iNq/b94IybxnFtqWQcSrzsiBdkyuEnLrw7jk3SBZrXJ7PRqnyije/cPKWrH+kN2ekgrBZqTrwz4uPuzObLc8IiHehgmsJy</tem:sAccessCode>
+      <tem:branchCode>521101</tem:branchCode>
+    </tem:GetPremiumForHCV3>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,70 @@
+.forCV{display:none;}
+#ModelOTP{display:none;} 
+.SubFOSPopup{top:0;position: fixed;box-shadow: 0 0 1px 1px #e5e5e5;width: 100%;background: rgba(0, 0, 0, 0.4);height: 100%;z-index: 9999;font-family:Arial !important;}
+.SubFOSScreen{width:30%;top: 40%;left: 50%;padding:7px;position:absolute;transform:translate(-50%,-50%);background: #fff;border-radius:3px;}
+.centerAlign{text-align:center;}
+.boldFont{font-weight: 700;}
+.FOSHeader h4{margin:0px;font-size:18px;}
+.MainContentBlog h6{font-size:15px;}
+.MainContentBlog p{font-size:15px;font-weight:bold;color:#333;}
+.MainContentBlog .otp_txtbx input{width:50%;margin:0px;border-bottom:1px solid #999;text-align:center;margin-bottom:20px;cursor:pointer}
+.closeotppopup{color:red;text-decoration:underline;cursor:pointer;margin-top:8px;}
+.verifybx ,.verifybx button{display:inline-block;}
+.verify{background:#1A81FF;color:#fff;cursor:pointer;margin:14px;padding: 5px 20px;border: 2px solid #1A81FF;}
+.resend{background:#1A81FF;color:#fff;cursor:pointer;margin-top:14px;padding: 5px 20px; border: 2px solid #1A81FF}
+.closeotppopup{color:red;text-decoration:underline;cursor:pointer;margin-top:8px;}
+@media (max-width: 768px){
+	.SubFOSScreen {width: 93%;top: 40%;left: 50%;padding: 7px;position: absolute;transform: translate(-50%,-50%);background: rgb(255, 255, 255);border-radius: 3px;}
+}
+@media (max-width: 767px) {
+  .profile-popup{display:none;}
+}
+.profile-popup {
+    position: absolute;
+    /* right: 130px; */
+    background-color: white;
+    padding: 10px 5px;
+    box-shadow: 0 0 5px grey;
+    border-radius: 3px;
+    width: 200px;
+    text-align: center;
+    display: none;
+    z-index: 999;
+    color: black;
+}
+
+.logOut-btn {
+    background-color: #1A81FF;
+    width: 90px;
+    margin: auto;
+    color: white;
+    border: 1px solid #1A81FF;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 5px;
+}
+#agentName:hover + .profile-popup {
+  display: block;
+}
+.profile-popup:hover {
+  display: block;
+}
+.profile-popup a{
+    text-decoration: none;
+    color: #6a6a6a;
+}
+.error_message{top:0;position: fixed;width: 100%;height: 100%;overflow: hidden;background: rgba(0, 0, 0, 0.7);z-index: 99999;display:none;}
+.error_container{width:25%;margin:0px auto;background: #ffff;border-radius: 5px;padding: 10px;animation: rotateHorz;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)}
+.ErrpopupSection1{padding: 10px;background: #fff;border-radius: 0px 0px 5px 5px;height: 82%;overflow-y: auto;text-align: center;}
+.ErrpopClose1{position: absolute;right: 2%;font-size: 40px;top: -5px;color: #cecece;cursor: pointer;}
+.OK_Btn{display: block;
+    text-align: -webkit-center;
+    background-color: #1A81FF !important;
+    border: 1px solid #1A81FF;
+    color: rgb(255, 255, 255);
+    padding: 4px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+  margin: 15px auto;}

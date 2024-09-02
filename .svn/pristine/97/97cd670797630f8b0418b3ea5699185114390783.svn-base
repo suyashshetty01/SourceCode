@@ -1,0 +1,114 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "fullQuote",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        <!--qutation_no-->
+        "ProductCode": "___dbmaster_pb_plan_code___",
+        "ProductVersion": "1.0",
+        "EffectiveDate": "___policy_start_date___",
+        "ExpiryDate": "___policy_end_date___T23:59:59",
+        "FirstPolicyInceptionDate": "___current_date___T00:00:00",
+        "NewBizClassification": "1",
+        "BusinessType": "1",
+        "AgreementCode": "___agreement_code___",
+        "SBIGBranchCode": "HO",
+        "SBIGBranchStateCode": "MH",
+        "PolicyDuration": 1,
+        "SiCurrencyCode": "INR",
+        "PremiumCurrencyCode": "INR",
+        "ChannelType": "1",
+        "PlanName": "Plan A",
+        "MasterPolicyNo": "SBIG_DUMMY_PLUS_1",
+        "PlanClassification": "1",
+        <!--FamilyFloaterCat_Start-->
+        "FamilyFloaterCategory": "___get_member_type___",
+        <!--FamilyFloaterCat_End-->
+        "TransactionDate": "___current_date___",
+        "TransactionId": "___timestamp___",
+        "ArogyaPolicyTenure": "___policy_tenure___",
+        "ArogyaPolicyType": ___policy_type___,
+        "CoInsurancePer": "",
+        "Autorenewal": "0",
+        "PolicyCustomerList": [
+            {
+                "FirstName": "___first_name___",
+                "MiddleName": "___middle_name___",
+                "LastName": "___last_name___",
+                "GenderCode": "___gender___",
+                "DateOfBirth": "___birth_date___",
+                "PlotNo": "___permanent_address_1___",
+                "BuildingHouseName": "___permanent_address_2___",
+                "StreetName": "___permanent_address_3___",
+                "PostCode": "___permanent_pincode___",
+                "District": "___communication_district_code___",
+                "City": "",
+                "State": "___communication_state_code___",
+                "Mobile": "___mobile___",
+                "Email": "___email___",
+                "IsInsured": "___isInsured___",
+                "ContactPersonTel": "___mobile___",
+                "Title": "___salutation___",
+                "PartyStatus": "1",
+                "GSTInputState": "GSTInputState",
+                "MaritalStatus": "___marital___",
+                "PAN": "___pan___",
+                "IsPolicyHolder": "1",
+                "Locality": "",
+                "ContactEmail": "___email___",
+                "OccupationCode": "___occupation___",
+                "NationalityCode": "IND",
+                "PreferredContactMode": "email",
+                "CountryCode": "1000000108"
+            }
+        ],
+        "PolicyLobList": [
+            {
+                "ProductCode": "___dbmaster_pb_plan_code___",
+                "PolicyRiskList": [ <!--InsurersDetail_Start-->
+                    {
+                        "ProductElementCode": "R10007",
+                        "InsuredName": "___member_array_first_name___ ___member_array_middle_name___ ___member_array_last_name___",
+                        "ArgInsuredRelToProposer": "___member_array_rel___",
+                        "GenderCode": "___member_array_gender___",
+                        "DateOfBirth": "___member_array_birth_date___",
+                        "InceptionDate": "___current_date___",
+                        "DateOfMemberEntry":"___current_date___",
+                        "InsuredRelToProposer": "___member_array_rel___",
+                        "ArogyaEdQualification": "___member_array_qualification___",
+                        "MaritalStatus": "___member_array_marital_status___",
+                        "ArogyaOccupation":"___member_array_occupation___",
+                        "Height": "___member_array_height___",
+                        "Weight": "___member_array_weight___",
+                        "InsuredDateofFirstPolicy": "___current_date___T00:00:00",
+                        "Questionnaire2b": "___member_array_question_1701_details___",
+                        "IsSmoker": "___member_array_question_1702_details___",
+                        "AlcoholStatus": "___member_array_question_1703_details___",
+                        "Questionnaire3a2": "___member_array_question_1704_details___",
+                        "Questionnaire3a1": "___member_array_question_1705_details___",
+                        "Questionnaire3a3": "___member_array_question_1706_details___",
+                        "OtherImpairment": "___member_array_question_1707_details___",
+                        "NomineeName": "___nominee_name___",
+                        "NomineeGender": "___gender___",
+                        "NomineeRelToProposer": "___nominee_relation___",
+                        "NomineeDOB": "___nominee_birth_date___",
+                        "AppointeeName": "",
+                        "HasPrePolicy": "0",
+                        "PolicyCoverageList": [
+                            {
+                                "ProductElementCode": "HVSC01",
+                                "EffectiveDate": "___policy_start_date___",
+                                "ExpiryDate": "___policy_end_date___T23:59:59",
+                                "PremiumBeforeTaxOpt1": "1",
+                                "ArogPlus_1stYearCoverageSI": ___health_insurance_si_2___
+                            }
+                        ]
+                    } <!--InsurersDetail_End-->
+                ]
+            }
+        ]
+    }
+}

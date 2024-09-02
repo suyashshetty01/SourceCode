@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Health Advisory</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<!-- <script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-TSWG49H');
+	</script> -->
+	<!-- End Google Tag Manager -->
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<!-- <noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSWG49H" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe>
+	</noscript> -->
+	<!-- End Google Tag Manager (noscript) -->
+	<div id="input-loader" style="display:none;">
+		<img src="Images/input-loader.gif">
+	</div>
+
+	<div id="input_page">
+		<div class="heading">
+			<img src="Images/PB_Logo.png">
+			<h6>Do you have the Best Health Insurance Plan in the market?</h6>
+			<p>Just Fill the Below Form & Find out in 2 Min! </p>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="box d-flex align-items-center justify-content-center">
+						<div>
+							<img src="Images/Healht_bg.png">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<h4>HEALTH INSURANCE</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="column">
+								<p>No. of Members</p>
+								<select id="no_of_member" tabindex="1">
+									<option value="" disabled selected>Select</option>
+									<option value="1+0">1 Adult</option>
+									<option value="1+1">1 Adult & 1 Child</option>
+									<option value="1+2">1 Adult & 2 Child</option>
+									<option value="1+3">1 Adult & 3 Child</option>
+									<option value="1+4">1 Adult & 4 Child</option>
+									<option value="2+0">2 Adult</option>
+									<option value="2+1">2 Adult & 1 Child</option>
+									<option value="2+2">2 Adult & 2 Child</option>
+									<option value="2+3">2 Adult & 3 Child</option>
+									<option value="2+4">2 Adult & 4 Child</option>
+								</select>
+							</div>
+							<input type="hidden" id="mem_1_input" name="mem_1_input" />
+							<input type="hidden" id="mem_2_input" name="mem_2_input" />
+							<input type="hidden" id="mem_3_input" name="mem_3_input" />
+							<input type="hidden" id="mem_4_input" name="mem_4_input" />
+							<input type="hidden" id="mem_5_input" name="mem_5_input" />
+							<input type="hidden" id="mem_6_input" name="mem_6_input" />
+							<div class="column">
+								<p>Pincode</p>
+								<input inputmode="numeric" id="pincode" name="pincode" maxlength="6"
+									placeholder="Pincode" autocomplete="nope" onkeyup="forceNumeric(event)"
+									onfocusout="callPincodeDetails()" tabindex="3">
+								<input type="hidden" id="hidden_pincode">
+							</div>
+							<div class="column">
+								<p>Existing Insurer</p>
+								<select id="existing_insurer"
+									onchange="getExistingPlan(this.options[this.selectedIndex].value)" tabindex="5">
+									<option value="">Select</option>
+								</select>
+							</div>
+							<div class="column">
+								<p>Name</p>
+								<input type="text" id="contact_name" placeholder="Full Name" name="contact_name"
+									maxlength="50" autocomplete="nope" onkeyup="forceText(event)" tabindex="7">
+							</div>
+							<span class="req_field_error" id="req_field"></span>
+						</div>
+						<div class="col-md-6">
+							<div class="column">
+								<p>Eldest Member Age</p>
+								<select id="eldest_member_age" tabindex="2">
+									<option value="">Select</option>
+								</select>
+							</div>
+							<input type="hidden" id="gen_1_input" name="gen_1_input" />
+							<input type="hidden" id="gen_2_input" name="gen_2_input" />
+							<input type="hidden" id="gen_3_input" name="gen_3_input" />
+							<input type="hidden" id="gen_4_input" name="gen_4_input" />
+							<input type="hidden" id="gen_5_input" name="gen_5_input" />
+							<input type="hidden" id="gen_6_input" name="gen_6_input" />
+							<div class="column">
+								<p>Existing Sum Insured</p>
+								<select id="sum_insured" tabindex="4">
+									<option value="">Select</option>
+								</select>
+							</div>
+							<div class="column">
+								<p>Existing Plan</p>
+								<select id="existing_plan" tabindex="6">
+									<option value="">Select</option>
+								</select>
+							</div>
+							<div class="column">
+								<p>Mobile</p>
+								<input inputmode="numeric" id="mobile" name="mobile" maxlength="10" placeholder="Mobile"
+									autocomplete="nope" onkeyup="forceNumeric(event)" tabindex="8">
+							</div>
+						</div>
+						<div class="instruction">By clicking on "SUBMIT", You agree to our
+							<b>Privacy Policy </b>&amp;
+							<b>Terms of Use</b>
+						</div>
+						<div onclick="validateForm()" id="btnSubmit" class="button" tabindex="9">SUBMIT</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div onclick="validateForm()" class="MB_button">SUBMIT</div>
+	</div>
+	<div class="warningmsg" style="display:none;">
+		<h3 style="text-align: center; color: red;"><u>Error</u></h3>
+		<h3 style="text-align: center;" id="warningerror">ss_id, fba_id, sub_fba_id are mandatory</h3>
+	</div>
+	<div class="popUp" style="display:none;" id="otp_popup">
+		<div class="displayBox">
+			<div>
+				<P style="text-align: right;margin:0;" id="close"><i class="fa fa-close"></i></P>
+				<p>Verify Mobile OTP</p>
+				<input type="text" name="" minlength="4" maxlength="4">
+				<div class="button">VERIFY</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var pincodeName = [];
+		var insurer_list = [];
+		var plan_list = [];
+		var suminsured_lists = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6, 7, 7.5, 8, 9, 10, 11, 12, 13, 14, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, 200, 300, 600];
+		var cnt_adult = 1;
+		var cnt_child = 0;
+		var member_count = 1;
+		var city_id, city_name, state_name;
+		var pin_validation = false;
+		var member1age, member2age, member3age, member4age, member5age, member6age;
+		var member1gender, member2gender, member3gender, member4gender, member5gender, member6gender;
+		var member_1_birth_date, member_2_birth_date, member_3_birth_date, member_4_birth_date, member_5_birth_date, member_6_birth_date;
+		var policy_tenure = 1;
+		var ss_id = 0;
+		var fba_id = "";
+		var sub_fba_id = "";
+		var agent_name = "";
+		var agent_email = "";
+		var agent_mobile = "";
+		var insurer_selected = "";
+		var geo_lat, geo_long, ip_address;
+		var utm_source, utm_medium, utm_campaign;
+		$(document).ready(function () {
+			siteURL = window.location.href;
+			getSession();
+			// stringparam();
+			if(siteURL.includes('utm_')){
+				var queryData = getUrlVars();
+				utm_source = queryData['utm_source'] != undefined ? queryData['utm_source'] : "";
+				utm_medium = queryData['utm_medium'] != undefined ? queryData['utm_medium'] : "";
+				utm_campaign = queryData['utm_campaign'] != undefined ? queryData['utm_campaign'] : "";	
+			}
+			getClientBrowserDetails();
+			$('#no_of_member,#existing_insurer,#eldest_member_age,#sum_insured,#existing_plan').val('');
+			$('#pincode,#contact_name,#mobile').val('');
+			//$('.MB_button').click(function(){
+			//	$('#otp_popup').show();
+			//});
+			//$('.button').click(function(){
+			//	$('#otp_popup').show();
+			//});
+			//$('#close').click(function(){
+			//	$('#otp_popup').hide();
+			//});
+			$("#eldest_member_age").empty();
+			var gender = '<option disabled selected value="' + 0 + '">' + "Select" + '</option>';
+			$("#eldest_member_age").append(gender);
+			for (var i = 18; i < 83; i++) {
+				var gender = '<option value="' + i + '">' + i + '</option>';
+				$("#eldest_member_age").append(gender);
+			}
+
+			$.ajax({
+				type: 'GET',
+				url: GetUrl() + "/get_insurer/2",
+				success: function (data) {
+					//console.log(data);
+					insurer_list = data;
+					$("#existing_insurer").empty();
+					var insurer = '<option disabled selected value="' + 0 + '">' + "Select" + '</option>';
+					$("#existing_insurer").append(insurer);
+					$.each(insurer_list, function (i) {
+						var insurer = '<option value="' + insurer_list[i]['_id'].Insurer_Id + '">' + insurer_list[i]['_id'].Insurer_Name + '</option>';
+						$("#existing_insurer").append(insurer);
+					});
+				},
+				error: function (result) {
+					console.log(result);
+				}
+			});
+			$("#sum_insured").empty();
+			var sum_insured = '<option disabled selected value="' + 0 + '">' + "Select" + '</option>';
+			$("#sum_insured").append(sum_insured);
+			$.each(suminsured_lists, function (j) {
+				var si = suminsured_lists[j];
+				var sum_insured = '<option value="' + si * 100000 + '">' + si + ' Lacs' + '</option>';
+				$("#sum_insured").append(sum_insured);
+			});
+		});
+		function validateForm() {
+			var err = 0;
+			var namePattern = new RegExp('^[a-zA-Z ]+$');
+			var mobilePattern = new RegExp('^[7-9]{1}[0-9]{9}$');
+			var no_of_member = $('#no_of_member').val();
+			var pincode = $('#pincode').val();
+			var existing_insurer = $('#existing_insurer').val();
+			var contact_name = $('#contact_name').val();
+			var eldest_member_age = $('#eldest_member_age').val();
+			var sum_insured = $('#sum_insured').val();
+			var existing_plan = $('#existing_plan').val();
+			var mobile = $('#mobile').val();
+
+			$("#no_of_member").removeClass('Error');
+			$("#pincode").removeClass('Error');
+			$("#existing_insurer").removeClass('Error');
+			$("#contact_name").removeClass('Error');
+			$("#eldest_member_age").removeClass('Error');
+			$("#sum_insured").removeClass('Error');
+			$("#existing_plan").removeClass('Error');
+			$("#mobile").removeClass('Error');
+
+			if (no_of_member == '' || no_of_member == null || no_of_member == undefined) {
+				$("#no_of_member").addClass('Error');
+				err++;
+			}
+
+			if (pincode == '' || pincode == null || pincode == undefined || pincode.length !== 6 || pin_validation == false) {
+				$("#pincode").addClass('Error');
+				err++;
+			}
+
+			if (existing_insurer == '' || existing_insurer == null || existing_insurer == undefined) {
+				$("#existing_insurer").addClass('Error');
+				err++;
+			}
+
+			if (contact_name !== '') {
+				if (!namePattern.test(contact_name)) {
+					err++;
+					$("#contact_name").addClass('Error');
+				} else {
+					var namearray = contact_name.split(" ");
+					if (namearray[1] === "" || namearray[0] === "" || namearray[1] === undefined) {
+						err++;
+						$("#contact_name").addClass('Error');
+					}
+				}
+			} else {
+				err++;
+				$("#contact_name").addClass('Error');
+			}
+
+			if (eldest_member_age == '' || eldest_member_age == null || eldest_member_age == undefined) {
+				$("#eldest_member_age").addClass('Error');
+				err++;
+			}
+
+			if (sum_insured == '' || sum_insured == null || sum_insured == undefined) {
+				$("#sum_insured").addClass('Error');
+				err++;
+			}
+
+			if (existing_plan == '' || existing_plan == null || existing_plan == undefined) {
+				$("#existing_plan").addClass('Error');
+				err++;
+			}
+
+			if (mobile === '' || !mobilePattern.test(mobile)) {
+				err++;
+				$("#mobile").addClass('Error');
+			}
+
+			if (cnt_adult > 0) {
+				member1gender = 'M';
+				document.getElementById("gen_1_input").value = 'M';
+			}
+
+			if (cnt_adult > 0) {
+				member1age = parseInt(document.getElementById("eldest_member_age").value);
+				document.getElementById("mem_1_input").value = parseInt(member1age);
+			} else {
+				member3age = parseInt(document.getElementById("eldest_member_age").value);
+				document.getElementById("mem_3_input").value = parseInt(member3age);
+			}
+
+			if (cnt_adult === 2) {
+				if (member1age == 18 || member1age == 19) {
+					member2age = member1age;
+				}
+				else {
+					member2age = parseInt(member1age - 2);
+				}
+				document.getElementById("mem_2_input").value = parseInt(member2age);
+			}
+
+			member_count = cnt_adult + cnt_child;
+
+			if (member_count > 1 && cnt_adult > 0) {
+				setDummyValues(member1age, member1gender);
+			}
+			if (member_count > 1 && cnt_adult == 0) {
+				setChildDummyValues(member3age, member3gender);
+			}
+
+			if (err > 0) {
+				document.getElementById("req_field").innerHTML = "Highlighted fields are mandatory";
+			} else {
+				document.getElementById("req_field").innerHTML = "";
+				$('#input-loader').show();
+				getStart();
+			}
+		}
+		function setDummyValues(mem1age, mem1gender) {
+			var youngerAdult = 0;
+			if (cnt_adult > 1) {
+				member2gender = (mem1gender == "M") ? "F" : "M";
+				member2age = parseInt((mem1age - 2) <= 18 ? mem1age : mem1age - 1);
+				youngerAdult = member2age;
+				document.getElementById("gen_2_input").value = member2gender;
+				document.getElementById("mem_2_input").value = member2age;
+			}
+			else {
+				youngerAdult = mem1age;
+			}
+
+			if (cnt_child > 0) {
+				for (var i = 3; i <= cnt_child + 2; i++) {
+					if (i == 3) {
+						member3gender = "M";
+						member3age = (youngerAdult - 18) < 1 ? 1 : (youngerAdult - 18);
+						if (member3age >= 18) {
+							member3age = 17;
+						}
+						document.getElementById("gen_3_input").value = member3gender;
+						document.getElementById("mem_3_input").value = parseInt(member3age);
+					}
+					else {
+						var j = i - 1;
+						document.getElementById("gen_" + i + "_input").value = document.getElementById("gen_" + j + "_input").value == "M" ? "F" : "M";
+						document.getElementById("mem_" + i + "_input").value = parseInt(document.getElementById("mem_" + j + "_input").value) < 3 ? 1 : parseInt(document.getElementById("mem_" + j + "_input").value) - 2;
+					}
+				}
+			}
+		}
+
+		function setChildDummyValues(member3age, member3gender) {
+			for (var i = 3; i <= cnt_child + 2; i++) {
+				if (i == 3) {
+					document.getElementById("gen_3_input").value = member3gender;
+					document.getElementById("mem_3_input").value = parseInt(member3age);
+				}
+				else {
+					var j = i - 1;
+					document.getElementById("gen_" + i + "_input").value = document.getElementById("gen_" + j + "_input").value == "M" ? "F" : "M";
+					document.getElementById("mem_" + i + "_input").value = parseInt(document.getElementById("mem_" + j + "_input").value) < 3 ? 1 : parseInt(document.getElementById("mem_" + j + "_input").value) - 2;
+				}
+			}
+			document.getElementById("gen_1_input").value = "";
+			document.getElementById("mem_1_input").value = "";
+			document.getElementById("gen_2_input").value = "";
+			document.getElementById("mem_2_input").value = "";
+		}
+
+		var getStart = function () {
+			var srn = "";
+			var member1Age = parseInt(document.getElementById("mem_1_input").value);
+			var member2Age = parseInt(document.getElementById("mem_2_input").value);
+			var member3Age = parseInt(document.getElementById("mem_3_input").value);
+			var member4Age = parseInt(document.getElementById("mem_4_input").value);
+			var member5Age = parseInt(document.getElementById("mem_5_input").value);
+			var member6Age = parseInt(document.getElementById("mem_6_input").value);
+
+			var str = {
+				"city_id": parseInt(city_id),
+				"city_name": city_name,
+				"state_name": state_name,
+				"health_insurance_si": document.getElementById("sum_insured").value,
+				"adult_count": cnt_adult,
+				"child_count": cnt_child,
+				"elder_mem_age": isNaN(member1Age) == true ? "" : parseInt(member1Age),
+				"member_1_age": isNaN(member1Age) == true ? "" : parseInt(member1Age),
+				"member_2_age": isNaN(member2Age) == true ? "" : parseInt(member2Age),
+				"member_3_age": isNaN(member3Age) == true ? "" : parseInt(member3Age),
+				"member_4_age": isNaN(member4Age) == true ? "" : parseInt(member4Age),
+				"member_5_age": isNaN(member5Age) == true ? "" : parseInt(member5Age),
+				"member_6_age": isNaN(member6Age) == true ? "" : parseInt(member6Age),
+				"member_1_gender": document.getElementById("gen_1_input").value,
+				"member_2_gender": document.getElementById("gen_2_input").value,
+				"member_3_gender": document.getElementById("gen_3_input").value,
+				"member_4_gender": document.getElementById("gen_4_input").value,
+				"member_5_gender": document.getElementById("gen_5_input").value,
+				"member_6_gender": document.getElementById("gen_6_input").value,
+				"contact_name": document.getElementById("contact_name").value,
+				"mobile": document.getElementById("mobile").value,
+				"email": "",
+				"product_id": 2,
+				"policy_tenure": policy_tenure,
+				"method_type": "Premium",
+				"health_insurance_type": member_count > 1 ? "floater" : "individual",
+				"execution_async": "yes",
+				"crn": 0,
+				"ss_id": getUrlVars()["ss_id"] === undefined ? ss_id : getUrlVars()["ss_id"],
+				"agent_source": "0",
+				"secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+				"client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+				"fba_id": getUrlVars()["fba_id"] === undefined ? fba_id : getUrlVars()["fba_id"],
+				"ip_address": ip_address,
+				"geo_lat": geo_lat,
+				"geo_long": geo_long,
+				"app_version": "PolicyBoss.com",
+				"permanent_pincode": parseInt(document.getElementById("pincode").value),
+				"quick_quote": true,
+				"topup_applied": "none",
+				"multi_individual": "no",
+				"ui_source": "",
+				"source": "health_advisory",
+				"existing_insurer_id": parseInt(document.getElementById("existing_insurer").value),
+				"existing_plan_id": parseInt(document.getElementById("existing_plan").value),
+				"insurer_selected": insurer_selected,
+				"utm_source" : utm_source != undefined  && utm_source != null ? utm_source : "",
+				"utm_medium" : utm_medium != undefined && utm_medium != null ? utm_medium : "",
+				"utm_campaign" : utm_campaign != undefined  && utm_campaign != null ? utm_campaign : ""
+			};
+			if (sub_fba_id != '' && sub_fba_id != null) { str["sub_fba_id"] = sub_fba_id; }
+			// console.log(str);
+			console.log(JSON.stringify(str));
+			$.ajax({
+				type: "POST",
+				data: JSON.stringify(str),
+				url: GetUrl() + "/quote/premium_initiate",
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (data) {
+					if ((data.hasOwnProperty("Details")) && ((data.hasOwnProperty("Summary")) ? ((data.Summary.hasOwnProperty("Request_Unique_Id")) || (data.Summary.Request_Unique_Id == "")) : true)) { }
+					else {
+						console.log(data);
+						srn = data['Summary']['Request_Unique_Id'];
+						udid = srn.split("_")[1];
+						if (siteURL.includes('=beta')) {
+							window.location.href = './advisory_quote.html?SID=' + srn + '&ClientID=2';
+						} else {
+							window.location.href = './advisory_result.html?SID=' + srn + '&ClientID=2';
+						}
+					}
+				},
+				error: function (result) {
+					//alert("Error");
+				}
+			});
+		}
+		function callPincodeDetails() {
+			var pincode = $('#pincode').val();
+			getPincodeDetails(pincode);
+		}
+		function getPincodeDetails(pincode) {
+			$.ajax({
+				type: "GET",
+				dataType: "json",
+				url: GetUrl() + "/getPinDetails/" + pincode,
+				success: function (data) {
+					//console.log('pincode details' + data);
+					if (data === null) {
+						pin_validation = false;
+					} else {
+						city_id = data.City_Id;
+						city_name = data.City;
+						state_name = data.State;
+						pin_validation = true;
+					}
+				},
+				error: function (result) {
+
+				}
+			});
+
+		}
+		$("#no_of_member").on('change', function (e) {
+			var no_of_member = e.currentTarget.value;
+			cnt_adult = parseInt(no_of_member.split('+')[0]);
+			cnt_child = parseInt(no_of_member.split('+')[1]);
+		});
+		$("#btnSubmit").keyup(function (event) {
+			if (event.keyCode === 13) {
+				$("#btnSubmit").click();
+			}
+		});
+		function getExistingPlan(insurer_id) {
+			$.ajax({
+				type: 'GET',
+				url: GetUrl() + "/get_plan/2/" + insurer_id,
+				success: function (data) {
+					//console.log(data);
+					plan_list = data;
+					$("#existing_plan").empty();
+					var planhtml = '<option disabled selected value="' + 0 + '">' + "Select" + '</option>';
+					$("#existing_plan").append(planhtml);
+					$.each(plan_list, function (i) {
+						var planhtml = '<option value="' + plan_list[i]['_id'].Plan_Id + '">' + plan_list[i]['_id'].Plan_Name + '</option>';
+						$("#existing_plan").append(planhtml);
+					});
+				},
+				error: function (result) {
+					console.log(result);
+				}
+			});
+		}
+
+		function forceText(e) {
+			e.target.value = e.target.value.replace(/[^a-zA-Z ]+/g, '');
+			return false;
+		}
+		function forceNumeric(e) {
+			e.target.value = e.target.value.replace(/[^\d]/g, '');
+			return false;
+		}
+		function getSession() {
+			var session_url = getEditUrl() + "/Payment/GetSession";
+			$.getJSON(session_url, function (data) {
+				if (data.hasOwnProperty('agent_id')) {
+					ss_id = + data.agent_id;
+					agent_name = data.agent_name;
+					agent_email = data.agent_email;
+					agent_mobile = data.agent_mobile;
+					fba_id = data.fba_id;
+					sub_fba_id = data.hasOwnProperty('sub_fba_id') ? data.sub_fba_id : '';
+				}
+				console.log('session data', data);
+			}).fail(function (error) {
+				console.log('Error in get Session:', error.status, error.statusText);
+			});
+		}
+		function getClientBrowserDetails() {
+			if (window.navigator && window.navigator.geolocation) {
+				window.navigator.geolocation.getCurrentPosition(
+					position => {
+						this.showPosition(position)
+					},
+					error => {
+						console.log('Position Unavailable');
+					});
+			}
+		}
+		function showPosition(position) {
+			geo_lat = position.coords.latitude;
+			geo_long = position.coords.longitude;
+			$.getJSON('https://api.ipify.org?format=json', function (data) {
+				ip_address = data.ip;
+			});
+		}
+		var GetUrl = function () {
+			var url = window.location.href;
+			var newurl = "http://qa-horizon.policyboss.com:3000";
+			if (url.includes("request_file")) {
+				newurl = "http://localhost:3000";
+			} else if (url.includes("qa.")) {
+				newurl = "http://qa-horizon.policyboss.com:3000";
+			} else if (url.includes("https:")) {
+				newurl = "https://horizon.policyboss.com:5443";
+			}
+			return newurl;
+		}
+		function getEditUrl() {
+			var url = window.location.href;
+			var newurl = "http://qa.policyboss.com";
+			if (url.includes("https:")) {
+				newurl = "https://www.policyboss.com";
+			}
+			return newurl;
+		}
+		var getUrlVars = function () {
+
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for (var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		function stringparam() {
+			ss_id = getUrlVars()["ss_id"];
+			fba_id = getUrlVars()["fba_id"];
+			sub_fba_id = getUrlVars()["sub_fba_id"];
+
+			if ((fba_id == "" || fba_id == undefined || fba_id == "0" || ss_id == "" || ss_id == undefined || ss_id == "0")) {
+				$("#input_page").hide();
+				$('.warningmsg').css('display', 'block');
+			} else {
+				$("#input_page").show();
+				$('.warningmsg').css('display', 'none');
+			}
+		}
+	</script>
+</body>
+
+</html>

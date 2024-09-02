@@ -1,0 +1,77 @@
+[
+
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"New Business\",\"renew\":\"Rollover\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+     
+    {
+        "Field_Name": "vehicle_registration_type",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"individual\":\"I\",\"corporate\":\"C\"}",
+        "Field_Group": "Registration",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_registration_type"
+    },
+
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"No\",\"no\":\"Yes\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+    {
+        "Field_Name": "is_antitheft_fit",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_antitheft_fit"
+    },
+    {
+
+        "Field_Name": "product_id",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"3121\",\"10\":\"3122\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+    {
+        "Field_Name": "is_external_bifuel",
+         "Insurer_ID": "11",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value" : "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group" : "Vehicle",
+        "Field_Category": "input",
+         "Field_Parent": "is_external_bifuel"
+    }
+    
+]

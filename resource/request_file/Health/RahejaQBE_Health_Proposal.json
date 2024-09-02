@@ -1,0 +1,160 @@
+{
+  "ClientCreation": {
+    "salutation": "___salutation___",
+    "firstName": "___first_name___ ",
+    "middleName": "___middle_name___",
+    "lastName": "___last_name___",
+    "dateofBirth": "___birth_date___",
+    "gender": "___gender___",
+    "educationalQualification": "",
+    "pinCode": "___permanent_pincode___",
+    "uidNo": "",
+    "maritalStatus": "___marital___",
+    "nationality": "Indian",
+    "occupation": "___occupation___",
+    "primaryEmailID": "___email___",
+    "contactMobileNo": "___mobile___",
+    "stdLandlineNo": "",
+    "panNo": "___pan___",
+    "passportNumber": "",
+    "contactPerson": "",
+    "annualIncome": "___annual_income___",
+    "remarks": "Remarks",
+    "startDate": "___policy_start_date___",
+    "endDate": "___policy_end_date___",
+    "IdProof": "",
+    "residenceProof": "",
+    "ageProof": "",
+    "others": "",
+    "homeAddressLine1": "___permanent_address_1___",
+    "homeAddressLine2": "___permanent_address_2___",
+    "homeAddressLine3": "___permanent_address_3___",
+    "homePinCode": "___permanent_pincode___",
+    "homeArea": "",
+    "homeContactMobileNo": "___mobile___",
+    "homeContactMobileNo2": "",
+    "homeSTDLandlineNo": "",
+    "homeSTDLandlineNo2": "",
+    "homeFaxNo": "",
+    "sameAsHomeAddress": "",
+    "mailingAddressLine1": "___communication_address_1___",
+    "mailingAddressLine2": "___communication_address_2___",
+    "mailingAddressLine3": "___communication_address_3___",
+    "mailingPinCode": "___permanent_pincode___",
+    "mailingArea": "",
+    "mailingContactMobileNo": "___mobile___",
+    "mailingContactMobileNo2": "",
+    "mailingSTDLandlineNo": "",
+    "mailingSTDLandlineNo2": "",
+    "mailingFaxNo": "",
+    "bankAccountType": "",
+    "bankAccountNo": "",
+    "ifscCode": ""
+  },
+  "PolicyCreationRequest": {
+    "Product_Code": "___product_code___",
+    "Plan_Code": "___dbmaster_pb_plan_code___",
+    "SumInsured_Type": "___suminsured_type___",
+    "Policy_Tanure": "___policy_tenure___",
+    "Member_Type_Code": "___get_member_type___",
+    "intermediaryCode": "___intermediary_code___",
+    "intermediaryBranchCode": "400401",
+    "agentSignatureDate": "",
+    "Customer_Signature_Date": "",
+    "businessSourceChannel": "",
+    "leadID": "Vendor001",
+    "IsPayment": 0,
+    "OfficeCode": "",
+    "Source_Name": "PolicyBoss",
+    "IsQuotationRequired": "1",
+    "familyDoctor": {}
+  },
+  "MemObj": {
+    "Member": [
+       <!--InsurersDetail_Start-->
+      {
+        "MemberNo": "___member_array_inc___",
+        "Salutation": "___member_array_salutation___",
+        "First_Name": "___member_array_first_name___ ",
+        "Middle_Name": "___member_array_middle_name___",
+        "Last_Name": "___member_array_last_name___",
+        "Gender": "___member_array_gender___",
+        "DateOfBirth": "___member_array_birth_date___",
+        "Relation_Code": "___member_array_relation___",
+        "Marital_Status": "___member_array_marital_status___",
+        "height": "___member_array_height___",
+        "weight": "___member_array_weight___",
+        "occupation": "___member_array_occupation___",
+        "PrimaryMember": "",
+        "optionalCovers": [
+          {"optionalCoverName": "", "optionalCoverValue": "" }
+        ],
+        "productComponents": [
+          {
+            "productComponentName": "SumInsured",
+            "productComponentValue": "___member_array_si___"
+          }
+        ],
+        "MemberPED": [],
+        "MemberQuestionDetails": [<!--___member_array_medquestn-->],
+        "exactDiagnosis": "",
+        "dateOfDiagnosis": "",
+        "lastDateConsultation": "",
+        "detailsOfTreatmentGiven": "",
+        "doctorName": "",
+        "hospitalName": "",
+        "phoneNumberHosital": "",
+        "labReport": "",
+        "dischargeCardSummary": "",
+        "personalHabitDetail": [
+          {
+            "numberOfYears": "___member_array_question_Q015_details___",
+            "count": "___member_array_question_Q016_details___",
+            "type": "smoking"
+          },
+          {
+            "numberOfYears": "___member_array_question_Q017_details___",
+            "count": "___member_array_question_Q018_details___",
+            "type": "alcohol"
+          },
+          {
+            "numberOfYears": "___member_array_question_Q019_details___",
+            "count": "___member_array_question_Q020_details___",
+            "type": "tobacco"
+          }
+        ],
+        "Nominee_First_Name": "___nominee_first_name___",
+        "Nominee_Last_Name": "___nominee_last_name___",
+        "Nominee_RelationShip": "R00___nominee_relation___",
+        "Nominee_Contact_Number": "",
+        "Nominee_Home_Address": "___nominee_address___",
+        "Member_Bank_IFSCCode": "",
+        "Member_Bank_MICRCode": ""
+      }
+      <!--InsurersDetail_End-->
+    ]
+  },
+  "ReceiptCreation": {
+    "officeLocation": "Mumbai",
+    "modeOfEntry": "DIRECT",
+    "cdAcNo": "",
+    "expiryDate": "",
+    "payerType": "Proposer",
+    "payerCode": "",
+    "paymentBy": "Customer",
+    "paymentByName": "___first_name___ ___last_name___",
+    "paymentByRelationship": "R00___relation___",
+    "collectionAmount": "___total_premium___",
+    "collectionRcvdDate": "___current_date___",
+    "collectionMode": "Online Collections",
+    "remarks": "",
+    "instrumentNumber": "___instrument_number___",
+    "instrumentDate": "___current_date___",
+    "bankName": "",
+    "branchName": "",
+    "bankLocation": "",
+    "micrNo": "",
+    "chequeType": "",
+    "ifscCode": ""
+  }
+}

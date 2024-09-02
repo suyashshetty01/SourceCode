@@ -1,0 +1,1183 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var config = require('config');
+var mongoose = require('mongoose');
+var Base = require('../libs/Base');
+var path = require('path');
+var fs = require('fs');
+const {fuzzy} = require("fast-fuzzy");
+var appRoot = path.dirname(path.dirname(require.main.filename));
+mongoose.connect(config.db.connection + ':27017/' + config.db.name, {useMongoClient: true}); // connect to our database
+
+var Vehicle = require('../models/vehicle');
+var arr_ins = {1: "BajajAllianz", 2: "BhartiAxa", 3: "Cholamandalam MS", 4: "Future Generali", 5: "HDFCERGO", 6: "ICICILombard", 7: "IFFCOTokio", 8: "National Insurance", 9: "Reliance", 10: "RoyalSundaram", 11: "TataAIG", 12: "New India", 13: "Oriental", 14: "UnitedIndia", 15: "L&amp;T General", 16: "Raheja QBE", 17: "SBI General", 18: "Shriram General", 19: "UniversalSompo", 20: "Max Bupa", 21: "HDFC ERGO Health", 22: "DLF Pramerica", 23: "Bajaj Allianz", 24: "IndiaFirst", 25: "AEGON Religare", 26: "Star Health", 27: "Express BPO", 28: "HDFC Life", 29: "Bharti Axa", 30: "Kotak Mahindra", 31: "LIC India", 32: "Birla Sun Life", 33: "LibertyGeneral", 34: "Care Health", 35: "Magma HDI", 36: "Indian Health Organisation", 37: "TATA AIA", 38: "Manipal Cigna", 39: "ICICI Pru", 42: "Aditya Birla", 43: "Edelweiss Tokio Life", 44: "GoDigit", 45: "Acko", 46: "Edelweiss", 48: 'Kotak', 47: "DHFL", 100: "FastLaneVariantMapping", 101: "Landmark"};
+module.exports.controller = function (app) {
+    /**
+     * a home page route
+     */
+    app.post('/vehicles/pospfilesave', function (req, res) {
+        var filedata = req.body.DocumentContent;
+        var filename = req.body.PBPOSPRequestID + '_' + req.body.DocumentName;
+        var filepath = 'D://LM//PB//POSP//payout//';
+        var http = require('http')
+                , fs = require('fs')
+                , options;
+
+        fs.writeFile(filepath + filename, filedata, 'base64', function (err) {
+            if (err) {
+                res.json({'status': 'fail', 'err': err});
+            } else {
+                console.log('File saved.');
+                res.json({'status': 'success', 'filename': filepath + filename});
+            }
+        });
+
+    });
+    app.get('/vehicles', function (req, res) {
+        Vehicle.find(function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+    });
+    app.get('/vehicles/make_model_list', function (req, res) {
+        var agg = [
+            {$group: {
+                    _id: {Make_Name: "$Make_Name", Model_Name: "$Model_Name"}
+                }},
+            {$project: {_id: 0, Make_Name: "$_id.Make_Name", Model_Name: "$_id.Model_Name"}},
+            {$sort: {'Make_Name': 1}}
+        ];
+
+        Vehicle.aggregate(agg, function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+        /*
+         Vehicle.find({}, 'Vehicle_ID Make_Name Model_Name Variant_Name Fuel_Name Cubic_Capacity Seating_Capacity', function (err, vehicles) {
+         if (err)
+         res.send(err);
+         
+         
+         res.json(vehicles);
+         });
+         */
+    });
+    app.post('/vehicles/list', function (req, res) {
+
+        Vehicle.find({
+            $or: [
+                {'Make_Name': new RegExp(req.body['q'], 'i')},
+                {'Model_Name': new RegExp(req.body['q'], 'i')},
+                {'Variant_Name': new RegExp(req.body['q'], 'i')},
+                {'Fuel_Name': new RegExp(req.body['q'], 'i')}
+            ],
+            $and: [{'Product_Id_New': parseInt(req.body['product_id'])}]
+        }, function (err, vehicles) {
+            if (err)
+                res.send(err);
+//
+//            var listresponse = [];
+//            for (var k in vehicles) {
+//                listresponse.push({'id': vehicles[k]['Vehicle_ID'], 'label': vehicles[k]['Make_Name'] + ' ' + vehicles[k]['Model_Name'] + ' ' + vehicles[k]['Variant_Name'] + '( Fuel: ' + vehicles[k]['Fuel_Name'] + ', CC:' + vehicles[k]['Cubic_Capacity'] + ' )'})
+//            }
+
+            res.json(vehicles);
+        });
+//        Vehicle.find({$text: {$search: req.query['query']}}, {score: {$meta: "textScore"}}).sort({score: {$meta: 'textScore'}}).exec(function (err, vehicles) {
+//            if (err)
+//                res.send(err);
+//
+//            var listresponse = [];
+//            for (var k in vehicles) {
+//                listresponse.push({'id': vehicles[k]['Vehicle_ID'], 'label': vehicles[k]['Make_Name'] + ' ' + vehicles[k]['Model_Name'] + ' ' + vehicles[k]['Variant_Name'] + '( Fuel: ' + vehicles[k]['Fuel_Name'] + ', CC:' + vehicles[k]['Cubic_Capacity'] + ' )'})
+//            }
+//
+//            res.json(listresponse);
+//        });
+    });
+
+    app.get('/vehicles/make1/:product_id', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var from = 0, to = 0;
+        if (product_id === 1) {
+            from = 0;
+            to = 50000;
+        } else {
+            from = 50000;
+            to = 100000;
+        }
+        Vehicle.find().distinct('Make_Name', {}, function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+    });
+    app.get('/vehicles/make/:product_id', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var from = 0, to = 0;
+        if (product_id === 1) {
+            from = 0;
+            to = 50000;
+        } else {
+            from = 50000;
+            to = 100000;
+        }
+        ;
+        var agg = [
+            {"$match": {"Product_Id_New": product_id}},
+            {$group: {
+                    _id: {Make_Name: "$Make_Name"},
+                    VehicleCount: {$sum: 1}
+                }},
+            {$project: {_id: 0, Make_Name: "$_id.Make_Name", VehicleCount: 1}},
+            {$sort: {'Make_Name': 1}}
+        ];
+
+        Vehicle.aggregate(agg, function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+
+    });
+    app.get('/vehicles/model/:product_id/:make_name', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var make_name = req.params.make_name;
+        /* Vehicle.find().distinct('Model_Name', {'Make_Name': make_name}, function (err, vehicles) {
+         if (err)
+         res.send(err);
+         
+         res.json(vehicles);
+         });*/
+        var agg = [
+            {"$match": {"Product_Id_New": product_id, 'Make_Name': make_name}},
+            {$group: {
+                    _id: {Model_Name: "$Model_Name"},
+                    VehicleCount: {$sum: 1},
+                }},
+            {$project: {_id: 0, Make_Name: "$Make_Name", Model_Name: "$_id.Model_Name", VehicleCount: 1}},
+            {$sort: {'Model_Name': 1}}
+        ];
+
+        Vehicle.aggregate(agg, function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+    });
+    app.get('/vehicles/variant/:make_name/:model_name', function (req, res) {
+        var make_name = req.params.make_name;
+        var model_name = req.params.model_name;
+        Vehicle.find({'Make_Name': make_name, 'Model_Name': model_name}).sort({'Variant_Name': 'asc'}).exec(function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicles);
+        });
+    });
+    app.get('/vehicles/insurer_mapped_count_summary', function (req, res) {
+        try {
+            var Product_Id = req.query['Product_Id'] - 0;
+            Vehicle.find({'Product_Id_New': Product_Id}).exec(function (err, vehicles) {
+                try {
+                    if (err)
+                        res.send(err);
+
+                    let obj_config_product = {
+                        1: [1, 2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 19, 30, 33, 44, 46, 47],
+                        10: [1, 2, 3, 5, 6, 9, 11, 13, 17, 33, 44, 45, 47, 48],
+                        12: [1, 4, 5, 19, 44]
+                    };
+                    let objVehicle_Mapping_Summary = {};
+                    let objVehicle_Insurer_Count = {};
+                    let objVehicle_Insurer_Base_Count = {};
+                    let objVehicle_Insurer_Wise_Summary = {};
+                    let Total_Vehicle = vehicles.length;
+                    let Total_Base_Vehicle = 0;
+                    for (let j of obj_config_product[Product_Id]) {
+                        objVehicle_Insurer_Wise_Summary['Insurer_' + j] = {
+                            'Insurer': arr_ins[j],
+                            'All-Total': Total_Vehicle,
+                            'All-Pending': 0,
+                            'All-NotSupported': 0,
+                            'All-Supported': 0,
+                            'Base-Total': 0,
+                            'Base-Pending': 0,
+                            'Base-NotSupported': 0,
+                            'Base-Supported': 0
+                        };
+                    }
+                    obj_config_product[1] = ('Insurer_' + obj_config_product[1].join(',Insurer_')).split(',');
+                    obj_config_product[10] = ('Insurer_' + obj_config_product[10].join(',Insurer_')).split(',');
+                    obj_config_product[12] = ('Insurer_' + obj_config_product[12].join(',Insurer_')).split(',');
+
+                    for (let k in vehicles) {
+                        let Vehicle_ID = vehicles[k]._doc['Vehicle_ID'];
+                        let Mapped_Insurer_Count = 0;
+                        if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                            Total_Base_Vehicle++;
+                        }
+                        for (let i in vehicles[k]._doc) {
+                            if (i.indexOf('Insurer_') > -1 && objVehicle_Insurer_Wise_Summary.hasOwnProperty(i)) {
+                                if (vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && (vehicles[k]._doc[i]['Status_Id'] === 2 || vehicles[k]._doc[i]['Status_Id'] === 4)) {
+                                    objVehicle_Insurer_Wise_Summary[i]['All-Supported']++;
+                                    if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                                        objVehicle_Insurer_Wise_Summary[i]['Base-Supported']++;
+                                    }
+                                }
+                                if (vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && vehicles[k]._doc[i]['Status_Id'] === 3) {
+                                    objVehicle_Insurer_Wise_Summary[i]['All-NotSupported']++;
+                                    if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                                        objVehicle_Insurer_Wise_Summary[i]['Base-NotSupported']++;
+                                    }
+                                }
+                            }
+                            if (i.indexOf('Insurer_') > -1 && obj_config_product[Product_Id].indexOf(i) > -1 && vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && (vehicles[k]._doc[i]['Status_Id'] === 2 || vehicles[k]._doc[i]['Status_Id'] === 4)) {
+                                Mapped_Insurer_Count++;
+                            }
+                        }
+                        objVehicle_Insurer_Count['Vehicle_' + Vehicle_ID] = Mapped_Insurer_Count;
+                        if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                            objVehicle_Insurer_Base_Count['Vehicle_' + Vehicle_ID] = Mapped_Insurer_Count;
+                        }
+                        if (req.query['op'] === 'UPDATE_MAPPED_INSURER') {
+                            Vehicle.update({'Vehicle_ID': Vehicle_ID}, {$set: {'Mapped_Insurer_Count': Mapped_Insurer_Count}}, function (err, numAffected) {
+                                if (err) {
+                                    console.error('UPDATE_MAPPED_INSURER', err);
+                                }
+                            });
+                        }
+                    }
+                    for (let i in objVehicle_Insurer_Wise_Summary) {
+                        objVehicle_Insurer_Wise_Summary[i]['All-Pending'] = Total_Vehicle - (objVehicle_Insurer_Wise_Summary[i]['All-Supported'] + objVehicle_Insurer_Wise_Summary[i]['All-NotSupported']);
+                        objVehicle_Insurer_Wise_Summary[i]['Base-Pending'] = Total_Base_Vehicle - (objVehicle_Insurer_Wise_Summary[i]['Base-Supported'] + objVehicle_Insurer_Wise_Summary[i]['Base-NotSupported']);
+                        objVehicle_Insurer_Wise_Summary[i]['Base-Total'] = Total_Base_Vehicle;
+                    }
+                    let objVehicle_Insurer_Count_Summary = {};
+                    for (let k in objVehicle_Insurer_Count) {
+                        let Insurer_Count_Key = 'Vehicle_Mapped_With_' + objVehicle_Insurer_Count[k] + '_Insurer';
+                        if (objVehicle_Insurer_Count_Summary.hasOwnProperty(Insurer_Count_Key) === false) {
+                            objVehicle_Insurer_Count_Summary[Insurer_Count_Key] = {'Detail': Insurer_Count_Key, 'All-Count': 0, 'Base-Count': 0};
+                        }
+                        objVehicle_Insurer_Count_Summary[Insurer_Count_Key]['All-Count']++;
+                        if (objVehicle_Insurer_Base_Count.hasOwnProperty(k)) {
+                            objVehicle_Insurer_Count_Summary[Insurer_Count_Key]['Base-Count']++;
+                        }
+                    }
+                    objVehicle_Mapping_Summary['objVehicle_Insurer_Count_Summary'] = objVehicle_Insurer_Count_Summary;
+                    objVehicle_Mapping_Summary['objVehicle_Insurer_Wise_Summary'] = objVehicle_Insurer_Wise_Summary;
+
+
+                    res.json(objVehicle_Mapping_Summary);
+                } catch (e) {
+                    res.send(e.stack);
+                }
+            });
+        } catch (e) {
+            res.send(e.stack);
+        }
+    });
+    app.get('/vehicles/single_insurer_mapped_count_summary', function (req, res) {
+        try {
+            var Product_Id = req.query['Product_Id'] - 0;
+            var Insurer_Id = req.query['Insurer_Id'] - 0;
+            Vehicle.find({'Product_Id_New': Product_Id}).select().exec(function (err, vehicles) {
+                try {
+                    if (err)
+                        res.send(err);
+
+                    let obj_config_product = {
+                        1: [Insurer_Id],
+                        10: [Insurer_Id],
+                        12: [Insurer_Id]
+                    };
+                    let objVehicle_Insurer_Count = {};
+                    let objVehicle_Insurer_Base_Count = {};
+                    let objVehicle_Insurer_Wise_Summary = {};
+                    let Total_Vehicle = vehicles.length;
+                    let Total_Base_Vehicle = 0;
+                    for (let j of obj_config_product[Product_Id]) {
+                        objVehicle_Insurer_Wise_Summary['Insurer_' + j] = {
+                            'Insurer': arr_ins[j],
+                            'All-Total': Total_Vehicle,
+                            'All-Pending': 0,
+                            'All-NotSupported': 0,
+                            'All-Supported': 0,
+                            'Base-Total': 0,
+                            'Base-Pending': 0,
+                            'Base-NotSupported': 0,
+                            'Base-Supported': 0
+                        };
+                    }
+                    obj_config_product[1] = ('Insurer_' + obj_config_product[1].join(',Insurer_')).split(',');
+                    obj_config_product[10] = ('Insurer_' + obj_config_product[10].join(',Insurer_')).split(',');
+                    obj_config_product[12] = ('Insurer_' + obj_config_product[12].join(',Insurer_')).split(',');
+
+                    for (let k in vehicles) {
+                        let Vehicle_ID = vehicles[k]._doc['Vehicle_ID'];
+                        let Mapped_Insurer_Count = 0;
+                        if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                            Total_Base_Vehicle++;
+                        }
+                        for (let i in vehicles[k]._doc) {
+                            if (i.indexOf('Insurer_') > -1 && objVehicle_Insurer_Wise_Summary.hasOwnProperty(i)) {
+                                if (vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && (vehicles[k]._doc[i]['Status_Id'] === 2 || vehicles[k]._doc[i]['Status_Id'] === 4)) {
+                                    objVehicle_Insurer_Wise_Summary[i]['All-Supported']++;
+                                    if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                                        objVehicle_Insurer_Wise_Summary[i]['Base-Supported']++;
+                                    }
+                                }
+                                if (vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && vehicles[k]._doc[i]['Status_Id'] === 3) {
+                                    objVehicle_Insurer_Wise_Summary[i]['All-NotSupported']++;
+                                    if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                                        objVehicle_Insurer_Wise_Summary[i]['Base-NotSupported']++;
+                                    }
+                                }
+                            }
+                            if (i.indexOf('Insurer_') > -1 && obj_config_product[Product_Id].indexOf(i) > -1 && vehicles[k]._doc[i] !== null && vehicles[k]._doc[i].hasOwnProperty('Status_Id') && (vehicles[k]._doc[i]['Status_Id'] === 2 || vehicles[k]._doc[i]['Status_Id'] === 4)) {
+                                Mapped_Insurer_Count++;
+                            }
+                        }
+                        objVehicle_Insurer_Count['Vehicle_' + Vehicle_ID] = Mapped_Insurer_Count;
+                        if (vehicles[k]._doc['Is_Base'] === 'Yes') {
+                            objVehicle_Insurer_Base_Count['Vehicle_' + Vehicle_ID] = Mapped_Insurer_Count;
+                        }
+                    }
+                    for (let i in objVehicle_Insurer_Wise_Summary) {
+                        objVehicle_Insurer_Wise_Summary[i]['All-Pending'] = Total_Vehicle - (objVehicle_Insurer_Wise_Summary[i]['All-Supported'] + objVehicle_Insurer_Wise_Summary[i]['All-NotSupported']);
+                        objVehicle_Insurer_Wise_Summary[i]['Base-Pending'] = Total_Base_Vehicle - (objVehicle_Insurer_Wise_Summary[i]['Base-Supported'] + objVehicle_Insurer_Wise_Summary[i]['Base-NotSupported']);
+                        objVehicle_Insurer_Wise_Summary[i]['Base-Total'] = Total_Base_Vehicle;
+                    }
+                    res.json(objVehicle_Insurer_Wise_Summary);
+                } catch (e) {
+                    res.send(e.stack);
+                }
+            });
+        } catch (e) {
+            res.send(e.stack);
+        }
+    });
+
+    app.post('/vehicles', function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Vehicle_Id': 'asc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 10
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+
+        }
+
+
+
+
+        Vehicle.paginate(obj_pagination.filter, optionPaginate).then(function (vehicles) {
+            console.log(obj_pagination.filter, optionPaginate, vehicles);
+            res.json(vehicles);
+        });
+    });
+    app.post('/vehicles/mapping', function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Vehicle_Id': 'asc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 10
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+
+        }
+        var filter = obj_pagination.filter;
+        //console.error('Filter', req.body);
+        if (req.body['search[value]'] !== '') {
+            if (isNaN(req.body['search[value]'])) {
+                filter = {
+                    $or: [
+                        {'Make_Name': new RegExp(req.body['search[value]'], 'i')},
+                        {'Model_Name': new RegExp(req.body['search[value]'], 'i')},
+                        {'Variant_Name': new RegExp(req.body['search[value]'], 'i')},
+                        {'Fuel_Name': new RegExp(req.body['search[value]'], 'i')}
+                    ],
+                    $and: [
+                        {'Product_Id_New': parseInt(req.body['Product_Id_New'])}
+                    ]
+                };
+            } else {
+                filter = {'Product_Id_New': parseInt(req.body['Product_Id_New']), 'Vehicle_ID': parseInt(req.body['search[value]'])};
+            }
+        } else {
+            filter = {'Product_Id_New': parseInt(req.body['Product_Id_New'])};
+            if (req.body['Vehicle_Id'] !== '') {
+                filter['Vehicle_ID'] = parseInt(req.body['Vehicle_Id']);
+            } else if (req.body['Model_Name'] !== '') {
+                filter['Make_Name'] = req.body['Make_Name'];
+                filter['Model_Name'] = req.body['Model_Name'];
+            } else if (req.body['Make_Name'] !== '') {
+                filter['Make_Name'] = req.body['Make_Name'];
+            } else if (req.body['Is_Base'] !== '') {
+                if (req.body['Is_Base'] === 'Yes') {
+                    filter['Is_Base'] = req.body['Is_Base'];
+                }
+                if (req.body['Is_Base'] === 'No') {
+                    filter['Is_Base'] = {$exists: false};
+                }
+                if (req.body['Is_Base'] === 'NA') {
+                    filter['Base_Vehicle_ID'] = {$exists: false};
+                }
+            } else if (req.body['Mapped_Insurer_Count'] !== '') {
+                filter['Mapped_Insurer_Count'] = req.body['Mapped_Insurer_Count'] - 0;
+            }
+
+
+            if (req.body['Insurer']) {
+                var arr_Insurer = req.body['Insurer'].split('|');
+                for (var k in arr_Insurer) {
+                    if (parseInt(req.body['Status']) == 1) {
+                        filter['Insurer_' + arr_Insurer[k]] = {$exists: false};
+                    } else if (parseInt(req.body['Status']) == 5) {
+                        filter['Insurer_' + arr_Insurer[k] + '.Is_Active'] = 1;
+                    } else {
+                        filter['Insurer_' + arr_Insurer[k] + '.Status_Id'] = parseInt(req.body['Status']);
+                    }
+                }
+            }
+
+        }
+        Vehicle.paginate(filter, optionPaginate).then(function (vehicles) {
+            //console.error(filter, optionPaginate, vehicles);
+            res.json(vehicles);
+            /*
+             var arr_vehicle_id = [];
+             for (var k in vehicles.docs) {
+             arr_vehicle_id.push(vehicles.docs[k]['Vehicle_ID']);
+             for (var k1 in arr_insurer) {
+             vehicles.docs[k]['Insurer_' + k1] = {};
+             }
+             }
+             console.log(arr_vehicle_id);
+             var Vehicles_Insurers_Mapping = require('../models/vehicles_insurers_mapping');
+             Vehicles_Insurers_Mapping.find({Vehicle_ID: {$in: arr_vehicle_id}}).exec(function (err, db_Vehicles_Insurers_Mappings) {
+             if (err)
+             {
+             res.send(err);
+             } else {
+             console.error(db_Vehicles_Insurers_Mappings);
+             for (var k in vehicles.docs) {
+             var Vehicle_ID = vehicles.docs[k]['Vehicle_ID'];
+             for (var k2 in db_Vehicles_Insurers_Mappings) {
+             console.error(Vehicle_ID, '===', db_Vehicles_Insurers_Mappings[k2]['Vehicle_ID'], db_Vehicles_Insurers_Mappings[k2]['Insurer_ID']);
+             if (Vehicle_ID == db_Vehicles_Insurers_Mappings[k2]['Vehicle_ID']) {
+             var Insurer_ID = db_Vehicles_Insurers_Mappings[k2]['Insurer_ID'];
+             console.error(Vehicle_ID, Insurer_ID);
+             vehicles.docs[k]['Insurer_' + Insurer_ID] = db_Vehicles_Insurers_Mappings[k2];
+             
+             }
+             }
+             }
+             
+             }
+             });
+             */
+        });
+    });
+    app.get('/vehicles/update_base_vehicle', function (req, res) {
+        var Vehicle_ID = parseInt(req.query['Vehicle_ID']);
+        var Base_Vehicle_ID = parseInt(req.query['Base_Vehicle_ID']);
+        Vehicle.findOne({'Vehicle_ID': Base_Vehicle_ID}, function (err, dbBaseVehicle) {
+            dbBaseVehicle = dbBaseVehicle._doc;
+            if (dbBaseVehicle['Is_Base'] === 'Yes') {
+                Vehicle.update({'Vehicle_ID': Vehicle_ID}, {$set: {'Base_Vehicle_ID': Base_Vehicle_ID}}, function (err, numAffected) {
+                    if (err) {
+                        console.error('UPDATE_MAPPED_INSURER', err);
+                        res.send(err);
+                    } else {
+                        res.send('SUCCESS');
+                    }
+                });
+            } else {
+                res.send('INVALID_BASE_VEHICLE_ID');
+            }
+        });
+    });
+    app.post('/vehicles/save', function (req, res) {
+        var objVehicle = {};
+        var base = new Base();
+        for (var key in req.body) {
+            objVehicle[key] = req.body[key];
+        }
+        var currentDate = new Date();
+
+        objVehicle['Modified_On'] = currentDate;
+        objVehicle['Vehicle_ID'] = parseInt(objVehicle['Vehicle_ID']);
+        if (objVehicle['Vehicle_ID'] > 0) {
+            console.log(objVehicle);
+            // any logic goes here
+            Vehicle.findOne({'Vehicle_ID': objVehicle['Vehicle_ID']}, function (err, dbVehicle) {
+                if (err) {
+
+                } else {
+                    if (dbVehicle) {
+                        Vehicle.update({'Vehicle_ID': objVehicle['Vehicle_ID']}, {$set: objVehicle}, function (err, numAffected) {
+                            if (err) {
+                                res.json({Msg: 'Vehicle_Not_Found', Details: err});
+                            } else {
+                                res.json({Msg: 'Success_Created', Details: numAffected});
+                            }
+                        });
+                    } else {
+                        res.json({Msg: 'Vehicle_Not_Found', Details: objVehicle});
+                    }
+                }
+            });
+
+        } else {
+            Vehicle.findOne({'Product_Id_New': parseInt(objVehicle['Product_Id_New'])}, null, {sort: {'Vehicle_ID': -1}}, function (err, dbVehicleOne) {
+                console.log('lastvehicle', dbVehicleOne);
+                if (dbVehicleOne) {
+                    objVehicle['Vehicle_ID'] = dbVehicleOne._doc['Vehicle_ID'];
+                    objVehicle['Created_On'] = currentDate;
+                    console.log(objVehicle);
+                    var vehicle = new Vehicle(objVehicle);
+                    vehicle.save(function (err) {
+                        if (err) {
+                            res.json({Msg: 'Vehicle_Not_Updated', Details: err});
+                        } else {
+                            res.json({Msg: 'Success_Updated', Details: vehicle});
+                        }
+                    });
+                }
+            });
+
+        }
+
+    });
+    app.get('/vehicles/view/:id', function (req, res) {
+
+        Vehicle.find(function (err, vehicle) {
+            if (err)
+                res.send(err);
+
+            res.json(vehicle);
+        });
+    });
+    app.delete('/delete/:id', function (req, res) {
+        // any logic goes here
+        res.render('vehicles/view');
+    });
+    /**
+     * About page route
+     */
+    app.get('/login', function (req, res) {
+// any logic goes here
+        res.render('users/login')
+    });
+    app.get('/vehicles/Model_list', function (req, res) {
+        var product_id = parseInt(req.query['product_id']);
+        var cache_key = 'live_vehicles_model_list_' + product_id;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var agg = [
+                {$match: {Product_Id_New: product_id}},
+                {$group: {
+                        _id: {Model_ID: "$Model_ID", Make_Name: "$Make_Name", Model_Name: "$Model_Name"}
+                    }},
+                {$project: {_id: 0, Model_ID: "$_id.Model_ID", Make_Name: "$_id.Make_Name", Model_Name: "$_id.Model_Name"}},
+                {$sort: {'Make_Name': 1, 'Model_Name': 1}}
+            ];
+            console.log(JSON.stringify(agg));
+            Vehicle.aggregate(agg, function (err, vehicles) {
+
+                if (err)
+                {
+                    res.send(err);
+                } else {
+                    for (var k in vehicles) {
+                        vehicles[k]["vehicle_name"] = vehicles[k]["Make_Name"] + ", " + vehicles[k]["Model_Name"];
+                    }
+                    fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(vehicles), function (err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                    });
+                    res.json(vehicles);
+                }
+
+            });
+        }
+
+        /*
+         Vehicle.find({}, 'Vehicle_ID Make_Name Model_Name Variant_Name Fuel_Name Cubic_Capacity Seating_Capacity', function (err, vehicles) {
+         if (err)
+         res.send(err);
+         
+         
+         res.json(vehicles);
+         });
+         */
+    });
+
+    app.get('/vehicles/Model_list_make', function (req, res) {
+        var product_id = parseInt(req.query['product_id']);
+        var make_name = req.query['make_name'];
+        var cache_key = 'live_vehicles_model_list_make_' + product_id + '_' + make_name;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var agg = [
+                {$match: {Product_Id_New: product_id, Make_Name: make_name}},
+                {$group: {
+                        _id: {Model_ID: "$Model_ID", Make_Name: "$Make_Name", Model_Name: "$Model_Name"}
+                    }},
+                {$project: {_id: 0, Model_ID: "$_id.Model_ID", Make_Name: "$_id.Make_Name", Model_Name: "$_id.Model_Name"}},
+                {$sort: {'Model_ID': 1}}
+            ];
+            console.log(JSON.stringify(agg));
+            Vehicle.aggregate(agg, function (err, vehicles) {
+
+                if (err)
+                {
+                    res.send(err);
+                } else {
+                    for (var k in vehicles) {
+                        vehicles[k]["vehicle_name"] = vehicles[k]["Make_Name"] + ", " + vehicles[k]["Model_Name"];
+                    }
+                    fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(vehicles), function (err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                    });
+                    res.json(vehicles);
+                }
+
+            });
+        }
+
+        /*
+         Vehicle.find({}, 'Vehicle_ID Make_Name Model_Name Variant_Name Fuel_Name Cubic_Capacity Seating_Capacity', function (err, vehicles) {
+         if (err)
+         res.send(err);
+         
+         
+         res.json(vehicles);
+         });
+         */
+    });
+
+    app.get('/vehicles/Model_list_cv', function (req, res) {
+        var product_id = parseInt(req.query['product_id']);
+        var product_sub_type = parseInt(req.query['vehicle_class']);
+        var cache_key = 'live_vehicles_cv_model_list_' + product_id + '_' + product_sub_type;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var agg = [
+                {$match: {Product_Id_New: product_id, Product_Sub_Category_Code: product_sub_type}},
+                {$group: {
+                        _id: {Model_ID: "$Model_ID", Make_Name: "$Make_Name", Model_Name: "$Model_Name"}
+                    }},
+                {$project: {_id: 0, Model_ID: "$_id.Model_ID", Make_Name: "$_id.Make_Name", Model_Name: "$_id.Model_Name"}},
+                {$sort: {'Model_ID': 1}}
+            ];
+            console.log(JSON.stringify(agg));
+            Vehicle.aggregate(agg, function (err, vehicles) {
+
+                if (err)
+                {
+                    res.send(err);
+                } else {
+                    for (var k in vehicles) {
+                        vehicles[k]["vehicle_name"] = vehicles[k]["Make_Name"] + ", " + vehicles[k]["Model_Name"];
+                    }
+                    fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(vehicles), function (err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                    });
+                    res.json(vehicles);
+                }
+
+            });
+        }
+
+        /*
+         Vehicle.find({}, 'Vehicle_ID Make_Name Model_Name Variant_Name Fuel_Name Cubic_Capacity Seating_Capacity', function (err, vehicles) {
+         if (err)
+         res.send(err);
+         
+         
+         res.json(vehicles);
+         });
+         */
+    });
+    app.get('/vehicles/Fuel', function (req, res) {
+        var model_id = parseInt(req.query['Model_ID']);
+        Vehicle.find({'Model_ID': model_id}).distinct('Fuel_Name', function (error, dbFuels) {
+            // ids is an array of all ObjectIds
+            res.json(dbFuels);
+        });
+    });
+    app.get('/vehicles/GetFuelVariant', function (req, res) {
+        var model_id = parseInt(req.query['Model_ID']);
+        var Product_Id_New = parseInt(req.query['Product_Id']);
+        var objResponse = {
+            FuelList: [],
+            VariantList: []
+        };
+        var cache_key = 'live_vehicles_GetFuelVariant_' + model_id + '_' + Product_Id_New;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var arrFuels = [];
+            var arrVehicles = [];
+//            Vehicle.find({'Product_Id_New': Product_Id_New, 'Model_ID': model_id}, function (err, dbVehicles) {
+            var agg = [
+                {$match: {Product_Id_New: Product_Id_New, Model_ID: model_id}},
+                {$sort: {'Variant_Name': 1}}
+            ];
+            console.log(JSON.stringify(agg));
+            Vehicle.aggregate(agg, function (err, dbVehicles) {
+                for (var k in dbVehicles) {
+                    if (arrFuels.indexOf(dbVehicles[k]['Fuel_Name']) < 0) {
+                        arrFuels.push(dbVehicles[k]['Fuel_Name']);
+                    }
+                    for (var k1 in dbVehicles[k]) {
+                        if (k1.indexOf('Insurer_') > -1) {
+                            dbVehicles[k][k1] = null;
+                        }
+                    }
+                }
+                objResponse['FuelList'] = arrFuels;
+                objResponse['VariantList'] = dbVehicles;
+                fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(objResponse), function (err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                });
+                res.json(objResponse);
+            });
+        }
+    });
+    app.get('/vehicles/beta_GetFuelVariant/:Model_ID/:Product_Id', function (req, res) {
+        var model_id = parseInt(req.params['Model_ID']);
+        var Product_Id_New = parseInt(req.params['Product_Id']);
+        var objResponse = {
+            FuelList: [],
+            VariantList: []
+        };
+        var cache_key = 'live_vehicles_GetFuelVariant_' + model_id + '_' + Product_Id_New;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var arrFuels = [];
+            var arrVehicles = [];
+//            Vehicle.find({'Product_Id_New': Product_Id_New, 'Model_ID': model_id}, function (err, dbVehicles) {
+            var agg = [
+                {$match: {Product_Id_New: Product_Id_New, Model_ID: model_id}},
+                {$sort: {'Variant_Name': 1}}
+            ];
+            console.log(JSON.stringify(agg));
+            Vehicle.aggregate(agg, function (err, dbVehicles) {
+                for (var k in dbVehicles) {
+                    if (arrFuels.indexOf(dbVehicles[k]['Fuel_Name']) < 0) {
+                        arrFuels.push(dbVehicles[k]['Fuel_Name']);
+                    }
+                    for (var k1 in dbVehicles[k]) {
+                        if (k1.indexOf('Insurer_') > -1) {
+                            dbVehicles[k][k1] = null;
+                        }
+                    }
+                }
+                objResponse['FuelList'] = arrFuels;
+                objResponse['VariantList'] = dbVehicles;
+                fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(objResponse), function (err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                });
+                res.json(objResponse);
+            });
+        }
+    });
+    app.get('/vehicles/GetFuelVariant_cv', function (req, res) {
+        var model_id = parseInt(req.query['Model_ID']);
+        var Product_Id_New = parseInt(req.query['Product_Id']);
+        var product_sub_type = parseInt(req.query['vehicle_class']);
+        var objResponse = {
+            FuelList: [],
+            VariantList: []
+        };
+        var cache_key = 'live_vehicles_GetFuelVariant_cv_' + model_id + '_' + Product_Id_New;
+        if (fs.existsSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log")) {
+            var cache_content = fs.readFileSync(appRoot + "/tmp/cachemaster/" + cache_key + ".log").toString();
+            var obj_cache_content = JSON.parse(cache_content);
+            res.json(obj_cache_content);
+        } else {
+            var arrFuels = [];
+            var arrVehicles = [];
+            Vehicle.find({'Product_Id_New': Product_Id_New, 'Model_ID': model_id, 'Product_Sub_Category_Code': product_sub_type}, function (err, dbVehicles) {
+                for (var k in dbVehicles) {
+                    if (arrFuels.indexOf(dbVehicles[k]['Fuel_Name']) < 0) {
+                        arrFuels.push(dbVehicles[k]['Fuel_Name']);
+                    }
+                    for (var k1 in dbVehicles[k]) {
+                        if (k1.indexOf('Insurer_') > -1) {
+                            dbVehicles[k][k1] = null;
+                        }
+                    }
+                }
+                objResponse['FuelList'] = arrFuels;
+                objResponse['VariantList'] = dbVehicles;
+                fs.writeFile(appRoot + "/tmp/cachemaster/" + cache_key + ".log", JSON.stringify(objResponse), function (err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                });
+                res.json(objResponse);
+            });
+        }
+    });
+    app.get('/vehicles/mapping_batch', function (req, res) {
+        var objBase = new Base();
+        var arr_insurer = {
+            "47": "DHFL",
+            "101": "ERP",
+            "13": "Oriental",
+            "11": "TataAIG",
+            "2": "Bharti",
+            "4": "FutureGenerali",
+            "7": "IffcoTokio",
+            "9": "Reliance",
+            "10": "RoyalSundaram",
+            "12": "NewIndia",
+            "19": "UniversalSompo",
+            "33": "LibertyVideocon",
+            "1": "Bajaj",
+            "5": "HdfcErgo",
+            "6": "IciciLombard",
+            "30": "Kotak",
+            "100": "FastLane",
+            "46": "Edelweiss"
+        };
+
+        Vehicle.find({$and: [{'Insurer_2': {$exists: false}}, {'Insurer_33': {$exists: false}}]}).limit(500).exec(function (err, vehicles) {
+            if (err) {
+                res.send(err);
+            }
+            console.log(vehicles);
+            var arr_vehicle_id = [];
+            for (var k in vehicles) {
+                arr_vehicle_id.push(vehicles[k]['Vehicle_ID']);
+            }
+            //console.log(arr_vehicle_id);
+            var Vehicles_Insurers_Mapping = require('../models/vehicles_insurers_mapping');
+            Vehicles_Insurers_Mapping.find({Vehicle_ID: {$in: arr_vehicle_id}}).exec(function (err, db_Vehicles_Insurers_Mappings) {
+                if (err)
+                {
+                    res.send(err);
+                } else {
+                    //console.error(db_Vehicles_Insurers_Mappings);
+                    var arr_vehicle_map = {};
+                    for (var k in vehicles) {
+                        var Vehicle_ID = parseInt(vehicles[k]['Vehicle_ID']);
+                        arr_vehicle_map[Vehicle_ID] = {};
+                        for (var k2 in db_Vehicles_Insurers_Mappings) {
+                            //console.error(Vehicle_ID, '===', db_Vehicles_Insurers_Mappings[k2]['Vehicle_ID'], db_Vehicles_Insurers_Mappings[k2]['Insurer_ID']);
+                            if (Vehicle_ID === parseInt(db_Vehicles_Insurers_Mappings[k2]['Vehicle_ID'])) {
+                                var Insurer_ID = db_Vehicles_Insurers_Mappings[k2]['Insurer_ID'];
+                                //console.error(Vehicle_ID, Insurer_ID);
+                                //vehicles.docs[k]['Insurer_' + Insurer_ID] = db_Vehicles_Insurers_Mappings[k2];
+                                arr_vehicle_map[Vehicle_ID]['Insurer_' + Insurer_ID] = {
+                                    "Insurer_ID": db_Vehicles_Insurers_Mappings[k2]['Insurer_ID'],
+                                    "Insurer_Vehicle_ID": db_Vehicles_Insurers_Mappings[k2]['Insurer_Vehicle_ID'],
+                                    "Vehicle_ID": db_Vehicles_Insurers_Mappings[k2]['Vehicle_ID'],
+                                    "Is_Active": db_Vehicles_Insurers_Mappings[k2]['Is_Active'],
+                                    "Status_Id": db_Vehicles_Insurers_Mappings[k2]['Status_Id'],
+                                    "Premium_Status": db_Vehicles_Insurers_Mappings[k2]['Premium_Status']
+                                };
+                            }
+                        }
+                        Vehicle.update({'Vehicle_ID': Vehicle_ID}, {$set: arr_vehicle_map[Vehicle_ID]}, function (err, numAffected) {
+                            if (err) {
+                                res.json({Msg: 'Vehicle_Not_Saved', Details: err});
+                            } else {
+                                //res.json({Msg: 'Success_Created', Details: numAffected});
+                            }
+                        });
+
+                    }
+                    res.json(arr_vehicle_map);
+                }
+            });
+        });
+    });
+
+    app.get('/vehicles/getmodel_variant/:product_id/:make/:vehicle_class?', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        var make_name = req.params.make;
+        let vehicle_class = req.params.vehicle_class - 0;
+        let match_data = {"Product_Id_New": product_id, 'Make_Name': make_name};
+        if (product_id === 12) {
+            if (req.params.vehicle_class) {
+               match_data["Product_Sub_Category_Code"] = vehicle_class; 
+            }
+        } 
+        var agg = [
+            {"$match": match_data},
+            {$group: {_id: "$Model_Name", "Model_ID": {"$first": "$Model_ID"}, Variantlist: {$push: {Variant_Name: "$Variant_Name", Vehicle_ID: "$Vehicle_ID", Fuel_Name: "$Fuel_Name"}}}},
+            {$sort: {'Model_Name': 1, "_id": 1}}
+        ];
+        Vehicle.aggregate(agg, function (err, vehicles) {
+            if (err)
+                res.send(err);
+            res.json(vehicles);
+        });
+    });
+    app.get('/vehicles/getrto', function (req, res) {
+        var Rto = require('../models/rto');
+        var agg = [
+            {$group: {_id: "$State_Id", "VehicleCity_RTOCode": {"$first": "$VehicleCity_RTOCode"}, "State_Name": {"$first": "$State_Name"}
+                    , Rtolist: {$push: {RTO_City: "$RTO_City", VehicleTariff_Zone: "$VehicleTariff_Zone"
+                            , VehicleCity_RTOCode: "$VehicleCity_RTOCode", VehicleCity_Id: "$VehicleCity_Id"}}}},
+            {$sort: {'State_Name': 1}}
+        ];
+        Rto.aggregate(agg, function (err, rto) {
+            if (err)
+                res.send(err);
+            res.json(rto);
+        });
+    });
+    app.get('/vehicles/tree', function (req, res) {
+        let vehicle_tree = {};
+        Vehicle.find({'Product_Id_New': parseInt(req.query['product_id'])}).sort({'Make_Name': 1, 'Model_Name': 1, 'Fuel_ID': 1, 'Vehicle_ID': 1}).exec(function (err, vehicles) {
+            if (err)
+                res.send(err);
+
+            try {
+                for (var k in vehicles) {
+                    try {
+                        let Make_Ident = vehicles[k]['Make_Name'];
+                        let Model_Ident = vehicles[k]['Model_Name'];
+                        let Fuel_Ident = vehicles[k]['Fuel_Name'];
+                        if (vehicle_tree.hasOwnProperty(Make_Ident) === false) {
+                            vehicle_tree[Make_Ident] = {};
+                        }
+                        if (vehicle_tree[Make_Ident].hasOwnProperty(Model_Ident) === false) {
+                            vehicle_tree[Make_Ident][Model_Ident] = {};
+                        }
+                        if (vehicle_tree[Make_Ident][Model_Ident].hasOwnProperty(Fuel_Ident) === false) {
+                            vehicle_tree[Make_Ident][Model_Ident][Fuel_Ident] = [];
+                        }
+
+                        vehicle_tree[Make_Ident][Model_Ident][Fuel_Ident].push({
+                            'Vehicle_Id': vehicles[k]['Vehicle_ID'],
+                            'Vehicle_Name': vehicles[k]['Variant_Name'] + '::CC-' + vehicles[k]['Cubic_Capacity'] + ((vehicles[k]['Is_Base'] && vehicles[k]['Is_Base']) === 'Yes' ? '::Base' : '')
+                        });
+                    } catch (e) {
+                        res.send(vehicles[k]['Vehicle_ID'] + '|' + vehicles[k]['Description'] + '|' + e.stack);
+                    }
+                }
+                res.json(vehicle_tree);
+            } catch (e) {
+                res.send(e.stack);
+            }
+        });
+    });
+    app.get('/vehicles/mapping/get_availability', function (req, res) {
+        let PB_Vehicle_Id = req.query['PB_Vehicle_Id'] || 0;
+        let Mapping_Insurer_Id = req.query['Mapping_Insurer_Id'] || 0;
+        let Ss_Id = req.query['Ss_Id'] || 0;
+        PB_Vehicle_Id = parseInt(PB_Vehicle_Id);
+        Mapping_Insurer_Id = parseInt(Mapping_Insurer_Id);
+        let obj_vehicle_mapping = {
+            'Status': 'PENDING',
+            'Msg': '',
+            'Pb_Vehicle': null,
+            'Insurer_Vehicle_List': []
+        };
+        if (Ss_Id > 0 && PB_Vehicle_Id > 0 && Mapping_Insurer_Id > 0) {
+            Vehicle.findOne({'Vehicle_ID': PB_Vehicle_Id}).exec(function (err, db_vehicle) {
+                if (err)
+                    res.send(err);
+
+                try {
+                    if (db_vehicle) {
+                        let obj_vehicle = db_vehicle._doc;
+                        if (obj_vehicle.hasOwnProperty('Insurer_' + Mapping_Insurer_Id) === false || (obj_vehicle.hasOwnProperty('Insurer_' + Mapping_Insurer_Id) && obj_vehicle['Insurer_' + Mapping_Insurer_Id]['Status_Id'] === 3)) {
+                            let cc_slab = {
+                                1: {
+                                    'slab_1': {min: 0, max: 1000},
+                                    'slab_2': {min: 1001, max: 1500},
+                                    'slab_3': {min: 1501, max: 10000}
+                                },
+                                10: {
+                                    'slab_1': {min: 0, max: 75},
+                                    'slab_2': {min: 76, max: 150},
+                                    'slab_3': {min: 151, max: 350},
+                                    'slab_4': {min: 351, max: 5000}
+                                }
+                            };
+                            let Pb_Make = obj_vehicle['Make_Name'] || '';
+                            let Pb_Model = obj_vehicle['Model_Name'] || '';
+                            let Pb_Fuel = obj_vehicle['Fuel_Name'] || '';
+                            let Pb_CC = obj_vehicle['Cubic_Capacity'] || 0;
+                            Pb_CC = Pb_CC - 0;
+                            obj_vehicle_mapping.Pb_Vehicle = {
+                                'Vehicle_ID': PB_Vehicle_Id,
+                                'Make_Name': Pb_Make,
+                                'Model_Name': Pb_Model,
+                                'Variant_Name': obj_vehicle['Variant_Name'],
+                                'Fuel_Name': Pb_Fuel,
+                                'Cubic_Capacity': Pb_CC,
+                                'Full_Name': Pb_Make + ' ' + Pb_Model + ' ' + obj_vehicle['Variant_Name'] + ' ' + Pb_Fuel + ' ' + Pb_CC
+                            };
+
+                            let insurer_cc_slab = null;
+                            for (let k in cc_slab[obj_vehicle['Product_Id_New']]) {
+                                let ind_cc_slab = cc_slab[obj_vehicle['Product_Id_New']][k];
+                                if (Pb_CC >= ind_cc_slab['min'] && Pb_CC <= ind_cc_slab['max']) {
+                                    insurer_cc_slab = ind_cc_slab;
+                                    continue;
+                                }
+                            }
+                            if ((Pb_CC - insurer_cc_slab['min']) > 200) {
+                                insurer_cc_slab['min'] = Pb_CC - 200;
+                            }
+                            if ((insurer_cc_slab['max'] - Pb_CC) > 200) {
+                                insurer_cc_slab['max'] = Pb_CC + 200;
+                            }
+                            obj_vehicle_mapping.Pb_Vehicle['Insurer_CC_Slab'] = insurer_cc_slab;
+                            var Vehicles_Insurer = require('../models/vehicles_insurer');
+                            let cond_vehicle_insurer = {
+                                'Product_Id_New': obj_vehicle['Product_Id_New'],
+                                'PB_Make_Name': Pb_Make,
+                                'Insurer_ID': Mapping_Insurer_Id
+                            };
+                            Vehicles_Insurer.find(cond_vehicle_insurer).exec(function (err, db_vehicle_insurers) {
+                                if (db_vehicle_insurers) {
+                                    let obj_available_vehicle = {};
+                                    for (let k in db_vehicle_insurers) {
+                                        let ind_vehicle_insurers = db_vehicle_insurers[k]._doc;
+                                        try {
+                                            let full_insurer_name = ind_vehicle_insurers['Insurer_Vehicle_Make_Name'] + ' ' + ind_vehicle_insurers['Insurer_Vehicle_Model_Name'] + ' ' + ind_vehicle_insurers['Insurer_Vehicle_Variant_Name'] + ' ' + ind_vehicle_insurers['Insurer_Vehicle_FuelType'] + ' ' + 'CC-' + ind_vehicle_insurers['Insurer_Vehicle_CubicCapacity'].toString();
+                                            full_insurer_name = full_insurer_name.toString().toLocaleUpperCase();
+                                            let insurer_cc = ind_vehicle_insurers['Insurer_Vehicle_CubicCapacity'] || 0;
+                                            insurer_cc = insurer_cc - 0;
+                                            if (insurer_cc > 0 && insurer_cc >= insurer_cc_slab['min'] && insurer_cc <= insurer_cc_slab['max']) {
+                                                if (full_insurer_name.indexOf(Pb_Fuel.toUpperCase()) > -1) {
+                                                    if (full_insurer_name.indexOf(Pb_Model.toUpperCase()) > -1) {
+                                                        obj_available_vehicle['Ins_' + ind_vehicle_insurers['Insurer_Vehicle_ID']] = {
+                                                            'Full_Name': full_insurer_name,
+                                                            'Insurer_Vehicle_ID': ind_vehicle_insurers['Insurer_Vehicle_ID']
+                                                        };
+                                                    }
+                                                }
+                                            }
+                                        } catch (e) {
+                                            obj_vehicle_mapping.Status = 'LOOP_EXCEPTION';
+                                            obj_vehicle_mapping.Msg = ind_vehicle_insurers['Insurer_Vehicle_ID'] + '|' + e.stack;
+                                            return res.json(obj_vehicle_mapping);
+                                        }
+                                    }
+                                    let Source_String = obj_vehicle_mapping.Pb_Vehicle.Full_Name;
+                                    let obj_match_vehicle = {};
+
+                                    for (let i in obj_available_vehicle) {
+                                        let indVehicle = obj_available_vehicle[i];
+                                        let TargetString = indVehicle['Full_Name'];
+                                        let matchScore = fuzzy(Source_String, TargetString);
+                                        if (matchScore > 0) {
+                                            obj_match_vehicle[i] = matchScore;
+                                            obj_available_vehicle[i]['MatchScore'] = matchScore;
+                                        }
+                                    }
+                                    if (Object.keys(obj_match_vehicle).length > 0) {
+                                        obj_match_vehicle = sortObject(obj_match_vehicle);
+                                        for (let i in obj_match_vehicle) {
+                                            obj_vehicle_mapping.Insurer_Vehicle_List.push(obj_available_vehicle[i]);
+                                        }
+                                        obj_vehicle_mapping.Status = 'SUCCESS';
+                                    } else {
+                                        obj_vehicle_mapping.Status = 'NOT_MATCH_AVAILABLE';
+                                    }
+
+                                } else {
+                                    obj_vehicle_mapping.Status = 'NOT_LIST_AVAILABLE';
+                                }
+                                return res.json(obj_vehicle_mapping);
+                            });
+                        } else {
+                            obj_vehicle_mapping.Status = 'ALREADY_MAPPED';
+                            return res.json(obj_vehicle_mapping);
+                        }
+                    } else {
+                        obj_vehicle_mapping.Status = 'INVALID_VEHICLE';
+                        return res.json(obj_vehicle_mapping);
+                    }
+                } catch (e) {
+                    obj_vehicle_mapping.Status = 'MAIN_EXCEPTION';
+                    obj_vehicle_mapping.Msg = e.stack;
+                    return res.json(obj_vehicle_mapping);
+                }
+            });
+        } else {
+            obj_vehicle_mapping.Status = 'EMPTY_VEHICLE_INSURER';
+            return res.json(obj_vehicle_mapping);
+        }
+    });
+    app.get('/vehicles/:product_id', function (req, res) {
+        var product_id = parseInt(req.params.product_id);
+        //Vehicle.find({Product_Id_New: product_id}, function (err, vehicles) {
+        Vehicle.find({Product_Id_New: product_id}, {"Vehicle_ID": 1, "Variant_Name": 1, "Model_ID": 1, "Cubic_Capacity": 1, "Vehicle_Image": 1, "Fuel_ID": 1, "Seating_Capacity": 1, "ExShoroomPrice": 1, "IsActive": 1, "CreatedOn": 1, "ModifyOn": 1, "IndirectVariant_Id": 1, "InHouseSS_Variant_Id": 1, "Product_Id_New": 1, "Make_Name": 1, "Model_Name": 1, "Fuel_Name": 1, "Description": 1, "Make_ID": 1, "Product_Sub_Category_Code": 1, "Capacity_Type": 1, "Gross_Vehicle_Weight": 1, "Product_Type": 1, "Product_Sub_Category_Class_CODE": 1, "Product_Sub_Category_Class_Name": 1, "Number_of_wheels": 1, "Insurer_Vehicle_Insurer_Segmant": 1, "Is_Base": 1}, function (err, vehicles) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(vehicles);
+            }
+        });
+    });
+}
+function sortObject(preObj) {
+    var newO = {};
+    Object.keys(preObj).sort(function (a, b) {
+        return preObj[b] - preObj[a]
+    }).map(key => newO[key] = preObj[key]);
+    return newO;
+}

@@ -1,0 +1,54 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:59:07 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:59:07 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"8:59:07 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"8:59:07 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:59:07 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"8:59:07 AM"}
+{"meta":"","level":"info","message":"","timestamp":"8:59:07 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:43:56 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:43:56 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"10:43:56 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"10:43:56 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:43:56 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:43:56 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:43:56 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:45:16 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:46:14 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:46:23 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:47:41 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:47:52 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"10:48:46 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:53:17 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:53:17 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"10:53:17 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"10:53:17 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:53:17 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:53:17 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:53:17 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:57:37 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:57:37 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"10:57:37 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"10:57:37 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:57:37 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:57:37 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:57:37 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"11:00:55 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"11:02:26 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"11:02:51 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"11:02:51 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:06:04 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:06:04 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"11:06:04 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"11:06:04 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:06:04 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:06:04 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:06:04 AM"}
+{"level":"info","message":"emailsendgrid","timestamp":"11:10:07 AM"}
+{"level":"info","message":"Error response received","timestamp":"11:10:08 AM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"11:10:08 AM"}
+{"level":"info","message":"[]","timestamp":"3:27:39 PM"}
+{"level":"info","message":"[ { _id: 5f9cff83a4f34ee58f8bd9a6,\n    Product_Id: [ 2, null, null, null ],\n    Category_Id: 1,\n    SubCategory: 'Pincode not found',\n    SubCategory_Id: 30,\n    Error_Code: '' },\n  { _id: 5f9cff83a4f34ee58f8bd9c0,\n    Product_Id: [ 1, 10, null, 12 ],\n    Category_Id: 1,\n    SubCategory: 'Company owned vehicle functionality not available',\n    SubCategory_Id: 4,\n    Error_Code: '' },\n  { _id: 5f9cff83a4f34ee58f8bd9c1,\n    Product_Id: [ 1, 10, null, 12 ],\n    Category_Id: 1,\n    SubCategory: 'RTO not available',\n    SubCategory_Id: 3,\n    Error_Code: '' },\n  { _id: 5f9cff83a4f34ee58f8bd9c2,\n    Product_Id: [ 1, 10, null, 12 ],\n    Category_Id: 1,\n    SubCategory: 'Make Model Variant not available',\n    SubCategory_Id: 2,\n    Error_Code: '' },\n  { _id: 5f9cff83a4f34ee58f8bd9c3,\n    Product_Id: [ 1, 10, null, 12 ],\n    Category_Id: 1,\n    SubCategory: 'Invalid registration number',\n    SubCategory_Id: 1,\n    Error_Code: 'LM227' } ]","timestamp":"3:27:47 PM"}
+{"level":"info","message":"user_detailsInsert null { result: { ok: 1, n: 1 },\n  ops: \n   [ { Ticket_Id: 2524,\n       Ticket_code: 'HEPR6901',\n       Product: 2,\n       Category: 'Product Input Page',\n       SubCategory: 'Pincode not found',\n       From: 'Piyush Kumar Singh (115440)',\n       To: 'Piyush Kumar Singh (115440)',\n       Status: 'Open',\n       Created_By: 'Piyush Kumar Singh ',\n       Created_On: 2023-11-22T09:58:09.311Z,\n       Modified_By: 114118,\n       Modified_On: 2023-11-22T09:58:09.311Z,\n       CRN: 0,\n       Mobile_No: '9999999999',\n       Vehicle_No: '',\n       Remark: 'ghddfg',\n       ss_id: 114118,\n       CRN_owner: '',\n       fba_id: 86240,\n       CRN_fba_id: '',\n       channel: '',\n       subchannel: '',\n       Agent_Email_Id: 'anuj.singh@policyboss.com',\n       Transaction_On: '',\n       Source: 'horizon',\n       RM_Email_Id: '',\n       RM_Agent_Name: '',\n       Insurer_Id: '',\n       _id: 655dd0b1377f9200948207fd } ],\n  insertedCount: 1,\n  insertedIds: [ 655dd0b1377f9200948207fd ] }","timestamp":"3:28:09 PM"}
+{"level":"info","message":"TicketUpdated null CommandResult {\n  result: { n: 1, nModified: 1, ok: 1 },\n  connection: \n   Connection {\n     domain: null,\n     _events: \n      { error: [Object],\n        close: [Object],\n        timeout: [Object],\n        parseError: [Object] },\n     _eventsCount: 4,\n     _maxListeners: undefined,\n     options: \n      { host: '3.109.206.238',\n        port: 27017,\n        size: 5,\n        connectionTimeout: 30000,\n        socketTimeout: 30000,\n        keepAlive: true,\n        keepAliveInitialDelay: 0,\n        noDelay: true,\n        ssl: false,\n        checkServerIdentity: true,\n        ca: null,\n        cert: null,\n        key: null,\n        passPhrase: null,\n        rejectUnauthorized: false,\n        promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false,\n        reconnect: true,\n        reconnectInterval: 1000,\n        reconnectTries: 30,\n        domainsEnabled: false,\n        disconnectHandler: [Object],\n        cursorFactory: [Object],\n        emitError: true,\n        socketOptions: {},\n        clientInfo: [Object],\n        readPreference: [Object],\n        promiseLibrary: [Function: Promise],\n        bson: BSON {} },\n     id: 3,\n     logger: Logger { className: 'Connection' },\n     bson: BSON {},\n     tag: undefined,\n     messageHandler: [Function],\n     maxBsonMessageSize: 67108864,\n     port: 27017,\n     host: '3.109.206.238',\n     keepAlive: true,\n     keepAliveInitialDelay: 0,\n     noDelay: true,\n     connectionTimeout: 30000,\n     socketTimeout: 30000,\n     destroyed: false,\n     domainSocket: false,\n     singleBufferSerializtion: true,\n     serializationFunction: 'toBinUnified',\n     ca: null,\n     cert: null,\n     key: null,\n     passphrase: null,\n     ssl: false,\n     rejectUnauthorized: false,\n     checkServerIdentity: true,\n     responseOptions: \n      { promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false },\n     flushing: false,\n     queue: [],\n     connection: \n      Socket {\n        connecting: false,\n        _hadError: false,\n        _handle: [Object],\n        _parent: null,\n        _host: null,\n        _readableState: [Object],\n        readable: true,\n        domain: null,\n        _events: [Object],\n        _eventsCount: 8,\n        _maxListeners: undefined,\n        _writableState: [Object],\n        writable: true,\n        allowHalfOpen: false,\n        destroyed: false,\n        _bytesDispatched: 2540,\n        _sockname: null,\n        _pendingData: null,\n        _pendingEncoding: '',\n        server: null,\n        _server: null,\n        _idleTimeout: 30000,\n        _idleNext: [Object],\n        _idlePrev: [Object],\n        _idleStart: 15735208,\n        read: [Function],\n        _consuming: true },\n     writeStream: null,\n     hashedName: '96dd4d9c88ab69c21ac25168d575190f0e651e4a',\n     workItems: [],\n     buffer: null,\n     sizeOfMessage: 0,\n     bytesRead: 0,\n     stubBuffer: null },\n  message: \n   Response {\n     parsed: true,\n     index: 75,\n     raw: <Buffer 4b 00 00 00 e0 57 bb 58 53 0c 00 00 01 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 27 00 00 00 10 6e 00 01 00 00 00 10 6e 4d ... >,\n     data: <Buffer 4b 00 00 00 e0 57 bb 58 53 0c 00 00 01 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 27 00 00 00 10 6e 00 01 00 00 00 10 6e 4d ... >,\n     bson: BSON {},\n     opts: \n      { promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false },\n     length: 75,\n     requestId: 1488672736,\n     responseTo: 3155,\n     responseFlags: 8,\n     cursorId: Long { _bsontype: 'Long', low_: 0, high_: 0 },\n     startingFrom: 0,\n     numberReturned: 1,\n     documents: [ [Object] ],\n     cursorNotFound: false,\n     queryFailure: false,\n     shardConfigStale: false,\n     awaitCapable: true,\n     promoteLongs: true,\n     promoteValues: true,\n     promoteBuffers: false,\n     hashedName: '96dd4d9c88ab69c21ac25168d575190f0e651e4a' } }","timestamp":"3:28:09 PM"}
+{"level":"info","message":"Error response received","timestamp":"3:28:09 PM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"3:28:09 PM"}

@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <title>Ticketing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Headerstyle.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="ticket_maindiv">
+    <div class="CommentPopup">
+        <div class="popupScreen">
+            <div class="commntPopHeader">
+                <div class="popupclose">&times;</div>
+                <h4>View Documents</h4>
+            </div>
+            <div class="popup_txt">
+                <div id="div_Comments">
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div id="view_doc" style="display:none;">
+        <div>
+            <i class="fa fa-long-arrow-left" onclick="CloseView();" aria-hidden="true"></i>
+            <div class="ticketHeader">View Image</div>
+        </div>
+    </div>
+    <div class="StatusPopup">
+        <div class="StatuspopScreen">
+            <div class="StatusPopHeader">
+                <div class="addpopupclose">&times;</div>
+                <h4>SUMMARY</h4>
+            </div>
+            <div class="Statuspopup_txt">
+				<div class="" style="margin:5px;"> <span style="font-weight:700">Ticket Id  </span> : 
+				<span id="spn_ticket_id"></span></div>
+                <div class="clsCRN" style="margin:5px;"> <span style="font-weight:700">CRN  </span> : 
+				<span id="spn_CRN"></span></div>
+                <div class="clsInsurerName" style="margin:5px;"> <span style="font-weight:700">Insurer Name  </span> : 
+					<span id="insurer_name"></span></div>
+				<div class="clsProductName" style="margin:5px;"> <span style="font-weight:700">Product Name  </span> : 
+                            <span id="product_name"></span></div>
+                <div class="" style="margin:5px;"> <span style="font-weight:700">Category </span> : <span id="spn_Category"></span></div>
+                <div class="" style="margin:5px;"> <span style="font-weight:700">SubCategory  </span> : <span id="spn_SubCategory"></span></div>
+				<div class="clsCRN" style="margin:5px;"> <span style="font-weight:700">Transaction On  </span> : <span id="spn_tranaction_on"></span></div>
+				<div class="" style="margin:5px;"> <span style="font-weight:700">Created On   </span> : <span id="spn_created_on"></span></div>
+				<div class="uploadImg" style="margin:7px;" id="txt_statusmsg"></div>
+				<div id="endNote" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; font-size: large;"><span class="boldFont"><b>Note : </b></span><span id="endrsmtNote"></span></div>
+                <div class="SubmitDiv">
+                    <button class="statusImgSubmit" id="statusClosed">OK</button>
+                </div>
+            </div>
+			
+            <br>
+        </div>
+    </div>
+
+    <div class="AddPopup">
+        <div class="addpopScreen">
+            <div class="commntPopHeader">
+                <div class="addpopupclose">&times;</div>
+                <h4>My Document</h4>
+            </div>
+            <div class="addpopup_txt">
+                <form method="post" action="http://horizon.policyboss.com:5000/finmart_raiseticket" id="uploadForm" enctype="multipart/form-data">
+                    <div class="uploadImg">
+                        <button type="button" style="background: rgb(0, 159, 227);border: 2px solid rgb(0, 159, 227);color: rgb(255, 255, 255);padding: 3px 14px;" onclick="Upload_doc_view();">Upload</button>
+                        <input type="hidden" id="file_name" value="">
+                        <input type="hidden" id="file_path" value="">
+                        <div style="text-align: left;" id="txt_fileUpload">No File Attached</div>
+                        <input type="hidden" id="hdfilePicker" />
+                        <input type="hidden" id="hdfile_ext" />
+						
+						
+                    </div>
+                    <div class="addComment">
+                        <input type="text" id="txt_Comment" placeholder="Comment ..">
+                    </div>
+					<div class="fieldiv">
+					<label>Status</label>
+					<select id="Ticket_Status" name="Ticket_Status" >                                        
+                                            <option value="0">--Select Ticket Status--</option>
+                                            <option value="Closed">Closed</option>  
+                                            <option value="Reopened">Reopened</option>
+                                            <option value="Cancel">Cancel</option>                                  
+                    </select>
+					</div>
+                    <div class="SubmitDiv">
+                        <div class="ImgSubmit" onclick="SubmitForm();">Submit</div>
+                    </div>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="UploadPopup">
+        <div class="UploadpopScreen">
+            <div class="UploadPopHeader">
+                <div class="addpopupclose">&times;</div>
+                <h4>Take Picture</h4>
+            </div>
+
+
+            <div class="Uploadpopup_txt">
+                <div class="uploadImg">
+                    <div>Upload Image</div>
+
+                    <div id="cameraDIV">
+                        <!-- Camera sensor -->
+                        <canvas id="camera--sensor" style="display:none;height: 481px;margin-top: 25px;"></canvas>
+                        <!-- <!-- Camera view -->
+                        <video id="camera--view" autoplay playsinline style="width: 100%;height: 400px;margin-top: 25px;"></video>
+                        <!-- <!-- Camera output -->
+                        <img src="//:0" alt="" id="camera--output">
+                        <!-- <!-- Camera trigger -->
+
+
+                    </div>
+                </div>
+
+
+                <div style="text-align:center;">
+                    <button id="camera--trigger1" onclick="cameraClicked();">Captured</button>
+                </div>
+
+                <div class="SubmitDivs">
+                    <div class="ImgSubmit" id="upload" style="width:100%">Upload</div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="Ticketcontent">
+        <header>
+            <!-- <i class="fa fa-long-arrow-left" aria-hidden="true"></i> -->
+            <div class="ticketHeader">Ticket List</div>
+            <div class="addContent">
+                <div class="searchgrid">
+                    <div id="create_ticket"><i class="fa fa-ticket" aria-hidden="true"></i>Add Ticket</div>
+                    <div style="text-align:right;">
+                        <input type="text" id="txt_search" class="srchInput" placeholder="Search.." name="search">
+                        <i class="fa fa-search" aria-hidden="true" onclick="Search();"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="sticky_btn refresh1" style="bottom: 12% !important;">
+
+
+            <div class="refresh_quote">
+                <span onclick="locationreload();">
+                    <img src="./images/refresh.png">
+                </span>
+            </div>
+        </div>
+        <div class="div_Ticketlist"></div>
+        <div class="tickCard" style="display:none;">
+            <div class="ticketDesc">
+                <div class="Desc">
+                    <div class="desctitle">Ticket Id</div>
+                    <div>12345</div>
+                </div>
+                <div class="Desc">
+                    <div class="desctitle">Ticket Status</div>
+                    <div>Open</div>
+                </div>
+                <div class="Desc">
+                    <div class="desctitle">Category</div>
+                    <div>Finamart Application</div>
+                </div>
+                <div class="Desc">
+                    <div class="desctitle">Description</div>
+                    <div>not display test by tester</div>
+                </div>
+                <div class="Desc">
+                    <div class="desctitle">Email</div>
+                    <div>giteKhushbu27@gmail.com</div>
+                </div>
+            </div>
+            <div class="commentadd">
+                <div class="desctitle commntPop"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;  View Document</div>
+                <div class="desctitle addpop"><i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;  Add</div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="warningmsg" style="display:none;padding-top: 169px;">
+                <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+                <h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;" 
+				id="warningerror">ss_id, fba_id, app_version is mandatory</h3>
+				<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+                <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 700;font-size: 16px;" id="error_query_str"></div>
+            </div>
+    <script>
+        function locationreload() {
+            location.reload();
+
+        }
+        $(document).ready(function () {
+            siteURL = window.location.href;
+
+            $("#UploadPic").click(function () {
+                $("#myFileInput").slideDown();
+            });
+
+            $("#TakePic").click(function () {
+                $("#myFileInput").slideUp();
+            });
+
+            $(".commntPop").click(function () {
+                $(".CommentPopup").show();
+            });
+            $(".popupclose").click(function () {
+                $(".CommentPopup").hide();
+            });
+
+            $(".addpop").click(function () {
+                $(".AddPopup").show();
+            });
+            $(".addpopupclose").click(function () {
+                $(".UploadPopup").hide();
+            });
+            $("#upload").click(function () {
+                $(".UploadPopup").hide();
+            });
+            stringparam();
+            GetTicketlist();
+
+            $("#create_ticket").click(function () {
+                window.location.href = "../Ticketing/ticketIndex.html?ss_id=" + ss_id + "&fba_id=" + fba_id + "&app_version=" + app_version;
+        });
+        });
+        $(".statusImgSubmit").click(function () {
+            location.reload();
+        });
+        var siteURL = "";
+        var ss_id, fba_id, ip_address, app_version, mac_address, mobile_no, srn, client_id = 2, editmodify, header, sub_fba_id, UDID;
+        var Ticket_Id;
+        var Name = "Khushbu Gite";
+        //var UDID = "111162";
+        var agent_email = "khushbu.gite@policyboss.com";
+        var search_by;
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+        function stringparam() {
+            ss_id = getUrlVars()["ss_id"];
+            fba_id = getUrlVars()["fba_id"];
+            ip_address = getUrlVars()["ip_address"];
+            app_version = getUrlVars()["app_version"];
+            mac_address = getUrlVars()["mac_address"];
+            SRN = getUrlVars()["SRN"];
+            client_id = getUrlVars()["ClientID"];
+            editmodify = getUrlVars()["Edit"];
+            header = getUrlVars()["header"];
+            Product_id = getUrlVars()["product_id"];
+            sub_fba_id = getUrlVars()["sub_fba_id"];
+            UDID = getUrlVars()["UDID"];
+			
+			if (fba_id == "" || fba_id == undefined || fba_id == "0" || app_version == "" || app_version == "0" || app_version == undefined || ss_id == "" || ss_id == undefined || ss_id == "0"){
+				$('.warningmsg').show();
+				$('.ticket_maindiv').hide();
+				 $("#error_query_str").text(window.location.href.split('?')[1]);
+			}else{
+				$('.warningmsg').hide();
+				$('.ticket_maindiv').show();
+			}
+        }
+        function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            if (url.includes("Horizon_v1")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+        }
+        function GeteditUrl() {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            newurl = "http://qa.policyboss.com";
+            if (url.includes("localhost")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+        function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+        function GetTicketlist() {
+            var objdata = {
+                "search_by": search_by == "ticketid" ? "ticketid" : "CurrentDate",
+                "search_byvalue": $('#txt_search').val(),
+                "from_date": "",
+                "to_date": "",
+                "status": "",
+                "ss_id": ss_id,
+                "Category": "",
+                "role_type": "tickets"
+
+            };
+            var obj_horizon_data = Horizon_Method_Convert("/tickets/search", objdata, "POST");
+            $.ajax({
+                type: "POST",
+                //data: objdata,
+                //url: GetUrl() + "/ticket/search" ,
+                data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(objdata),
+                url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() +  "/report/ticket/search",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    $('.div_Ticketlist').empty();
+                    if (response.length > 0) {
+                        $('#QuoteLoader').hide();
+                        $('.tickitlist').empty();
+                        $('.tickit_error').hide();
+                        $('.dashboardcontnr').show();
+                        for (var i in response) {
+                            $('.div_Ticketlist').append("<div class='tickCard'>"
+                                                            + "<div class='ticketDesc'>"
+                                                            + "<div class='Desc'>"
+                                                                + "<div class='desctitle'>Ticket Id</div>"
+                                                                + "<div>" + response[i]["Ticket_Id"] + "</div>"
+                                                            + "</div>"
+                                                            + "<div class='Desc'>"
+                                                                + "<div class='desctitle'>Ticket Status</div>"
+                                                                + "<div>" + response[i]["Status"] + "</div>"
+                                                            + "</div>"
+                                                            + "<div class='Desc'>"
+                                                                + "<div class='desctitle'>Category</div>"
+                                                                + "<div>" + response[i]["Category"] + "</div>"
+                                                            + "</div>"
+                                                            + "<div class='Desc'>"
+                                                                + "<div class='desctitle'>Description</div>"
+                                                                + "<div>" + response[i]["Remark"] + "</div>"
+                                                            + "</div>"
+															+ "<div class='Desc'>"
+                                                                + "<div class='desctitle'>Email Id</div>"
+                                                                + "<div>" + response[i]["Agent_Email_Id"] + "</div>"
+                                                            + "</div>"
+                                                            + "</div>"
+                                                            + "<div class='commentadd'>"
+                                                                + "<div class='desctitle commntPop' onclick='view_history_log(\"" + response[i]["Ticket_Id"] + "\" )'><i class='fa fa-file-text'  aria-hidden='true'></i>&nbsp;  View Documents</div>"
+                                                                + "<div class='desctitle addpop' onclick='OpenUploadWindow(\"" + response[i]["Ticket_Id"] + "\" )'><i class='fa fa-plus-square' aria-hidden='true'></i>&nbsp;  Add</div>"
+                                                            + "</div>"
+                                                        + "</div>");
+
+                        }
+                    } else {
+
+                        $('.tickit_error').show();
+                        // $('.tickit_error').text('No Record found.');
+                        $('.dashboardcontnr').hide();
+
+                    }
+                    $(".commntPop").click(function () {
+                        $(".CommentPopup").show();
+                    });
+                    $(".popupclose").click(function () {
+                        $(".CommentPopup").hide();
+                    });
+
+
+                    $(".addpopupclose").click(function () {
+                        $(".AddPopup").hide();
+						$(".StatusPopup").hide();
+                    });
+                }
+            });
+        }
+        function Search() {
+            if ($('#txt_search').val() != "")
+                search_by = 'ticketid';
+            GetTicketlist();
+        }
+        var file_extention = {
+            "application/pdf": "pdf",
+            "text/plain": "txt",
+            "image/png": "png",
+            "image/jpeg": "jpg"
+        };
+        var handleFileSelect = function (evt) {
+
+            var files = evt.target.files;
+            var file = files[0];
+
+            var file_id = evt.target.id;
+            var i = evt.target.id.split('_')[1];
+            $('#hdfile_ext').val(file_extention[files[0]["type"]]);
+
+            if (files && file) {
+                var reader = new FileReader();
+
+                reader.onload = function (readerEvt) {
+                    var binaryString = readerEvt.target.result;
+                    $('#hdfilePicker').val(encodeURIComponent(btoa(binaryString)));
+                };
+
+                reader.readAsBinaryString(file);
+            }
+        };
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            //document.getElementById('myFileInput').addEventListener('change', handleFileSelect, false);
+        } else {
+            alert('The File APIs are not fully supported in this browser.');
+        }
+
+        function SubmitForm() {
+            var error_cnt = 0;
+
+            if ($('#txt_Comment').val() === null || $('#txt_Comment').val() === "") {
+                error_cnt = 1;
+                $('#txt_Comment').addClass('Error');
+            }
+            else {
+                $('#txt_Comment').removeClass('Error');
+            }
+			 if ($('#Ticket_Status').val() === "0") {
+                error_cnt = 1;
+                $('#Ticket_Status').addClass('Error');
+            }
+            else {
+                $('#Ticket_Status').removeClass('Error');
+            }
+
+            if (error_cnt === 0) {
+                var objdata = {
+                    "Ticket_Id": Ticket_Id,
+                    "Remark": $('#txt_Comment').val(),
+                    //"Agent_Email" : agent_email,
+                    "ss_id": ss_id,
+                    "file_name": $('#file_name').val(),
+                    "file_path": $('#file_path').val(),
+					"Status" : $('#Ticket_Status').val(),
+					"Source" : "app",
+					"Product" : "FM"
+                };
+                $('#uploadForm').ajaxSubmit({
+                    data: objdata,
+                    error: function (xhr) {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        //response= JSON.parse(response);
+                        $(".AddPopup").hide();
+                        $(".UploadPopup").hide();
+                        $(".StatusPopup").show();
+                        $('#txt_statusmsg').text(response["Msg"]);
+						$('#spn_ticket_id').text(response['Ticket_Id']);
+                        $('#spn_created_on').text(response['Created_On']);
+                        if (response["CRN"] !== "" && response["CRN"] !== 0 && response["CRN"] !== "0" && response["CRN"] !== undefined) {
+                            $('#spn_CRN').text(response["CRN"]);
+							$('#spn_tranaction_on').text(response['Transaction_On']);
+                            $('.clsCRN').show();
+                        } else {
+                            $('.clsCRN').hide();
+                        }
+						if (response["Insurer_Name"] !== "" && response["Insurer_Name"] !== undefined) {
+                            $('#insurer_name').text(response["Insurer_Name"]);
+                            $('.clsInsurerName').show();
+                        } else {
+                            $('.clsInsurerName').hide();
+                        }
+						if (response["Product_Name"] !== "" && response["Product_Name"] !== undefined) {
+                            $('#product_name').text(response["Product_Name"]);
+                            $('.clsProductName').show();
+                        } else {
+                            $('.clsProductName').hide();
+                        }
+						
+						if (response.Category === "Endorsement"){
+							$("#endNote").show();
+							$("#endrsmtNote").text("Endorsement TAT - 7 - 10 Working Days");
+						} else if (response["SubCategory"] === "PG Dropoff - Amount deducted but customer does not redirected to PolicyBoss"){
+							$("#endNote").show();
+							$("#endrsmtNote").text("Policy TAT - 48 hours");
+						} else{
+							$("#endNote").hide();
+						}
+
+                        $('#spn_Category').text(response["Category"]);
+                        $('#spn_SubCategory').text(response["SubCategory"]);
+                    }
+                });
+            }
+        }
+
+        function SubmitForm_bk() {
+            var objdata = {
+                "Ticket_Id": Ticket_Id,
+                "file_3": $('#hdfilePicker').val(),
+                "file_ext_3": $('#hdfile_ext').val(),
+                "Remark": $('#txt_Comment').val(),
+                "Agent_Email": agent_email,
+                "ss_id": ss_id,
+                "file_name": $('#file_name').val(),
+                "file_path": $('#file_path').val()
+            };
+            var obj_horizon_data = Horizon_Method_Convert("/finmart_raiseticket", objdata, "POST");
+            $.ajax({
+                type: "POST",
+                //data : objdata,
+                //url: GetUrl() + "/tickets/raiseticket",
+                data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(objdata),
+                url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/finmart_raiseticket",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    console.log(response);
+                    $(".AddPopup").hide();
+                    $(".UploadPopup").hide();
+                    $(".StatusPopup").show();
+                    if (response["Status"] === "Success") {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                    } else {
+                        $('#txt_statusmsg').text(response["Msg"]);
+                    }
+                }
+            });
+        }
+
+        function view_history_log(Ticket_Id) {
+
+            $.ajax({
+                method: "GET",
+                data: siteURL.indexOf("https") == 0 ? { method_name: "/ticket_Comments/" + Ticket_Id, client_id: "2" } : "",
+                url: siteURL.indexOf("https") == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + "/ticket_Comments/" + Ticket_Id,
+                dataType: "json",
+                success: function (response) {
+                    $('#div_Comments').empty();
+                    console.log(response);
+                    var file_name = "";
+                    var btn_name = "";
+                    if (response != null) {
+                        for (var i in response) {
+                            if (response[i]["UploadFiles"] != null && response[i]["UploadFiles"] !== "") {
+                                for (var k in response[i]['UploadFiles']) {
+                                    if (k != "file_count") {
+                                        if (response[i]['UploadFiles'][k] != null && response[i]['UploadFiles'][k] != "") {
+                                            file_name = response[i]['UploadFiles'][k];
+
+                                        } else {
+                                            file_name = "";
+                                        }
+                                    }
+                                }
+                            } else {
+                                file_name = "";
+                            }
+
+                            $('#div_Comments').append('<div class="commentGrid">'
+														+ '<div>'
+														+ '<div class="showImg" id="href_upload_file_' + [i] + '"><a  href="' + file_name + '" target="_blank">View</a></div>'
+														+ '</div>'
+														+ '<div class="commentDiv">' + response[i]['Remark'] + '</div>'
+                            + '</div>');
+                            if (file_name === "") {
+                                $('#href_upload_file_' + i).hide();
+                            }
+                        }
+                    }
+
+                }
+            });
+        }
+
+        /// Camera
+        var front = false;
+        var constraints = { video: { facingMode: (front ? "user" : "environment") } };
+        /* var constraints = { video: { facingMode: "user" }, audio: false }; */
+
+
+        // Define constants
+        const cameraView = document.querySelector("#camera--view"),
+                saveDIV = document.querySelector("#saveDIV"),
+                cameraDIV = document.querySelector("#cameraDIV"),
+                cameraOutput = document.querySelector("#camera--output"),
+                cameraSensor = document.querySelector("#camera--sensor"),
+                cameraTrigger = document.querySelector("#camera--trigger"),
+                flipButton = document.querySelector("#flip--button"),
+                cameraTrigger1 = document.querySelector("#camera--trigger1");
+        //cameraSaveImg = document.querySelector("#camera--image")
+        // Access the device camera and stream to cameraView
+
+
+        // Take a picture when cameraTrigger is tapped
+        var count = 0;
+        function cameraStart() {
+            navigator.mediaDevices
+                    .getUserMedia(constraints)
+                    .then(function (stream) {
+                        track = stream.getTracks()[0];
+                        cameraView.srcObject = stream;
+                    })
+                    .catch(function (error) {
+                        //console.log("Oops. Something is broken.");
+                    });
+        }
+        function cameraClicked() {
+            $('#camera--view').hide();
+            $('#camera--sensor').show();
+            cameraSensor.width = cameraView.videoWidth;
+            cameraSensor.height = cameraView.videoHeight;
+            cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+            cameraOutput.src = cameraSensor.toDataURL("image/webp");
+            cameraOutput.classList.add("taken");
+            $("#hdfilePicker").val(encodeURIComponent(cameraOutput.src))
+            $('#hdfile_ext').val("png");
+        }
+
+        function OpenUploadWindow(ticketid) {
+            Ticket_Id = ticketid;
+            $('.AddPopup').show();
+
+        }
+
+        function takepicture() {
+            $('.UploadPopup').show();
+            cameraStart();
+        }
+        function create_UUID() {
+            var dt = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (dt + Math.random() * 16) % 16 | 0;
+                dt = Math.floor(dt / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+        function Upload_doc_view() {
+            var guid = create_UUID();
+            Android.Upload_doc_view(guid);
+        }
+        function uploadImagePath(uploadedPath) {
+            var objRes = uploadedPath;
+            var data = objRes.split('|');
+            var file_name = "";
+            var file_path = "";
+            $('#txt_fileUpload').text("File Uploaded Success");
+            if (data[0] !== null && data[0] !== "") {
+                $('#file_name').val(data[0].replace(/\s/g, ""));
+            }
+            if (data[1] !== null && data[1] !== "") {
+                $('#file_path').val(data[1]);
+
+            }
+        }
+        function CloseView() {
+            $('#view_doc').hide();
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+    "GCCustomerID": "___dbmaster_insurer_transaction_identifier___",
+    "IMDNumber": "___insurer_integration_agent_code___",
+    "OfficeCode": "___insurer_integration_location_code___",
+    "QuotationNumber": "___pg_reference_number_1___",
+    "ProductCode": "___product_id___",
+    "TPSourceName": "PolicyBoss",
+    "PremiumAmount": "___final_premium___",
+    "TransactionID": "___pg_reference_number_1___",
+    "SendEmailtoCustomer": "true",
+    "TPEmailID": "___email___",
+    "PaymentSource": "___payment_source___",
+	"OTPCreatedDate": "___current_date___",
+	"OTPEnteredDate" : "___current_date___"
+}

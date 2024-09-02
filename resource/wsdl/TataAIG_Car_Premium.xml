@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://stub.unotechsoft.com/wsdl/MotorService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MotorService" targetNamespace="http://stub.unotechsoft.com/wsdl/MotorService/">
+  <wsdl:types>
+<xs:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://stub.unotechsoft.com/wsdl/MotorService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://stub.unotechsoft.com/wsdl/MotorService/">
+  
+  <xs:element name="PolicyRequest" type="tns:PolicyRequest"/>
+  
+  <xs:element name="PolicyResponse" type="tns:PolicyResponse"/>
+  
+  <xs:element name="QuotationRequest" type="tns:QuotationRequest"/>
+  
+  <xs:element name="QuotationResponse" type="tns:QuotationResponse"/>
+  
+  <xs:element name="Request" type="tns:Request"/>
+  
+  <xs:complexType name="QuotationRequest">
+    
+    <xs:complexContent>
+      
+      <xs:extension base="tns:Request">
+        
+        <xs:sequence/>
+      
+      </xs:extension>
+    
+    </xs:complexContent>
+  
+  </xs:complexType>
+  
+  <xs:complexType name="Request">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="ProductCode" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="AuthenticationToken" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="CIAName" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="Campaign" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="HashKey" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="HostAddress" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="Medium" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ServiceConsumer" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="Source" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="InputXML" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="IsBankDataRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="IsCutomerAddressRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="IsFinanciarDataRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="IsManufacturerMappingRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="IsModelMappingRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="IsRTOMappingRequired" type="xs:boolean"/>
+      
+      <xs:element minOccurs="0" name="ModeOfOperation" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="OldProposalNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="QuotationNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="QuotationVersion" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="UserId" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="UserRole" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="VehicleClassCode" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+  
+  <xs:complexType name="QuotationResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="ProductCode" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ErrorText" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="NetPremium" type="xs:double"/>
+      
+      <xs:element minOccurs="0" name="QuotationNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="QuotationVersion" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ReferenceNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ResponseXML" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="OtherDetailsGridXML" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ServiceTax" type="xs:double"/>
+      
+      <xs:element minOccurs="0" name="TotalPremium" type="xs:double"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+  
+  <xs:complexType name="PolicyRequest">
+    
+    <xs:complexContent>
+      
+      <xs:extension base="tns:Request">
+        
+        <xs:sequence/>
+      
+      </xs:extension>
+    
+    </xs:complexContent>
+  
+  </xs:complexType>
+  
+  <xs:complexType name="PolicyResponse">
+    
+    <xs:sequence>
+      
+      <xs:element minOccurs="0" name="ProductCode" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ErrorText" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="NetPremium" type="xs:double"/>
+      
+      <xs:element minOccurs="0" name="PaymentId" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="PolicyNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ProposalNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ResponseXML" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="OtherDetailsGridXML" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="ServiceTax" type="xs:double"/>
+      
+      <xs:element minOccurs="0" name="TotalPremium" type="xs:double"/>
+      
+      <xs:element minOccurs="0" name="VoucherNumber" type="xs:string"/>
+      
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:string"/>
+    
+    </xs:sequence>
+  
+  </xs:complexType>
+  
+  <xs:element name="getProductProposalDataRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="getProductProposalDataResponse" nillable="true" type="tns:QuotationResponse"/>
+  
+  <xs:element name="saveProposalRequest" nillable="true" type="tns:PolicyRequest"/>
+  
+  <xs:element name="saveProposalResponse" nillable="true" type="tns:PolicyResponse"/>
+  
+  <xs:element name="getQuickQuote_OnProposalRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="getQuickQuote_OnProposalResponse" nillable="true" type="tns:QuotationResponse"/>
+  
+  <xs:element name="createQuoteRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="createQuoteResponse" nillable="true" type="tns:QuotationResponse"/>
+  
+  <xs:element name="createPolicyRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="createPolicyResponse" nillable="true" type="tns:QuotationResponse"/>
+  
+  <xs:element name="quickQuoteRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="quickQuoteResponse" nillable="true" type="tns:QuotationResponse"/>
+  
+  <xs:element name="getQuickQuote_OnQuoteRequest" nillable="true" type="tns:QuotationRequest"/>
+  
+  <xs:element name="getQuickQuote_OnQuoteResponse" nillable="true" type="tns:QuotationResponse"/>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createPolicy">
+    <wsdl:part element="tns:createPolicyRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuoteResponse">
+    <wsdl:part element="tns:quickQuoteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuote">
+    <wsdl:part element="tns:quickQuoteRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuote_OnProposal">
+    <wsdl:part element="tns:getQuickQuote_OnProposalRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveProposalResponse">
+    <wsdl:part element="tns:saveProposalResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuote_OnQuoteResponse">
+    <wsdl:part element="tns:getQuickQuote_OnQuoteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createQuoteResponse">
+    <wsdl:part element="tns:createQuoteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createPolicyResponse">
+    <wsdl:part element="tns:createPolicyResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createQuote">
+    <wsdl:part element="tns:createQuoteRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductProposalDataResponse">
+    <wsdl:part element="tns:getProductProposalDataResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuote_OnProposalResponse">
+    <wsdl:part element="tns:getQuickQuote_OnProposalResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getQuickQuote_OnQuote">
+    <wsdl:part element="tns:getQuickQuote_OnQuoteRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProductProposalData">
+    <wsdl:part element="tns:getProductProposalDataRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveProposal">
+    <wsdl:part element="tns:saveProposalRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MotorService">
+    <wsdl:operation name="getProductProposalData">
+      <wsdl:input message="tns:getProductProposalData" name="getProductProposalData">
+    </wsdl:input>
+      <wsdl:output message="tns:getProductProposalDataResponse" name="getProductProposalDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveProposal">
+      <wsdl:input message="tns:saveProposal" name="saveProposal">
+    </wsdl:input>
+      <wsdl:output message="tns:saveProposalResponse" name="saveProposalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote_OnProposal">
+      <wsdl:input message="tns:getQuickQuote_OnProposal" name="getQuickQuote_OnProposal">
+    </wsdl:input>
+      <wsdl:output message="tns:getQuickQuote_OnProposalResponse" name="getQuickQuote_OnProposalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createQuote">
+      <wsdl:input message="tns:createQuote" name="createQuote">
+    </wsdl:input>
+      <wsdl:output message="tns:createQuoteResponse" name="createQuoteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPolicy">
+      <wsdl:input message="tns:createPolicy" name="createPolicy">
+    </wsdl:input>
+      <wsdl:output message="tns:createPolicyResponse" name="createPolicyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote">
+      <wsdl:input message="tns:getQuickQuote" name="getQuickQuote">
+    </wsdl:input>
+      <wsdl:output message="tns:getQuickQuoteResponse" name="getQuickQuoteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote_OnQuote">
+      <wsdl:input message="tns:getQuickQuote_OnQuote" name="getQuickQuote_OnQuote">
+    </wsdl:input>
+      <wsdl:output message="tns:getQuickQuote_OnQuoteResponse" name="getQuickQuote_OnQuoteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MotorServiceSoapBinding" type="tns:MotorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProductProposalData">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/getProductProposalData" style="document"/>
+      <wsdl:input name="getProductProposalData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProductProposalDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote_OnProposal">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/getQuickQuote_OnProposal" style="document"/>
+      <wsdl:input name="getQuickQuote_OnProposal">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getQuickQuote_OnProposalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveProposal">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/" style="document"/>
+      <wsdl:input name="saveProposal">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveProposalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPolicy">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/createPolicy" style="document"/>
+      <wsdl:input name="createPolicy">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createPolicyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createQuote">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/createQuote" style="document"/>
+      <wsdl:input name="createQuote">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createQuoteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/getQuickQuote" style="document"/>
+      <wsdl:input name="getQuickQuote">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getQuickQuoteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuickQuote_OnQuote">
+      <soap:operation soapAction="http://stub.unotechsoft.com/wsdl/MotorService/getQuickQuote_OnQuote" style="document"/>
+      <wsdl:input name="getQuickQuote_OnQuote">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getQuickQuote_OnQuoteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MotorService">
+    <wsdl:port binding="tns:MotorServiceSoapBinding" name="SOAPOverHTTP">
+      <soap:address location="https://connectbeta.tataaiginsurance.in/integration/Motor"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

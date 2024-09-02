@@ -1,0 +1,37 @@
+/* Author : Dipali Revanwar
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// grab the things we need
+var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
+var Schema = mongoose.Schema;
+autoIncrement = require('mongoose-plugin-autoinc');
+mongoose.Promise = global.Promise;
+var kyc_historySchema = new Schema({
+    'Kyc_History_Id': Number,
+    'CRN': Number,
+    'Proposal_Id': String,
+    'PAN': String,
+    'Aadhaar': Number,
+    'DOB': String,
+    'Mobile': Number,
+    'Email': String,
+    'Insurer_Id': Number,
+    'KYC_Request_Core': Object,
+    'KYC_Response_Core': Object,
+    'Status': String,
+    'Created_On': Date,
+    'Modified_On': Date
+});
+// we need to create a model using it
+kyc_historySchema.plugin(mongoosePaginate);
+
+
+kyc_historySchema.plugin(autoIncrement.plugin, {model: 'kyc_history', field: 'Kyc_History_Id', startAt: 1});
+var kyc_history = mongoose.model('kyc_history', kyc_historySchema);
+
+// make this available to our users in our Node applications
+module.exports = kyc_history;

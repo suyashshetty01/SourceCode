@@ -1,0 +1,9 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <GetPolicyDetailforRSA xmlns="http://RGICL_Policy_Service.ServiceContracts/22/2014">
+            <Username>RSAUser</Username>
+            <EncryptedPassword>2koXVAU4J6k7P3epyGoeeA==</EncryptedPassword>
+            <PolicyNumber>___vehicle_number___</PolicyNumber>
+        </GetPolicyDetailforRSA>
+    </Body>
+</Envelope>

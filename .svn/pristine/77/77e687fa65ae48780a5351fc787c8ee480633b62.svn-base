@@ -1,0 +1,198 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "fullQuote",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        
+        "AdditonalCompDeductible": "",
+        <!--proposal node-->
+        "AgreementCode": "6660",
+        "AlternatePolicyNo": "AlternatePolicyNo",
+        "BusinessType": "___vehicle_insurance_type___",
+        "ChannelType": "2",
+        "CustomerGSTINNo": "___gst_no___",
+        "CustomerSegment": "CustomerSegment",
+        "EffectiveDate": "___effective_start_date___",
+        "ExpiryDate": "___expiry_date___T23:59:59",
+        "HasPrePolicy": "___is_pre_policy_exist___",
+       
+        "IssuingBranchCode": "",
+        "IssuingBranchGSTN": "",
+        <!-- KindofPolicy -->
+        "NewBizClassification": "___New_Biz_Classification___",
+        "PolicyCustomerList": [
+            {
+                "AadharNumUHID": "___aadhar___",
+                "BuildingHouseName": "___communication_address_2___",
+                "City": "___communication_city_code___",
+                "ContactEmail": "___email___",
+                "ContactPersonTel": "",
+                "CountryCode": "1000000108",
+                "CustomerName": "___first_name___ ___last_name___",
+
+                "FirstName": "___first_name___",
+                "MiddleName": "___middle_name___",
+                "LastName": "___last_name___",
+
+                "DateOfBirth": "___dob___",
+                "DateOfIncorporation": "",
+                "District": "___communication_district_code___",
+                "EIANumber": "EIANumber",
+
+                "GSTRegistrationNum": "___gst_no___",
+                "GenderCode": "___gender___",
+                "ISDNum": "ISDNum",
+                "IdNo": "___pan___",
+                "IdType": "___pan_id_type___",
+                "IsInsured": "___is_pre_policy_exist___",
+                "IsOrgParty": "___is_org_party___",
+                "IsPolicyHolder": "___is_pre_policy_exist___",
+                "Locality": "___locality_text___",
+                "Mobile": "___mobile___",
+                "NationalityCode": "IND",
+                "OccupationCode": "___occupation___",
+                "PartyStatus": "1",
+                "PlotNo": "___communication_address_1___",
+                "PostCode": "___communication_pincode___",
+                "PreferredContactMode": "PreferredContactMode",
+                "RegistrationName": "___company_name___",
+                "SBIGCustomerId": "",
+                "STDCode": "0891",
+                "State": "___dbmaster_insurer_rto_state_code___",
+                "StreetName": "___communication_address_3___",
+                "Title": "___title_code___"
+            }
+        ],
+        "PolicyLobList": [
+            {
+                "PolicyRiskList": [
+                    {
+                        "AAMemberExpiryDate": "",
+                        "AAMemberNo": "",
+                        "AntiTheftAlarmSystem": "___is_antitheft___",
+                        "BodyStyle": "___dbmaster_insurer_vehicle_insurer_bodytype___",
+                        "BodyType": "___dbmaster_insurer_vehicle_insurer_bodytype___",
+                        "CarryingCapacity": ___dbmaster_insurer_vehicle_seatingcapacity___,
+                        "ChassisNo": "___chassis_number___",
+                        "DailyUseDistance": "2",
+                        "DayParkLoc": "1",
+                        "DayParkLocPinCode": "388215",
+                        "EmployeeCount": 0,
+                        "EngineCapacity": "___dbmaster_insurer_vehicle_cubiccapacity___",
+                        "EngineNo": "___engine_number___",
+                        "FEVehicleRegNo": "",
+                        <!-- financial details start --->
+                        "FNBranchName": "___financial_institute_name___",
+                        "FNName": "___financial_institute_city___",
+                        "FNType": "___fn_type___",
+                        <!-- financial details end --->
+                        "FuelType": "___dbmaster_insurer_vehicle_fueltype_code___",
+                        "GeoExtnBangladesh": "0",
+                        "GeoExtnBhutan": "0",
+                        "GeoExtnMaldives": "0",
+                        "GeoExtnNepal": "0",
+                        "GeoExtnPakistan": "0",
+                        "GeoExtnSriLanka": "0",
+                        "IDV_Suggested": ___normal_idv___,
+                        "IDV_User": ___user_idv___,
+                        "IsAAMember": "___is_auto_mobile___",
+                        "IsCertifiedVintageCar": "0",
+                        "IsConfinedOwnPremises": "0",
+                        "IsDrivingTuitionsUse": "0",
+                        "IsFEVehicle": "0",
+                        "IsFGFT": "0",
+                        "IsGeographicalExtension": "0",
+                        "IsHandicappedMod": "0",
+                        "IsImportedWithoutDuty": "0",
+                        <!-- Renew nodes start -->
+                        "IsNCB": "___is_claim_exists___",
+                        <!-- Renew nodes end -->
+                        "IsNewVehicle": "1",
+                        "LLSSACount": 0,
+                        "LoanAccountNumber": "",
+                        "ManufactureYear": "___vehicle_manf_year___",
+                        "MaxIDV_Suggested": ___max_idv___,
+                        "MinIDV_Suggested": ___min_idv___,
+                        "ModificationType": "1",
+                        "NCB": ___vehicle_ncb_next_1___,
+                        "NCBLetterDate": "",
+                        "NCBPrePolicy" : "___vehicle_ncb_current_1___",
+                        "NCBProof": "1",
+                        "NightParkLoc": "1",
+                        "NightParkLocPinCode": "530013",
+                        "PaidDriverCount": ___is_pa_paid_driver___,
+                        "ProductElementCode": "R10005",
+                        "RTOCityDistric": "___dbmaster_insurer_rto_district_code___",
+                        "RTOCluster": "___dbmaster_insurer_rto_cluster___",
+                        "RTOLocation": "___dbmaster_insurer_rto_code___",
+                        "RTOLocationID": "___dbmaster_insurer_rto_location_code___",
+                        "RTONameCode": "___dbmaster_insurer_rto_state_code___",
+                        "RTORegion": "___dbmaster_insurer_rto_zone_code___",
+
+                        "RegistrationDate": "___vehicle_registration_dt___T00:00:00.000",
+                        "RegistrationNo": "___registration_no___",
+                        "RoadType": "4",
+                        "SeatingCapacity": ___dbmaster_insurer_vehicle_seatingcapacity___,
+                        "TrailerCount": 0,
+                        "Variant": "___dbmaster_insurer_vehicle_variant_code___",
+                        "VehicleColor": "___vehicleColor___",
+                        "VehicleMake": "___dbmaster_insurer_vehicle_make_code___",
+                        "VehicleModel": "___dbmaster_insurer_vehicle_model_code___",
+                        "VehicleSegment": "___dbmaster_insurer_vehicle_insurer_segmant___",
+                        "VehicleUsage": "___vehicle_usage___",
+                        "VoluntaryDeductible": ___voluntary_deductible___,
+                        "WheelNum": ___dbmaster_number_of_wheels___,
+                        "Zone": "___dbmaster_insurer_rto_zone_name___",
+                        "PolicyCoverageList": [
+                            <!-- OD_Block -->
+                            <!-- key_replacement_block -->
+                            <!-- Return_To_Invoice -->
+                            <!-- NCB_Protection -->
+                            <!-- Tyre_Rim_Guard -->
+                            <!-- zerp_dep_block -->
+                            <!-- allowanve_block -->
+                            <!-- persobal_belogning_block -->
+                            <!-- engine_protection_block -->
+                            <!-- consumable_element_block -->
+                            <!-- Basic_RSA_Block -->
+                            <!-- TP_Block -->
+                        ]
+                    }
+                ],
+                "ProductCode": "PMCAR001",
+                "PolicyType": "___policy_type___",
+                "BranchInfo": ""
+            }
+        ],
+        <!-- SAOD nodes start-->
+        "ActiveLiabilityPolicyNo" : "___tp_policy_number___",
+        "ActiveLiabilityPolicyInsurer" : "___tp_insurer_code___",
+        "ActiveLiabilityPolicyEffDate" : "___tp_policy_start_date___",
+        "ActiveLiabilityPolicyExpDate" : "___tp_policy_end_date___",
+        <!-- SAOD nodes end-->
+        "PreInsuranceComAddr": "___dbmaster_pb_previousinsurer_address___",
+        <!-- Renew nodes start 1 -->
+        "PreInsuranceComName": "___previous_insurer_id___",
+        <!-- Renew nodes end 1 -->
+        "PrePolicyEndDate": "___pre_policy_expiry_date___",
+        "PrePolicyNo": "___previous_policy_number___",
+        "PrePolicyStartDate": "___prev_policy_start_date___",
+        "PremiumCurrencyCode": "INR",
+        "PremiumLocalExchangeRate": 1,
+        "ProductCode": "PMCAR001",
+        "ProductVersion": "1.0",
+        "ProposalDate": "___proposal_date___",
+        "QuoteValidTo": "___quote_valid_date___",
+        "SBIGBranchStateCode": "___dbmaster_insurer_rto_state_code___",
+        "SPCode": "",
+        "SPEOAPartyID": "",
+        "SPEOAUserID": "",
+        "SecondarySalesMgr": "",
+        "SiCurrencyCode": "INR",
+        "SimFlowId": "",
+        "TransactionInitiatedBy": "PolicyBoss"
+    }
+    }

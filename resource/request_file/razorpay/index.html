@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script type="text/javascript">
+        var transaction_id = 0;
+        function codeAddress() {
+		  transaction_id = getUrlParameter('transaction_id');
+		  var amount = getUrlParameter('amount');
+		  //document.getElementById('amount').innerHTML = amount;
+		  var amount_data = (amount - 0) * 100;
+		  // QA Key = rzp_test_m1Q5m1JFK3j2LN
+		   var options = {    "key": "rzp_test_m1Q5m1JFK3j2LN",  "amount": "100",    "currency": "INR",    "name":  "",   
+		   "description": "",    "image": "https://www.rupeeboss.com/image/logo.png",  
+		   "handler": function (response){
+		   var PayId = response.razorpay_payment_id;
+		   window.location.href = GetUrl()+'/razorpay-transaction-status/'+transaction_id+'/Success/'+PayId;
+		   },   
+		   "prefill": {"name": "","email": "policybosstesting@gmail.com","contact": "9619160851"},   
+		   "notes": {        "address": "note value"    },    "theme": {        "color": "#528FF0"    },"modal": { escape: false, ondismiss: function(){ alert("Your payment transaction was not successful.");
+		//window.location.href = "http://qa.mgfm.in/images/rbasalesmaterial/razorpay/cancel.html?cid=" + custid; } },
+		window.location.href = GetUrl()+'/razorpay-transaction-status/'+transaction_id+'/Cancle';} },
+        };
+		   var rzp1 = new Razorpay(options);//document.getElementById('rzp-button1').onclick = function(e){    rzp1.open();    e.preventDefault();}
+		   rzp1.open();
+        }
+        window.onload = codeAddress;
+		function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+		function showbo()
+		{
+		alert("Your payment transaction was not successful.");
+		window.location.href = GetUrl()+'/razorpay-transaction-status/'+transaction_id+'/Cancle';
+		}
+		function GetUrl() {
+            var url = window.location.href;
+            var newurl;
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:7000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")|| url.includes("origin-cdnh")) {
+                newurl = "http://horizon.policyboss.com";
+            }
+            return newurl;
+        }
+	   </script>
+<html>
+<head>
+
+	<title>Payment Details</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body onload="codeAddress()">
+	<!--<div class="container">
+		<div class="infoContainer">
+			<div style="padding:20px; padding-bottom:0px;">
+				<img src="Images/MFM.png">
+			</div>
+			<div class="row">
+				<div style="margin: auto;">
+					<img src="Images/Payment.png">
+				</div>
+				<div class="details"><input type="hidden"  id="hdcustid" value="">
+					<p>PAYMENT DETAILS</p>
+					<div>
+						<span>Payable Amount :</span>
+						<strong id="amount"></strong>
+					</div>
+					<input type="submit" id="rzp-button1" name="" value="BUY NOW">
+					<input type="submit" name="" value="CANCEL" onclick="showbo();">
+				</div>
+			</div>
+		</div>
+	</div>-->
+</body>
+</html>

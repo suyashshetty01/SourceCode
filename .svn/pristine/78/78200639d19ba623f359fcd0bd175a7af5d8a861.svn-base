@@ -1,0 +1,38 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body xmlns:ns1="http://iims.services/types/">
+      <ns1:collectpremium_IssuepolElement>
+         <ns1:userCode>POLICYBOSS</ns1:userCode>
+         <ns1:rolecode>SUPERUSER</ns1:rolecode>
+         <ns1:PRetCode>1</ns1:PRetCode>
+         <ns1:userId>POLICYBOSS</ns1:userId>
+         <ns1:stakeCode>BROKER</ns1:stakeCode>
+         <ns1:roleId />
+         <ns1:userroleId />
+         <ns1:branchcode />
+         <ns1:PRetErr />
+         <ns1:sourceOfCollection>A</ns1:sourceOfCollection>
+         <ns1:collectionNo />
+         <ns1:receivedFrom />
+         <ns1:instrumentAmt>5987</ns1:instrumentAmt>
+         <ns1:collections>
+            <ns1:accountCode>9100.130200</ns1:accountCode>
+            <ns1:draweeBankName />
+            <ns1:subCode />
+            <ns1:draweeBankCode />
+            <ns1:collectionMode>ECS</ns1:collectionMode>
+            <ns1:debitCreditInd>D</ns1:debitCreditInd>
+            <ns1:scrollNo />
+            <ns1:chequeType />
+            <ns1:quoteNo>1302001610808847</ns1:quoteNo>
+            <ns1:collectionAmount>5987</ns1:collectionAmount>
+            <ns1:chequeDate />
+            <ns1:chequeNo>HEFC34343445</ns1:chequeNo>
+            <ns1:draweeBankBranch />
+         </ns1:collections>
+         <ns1:quoteNo>1302001610808847</ns1:quoteNo>
+         <ns1:collectionType>A</ns1:collectionType>
+         <ns1:policyNo />
+         <ns1:documentLink />
+      </ns1:collectpremium_IssuepolElement>
+   </soapenv:Body>
+</soapenv:Envelope>

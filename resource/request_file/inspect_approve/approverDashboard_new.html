@@ -1,0 +1,3425 @@
+<html>
+<title>Inspection Approver Dashboard</title>
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+<script type="text/javascript">
+var Supportagentid = 1;
+var fbaid = 1;
+var client_id = 2;
+
+function Redirect() {
+	$("#SearchQuote").val(0);
+	//$('#next_page').show();
+	$("#SearchQuoteInput").hide();
+	pageIndex=1;	
+	RedirectSelect = "SEARCH";
+	GetQuoteList();
+	$(".allData").hide();
+	$(".healthmaindiv").show();
+	$(".quote_list_Div").scrollTop(top) + "px"
+	$(".appquote_list").hide();
+	$(".sellquote_list").hide();
+	$(".all_data").css({ "background-color": "#fff", "color": "#1c2955" });
+	$(".quote_li").css({ "background-color": "#1c2955", "color": "#fff" });
+	$(".applctn_li").css({ "background-color": "#fff", "color": "#1c2955" });
+	$(".sell_li").css({ "background-color": "#fff", "color": "#1c2955" });
+}
+
+function GetUrl(){
+	var url = window.location.href;
+	var newurl;
+	//newurl = "http://qa.policyboss.com";
+	if (url.includes("Desktop")) {
+		newurl = "http://localhost:3000";
+		//newurl = "http://qa-horizon.policyboss.com:3000";
+	} else if (url.includes("qa")) {
+		newurl = "http://qa-horizon.policyboss.com:3000";
+	} else if (url.includes("www") || url.includes("cloudfront")) {
+		newurl = "http://horizon.policyboss.com:5000";
+	}
+	return newurl;
+};
+
+
+</script>
+<script type="text/javascript">
+    $('.select').on('click', '.placeholder', function () {
+        var parent = $(this).closest('.select');
+        if (!parent.hasClass('is-open')) { parent.addClass('is-open'); $('.select.is-open').not(parent).removeClass('is-open'); }
+        else { parent.removeClass('is-open'); }
+    }).on('click', 'ul>li', function () {
+        var parent = $(this).closest('.select');
+        parent.removeClass('is-open').find('.placeholder').text($(this).text());
+        parent.find('input[type=hidden]').attr('value', $(this).attr('data-value'));
+    });
+    jQuery(function ($) {
+        //  At the focus
+        $('.field-input').focus(function () {
+            $(this).parent().addClass('is-focused has-label');
+        });
+        // loss of focus
+        $('.field-input').blur(function () {
+            $parent = $(this).parent();
+            if ($(this).val() == '') { $parent.removeClass('has-label'); }
+            $parent.removeClass('is-focused');
+        });
+        // if a field is filled, we add directly the class has-label
+        $('.field-input').each(function () {
+            if ($(this).val() != '') { $(this).parent().addClass('has-label'); }
+        });
+    })
+</script>
+<script type="text/javascript">
+    var ModelSelected;
+    var FuelSelected ="";
+    var VariantIDSelected;
+    var twowheelerType;
+    var validationMsg = 'Please Select below options.';
+    var isAccessoriesAdded = false;
+    var ProductName = '@Product';
+    var IsFastLane = 'True';
+    var IsExternalBifuel = false;
+    var BiFuelTypeVal = "";
+    var isPostBack = false;
+    var FilterVehicleList=[];
+    var RtoList = [];
+    var VehicleList={};
+    var FuelList = [];
+    var VariantList = [];
+    var IsHaveNCBCertificate = '@Model.HaveNCBCertificate';
+    var VehicleType='@Model.TwoWheelerType';
+    var SRNValue = '@TempData["SID"]';
+    var ClientIDValue = '@TempData["ClientID"]';
+    var RegNo = "";
+
+    //For Edited Values
+    var PreMake_Name="";
+    var PreModel_ID="";
+    var PreFuel_Name="";
+    var Preexternal_bifuel_value;
+    var PreVehicleCity_Id;
+    var PreCRN;
+    var PreSRN;
+    var PreUDID;
+
+    var PrevVehicle_id;
+    var PrevRto_id;
+    var PrevReg_Date;
+
+    var FlagRegNoValid = 0;
+
+    var VehicleInsuranceSubtype = "";
+    var InsPlanType;
+    var InsPlanTypeYear;
+
+    var ProductID = '@Model.ProductID';
+
+    var Model_ManufactureYear ='@Model.ManufactureYear';
+    var Model_CityofRegitrationID ='@Model.CityofRegitrationID';
+    var Model_NoClaimBonusPercent ='@Model.NoClaimBonusPercent';
+
+    var Model_ContactName ='@Model.ContactName';
+    var Model_ContactMobile ='@Model.ContactMobile';
+    var Model_ContactEmail ='@Model.ContactEmail';
+    var Supportagentid = '@Session["agent_id"]' != ''? '@Session["agent_id"]' : 0;
+    var fbaid = '@Session["fba_id"]' != "" ? '@Session["fba_id"]' : null;
+    var client_id = '@Session["client_id"]' != "" ? '@Session["client_id"]' : 2;
+    //var UDID = "";
+    var RTOCode = "";
+    var PEDFlag = "no";
+    var IsPolicyExistFlag = "yes";
+    var RedirectSelect = "SEARCH";
+    var is_TP = "no";
+    var IsCustomer = 'True';
+
+    //document.cookie ='@TempData["SID"]';
+    //document.cookie ='@TempData["ClientID"]';
+    $(window).load(function(){
+        if (SRNValue != null && ClientIDValue != null &&SRNValue != "" && ClientIDValue != "") {
+            setTimeout(function() { $("#QuoteLoader").addClass('hidden');  }, 4000);
+        }
+    });
+    $(document).ready(function(){
+        if('@SaleLogin'=='False'){
+            $("#maindiv").removeClass("hidden");
+        } else{
+            IsCustomer = 'False';
+            $("#maindiv").addClass("hidden");
+        }
+        $("#PageText").html("Please Wait While Fetching Data.");
+        $("#RegisterintheName").val("individual");
+        if (ProductName == 'Car') { InsPlanTypeYear = 3; $("#MakeModel").attr('placeholder','Vehicle Make & Model (e.g. Honda, City)');  }
+        if (ProductName == 'Bike') {  InsPlanTypeYear = 5; $("#MakeModel").attr('placeholder','Vehicle Make & Model (e.g. Bajaj, Avenger)');  $("#PolicyExistQs").hide(); }
+
+        SetTextInsPlan(InsPlanTypeYear);
+        SetUrl();
+
+        /*var ModelListURL = '/vehicles/model_list?product_id='+ProductID;
+        var obj_horizon_data = Horizon_Method_Convert(ModelListURL,'',"GET");
+        $.ajax({
+            method:"GET",
+            data: JSON.stringify(obj_horizon_data['data']),
+            url: obj_horizon_data['url'],
+            dataType: "json",
+            success: function(data){ VehicleList=data; }
+        });*/
+
+        //$.ajax({
+        //    type: "GET",
+        //    url: 'TwoWheelerInsurance/call_horizon_get',
+        //    dataType: "json",
+        //    data:{method_name:'/vehicles/model_list?product_id='+ ProductID, client_id:"2"},
+        //    success: function(data){ VehicleList=data; }
+        //});
+
+        /*var RtoListURL = '/rtos/list';
+        var obj_horizon_data = Horizon_Method_Convert(RtoListURL,'',"GET");
+        $.ajax({
+            type:"GET",
+            data: JSON.stringify(obj_horizon_data['data']),
+            url: obj_horizon_data['url'],
+            dataType: "json",
+            success: function(data){ RtoList=data; }
+        });*/
+        
+		SetInputValue();
+        //$("#QuoteLoader").addClass('hidden');
+
+        $('#CityofRegitration').attr('placeholder', 'Place Of Registration').addClass('form-control floating-label');
+        $("#PreviousInsurer").attr({ 'placeholder': 'Previous Insurer', 'data-tooltip-animate-function': "foldin", 'data-tooltip-stickto': "top", 'data-tooltip-color': "black" });
+        $("#NoClaimBonusPercent").attr({ 'placeholder': 'No Claim Bonus Percent', 'data-tooltip-animate-function': "foldin", 'data-tooltip-stickto': "top", 'data-tooltip-color': "black" });
+        $("#FuelType").attr({ 'placeholder': 'Fuel Type', 'data-tooltip-animate-function': "foldin", 'data-tooltip-stickto': "top", 'data-tooltip-color': "black" });
+        $('.DateofPurchaseofCar').attr('placeholder', 'First Registration / Invoice Date').addClass('form-control floating-label');
+
+        if (VehicleType == null || VehicleType== '') { isPostBack = false; }
+        else {
+            isPostBack = true;
+            if (VehicleType == "NEW") { TwoWheelerTypeNew(); }
+            if (VehicleType == "RENEW") { TwoWheelerTypeRenew(); }
+        }
+
+        $('select[name="ManufactureYear"] option[value="' + Model_ManufactureYear +'"]').attr("selected", "selected");
+        $('select[name="CityofRegitrationID"] option[value="' + Model_CityofRegitrationID +'"]').attr("selected", "selected");
+        $('select[name="NoClaimBonusPercent"] option[value="' + Model_NoClaimBonusPercent +'"]').attr("selected", "selected");
+
+        //NCB
+        if (IsHaveNCBCertificate == "Yes") { $('#lblHaveNCBCertificate-No').removeClass('active'); $('#lblHaveNCBCertificate-Yes').addClass('active'); }
+        if (IsHaveNCBCertificate == "No") { $('#lblHaveNCBCertificate-Yes').html('NO'); }
+        if (Model_ContactName == '') { $("ContactName").val(Model_ContactName); }
+        if (Model_ContactMobile == '') { $("ContactMobile").val(Model_ContactMobile); }
+        if (Model_ContactEmail == '') { $("ContactEmail").val(Model_ContactEmail); }
+
+        var todayDate = moment();
+
+        $('.Datepicker').on('change', function (e, date) {
+            var thisId = $(this).attr('id');
+            var ErthisId = $("#Er" + thisId);
+            switch (thisId) {
+                case "DOPCNew": case "DOPCRenew":
+                    ErrMsg = "Please Select Registration/Invoice Date.";
+                    $(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+                    break;
+                case "ManufactureDate":
+                    ErrMsg = "Please Select Year - Month Of Registration.";
+                    $(".dtp-picker, .dtp-actual-num").addClass('hidden');
+                    SetManuDate();
+                    break;
+                case "PolicyExpiryDate":
+                    ErrMsg = "Please Select Policy Expiry Date.";
+                    $(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+                    break;
+            }
+            if ($(this).val() != "") { ErthisId.html("").hide(); }
+            else { $("#Er" + thisId).show().html(ErrMsg); }
+        });
+        $('.Datepicker').on('focus', function (e, date) {
+            var thisId = $(this).attr('id');
+            switch (thisId) {
+                case "DOPCNew": case "DOPCRenew":
+                    $(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+                    break;
+                case "ManufactureDate":
+                    $(".dtp-picker, .dtp-actual-num").addClass('hidden');
+                    break;
+                case "PolicyExpiryDate":
+                    $(".dtp-picker, .dtp-actual-num").removeClass('hidden');
+                    break;
+            }
+        });
+
+        $.material.init()
+
+        $('select').each(function () {
+            var thisId = $(this).attr('Id');
+            if ($(this).val() == "0" || $(this).val() == null) { $(this).addClass('empty Unselected').removeClass('dropdown-toggle');  }
+            else { $(this).removeClass('empty Unselected');}
+        });
+        $('select').focusout(function () {
+            if ($(this).val() == "0" || $(this).val() == null) { $(this).addClass('empty Unselected');  }
+            else {$(this).removeClass('empty Unselected');}
+        });
+        $('select').click(function () {
+            $(this).removeClass('Unselected');
+        });
+        $('select').change(function () {
+            var thisId = $(this).attr('Id');
+            var ErthisId = $("#Er" + thisId);
+            if ($(this).val() == "0" || $(this).val() == null) {
+                $('label[for=' + thisId + '], input#' + thisId + '').hide();
+                $(this).addClass('empty Unselected');
+
+                switch (thisId) {
+                    case "FuelType":
+                        ErrMsg = "Please Select Fuel Type.";
+                        $("#VariantID").empty();
+                        $("#VariantID").append('<option value="0">Select Variant</option>');
+                        $('label[for=VariantID], input#VariantID').hide();
+                        break;
+                    case "VariantID":
+                        ErrMsg = "Please Select " + ProductName + " Variant from list.";
+                        break;
+                    case "PreviousInsurer":
+                        ErrMsg = "Please Select Previous Insurer.";
+                        break;
+                    case "NoClaimBonusPercent":
+                        $('label[for=NoClaimBonusPercent], input#NoClaimBonusPercent').show();
+                        ErrMsg = "";
+                        break;
+                }
+                $("#Er" + thisId).show().html(ErrMsg);
+            }
+            else {
+                $(this).removeClass('Unselected');
+                switch (thisId) {
+                    case "FuelType":
+                        FuelSelected = $(this).val();
+                        if (ProductName == "Car") { VariantIDSelected = ""; $("#ValueOfBiFuelKit").val("");
+                            //CallVariantOnModelNFuelSelect($("#ModelName").val(), $(this).val());
+                            //CallVariantOnModelSelect($('#MakeModelID').val());
+                        }
+                        $('label[for=VariantID], input#VariantID').hide();
+                        break;
+                    case "VariantID":
+                        VariantIDSelected = $("#VariantID").val();
+                        if (ProductName == "Car") { $("#CarVariantID").val(VariantIDSelected);  }
+                        else { $("#TwoWheelerVariantID").val(VariantIDSelected); }
+                        break;
+                    case "PreviousInsurer":
+                        break;
+                }
+
+                $('label[for=' + thisId + '], input#' + thisId + '').show();
+                $("#Er" + thisId).hide().html("");
+            }
+
+            if (ProductName == "Car") {
+                if ($('#FuelType :selected').text().indexOf("External") > -1 || $('#FuelType :selected').text().indexOf("EXTERNAL") > -1) {
+                    $("#IsBiFuelKit").val("yes");
+                    $("#divValueOfBiFuelKit").show(); IsExternalBifuel = true;
+                    if ($('#FuelType :selected').text().indexOf("CNG") > -1 ) { $("#BiFuelType").val("cng"); BiFuelTypeVal="cng"; }
+                    else { $("#BiFuelType").val("lpg");  BiFuelTypeVal="lpg";}
+                }
+                else { $("#divValueOfBiFuelKit").hide().val(""); IsExternalBifuel = false; $("#IsBiFuelKit").val("no"); $("#BiFuelType").val(''); }
+            }
+            else { $("#IsBiFuelKit").val(''); $("#BiFuelType").val(''); IsExternalBifuel = false;}
+
+            console.log("MakeModel : " + $("#MakeModel").val() + " & ID : " + $("#MakeModelID").val() + "\nFuelType : " + $("#FuelType").val() + "\nVariant : " + $("#VariantID option:selected").text() + " & ID : " + $("#VariantID").val());
+
+            //if ($(this).val() != "") { ErthisId.html("").hide(); }
+            //else { ErthisId.html(ErrMsg).Show(); }
+        });
+        $('input').blur(function () {
+            var $this = $(this);
+            var $Erthis = $('#Er' + $(this).attr('id') + '');
+            if ($this.val()) { $Erthis.html("").hide(); $(this).parent().removeClass('is-empty'); }
+            else { $(this).parent().addClass('is-empty'); }
+        });
+        $('input[type="text"]').keyup(function () {
+            var $this = $(this);
+            var $Erthis = $('#Er' + $(this).attr('id') + '');
+            if ($this.val()) { $Erthis.html("").hide(); $(this).parent().removeClass('is-empty'); }
+            else { $(this).parent().addClass('is-empty'); }
+        });
+        $("#ValueOfBiFuelKit").keypress(function () { return this.value.length < 6 })
+        $("#ContactMobile").keypress(function () { return this.value.length < 10 })
+        $("#RegistrationNo").keypress(function () { return this.value.length < 11 })
+        $("#RegistrationNo").keyup(function () {
+            if ($(this).val() == "") {
+                $("#RegistrationNoError").show();
+                $(this).addClass('ErrorClass');
+            }
+            else { $("#RegistrationNoError").hide(); $(this).removeClass('ErrorClass') }
+        });
+        $(".inputIsu").keyup(function () {
+            if ($(this).val() == "") {
+                $("#RegistrationNoError").show();
+                $(this).addClass('ErrorClass');
+            }
+            else { $("#RegistrationNoError").hide(); $(this).removeClass('ErrorClass'); }
+        });
+
+        /*$('#MakeModel').autocomplete({
+            source: function (request, response) {
+                if (FilterVehicleList!=null && FilterVehicleList!= undefined) {
+                    if (FilterVehicleList.length == 0) {
+                        FilterVehicleList.push({ MakeModelID: null, MakeModel: 'Not Found.' });
+                        $('#MakeModelID').val(null);
+                    };
+                    response($.map(FilterVehicleList, function (item) {
+                        //console.log(item);
+                        return { label: item.vehicle_name, value: item.vehicle_name, id: item.Model_ID };
+                    }));
+                }
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                if (ui.item.id == null) return false;
+                $('#MakeModelID').val(ui.item.id);
+                $('#divslide1Result').html("").hide();
+                SelectedMakeModel = ui.item.value;
+                var ModelID = ui.item.id;
+                var arr = (ui.item.value).split(',');
+                arr[1] =(arr[1]).trim();
+                ModelSelected = arr[1];
+                $("#MakeName").val(arr[0]);
+                $("#ModelName").val(arr[1]);
+                if (arr[1] != null && $(this).val() != null) { // if (arr[1] != null) { //
+                    if (ModelID != "0") {
+                        $("#MakeModelID").val(ModelID);
+                        if (ProductName == "Car") { CallFuelOnModelSelect(ModelID); }
+                        else { //CallVariantOnModelSelect($('#MakeModelID').val()); 
+						}
+                    }
+                }
+                FuelSelected = "";
+            },
+            change: function (event, ui) {
+                if (ui.item == null) {
+                    $("#FuelType").empty();
+                    $("#FuelType").append('<option value="0">Select Fuel Type</option>');
+                    $("#VariantID").empty();
+                    $("#VariantID").append('<option value="0">Select Variant</option>');
+                }
+                MakeModelChange();
+            }
+        });
+        */
+		//$('#MakeModel').autocomplete("widget").addClass("fixedHeight");
+
+        /*$('#CityofRegitration').autocomplete({
+            source: function (request, response) {
+                if (RtoList!=null && RtoList!= undefined) {
+                    var RtoFilterList = [];
+                    var searchStr =$("#CityofRegitration").val();
+                    for(var i=0; i < RtoList.length; i++){
+                        if((("("+RtoList[i].VehicleCity_RTOCode.toString()+") "+RtoList[i].RTO_City.toString()).toLowerCase()).indexOf(searchStr.toLowerCase())>-1){
+                            RtoFilterList.push(RtoList[i]);
+                        }
+                    }
+                    response($.map(RtoFilterList, function (item) {
+                        //console.log(RtoFilterList.length);
+                        if (RtoFilterList.length > 1) {
+                            RtoFilterList.push({ CityofRegitrationID: null, CityofRegitration: 'Not Found.' });
+                            //$('#CityofRegitrationID').val(null);
+                        };
+                        var label = "("+ item.VehicleCity_RTOCode+") "+ item.RTO_City;
+
+                        return { label: label, value: label, id: item.VehicleCity_Id };
+                    }));
+                }
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                if (ui.item.id == null) return false;
+                RTOCode = (ui.item.label).slice(1,3) +"-"+ (ui.item.label).slice(3,5);
+                $('#CityofRegitrationID').val(ui.item.id);
+                $('#CityofRegitration').val(ui.item.VehicleCity_RTOCode);
+            }
+        });
+        */
+		$("#lblHaveNCBCertificate-No").click(function () {   //Yes button
+            $("#divNoClaimBonusPercent").slideUp();
+            $('#HaveNCBCertificate').val("No");
+            $("#NoClaimBonusPercent").val("0");
+            //$("#lblHaveNCBCertificate-No").addClass('btn-primarySelected active');
+            //$("#lblHaveNCBCertificate-Yes").removeClass('btn-primarySelected active');
+            $(".NCBYes").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active');
+            $(".NCBNo").removeClass('btn-primarySelected btnError active').addClass('btn-UnSelected');
+            $("#lblHaveNCBCertificate-Yes").text("No");
+        });
+        $("#lblHaveNCBCertificate-Yes").click(function () {   //No button
+            $("#divNoClaimBonusPercent").slideDown();
+            $('#HaveNCBCertificate').val("Yes");
+            //$("#lblHaveNCBCertificate-Yes").addClass('btn-primarySelected active');
+            //$("#lblHaveNCBCertificate-No").removeClass('btn-primarySelected active');
+            $(".NCBNo").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active');
+            $(".NCBYes").removeClass('btn-primarySelected btnError active').addClass('btn-UnSelected');
+            $('label[for=NoClaimBonusPercent], input#NoClaimBonusPercent').show();
+        });
+        $("#lblPolicyExist-Yes").click(function () {
+            IsPolicyExistFlag = "yes";
+            $("#PolicyExist").show();
+            $("#lblPolicyExist-Yes").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active');
+            $("#lblPolicyExist-No").removeClass('btn-primarySelected btnError active').addClass('btn-UnSelected');
+        });
+        $("#lblPolicyExist-No").click(function () {
+            if (is_TP == "no") {
+            alert("Your Policy will not issue instantly. It will issue after inspection");
+            }
+            IsPolicyExistFlag = "no";
+            $("#PolicyExist").hide();
+            $("#lblPolicyExist-Yes").removeClass('btn-primarySelected btnError active').addClass('btn-UnSelected');
+            $("#lblPolicyExist-No").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active');
+            $("#PolicyExpiryDate").val();
+            $("#PreviousInsurer").val();
+        });
+
+        $('.DateofPurchaseofCar').on('change', function(e, date) {   $("#DateofPurchaseofCar").val($(this).val()); });
+
+        $('input').each(function () { $(this).attr('autocomplete', 'nope'); });
+
+    });
+    function ExistPolicy(Option) {
+        if(Option == "yes"){
+            IsPolicyExistFlag = "yes";
+            $("#PolicyExist").show();
+        }
+        else if(Option == "no") {
+            if (is_TP == "no") { alert("Your Policy will not issue instantly. It will issue after inspection"); }
+            IsPolicyExistFlag = "no";
+            $("#PolicyExist").hide();
+            $("#PolicyExpiryDate").val();
+            $("#PreviousInsurer").val();
+        }
+    }
+    function SetInputValue()
+    {
+        $(".ErrorMsg").hide().html("");
+        $("input").each(function (i, element) {//$("input[type='text']").each(function (i, element) {
+            var This = $(this);
+            if (This.val() == "" || This.val() == "0") { $(this).parent().addClass('is-empty'); }
+            else { $(this).parent().removeClass('is-empty'); }
+        });
+        $('select').each(function () {
+            var thisId = $(this).attr('Id');
+            if ($(this).val() == "0" || $(this).val() == null) { $('label[for=' + thisId + '], input#' + thisId + '').hide(); $(this).addClass('empty'); }
+            else { $('label[for=' + thisId + '], input#' + thisId + '').show(); }
+        });
+    }
+    function SetDefaultValue() {
+        ModelSelected = "";
+        $(".quickSection").hide();
+        $(".detailSection").show();
+
+        //Clear All Input Values of input, Select Fields
+        $('input').val('');
+        $('input[type=hidden]').val('');
+        $('option').attr('selected', false);
+
+        //$("#MakeModelID, #CityofRegitrationID, #TwoWheelerVariantID, #VariantID #CarVariantID").val(0);
+        //$("#MakeModel, #CityofRegitration, #ManufactureDate").val("");
+
+        $("#VariantID").empty();
+        $("#VariantID").append('<option value="0">Select Variant</option>');
+        $("#FuelType").empty();
+        $("#FuelType").append('<option value="0">Select Fuel Type</option>');
+        $("#HaveNCBCertificate").val("No");
+        $("#NoClaimBonusPercent").val("0");
+        SetInputValue();
+    }
+    function TwoWheelerTypeNew() {
+        twowheelerType = "NEW";
+        IsFastLane = "False";
+        $("#TwoWheelerType").val("NEW");
+        $('#divDOPCNew').show();
+        $('#divDOPCRenew').hide();
+        $("#lblCompTP").show();
+
+        //$('#DateofPurchaseofCar').bootstrapMaterialDatePicker({
+        //    time: false, clearButton: true, format: 'DD-MM-YYYY',
+        //    minDate: moment().subtract(6, 'months'), // 6 Months Before The Current Day
+        //    maxDate: moment(), // Current day
+        //    currentDate: moment() // Current day
+        //});
+        //$('#DateofPurchaseofCar').val("");
+        //var DateofPurchaseofCar = $('#DateofPurchaseofCar').val();
+        //$('#DateofPurchaseofCar').on('open', function(e, date) {   $('#DateofPurchaseofCar').val(""); });
+
+        $('#DOPCNew').bootstrapMaterialDatePicker({
+            time: false, clearButton: true, format: 'DD-MM-YYYY',
+            minDate: moment().subtract(6, 'months'), // 6 Months Before The Current Day
+            maxDate: moment(), // Current day
+            currentDate: moment() // Current day
+        });
+
+        $('#DOPCNew').val("");
+        $('#DOPCNew').on('open', function(e, date) {   $('#DOPCNew').val(""); });
+    }
+    function TwoWheelerTypeRenew() {
+        twowheelerType = "RENEW";
+        $("#TwoWheelerType").val("RENEW");
+        $('#divDOPCRenew').show();
+        $('#divDOPCNew').hide();
+        $("#lblCompTP").hide();
+        if (!isPostBack) { $("#NoClaimBonusPercent").val("0"); }
+        //$('#DateofPurchaseofCar').bootstrapMaterialDatePicker({
+        //    time: false, clearButton: true, format: 'DD-MM-YYYY',
+        //    minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+        //    maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+        //    currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+        //    onSelect: function () { myfunction(); }
+        //});
+        //$('#DateofPurchaseofCar').val("");
+        //var DateofPurchaseofCar = $('#DateofPurchaseofCar').val();
+        //$('#DateofPurchaseofCar').on('open', function(e, date) {   $('#DateofPurchaseofCar').val(""); });
+
+        $('#DOPCRenew').bootstrapMaterialDatePicker({
+            time: false, clearButton: true, format: 'DD-MM-YYYY',
+            minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+            maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+            currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+            onSelect: function () { myfunction(); }
+        });
+        $('#DOPCRenew').val("");
+        $('#DOPCRenew').on('open', function(e, date) {   $('#DOPCRenew').val(""); });
+
+        $('#PolicyExpiryDate').bootstrapMaterialDatePicker({
+            time: false, clearButton: true, format: 'DD-MM-YYYY',
+            minDate: moment().subtract(120, 'days'), // (ProductName =="Bike" ? moment().subtract(180, 'days') : moment()), //
+            maxDate: moment().add(60, 'days'),
+            defaultDate: moment(),
+            onselect: function () { myfunction1(); }
+        });
+    }
+    function GetFastLane(RegNo) {
+        $('#divDOPCRenew').show();
+        $('#divDOPCNew').hide();
+        $.ajax({
+            url: "/CarInsuranceIndia/Fastlane",
+            data: JSON.stringify({ 'someNum': RegNo.toLowerCase() }),
+            type: "POST",
+            dataType: "json",
+            traditional: true,
+            contentType: "application/json; charset=utf-8",
+            success: function (data,e) {
+                console.log(data);
+                //if (ProductName == "Car" && data.VariantId > 50000) { // Checking Invalid Bike Registration Number
+                //    FlagRegNoValid = 1;
+                //}
+                //if (ProductName == "Bike" && data.VariantId < 50000 && data.VariantId > 100000) { // Checking Invalid Car Registration Number
+                //    FlagRegNoValid = 1;
+                //}
+                //if (ProductName == "CV" && data.VariantId < 100001) { // Checking Invalid CV Registration Number
+                //    FlagRegNoValid = 1;
+                //}
+                if (data.status == "Success" && FlagRegNoValid != 1 ) {
+                    $("#FastlaneMsg").show();
+                    //All Details Not Null
+                    //$(".quickSection").hide();
+                    //$(".detailSection").show();
+                    $("#TwoWheelerType").val("renew");
+                    if (data.Make_Name == "" || data.Make_Name == null || data.ModelName == "" || data.ModelName == null) {
+                        $("#ErMakeModel").show().addClass('DetailsError');
+                    }
+                    else {
+                        varcarmodel = data.ModelName;
+                        $("#MakeName").val(data.Make_Name);
+                        ModelSelected = data.ModelName;
+                        $("#ModelName").val(data.ModelName);
+                        $("#MakeModel").val(data.Make_Name + ', ' + data.ModelName);
+                        $("#MakeModelID").val(data.ModelID);
+                        //if (ProductName == "Car") { CallFuelOnModelSelect(data.ModelName); }
+                    }
+
+                    if (data.FuelName != null && data.FuelName != "") {
+                        FuelSelected = (data.FuelName).toUpperCase();
+                        //CallFuelOnModelSelect(data.ModelID);
+                        if (ProductName == "Car") { CallFuelOnModelSelect(data.ModelID); }
+                        //$("#FuelType").val(data.FuelName);
+                        //$('#FuelType :selected').text(data.FuelName);
+                        //$("#FuelSelected").val(data.FuelName);
+                    }
+                    else { $("#ErFuelType").show().addClass('DetailsError');  }
+
+                    if (data.VariantId != null && data.VariantId != 0 && data.VariantId != "0" && data.VariantId >= 0) {
+
+                        VariantIDSelected = data.VariantId;
+                        $("#VariantID").val(VariantIDSelected).removeClass('Unselected');
+                        if (ProductName == "Car") {
+                            $("#CarVariantID").val(VariantIDSelected);
+                            if (data.ModelName != null && data.ModelName != "" && data.FuelName != null && data.FuelName != "") {
+                                $("#MakeModelID").val(data.ModelID);
+                                //CallVariantOnModelNFuelSelect(data.ModelName, data.FuelName); // Temporary Change For Variant List on 16-02-2018
+                                //CallVariantOnModelSelect(data.ModelID);
+                                //$("#VariantID").val(VariantIDSelected);
+                            }
+                            else { $("#ErVariantID").show().addClass('DetailsError'); }
+                        }
+                        if (ProductName == "Bike") {
+                            $("#TwoWheelerVariantID").val(VariantIDSelected);
+                            //Here data.ModelID != null Have to Check
+                            if (data.ModelName != null && data.ModelName != "") {
+                                $("#MakeModelID").val(data.ModelID);
+                                //CallVariantOnModelSelect(data.ModelID);
+                                ///$("#VariantID").val(VariantIDSelected);
+                            }
+                            else { $("#ErVariantID").show().addClass('DetailsError'); }
+                        }
+                    }
+                    else {
+                        $("#ErVariantID").show().addClass('DetailsError');
+                        $("#VariantID").empty();
+                        $("#VariantID").append('<option value="0">Select Variant</option>');
+                        $('label[for=VariantID], input#VariantID').hide();
+                    }
+
+                    if (data.CityofRegitration != null && data.CityofRegitration != "") {
+                        strcity = RegNo.slice(0, 4);
+                        strcity = "(" + strcity + ") " + data.citycamal;
+                        $("#CityofRegitration").val(strcity);
+                        $('#CityofRegitrationID').val(data.PD_VehicleCity_Id);
+                        //$("#spnCityofRegitration").text(data.CityofRegitration);
+                    }
+                    else { $("#ErCityofRegitration").show().addClass('DetailsError'); }
+
+                    $('#DOPCRenew').bootstrapMaterialDatePicker({
+                        time: false, clearButton: true, format: 'DD-MM-YYYY',
+                        minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+                        maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+                        currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+                        onSelect: function () { myfunction(); }
+                    });
+
+                    $("#PolicyExpiryDate").bootstrapMaterialDatePicker({
+                        time: false, clearButton: true, format: 'DD-MM-YYYY',
+                        minDate: moment().subtract(120, 'days'), //(ProductName =="Bike" ? moment().subtract(180, 'days') : moment()), //
+                        maxDate: moment().add(60, 'days'), // 60 Days From The Current Day
+                        defaultDate: moment(),
+                        onselect: function () { myfunction1(); }
+                    });
+
+                    //Check Whether Year Valid Or Not // For Format FEB2014
+                    if (data.Year != "NULL" && data.Year != "" && data.Year !=null && data.Year != "0") // Year Validate
+                    {
+                        var CurMonth =  1; // new Date().getMonth() + 1; //
+                        if (CurMonth < 10) { CurMonth = "0" + CurMonth; }
+
+                        if (data.ManufactureYear.substring(0,3)!= null) {
+                            var Month = GetMonthNum(data.ManufactureYear.substring(0,3))
+
+                            $("#ManufactureDate").val(Month + "-" + data.Year);
+                            $('#ManufactureYear').val(data.ManufactureYear.substring(3,7));
+                            $('#ManufactureMonth').val(Month);
+                        }
+
+                        VarDateofPurchaseofCar = data.RegistrationDate;
+                        var today = new Date();
+                        var month = today.getMonth() + 1;
+                        var day = today.getDate();
+                        if (day < 10) { day = "0" + day; }
+                        if (month < 10) { month = "0" + month; }
+                        today = day + '-' + month + '-' + today.getFullYear();
+
+                        $("#PolicyExpiryDate").val(today);
+                    }
+                    else { $("#ErPolicyExpiryDate, #ErDateofPurchaseofCar, #ErManufactureDate").show().addClass('DetailsError'); }
+
+                    if (data.RegistrationDate != null && data.RegistrationDate != "") { $("#DateofPurchaseofCar, #DOPCRenew").val(data.RegistrationDate); }
+                    else { $("#DateofPurchaseofCar, #DOPCRenew").val("");  $("#ErDateofPurchaseofCar, #ErDOPCRenew").show().addClass('DetailsError'); }
+
+                    //$('#DateofPurchaseofCar').bootstrapMaterialDatePicker(
+                    //{
+                    //    time: false, clearButton: true, format: 'DD-MM-YYYY',
+                    //    minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+                    //    maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+                    //    currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+                    //    onSelect: function () { myfunction(); }
+                    //});
+
+                    $("#PolicyExpiryDate").datepicker("refresh");
+                    $("#RegistrationNo").val(RegNo);
+                    //CalDifference();
+                    SetInputValue();
+                    $(".quickSection").hide();
+                    $(".detailSection").show();
+                    $(".DetailsError").show();
+                }
+                    //else if (FlagRegNoValid == 1 && data.VariantId != 0) {
+                    //    $("#PreLoader").hide();
+                    //    var EMsg ="Please Enter Valid "+ ProductName+" Registration Number."
+                    //    $("#RegistrationNoError").show().html(EMsg);
+                    //    return false;
+                    //    //$(".back").click();
+                    //}
+                else {
+                    IsFastLane = "False";
+                    $(".quickSection").hide();
+                    $(".detailSection").show();
+                    validationMsg = "Your Vehicle Details Not Found. Please Enter Manually";
+                    $("#MakeModel").val("");
+                    $("#MakeModelID").val(0);
+                    //$('#VehicleDetailsError').html(validationMsg).slideUp().slideDown();
+                    SetDefaultValue();
+                    TwoWheelerTypeRenew();
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                SetDefaultValue();
+                TwoWheelerTypeRenew();
+            }
+        });
+    }
+    function GetFastLane1(RegNo) {
+        $('#divDOPCRenew').show();
+        $('#divDOPCNew').hide();
+        var data1 = {
+            "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+            "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+            "RegistrationNumber":RegNo
+        }
+        var obj_horizon_data = Horizon_Method_Convert("/quote/vehicle_info",data1,"POST");
+
+        $.ajax({
+            url: obj_horizon_data['url'],
+            data: JSON.stringify(obj_horizon_data['data']),
+            type: "POST",
+            dataType: "json",
+            traditional: true,
+            contentType: "application/json; charset=utf-8",
+            success: function (data,e) {
+                console.log(data);
+                if (ProductName == "Car" && data.VariantId > 50000) { // Checking Invalid Bike Registration Number
+                    FlagRegNoValid = 1;
+                }
+                if (ProductName == "Bike" && data.VariantId < 50000 && data.VariantId > 100000) { // Checking Invalid Car Registration Number
+                    FlagRegNoValid = 1;
+                }
+                if (ProductName == "CV" && data.VariantId < 100001) { // Checking Invalid CV Registration Number
+                    FlagRegNoValid = 1;
+                }
+                if (data.status == "Success" && FlagRegNoValid != 1 ) {
+                    $("#FastlaneMsg").show();
+                    //All Details Not Null
+                    //$(".quickSection").hide();
+                    //$(".detailSection").show();
+                    $("#TwoWheelerType").val("renew");
+                    if (data.Make_Name == "" || data.Make_Name == null || data.ModelName == "" || data.ModelName == null) {
+                        $("#ErMakeModel").show().addClass('DetailsError');
+                    }
+                    else {
+                        varcarmodel = data.ModelName;
+                        $("#MakeName").val(data.Make_Name);
+                        ModelSelected = data.ModelName;
+                        $("#ModelName").val(data.ModelName);
+                        $("#MakeModel").val(data.Make_Name + ', ' + data.ModelName);
+                        $("#MakeModelID").val(data.ModelID);
+                        //if (ProductName == "Car") { CallFuelOnModelSelect(data.ModelName); }
+                    }
+
+                    if (data.FuelName != null && data.FuelName != "") {
+                        FuelSelected = (data.FuelName).toUpperCase();
+                        //CallFuelOnModelSelect(data.ModelID);
+                        if (ProductName == "Car") { CallFuelOnModelSelect(data.ModelID); }
+                        //$("#FuelType").val(data.FuelName);
+                        //$('#FuelType :selected').text(data.FuelName);
+                        //$("#FuelSelected").val(data.FuelName);
+                    }
+                    else { $("#ErFuelType").show().addClass('DetailsError');  }
+
+                    if (data.VariantId != null && data.VariantId != 0 && data.VariantId != "0" && data.VariantId >= 0) {
+
+                        VariantIDSelected = data.VariantId;
+                        $("#VariantID").val(VariantIDSelected).removeClass('Unselected');
+                        if (ProductName == "Car") {
+                            $("#CarVariantID").val(VariantIDSelected);
+                            if (data.ModelName != null && data.ModelName != "" && data.FuelName != null && data.FuelName != "") {
+                                $("#MakeModelID").val(data.ModelID);
+                                //CallVariantOnModelNFuelSelect(data.ModelName, data.FuelName); // Temporary Change For Variant List on 16-02-2018
+                                //CallVariantOnModelSelect(data.ModelID);
+                                //$("#VariantID").val(VariantIDSelected);
+                            }
+                            else { $("#ErVariantID").show().addClass('DetailsError'); }
+                        }
+                        if (ProductName == "Bike") {
+                            $("#TwoWheelerVariantID").val(VariantIDSelected);
+                            //Here data.ModelID != null Have to Check
+                            if (data.ModelName != null && data.ModelName != "") {
+                                $("#MakeModelID").val(data.ModelID);
+                                //CallVariantOnModelSelect(data.ModelID);
+                                ///$("#VariantID").val(VariantIDSelected);
+                            }
+                            else { $("#ErVariantID").show().addClass('DetailsError'); }
+                        }
+                    }
+                    else {
+                        $("#ErVariantID").show().addClass('DetailsError');
+                        $("#VariantID").empty();
+                        $("#VariantID").append('<option value="0">Select Variant</option>');
+                        $('label[for=VariantID], input#VariantID').hide();
+                    }
+
+                    if (data.CityofRegitration != null && data.CityofRegitration != "") {
+                        strcity = RegNo.slice(0, 4);
+                        strcity = "(" + strcity + ") " + data.citycamal;
+                        $("#CityofRegitration").val(strcity);
+                        $('#CityofRegitrationID').val(data.PD_VehicleCity_Id);
+                        //$("#spnCityofRegitration").text(data.CityofRegitration);
+                    }
+                    else { $("#ErCityofRegitration").show().addClass('DetailsError'); }
+
+                    $('#DOPCRenew').bootstrapMaterialDatePicker({
+                        time: false, clearButton: true, format: 'DD-MM-YYYY',
+                        minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+                        maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+                        currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+                        onSelect: function () { myfunction(); }
+                    });
+
+                    $("#PolicyExpiryDate").bootstrapMaterialDatePicker(
+                    {
+                        time: false, clearButton: true, format: 'DD-MM-YYYY',
+                        minDate: moment().subtract(120, 'days'), // (ProductName =="Bike" ? moment().subtract(180, 'days') : moment()), //
+                        maxDate: moment().add(60, 'days'), // 60 Days From The Current Day
+                        defaultDate: moment(),
+                        onselect: function () { myfunction1(); }
+                    });
+
+                    //Check Whether Year Valid Or Not // For Format FEB2014
+                    if (data.Year != "NULL" && data.Year != "" && data.Year !=null && data.Year != "0") // Year Validate
+                    {
+                        var CurMonth =  1; // new Date().getMonth() + 1; //
+                        if (CurMonth < 10) { CurMonth = "0" + CurMonth; }
+
+                        if (data.ManufactureYear.substring(0,3)!= null) {
+                            var Month = GetMonthNum(data.ManufactureYear.substring(0,3))
+
+                            $("#ManufactureDate").val(Month + "-" + data.Year);
+                            $('#ManufactureYear').val(data.ManufactureYear.substring(3,7));
+                            $('#ManufactureMonth').val(Month);
+                        }
+
+                        VarDateofPurchaseofCar = data.RegistrationDate;
+                        var today = new Date();
+                        var month = today.getMonth() + 1;
+                        var day = today.getDate();
+                        if (day < 10) { day = "0" + day; }
+                        if (month < 10) { month = "0" + month; }
+                        today = day + '-' + month + '-' + today.getFullYear();
+
+                        $("#PolicyExpiryDate").val(today);
+                    }
+                    else { $("#ErPolicyExpiryDate, #ErDateofPurchaseofCar, #ErManufactureDate").show().addClass('DetailsError'); }
+
+                    if (data.RegistrationDate != null && data.RegistrationDate != "") { $("#DateofPurchaseofCar, #DOPCRenew").val(data.RegistrationDate); }
+                    else { $("#DateofPurchaseofCar, #DOPCRenew").val("");  $("#ErDateofPurchaseofCar, #ErDOPCRenew").show().addClass('DetailsError'); }
+
+                    //$('#DateofPurchaseofCar').bootstrapMaterialDatePicker(
+                    //{
+                    //    time: false, clearButton: true, format: 'DD-MM-YYYY',
+                    //    minDate: moment().subtract(15, 'years'), // 15 Years Before The Current Day // moment().subtract(15, 'y'),
+                    //    maxDate: moment().subtract(6, 'months'),// 6 Months Before The Current Day
+                    //    currentDate: moment().subtract(12, 'months'), // 1 Year Before The Current Day
+                    //    onSelect: function () { myfunction(); }
+                    //});
+
+                    $("#PolicyExpiryDate").datepicker("refresh");
+                    $("#RegistrationNo").val(RegNo);
+                    //CalDifference();
+                    SetInputValue();
+                    $(".quickSection").hide();
+                    $(".detailSection").show();
+                    $(".DetailsError").show();
+                }
+                else if (FlagRegNoValid == 1 && data.VariantId != 0) {
+                    $("#PreLoader").hide();
+                    var EMsg ="Please Enter Valid "+ ProductName+" Registration Number."
+                    $("#RegistrationNoError").show().html(EMsg);
+                    return false;
+                    //$(".back").click();
+                }
+                else {
+                    IsFastLane = "False";
+                    $(".quickSection").hide();
+                    $(".detailSection").show();
+                    validationMsg = "Your Vehicle Details Not Found. Please Enter Manually";
+                    $("#MakeModel").val("");
+                    $("#MakeModelID").val(0);
+                    //$('#VehicleDetailsError').html(validationMsg).slideUp().slideDown();
+                    SetDefaultValue();
+                    TwoWheelerTypeRenew();
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                SetDefaultValue();
+                TwoWheelerTypeRenew();
+            }
+        });
+    }
+    function CheckType(type) {
+        FlagRegNoValid = 0;
+        $("#VehicleDetailsError").html("").hide();
+        $("#DateofPurchaseofCar").val("");
+        //$("#DateofPurchaseofCar").datepicker("refresh");
+        //$('#DateofPurchaseofCar').bootstrapMaterialDatePicker('destroy');
+        $("#TPCompPlan").show();
+        if (type == "New") {
+            twowheelerType = "NEW";
+            if (ProductName == 'Car') { InsPlanTypeYear = 3; InsurerPlanType("CompTP");}
+            else { InsPlanTypeYear = 5; InsurerPlanTypeBike('1CH_4TP',type); $("#BikeNew").show(); $("#BikeRenew").hide();}
+
+            $('#HaveNCBCertificate').val("No");
+            $("#PolicyExpiryDate").datepicker("refresh");
+            SetDefaultValue();
+            TwoWheelerTypeNew();
+            //InsurerPlanType("CompTP");
+        }
+        else if (type == "Renew") {
+            InsPlanTypeYear = 1;
+
+            $('#ManufactureYear').val("");
+            $('#ManufactureMonth').val("");
+            SetDefaultValue();
+            TwoWheelerTypeRenew();
+			//InsurerPlanType("Comp");
+            if (ProductName == 'Car') { InsurerPlanType("Comp");}
+            else { InsurerPlanTypeBike('1CH_0TP',type);  $("#BikeNew").hide(); $("#BikeRenew").show(); }
+        }
+        else if (type == "FastLane") {
+            var Text_Pattern = new RegExp('^[a-zA-Z]+$');
+            var Number_Pattern = new RegExp('^[0-9]*$'); 
+            var AlphaNum_Pattern = new RegExp('^[0-9a-zA-Z]*$');
+
+            if ($("#Reg1").val() == "" || $("#Reg1").val().length != 2 || (Text_Pattern.test($("#Reg1").val()) == false)) {
+                RegNoblockError('Reg1');
+            }
+            else {  $("#Reg1").removeClass('ErrorClass'); }
+
+            if ($("#Reg2").val() == "" || $("#Reg2").val().length != 2 || (AlphaNum_Pattern.test($("#Reg2").val()) == false)) {
+                RegNoblockError('Reg2');
+            }
+            else if(Text_Pattern.test($("#Reg2").val()) == true) { 
+                RegNoblockError('Reg2');
+            }
+            else {  $("#Reg2").removeClass('ErrorClass');}
+
+            if ($("#Reg3").val() == "" || $("#Reg3").val().length < 2 || $("#Reg3").val().length > 3 || (Text_Pattern.test($("#Reg3").val()) == false)) {
+                RegNoblockError('Reg3');
+            }
+            else {  $("#Reg3").removeClass('ErrorClass'); }
+
+            if ($("#Reg4").val() == "" || $("#Reg4").val().length != 4 || (Number_Pattern.test($("#Reg4").val()) == false)) {
+                RegNoblockError('Reg4');
+            }
+            else {  $("#Reg4").removeClass('ErrorClass'); }
+
+            var RegNumber = $("#Reg1").val() + $("#Reg2").val() + $("#Reg3").val() + $("#Reg4").val();
+            $("#RegistrationNo").val(RegNumber);
+
+            InsPlanTypeYear = 1;
+            twowheelerType = "RENEW";
+            $("#TwoWheelerType").val("RENEW");
+            $('#divDOPCRenew').show();
+            $('#divDOPCNew').hide();
+            $("#lblCompTP").hide();
+            $("#RegistrationNoError").hide().html("");
+            RegNo = $("#RegistrationNo").val().toUpperCase();
+            var pattern1 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$');//new RegExp('^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$');
+            var Result1 = pattern1.test(RegNo);
+            var pattern2 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{4}$');
+            var Result2 = pattern2.test(RegNo);
+            var pattern3 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z]{1}[0-9]{4}$');
+            var Result3 = pattern3.test(RegNo);
+            var pattern4 = new RegExp('^[A-Z]{2}[A-Za-z0-9]{2}[A-Z]{2}[0-9]{4}$');
+            var Result4 = pattern4.test(RegNo);
+
+            //var pattern31 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z]{1}[0-9]{4}$');
+            //var pattern32 = new RegExp('^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$');
+            //var Result3 = pattern31.test(RegNo) || pattern32.test(RegNo);
+            if (RegNo != "" && !(RegNo.length < 8 && RegNo.length > 11)) {
+                if ((RegNo.length == 10 && (Result1 == true  || Result4 == true)) || (RegNo.length == 11 && Result2 == true) ||(RegNo.length == 9 && Result3 == true)) {
+                    twowheelerType = "RENEW";
+                    IsFastLane = 'True';
+                    $('#RegistrationNoError').html("").hide();
+                    $("#PreLoader").show();
+                    //SetDefaultValue();
+                    GetFastLane(RegNo);
+                    SetInputValue();
+                }
+                else {
+                    RegNoError();
+                }
+            }
+            else {
+                RegNoError();
+            }
+			//InsurerPlanType("Comp");
+            if (ProductName == 'Car') { InsurerPlanType("Comp");}
+            else { InsurerPlanTypeBike('1CH_0TP','Bike'); }
+        }
+        SetInputValue();
+        SetTextInsPlan(InsPlanTypeYear);
+    }
+    function RegNoblockError(id)
+    {
+        $("#"+id).addClass('ErrorClass');
+        var validationMsg = "Please Enter Valid Registration Number.";
+        $('#RegistrationNoError').html(validationMsg).show();
+        return false;
+    }
+    function RegNoError()
+    {
+        $("#RegistrationNo").addClass('ErrorClass');
+        var validationMsg = "Please Enter Valid Registration Number.";
+        $('#RegistrationNoError').html(validationMsg).slideUp().slideDown();
+        return false;
+    }
+    function RegisterName(type)
+    {
+        if (type == "Company") {
+            alert("This option is not available.");
+        }
+        $("#RegisterintheName").val("individual"); $("#lblVehRegTypeInd").addClass('btngrpSelected'); $("#lblVehRegTypeCom").removeClass('btngrpSelected');
+
+        //if (type == "Company"){ $("#RegisterintheName").val("corporate"); $("#lblVehRegTypeInd").removeClass('btngrpSelected'); $("#lblVehRegTypeCom").addClass('btngrpSelected'); }
+        //else{ $("#RegisterintheName").val("individual"); $("#lblVehRegTypeInd").addClass('btngrpSelected'); $("#lblVehRegTypeCom").removeClass('btngrpSelected'); }
+    }
+    function InsurerPlanType(type)
+    {
+        if (type == "TP") {
+            is_TP = "yes";
+            InsPlanType = "TP";
+            $(".NOTP").hide();
+            $("#lblTP").addClass('btngrpSelected');
+            $("#lblComp").removeClass('btngrpSelected');
+            $("#lblCompTP").removeClass('btngrpSelected');
+            if (twowheelerType == "NEW") { VehicleInsuranceSubtype = "0CH_"+InsPlanTypeYear+"TP";  }
+            else {VehicleInsuranceSubtype = "0CH_1TP";}
+        }
+        else if(type == "Comp")
+        {
+            InsPlanType = "Comp";
+            $(".NOTP").show();
+            $("#lblTP").removeClass('btngrpSelected');
+            $("#lblComp").addClass('btngrpSelected');
+            $("#lblCompTP").removeClass('btngrpSelected');
+            if (twowheelerType == "NEW") { VehicleInsuranceSubtype = InsPlanTypeYear+"CH_0TP";  }
+            else {VehicleInsuranceSubtype = "1CH_0TP";}
+        }
+        else {
+            InsPlanType = "CompTP";
+            $(".NOTP").show();
+            $("#lblTP").removeClass('btngrpSelected');
+            $("#lblComp").removeClass('btngrpSelected');
+            $("#lblCompTP").addClass('btngrpSelected');
+            if (twowheelerType == "NEW") { VehicleInsuranceSubtype = "1CH"+"_"+(InsPlanTypeYear - 1)+"TP";  }
+            else { VehicleInsuranceSubtype = "";}
+        }
+        console.log("VehicleInsuranceSubtype:"+VehicleInsuranceSubtype);
+        $("#VehicleInsuranceSubtype").val(VehicleInsuranceSubtype);
+    }
+    function InsurerPlanTypeBike(type,VehType)
+    {
+        VehicleInsuranceSubtype = type;
+        if (VehType == 'New') {
+            $(".BikeNew").removeClass('btngrpSelected');
+            $("#lbl_" + type).addClass('btngrpSelected');
+        }
+        else if(VehType == 'Renew')
+        {
+            $(".BikeRenew").removeClass('btngrpSelected');
+            $("#lbl_" + type).addClass('btngrpSelected');
+        }
+    }
+    function myfunction() {
+        if ($('#DateofPurchaseofCar').val() == "") { }
+        else {
+            var temp = $('#DateofPurchaseofCar').val().split('-');
+
+            var minManufactureDate=parseInt(temp[1]) + '-' + parseInt(temp[2]-1);
+            var maxManufactureDate=parseInt(temp[1]) + '-' + parseInt(temp[2]);
+
+            $('#ManufactureYear').val(parseInt(temp[2]));
+            $("#ManufactureMonth").val(parseInt(temp[1]));
+            queryDate = parseInt(temp[1]) + '-' + parseInt(temp[2]);
+            $('#ManufactureDate').bootstrapMaterialDatePicker({ dateFormat: 'mm-yy' });
+            //Khushbu Gite 20181005 Set min and max year and month for manufacture date
+            $('#ManufactureDate').bootstrapMaterialDatePicker('setMinDate', minManufactureDate);
+            $('#ManufactureDate').bootstrapMaterialDatePicker('setMaxDate', maxManufactureDate);
+            $('#ManufactureDate').bootstrapMaterialDatePicker('setDate', queryDate);
+            $('#ManufactureDate').parent().removeClass('is-empty');
+            $('#ErManufactureDate').hide().html("");
+        }
+        //Commented On 08-02-2018 By Pratik
+        //if (twowheelerType == "RENEW" && $("#DateofPurchaseofCar").val() != "") {
+        //    var dates = $("#DateofPurchaseofCar").val().split('-');
+        //    var purchase_date = moment([dates[2] - 0, (dates[1] - 0) - 1, dates[0] - 0]);
+        //    var expiry_date = moment([moment().year(), purchase_date.month(), purchase_date.date() - 1])
+        //    if (moment().diff(expiry_date, 'days') <= 0) { $("#PolicyExpiryDate").bootstrapMaterialDatePicker('setDate', expiry_date._d); }
+        //    else { $("#PolicyExpiryDate").bootstrapMaterialDatePicker('setDate', moment()._d); }
+        //    $('#PolicyExpiryDate').parent().removeClass('is-empty');
+        //}
+        //CalDifference();
+    }
+    function myfunction1_prev() {
+        if ($('#PolicyExpiryDate').val() == "") {
+            $('#PolicyExpiryDate').addClass('errorCheckBox');
+            $('#PolicyExpiryDate').removeClass('SuccessClass');
+        }
+        else {
+            var arr = $("#PolicyExpiryDate").val().split('-');
+            var Days =  (((new Date(Date.now())).getTime()) -((new Date(arr[1]+"-"+arr[0]+"-"+arr[2])).getTime())) / (1000 * 60 * 60 * 24);
+
+            if (ProductName == "Bike") {
+                if (Math.floor(Days) > 90) { $("#divNCB").hide();  $('#HaveNCBCertificate').val("No"); $("#NoClaimBonusPercent").val("0"); }
+                else { $("#divNCB").show();}
+            }
+            var VIST = VehicleInsuranceSubtype.split('CH_');
+            if (VIST[0] == '0') {  $("#divNCB").hide(); }
+            $('#PolicyExpiryDate').addClass('SuccessClass');
+            $('#PolicyExpiryDate').removeClass('errorCheckBox');
+            $('#PreviousInsurer').trigger('click');
+            //$('#PreviousInsurer option').toggle();
+        }
+        //Commented On 08-02-2018 By Pratik
+        //CalDifference();
+    }
+    function myfunction1() {
+        var ErrorFlag = false;
+
+        var DOPCar = $("#DateofPurchaseofCar").val().split('-');
+        DOPCar = DOPCar[2] + "-" + DOPCar[1] + "-" + DOPCar[0];
+
+        var MDate =  $("#ManufactureDate").val().split('-');
+        MDate = MDate[1] + "-" + MDate[0] + "-01";
+
+        var PEDate = $("#PolicyExpiryDate").val().split('-');
+        PEDate = PEDate[1] + "-" + PEDate[0] + "-" + PEDate[2];
+
+        if (((((new Date(DOPCar)).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24)) > 0) {
+            ErrorFlag = true;
+        }
+        else if (((((new Date(MDate)).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24)) > 0) {
+            ErrorFlag = true;
+        }
+
+        if ($('#PolicyExpiryDate').val() == "" || ErrorFlag == true) {
+            $('#PolicyExpiryDate').addClass('errorCheckBox');
+            $('#PolicyExpiryDate').removeClass('SuccessClass');
+        }
+        else {
+            var Days =  (((new Date(Date.now())).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24);
+
+            //if (ProductName == "Bike") {
+            //    if (Math.floor(Days) > 90) { $("#divNCB").hide();  $('#HaveNCBCertificate').val("No"); $("#NoClaimBonusPercent").val("0"); }
+            //    else { $("#divNCB").show();}
+            //}
+
+            if (Math.floor(Days) > 90) { $("#divNCB").hide();  $('#HaveNCBCertificate').val("No"); $("#NoClaimBonusPercent").val("0"); }
+            else { $("#divNCB").show();}
+
+            var VIST = VehicleInsuranceSubtype.split('CH_');
+            if (VIST[0] == '0') {  $("#divNCB").hide(); }
+            $('#PolicyExpiryDate').addClass('SuccessClass');
+            $('#PolicyExpiryDate').removeClass('errorCheckBox');
+            $('#PreviousInsurer').trigger('click');
+            //$('#PreviousInsurer option').toggle();
+            if (Math.floor(Days) > 0 && ProductID == 1 && is_TP == "no") {
+                alert("Your Policy will not issue instantly. It will issue after inspection");
+            }
+        }
+        //Commented On 08-02-2018 By Pratik
+        //CalDifference();
+    }
+    function MakeModelChange() {
+        $('#divslide1Result').html("").hide();
+        $('#CNG_LPG_Kit').hide();
+        var arr = $('#MakeModel').val().split(',');
+        if (arr[1] != undefined) { arr[1] =(arr[1]).trim(); }
+        ModelSelected = arr[1];
+        $("#MakeName").val(arr[0]);
+        $("#ModelName").val(arr[1]);
+
+        $('.ErrorMsg').removeClass('DetailsError');
+
+        if ($('#MakeModel').val() != null && arr[1] != null) {
+            var ModelID = $("#MakeModelID").val();
+            //if (ProductName == "Car") { CallFuelOnModelSelect(ModelSelected); }
+            //if (ProductName == "Car") { CallFuelOnModelSelect(ModelID); }
+            //else { CallVariantOnModelSelect($('#MakeModelID').val()); }
+            CallFuelOnModelSelect(ModelID);
+        }
+        else {
+            $('#MakeModel').addClass('errorCheckBox');
+            $("#MakeName, #ModelName, #MakeModelID").val("");
+            $("#FuelType").empty().append('<option value="0">Select Fuel Type</option>');
+            $('label[for=FuelType], input#FuelType').hide();
+            $("#VariantID").empty().append('<option value="0">Select Variant</option>');
+            $('label[for=VariantID], input#VariantID').hide();
+        }
+        FuelSelected = "";
+    }
+	
+    /*function CallVariantOnModelSelect(ModelID) {
+        var VariantListURL = '/vehicles/GetFuelVariant?Model_ID='+ModelID+'&Product_Id='+ProductID;
+        var obj_horizon_data = Horizon_Method_Convert(VariantListURL,'',"GET");
+        $.ajax({
+            type: 'GET',
+            url: 'TwoWheelerInsurance/call_horizon_get',
+            data: { 'method_name': '/vehicles/GetFuelVariant?Model_ID=' + ModelID + '&Product_Id=' + ProductID,'client_id':'2'},
+
+            dataType: "json",
+            success: function (Data) {
+                FuelList = Data['FuelList'];
+                VariantList = Data['VariantList'];
+                if (ProductName == "Bike") {
+                    $("#FuelType").empty().removeClass('Unselected');;
+                    $("#FuelType").append('<option value="Petrol">PETROL</option>');
+                    $('label[for=FuelType], input#FuelType').show();
+                    $("#FuelType").parent().removeClass('is-empty');
+                    $('#ErFuelType').html("").hide();
+                }
+
+                //New Code Starts
+                var FilterVariantList = [];
+                for(var i=0; i < VariantList.length; i++){
+                    if((VariantList[i].Fuel_Name.toString().toLowerCase()).indexOf(FuelSelected.toLowerCase())>-1){
+                        FilterVariantList.push(VariantList[i]);
+                    }
+                }
+                $("#VariantID").empty().append('<option value="0">Select Variant</option>');
+                if (FilterVariantList.length <= 0) {  $('#VehicleDetailsError').html("Variant Not Found").slideUp().slideDown(); }
+                else {
+                    $.each(FilterVariantList, function (i) {
+                        var optionhtml = '<option value="' + FilterVariantList[i].Vehicle_ID + '">' + FilterVariantList[i].Variant_Name + ' (' + FilterVariantList[i].Cubic_Capacity + 'CC)</option>';
+                        $("#VariantID").append(optionhtml);
+                        if (FilterVariantList.length == 1) {
+                            $('#VariantID').val(FilterVariantList[i].Vehicle_ID).attr("selected", "selected");
+                            $('#VariantID').removeClass('Unselected');
+                            $('#ErVariantID').html("").hide();
+                            $('label[for=VariantID], input#VariantID').show();
+                            $('#CarVariantID').val($('#VariantID').val());
+                            $('#TwoWheelerVariantID').val($('#VariantID').val());
+                        }
+                    });
+
+                    if (VariantIDSelected != null && VariantIDSelected != "") {
+                        $('#VariantID option[value="'+ VariantIDSelected +'"]').attr('selected', true);
+                        $("#VariantID").val(VariantIDSelected);
+                        console.log("VariantID: "+$("#VariantID").val());
+                        $('#TwoWheelerVariantID').val($('#VariantID').val());
+                        $('#VariantID').parent().removeClass('is-empty');
+                        $('label[for=VariantID], input#VariantID').show();
+                    }
+                }
+                //New Code Ends
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) { }
+        });
+    }
+    */
+	
+	function CallVariantOnModelNFuelSelect(Model, FuelType) {
+        var FilterVariantList = [];
+        for (var i = 0; i < VariantList.length; i++) {
+            if ((VariantList[i].Fuel_Name.toString().toLowerCase()).indexOf(FuelType.toLowerCase()) > -1) {
+                FilterVariantList.push(VariantList[i]);
+            }
+        }
+        $("#VariantID").empty();
+        $("#VariantID").append('<option value="0">Select Variant</option>');
+        if (FilterVariantList.length <= 0) { $('#divslide1Result').html("Variant Not Found").slideUp().slideDown(); }
+        else {
+            $.each(FilterVariantList, function(i) {
+                var optionhtml = '<option value="' + FilterVariantList[i].Vehicle_ID + '">' + FilterVariantList[i].Variant_Name + ' (' + FilterVariantList[i].Cubic_Capacity + 'CC)</option>';
+                $("#VariantID").append(optionhtml);
+                if (FilterVariantList.length == 1) {
+                    $('#VariantID').val(FilterVariantList[i].Vehicle_ID).attr("selected", "selected");
+                    $('#VariantID').removeClass('Unselected');
+                    $('#CarVariantID').val($('#VariantID').val());
+                    $('#ErVariantID').html("").hide();
+                    $('#VariantID').parent().removeClass('is-empty');
+                    $('label[for=VariantID], input#VariantID').show();
+                }
+
+            });
+            //For FastLane
+            if (VariantIDSelected != null && VariantIDSelected != "") {
+                $('#VariantID option[value="'+ VariantIDSelected +'"]').attr('selected', true);
+                console.log("VariantID: "+$("#VariantID").val());
+                $("#VariantID").val(VariantIDSelected);
+                $('#CarVariantID').val($('#VariantID').val());
+                $('#VariantID').parent().removeClass('is-empty');
+                $('label[for=VariantID], input#VariantID').show();
+            }
+        }
+    }
+    function CallFuelOnModelSelect(ModelID) {
+        var VariantListURL = '/vehicles/GetFuelVariant?Model_ID='+ModelID+'&Product_Id='+ProductID;
+        var obj_horizon_data = Horizon_Method_Convert(VariantListURL,'',"GET");
+
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            //Calling .net  Method
+            url: 'TwoWheelerInsurance/call_horizon_get',
+            data: { 'method_name': '/vehicles/GetFuelVariant?Model_ID=' + ModelID + '&Product_Id=' + ProductID,'client_id':'2'},
+
+            ////Calling Node Method
+            //url: Get_URL + '/vehicles/GetFuelVariant?Model_ID=' + ModelID,
+            success: function (Data) {
+                FuelList = Data['FuelList'];
+                VariantList = Data['VariantList'];
+                $("#FuelType").empty();
+                $("#FuelType").append('<option value="0">Select Fuel Type</option>');
+                if (FuelList.length <= 0) {
+                    //$('#VehicleDetailsError').html("Fuel Type Not Found").slideUp().slideDown();
+                    $("#VariantID").empty();
+                    $("#VariantID").append('<option value="0">Select Variant</option>');
+                }
+                else {
+                    $.each(FuelList, function (i) {
+                        var optionhtml = '<option value="' + FuelList[i] + '">' + FuelList[i] + '</option>';
+                        $("#FuelType").append(optionhtml);
+                        if (FuelList.length == 1) {
+                            $('#FuelType').val(FuelList[i]).attr("selected", "selected").removeClass('Unselected');
+                            //$("#FuelType").append('<option value="Petrol">Petrol</option>');
+                            $('label[for=FuelType], input#FuelType').show();
+                            $("#FuelType").parent().removeClass('is-empty');
+                            $('#ErFuelType').html("").hide();
+                            //CallVariantOnModelNFuelSelect(ModelID, FuelList[i]);
+                            //CallVariantOnModelSelect(ModelID);
+                        }
+                    });
+                    if (($('#FuelType').text()).indexOf("Petrol") > 0 || ($('#FuelType').text()).indexOf("PETROL") > 0) { // || ($('#FuelType').text()).indexOf("Diesel") > 0) {
+                        $("#FuelType").append('<option name="PetrolCNG" value="Petrol">EXTERNAL FITTED CNG</option>');
+                        $("#FuelType").append('<option name="PetrolLPG" value="Petrol">EXTERNAL FITTED LPG</option>');
+                        //$("#FuelType").append('<option name="PetrolCNG" value="Petrol">External Fitted CNG</option>');
+                        //$("#FuelType").append('<option name="PetrolLPG" value="Petrol">External Fitted LPG</option>');
+                    }
+                    if (FuelSelected != null && FuelSelected != "") {
+                        $("#FuelType").removeClass('Unselected');
+                        $('label[for=FuelType], input#FuelType').show();
+                        if (IsExternalBifuel == true) {
+                            if (BiFuelTypeVal == "cng") { $('select[id="FuelType"] option[name="PetrolCNG"]').attr("selected", "selected"); }
+                            if (BiFuelTypeVal == "lpg") { $('select[id="FuelType"] option[name="PetrolLPG"]').attr("selected", "selected"); }
+                        }
+                        else {
+                            if (FuelSelected == "Petrol" || FuelSelected == "PETROL" || FuelSelected == "CNG"|| FuelSelected == "Diesel" || FuelSelected == "DIESEL") {
+                                $('select[id="FuelType"] option[value="' + FuelSelected +'"]').attr("selected", "selected");
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) { }
+        });
+    }
+    function CalDifference() {
+        if ($("#PolicyExpiryDate").val() != "" && $("#DateofPurchaseofCar").val() != "") {
+            var DPOC = $("#DateofPurchaseofCar").val().split('-');
+            var DPCDate = new Date(DPOC[1] + "-" + DPOC[0] + "-" + DPOC[2]);
+            var PED = $("#PolicyExpiryDate").val().split('-');
+            var PEDDate = new Date(PED[1] + "-" + PED[0] + "-" + PED[2]);
+            var Diff = new Date(PEDDate - DPCDate);
+            var Years = Math.floor(Diff / 31536000000);
+            var TotalDays = Diff / 1000 / 60 / 60 / 24;
+            var Year = Math.round(TotalDays / 365.2425 * 10) / 10;
+
+
+            //switch (Year) {
+            //    case CheckYearRange(Year, 0, 1.5): ncbclaim(0); break; // 0-1.5
+            //    case CheckYearRange(Year, 1.6, 2.5): ncbclaim(20); break; // 1.6-2.5
+            //    case CheckYearRange(Year, 2.6, 3.5): ncbclaim(25); break;//2.6-3.5
+            //    case CheckYearRange(Year, 3.6, 4.5): ncbclaim(35); break;//3.6-4.5
+            //    case CheckYearRange(Year, 4.6, 5.5): ncbclaim(45); break;//4.6-5.5
+            //    case CheckYearRange(Year, 5.6, 16): ncbclaim(50); break;//5.6-16
+            //        //default: ncbclaim(50); break;
+            //}
+        }
+
+        if ($("#DateofPurchaseofCar").val() != "" && $("#ManufactureDate").val() != "") {
+
+            var DPC = $("#DateofPurchaseofCar").val().split('-');
+            var DPCDate = DPC[1] + "-" + DPC[0] + "-" + DPC[2];
+            var MD = $("#ManufactureDate").val().split('-');
+            var MDDate = MD[0] + "-" + "01" + "-" + MD[1];
+            var CompareRenew = false;
+            CompareRenew = new Date(MDDate) > new Date(DPCDate) == true;
+            if (CompareRenew) {
+                $('#VehicleDetailsError').html('Date Of First Registration Must Be Greater Than The Vehicle Manufacturing Year & Month.').slideUp().slideDown();
+                return false;
+            }
+            else { $('#VehicleDetailsError').html("").hide(); }
+        }
+    }
+    function CheckYearRange(y, n, m) {
+        if (y >= n && y <= m) { return y; }
+        else { return !y; }
+    }
+    function ncbclaim(ncbpercentage) {
+        $('#NoClaimBonusPercent').val(ncbpercentage);
+        $('#lblHaveNCBCertificate-Yes').html($('#NoClaimBonusPercent').val() + ' %, NCB ' + '  <span class="caret"></span>').addClass('btn-primarySelected');
+    }
+    $('#chkAuthorize').click(function () {
+        if (($(this).attr("checked")) == false) {
+            $(this).addClass('errorCheckBox');
+            $('#divslide7Result').html("Please Select Checkbox For Terms & Conditions.\n").slideUp().slideDown();
+        }
+        else { $(this).removeClass('errorCheckBox'); $('#divslide7Result').html(""); }
+    });
+    $(".next").click(function () {
+        $('#VehicleDetailsError').html("").hide();
+        $(".ErrorMsg").html("");
+        $(".ErrorMsg").removeClass("DetailsError");
+        // $(".DetailsError").html("").hide();
+        Error = 0;
+        if ($('#MakeModelID').val() != "0" && $('#MakeModel').val() != "") {
+            $("#ErMakeModel").hide().html("");
+            if ($('#FuelType').val() == "0" || $('#FuelType').val() == "") {
+                Error++; $("#ErFuelType").show().html("Please Select Fuel Type From List.");
+                $("#VariantID").empty().append('<option value="0">Select Variant</option>');
+            }
+            else {
+                $("#ErFuelType").hide().html("");
+                if (ProductName == "Car") {
+                    if (IsExternalBifuel == true) {
+                        if ($("#ValueOfBiFuelKit").val() >= 10000 && $("#ValueOfBiFuelKit").val() <= 60000) { $("#ErValueOfBiFuelKit").hide().html(""); }
+                        else { Error++; $("#ErValueOfBiFuelKit").show().html("The Value CNG/LPG Kit Should Be Between 10000 & 60000"); }
+                    }
+                }
+                if ($('#VariantID').val() == "0" || $('#VariantID').val() == "" || $('#VariantID').val() <= 0) { Error++; $("#ErVariantID").show().html("Please Select " + ProductName + " Variant From List."); }
+                else { $("#ErVariantID").hide().html(""); }
+            }
+        }
+        else {
+            Error++;
+            $("#ErMakeModel").show().html("Please Enter Proper " + ProductName + " Make And Model.");
+            $("#MakeName, #ModelName, #MakeModelID").val("");
+            $("#FuelType").empty().append('<option value="0">Select Fuel Type</option>');
+            $("#VariantID").empty().append('<option value="0">Select Variant</option>');
+        }
+        //if ($('#FuelType').val() == "0" || $('#FuelType').val() == "") {
+        //    Error++; $("#ErFuelType").show().html("Please Select Fuel Type From List.");
+        //    $("#VariantID").empty().append('<option value="0">Select Variant</option>');
+        //}
+        //else { $("#ErFuelType").hide().html(""); }
+        //if (ProductName == "Car") {
+        //    if (IsExternalBifuel == true) {
+        //        if ($("#ValueOfBiFuelKit").val() >= 10000 && $("#ValueOfBiFuelKit").val() <= 60000) { $("#ErValueOfBiFuelKit").hide().html(""); }
+        //        else { Error++; $("#ErValueOfBiFuelKit").show().html("The Value CNG/LPG Kit Should Be Between 10000 & 60000"); }
+        //    }
+        //}
+        //if ($('#VariantID').val() == "0" || $('#VariantID').val() == "" || $('#VariantID').val() <= 0) { Error++; $("#ErVariantID").show().html("Please Select " + ProductName + " Variant From List."); }
+        //else { $("#ErVariantID").hide().html(""); }
+
+        //if ($("#DateofPurchaseofCar").val() == "") { Error++; $("#ErDateofPurchaseofCar").show().html("Please Select Registration/Invoice Date."); }
+        //else { $("#ErDateofPurchaseofCar").hide().html(""); }
+
+        if (twowheelerType == "NEW") {
+            if ($("#DOPCNew").val() == "") { Error++; $("#ErDOPCNew").show().html("Please Select Registration/Invoice Date."); }
+            else { $("#ErDOPCNew").hide().html(""); }
+        }
+        if (twowheelerType == "RENEW") {
+            if ($("#DOPCRenew").val() == "") { Error++; $("#ErDOPCRenew").show().html("Please Select Registration/Invoice Date."); }
+            else { $("#ErDOPCRenew").hide().html(""); }
+        }
+
+        if ($('#CityofRegitrationID').val() <= 0 || $('#CityofRegitration').val() == "") { Error++; $("#ErCityofRegitration").show().html("Please Enter Place Of Registration From List."); }
+        else { $("#ErCityofRegitration").hide().html(""); }
+
+        if ($("#ManufactureDate").val() == "") { Error++; $("#ErManufactureDate").show().html("Please Select Year - Month Of Registration."); }
+        else {
+            var MD = parseInt(($('#ManufactureDate').val()).substring(3,7));
+            if ( new Date().getFullYear() < MD) { Error++; $("#ErManufactureDate").show().html("Please Select Year Less Than Current Date."); }
+            else if ( (new Date().getFullYear() - 15) > MD) { Error++; $("#ErManufactureDate").show().html("Please Select Year Upto 15 Year From Current Date."); }
+            else {$("#ErManufactureDate").hide().html(""); }
+        }
+
+        //var DateConditionRenew = false;
+        //DateConditionRenew = new Date($("#ManufactureDate").val()) > new Date($("#DateofPurchaseofCar").val()) == true;
+        //if (DateConditionRenew) {
+        //    $('#VehicleDetailsError').html('Date Of First Registration Must Be Greater Than The Vehicle Manufacturing Year & Month.').slideUp().slideDown();
+        //    Error++;
+        //    return false;
+        //}
+
+        var DPC = $("#DateofPurchaseofCar").val().split('-');
+        var DPCDate = DPC[1] + "-" + DPC[0] + "-" + DPC[2];
+        var MD = $("#ManufactureDate").val().split('-');
+        var MDDate = MD[0] + "-" + "01" + "-" + MD[1];
+        SetManuDate();
+        var CompareRenew = false;
+        CompareRenew = new Date(MDDate) > new Date(DPCDate) == true;
+        if (CompareRenew) {
+            $('#VehicleDetailsError').html('Date Of First Registration Must Be Greater Than The Vehicle Manufacturing Year & Month.').slideUp().slideDown();
+            Error++;
+            return false;
+        }
+        if (Error == 0) {
+            $(".detailSection").hide();
+            if (twowheelerType == "NEW") {
+                SmartCalculateQuote();
+                //$(".PersonalDetails").removeClass('hidden');
+            }
+            else { $(".bikeinsurance").removeClass('hidden'); }
+        }
+    });
+    $(".next1").click(function () {
+        Error = 0;
+        //if (!$("#lblPolicyExist-No").hasClass("active") && !$("#lblPolicyExist-Yes").hasClass("active")) {
+        //    $("#lblPolicyExist-No, #lblPolicyExist-Yes").addClass("btnError"); Error++; $("#PolicyExistGroupErMsg").show().html("Please Select Option For Existing Policy");
+        //}
+        //else
+        if (twowheelerType == "RENEW" && IsPolicyExistFlag == "yes") {
+
+            if ($("#PolicyExpiryDate").val() == "") { Error++; $("#ErPolicyExpiryDate").show().html("Please Select Policy Expiry Date"); }
+            else {
+                var DOPCar1 = $("#DateofPurchaseofCar").val().split('-');
+                DOPCar = DOPCar1[2] + "-" + DOPCar1[1] + "-" + DOPCar1[0];
+
+                var MDate1 =  $("#ManufactureDate").val().split('-');
+                MDate = MDate1[1] + "-" + MDate1[0] + "-01";
+
+                var PEDate1 = $("#PolicyExpiryDate").val().split('-');
+                PEDate = PEDate1[2] + "-" + PEDate1[1] + "-" + PEDate1[0];
+
+                if (((((new Date(DOPCar)).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24)) > 0) {
+                    Error++; $("#ErPolicyExpiryDate").show().html("Policy Expiry Date Should greater than Date of Purchase of "+ ProductName);
+                }
+                else if (((((new Date(MDate)).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24)) > 0) {
+                    Error++; $("#ErPolicyExpiryDate").show().html("Policy Expiry Date Should greater than Manufacturing Date");
+                }
+
+                var Days =  (((new Date(Date.now())).getTime()) - ((new Date(PEDate)).getTime())) / (1000 * 60 * 60 * 24);
+
+                if (Math.floor(Days) > 120) { Error++; $("#ErPolicyExpiryDate").show().html("Please Select Proper Policy Expiry Date"); }
+                else { $("#ErPolicyExpiryDate").hide().html("");  }
+
+                //Check For Prev PolicyStartDate
+                var PSDate = (parseInt(PEDate1[2])-1) + "-" + PEDate1[1] + "-" + PEDate1[0];
+                if (((((new Date(MDate)).getTime()) - ((new Date(PSDate)).getTime())) / (1000 * 60 * 60 * 24)) > 0) {
+                    Error++; $("#ErPolicyExpiryDate").show().html("Policy Expiry Date Should 1 year greater than Manufacturing Date");
+                }
+            }
+
+            if ($('#PreviousInsurer').val() <= 0 || $('#PreviousInsurer').val() == "") { Error++; $("#ErPreviousInsurer").show().html("Please Select Previous Insurer."); }
+            else { $("#ErPreviousInsurer").hide().html(""); }
+
+            var VIST = VehicleInsuranceSubtype.split('CH_');
+            if (VIST[0] != '0') {
+                if (Days < 90) {
+                    if (!$("#lblHaveNCBCertificate-No").hasClass("active") && !$("#lblHaveNCBCertificate-Yes").hasClass("active")) {
+                        $("#lblHaveNCBCertificate-No, #lblHaveNCBCertificate-Yes").addClass("btnError"); Error++;
+                    }
+                    else {$("#lblHaveNCBCertificate-No, #lblHaveNCBCertificate-Yes").removeClass("btnError");}
+                }
+            }
+        }
+        if (Error == 0) {
+            SmartCalculateQuote();
+            //$(".bikeinsurance").addClass('hidden');
+            //$(".PersonalDetails").removeClass('hidden');
+        }
+    });
+
+    $(".back").click(function () {
+        SetDefaultValue();
+        $(".quickSection").show();
+        $(".detailSection, #RegistrationNoError, #PreLoader").hide();
+        $("#RegistrationNo").removeClass("ErrorClass");
+    });
+    $(".back1").click(function () {
+        $(".bikeinsurance").addClass('hidden');
+        $(".detailSection").show();
+    });
+    $(".back2").click(function () {
+        $(".next, .next1").html("Next").attr('disabled',false);
+        $(".PersonalDetails").addClass('hidden');
+        if (twowheelerType == "NEW") { $(".detailSection").show(); }
+        else { $(".bikeinsurance").removeClass('hidden'); }
+    });
+    $(".editSection").click(function () {
+        $(".NewPersonalDetails").addClass('hidden');
+        $(".header-content-inner").removeClass('hidden');
+        $(".PersonalDetails").addClass('hidden');
+        $(".delinfo").show();
+        $(".bikeinsurance").addClass('hidden');
+        $(".detailSection").show();
+    });
+    $(".resultback").click(function () {
+        $(".PersonalDetails").addClass('hidden');
+        $(".header-content-inner").removeClass('hidden');
+        $(".delinfo").show();
+        $(".detailSection").show();
+    });
+    
+	var srn = "";
+    function Horizon_Method_Convert(method_action, data, type) {
+		var obj_horizon_method = {
+		'url': (type == "POST") ? "https://localhost:50111/TwoWheelerInsurance/call_horizon_post" : "https://localhost:50111/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+			//'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+			"data": {
+				request_json: JSON.stringify(data),
+				method_name: method_action,
+				client_id: "2"
+			}
+		};
+		return obj_horizon_method;
+	}
+    // to call calculator API, and return CRN no and RequestID
+    function SmartCalculateQuote() {
+        if (twowheelerType == "NEW") {
+            $(".PersonalDetails").removeClass('hidden');
+            $(".next").html("Please Wait").attr('disabled','disabled');
+        }
+        else { $(".next1").html("Please Wait").attr('disabled','disabled');        }
+        setcookies();
+        srn = "";
+        $('#OwnerDriverPersonalAccidentCover').val("1500000");
+        $('#PaidDriverPersonalAccidentCover').val("0");
+        $("#PeronalAccidentCoverforDriver").val("No");
+        $("#IsAntiTheftDevice").val("No");
+
+        //$("#VehicleInsuranceSubtype").val(VehicleInsuranceSubtype);
+        if (ProductName == "Car") { //For Car
+            if($("#lblVehRegTypeCom").hasClass('btngrpSelected')) { $("#RegisterintheName").val("corporate");}
+            if($("#lblVehRegTypeInd").hasClass('btngrpSelected')) { $("#RegisterintheName").val("individual");}
+        }
+        else { $("#RegisterintheName").val("individual"); } //For Bike
+        $("#MemberofAA").val("No");
+        $('#VehicleType').val($('#TwoWheelerType').val() == "NEW" ? 0 : 1);
+
+        if ($("#VariantID").val()== PrevVehicle_id && $("#CityofRegitrationID").val() == PrevRto_id && $("#DateofPurchaseofCar").val() == PrevReg_Date) {  $("#CustomerReferenceID").val(PreCRN); }
+        else{ $("#CustomerReferenceID").val("0"); }
+
+        var dataToPost = $("form").serializeArray();
+        // New Node Calling starts
+        var data = {};
+        $(dataToPost).each(function (index, value) {
+            data[value.name] = value.value;
+        });
+        var DOP = (data['DateofPurchaseofCar']).split('-');
+        var DOPNew = DOP[2]+"-"+DOP[1]+"-"+DOP[0];
+        var manf_date = data['ManufactureYear']+"-"+ data['ManufactureMonth']+"-01";
+
+        if (twowheelerType == "RENEW") {
+            if (IsPolicyExistFlag == "yes") {
+                var expiry_date = data['PolicyExpiryDate'].split('-');
+                var expiry_date_new = expiry_date[2] + "-" + expiry_date[1] + "-" + expiry_date[0];
+
+                //Breakin Case Added By Pratik 11-03-2019
+                var selectedDate = new Date(expiry_date_new);
+                var now = new Date();
+                now.setHours(0);
+                now.setMinutes(0);
+                now.setSeconds(0, 0);
+                if (selectedDate < now) { PEDFlag = "yes"; }
+                else { PEDFlag = "no"; }
+            }
+            else if (IsPolicyExistFlag == "no") {//Breakin Case Added By Pratik 20-03-2019
+                data['PreviousInsurer'] = "0";
+                PEDFlag = "yes";
+                data["HaveNCBCertificate"] = "No";
+                data["NoClaimBonusPercent"] = "0";
+            }
+        }
+        else if(twowheelerType == "NEW")
+        {
+            PEDFlag = "no";
+            IsPolicyExistFlag = "no";
+        }
+
+        ////Hard Coding For Breakin
+        //PEDFlag = "no";
+
+        var name = (data['ContactName']).split(' ');
+        var  middle_name;
+        for (var i = 2; i < name.Length; i++){
+            middle_name = middle_name + name[i - 1] + " ";
+        }
+        var firstname = data['ContactName'].split(' ')[0];
+        var lastname=name.Length == 1 ? "" : name[name.Length - 1];
+        if (data['RegistrationNo'] == "") { data['RegistrationNo'] = RTOCode + "-AA-1234"; }
+        if (data['ElectricalAccessories'] == "") { data['ElectricalAccessories'] = 0; }
+        if (data['NonElectricalAccessories'] == "") { data['NonElectricalAccessories'] = 0; }
+        if (data['ValueOfBiFuelKit'] == "") { data['ValueOfBiFuelKit'] = 0; }
+
+        var data1 = {
+            "product_id" : parseInt(ProductID),
+            "vehicle_id": $('#VariantID').val(),
+            "rto_id": data['CityofRegitrationID'],
+            "vehicle_insurance_type" : data['TwoWheelerType'].toLowerCase(),
+            "vehicle_registration_date": DOPNew,
+            "vehicle_manf_date": manf_date,
+            "policy_expiry_date": expiry_date_new == undefined ? "" : expiry_date_new,
+            "prev_insurer_id" : data['PreviousInsurer'],
+            "vehicle_registration_type" : data['RegisterintheName'],
+            "vehicle_ncb_current" : data['NoClaimBonusPercent'],
+            "is_claim_exists" : data['HaveNCBCertificate'] == "No" ? "yes" : "no",
+            "method_type" : "Premium",
+            "execution_async" : "yes",
+            "electrical_accessory" : data['ElectricalAccessories'],
+            "non_electrical_accessory" : data['NonElectricalAccessories'],
+            "registration_no" : data['RegistrationNo'],
+            "is_llpd" : data['PeronalAccidentCoverforDriver'].toLowerCase(),
+            "is_antitheft_fit" : data['IsAntiTheftDevice'].toLowerCase(),
+            "voluntary_deductible" : data['VoluntaryDeduction'],
+            "is_external_bifuel" : data['IsBiFuelKit'],
+            "is_aai_member" : data['MemberofAA'].toLowerCase(),
+            "external_bifuel_type" : data['BiFuelType'],
+            "external_bifuel_value" : data['ValueOfBiFuelKit'],
+            "pa_owner_driver_si" : data['OwnerDriverPersonalAccidentCover'],
+            "is_pa_od":"yes",
+            "is_having_valid_dl" : "no",
+            "is_opted_standalone_cpa" : "yes",
+            "pa_named_passenger_si" : data['NamedPersonalAccidentCover'],
+            "pa_unnamed_passenger_si" : data['PersonalCoverPassenger'],
+            "pa_paid_driver_si" : data['PaidDriverPersonalAccidentCover'],
+            "vehicle_expected_idv" : data['ExpectedIDV'],
+            "first_name" : firstname,
+            "middle_name" : middle_name,
+            "last_name" : lastname,
+            "mobile" : data['ContactMobile'],
+            "email" : data['ContactEmail'],
+            "crn" : data['CustomerReferenceID'],
+            "ss_id" : Supportagentid,
+            "client_id": client_id,
+            "fba_id" : fbaid,
+            "geo_lat" : 0,
+            "geo_long" : 0,
+            "agent_source" : "",
+            //"ip_address" : "10.0.5.1",
+            "app_version" : "2.0",
+            //"vehicle_sub_class": $("#VehicleSubClass").val(),
+            //"vehicle_class":$("#VehicleClass").val(),
+            "vehicle_insurance_subtype": VehicleInsuranceSubtype,
+            "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+            "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+            "is_breakin":PEDFlag,
+            "is_policy_exist":IsPolicyExistFlag
+        };
+        console.log(data1);
+
+        //Calling Node Method premium_initiate() For SRN
+        var obj_horizon_data = Horizon_Method_Convert("/quote/premium_initiate",data1,"POST");
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(obj_horizon_data['data']),
+            url: obj_horizon_data['url'],
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log("srn:",data.Summary.Request_Unique_Id);
+                srn = data.Summary.Request_Unique_Id;
+
+                if (twowheelerType == "RENEW") {
+                    $(".next1").html("Next").removeAttr('disabled');
+                    $(".bikeinsurance").addClass('hidden');
+                    $(".PersonalDetails").removeClass('hidden');
+                }
+                else {
+                    $(".detailSection").hide();
+                    $(".PersonalDetails").removeClass('hidden');
+                }
+            },
+            error: function (data) {
+                alert("Cannot Proceed Now. Please Try Again!");
+                console.log(data);
+                if (ProductID == 1) { window.location.href = "/car-insurance"; }
+                else if (ProductID == 10) { window.location.href = "/two-wheeler-insurance"; }
+                $('#body').empty();
+            }
+        });
+
+        return false;
+
+        //Previous .net Calling
+        var data1 = {};
+        $(dataToPost).each(function (index, value) {
+            data1[value.name] = value.value;
+        });
+        data1['app_version'] = "2.0";
+        data1["VehicleInsuranceSubtype"] = VehicleInsuranceSubtype;
+        console.log(JSON.stringify(data1));
+        if (ProductName == "Car") {
+            $.ajax({
+                type: 'POST',
+                url: 'CarInsuranceIndia/Motor_Initiate_Request',
+                data: JSON.stringify(data1),
+                dataType: "json",
+                contentType: 'application/json;',
+                success: function (data) {
+                    console.log("success " + data.Summary.Request_Unique_Id);
+                    srn = data.Summary.Request_Unique_Id;
+                    //UDID = data.Summary.User_Data_Id;
+                    if(twowheelerType =="RENEW"){
+                        $(".next1").html("Next").removeAttr('disabled');
+                        $(".bikeinsurance").addClass('hidden');
+                        $(".PersonalDetails").removeClass('hidden');
+                    }
+                    else{
+                        $(".detailSection").hide();
+                        $(".PersonalDetails").removeClass('hidden');
+                    }
+                },
+                error: function (data) {
+                    alert("Cannot Proceed Now. Please Try Again!");
+                    console.log(data);
+                    window.location.href = "/car-insurance";
+                    $('#body').empty();
+                }
+            });
+        }
+        if (ProductName == "Bike") {
+            $.ajax({
+                type: 'POST',
+                url: 'TwoWheelerInsurance/Motor_Initiate_Request',
+                data: JSON.stringify(data1),
+                dataType: "json",
+                contentType: 'application/json;',
+                success: function (data) {
+                    console.log("success " + data.Summary.Request_Unique_Id);
+                    srn = data.Summary.Request_Unique_Id;
+                    //UDID = data.Summary.User_Data_Id;
+                    if(twowheelerType =="RENEW"){
+                        $(".next1").html("Next").removeAttr('disabled');
+                        $(".bikeinsurance").addClass('hidden');
+                        $(".PersonalDetails").removeClass('hidden');
+                    }
+                    else{
+                        $(".detailSection").hide();
+                        $(".PersonalDetails").removeClass('hidden');
+                    }
+                },
+                error: function (data) {
+                    alert("Cannot Proceed Now. Please Try Again!");
+                    console.log(data);
+                    window.location.href = "/two-wheeler-insurance";
+                    $('#body').empty();
+                }
+            });
+        }
+    }
+    
+	function setcookies() {
+        var x = document.cookies;
+        //set cookies save SRN and basic details.
+    }
+    function BindMakeModel() {
+        FilterVehicleList=[];
+        var searchStr =$("#MakeModel").val();
+        for(var i=0; i < VehicleList.length; i++){
+            if((VehicleList[i].vehicle_name.toString().toLowerCase()).indexOf(searchStr.toLowerCase())>-1){
+                FilterVehicleList.push(VehicleList[i]);
+            }
+        }
+    }
+    function GetMonthNum(MonthName)
+    {
+        switch (MonthName) {
+            case "Jan" : return "01"; break;
+            case "Feb" : return "02"; break;
+            case "Mar" : return "03"; break;
+            case "Apr" : return "04"; break;
+            case "May" : return "05"; break;
+            case "Jun" : return "06"; break;
+            case "Jul" : return "07"; break;
+            case "Aug" : return "08"; break;
+            case "Sep" : return "09"; break;
+            case "Oct" : return "10"; break;
+            case "Nov" : return "11"; break;
+            case "Dec" : return "12"; break;
+        }
+    }
+    function GetDataFromSIDCRN(SRN, ClientID)
+    {
+        var data1 = { "search_reference_number":SRN };
+        var obj_horizon_data = Horizon_Method_Convert("/quote/premium_summary",data1,"POST");
+
+        $.ajax({
+            //url: "CarInsuranceIndia/Get_Search_Summary?SID=" + SRN + "&ClientID=" + ClientID,
+            //type: 'GET',
+            type: "POST",
+            data: JSON.stringify(obj_horizon_data['data']),
+            url: obj_horizon_data['url'],
+            contentType: 'application/json;',
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                var vehicle = response.Master.Vehicle;
+                var RTO = response.Master.Rto;
+                var request = response.Request;
+                var Summary = response.Summary;
+                var CRN = request.crn;
+                $("#CustomerReferenceID").val(CRN);
+                console.log("CRN:" + request.crn);
+                $("#TPCompPlan").show();
+                //PreMake_Name = vehicle.Make_Name;
+                //PreModel_ID = vehicle.Model_ID;
+                //PreFuel_Name = vehicle.Fuel_Name;
+                //Preexternal_bifuel_value = request.external_bifuel_value;
+                //PreVehicleCity_Id = RTO.VehicleCity_Id;
+
+                PreCRN = request.crn;
+                PreSRN = Summary.Request_Unique_Id;
+                //PreSRN = Summary.Request_Unique_Id.split("|")[0];
+                //PreUDID = Summary.Request_Unique_Id.split("|")[1];
+                PrevVehicle_id = request.vehicle_id;
+                PrevRto_id = request.rto_id;
+                RTOCode = RTO.VehicleCity_RTOCode;
+                
+                var VIST = request.vehicle_insurance_subtype.split('CH_'); 
+                if (VIST[0] == "0") { is_TP = 'yes'; }
+                else { is_TP = 'no'; }
+
+                if(request.is_policy_exist == 'yes') { 
+                    $('#ExistPolicyYes').attr('checked','checked');
+                    IsPolicyExistFlag = "yes";
+                    $("#PolicyExist").show(); 
+                }
+                else if(request.is_policy_exist == 'no') { 
+                    $('#ExistPolicyNo').attr('checked','checked');
+                    IsPolicyExistFlag = "no";  
+                    $("#PolicyExist").hide();
+                    $("#PolicyExpiryDate").val();
+                    $("#PreviousInsurer").val(); 
+                }
+
+                if(request.is_breakin == 'yes') { PEDFlag = "yes"; }
+                else if(request.is_breakin == 'no') { PEDFlag = "no"; }
+
+                if(RTO.VehicleCity_RTOCode !="" && (!(RTO.VehicleCity_RTOCode).includes("-"))){
+                    RTOCode = RTO.VehicleCity_RTOCode.substring(0,2)+'-'+RTO.VehicleCity_RTOCode.substring(2,4);
+                }
+
+                if (request.registration_no !== "" && request.registration_no !== "MH-01-AA-1234" && request.registration_no !== "MH-01-ZZ-9999") {
+                    if ((request.registration_no).indexOf("-")>-1) {
+                        RegNo = request.registration_no.split("-");
+                        RegNo = RegNo[0] + RegNo[1] + RegNo[2]+ RegNo[3];
+                        $("#RegistrationNo").val(RegNo);
+                    }
+                    else { $("#RegistrationNo").val(request.registration_no); }
+                }
+
+                var RegDate = request.vehicle_registration_date.substring(8,10) + "-" + request.vehicle_registration_date.substring(5,7) + "-" + request.vehicle_registration_date.substring(0,4);
+                PrevReg_Date = RegDate;
+                console.log("PrevReg_Date:",PrevReg_Date);
+                console.log("Type:" +request.vehicle_insurance_type+"\nDateofPurchaseofCar:"+RegDate);
+
+                //Added By For T.P. And Comprehensive Starts
+                VehicleInsuranceSubtype = request.vehicle_insurance_subtype;
+                var VehInsST = VehicleInsuranceSubtype.split('CH_');
+                var VehInsSTType = "";
+                if (request.vehicle_insurance_type == "new") {
+                    TwoWheelerTypeNew(); $("#DateofPurchaseofCar, #DOPCNew").val(RegDate);
+                    if (VehInsST[0] == 0) { VehInsSTType = 'TP'; }
+                    else if (VehInsST[0] > 1) { VehInsSTType = 'Comp'; }
+                    else { VehInsSTType = 'CompTP'; }
+                }
+                if (request.vehicle_insurance_type == "renew") {
+                    TwoWheelerTypeRenew(); $("#DateofPurchaseofCar, #DOPCRenew").val(RegDate);
+                    if (VehInsST[0] == 0) { VehInsSTType = 'TP'; }
+                    else { VehInsSTType = 'Comp'; }
+                }
+
+                if ($('#DateofPurchaseofCar').val() != "") {
+                    var temp = $('#DateofPurchaseofCar').val().split('-');
+                    var minManufactureDate=parseInt(temp[1]) + '-' + parseInt(temp[2]-1);
+                    var maxManufactureDate=parseInt(temp[1]) + '-' + parseInt(temp[2]);
+                    $('#ManufactureDate').bootstrapMaterialDatePicker({ dateFormat: 'mm-yy' });
+
+                    $('#ManufactureDate').bootstrapMaterialDatePicker('setMinDate', minManufactureDate);
+                    $('#ManufactureDate').bootstrapMaterialDatePicker('setMaxDate', maxManufactureDate);
+                }
+                //Added By For T.P. And Comprehensive Ends
+
+                //Make Model Details
+                $("#MakeName").val(vehicle.Make_Name);
+                ModelSelected = vehicle.Model_Name;
+                $("#ModelName").val(vehicle.Model_Name);
+                $("#MakeModel").val(vehicle.Make_Name + ', ' + vehicle.Model_Name);
+                $("#MakeModelID").val(vehicle.Model_ID);
+
+                //Variant
+                VariantIDSelected = vehicle.Vehicle_ID;
+                $("#VariantID").val(vehicle.Vehicle_ID);
+
+                FuelSelected = vehicle.Fuel_Name;
+                if (ProductName == "Car") {
+                    InsurerPlanType(VehInsSTType);
+                    SetTextInsPlan(3);
+                    CallFuelOnModelSelect(vehicle.Model_ID);//Fuel
+
+                    //Bifuel
+                    if (request.is_external_bifuel == "yes") {
+                        IsExternalBifuel = true;
+                        BiFuelTypeVal = request.external_bifuel_type;
+
+                        $("#IsBiFuelKit").val(request.is_external_bifuel);
+                        $("#BiFuelType").val(request.external_bifuel_type);
+                        $("#ValueOfBiFuelKit").val(request.external_bifuel_value);
+                        $("#divValueOfBiFuelKit").show();
+                    }
+                    $("#CarVariantID").val(VariantIDSelected);
+                    //CallVariantOnModelNFuelSelect(vehicle.Model_ID, vehicle.Fuel_Name)
+                    //CallVariantOnModelSelect(vehicle.Model_ID);
+                }
+                if (ProductName == "Bike") {
+                    SetTextInsPlan(5);
+                    var instype = "";
+                    if (request.vehicle_insurance_type == "renew") {
+                        instype = "Renew";
+                        $("#BikeRenew").show();
+                    }
+                    if (request.vehicle_insurance_type == "new") {
+                        instype = "New";
+                        $("#BikeNew").show();
+                    }
+                    InsurerPlanTypeBike(VehicleInsuranceSubtype,instype);
+                    //CallVariantOnModelSelect(vehicle.Model_ID);
+                    $("#TwoWheelerVariantID").val(VariantIDSelected);
+                }
+
+                var RegDate = (request.vehicle_manf_date).split("-");
+                RegDate = RegDate[2] + "-" + RegDate[1] + "-" + RegDate[0];
+
+                var ManDate = (request.vehicle_manf_date).split("-");
+                $('#ManufactureYear').val(ManDate[0]);
+                $('#ManufactureMonth').val(ManDate[1]);
+                ManDate = ManDate[1] + "-" + ManDate[0];
+                $("#ManufactureDate").val(ManDate);
+
+                var PolExpDate = (request.policy_expiry_date).split("-")
+                PolExpDate = PolExpDate[2] + "-" + PolExpDate[1] + "-" + PolExpDate[0];
+                $("#PolicyExpiryDate").val(PolExpDate);
+                myfunction1();
+
+                //City
+                CityName = "(" + RTOCode + ") " + RTO.RTO_City;
+                $("#CityofRegitration").val(CityName);
+                $('#CityofRegitrationID').val(RTO.VehicleCity_Id);
+                $("#PreviousInsurer").val(request.prev_insurer_id);
+
+                //Claim
+                if(request.is_claim_exists == "yes") { $("#HaveNCBCertificate").val("No"); $(".NCBYes").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active'); }
+                else { $("#HaveNCBCertificate").val("Yes"); $(".NCBNo").removeClass('btn-UnSelected btnError').addClass('btn-primarySelected active'); $("#divNoClaimBonusPercent").show(); }
+                $("#NoClaimBonusPercent").val(request.vehicle_ncb_current);
+
+                //first Name And Last Name
+                var Reg = /^[a-zA-Z ]+$/;
+                if (Reg.test(request.first_name) && Reg.test(request.last_name) ) { $("#ContactName").val(request.first_name+" "+request.last_name); }
+                if (request.mobile!=0 && request.mobile != "") {
+                    $("#ContactMobile").val(request.mobile);
+                }
+                if (request.email!=0 && request.email != "") {
+                    if ((request.email).indexOf('testpb.com') > -1) { $("#ContactEmail").val(""); }
+                    else { $("#ContactEmail").val(request.email); }
+                }
+                $('select').click();
+                if (request.vehicle_registration_type == "corporate") { $("#lblVehRegTypeCom").addClass('btngrpSelected'); $("#lblVehRegTypeInd").removeClass('btngrpSelected'); $("#RegisterintheName").val("corporate");
+                }
+                else {
+                    $("#lblVehRegTypeInd").addClass('btngrpSelected');  $("#lblVehRegTypeCom").removeClass('btngrpSelected'); $("#RegisterintheName").val("individual");
+                }
+                SetInputValue();
+            },
+            error: function (response) { alert("Error While fetching Data"); }
+        });
+        $(".quickSection").hide();
+        $(".detailSection").show().removeClass('hidden');
+    }
+    function SetManuDate()
+    {
+        if ($("#ManufactureDate").val()!= "") {
+            var ManDate = ($("#ManufactureDate").val()).split("-");
+            $("#ManufactureYear").val(ManDate[1]);
+            if (parseInt(ManDate[0]) < 9) { $("#ManufactureMonth").val("0"+parseInt(ManDate[0])); }
+            else {$("#ManufactureMonth").val(ManDate[0]);}
+        }
+    }
+    $('.Numeric').keyup(function(e){
+        var $this = $(this).val();
+        if ($this.trim() == "") { $(this).val(""); }
+    });
+    $('input').focusout(function () {
+        var input = $.trim($(this).val());
+        if (input.length == 0) {
+            $(this).val('');
+        }
+        var string = $(this).val();
+        string = string.replace(/^0+/, '').replace(/  +/g, ' ');
+        $(this).val(string);
+        if ($(this).hasClass('Datepicker') || $(this).hasClass('Reg')) {
+            if ($(this).val() != 0) { $(this).val(input); }
+        }
+    });
+    function SetTextInsPlan(Years)
+    {
+        var year, Yeartext = "";
+        if (twowheelerType == "NEW") { year = Years - 1;}
+        else { Years = 1; }
+
+        if (Years == 1 ) { Yeartext = "1 Yr" } else { Yeartext = Years+" Yrs"}
+
+        $("#lblTP").text("T.P. Only ("+ Yeartext+")");
+        $("#lblCompTP").text("Comprehensive (1 Yr) + T.P. ("+year+" Yrs)");
+        $("#lblComp").text("Comprehensive Plan ("+ Yeartext+")");
+    }
+</script>
+<script type="text/javascript">
+    var pageIndex = 1;
+    var pageCount;
+    var iScrollPos = 0;
+    //var Search_Val= document.getElementById('myInput').value;
+    var quote_cnt = 0, application_cnt = 0, sell_cnt = 0;
+    var Reg = /^[a-zA-Z ]+$/;
+    var const_insurerlogo = {
+        "1" : "BajajAllianzGeneral.png",
+        "2"	:"Bharti_Axa_General.png",
+        "3"	:"chola.png",
+        "4" : "Future_Generali_General.png",
+        "5" : "hdfc.png",
+        "6" : "ICICI_Lombard.png",
+        "7" : "Iffco_Tokio_General.png",
+        "8" : "national.png",
+        "9" : "reliance.png",
+        "10" : "royal.png",
+        "11": "tata_aig.png",
+        "12": "new_india.png",
+        "13"	:"oriental.png",
+        "14"  :"United.png",
+        "15"  :"lt.png",
+        "16"  :"raheja.png",
+        "17"  :"SBI_General.png",
+        "18"  :"shriram.png",
+        "19": "universal_sompo.png",
+        "20": "Max_Bupa_Health.png",
+        "21": "Apollo_Munich_Health.png",
+        "22": "DLF_Pramerica_Life.png",
+        "23": "BajajAllianzLife.png",
+        "24": "IndiaFirstLife.png",
+        "25": "AEGONReligareLife.png",
+        "26": "StarHealth.png",
+        "27": "ExpressBPO.png",
+        "28": "HDFC_Life.png",
+        "29": "Bharti_Axa_Life.png",
+        "30": "kotak.png",
+        "31": "lic.png",
+        "32": "bsli.png",
+        "33": "liberty.png",
+        "34": "rhicl.png",
+        "35": "magma_hdi.png",
+        "36": "IHO.png",
+        "37": "TataAIA.png",
+        "38": "Cigna_TTK.png",
+        "39": "icicipru-life-logo.png",
+        "42": "AdityaBirla.png",
+        "44": "Go_Digit.png",
+        "45": "Acko_General.png",
+        "46": "edelweiss.png"
+
+    };
+    $(document).ready(function () {
+        $("#SearchQuote").val(0);
+        $("#SearchQuoteInput").hide();
+        var ss_id= Supportagentid;
+        var fba_id= fbaid;
+        //var Search_Val= document.getElementById('myInput').value;
+        //GetSessionRecord();
+        if (ss_id > 0) {
+            GetQuoteList();
+        }
+        //GetApplication();
+        //GetSellList();
+        $(".mb").click(function (e) {
+            var mbtoppos = $(this).position().top + (-13) + "px";
+            //console.log(mbtoppos);
+            if ($(".menuBox").is(":visible")) {
+                $(".menuBox").hide()
+                $(".menuBox").slideDown();
+            }
+            $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+        });
+        $(".amb").click(function (e) {
+            var mbtoppos = $(this).position().top + "px";
+            //console.log(mbtoppos);
+            if ($(".menuBox").is(":visible")) {
+                $(".menuBox").hide()
+                $(".menuBox").slideDown()
+            }
+            $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+        });
+    });
+    function SetUrl() {
+        var url = window.location.href;
+        var newurl;
+        if (url.includes("local")) {
+            newurl = "http://localhost:3000";
+        } else if (url.includes("qa")) {
+            newurl = "http://qa-horizon.policyboss.com:3000";
+        } else if (url.includes("www") || url.includes("cloudfront")) {
+            newurl = "http://horizon.policyboss.com:5000";
+        }
+        return newurl;
+    }
+
+    function GetSessionRecord() {
+        var obj = [{ "client_id": "2", "agent_id": "305", "agent_name": "Pramod Kumar", "fba_id": "305", "agent_source": "5", "AgentClientFBAID": "305,2,305", "agent_email": "pramod.parit@policyboss.com", "agent_mobile": "9619833708", "VisitorID": "447700" }]
+
+        for (var i = 0; i <= obj.length; i++) {
+            console.log(obj[i]);
+            $('#agent_name').text(obj[0]['agent_name']);
+            ss_id = '2964' //obj[0]['agent_id'];
+            fba_id = '1219'//obj[0]['fba_id'];
+            mobile_no = '9300793573'//obj[0]['agent_mobile'];
+        }
+
+        if (obj != null || obj != "") {
+            $('.agent_logout').show();
+            $('.agent_login').hide();
+        } else {
+            $('.agent_logout').hide();
+            $('.agent_login').show();
+        }
+    }
+
+	function GetQuoteList() {
+		//var obj_horizon_data = Horizon_Method_Convert("/user_datas/quicklist/"+ ProductID +"/" + Supportagentid + "/" + fbaid + "/"+ pageIndex,'',"GET");
+		//var obj_horizon_data = Horizon_Method_Convert("/user_datas/quicklist/"+ ProductID +"/SEARCH/487/487/"+ pageIndex +"/0",'',"GET");
+		//var url = SetUrl()+"/user_datas/quicklist/"+ ProductID +"/SEARCH/" + Supportagentid + "/" + fbaid + "/"+ pageIndex +"/0";
+		$.ajax({
+			type: "GET",
+			//url: obj_horizon_data['url'],
+			url: GetUrl() + '/user_datas/inspectionlist/1/1/1/'+ pageIndex,
+			dataType: "json",
+			success: function (data) {
+				alert(JSON.stringify(data));
+				console.log(data.length);
+				quote_cnt=data.length;
+				if(quote_cnt >0){
+					$("#tbl_quote_list").empty();
+				}
+
+				for (var i in data) {
+					$('#tbl_quote_list').append('<tr id="tr_lst" srn="' + data[i].SRN + '">' +
+						'<td class="quoteTabData"><div class="ApplicantName">' +data[i].Customer_Name + '</div>' +
+						'<div class="ApplicantName fieldName">CRN:<span class="crn_span Datacolor">' + data[i].CRN + '</div></td>' +
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">Vehicle</div><div class="Datacolor desc quote_date">Honda City</div></td>'+
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">RTO</div><div class="desc quote_date Datacolor">Mumbai-Andheri</div></td>'+
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">Vehicle Number</div><div class="desc quote_date Datacolor">' + data[i].Quote_Date + '</div></td>'+
+						'<td class="quoteTabData"><div class="ApplicantName fieldName">QUOTE DATE</div><div class="desc quote_date Datacolor">' + data[i].Quote_Date + '</div></td>' +
+						'<td class="quoteTabData" style="display:none;"><div class="ApplicantName fieldName">Status</div><div class="desc quote_date Datacolor">Complete</div></td>'+
+						'<td class="quoteTabData" ><div class="info"  ><img class="grab" src="http://www.policyboss.com/Images/lmdesign/ico-details.png" id="info'+[i]+'"  title="Vehicle Details"></div></td>'+
+						'</tr>'
+					)
+					$(".ApplicantName,.si_amt,.quote_date").click(function (e) {
+						var SRN = $(this).parent().parent().attr('srn');
+						var udid = $(this).parent().parent().attr('udid');
+
+						//window.location.href = '/TwoWheelerInsurance/NewQuotePage?SRN=' + SRN + '&client_id=2';
+						if (ProductID == 10)
+						{
+							 var _redirectUrl = '@Url.Action("NewQuotePage", "TwoWheelerInsurance", new { SID = "_srn_", ClientID = "_client_id_" })';
+							const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+							const parsedUrl = parseResult.documentElement.textContent;
+							window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+							//window.location.href = "/TwoWheelerInsurance/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+						}
+						else
+						{
+							var _redirectUrl = '@Url.Action("NewQuotePage", "CarInsuranceIndia", new { SID = "_srn_", ClientID = "_client_id_" })';
+							const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+							const parsedUrl = parseResult.documentElement.textContent;
+							window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+							//window.location.href = "/CarInsuranceIndia/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+						}
+					});
+					$('#info'+[i]).click(function(e){
+					   
+						var SRN = $(this).parent().parent().parent().attr('srn');
+						SRN=SRN.split('_')[0];
+						vehicleinfo(SRN);
+					});
+				}
+				//quote_cnt <20?  $('#next_page').hide():  $('#next_page').show();
+			},
+			error: function (result) {
+			}
+		});
+	}
+    // '<td style="width:10%; margin-top: 22px; font-size: 20px; " class="glyphicon glyphicon-option-vertical mb"></td>'+
+
+    function GeteditUrl() {
+        var url = window.location.href;
+        //alert(url.includes("health"));
+        var newurl;
+        newurl = "http://qa.policyboss.com";
+        if (url.includes("localhost")) {
+            newurl = "http://localhost:3000";
+        } else if (url.includes("qa")) {
+            newurl = "http://qa.policyboss.com";
+        } else if (url.includes("www") || url.includes("cloudfront")) {
+            newurl = "https://www.policyboss.com";
+        }
+        return newurl;
+    }
+    function Sale_login_logout(value) {
+        if (value == "login") {
+            window.location.href = GeteditUrl() + "/Sales/Login";
+        }
+        else if (value == "logout") {
+            window.location.href = GeteditUrl() + "/Sales/Login?_logout=logout";
+        } else if (value == "dashboard") {
+            window.location.href = GeteditUrl() + "/Sales/Dashboard";
+        }
+    }
+
+    function Redirect(input) {
+        $("#SearchQuote").val(0);
+        //$('#next_page').show();
+        $("#SearchQuoteInput").hide();
+        pageIndex=1;
+        if (input == "ALLData") {
+            RedirectSelect = "SEARCH";
+            GetQuoteList();
+            $(".allData").show();
+            $(".healthmaindiv").hide();
+            $(".quote_list_Div").scrollTop(top) + "px"
+            $(".appquote_list").hide();
+            $(".sellquote_list").hide();
+            $(".all_data").css({ "background-color": "#1c2955", "color": "#fff" });
+            $(".quote_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".applctn_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".sell_li").css({ "background-color": "#fff", "color": "#1c2955" });
+
+        }
+        else if (input == "QUOTE") {
+            RedirectSelect = "SEARCH";
+            GetQuoteList();
+            $(".allData").hide();
+            $(".healthmaindiv").show();
+            $(".quote_list_Div").scrollTop(top) + "px"
+            $(".appquote_list").hide();
+            $(".sellquote_list").hide();
+            $(".all_data").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".quote_li").css({ "background-color": "#1c2955", "color": "#fff" });
+            $(".applctn_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".sell_li").css({ "background-color": "#fff", "color": "#1c2955" });
+
+        } else if (input == "APPLICATIONS") {
+            RedirectSelect = "APPLICATION";
+            GetApplication();
+            $(".allData").hide();
+            $(".healthmaindiv").hide();
+            $(".quote_list_Div").scrollTop(top) + "px"
+            $(".appquote_list").show();
+            $(".sellquote_list").hide();
+            $(".all_data").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".applctn_li").css({ "background-color": "#1c2955", "color": "#fff" });
+            $(".quote_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".sell_li").css({ "background-color": "#fff", "color": "#1c2955" });
+
+        } else if (input == "SELL") {
+            GetSellList();
+            $(".allData").hide();
+            RedirectSelect = "SELL";
+            $(".healthmaindiv").hide();
+            $(".quote_list_Div").scrollTop(top) + "px"
+            $(".appquote_list").hide();
+            $(".sellquote_list").show();
+            $(".all_data").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".applctn_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".quote_li").css({ "background-color": "#fff", "color": "#1c2955" });
+            $(".sell_li").css({ "background-color": "#1c2955", "color": "#fff" });
+        }
+    }
+
+    // Get Application Data
+    function GetApplication() {
+        var obj_horizon_data = Horizon_Method_Convert("/user_datas/quicklist/" + ProductID + "/APPLICATION/" + Supportagentid + "/" + fbaid + "/"+ pageIndex +"/0",'',"GET");
+        //var obj_horizon_data = Horizon_Method_Convert("/user_datas/quicklist/" + ProductID + "/APPLICATION/487/487/"+ pageIndex +"/0",'',"GET");
+        //var url = SetUrl()+"/user_datas/quicklist/" + ProductID + "/APPLICATION/" + Supportagentid + "/" + fbaid + "/"+ pageIndex +"/0"
+        $.ajax({
+            type: "GET",
+            url: obj_horizon_data['url'],
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                application_cnt=data.length;
+                if(application_cnt >0){
+                    $(".app_mainlist").empty();
+                }
+                for (var i in data) {
+                    //var Customer_Name= data[i].Customer_Name.trim();
+                    var Sum_Insured =data[i].Sum_Insured;
+                    //if(Customer_Name =="" || Customer_Name=="Undefined" || !Reg.test(Customer_Name))
+                    //{
+                    //    Customer_Name="No details"
+                    //}
+                    if( Sum_Insured==undefined )
+                    {
+                        Sum_Insured="0"
+                    }
+                    $(".app_mainlist").append("<div class='app_quoteDiv' id='app_quote_id'" + data[i].CRN + ">"
+                            + "<div class='ins_logo'>"
+                            + "<img src='http://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/" + const_insurerlogo[data[i].Insurer] + "' class='img-responsive'>"
+                            
+                            + "</div>"
+                            + "<div class='content_container'>"
+                            + "<div class='con parta'>"
+                            +   "<div class='uname'>" + data[i].Customer_Name
+                            +   "</div>"
+                            +   "<div class='menu' style='display:none;'><span class='glyphicon glyphicon-option-vertical amb'></span>"
+                            +   "</div>"
+                            + "</div>"
+                            + "<div class='con partb' style='grid-template-columns: 1fr 1fr;'>"
+                            +   "<div class='app_num'>"
+                            +       "<div class='title'>CRN</div>"
+                            +       "<div class='num'>" + data[i].CRN + "</div>"
+                            +   "</div>"
+                            +   "<div class='a_date' style='display:none;'>"
+                            +       "<div class='title fieldName'>Premium</div>"
+                            +           "<span>&#8377</span> 500000"
+                            +   "</div>"
+                            +   "<div class='app_status'>"
+                            +       "<div class='title'>STATUS </div>"
+                            +       "<div class='progress'>"
+                            +           "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:" + data[i].Progress + "%'>"
+                            +               data[i].Progress
+                            +           "</div>"
+                            +       "</div>"
+                            +   "</div>"
+                            + "<div class='info'"+[i]+"' onclick=info("+[i]+")  ><img class='grab' src='/Images/lmdesign/ico-details.png'   title='Vehicle Details'></div>"
+                            + "</div>"
+                            + "<div class='con partc' style='grid-template-columns: 1fr 1fr;'>"
+                            +   "<div class='a_date' style='text-align:left;'>"
+                            +       "<div class='title fieldName'>APP DATE</div>"
+                            +           data[i].Quote_Date
+                            +   "</div>"
+                             +   "<div class='SUM_a' style='text-align:left;'>"
+                            +       "<div class='title fieldName'>IDV</div>"
+                            +           "<span>&#8377</span>" +Sum_Insured
+                            +   "</div>"
+                            +   "<div class='a_date' style='display:none;'>"
+                            +       "<div class='title fieldName'>RTO</div>"
+                            +           'Mumbai-Andheri'
+                            +   "</div>"
+                            +   "<div class='a_date' style='display:none;' >"
+                            +       "<div class='title fieldName'>Vehicle name</div>"
+                            +           "<div style='text-transform: capitalize;'> Honda Accord </div>"
+                            +   "</div>"
+                            +   "<div class='a_date' style='display:none;'>"
+                            +       "<div class='title fieldName'>Vehicle Number</div>"
+                            +           data[i].Quote_Date
+                            +   "</div>"
+                          
+                            + "</div>"
+                            + "<input type='hidden' id='hd_app_SRN_"+i+"' value='" + data[i].SRN + "'/>"
+                            + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>"
+                            + "</div>"
+                            + "</div>");
+                    $(".amb").click(function (e) {
+                        var mbtoppos = $(this).position().top + "px";
+                        //console.log(mbtoppos);
+                        if ($(".menuBox").is(":visible")) {
+                            $(".menuBox").hide()
+                            $(".menuBox").slideDown()
+                        }
+                        $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+                    });
+                    
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 0) {
+                            $('.menuBox').fadeOut();
+                        }
+                        else {
+
+                        }
+                    });
+                   
+                }
+                //application_cnt <20?  $('#next_page').hide():  $('#next_page').show();
+            },
+            error: function (result) {
+                console.log(result)
+            }
+        });
+    }
+    function info(i){
+                       
+        var SRN = $('#hd_app_SRN_'+i).val();
+        SRN=SRN.split('_')[0];
+        vehicleinfo(SRN);
+    }
+    function GetSellList() {
+        var obj_horizon_data = Horizon_Method_Convert("/user_datas/quicklist/"+ ProductID + "/SELL/" + Supportagentid + "/" + fbaid + "/"+ pageIndex +"/0","GET");
+       // var url = SetUrl()+"/user_datas/quicklist/"+ ProductID + "/SELL/" + Supportagentid + "/" + fbaid + "/"+ pageIndex +"/0"
+        $.ajax({
+            type: "GET",
+            url: obj_horizon_data['url'],
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                sell_cnt=data.length;
+                if(sell_cnt >0){
+                    $(".sell_mainlist").empty();
+                }
+                for (var i in data) {
+                    //var Customer_Name= data[i].Customer_Name.trim();
+                    var Sum_Insured =data[i].Sum_Insured;
+                    var ERP_CS=data[i].ERP_CS;
+                    //if(Customer_Name =="" || Customer_Name=="Undefined" || !Reg.test(Customer_Name))
+                    //{
+                    //    Customer_Name="No details"
+                    //}
+                    if( Sum_Insured==undefined )
+                    {
+                        Sum_Insured="0"
+                    }
+                    if(ERP_CS =="" ||ERP_CS==undefined || ERP_CS.indexOf("CS") ==-1)
+                    {
+                        ERP_CS="PENDING"
+                    }
+
+                    $(".sell_mainlist").append("<div class='sell_quoteDiv app_quoteDiv' id='app_quote_id'" + data[i].CRN + ">"
+                            + "<div class='ins_logo'>"
+                            + "<img src='http://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/" + const_insurerlogo[data[i].Insurer] + "' class='img-responsive'>"
+                           
+                            + "</div>"
+                            + "<div class='content_container'>"
+                            + "<div class='con parta'>"
+                            + "<div class='uname'>" +data[i].Customer_Name
+                            + "</div>"
+                            + "<div class='menu'><span class='glyphicon glyphicon-option-vertical amb'style='display: none;'></span>"
+                            + "</div>"
+                            + "</div>"
+                            + "<div class='con partb'>"
+                            + "<div class='app_num'>"
+                            + "<div class='title'>CRN</div>"
+                            + "<div class='num'>" + data[i].CRN + "</div>"
+                            + "<div class='info' onclick=info("+[i]+") ><img class='grab' src='/Images/lmdesign/ico-details.png' id='info'"+[i]+"'  title='Vehicle Details'></div>"
+                            + "</div>"
+                            + "<div class='app_status'>"
+                            + "<div class='title'>STATUS : <span class='Datacolor'>COMPLETE</span></div>"
+                            + "<div class='progress'>"
+                            + "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:" + data[i].Progress + "%'>"
+                            + data[i].Progress
+                            + "</div>"
+                            + "</div>"
+                            + "</div>"
+                            + "</div>"
+                            + "<div class='con1 partc'>"
+                            + "<div class='SUM_a'>"
+                            + "<div class='title fieldName'>CS Number</div>"
+                            + ERP_CS
+                            + "</div>"
+                            + "<div class='a_date'>"
+                            + "<div class='title fieldName'>APP DATE</div>"
+                            + data[i].Quote_Date
+                            
+                            + "</div>"
+                                +"<div class='download' id='div_downloadPolicy_"+i+"'>"
+                                +"<a href='"+data[i].policy_url+"' target='_blank' download='"+data[i].CRN+"'><div class='dwn_policy' id='download_policy'><i class='fa fa-download' aria-hidden='true'></i></div></a>"
+                                +"</div>"
+
+                            + "</div>"
+                            + "<input type='hidden' id='hd_app_SRN_"+i+"' value='" + data[i].SRN + "'/>"
+                            + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>"
+                            + "</div>"
+                            + "</div>");
+                    $(".amb").click(function (e) {
+                        var mbtoppos = $(this).position().top + "px";
+                        //console.log(mbtoppos);
+                        if ($(".menuBox").is(":visible")) {
+                            $(".menuBox").hide()
+                            $(".menuBox").slideDown()
+                        }
+                        $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+                    });
+                    $('#info'+[i]).click(function(e){
+                       
+                        var SRN = $(this).parent().parent().parent().attr('srn');
+                        SRN=SRN.split('_')[0];
+                        vehicleinfo(SRN);
+                    });
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 0) {
+                            $('.menuBox').fadeOut();
+                        }
+                        else {
+
+                        }
+                    });
+                    var Status =  data[i].Last_Status;
+                    if(Status=="TRANS_SUCCESS_WITH_POLICY")
+                    {
+                        $('#div_downloadPolicy_'+i).show();
+                    }else{
+                        $('#div_downloadPolicy_'+i).hide();
+                    }
+                }
+                //sell_cnt <20?  $('#next_page').hide():  $('#next_page').show();
+            },
+            error: function (result) {
+                console.log(result)
+            }
+        });
+    }
+
+    function SearchCrnName() {
+        var Search_Type = document.getElementById('SearchQuote').value;
+        var Search_Val= document.getElementById('myInput').value;
+        if( $("#myInput").val() == "") {
+            if( RedirectSelect == "SEARCH" ){
+                $('#tbl_quote_list').empty()
+                GetQuoteList();
+            }
+            else if (RedirectSelect == "APPLICATION"){
+                $('.app_mainlist').empty()
+                GetApplication();
+            }
+            if(RedirectSelect == "SELL"){
+                $('.sell_mainlist').empty()
+                GetSellList();
+            }
+        }
+        else {
+
+            if((Search_Type =="Name" && Search_Val.toString().length >= 3)||(Search_Type =="CRN" && Search_Val.toString().length == 6)) {
+                //var url = "http://localhost:3000/user_datas/search/1/" + Search_Type+"/"+Search_Val;
+                var obj_horizon_data = SetUrl()+"/user_datas/search/"+ ProductID +"/"+ RedirectSelect + "/" + Supportagentid + "/" + fbaid + "/"+Search_Type+"/"+Search_Val+"/0";
+                $.ajax({
+                    type: "GET",
+                    url: obj_horizon_data['url'],
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data);
+                        if(RedirectSelect == "SEARCH"){
+                            $('#tbl_quote_list').empty()
+                            for (var i in data) {
+
+                                $('#tbl_quote_list').append('<tr style="width:100%;height:40px; border-bottom:1px solid #1c2955;" id="tr_lst" srn="' + data[i].SRN + '">' +
+                                                    '<td style="width:45%;padding:10px"><div class="ApplicantName">' + data[i].Customer_Name + '</div>' +
+                                                    '<div class="ApplicantName">CRN:<span class="crn_span">' + data[i].CRN + '</div>' +
+                                                    '</td>' +
+                                                    '<td style="width:35%"><div class="title ApplicantName">QUOTE DATE</div><div class="desc quote_date">' + data[i].Quote_Date + '</div></td>' +
+                                                    '</tr>'
+                                )
+                                $(".mb").click(function (e) {
+                                    var mbtoppos = $(this).position().top + (-13) + "px";
+                                    //console.log(mbtoppos);
+                                    if ($(".menuBox").is(":visible")) {
+
+                                        $(".menuBox").hide()
+                                        $(".menuBox").slideDown();
+                                    }
+                                    $(".menuBox").slideDown().css({ "top": mbtoppos });
+                                });
+
+                                $(".ApplicantName,.si_amt,.quote_date").click(function (e) {
+                                    var SRN =  $( this ).parent().parent().attr('srn');
+                                    var udid =  $( this ).parent().parent().attr('udid');
+                                    //window.location.href = '/TwoWheelerInsurance/NewQuotePage?SRN=' + SRN + '&client_id=2';
+                                    if (ProductID == 10)
+                                    {
+                                        var _redirectUrl = '@Url.Action("NewQuotePage", "TwoWheelerInsurance", new { SID = "_srn_", ClientID = "_client_id_" })';
+                                        const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+                                        const parsedUrl = parseResult.documentElement.textContent;
+                                        window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+                                        //window.location.href = "/TwoWheelerInsurance/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+                                    }
+                                    else
+                                    {
+                                        var _redirectUrl = '@Url.Action("NewQuotePage", "CarInsuranceIndia", new { SID = "_srn_", ClientID = "_client_id_" })';
+                                        const parseResult = new DOMParser().parseFromString(_redirectUrl, "text/html");
+                                        const parsedUrl = parseResult.documentElement.textContent;
+
+                                        window.location.href = parsedUrl.replace('_srn_', SRN).replace('_client_id_', client_id);
+                                        //window.location.href = "/CarInsuranceIndia/NewQuotePage?SID=" + SRN + "&ClientID=" + client_id;
+                                    }
+
+                                });
+                                $("#CallFuncId").click(function (e) {
+
+                                    //$('a[href*="tel:+91"]' + data[i].Customer_Mobil);
+                                    $(".CallFuncClass").attr('href', 'tel:' + data[i].Customer_Mobile);
+                                });
+
+                                $("#SmsFuncId").click(function (e) {
+                                    //$('a[href*="tel:+91"]' + data[i].Customer_Mobil);
+                                    $(".SmsFuncClass").attr('href', 'sms:' + data[i].Customer_Mobile);
+                                });
+                            }
+                        }
+                        else if (RedirectSelect == "APPLICATION") {
+                            $(".app_mainlist").empty()
+                            for (var i in data) {
+                                $(".app_mainlist").append("<div class='app_quoteDiv' id='app_quote_id'" + data[i].CRN + ">"
+                                        + "<div class='ins_logo'>"
+                                        + "<img src='http://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/" + const_insurerlogo[data[i].Insurer] + "' class='img-responsive'>"
+                                        + "</div>"
+                                        + "<div class='content_container'>"
+                                        + "<div class='con parta'>"
+                                        + "<div class='uname'>" + data[i].Customer_Name
+                                        + "</div>"
+                                        + "<div class='menu' style='display:none;'><span class='glyphicon glyphicon-option-vertical amb'></span>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div class='con partb'>"
+                                        + "<div class='app_num'>"
+                                        + "<div class='title'>CRN</div>"
+                                        + "<div class='num'>" + data[i].CRN + "</div>"
+                                        + "</div>"
+                                        + "<div class='app_status'>"
+                                        + "<div class='title'>STATUS : <span class='Datacolor'>COMPLETE</span></div>"
+                                        + "<div class='progress'>"
+                                        + "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:" + data[i].Progress + "%'>"
+                                        + data[i].Progress
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div class='con partc'>"
+                                        + "<div class='SUM_a'>"
+                                        + "<div class='title fieldName'>SUM ASSURED</div>"
+                                        + data[i].Sum_Insured
+                                        + "</div>"
+                                        + "<div class='a_date'>"
+                                        + "<div class='title fieldName'>APP DATE</div>"
+                                        + data[i].Quote_Date
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<input type='hidden' id='hd_app_SRN' value='" + data[i].SRN + "'/>"
+                                        + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>"
+                                        + "</div>"
+                                        + "</div>");
+                                $(".amb").click(function (e) {
+                                    var mbtoppos = $(this).position().top + "px";
+                                    //console.log(mbtoppos);
+                                    if ($(".menuBox").is(":visible")) {
+                                        $(".menuBox").hide()
+                                        $(".menuBox").slideDown()
+                                    }
+                                    $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+                                });
+                                $(window).scroll(function () {
+                                    if ($(this).scrollTop() > 0) {
+                                        $('.menuBox').fadeOut();
+                                    }
+                                    else {
+
+                                    }
+                                });
+                            }
+                        }
+                        else if(RedirectSelect == "SELL"){
+                            $(".sell_mainlist").empty()
+                            for (var i in data) {
+                                $(".sell_mainlist").append("<div class='sell_quoteDiv app_quoteDiv' id='app_quote_id'" + data[i].CRN + ">"
+                                        + "<div class='ins_logo'>"
+                                        + "<img src='http://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/" + const_insurerlogo[data[i].Insurer] + "' class='img-responsive'>"
+                                        + "</div>"
+                                        + "<div class='content_container'>"
+                                        + "<div class='con parta'>"
+                                        + "<div class='uname'>" + data[i].Customer_Name
+                                        + "</div>"
+                                        + "<div class='menu'><span class='glyphicon glyphicon-option-vertical amb'style='display: none;'></span>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div class='con partb'>"
+                                        + "<div class='app_num'>"
+                                        + "<div class='title'>CRN</div>"
+                                        + "<div class='num'>" + data[i].CRN + "</div>"
+                                        + "</div>"
+                                        + "<div class='app_num'>"
+                                        + "<div class='title'>CRN</div>"
+                                        + "<div class='num'>" + data[i].CRN + "</div>"
+                                        + "</div>"
+                                        + "<div class='app_status'>"
+                                        + "<div class='title'>STATUS : <span class='Datacolor'>COMPLETE</span></div>"
+                                        + "<div class='progress'>"
+                                        + "<div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:" + data[i].Progress + "%'>"
+                                        + data[i].Progress
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div class='con1 partc'>"
+                                        + "<div class='SUM_a'>"
+                                        + "<div class='title fieldName'>SUM ASSURED</div>"
+                                        + data[i].Sum_Insured
+                                        + "</div>"
+                                        + "<div class='a_date'>"
+                                        + "<div class='title fieldName'>APP DATE</div>"
+                                        + data[i].Quote_Date
+                                        + "</div>"
+                                        +"<div class='download' id='div_downloadPolicy_"+i+"'>"
+                                        +"<a href='"+data[i].policy_url+"' target='_blank' download='"+data[i].CRN+"'><div class='dwn_policy' id='download_policy'><i class='fa fa-download' aria-hidden='true'></i></div></a>"
+                                        +"</div>"
+
+                                        + "</div>"
+                                        + "<input type='hidden' id='hd_app_SRN' value='" + data[i].SRN + "'/>"
+                                        + "<input type='hidden' id='hd_app_Insurer' value='" + data[i].Insurer + "'/>"
+                                        + "</div>"
+                                        + "</div>");
+                                $(".amb").click(function (e) {
+                                    var mbtoppos = $(this).position().top + "px";
+                                    //console.log(mbtoppos);
+                                    if ($(".menuBox").is(":visible")) {
+                                        $(".menuBox").hide()
+                                        $(".menuBox").slideDown()
+                                    }
+                                    $(".menuBox").slideDown().css({ "top": mbtoppos, "right": "30px" });
+                                });
+                                $(window).scroll(function () {
+                                    if ($(this).scrollTop() > 0) {
+                                        $('.menuBox').fadeOut();
+                                    }
+                                    else {
+
+                                    }
+                                });
+                                var Status =  data[i].Last_Status;
+                                if(Status=="TRANS_SUCCESS_WITH_POLICY")
+                                {
+                                    $('#div_downloadPolicy_'+i).show();
+                                }else{
+                                    $('#div_downloadPolicy_'+i).hide();
+                                }
+                            }
+                        }
+                    },
+                    error: function(result) {
+                    }
+                });
+
+            }
+        }
+    }
+
+    var flag = 0;
+    /* Side slide menu */
+    function openNav() {
+        if (flag == 0) { document.getElementById("mySidenav").style.width = "250px"; flag = 1; }
+        else { closeNav(); }
+    }
+    function closeNav() { document.getElementById("mySidenav").style.width = "0"; flag = 0; }
+    /* tab slider */
+
+    function AddQuote() {
+        $('.Car_insurer_main_cls').hide();
+        $('#maindiv').removeClass("hidden");
+    }
+    function Reload() {
+        location.reload(true)
+    }
+    function SearchQuote(This) {
+        if ($("#SearchQuote").val() != 0) {
+            $("#SearchQuoteInput").show();
+            var option = $("#SearchQuote").val();
+            $("#myInput").val("");
+            switch (option) {
+                case 'Name':
+                    $('#myInput').attr('placeholder', 'Name');
+                    break;
+                case 'CRN':
+                    $('#myInput').attr('placeholder', 'CRN');
+                    break;
+                    //case 'RegNo':
+                    //    $('#myInput').attr('placeholder', 'Registration Number');
+                    //    break;
+            }
+        }
+        else {$("#SearchQuoteInput").hide();}
+
+    }
+
+    //$('.quote_list_Div').scroll(function() {
+    //    var pageIndex= 1;
+    //    var iCurScrollPos = $(this).scrollTop();
+    //    if (iCurScrollPos > iScrollPos) {
+    //        //Scrolling Down
+    //        var elmnt = document.getElementById("quote_list_Div");
+    //        var y = $('.quote_list_Div').scrollTop();
+    //        if ( $('.quote_list_Div').height() >= 375 ) {
+    //            //if(!isSearchCheck){
+    //            if (RedirectSelect == 'SEARCH'){
+    //                pageIndex++;
+    //                GetQuoteList();
+    //            }else if (RedirectSelect == 'APPLICATION'){
+    //                pageIndex++;
+    //                GetApplication();
+    //            }else if (RedirectSelect == 'SELL'){
+    //                pageIndex++;
+    //                GetSellList();
+    //            }
+
+    //            //}
+    //        }
+    //    }
+
+    //});
+
+    function Next_previous(type)
+    {
+        if(type=="Next")
+        {
+            pageIndex++;
+            if (RedirectSelect == 'SEARCH' && quote_cnt == 20){
+                GetQuoteList();
+
+            }else if (RedirectSelect == 'APPLICATION'  && application_cnt == 20){
+                GetApplication();
+
+            }else if (RedirectSelect == 'SELL'  && sell_cnt == 20){
+                GetSellList();
+            } else{
+                alert('No more record');
+            }
+        }
+        if(type=="Previous")
+        {
+            if(pageIndex > 1){
+            pageIndex--;
+            if (RedirectSelect == 'SEARCH'){
+                GetQuoteList();
+            }else if (RedirectSelect == 'APPLICATION'){
+                GetApplication();
+            }else if (RedirectSelect == 'SELL'){
+                GetSellList();
+            }
+        }
+        else{
+            alert('No more record');
+        }
+        }
+        //pageIndex==1?  $('#previous_page').hide():  $('#previous_page').show();
+
+    }
+    $(".inputIsu").keyup(function () {
+        if (this.value.length == this.maxLength) {
+            var $next = $(this).next('.inputIsu');
+            if ($next.length)
+                $(this).next('.inputIsu').focus();
+            else
+                $(this).blur();
+        }
+    });
+
+    function checkTextWithSpace(input) {
+        var pattern = new RegExp('^[a-zA-Z ]+$');
+        if (pattern.test(input) == false) { return false; }
+        else { return true; }
+    }
+    function ShowVehInsSubType(VISTCode) {
+        var InsText = "";
+        switch (VISTCode) {
+            case '0CH_1TP': InsText = "T.P. Only For 1 Yr"; break;
+            case '0CH_3TP': InsText = "T.P. Only For 3 Yrs"; break;
+            case '0CH_5TP': InsText = "T.P. Only For 5 Yrs"; break;
+            case '1CH_0TP': InsText = "Comprehensive For 1 Yr"; break;
+            case '3CH_0TP': InsText = "Comprehensive For 3 Yrs"; break;
+            case '5CH_0TP': InsText = "Comprehensive For 5 Yrs"; break;
+            case '1CH_2TP': InsText = "Comprehensive For 1 Yr + T.P. For 2 Yrs"; break;
+            case '1CH_4TP': InsText = "Comprehensive For 1 Yr + T.P. For 4 Yrs"; break;
+
+            case '1CH_1TP': InsText = "O.D. For 1 Yr + T.P. For 1 Yr"; break;
+            case '2CH_0TP': InsText = "O.D. + T.P. For 2 Yrs"; break;
+            case '3CH_0TP': InsText = "O.D. + T.P. For 3 Yrs"; break;
+
+            case '1CH_4TP': InsText = "O.D. For 1 Yr + T.P. For 4 Yrs"; break;
+            case '5CH_0TP': InsText = "O.D. For 5 Yrs"; break;
+        }
+        return InsText;
+    }
+    function GetPrevIns(InsId) {
+        var InsText = "";
+        switch (InsId) {
+            case 1: InsText = "Bajaj Allianz"; break;
+            case 2: InsText = "Bharti Axa"; break;
+            case 3: InsText = "Cholamandalam MS"; break;
+            case 4: InsText = "Future Generali"; break;
+            case 5: InsText = "HDFC ERGO"; break;
+            case 6: InsText = "ICICI Lombard"; break;
+            case 7: InsText = "IFFCO Tokio"; break;
+            case 8: InsText = "National Insurance"; break;
+            case 9: InsText = "Reliance General"; break;
+            case 10: InsText = "Royal Sundaram"; break;
+            case 11: InsText = "Tata AIG"; break;
+            case 12: InsText = "New India Assurance"; break;
+            case 13: InsText = "Oriental Insurance"; break;
+            case 14: InsText = "United India"; break;
+            case 15: InsText = "L&amp;T General"; break;
+            case 16: InsText = "Raheja QBE"; break;
+            case 17: InsText = "SBI General"; break;
+            case 18: InsText = "Shriram General"; break;
+            case 19: InsText = "Universal Sompo"; break;
+            case 30: InsText = "Kotak Mahindra"; break;
+            case 33: InsText = "Liberty Videocon"; break;
+            case 35: InsText = "Magma HDI"; break;
+            case 44: InsText = "Go Digit"; break;
+            case 45: InsText = "Acko General"; break;
+            case 46: InsText = "Edelweiss"; break;
+        }
+        return InsText;
+    }
+
+    function vehicleinfo(SRN){
+	var data1 = { 
+			"search_reference_number": SRN,
+			"secret_key" : "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+			"client_key" : "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9" 
+		};
+	var obj_horizon_data = Horizon_Method_Convert("/quote/premium_summary", data1, "POST");
+	$.ajax({
+		type:"POST",
+		//data: JSON.stringify(obj_horizon_data['data']),
+		data: JSON.stringify(data1),
+		//url: obj_horizon_data['url'],
+		url: GetUrl() + '/quote/premium_summary',
+		contentType: "application/json;charset=utf-8",
+		dataType: "json",
+		
+		success: function (response) {
+			alert(JSON.stringify(response));
+			var vehicle = response.Master.Vehicle;
+			var request = response.Request;
+			var rto = response.Master.Rto;
+			if (request.registration_no != "") {
+				var RegNo = request.registration_no.replace(new RegExp('-', 'gi'), "");
+				$("#RegistrationNo").text(RegNo);
+
+				if ((RegNo.indexOf("AA1234") > -1) || (RegNo.indexOf("ZZ9999") > -1)) {
+					$("#RegistrationNo").text(RTOCode); $("#divRegistrationNoDetails").hide();
+				}
+				else {
+					$("#divRegistrationNoDetails").show();
+					$("#RegistrationNoDetails").text(RegNo);
+				}              
+			}
+			if(vehicle != "" && vehicle != null){
+				$("#VehicleNameDetails").text(vehicle.Description + " (" + vehicle.Vehicle_ID + ")");
+				$("#FuelNameDetails").text(vehicle.Fuel_Name);
+				if (request.external_bifuel_type == "cng") {
+					$("#FuelNameDetails").text(vehicle.Fuel_Name + "(" + "EXTERNAL FITTED CNG" + ")");
+				}
+				if (request.external_bifuel_type == "lpg") {
+					$("#FuelNameDetails").text(vehicle.Fuel_Name + "(" + "EXTERNAL FITTED LPG" + ")");
+				}
+			}
+
+			if (request.external_bifuel_value > 0) { $("#ExternalBifuelVal").html(request.external_bifuel_value); }
+			else { $("#divExternalBifuelVal").hide(); }
+			
+			if(rto != "" && rto != null){
+				$("#RTODetails").text(rto.RTO_City + ", " + rto.State_Name + " (" + response.Master.Rto.VehicleCity_Id + ")");
+			}
+			var Name = "";
+			if (request.first_name != "" && checkTextWithSpace(request.first_name)) {
+				Name = request.first_name + " ";
+				if (request.middle_name != "" && checkTextWithSpace(request.middle_name)) {
+					Name = Name + request.middle_name + " ";
+				}
+				if (request.last_name != "" && checkTextWithSpace(request.last_name)) {
+					Name = Name + request.last_name;
+				}
+			}
+			else { $("#divNameDetails").hide(); }
+			$("#NameDetails").text(Name);
+			if (request.mobile != "" && request.mobile != null) {
+				$("#MobileDetails").text(request.mobile);
+				if (request.mobile == "9999999999") {
+					$("#MobileDetails").text("NA");
+				}
+			} else { $("#divMobileDetails").hide(); }
+			if (request.email != "" && request.email != null) {
+				$("#EmailDetails").text(request.email);
+				if ((request.email).indexOf('@@testpb.com') > 1) {
+					$("#EmailDetails").text("NA");
+				}
+			} else { $("#divEmailDetails").hide(); }
+
+			if (request.vehicle_insurance_type == "new") { $("#RegistrationTypeDetails").text("New"); }
+			else { $("#RegistrationTypeDetails").text("Renew"); }
+
+			//For TP Plan Implementation
+			VehInsSubType = request.vehicle_insurance_subtype;
+			$("#VehicleInsuranceSubtype").val(VehInsSubType);
+			console.log("VehInsSubType: ", VehInsSubType);
+
+			$("#RegistrationSubTypeDetails").html(ShowVehInsSubType(VehInsSubType));
+
+			if (request.vehicle_registration_date != "" || request.vehicle_registration_date != null) { $("#RegistrationDate").html(request.vehicle_registration_date); }
+			else { $("#divRegistrationDate").hide(); }
+
+			if (request.vehicle_manf_date != "" || request.vehicle_manf_date != null) { $("#ManufactureDateval").html(request.vehicle_manf_date); }
+			else { $("#divManufactureDateval").hide(); }
+
+			if (request.policy_expiry_date != "" && request.policy_expiry_date != null) { $("#PolicyExpiryDateval").html(request.policy_expiry_date); }
+			else { $("#divPolicyExpiryDateval").hide(); }
+
+			if ((request.vehicle_ncb_current != "" || request.vehicle_ncb_current != null) && request.vehicle_ncb_current != 0) { $("#PrevNCB").html(request.vehicle_ncb_current + "%"); }
+			else { $("#divPrevNCB").hide(); }
+
+			if (request.is_claim_exists != "no") { $("#ClaimYesNo").html("Yes"); $("#divPrevNCB").hide(); }
+			if (request.is_claim_exists != "yes") { $("#ClaimYesNo").html("No"); $("#divPrevNCB").show(); }
+
+			if (request.vehicle_registration_type == "corporate") { $("#VehicleInsType").html("Company"); }
+			else { $("#VehicleInsType").html("Individual"); }
+
+			var PrevInsName = GetPrevIns(request.prev_insurer_id);
+			if (request.prev_insurer_id != "" && request.prev_insurer_id != null) { $("#PrevInsurer").html(PrevInsName); }
+			else { $("#divPrevInsurer").hide(); }
+			$('#VehicleModal').show();
+		},
+		error: function (response) { 
+			alert('Error in Premium Summary') 
+		}
+	});
+}
+
+$('.popclosepos').click(function(e){
+        $('#VehicleModal').hide();
+    })
+</script>
+</head>
+<body onload="Redirect()">
+<div style="width:100%; top:0px;">
+    <section id="intro">
+        <div id="VehicleModal" class="modal animated bounceIn in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; padding-left: 17px;">
+            <div class="modal-dialog compare-popup popuptop travel-popup">
+                <div class="modal-content" style="height: 100%; background: #fff!important;">
+                    <div class="modal-header" style="background-color: #1C2855;margin-top: 50px;height: 40px;padding: 10px;">
+                        <div style="color:#fff;display:inline;font-size:18px;">Your Details</div>
+                        <a href="#" data-dismiss="modal" class="nooutline popclosepos cross-w" style="float: right;padding-right: 10px;"> X </a>
+                    </div>
+                    <div class="modal-body" style="padding: 10px !important;">
+                        <div class="row" style="margin-right: 0px !important; margin-left: 0px !important;">
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Name : <span style="color:#c78217;" id="VehicleNameDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Fuel Name : <span style="color:#c78217;" id="FuelNameDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divExternalBifuelVal">
+                                <h3 style="padding-bottom: 0px !important;">Bi-fuel CNG/LPG Kit Value : <span style="color:#c78217;" id="ExternalBifuelVal"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">RTO : <span style="color:#c78217;" id="RTODetails"></span></h3>
+                            </div>
+                            @*<div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divNameDetails">
+                                <h3 style="padding-bottom: 0px !important;">Name : <span style="color:#c78217;" id="NameDetails"></span></h3>
+                            </div>*@
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divMobileDetails">
+                                <h3 style="padding-bottom: 0px !important;">Mobile : <span style="color:#c78217;" id="MobileDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divEmailDetails">
+                                <h3 style="padding-bottom: 0px !important;">Email : <span style="color:#c78217;" id="EmailDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divRegistrationNoDetails">
+                                <h3 style="padding-bottom: 0px !important;">Registration Number : <span style="color:#c78217;" id="RegistrationNoDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Type : <span style="color:#c78217;" id="RegistrationTypeDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Sub-Type : <span style="color:#c78217;" id="RegistrationSubTypeDetails"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divRegistrationDate">
+                                <h3 style="padding-bottom: 0px !important;">Registration Date : <span style="color:#c78217;" id="RegistrationDate"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divManufactureDateval">
+                                <h3 style="padding-bottom: 0px !important;">Manufacturing Date : <span style="color:#c78217;" id="ManufactureDateval"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPolicyExpiryDateval">
+                                <h3 style="padding-bottom: 0px !important;">Previous Policy Expiry Date : <span style="color:#c78217;" id="PolicyExpiryDateval"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divClaimYesNo">
+                                <h3 style="padding-bottom: 0px !important;">Claimed In The Past Year : <span style="color:#c78217;" id="ClaimYesNo"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPrevNCB">
+                                <h3 style="padding-bottom: 0px !important;">Previous No Claim Bonus (NCB) : <span style="color:#c78217;" id="PrevNCB"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divVehicleInsType">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Registration Type : <span style="color:#c78217;" id="VehicleInsType"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;display:none;" id="divVehicleClass">
+                                <h3 style="padding-bottom: 0px !important;">Vehicle Class : <span style="color:#c78217;" id="VehicleClass"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom:none !important;" id="divPrevInsurer">
+                                <h3 style="padding-bottom: 0px !important;">Previous Insurer Name : <span style="color:#c78217;" id="PrevInsurer"></span></h3>
+                            </div>
+                        </div>
+                        <div style="border-bottom:1px solid #e2d9d9; margin-bottom:5px;margin-top: 10px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-section " data-type="background" data-speed="7">
+                <div class="Car_insurer_main_cls">
+					<div class="row Car_insurer_txt">@Product Insurance</div>
+					<div class="row Car_insurer_container">
+						<div class="col-md-12 col-sm-12" data-spy="affix" data-offset-top="17">
+							<div class="header_Maindiv">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<div class="addquot_div">
+										<div class="grab">
+											<span class="ad_quote">
+												<img src="http://www.policyboss.com/Images/Quotelist/file.png" style="margin-left: -15px;">
+												Inspection Data
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-9 Btn_div">
+									<ul style="float:right" class="grab">
+										<li id="previous_page" style="border-top-left-radius:5px;border-bottom-left-radius:5px;width:75px;height:40px" onclick="Next_previous('Previous');" name="Previous">Previous</li>
+										<li id="next_page" style="border-top-right-radius:5px;border-bottom-right-radius:5px;width:50px;height:40px" onclick="Next_previous('Next');">Next</li>
+										</ul>
+								</div>
+							</div>
+						</div>
+						<div class="quote_list_Div">
+							<div class="container-fluid healthmaindiv">
+								<div class="menuBox" style="display:none;">
+									<div id="CallFuncId">
+										<a href="#" class="CallFuncClass">CALL</a>
+									</div>
+									<div id="SmsFuncId">
+										<a href="#" class="SmsFuncClass">SMS</a>
+									</div>
+								</div>
+								<!-- <div class="loader" id="loader_id">Fetching......</div> -->
+								<div class="quoteList_container quoteList">
+									<table style="width:100%;" id="tbl_quote_list">
+										<tr class="quoteTR" id="tr_lst" style="display:none;">
+											<td class="quoteTabData">
+												<div class="ApplicantName">Preeti Patil</div>
+												<div class="ApplicantName fieldName">CRN:<span class="crn_span Datacolor">234578</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Vehicle Name</div>
+												<div class="Datacolor desc quote_date">Honda City</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">RTO Name</div>
+												<div class="desc quote_date Datacolor">Mumbai-Andheri</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Vehicle Number</div>
+												<div class="desc quote_date Datacolor">01/04/2019</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">QUOTE DATE</div>
+												<div class="desc quote_date Datacolor">20/10/2019</div>
+											</td>
+											<td class="quoteTabData">
+												<div class="ApplicantName fieldName">Status</div>
+												<div class="desc quote_date Datacolor">Complete</div>
+											</td>
+											<!-- <td style="width:10%; margin-top: 22px; font-size: 20px;position:inherit" class="glyphicon glyphicon-option-vertical mb"></td> -->
+										</tr>
+									</table>
+								</div>
+							</div>
+
+							<div class="quoteList_container appquote_list">
+								<div class="menuBox" style="display: none;">
+									<div id="CallFuncId">
+										<a href="#" class="CallFuncClass">CALL</a>
+									</div>
+									<div id="SmsFuncId">
+										<a href="#" class="SmsFuncClass">SMS</a>
+									</div>
+									<!-- <div>SHARE LINK</div> -->
+								</div>
+								<div class="app_mainlist">
+								</div>
+								<div class="app_quoteDiv" style="display:none;">
+									<div class="ins_logo">
+										<img src="" class="img-responsive">
+									</div>
+									<div class="content_container">
+										<div class="con parta">
+											<div class="uname">
+												KHUSHBU GITE
+											</div>
+											<div class="menu" style="display:none;">
+												<span class="glyphicon glyphicon-option-vertical amb"></span>
+											</div>
+										</div>
+										<div class="con partb">
+											<div class="app_num">
+												<div class="title">APP NUMBER</div>
+												<div class="num">125642</div>
+											</div>
+											<div class="app_num">
+												<div class="title">APP NUMBER</div>
+												<div class="num">125642</div>
+											</div>
+											<div class="app_status">
+												<div class="title"></div>
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="70"
+														 aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+														57%
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="con partc">
+											<div class="SUM_a">
+												<div class="title"></div>
+												1500000
+											</div>
+											<div class="a_date">
+												<div class="title">APP DATE</div>
+												23/01/1989
+											</div>
+										</div>
+										<input type="hidden" id="hd_app_SRN" value="" />
+										<input type="hidden" id="hd_app_Insurer" value="" />
+									</div>
+								</div>
+							</div>
+
+							<div class="quoteList_container sellquote_list" style="display: block;">
+								<div class="menuBox" style="display:none">
+									<div id="CallFuncId">
+										<a href="#" class="CallFuncClass">CALL</a>
+									</div>
+									<div id="SmsFuncId">
+										<a href="#" class="SmsFuncClass">SMS</a>
+									</div>
+									<!-- <div>SHARE LINK</div> -->
+								</div>
+								<div class="sell_quoteDiv app_quoteDiv">
+
+								</div>
+								<div class="sell_mainlist">
+								</div>
+							</div>
+
+						</div>
+						<div class="PaginationDiv">
+							<div class="pagination" id="pagin">
+								<a href="#">Previous</a>
+								<a href="#" class="current">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">Next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

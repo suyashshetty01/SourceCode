@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <title>NCSI :: List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://raw.githubusercontent.com/ReactiveRaven/jqBootstrapValidation/1.3.6/jqBootstrapValidation.js"></script>
+
+        <link href="http://horizon.policyboss.com:5000/adminpanel/css/materialize.css" rel="stylesheet" />
+
+        <!--<link href="http://horizon.policyboss.com:5000/adminpanel/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />-->
+        <link rel="stylesheet" href="http://t00rk.github.io/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" />
+
+        <script src="http://horizon.policyboss.com:5000/adminpanel/plugins/momentjs/moment.js"></script>
+
+        <!--<script src="http://horizon.policyboss.com:5000/adminpanel/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>-->
+        <script type="text/javascript" src="http://t00rk.github.io/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+        <style>
+            body {
+                margin-bottom: 100px;
+            }
+
+            .row {
+                margin-bottom: 20px;
+            }
+
+            pre {
+                margin-top: 0;
+            }
+
+            .button.button-small {
+                height: 30px;
+                line-height: 30px;
+                padding: 0px 10px;
+            }
+
+            td input[type=text], td select {
+                width: 100%;
+                height: 30px;
+                margin: 0;
+                padding: 2px 8px;
+            }
+
+            th:last-child {
+                text-align: right;
+            }
+
+            td:last-child {
+                text-align: right;
+            }
+
+            td:last-child .button {
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                padding: 0px;
+                margin-bottom: 0px;
+                margin-right: 5px;
+                background-color: #FFF;
+            }
+
+            td:last-child .button .fa {
+                line-height: 30px;
+                width: 30px;
+            }
+        </style>
+
+
+        <style>
+            body , html , * {
+                font-family:'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+            }
+            .claimList th{
+                text-align:center !important;
+            }
+            td{
+                text-align:center !important;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="text-align: center">NSCI - Enrollment List(Count - <span id="cnt">0</span>)</h2>
+        <!-- <table id="example" class="display" cellspacing="0" width="100%"> -->
+        <!-- <thead> -->
+        <!-- <tr> -->
+        <!-- <th></th> -->
+        <!-- <th>AckCode</th> -->
+        <!-- <th>Name</th> -->
+        <!-- <th>Membership</th> -->
+        <!-- <th>DOB</th> -->
+        <!-- <th>Mobile</th> -->
+        <!-- <th>Sum_Insured</th> -->
+        <!-- <th>PlanOption</th> -->
+        <!-- <th>CreatedOn</th> -->
+        <!-- </tr> -->
+        <!-- </thead> -->
+        <!-- </table> -->
+        <div class="panel panel-default">                
+            <div class="panel-body table-responsive" >
+                <table id="example" class="u-full-width demo table-responsive">
+                    <thead>
+                        <tr class="claimList">
+                            <th>Edit</th>
+                            <th>Ack</th>
+                            <th>Name</th>
+                            <th>Membership</th>
+                            <th>DOB</th>
+                            <th>Mobile</th>
+                            <th>Sum_Insured</th>                    
+                            <th>Premium</th>
+                            <th>PlanOption</th>
+                            <th>CreatedOn</th>                    
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit data</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form method="POST" id="frmdata"  name="frmdata" enctype="multipart/form-data" action="http://horizon.policyboss.com:5000/report/nsci_lead_update">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-default" id="btnsave">Update</button>
+                                    <button type="button" class="btn btn-default" id="btnclose">Close</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line focused">
+                                        <label class="form-label">Cheque copy</label>
+                                        <input type="file" class="form-control"  id="cheque_copy" name="cheque_copy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body" id="editdata">
+
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/table-edits.min.js"></script>
+    <script>
+        var common_data = {};
+        $.fn.serializeObject = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+        $(document).ready(function () {
+            var url = "http://horizon.policyboss.com:5000/report/nsci_list";
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: "json",
+                success: function (data) {
+                    $('#cnt').html(data.data.length);
+                    console.log(data);
+                    for (var i in data.data) {
+                        common_data[data.data[i].ack] = data.data[i];
+                        $("#example").append(" <tr data-id='1'>"
+                                + "<td>"
+                                + "<a class='button button-small edit' title='Edit'>"
+                                + "<i class='fa fa-pencil'></i>"
+                                + "</a>"
+                                + "<td data-field='ack'>" + data.data[i].ack + "</td>"
+                                + "<td data-field='member_1_name'>" + data.data[i].member_1_name + "</td>"
+                                + "<td data-field='membership_no'>" + data.data[i].membership_no + "</td>"
+                                + "<td data-field='member_1_dob'>" + data.data[i].member_1_dob + "</td>"
+                                + "<td data-field='mobile_no'>" + data.data[i].mobile_no + "</td>"
+                                + "<td data-field='sum_insured'>" + data.data[i].sum_insured + "</td>"
+                                + "<td data-field='premium'>" + data.data[i].premium + "</td>"
+                                + "<td data-field='plan_option'>" + data.data[i].plan_option + "</td>"
+                                + "<td data-field='created_on'>" + new Date(data.data[i].created_on).toLocaleString() + "</td>"
+                                + "</tr>"
+                                );
+
+                        $(function () {
+                            var pickers = {};
+
+                            $('table tr').editable({
+                                dropdowns: {
+                                    sex: ['Male', 'Female']
+                                },
+                                edit: function (values) {
+                                    console.log('edit', values);
+                                    $('#editdata').html();
+                                    var arr_key_ignore = ['_id', 'ack', 'otp_created', 'created_on', 'otp_entered'];
+                                    var ind_data = common_data[values.ack];
+                                    for (var k in ind_data) {
+                                        if (k == '_id' || k == 'created_on' || k == 'modified_on') {
+                                            continue;
+                                        }
+
+                                        if (arr_key_ignore.indexOf(k) < 0) {
+                                            var html = "<div class=\"form-group\">\n\
+                                                            <label class=\"control-label col-sm-4\" for=\"" + k + "\">" + k + ":</label>\n\
+                                <div class=\"col-sm-8\">\n\
+                                    <input type=\"text\" name=\"" + k + "\" class=\"form-control\" id=\"" + k + "\" placeholder=\"Enter " + k + "\" value=\"" + ind_data[k] + "\"></div></div>";
+                                            if (k == 'cheque_copy' && ind_data[k] !== '') {
+                                                var html = "<div class=\"form-group\">\n\
+                                                            <label class=\"control-label col-sm-4\" for=\"" + k + "\">" + k + ":</label>\n\
+                                <div class=\"col-sm-8\">\n\
+                                    <a href=\"http://download.policyboss.com/pdf-files/policy/" + ind_data[k] + "\" target=\"BLANK\">VIEW</a></div></div>";
+                                            }
+
+                                        } else {
+                                            var html = "<input type=\"hidden\" name=\"" + k + "\" class=\"form-control\" id=\"" + k + "\"  value=\"" + ind_data[k] + "\">";
+                                        }
+                                        $('#editdata').append(html);
+                                    }
+                                    $('#myModal').modal('show');
+
+                                }
+                            });
+
+
+                        });
+                    }
+                },
+                error: function (result) {
+
+                }
+            });
+
+        });
+
+        $(function () {
+            var pickers = {};
+
+            $('table tr').editable({
+                dropdowns: {
+                    sex: ['Male', 'Female']
+                },
+                edit: function (values) {
+                    /*$(".edit i", this)
+                     .removeClass('fa-pencil')
+                     .addClass('fa-save')
+                     .attr('title', 'Save');
+                     
+                     pickers[this] = new Pikaday({
+                     field: $("td[data-field=birthday] input", this)[0],
+                     format: 'MMM D, YYYY'
+                     });*/
+                },
+                save: function (values) {
+                    alert('Saved');
+                    $(".edit i", this)
+                            .removeClass('fa-save')
+                            .addClass('fa-pencil')
+                            .attr('title', 'Edit');
+
+                    if (this in pickers) {
+                        pickers[this].destroy();
+                        delete pickers[this];
+                    }
+                },
+                cancel: function (values) {
+                    $(".edit i", this)
+                            .removeClass('fa-save')
+                            .addClass('fa-pencil')
+                            .attr('title', 'Edit');
+
+                    if (this in pickers) {
+                        pickers[this].destroy();
+                        delete pickers[this];
+                    }
+                }
+            });
+
+            $('#btnclose').on('click', function () {
+                $('#myModal').modal('hide');
+                window.location.reload();
+            });
+            $('#btnsave').on('click', function () {
+                if (confirm('Wana update data?')) {
+                    var odata = {};
+                    var formData = $('#frmdata').serializeObject();
+                    for (var k in formData) {
+                        if ($("#" + k).is(":visible") && formData[k] == "") {
+
+                        } else {
+                            odata[k] = formData[k];
+                        }
+                    }
+                    console.log(formData);
+
+                    $('#frmdata').ajaxSubmit({
+                        error: function (xhr) {
+                            window.location.reload();
+                            //status('Error: ' + xhr.status);
+                        },
+                        success: function (response) {
+                            alert('Data is Updated');
+                            //$("#status").empty().text('');
+                            console.log(response);
+                            window.location.reload();
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+</html>

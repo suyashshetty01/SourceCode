@@ -1,0 +1,744 @@
+<html>
+<title>Inspection Page</title>
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        [type="checkbox"]:checked.chk-col-red + label:before {
+            border-right: 2px solid #5b9bd5;
+            border-bottom: 2px solid #5b9bd5;
+        }
+
+        [type="checkbox"].filled-in:checked + label:before {
+            border-right: 2px solid #fff !important;
+            border-bottom: 2px solid #fff !important;
+        }
+
+        [type="checkbox"].filled-in:checked.chk-col-red + label:after {
+            border: 2px solid #5b9bd5;
+            background-color: #5b9bd5;
+        }
+
+        label {
+            color: #999;
+            font-size: 13px;
+            font-weight: normal;
+            /*position: absolute;*/
+            pointer-events: auto;
+            left: 10px;
+            /*top: 7px;*/
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        [data-toggle=buttons] > .btn input[type=checkbox], [data-toggle=buttons] > .btn input[type=radio], [data-toggle=buttons] > .btn-group > .btn input[type=checkbox], [data-toggle=buttons] > .btn-group > .btn input[type=radio] {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
+
+        [data-toggle=buttons] > .btn input[type=checkbox], [data-toggle=buttons] > .btn input[type=radio], [data-toggle=buttons] > .btn-group > .btn input[type=checkbox], [data-toggle=buttons] > .btn-group > .btn input[type=radio] {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
+
+        .radioYesStyle {
+            position: relative;
+            width: auto;
+            height: 27px;
+            float: left;
+            font-size: 12px;
+            margin-top: 12px;
+            left: 0;
+            text-transform: uppercase;
+        }
+
+        .radioNoStyle {
+            left: 5px;
+            position: relative;
+            width: auto;
+            height: 27px;
+            float: left;
+            font-size: 12px;
+            margin-top: 12px;
+            text-transform: uppercase;
+        }
+
+        .ErrorText {
+            color: red;
+        }
+
+        .Error1 {
+            border: 1px solid red !important;
+        }
+
+        .ui-datepicker .ui-datepicker-title select {
+            color: #000;
+        }
+
+        .ui-widget-header {
+            border: 1px solid #0f1d3a;
+            background: #adb8ec;
+            color: #9495c5;
+            font-weight: bold;
+        }
+
+        .SpinnerClass {
+            display: block;
+            background-color: #f7fbfe;
+            border: 1px solid #97bfd8;
+            border-radius: 2px;
+            box-shadow: 0 0 5px 2px rgba(51,51,51,.2);
+            bottom: 2.5em;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 120px;
+            width: 80%;
+            padding: 0px;
+            text-align: center;
+            max-height: 300px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 100;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .icon-heading {
+            text-align: left;
+            position: absolute;
+            left: 13px;
+            display: none;
+        }
+
+        .pad-left-panel {
+            margin-left: 15px;
+        }
+
+        .ui-widget-header {
+            border: 1px solid #0f1d3a;
+            background: #a7a7a7;
+            color: #000000;
+            font-weight: bold;
+        }
+
+            .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+                border: 1px solid #ccc;
+                background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+                font-weight: bold;
+                color: #616161;
+            }
+
+        .ui-widget-header {
+            border: 1px solid #424242;
+            background: #808080;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .panel-title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .clear {
+            padding-top: 15px;
+            margin-left: -8px;
+        }
+
+        .height-box {
+            margin-bottom: 4px !important;
+        }
+
+        .valerr {
+            margin-top: -5px !important;
+            font-size: 13px;
+        }
+
+        .Error {
+            color: red;
+        }
+
+        @@media (max-width: 991px) {
+            .divRegSearch {
+                text-align: center !important;
+            }
+        }
+        /*Added By Pratik Loader css*/
+        #preload {
+            background: rgb(28, 40, 85);
+            /*background: transparent;*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: table;
+        }
+
+        .preload {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            height: 100%;
+        }
+
+        @@keyframes load8 {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .Pgloader {
+            background-color: white;
+            padding: 25px;
+            width: 50%;
+            color: #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid #97bfd8;
+            border-radius: 2px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        @@media (max-width: 475px) {
+            .Pgloader {
+                width: 80%;
+            }
+        }
+
+        .PlanDiv {
+            padding: 5px 20px;
+        }
+
+        .addMark {
+            font-size: 12px;
+            color: green;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .bundleAddons {
+            display: block;
+            padding: 5px 7px;
+            margin: 2px;
+            font-size: 12px;
+        }
+    </style>
+	
+<script type="text/javascript">
+    var ClientID = 2;
+    function submitForSelfInspection() {
+        var CRNVal = $("#CustomerReference_ID").text();
+        var ServiceLogUniqueId = $("#ServiceLogUniqueId").text();
+        window.location.href = "Camaratest.html?CRN="+CRNVal+"&ARN="+ServiceLogUniqueId;
+    }
+	
+    function Horizon_Method_Convert(method_action, data, type) {
+        var obj_horizon_method = {
+            //'url': (type == "POST") ? "https://localhost:50111/TwoWheelerInsurance/call_horizon_post" : "https://localhost:50111/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+            'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+            "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+            }
+        };
+        return obj_horizon_method;
+    }
+
+    $(document).ready(function () {
+        if (location.protocol != 'https:' && (window.location.host.indexOf('www') > -1)) {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+        $("#divCurrentAddress").hide();
+        $("#PolicyTenure").val("1");
+    });
+	
+    function GetUrl(){
+        var url = window.location.href;
+        var newurl;
+        //newurl = "http://qa.policyboss.com";
+        if (url.includes("Desktop")) {
+            newurl = "http://localhost:3000";
+            //newurl = "http://qa-horizon.policyboss.com:3000";
+        } else if (url.includes("qa")) {
+            newurl = "http://qa-horizon.policyboss.com:3000";
+        } else if (url.includes("www") || url.includes("cloudfront")) {
+            newurl = "http://horizon.policyboss.com:5000";
+        }
+        return newurl;
+    };
+	
+    function Get_Search_Summary_Proposal() {
+        var ARN = window.location.href.split("=")[1];
+        ARN = ARN.toUpperCase();
+        var data1 = { 
+            "api_reference_number": ARN,
+            "secret_key" : "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+            "client_key" : "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+        };
+            
+        var obj_horizon_data = Horizon_Method_Convert("/quote/api_log_summary", data1, "POST");
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(obj_horizon_data['data']),
+            //data: JSON.stringify(data1),
+            url: obj_horizon_data['url'],
+            //url: GetUrl() + '/quote/api_log_summary',
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+
+            success: function (response) {
+                summary = response;
+                var request = summary.Quote_Request;
+                var processed = summary.Last_Premium_Request;
+                var breakup = summary.Premium_Response.Premium_Breakup;
+                var LastPremRes = summary.Last_Premium_Response;
+                var vehicle = summary.Insurer_Master.Vehicle;
+                var pbrto = summary.PB_Master.Rto;
+                var insurer = summary.PB_Master.Insurer;
+                var posp = summary.Posp;
+                var pb_vehicle = summary.PB_Master.Vehicle;
+                var SRN = summary.Summary.Request_Unique_Id;
+
+                $("#ServiceLogUniqueId").text(ARN);
+                $("#CustomerReference_ID").text(request.crn);
+                $("#_IDV").text(processed.vehicle_expected_idv);
+                $('#_Rto_Input').text(pbrto.VehicleCity_RTOCode + " " + pbrto.RTO_City);
+                $('#_Registration_Date').text(request.vehicle_registration_date);
+
+                var policy_tenure = request.policy_tenure - 0;
+                var end_date = new Date(processed.policy_start_date);
+                end_date.setFullYear(end_date.getFullYear() + policy_tenure)
+                end_date.setDate(end_date.getDate() - 1);
+                end_date = $.datepicker.formatDate('yy-mm-dd', end_date);
+                $('#_Policy_Duration').text(processed.policy_start_date + '  -  ' + end_date);
+				
+                var vehInsType = request.vehicle_insurance_type;
+
+                // New Code For Addon Bundle Selected Or Not
+                var AddonMode = summary.Summary.Addon_Mode;
+                var PlanName = summary.Summary.Plan_Name;
+                var PlanList = summary.Premium_Response.Plan_List;
+                var is_TP = "no";
+
+                var AddonNetPremium = 0;
+                var addon = [];
+
+                ProductID = request.product_id;
+                InsurerID = insurer.Insurer_ID;
+                PlanID = summary.Summary.Plan_Id;
+				
+                if (AddonMode == 'BUFFET') {
+                    for (var pl in PlanList) {
+                        if (PlanList[pl].Plan_Name == PlanName) {
+                            PlanAddonList = PlanList[pl].Plan_Addon_Breakup;
+                            break;
+                        }
+                    }
+                    $("#divPlanName").removeClass('hidden');
+                    $("#PlanName").text(PlanName);
+                }
+                else {
+                    if (summary.Addon_Request != null) {
+                        var Addon_Request_Tmp = {};
+                        if (summary.Addon_Request.hasOwnProperty('addon_standalone')) {
+                            Addon_Request_Tmp = summary.Addon_Request.addon_standalone;
+                        }
+                        else {
+                            Addon_Request_Tmp = summary.Addon_Request;
+                        }
+                        PlanAddonList = Addon_Request_Tmp;// summary.Premium_Response.Addon_List; //
+                        addon = Addon_Request_Tmp;
+                    }
+                }
+				
+                //set values to proposal page.
+                $("#insurer_logo").attr('src', '/Images/insurer_logo/' + insurer.Insurer_Logo_Name);
+                $("#twowheeler_variant").text(pb_vehicle.Make_Name + " " + pb_vehicle.Model_Name + " " + pb_vehicle.Variant_Name);
+                $("#TwoWheelerVariant").val(pb_vehicle.Make_Name + ", " + pb_vehicle.Model_Name + ", " + pb_vehicle.Variant_Name);
+
+                if (summary.Quote_Request.app_version == "FinPeace") {
+                    if ((window.location.href).indexOf("www") > 0) {
+                        $("#quotepage_url").attr('href', 'http://d3j57uxn247eva.cloudfront.net/TW_Web/quotepage.html?SRN=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                    }
+                    else {
+                        $("#quotepage_url").attr('href', '/TW_Web/quotepage.html?SRN=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                    }
+                }
+                else {
+                    $("#quotepage_url").attr('href', '/two-wheeler-insurance/quotes?SID=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                }
+
+                // in case of car paid driver div should be visible
+                if (request.product_id == 1) {
+                    $('.car').removeClass("hidden");
+                    $("#PeronalAccidentCoverforDriver").text(request.pa_paid_driver_si > "0" ? "Yes" : "No");
+                    $("#PersonalCoverPassenger").text(request.pa_unnamed_passenger_si);
+                    $("#LegalLiabilityToPaidDriver").text((request.is_llpd == "yes") ? "Yes" : "No");
+                    if (InsurerID == 1 || InsurerID == 44) {
+                        $("#divLegalLiabilityToPaidDriver").hide();
+                    }
+                    $("#CNG_LPG_Kit").text(request.external_bifuel_value);
+
+                    if (summary.Quote_Request.app_version == "FinPeace") {
+                        if ((window.location.href).indexOf("www") > 0) {
+                            $("#quotepage_url").attr('href', 'http://d3j57uxn247eva.cloudfront.net/Motor_Web/quotepage.html?SRN=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                        }
+                        else {
+                            $("#quotepage_url").attr('href', '/Motor_Web/quotepage.html?SRN=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                        }
+                    }
+                    else {
+                        $("#quotepage_url").attr('href', '/car-insurance/quotes?SID=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                    }
+                }
+
+                //For Commercial Vehicle 12
+                if (request.product_id == 12) {
+                    $("#quotepage_url").attr('href', '/car-insurance/quotes?SID=' + summary.Summary.Request_Unique_Id + '&ClientID=' + ClientID + '');
+                }
+
+                //Populate addon on proposal page
+
+                var addon_populate = summary.Premium_Response.Addon_List;
+                //console.log('addon_populate', addon_populate, 'addon', addon);
+
+                var addon_html = $($('#collapseViewAddon').children('.panel-body')[0]).html();
+                $($('#collapseViewAddon').children('.panel-body')[0]).html("");
+
+                var addon_html_new = $($('#ShowAddon').children('.view-input-details')[0]).html();
+                $($('#ShowAddon').children('.view-input-details')[0]).html("");
+
+                var element_count = 0, tataaig_addon = 0;
+
+                //Khushbu Gite 20190401 
+                // Tata AIG give this addon for Free, they want to show 
+                if (InsurerID == 11) {
+                    PlanAddonList["addon_repair_glass_fiber_plastic"] = 0;                      
+                }
+
+                if (typeof PlanAddonList !== 'undefined') {
+                    $.each(PlanAddonList, function (index, value) {
+                        if ($.isNumeric(value)) {
+                            element_count++;
+                            var html = addon_html;
+                            html = html.replace('___Common_Addon___', index);
+                            html = html.replace('___Common_Addon___', index);
+                            html = html.replace('___Common_Addon_Name___', addon_list[index]);
+                            html = html.replace('___price___', PlanAddonList[index]);
+
+                            if (AddonMode == 'BUFFET') {
+                                if (element_count == 1) {
+                                    $($('#collapseViewAddon').children('.panel-body')[0]).append('<div class="PlanDiv"><strong>Plan Name </strong>: <span id="PlanName"></span></div>');
+                                }
+                            }
+                            if (PlanAddonList[index] != undefined) {
+                                //$($('#collapseViewAddon').children('.panel-body')[0]).append(html);
+                                $($('#ShowAddon').children('.view-input-details')[0]).append(html);
+                                AddonNetPremium += PlanAddonList[index];
+                            }
+                        }
+                        else if (value == 'yes') {
+                            element_count++;
+                            var html = addon_html;
+                            html = html.replace('___Common_Addon___', index);
+                            html = html.replace('___Common_Addon___', index);
+                            html = html.replace('___Common_Addon_Name___', addon_list[index]);
+                            html = html.replace('___price___', addon_populate[index]);
+
+                            if (addon_populate[index] != undefined) {
+                                if (index == "addon_zero_dep_cover" && request.vehicle_insurance_type == "renew") {
+                                    $("#divZeroDep").show();
+                                }
+                                //$($('#collapseViewAddon').children('.panel-body')[0]).append(html);
+                                $($('#ShowAddon').children('.view-input-details')[0]).append(html);
+                                AddonNetPremium += addon_populate[index];
+                            }
+                        }
+                    });
+                }
+                if (AddonMode != 'BUFFET') {
+                    AddonNetPremium = 0;
+                }
+                $("#PlanName").text(PlanName.replace(/_/g, ' '));
+                if (element_count == 0 || (AddonMode == 'BUFFET' && PlanName == 'Basic')) {
+                    $($('#ShowAddon').children('.view-input-details')[0]).html('<div style="padding: 10px;text-align: center;">No Addon Selected</div>');
+                }
+                net_premium = 0;
+                final_premium = 0;
+                var service_tax = 0;
+                var AddonPremiumST = 0;
+                var AddonPremiumTotalPremium = 0;
+
+                if (AddonNetPremium != 0) {
+                    AddonPremiumST = AddonNetPremium * (0.18);
+                    AddonPremiumTotalPremium = AddonNetPremium + AddonPremiumST;
+                }
+
+                net_premium = breakup.net_premium + AddonNetPremium;
+                finalServiceTax = breakup.service_tax + AddonPremiumST;
+                final_premium = breakup.final_premium + AddonPremiumTotalPremium;
+
+                if (ProductID == 12) {
+                    var OD_final = breakup.own_damage['od_final_premium'];
+                    var OD_Own_Premises = breakup.own_damage['od_disc_own_premises'];
+                    od_final_premium = (Math.round(OD_final - OD_Own_Premises));
+                    breakup.own_damage['od_final_premium'] = od_final_premium;
+                    var total_liability_premium1 = parseInt(breakup.liability['tp_final_premium']) + parseInt(breakup.liability['tp_cover_imt23']);
+                    var total_liability_premium2 = parseInt(breakup.liability['tp_basic_other_use']);
+                    var total_liability_premium = (Math.round(total_liability_premium1 + total_liability_premium2));
+                    breakup.liability['tp_final_premium'] = total_liability_premium;
+                    net_premium = od_final_premium + total_liability_premium + AddonNetPremium;
+                    breakup.net_premium = net_premium;
+                    if (request.vehicle_class == "gcv") {
+                        var OD_tax = 2 * (summary.Last_Premium_Response.own_damage['od_final_premium'] * 0.09) - 0;
+                        var tp_basic_Tax = 2 * (summary.Last_Premium_Response.liability['tp_basic'] * 0.06);
+                        var tp_rest = total_liability_premium - summary.Last_Premium_Response.liability['tp_basic'];
+                        var tp_rest_Tax = 2 * (tp_rest * 0.09) - 0;
+                        service_tax = (Math.round(OD_tax + tp_basic_Tax + tp_rest_Tax));
+                        breakup.service_tax = service_tax;
+                        finalServiceTax = service_tax;
+                    }
+                    else {
+                        service_tax = 2 * (breakup.net_premium * 0.09) - 0;
+                        breakup.service_tax = service_tax;
+                    }
+                    final_premium = net_premium + service_tax + AddonPremiumTotalPremium;
+                    breakup.service_tax = service_tax;
+                    finalServiceTax = service_tax;
+                }
+				
+                $("#SelectedQuote_NetPayablePayablePremium").val(net_premium + finalServiceTax);
+                $("#SelectedQuote_ServiceTax").val(finalServiceTax);
+                $("#SelectedQuote_TotalPremium").val(final_premium);
+                $("#premium").html(Math.round(final_premium));
+
+                console.log("net_premium:" + net_premium + "\nfinalServiceTax:" + finalServiceTax + "\nfinal_premium:" + final_premium);
+                console.log("(SelectedQuote_NetPayablePayablePremium).val()=" + $("#SelectedQuote_NetPayablePayablePremium").val() + "\n(SelectedQuote_ServiceTax).val()=" + $("#SelectedQuote_ServiceTax").val() + "\n(SelectedQuote_TotalPremium).val()=" + $("#SelectedQuote_TotalPremium").val())
+
+                if (element_count == 0) {
+                    var html = '<div class="col-xs-offset-2 col-xs-10 col-sm-offset-1 col-sm-3 pad text-sm-center text-sm-left">' +
+                        '<p style="margin-top:10px">No Addon Available</p>' +
+                        '</div>';
+                    $($('#collapseViewAddon').children('.panel-body')[0]).append(html);
+                }
+                $('#breakup_details').removeClass('hidden');
+                //update_premium(null);
+
+                //View Input Details
+                CRN = request.crn;
+
+                $("#CustomerReferenceID").val(request.crn);
+                $("#ProductID").val(request.product_id);
+
+                if (request.vehicle_insurance_subtype != null) {
+                    var VIST = (request.vehicle_insurance_subtype).split("CH_");
+                    if (VIST[0] == '0') {
+                        is_TP = "yes";
+                        $("#_IDV").text("Not Applicable"); $("#VehicleSubType").html(ShowVehInsSubType(request.vehicle_insurance_subtype));
+                        $(".NOTP").hide();
+                        $("#divVehicleSubType").show();
+                    }
+                }
+
+                $("#SelectedQuote_IDV").val(processed.vehicle_expected_idv);
+                $("#ElectricalAccessories").text(request.electrical_accessory == "" ? "0" : request.electrical_accessory);
+                $("#NonElectricalAccessories").text(request.non_electrical_accessory == "" ? "0" : request.non_electrical_accessory);
+                $("#NoClaimBonusPercent").text(request.vehicle_ncb_current);
+                $("#HaveNCBCertificate").val(request.is_claim_exists == "no" ? "No" : "Yes");
+                $("#VoluntaryDeduction").text(request.voluntary_deductible);
+                $("#IsAntiTheftDevice").text(request.is_antitheft_fit == "yes" ? "Yes" : "No");
+                $("#MemberofAA").text(request.is_aai_member == "yes" ? "Yes" : "No");
+
+                //Other Details
+                $("#TwoWheelerType").val(request.vehicle_insurance_type.toUpperCase());
+                $("#TwoWheelerVariantID").val(request.vehicle_id);
+                $("#DateofPurchaseofCar").val(request.vehicle_registration_date);
+                $("#PolicyExpiryDate").val(request.policy_expiry_date);
+                $("#CityofRegitration").val("(" + pbrto.VehicleCity_RTOCode + ") " + pbrto.RTO_City + "");
+                $("#CityofRegitrationID").val(pbrto.VehicleCity_Id);
+                $("#PreviousInsurer").val(request.prev_insurer_id);
+                $("#ManufactureMonth").val(request.vehicle_manf_date.substring(5, 7));
+                $("#ManufactureYear").val(request.vehicle_manf_date.substring(0, 4));
+                $("#SelectedQuote_InsurerId").val(InsurerID);
+                $("#SelectedQuote_InsurerName").val(insurer.Insurer_Name);
+                if (request.ss_id != "0") {
+                    $("#SupportsAgentID").val(request.ss_id);
+                }
+
+                $('#_Prev_Expiry_Date').text(processed.policy_expiry_date);
+                $('#_Vehicle_Variant').text(pb_vehicle.Make_Name + " " + pb_vehicle.Model_Name + " " + pb_vehicle.Variant_Name);
+
+                // POSP Details Added By Pratik on 09-03-2019
+                if (request.is_posp == "yes" && POSPDetails(ProductID, InsurerID) == true) {
+                    $('#POSPDetails').show();
+                    $("#POSPAadhaarNo").val(request.posp_aadhar).text(request.posp_aadhar);
+                    $("#POSPPANNo").val(request.posp_pan_no).text(request.posp_pan_no);
+                }
+
+                //Khushbu Gite 20181017
+                $("#_PolicyTenure").text(request.policy_tenure + " year");
+
+                //For Vehicle Registration Type Individual
+                VehicleRegistrationType = summary.Quote_Request.vehicle_registration_type;
+                console.log(VehicleRegistrationType);
+                if (VehicleRegistrationType == "corporate") { $(".Company").show(); }
+                if (VehicleRegistrationType == "individual") { $(".Company").hide(); }
+
+                //Contact Details
+                $("#ContactMiddleName").val("");
+                $("#ContactLastName").val("");
+                //$("#ContactName").val(request.first_name);
+                if (!(/[^a-zA-Z]/.test(request.first_name))) { $("#ContactName").val(request.first_name); }
+                if (!(/[^a-zA-Z ]/.test(request.middle_name))) { $("#ContactMiddleName").val(request.middle_name); }
+                if (!(/[^a-zA-Z]/.test(request.last_name))) { $("#ContactLastName").val(request.last_name); }
+
+                if (request.mobile != 0 && request.mobile != "" && request.mobile != null) {
+                    $("#ContactMobile").val(request.mobile == "9999999999" ? "" : request.mobile);
+                }
+                if (request.email != 0 && request.email != "" && request.email != null) {
+                    $("#ContactEmail").val((request.email == "finmarttest@gmail.com" || (request.email).indexOf('testpb.com') > -1) ? "" : request.email);
+                }
+
+                //Registration Details
+                $("#RegistrationNumberPart1").val(request.registration_no.substring(0, 2));
+                $("#RegistrationNumberPart1A").val(request.registration_no.substring(3, 5));
+                if (!request.registration_no.includes("AA-1234") && !(request.registration_no.indexOf("ZZ-9999") > -1)) {
+                    $("#RegistrationNumberPart2").val(request.registration_no.substring(6, 8));
+                    $("#RegistrationNumberPart3").val(request.registration_no.substring(9, 14));
+                }
+                //set Insurer_Id
+                $('#SelectedInsurerID').val(InsurerID);
+
+                //$("#collapseTermsConditions").html($("#collapseTermsConditions").html().replace("___insurer_name___", insurer.Insurer_Name));
+
+                if (request.vehicle_insurance_type == "new") {
+                    $('#divHaveRegistrationNumber').hide();
+                    $('#divPolicyNumber').hide();
+                    $('#divPrevPolicyNumber').hide();
+                }
+
+                // add class used
+                $("input").each(function () {
+                    var element = $(this);
+                    if (element.val() == "" || element.val() == "0") { $(element).removeClass('used'); }
+                    else { $(element).addClass('used'); }
+                });
+                $('select').each(function () {
+                    var ThisValue = $('option:selected', this).html();
+                    if (ThisValue == "TITLE") { $('#spnTitle').hide(); }
+                    else { $('#spnTitle').show(); }
+
+                    if ($(this).val() == "0" || $(this).val() == "TITLE" || ThisValue == "Select Area" || ThisValue == "Select Occupation" || ThisValue == "Select Relation" || ThisValue == "Select Height" || ThisValue == "Select Qualification") {
+                        $(this).prev('.selectbox-highlight').hide();
+                    }
+                    else { $(this).prev('.selectbox-highlight').show(); }
+                });
+
+                // Added By Pratik Hide Loader
+                $("#QuoteLoader").css('display', 'none');
+            },
+            error: function (response) {
+                alert("Technical Issue! Try again after some time", response);
+            }
+        });
+    }
+
+</script>
+</head>
+<body onload="Get_Search_Summary_Proposal()">
+<center>
+<!-- <form id="inspectionSubmitForm" name="inspectionSubmitForm"> -->
+<h2>CAR Breakin Case Details</h2>
+<input type="hidden" id="ServiceLogUniqueId" name="ServiceLogUniqueId" value=""/>
+<table cellpadding="5" cellspacing="5" border="0">
+    <tr>
+        <td colspan="5">Insurer_Logo</td><td><img id="insurer_logo" src="" class="img-responsive" /></td>
+        <td>CRN No.</td><td>:</td>
+        <td>
+            <strong><span id="CustomerReference_ID" name="CustomerReference_ID" value=""></span></strong>
+        </td>
+        <td>PREMIUM</td><td>:</td>
+        <td>
+            <strong><span id="premium" name="premium" value=""></span></strong>
+        </td>
+    </tr>
+    <tr><td colspan="12"><h4>VIEW INPUT DETAILS</h4></td></tr>
+    <tr>
+        <td>IDV</td><td>:</td>
+        <td>
+            <strong><span id="_IDV" name="_IDV" value=""></span></strong>
+        </td>
+        <td>Vehicle</td><td>:</td>
+        <td>
+            <strong><span id="_Vehicle_Variant" name="_Vehicle_Variant" value=""></span></strong>
+        </td>
+        <td>RTO</td><td>:</td>
+        <td>
+            <strong><span id="_Rto_Input" name="_Rto_Input" value=""></span></strong>
+        </td>
+        <td>REGISTRATION DATE</td><td>:</td>
+        <td>
+            <strong><span id="_Registration_Date" name="_Registration_Date" value=""></span></strong>
+        </td>
+    </tr>
+    <tr>			
+        <td>POLICY DURATION</td><td>:</td>
+        <td>
+            <strong><span id="_Policy_Duration" name="_Policy_Duration" value=""></span></strong>
+        </td>
+        <td>PREV POLICY EXP DATE</td><td>:</td>
+        <td>
+            <strong><span id="_Prev_Expiry_Date" name="_Prev_Expiry_Date" value=""></span></strong>
+        </td>
+        <td>POLICY TENURE</td><td>:</td>
+        <td>
+            <strong><span id="_PolicyTenure" name="_PolicyTenure" value=""></span></strong>
+        </td>
+        <td>VEH. INS. SUB-TYPE</td><td>:</td>
+        <td>
+            <strong><span id="VehicleSubType" name="VehicleSubType" value=""></span></strong>
+        </td>
+    </tr>
+    <tr><td colspan="12"><h4>CONTACT DETAILS</h4></td></tr>
+    <tr>
+        <td>PREMIUM</td><td>:</td>
+        <td>
+            <strong><span id="premium" name="premium" value=""></span></strong>
+        </td>
+        <td>PREMIUM</td><td>:</td>
+        <td>
+            <strong><span id="premium" name="premium" value=""></span></strong>
+        </td>
+        <td>PREMIUM</td><td>:</td>
+        <td>
+            <strong><span id="premium" name="premium" value=""></span></strong>
+        </td>
+    </tr>
+</table>
+<button id="submitButton" name="submitButton" onclick="submitForSelfInspection()">Start Inspection</button>
+<!-- </form> -->
+</center>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{
+    "enquiryId": "___quote_number___",
+    "contract": {
+        "insuranceProductCode": "___vehicle_insurance_subtype_2___",
+        "subInsuranceProductCode": "___vehicle_insurance_subtype___",
+        "startDate": "___policy_start_date___",
+        "endDate": "___policy_end_date___",
+        "policyHolderType": "___vehicle_registration_type___",
+        "externalPolicyNumber": null,
+        "isNCBTransfer": null,
+        "coverages": {
+            "voluntaryDeductible": "ZERO",
+            "thirdPartyLiability": {
+                "isTPPD": ___is_tppd___
+            },
+            "ownDamage": {
+                "discount": {
+                    "userSpecialDiscountPercent": 0,
+                    "discounts": []
+                },
+                "surcharge": {
+                    "loadings": []
+                }
+            },
+            "personalAccident": {
+                "selection": "___is_pa_od___",
+                "insuredAmount": null,
+                "coverTerm": null
+            },
+            "accessories": {
+                "cng": {
+                    "selection": ___is_external_bifuel___,
+                    "insuredAmount": ___external_bifuel_value___
+                },
+                "electrical": {
+                    "selection": ___electrical_accessory_2___,
+                    "insuredAmount": ___electrical_accessory___
+                },
+                "nonElectrical": {
+                    "selection": ___non_electrical_accessory_2___,
+                    "insuredAmount": ___non_electrical_accessory___
+                }
+            },
+            "addons": {
+                "partsDepreciation": {
+                    "claimsCovered": null,
+                    "selection": ___addon_zero_dep_cover___
+                },
+                "roadSideAssistance": {
+                    "selection": ___addon_road_assist_cover___
+                },
+                "engineProtection": {
+                    "selection": ___addon_engine_protector_cover___
+                },
+                "tyreProtection": {
+                    "selection": ___addon_tyre_coverage_cover___
+                },
+                "rimProtection": {
+                    "selection": null
+                },
+                "returnToInvoice": {
+                    "selection": ___addon_invoice_price_cover___
+                },
+                "consumables": {
+                    "selection": ___addon_consumable_cover___
+                }
+            },
+            "legalLiability": {
+                "paidDriverLL": {
+                    "selection": ___is_llpd___,
+                    "insuredCount": 1
+                },
+                "employeesLL": {
+                    "selection": null,
+                    "insuredCount": null
+                },
+                "unnamedPaxLL": {
+                    "selection": null,
+                    "insuredCount": null
+                },
+                "cleanersLL": {
+                    "selection": null,
+                    "insuredCount": null
+                },
+                "nonFarePaxLL": {
+                    "selection": null,
+                    "insuredCount": null
+                },
+                "workersCompensationLL": {
+                    "selection": null,
+                    "insuredCount": null
+                }
+            },
+            "unnamedPA": {
+                "unnamedPax": {
+                    "selection": ___pa_unnamed_passenger_si_2___,
+                    "insuredAmount": ___pa_unnamed_passenger_si___,
+                    "insuredCount": ___dbmaster_insurer_vehicle_seatingcapacity___
+                },
+                "unnamedPaidDriver": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedHirer": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedPillionRider": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedCleaner": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                },
+                "unnamedConductor": {
+                    "selection": null,
+                    "insuredAmount": null,
+                    "insuredCount": null
+                }
+            }
+        }
+    },
+    "vehicle": {
+        "isVehicleNew": ___vehicle_insurance_type___,
+        "vehicleMaincode": "___dbmaster_insurer_vehicle_code___",
+        "licensePlateNumber": "___registration_no_1______registration_no_2______registration_no_3______registration_no_4___",
+        "vehicleIdentificationNumber": null,
+        "engineNumber": null,
+        "manufactureDate": "___vehicle_manf_date___",
+        "registrationDate": "___vehicle_registration_date___",
+        "vehicleIDV": {
+            "idv": ___vehicle_expected_idv___,
+            "defaultIdv": ___vehicle_normal_idv___,
+            "minimumIdv": ___vehicle_min_idv___,
+            "maximumIdv": ___vehicle_max_idv___
+        },
+        "usageType": null,
+        "permitType": null,
+        "motorType": null
+    },
+    "previousInsurer": {
+        "isPreviousInsurerKnown": "___is_policy_exist___",
+        "previousInsurerCode": "___dbmaster_previousinsurer_code___",
+        "previousPolicyNumber": "5354353543543453",
+        "previousPolicyExpiryDate": "___policy_expiry_date___",
+        "isClaimInLastYear": ___is_claim_exists___,
+        "originalPreviousPolicyType": "___og_prev_policy_type___",
+        "previousPolicyType": null,
+        "previousNoClaimBonus": "___vehicle_ncb_current_1___",
+        "currentThirdPartyPolicy": ___tp_policy_details___
+    },
+    "pospInfo": {
+        "isPOSP": false
+    },
+    "pincode": "411001"
+}

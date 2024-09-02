@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advisory Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="input-loader" style="display:none;">
+        <img src="Images/input-loader.gif">
+    </div>
+
+    <div id="info_dashboard">
+        <div class="container" style="margin-bottom: 5px;">
+            <div class="DashboardnavItem">
+                <nav>
+                    <div class="Quotenav ActivenavItem" onclick="quoteClick()">QUOTE</div>
+                    <div class="Callbacknav" onclick="callbackClick()">SCHEDULE A CALLBACK</div>
+                </nav>
+            </div>
+            <!-- <div class="searchbar">
+					<div class="grab">
+						<span class="ad_quote" onclick="showInput()">
+							<img src="Images/file.png"> Add Quote
+						</span>
+					</div>
+				</div> -->
+            <div class="DashboardSec">
+                <div class="info_section" id="quoteId">
+                </div>
+                <div class="info_section" id="callbackId">
+                </div>
+            </div>
+        </div>
+        <div class="sticky_btn">
+            <!-- <div class="plus_quote">
+					<img src="Images/pl.png" onclick="showInput();">
+				</div> -->
+            <div class="refresh_quote">
+                <span onclick="Reload();">
+                    <img src="Images/refresh.png">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="warningmsg" style="display:none;">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center;" id="warningerror">ss_id, fba_id, sub_fba_id are mandatory</h3>
+        <!-- <h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+        <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 700;font-size: 16px;"
+            id="error_query_str"></div> -->
+    </div>
+    <div class="popUp" id="callback_popup">
+        <div class="displayBox">
+            <span style="font-size: 20px; line-height: 16px; float: right;" class="closeIcon" onclick="closePopup()">
+                <i class="fa fa-close"></i>
+            </span>
+            <div class="popup_content" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var ss_id = 0;
+        var fba_id = "";
+        var sub_fba_id = "";
+        var pageIndex = 1;
+        $(document).ready(function () {
+            siteURL = window.location.href;
+            stringparam();
+            // getClientBrowserDetails();
+
+        });
+        function getClientBrowserDetails() {
+            if (window.navigator && window.navigator.geolocation) {
+                window.navigator.geolocation.getCurrentPosition(
+                    position => {
+                        this.showPosition(position)
+                    },
+                    error => {
+                        console.log('Position Unavailable');
+                    });
+            }
+        }
+        function showPosition(position) {
+            geo_lat = position.coords.latitude;
+            geo_long = position.coords.longitude;
+            $.getJSON('https://api.ipify.org?format=json', function (data) {
+                ip_address = data.ip;
+            });
+        }
+        var GetUrl = function () {
+            var url = window.location.href;
+            var newurl = "http://qa-horizon.policyboss.com:3000";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+            } else if (url.includes("qa.")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("https:")) {
+                newurl = "https://horizon.policyboss.com:5443";
+            }
+            return newurl;
+        }
+        function getEditUrl() {
+            var url = window.location.href;
+            var newurl = "http://qa.policyboss.com";
+            if (url.includes("https:")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+        var getUrlVars = function () {
+
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        function stringparam() {
+            ss_id = getUrlVars()["ss_id"];
+            fba_id = getUrlVars()["fba_id"];
+            sub_fba_id = getUrlVars()["sub_fba_id"];
+
+            if ((fba_id == "" || fba_id == undefined || fba_id == "0" || ss_id == "" || ss_id == undefined || ss_id == "0")) {
+                $("#info_dashboard").hide();
+                $('.warningmsg').css('display', 'block');
+                // $("#error_query_str").text(window.location.href.split('?')[1]);
+            } else {
+                showDashBoard();
+                $("#info_dashboard").show();
+                $('.warningmsg').css('display', 'none');
+            }
+        }
+
+        var const_insurerlogo = {
+            "2": "Bharti_Axa_General.png",
+            "4": "Future_Generali_General.png",
+            "5": "hdfc.png",
+            "6": "ICICI_Lombard.png",
+            "9": "reliance.png",
+            "10": "royal.png",
+            "16": "raheja.png",
+            "17": "SBI_General.png",
+            "19": "universal_sompo.png",
+            "20": "Max_Bupa_Health.png",
+            "21": "Hdfc_Ergo_Health.png",
+            "26": "StarHealth.png",
+            "33": "liberty.png",
+            "34": "care.png",
+            "35": "magma_hdi.png",
+            "38": "Cigna_TTK.png",
+            "42": "AdityaBirla.png",
+            "44": "Go_Digit.png",
+            "46": "edelweiss.png"
+        };
+        function showDashBoard() {
+            GetSearch_data();
+            $('#warning_msg').hide();
+            $('#quoteId').show();
+            $('#callbackId').hide();
+        }
+        function showInput() {
+            $('#info_dashboard').hide();
+            $('#input_page').show();
+        }
+        function quoteClick() {
+            pageIndex = 1;
+            $('#quoteId').show();
+            $('#callbackId').hide();
+
+            $('.Quotenav').addClass('ActivenavItem');
+            $('.Callbacknav').removeClass('ActivenavItem');
+        }
+        function callbackClick() {
+            pageIndex = 1;
+            $('#quoteId').hide();
+            $('#callbackId').show();
+
+            $('.Quotenav').removeClass('ActivenavItem');
+            $('.Callbacknav').addClass('ActivenavItem');
+        }
+        function GetSearch_data() {
+            var url = "/user_datas/quicklist/2/SEARCH/" + ss_id + "/" + fba_id + "/" + pageIndex + "/undefined/" + sub_fba_id;
+
+            $.ajax({
+                type: "GET",
+                url: GetUrl() + url,
+                success: function (data) {
+                    console.log("SEARCH - ", data.length);
+
+                    if (data.length > 0) {
+                        $("#quoteId").empty();
+                        $("#callbackId").empty();
+                        for (var i in data) {
+
+                            $("#quoteId").append(" <div class='quoteList_container'><div srn='" + data[i].SRN + "' class='quoteDiv' id='quote_list_id_'" + data[i].CRN + ">"
+                                + "<div class='ApplicantName'>" + data[i].Customer_Name
+                                + "<div>CRN:<span class='crn_span'>" + data[i].CRN + "<span></div></div>"
+                                + "<div class='text-center'>"
+                                + "<div class='title'>SUM INSURED</div> <div class='descr'>" + data[i].Sum_Insured + "</div>"
+                                + "</div>"
+                                + "<div class='text-center'>"
+                                + "<div class='title'>QUOTE DATE</div><div class='descr'>" + data[i].Quote_Date_Mobile + "</div> "
+                                + "</div>"
+                                + "<div style='text-align:center' onclick='quote_data(" + JSON.stringify(data[i].Premium_Request) + ")'><i class='fa fa-info-circle' style='padding:4px 0px;cursor: pointer;' aria-hidden='true'></i></div>"
+                                + "</div> </div>");
+
+                            if (data[i].hasOwnProperty("Preferred_Plan")) {
+                                $("#callbackId").append("<div class='app_quoteDiv'>"
+                                    + "<div class='ins_logo'>"
+                                    + "<img src='https://www.policyboss.com/Images/insurer_logo/" + const_insurerlogo[data[i]['Preferred_Plan'].Insurer_Id] + "' class='img-responsive' style='width:100%;'>"
+                                    + "</div>"
+                                    + "<div class='content_container'>"
+                                    + "<div class='con parta'>"
+                                    + "<div class='uname'>" + data[i].Customer_Name
+                                    + "</div>"
+                                    + "<div>"
+                                    + "<div style='text-align:center' onclick='callback_data(" + JSON.stringify(data[i].Premium_Request) + "," + JSON.stringify(data[i].Preferred_Plan) + ")'>"
+                                    + "<i class='fa fa-info-circle' aria-hidden='true' style='padding:4px 0px;font-size:20px'></i>"
+                                    + "</div></div>"
+                                    + "</div>"
+                                    + "<div class='con partb'>"
+                                    + "<div class='app_num'>"
+                                    + "<div class='title'>CRN</div>"
+                                    + "<div class='num'>" + data[i]['CRN'] + "</div>"
+                                    + "</div><div>"
+                                    + "<div class='title'>MOBILE NUMBER</div>"
+                                    + "<div class='num'>"
+                                    + "<div>" + data[i].Customer_Mobile + "</div>"
+                                    + "</div>"
+                                    + "</div>"
+                                    + "</div>"
+                                    + "<div class='con partc'>"
+                                    + "<div class='SUM_a'>"
+                                    + "<div class='title'>SUM INSURED</div>" + data[i]['Sum_Insured']
+                                    + "</div>"
+                                    + "<div class='a_date'>"
+                                    + "<div class='title'>QUOTE DATE</div>" + data[i]['Quote_Date_Mobile']
+                                    + "</div></div></div></div>");
+
+                            }
+                        }
+                    }
+                },
+                error: function (result) {
+                    console.log(result)
+                }
+            });
+        }
+        function quote_data(prm_req) {
+            $(".popup_content").empty();
+            $(".popup_content").append(
+                // "<p><b><u>Customer Details</u></b></p>" +
+                "<p><b>Customer Name : </b><span>" + (prm_req.contact_name).toUpperCase() + "</span></p>" +
+                "<p><b>Mobile Number : </b><span>" + prm_req.mobile + "</span></p>" +
+                // "<p><b><u>Search Criteria</u></b></p>" +
+                "<p><b>Insurance Type : </b><span>" + prm_req.health_insurance_type + "</span></p>" +
+                "<p><b>Eldest Member Age : </b><span>" + prm_req.member_1_age + "</span></p>" +
+                "<p><b>Pincode : </b><span>" + prm_req.permanent_pincode + "</span></p>");
+
+            $('#callback_popup').show(100);
+
+        }
+        function callback_data(prm_req, prf_data) {
+            let date = (new Date(prf_data['Preferred_On'])).toLocaleString();
+            $(".popup_content").empty();
+            $(".popup_content").append(
+                // "<p><b><u>Customer Details</u></b></p>" +
+                "<p><b>Customer Name : </b><span>" + (prm_req.contact_name).toUpperCase() + "</span></p>" +
+                "<p><b>Mobile Number : </b><span>" + prm_req.mobile + "</span></p>" +
+                // "<p><b><u>Search Criteria</u></b></p>" +
+                "<p><b>Insurance Type : </b><span>" + prm_req.health_insurance_type + "</span></p>" +
+                "<p><b>Eldest Member Age : </b><span>" + prm_req.member_1_age + "</span></p>" +
+                "<p><b>Pincode : </b><span>" + prm_req.permanent_pincode + "</span></p>" +
+                "<p><b><u>Preferred Plan Details</u></b></p>" +
+                "<p><b>Plan Name : </b><span>" + prf_data.Plan_Name + "</span></p>" +
+                "<p><b>Insurer Name : </b><span>" + prf_data['Insurer_Name'] + "</span></p>" +
+                "<p><b>Preferred_On : </b><span>" + date.split(",")[0] + "</span></p>");
+
+            $('#callback_popup').show(100);
+
+        }
+        function closePopup() {
+            $('#callback_popup').hide();
+        }
+        function Reload() {
+            location.reload(true)
+        };
+        $(window).scroll(function () {
+            var iCurScrollPos = $(this).scrollTop();
+            if (iCurScrollPos > iScrollPos) {
+                //Scrolling Down
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    pageIndex++;
+                    GetSearch_data();
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

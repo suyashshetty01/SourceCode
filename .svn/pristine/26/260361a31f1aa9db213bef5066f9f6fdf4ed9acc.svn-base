@@ -1,0 +1,596 @@
+/* Author: Revati Ghadge
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var config = require('config');
+var mongoose = require('mongoose');
+mongoose.connect(config.db.connection + ':27017/' + config.db.name, {useMongoClient: true}); // connect to our database
+var agent_wallet = require('../models/agent_wallet');
+var wallet_transaction = require('../models/wallet_transaction');
+var wallet_history = require('../models/rzp_wallet_history');
+var User_Data = require('../models/user_data');
+let auth_token = "";
+var MongoClient = require('mongodb').MongoClient;
+module.exports.controller = function (app) {
+    app.get('/wallets/rzp_create_customer/:ssid/:created_by', function (req, res) {
+        agent_wallet.findOne({SS_ID: parseInt(req.params.ssid)}, function (err, dbAgentData) {
+            if (err) {
+                console.error("create_customer-", err);
+            } else {
+                if (dbAgentData && dbAgentData['_doc'].Merchant_Id.includes('cust_')) {
+                    res.send({"Customer_Id": dbAgentData['_doc'].Merchant_Id});
+                } else {
+                    let Client = require('node-rest-client').Client;
+                    let client = new Client();
+                    let ss_id = parseInt(req.params.ssid);
+                    let creator = parseInt(req.params.created_by);
+                    let username = ((config.environment.name !== 'Production') ? 'rzp_test_PR1nbJKsdaLPop' : '');
+                    let password = ((config.environment.name !== 'Production') ? 'CoNzrJZbBry80jMzzAbXSckP' : '');
+                    client.get('http://horizon.policyboss.com:5000/posps/dsas/view/' + ss_id, {}, function (data, response) {
+                        if (data['status'] === 'SUCCESS') {
+                            let create_url = "https://api.razorpay.com/v1/customers";
+                            if (data.hasOwnProperty('EMP')) {
+                                let args = {
+                                    data: {
+                                        "name": data['EMP'].Emp_Name,
+                                        "email": data['EMP'].Email_Id,
+                                        "contact": data['EMP'].Mobile_Number,
+                                        "fail_existing": "1",
+                                        "gstin": "12ABCDE2356F7GH",
+                                        "notes": {}
+                                    },
+                                    headers: {"Content-Type": "application/json",
+                                        "Accept": "application/json",
+                                        'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
+                                    }
+                                };
+                                client.post(create_url, args, function (data1, response1) {
+                                    if (data1.id !== "" && data1.id !== undefined) {
+                                        let args1 = {
+                                            'SS_ID': ss_id,
+                                            'FBA_ID': data['EMP'].FBA_ID,
+                                            'EMP_ID': data['EMP'].UID,
+                                            'Channel': data.channel,
+                                            'agent_name': data['EMP'].Emp_Name,
+                                            'agent_mobile': data['EMP'].Mobile_Number,
+                                            'agent_email': data['EMP'].Email_Id,
+                                            'Merchant_Id': data1.id,
+                                            'creation_request': args.data,
+                                            'creation_response': data1,
+                                            'ifsc': "",
+                                            'bank_account_no': "",
+                                            'virtual_account_id': "",
+                                            'virtual_acnt_request': "",
+                                            'virtual_acnt_response': "",
+                                            'wallet_amount': 0,
+                                            'Creator_SSID': creator,
+                                            'Created_On': new Date(),
+                                            'Modified_On': new Date(),
+                                            'IsActive': 1
+                                        };
+                                        var customerObj = new agent_wallet(args1);
+                                        customerObj.save(function (err) {
+                                            if (err) {
+                                                console.error('Customer Creation Failed', JSON.stringify(args1), err);
+                                            }
+                                            res.send({"Customer_Id": data1.id});
+                                        });
+                                    } else {
+                                        res.send({"Msg": "Fail"});
+                                    }
+                                });
+                            } else {
+                                res.send({'Msg': 'Employee details unavailable'});
+                            }
+                        } else {
+                            res.send({'Msg': 'Invalid ss_id'});
+                        }
+                    });
+                }
+            }
+        });
+    });
+    app.get('/wallets/rzp_virtual_acc/:cust_id', function (req, res) {
+        let customer_id = req.params.cust_id;
+        agent_wallet.findOne({Merchant_Id: req.params.cust_id}, function (err, dbAgentData) {
+            if (err) {
+                console.error("create_virtual_acc-", err);
+            } else {
+                if (dbAgentData && dbAgentData['_doc'].virtual_account_id !== "") {
+                    res.send({"Msg": "Customer already exists", "Account_No": dbAgentData['_doc'].virtual_account_id, "Customer_Id": customer_id});
+                } else {
+                    let create_url = "https://api.razorpay.com/v1/virtual_accounts";
+                    let Client = require('node-rest-client').Client;
+                    let client = new Client();
+                    let username = ((config.environment.name !== 'Production') ? 'rzp_test_PR1nbJKsdaLPop' : '');
+                    let password = ((config.environment.name !== 'Production') ? 'CoNzrJZbBry80jMzzAbXSckP' : '');
+                    let args = {
+                        data: {
+                            "receivers": {
+                                "types": [
+                                    "bank_account"
+                                ]
+                            },
+                            "description": "Virtual Account created for Landmark Insurance",
+                            "customer_id": customer_id,
+                            "notes": {}
+                        },
+                        headers: {"Content-Type": "application/json",
+                            "Accept": "application/json",
+                            'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
+                        }
+                    };
+                    client.post(create_url, args, function (data1, response1) {
+                        if (data1.id !== "" && data1.id !== undefined) {
+                            let objUpdates = {
+                                "ifsc": data1['receivers'][0].ifsc,
+                                "bank_account_no": data1['receivers'][0].account_number,
+                                "virtual_account_id": data1.id,
+                                "virtual_acnt_request": args.data,
+                                "virtual_acnt_response": data1,
+                                "Modified_On": new Date()
+                            };
+                            agent_wallet.update({'Merchant_Id': data1.customer_id}, {$set: objUpdates}, function (err) {
+                                if (err) {
+                                    console.error('rzp_virtual_acc_fail', JSON.stringify(objUpdates), err);
+                                }
+                                res.send({"Msg": "Customer Created", "Account_No": data1.id, "Customer_Id": customer_id});
+                            });
+                            let Email = require('../models/email');
+                            let objModelEmail = new Email();
+                            let subject = '[' + config.environment.name.toString().toUpperCase() + ']INFO-PolicyBoss.com-Razorpay Virtual Account of SS_ID:' + dbAgentData['_doc'].SS_ID;
+                            let email_body = '<html><body><p>Hi,</p><p>Your Razorpay virtual account has been successfully created.</p>' +
+                                    '<p>Your Merchant ID - <b>' + customer_id + '</b></p>' +
+                                    '<p>Your Virtual Account ID - <b>' + data1.id + '</b></p>' +
+                                    '<p>Your Bank Account Number - <b>' + data1['receivers'][0].account_number + '</b></p></body></html>';
+                            if (config.environment.name === 'Production') {
+                                objModelEmail.send('noreply@policyboss.com', '', subject, email_body, '', config.environment.notification_email, '');
+                            } else {
+                                objModelEmail.send('noreply@policyboss.com', 'revati.ghadge@policyboss.com', subject, email_body, '', '', '');
+                            }
+                        } else {
+                            res.send({"Msg": "Fail"});
+                        }
+                    });
+                }
+            }
+        });
+    });
+    app.get('/wallets/rzp_loading/:pay_id/:cust_id/:amt', function (req, res) {
+        let payId = req.params.pay_id;
+        let customer_id = req.params.cust_id;
+        let amount = Number(req.params.amt);
+        wallet_history.findOne({'rzp_payment_id': payId}, function (err, dbTransData) {
+            if (err) {
+                console.error("rzp_loading-", err);
+            } else {
+                if (dbTransData === null) {
+                    let Client = require('node-rest-client').Client;
+                    let client = new Client();
+                    let create_url = "https://api.razorpay.com/v1/payments/" + payId + "/transfers";
+                    let username = ((config.environment.name !== 'Production') ? 'rzp_test_PR1nbJKsdaLPop' : '');
+                    let password = ((config.environment.name !== 'Production') ? 'CoNzrJZbBry80jMzzAbXSckP' : '');
+                    let args = {
+                        data: {
+                            "transfers": [
+                                {
+                                    "customer": customer_id,
+                                    "amount": amount,
+                                    "currency": "INR",
+                                    "notes": {}
+                                }
+                            ]
+                        },
+                        headers: {"Content-Type": "application/json",
+                            "Accept": "application/json",
+                            'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
+                        }
+                    };
+                    client.post(create_url, args, function (data, response) {
+                        if (data.hasOwnProperty('items') && data['items'][0].id !== "" && data['items'][0].id !== undefined) {
+                            let payObj = {
+                                'PB_CRN': 0,
+                                'User_Data_Id': 0,
+                                'Service_Log_Id': 0,
+                                'rzp_customer_id': customer_id,
+                                'rzp_payment_id': payId,
+                                'transaction_type': "CREDIT",
+                                'transaction_amount': Number((amount / 100).toFixed(2)),
+                                'rzp_payment_request': args.data,
+                                'rzp_payment_response': data,
+                                'Created_On': new Date()
+                            };
+                            agent_wallet.findOne({Merchant_Id: customer_id}, function (err, dbAgentData) {
+                                if (err) {
+                                    console.error("rzp_loading-", err);
+                                } else {
+                                    if (dbAgentData && dbAgentData['_doc'].bank_account_no !== "") {
+                                        let objUpdates = {
+                                            "wallet_amount": dbAgentData['_doc'].wallet_amount + Number((amount / 100).toFixed(2)),
+                                            "Modified_On": new Date()
+                                        };
+                                        agent_wallet.update({'bank_account_no': dbAgentData['_doc'].bank_account_no}, {$set: objUpdates}, function (err) {
+                                            if (err) {
+                                                console.error('rzp_loading_fail', err);
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                            var transObj = new wallet_history(payObj);
+                            transObj.save(function (err1) {
+                                if (err1) {
+                                    console.error('rzp_wallet_loading_failed-', JSON.stringify(payObj), err1);
+                                } else {
+                                    res.send({"Msg": "Success"});
+                                }
+                            });
+                        } else {
+                            res.send({"Msg": "Fail", "Description": JSON.stringify(data.error)});
+                        }
+                    });
+                } else {
+                    res.send({"Msg": "Success"});
+                }
+            }
+        });
+    });
+    app.get('/wallets/rzp_order/:udid/:ssid/:amt', function (req, res) {
+        let ssid = Number(req.params.ssid);
+        let amount = Number(req.params.amt) * 100;
+        let udid = req.params.udid;
+        agent_wallet.findOne({SS_ID: ssid}, function (err, dbAgentData) {
+            if (err) {
+                console.error("rzp_order-", err);
+            } else {
+                let create_url = "https://api.razorpay.com/v1/orders";
+                let Client = require('node-rest-client').Client;
+                let client = new Client();
+                let username = ((config.environment.name !== 'Production') ? 'rzp_test_PR1nbJKsdaLPop' : '');
+                let password = ((config.environment.name !== 'Production') ? 'CoNzrJZbBry80jMzzAbXSckP' : '');
+                let customer_id = dbAgentData['_doc'].Merchant_Id;
+                let args = {
+                    data: {
+                        "amount": ((config.environment.name !== 'Production') ? 100 : amount),
+                        "payment_capture": 1,
+                        "currency": "INR",
+                        "receipt": "receipt_" + udid,
+                        "transfers": [
+                            {
+                                "account": ((config.environment.name !== 'Production') ? "acc_HkHhn0PQVj5NfV" : ""),
+                                "amount": ((config.environment.name !== 'Production') ? 100 : amount),
+                                "currency": "INR",
+                                "on_hold": false
+                            }
+                        ]
+                    },
+                    headers: {"Content-Type": "application/json",
+                        "Accept": "application/json",
+                        'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
+                    }
+                };
+                client.post(create_url, args, function (data1, response1) {
+                    if (data1.id !== "" && data1.id !== undefined && data1['status'] === 'created') {
+                        res.send({"Customer_Id": customer_id, "Response": data1, "User_Data_Id": udid});
+                    } else {
+                        res.send({"Msg": "Fail"});
+                    }
+                });
+            }
+        });
+    });
+    app.get('/wallets/rzp_payment/:cust_id/:ord_id/:amt/:udid', function (req, res) {
+        let customer_id = req.params.cust_id;
+        let order_id = req.params.ord_id;
+        let amount = Number(req.params.amt);
+        let udid = Number(req.params.udid);
+        agent_wallet.findOne({Merchant_Id: customer_id}, function (err, dbAgentData) {
+            if (err) {
+                console.error("rzp_payment-", err);
+            } else {
+                let create_url = "https://api.razorpay.com/v1/payments/create/openwallet";
+                let Client = require('node-rest-client').Client;
+                let client = new Client();
+                let username = ((config.environment.name !== 'Production') ? 'rzp_test_PR1nbJKsdaLPop' : '');
+                let password = ((config.environment.name !== 'Production') ? 'CoNzrJZbBry80jMzzAbXSckP' : '');
+                let args = {
+                    data: {
+                        "method": "wallet",
+                        "wallet": "openwallet",
+                        "customer_id": customer_id,
+                        "order_id": order_id,
+                        "amount": ((config.environment.name !== 'Production') ? 100 : amount),
+                        "currency": "INR",
+                        "contact": dbAgentData['_doc'].agent_mobile,
+                        "email": dbAgentData['_doc'].agent_email,
+                        "description": "Against " + order_id,
+                        "notes": {}
+                    },
+                    headers: {"Content-Type": "application/json",
+                        "Accept": "application/json",
+                        'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
+                    }
+                };
+                client.post(create_url, args, function (data1, response1) {
+                    if (data1.razorpay_payment_id !== "" && data1.razorpay_payment_id !== undefined) {
+                        let objUpdates = {
+                            "wallet_amount": dbAgentData['_doc'].wallet_amount - Number((amount / 100).toFixed(2)),
+                            "Modified_On": new Date()
+                        };
+                        agent_wallet.update({Merchant_Id: customer_id}, {$set: objUpdates}, function (err) {
+                            if (err) {
+                                console.error('rzp_order_fail', customer_id, amount, err);
+                            }
+                            User_Data.findOne({User_Data_Id: udid}, function (err, dbUserData) {
+                                if (err) {
+
+                                } else {
+                                    if (dbUserData !== null) {
+                                        let pg_ack_url = (config.environment.name.toString() !== 'Production') ? "http://qa-horizon.policyboss.com/" : "https://horizon.policyboss.com/";
+                                        let dbData = dbUserData._doc;
+                                        let proposal_id = dbData['Proposal_Id'];
+                                        let historyObj = {
+                                            'PB_CRN': dbData['PB_CRN'],
+                                            'User_Data_Id': udid,
+                                            'Service_Log_Id': dbData.Proposal_Request_Core['slid'],
+                                            'rzp_customer_id': customer_id,
+                                            'rzp_payment_id': data1.razorpay_payment_id,
+                                            'transaction_type': "DEBIT",
+                                            'transaction_amount': Number((amount / 100).toFixed(2)),
+                                            'rzp_payment_request': args.data,
+                                            'rzp_payment_response': data1,
+                                            'Created_On': new Date()
+                                        };
+                                        let obj_rzp_summary = {
+                                            'pg_request': null,
+                                            'pg_response': null
+                                        };
+                                        obj_rzp_summary.pg_request = args.data;
+                                        obj_rzp_summary.pg_response = data1;
+                                        obj_rzp_summary.pg_url = pg_ack_url + "transaction-status/" + udid + "/" + dbData['PB_CRN'] + "/" + proposal_id;
+
+                                        var transObj = new wallet_history(historyObj);
+                                        transObj.save(function (err1) {
+                                            if (err1) {
+                                                console.error('rzp_wallet_loading_failed-', JSON.stringify(historyObj));
+                                            }
+                                            res.send(obj_rzp_summary);
+                                        });
+                                    } else {
+                                        res.send({"Msg": "Fail"});
+                                    }
+                                }
+                            });
+                        });
+                    } else {
+                        res.send({"Msg": "Fail"});
+                    }
+                });
+            }
+        });
+    });
+    app.get('/wallets/rzp_getAccountDetail/:ssid', function (req, res) {
+        agent_wallet.findOne({SS_ID: parseInt(req.params.ssid)}, {_id: 0}, function (err, dbAgentData) {
+            if (err) {
+                console.error('rzp_getAccountDetail-', err);
+            } else {
+                if (dbAgentData) {
+                    res.send('<pre>' + JSON.stringify(dbAgentData, undefined, 2) + '</pre>');
+                } else {
+                    res.send('Invalid ss_id');
+                }
+            }
+        });
+    });
+    app.get('/wallets/getAccountDetail/:ssid', function (req, res) {
+
+        let payu_token_url = (config.environment.name.toString() !== 'Production') ? 'https://uat-accounts.payu.in' : 'https://accounts.payu.in/';
+        let payu_base_url = (config.environment.name.toString() !== 'Production') ? 'https://test.payumoney.com' : 'https://payout.payumoney.com';
+        agent_wallet.findOne({SS_ID: parseInt(req.params.ssid)}, function (err, dbAgentData) {
+            if (err) {
+
+            } else {
+                if (dbAgentData) {
+                    let client_id = (config.environment.name.toString() !== 'Production') ? '6f8bb4951e030d4d7349e64a144a534778673585f86039617c167166e9154f7e' : 'ccbb70745faad9c06092bb5c79bfd919b6f45fd454f34619d83920893e90ae6b';
+                    let args = {
+                        data: {
+                            "grant_type": "password",
+                            "scope": "create_payout_transactions",
+                            "client_id": client_id,
+                            "username": (config.environment.name.toString() !== 'Production') ? 'payouttest4@mailinator.com' : 'chirag.modi@policyboss.com',
+                            "password": (config.environment.name.toString() !== 'Production') ? 'Tester@123' : 'P@yout21'
+                        },
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        }
+                    };
+                    function jsonToQueryString(json) {
+                        return  Object.keys(json).map(function (key) {
+                            return encodeURIComponent(key) + '=' +
+                                    encodeURIComponent(json[key]);
+                        }).join('&');
+                    }
+                    args.data = jsonToQueryString(args.data);
+                    let Client = require('node-rest-client').Client;
+                    let client = new Client();
+                    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+                    let obj_payu_summary = {
+                        'rqst': null,
+                        'rsps': null
+                    };
+                    client.post(payu_token_url + '/oauth/token', args, function (data) {
+                        if (data && data.hasOwnProperty('access_token')) {
+                            auth_token = data.access_token;
+                            let args = {
+                                headers: {
+                                    "Cache-Control": "no-cache",
+                                    "Authorization": "Bearer " + auth_token,
+                                    "payoutMerchantId": dbAgentData._doc['Merchant_Id'],
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                }
+                            };
+                            obj_payu_summary.rqst = args;
+                            client.get(payu_base_url + '/payout/merchant/getAccountDetail', args, function (data) {
+                                try {
+                                    obj_payu_summary.rsps = data;
+                                    return res.send('<pre>' + JSON.stringify(obj_payu_summary, undefined, 2) + '</pre>');
+                                } catch (e) {
+                                    return res.send(e.stack);
+                                }
+                            });
+                        } else {
+                            return res.send(data);
+                        }
+                    });
+                } else {
+                    res.send('Invalid ss_id');
+                }
+            }
+        });
+    });
+    app.get('/wallets/executePaymentTransfer/:udid/:merchantid', function (req, res) {
+        let payu_base_url = (config.environment.name.toString() !== 'Production') ? 'https://test.payumoney.com' : 'https://payout.payumoney.com';
+        let pg_ack_url = (config.environment.name.toString() !== 'Production') ? "http://qa-horizon.policyboss.com/" : "http://horizon.policyboss.com/";
+        let udid = parseInt(req.params.udid);
+        let merchant_id = req.params['merchantid'];
+        User_Data.findOne({User_Data_Id: udid}, function (err, dbUserData) {
+            if (err) {
+                res.send(err);
+            } else {
+                if (dbUserData) {
+                    let dbData = dbUserData._doc;
+                    let crn = dbData['PB_CRN'];
+                    let proposal_id = dbData['Proposal_Id'];
+                    let slid = dbData.Proposal_Request_Core['slid'];
+                    let premium = dbData.Erp_Qt_Request_Core['___final_premium___'];
+                    wallet_transaction.findOne({User_Data_Id: udid}, function (err, dbTrans) {
+                        if (err)
+                            res.send(err);
+                        if (dbTrans !== null) {
+//                            wallet_transaction.update({User_Data_Id: udid}, {$set: {'Status': "Pending"}}, function (err) {
+//                                if (err) {
+//                                    res.json({Details: err});
+//                                } else {
+//                                    res.json({Msg: 'Updated'});
+//                                }
+//                            });
+                        } else {
+                            let args = {
+                                data: [
+                                    {
+                                        "beneficiaryAccountNumber": "1234567890",
+                                        "beneficiaryIfscCode": "KKBK0000431",
+                                        "beneficiaryName": "Ankush Pokarana",
+                                        "beneficiaryEmail": "",
+                                        "beneficiaryMobile": "",
+                                        "purpose": "Citi test",
+                                        "amount": premium.toString(),
+                                        "batchId": "citi",
+                                        "merchantRefId": "POLICYBOSS-" + crn + '-' + udid,
+                                        "paymentType": "IMPS",
+                                        "recipientCardNo": "5123456789012346",
+                                        "retry": false
+                                    }
+                                ],
+                                headers: {
+                                    "Cache-Control": "no-cache",
+                                    "Authorization": "Bearer " + auth_token,
+                                    "payoutMerchantId": merchant_id,
+                                    "Content-Type": "application/json"
+                                }
+                            };
+                            let Client = require('node-rest-client').Client;
+                            let client = new Client();
+                            process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+                            let obj_payu_summary = {
+                                'rqst': null,
+                                'rsps': null
+                            };
+                            obj_payu_summary.rqst = args;
+                            client.post(payu_base_url + '/payout/payment', args, function (data) {
+                                try {
+                                    let args = {
+                                        'PB_CRN': crn,
+                                        'User_Data_Id': udid,
+                                        'Service_Log_Id': slid,
+                                        'Premium': premium,
+                                        'Payu_Request': obj_payu_summary.rqst,
+                                        'Payu_Response': data,
+                                        'Payu_Status': data.status,
+                                        'Payu_Requested_On': new Date(),
+                                        'Created_On': new Date(),
+                                        'Status': "Pending"
+                                    };
+                                    var transactionObj = new wallet_transaction(args);
+                                    transactionObj.save(function (err) {
+                                        if (err) {
+                                            console.log('executePaymentTransfer-', 'Insert Failed');
+                                        } else {
+                                            console.log('executePaymentTransfer-', 'Inserted');
+                                        }
+                                    });
+                                    obj_payu_summary.rsps = data;
+                                    obj_payu_summary.rsps.pg_url = pg_ack_url + "transaction-status/" + udid + "/" + crn + "/" + proposal_id;
+                                    obj_payu_summary.rsps.pg_post = {};
+                                    if (data.status === 0) {
+                                        obj_payu_summary.rsps.pg_post = {
+                                            "status": "Success",
+                                            "amount": premium,
+                                            "txnid": "POLICYBOSS-" + crn + '-' + udid
+                                        };
+                                    } else {
+                                        obj_payu_summary.rsps.pg_post = {
+                                            "status": "Fail",
+                                            "txnid": "POLICYBOSS-" + crn + '-' + udid
+                                        };
+                                    }
+                                    return res.send('<pre>' + JSON.stringify(obj_payu_summary, undefined, 2) + '</pre>');
+                                } catch (e) {
+                                    console.error("executePaymentTransfer-", e.stack);
+                                }
+                            });
+                        }
+                    });
+                } else {
+                    res.send('Invalid UDID');
+                }
+            }
+        });
+    });
+    app.get('/wallets/policycancellation', function (req, res) {
+        try {
+            MongoClient.connect(config.db.connection + ':27017/' + config.db.name, function (err1, db) {
+                var dhfl_cancelpolicy = db.collection('dhfl_cancelpolicy');
+                var Email = require('../models/email');
+                var objModelEmail = new Email();
+                dhfl_cancelpolicy.find().toArray(function (err2, dbItems) {
+                    if (err2)
+                    {
+                        res.send('Error');
+                    } else {
+                        for (let i in dbItems) {
+                            if (i === "1" || i === "2") {
+                                let msg = "Dear Sir,<BR><BR>Please find attached the Notice of cancellation issued against the Policy no " + dbItems[i].Insurance_Policy_No + " dated " + dbItems[i].Date + ".<BR><BR>Since the address in the Policy is incomplete, we are sending the Notice of cancellation in the email id provided by you at the time of issuance of the policy.<BR><BR>Please download letter from below link : " + dbItems[i].url + "<BR><BR><BR>For Landmark Insurance Brokers Pvt.Ltd.<BR><BR>Team Customer Care,";
+                                let arr_cc = "customercare@policyboss.com";
+                                let bcc = "horizonlive.2020@gmail.com";
+                                let subject = "Notice of Cancellation against your Policy No: " + dbItems[i].Insurance_Policy_No;
+                                let content_html = '<!DOCTYPE html><html><head><style>*,html,body{font-family:\'Google Sans\' ,tahoma;font-size:14px;}</style><title>' + subject + '</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>';
+                                content_html += '<p>' + msg + '</p>';
+                                content_html += '</body></html>';
+                                //let arr_to = dbItems[i].Email;
+                                let arr_to = "anuj.singh@policyboss.com";
+                                objModelEmail.send('noreply@policyboss.com', arr_to, subject, content_html, arr_cc, config.environment.notification_email, "");
+                            }
+                        }
+                    }
+
+                });
+                res.send('Success');
+            });
+        } catch (e) {
+            return res.send(e.stack);
+        }
+    });
+};

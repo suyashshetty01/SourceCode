@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta itemprop="title" content="Policy Boss">
+    <meta name="keywords" content="Policy Boss">
+    <meta itemprop="description" content="Policy Boss">
+    <!-- Required meta tags End -->
+    <title>Policy Boss | Blogs & Videos</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="images/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" sizes="150x150" href="images/favicon/ms-icon-150x150.png">
+    <link rel="icon" sizes="36x36" href="images/favicon/android-icon-36x36.png">
+    <link rel="icon" sizes="48x48" href="images/favicon/android-icon-48x48.png">
+    <link rel="icon" sizes="72x72" href="images/favicon/android-icon-72x72.png">
+    <link rel="icon" sizes="96x96" href="images/favicon/android-icon-96x96.png">
+    <link rel="icon" sizes="144x144" href="images/favicon/android-icon-144x144.png">
+    <link rel="icon" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-icon-precomposed.png">
+    <link rel="ms-icon" sizes="70x70" href="images/favicon/ms-icon-70x70.png">
+    <link rel="ms-icon" sizes="144x144" href="images/favicon/ms-icon-144x144.png">
+    <link rel="ms-icon" sizes="150x150" href="images/favicon/ms-icon-150x150.png">
+    <link rel="ms-icon" sizes="310x310" href="images/favicon/ms-icon-310x310.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- <div class="loader"></div> -->
+    <div class="overlay-appear"></div>
+<!----------------------------------------- Header Section ------------------------------------------>
+<div class="mainHeader header-shadow" id="home">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html" title="Policy Boss"> <img src="images/logo.png" alt="Policy Boss" class="img-fluid"> </a>
+            </div>
+            <div class="navBlock">
+                <div class="navbarBtn d-lg-none">
+                    <button class="hamburger" id="sidebarCollapse">
+                        <div class="bar">
+                        </div>
+                    </button>
+                </div>
+                <nav class="navbarLink navbar-expand-md" id="sidebar">
+                    <div class="navi_mobile">
+                        <a href="#home" id="dismiss" class="hideclose d-lg-none d-md-none"><i class="fa fa-times"></i></a>
+                        <div class="logo mobile-logo">
+                            <a href="index.html" title="Policy Boss"> <img src="images/logo.png" alt="Policy Boss" class="img-fluid"> </a>
+                        </div>
+                        <!-- <button class="hamburger active" id="sidebarCollapse">
+                            <div class="bar">
+                            </div>
+                        </button> -->
+                        <div class="navbar-collapse">
+                            <ul class="navbar-nav mr-auto navigation-bar">
+                                <li class="dropdown-link-box js_link">
+                                    <a href="javascript:void(0)" title="Explore to Insure">Explore to Insure </a>
+                                    <span class="dropdown-icon">
+                                        <img class="img-fluid icon" src="images/icons/dropdown-arrow.png" alt="dropdown arrow" />
+                                    </span>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li class="">
+                                            <a href="" title="Car Insurance">Car Insurance</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="" title="Bike Insurance">Bike Insurance</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="" title="Health Insurance">Health Insurance</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="" title="Term Insurance">Term Insurance</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="" title="Travel Insurance">Travel Insurance</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="" title="Commercial Vehical Insurance">Commercial Vehical Insurance</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="js_link">
+                                    <a href="about.html" title="About PolicyBoss">About PolicyBoss</a>
+                                    <!-- <span class="dropdown-icon">
+                                        <img class="img-fluid icon" src="images/icons/dropdown-arrow.png" alt="dropdown arrow" />
+                                    </span>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li class="">
+                                            <a href="about.html">About us</a>
+                                        </li>
+                                    </ul> -->
+                                </li>
+                                <li class="js_link active">
+                                    <a href="#" title="Blogs & Videos">Blogs & Videos</a>
+                                </li>
+                                <li class="dropdown-link-box js_link">
+                                    <a href="javascript:void(0)" title="Contact Us">Contact Us</a>
+                                    <span class="dropdown-icon">
+                                        <img class="img-fluid icon" src="images/icons/dropdown-arrow.png" alt="dropdown arrow" />
+                                    </span>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li class="dropdown-link">
+                                            <a class="dropdown-icon-box" href="mailto:customercare@policyboss.com" title="Mail">
+                                                <div class="dropdown-text">
+                                                    <div class="icon-box normal-icon">
+                                                        <img src="images/icons/mail-icon.png" alt="" />
+                                                    </div>
+                                                    <div class="icon-box hover-icon">
+                                                        <img src="images/icons/mail-icon-white.png" alt="" />
+                                                    </div>
+                                                    customercare@policyboss.com
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-link">
+                                            <a class="dropdown-icon-box" href="tel:1800 419 419 9" title="Call">
+                                                <div class="dropdown-text">
+                                                    <div class="icon-box normal-icon">
+                                                        <img src="images/icons/call-icon.png" alt="" />
+                                                    </div>
+                                                    <div class="icon-box hover-icon">
+                                                        <img src="images/icons/call-icon-white.png" alt="" />
+                                                    </div>
+                                                    1800-419-419-9
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-link">
+                                            <a class="dropdown-icon-box" href="contact-us.html" title="mail">
+                                                <div class="dropdown-text">
+                                                    <div class="icon-box normal-icon">
+                                                        <img src="images/icons/mail-icon.png" alt="" />
+                                                    </div>
+                                                    <div class="icon-box hover-icon">
+                                                        <img src="images/icons/mail-icon-white.png" alt="" />
+                                                    </div>
+                                                    Get in touch
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="nav-box">
+                <ul class="nav-right-box">
+                    <li class="">
+                        <a href="" class="login-btn weight-700">Login</a>
+                    </li>
+                    <li class="">
+                        <!-- <div class="language-dropdown">
+                            <span class="language-dropdown-icon-box">
+                                <img src="images/icons/language-dropdown-icon.png" alt="" />
+                            </span>
+                            <select class="language-dropdown-select" name="state">
+                                <option selected>English</option>
+                                <option value="1">हिन्दी</option>
+                            </select>
+                        </div> -->
+                        <div class="language-dropdown language-dropdown-custom">
+                                <div class="input-field-box">
+                                    <span class="language-dropdown-icon-box">
+                                        <img src="images/icons/language-dropdown-icon.png" alt="" />
+                                    </span>
+                                    <input type="text" class="btn input-field dropdown-toggle select-dropdown border-thick" type="button" id="dropdownMenuButton12" placeholder="Year of Registration" value="English" data-bs-toggle="dropdown" readonly aria-expanded="false" autocomplete="off"/>
+                                    <div class="dropdown-menu dropdown-menu-box select-dropdown-box" aria-labelledby="dropdownMenuButton12">
+                                        <div class="dropdown-content-wrapper">
+                                            <ul class="dropdown-list-row select-dropdown-box-ul js-dropdown-field">
+                                                <li class="dropdown-list-col select-dropdown-box-li active">
+                                                    <a href="javascript:void(0)" class="dropdown-list-link select-dropdown-box-link">English</a>
+                                                </li>
+                                                <li class="dropdown-list-col select-dropdown-box-li">
+                                                    <a href="javascript:void(0)" class="dropdown-list-link select-dropdown-box-link">हिन्दी</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+</div>
+
+    <!---------------------------------------- Heading Section ------------------------------------------>
+    <div class="blogs-and-videos-heading-section">
+        <div class="bg-blue-banner">
+            <div class="blogs-and-videos-main-heading-box">
+                <h1 class="main-title text-white text-center">Blogs & Videos</h1>
+                <p class="font-26 text-white text-center bg-blue-banner-description">Read our blogs with different categories of insurance</p>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------- Blogs & Videos Main Section ---------------------------------->
+    <div class="blogs-and-videos-section">
+        <div class="container">
+            <div class="section-wrapper">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tabs-main-section section-padding pedding-top-0">
+                            <ul class="nav nav-tabs nav-tab-line" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active font-18" id="blogs" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Blogs</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link font-18" id="videos" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Videos</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane blogs-tab fade show active" id="tab1" role="tabpanel" aria-labelledby="blogs">
+                                    <div class="blogs-listing-area">
+                                        <div class="blog-box-row">
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog4.png" class="img-fluid" alt="Car Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Car Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">What is No Claim Bonus in...</h3>
+                                                            <p class="font-16 blog-description text-extralight">Are you a safe driver? What if you are told that you will be rewarded for having a safe pair of hands? A No Claim Bonus does just that!</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Dec 24, 2020</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog2.png" class="img-fluid" alt="Health Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Health Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">Finibus Bonorum et Malorum</h3>
+                                                            <p class="font-16 blog-description text-extralight">At vero eos et accusamus et iusto odio minus dignissimos ducimus qui blanditiis praesenti voluptatum deleniti atque corrupt.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog1.png" class="img-fluid" alt="Insurance Blog" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Term Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">Lorem Ipsum</h3>
+                                                            <p class="font-16 blog-description text-extralight">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog3.png" class="img-fluid" alt="Life Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Life Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">The standard passage</h3>
+                                                            <p class="font-16 blog-description text-extralight">Lorem ipsum dolor sit amet, consectetur non adipiscing elit, sed do eiusmod tempor officiis  incididunt ut labore et dolore.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog5.png" class="img-fluid" alt="Travel Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Travel Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">Importance of Selecting a Sum</h3>
+                                                            <p class="font-16 blog-description text-extralight">Lorem ipsum dolor sit amet, consectetur non adipiscing elit, sed do eiusmod tempor officiis  incididunt ut labore et dolore.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog6.png" class="img-fluid" alt="CV Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">CV Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">The standard passage</h3>
+                                                            <p class="font-16 blog-description text-extralight">Lorem ipsum dolor sit amet, consectetur non adipiscing elit, sed do eiusmod tempor officiis  incididunt ut labore et dolore.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog7.png" class="img-fluid" alt="Life Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Life Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">The standard passage</h3>
+                                                            <p class="font-16 blog-description text-extralight">Lorem ipsum dolor sit amet, consectetur non adipiscing elit, sed do eiusmod tempor officiis  incididunt ut labore et dolore.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="blog-box-col">
+                                                <a href="blog-detail.html" class="blog-main-box">
+                                                    <div class="blog-image-area mob-change">
+                                                        <div class="blog-image-box">
+                                                            <img src="images/home-page/blog8.png" class="img-fluid" alt="Life Insurance" />
+                                                            <div class="tag-box">
+                                                                <span class="tag-text font-16">Life Insurance</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-detail-box blog-bg-box">
+                                                        <div class="blog-body">
+                                                            <h3 class="font-20 blog-title">The standard passage</h3>
+                                                            <p class="font-16 blog-description text-extralight">Lorem ipsum dolor sit amet, consectetur non adipiscing elit, sed do eiusmod tempor officiis  incididunt ut labore et dolore.</p>
+                                                            <div class="blog-footer flex-box">
+                                                                <div class="blog-footer-inner">
+                                                                    <span class="posted-date small-detail-text">Aug 05, 2021</span>
+                                                                </div>
+                                                                <div class="read-more-btn light-text">
+                                                                    <span class="btn-text">Read More</span> 
+                                                                    <span class="btn-icon">
+                                                                        <img src="images/icons/right-arrow.png" alt="Raed More" />
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination-wrapper">
+                                        <div class="pagination-inner">
+                                        <ul class="pagination-inner-parent">
+                                            <li class="pagination-prev"><button title="prev" class="prev"><img src="./images/icons/chevron-left.png" alt="prev"/></button></li>
+                                            <li class="pagination-item active"><a class="main-details-20" href="">1</a></li>
+                                            <li class="pagination-item "><a class="main-details-20" href="">2</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">3</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">...</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">12</a></li>
+                                            <li class="pagination-next"><button title="next" class="next"><img src="./images/icons/chevron-right.png" alt="next"/></button></li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane video-tab fade" id="tab2" role="tabpanel" aria-labelledby="videos">
+                                    <div class="video-listing-area">
+                                        <div class="video-listing-row">
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="video-listing-col">
+                                                <div class="video-listing-box">
+                                                    <div class="video-content-box">
+                                                        <div class="tag-box bg-black-overlay">
+                                                            <span class="tag-text">01:20</span>
+                                                        </div>
+                                                        <div class="video-box">
+                                                            <div class="video-player">
+                                                                <video class="video-element" id="video-element-1" preload="metadata" src="videos/dummy-video.mp4#t=0.1"></video>
+                                                            </div>
+                                                            <button id="video-play-button-1" data-id-match="1" class="play-button bg-black-overlay video-playing js_play">
+                                                                <div class="icon-box ">
+                                                                    <img src="images/icons/play-icon.png" alt="Play" />
+                                                                </div>
+                                                            </button>
+                                                            <div class="description-box">
+                                                                <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="mob-description-box">
+                                                            <p class="font-16 description-text">Lorem Ipsum is simply dummy text the printing and typesetting. </p>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination-wrapper">
+                                        <div class="pagination-inner">
+                                        <ul class="pagination-inner-parent">
+                                            <li class="pagination-prev"><button title="prev" class="prev"><img src="./images/icons/chevron-left.png" alt="prev"/></button></li>
+                                            <li class="pagination-item active"><a class="main-details-20" href="">1</a></li>
+                                            <li class="pagination-item "><a class="main-details-20" href="">2</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">3</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">...</a></li>
+                                            <li class="pagination-item"><a class="main-details-20" href="">12</a></li>
+                                            <li class="pagination-next"><button title="next" class="next"><img src="./images/icons/chevron-right.png" alt="next"/></button></li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="right-side-section">
+                            <div class="right-side-box">
+                                <div class="search-area">
+                                    <div class="search-box">
+                                        <div class="icon-box">
+                                            <img src="images/icons/search.png" alt="Search" />
+                                        </div>
+                                        <input type="text" class="input-field search-input font-18" placeholder="Search" />
+                                    </div>
+                                </div>
+                                <div class="explore-area">
+                                    <div class="explore-box border-white-bg-box">
+                                        <h2 class="title-text explore-heading font-24">Explore iBuddy
+                                            <div class="tool-tip-box tool-tip">
+                                                <img src="images/icons/question.svg" alt="Help" />
+                                            </div>
+                                        </h2>
+                                        <form class="" id="explore-form">
+                                            <div class="input-field-box">
+                                                <input type="text" pattern="\d*" maxlength="10" minlength="10" min-legnth="10" name="number" inputmode="numeric" class="input-field font-18 js-input-group" placeholder="Enter your mobile number"/>
+                                            </div>
+                                            <button type="submit" class="main-btn find-btn width-full">Find My iBuddy</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="categories-area">
+                                    <div class="categories-box border-white-bg-box">
+                                        <h2 class="title-text categories-heading font-24">Categories</h2>
+                                        <ul class="categories-ul">
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Child Plan</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Health Insurance</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Investment Plan</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Motor Insurance</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Pension Plan</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Personal Accident</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Term Insurance</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Travel Insurance</a>
+                                            </li>
+                                            <li class="categories-li">
+                                                <a href="" class="categories-link font-18 text-extralight">Two Wheeler</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="recent-post-area">
+                                    <div class="recent-post-box border-white-bg-box">
+                                        <h2 class="title-text font-24">Recent Posts</h2>
+                                        <ul class="post-ul">
+                                            <li class="post-li">
+                                                <a href="#" class="post-box">
+                                                    <div class="post-image-box">
+                                                        <img src="images/blogs-and-videos/recent-post-1.png" alt="Recent Post" />
+                                                    </div>
+                                                    <div class="post-detail-box">
+                                                        <h4 class="font-16 post-title">Guidelines for Successful Health Insurance Claim</h4>
+                                                        <p class="date-text">Dec 10, 2020</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="post-li">
+                                                <a href="#" class="post-box">
+                                                    <div class="post-image-box">
+                                                        <img src="images/blogs-and-videos/recent-post-2.png" alt="Recent Post" />
+                                                    </div>
+                                                    <div class="post-detail-box">
+                                                        <h4 class="font-16 post-title">Car Insurance Add On Covers : Types & Benefits</h4>
+                                                        <p class="date-text">Nov 10, 2020</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="post-li">
+                                                <a href="#" class="post-box">
+                                                    <div class="post-image-box">
+                                                        <img src="images/blogs-and-videos/recent-post-3.png" alt="Recent Post" />
+                                                    </div>
+                                                    <div class="post-detail-box">
+                                                        <h4 class="font-16 post-title">What Should Be The Duration of My Term Plan</h4>
+                                                        <p class="date-text">Jul 25, 2020</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="post-li">
+                                                <a href="#" class="post-box">
+                                                    <div class="post-image-box">
+                                                        <img src="images/blogs-and-videos/recent-post-4.png" alt="Recent Post" />
+                                                    </div>
+                                                    <div class="post-detail-box">
+                                                        <h4 class="font-16 post-title">Top Myths about Buying Online Life Insurance</h4>
+                                                        <p class="date-text">Aug 19, 2020</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------- Footer Section ------------------------------------------>
+    <footer class="footer-section bg-dark-blue section-padding">
+        <div class="container">
+            <div class="footer-links">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-link-box js_accordion">
+                            <h4 class="font-18 footer-link-heading">Insurance Products</h4>
+                            <ul class="mob-accordion-box">
+                                <li>
+                                    <a href="" class="font-16">Car Insurance</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Bike Insurance</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Commercial Vehicle Insurance</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Health Insurance</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Travel Insurance</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Term Insurance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-link-box js_accordion">
+                            <h4 class="font-18 footer-link-heading">About PolicyBoss</h4>
+                            <ul>
+                                <li>
+                                    <a href="about.html" class="font-16">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Management Team</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Legal & Policies</a>
+                                </li>
+                                <li>
+                                    <a href="contact-us.html" class="font-16">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">PR & Media</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-link-box js_accordion">
+                            <h4 class="font-18 footer-link-heading">Help & Support</h4>
+                            <ul>
+                                <li>
+                                    <a href="" class="font-16">Claim Assistance</a>
+                                </li>
+                                <li>
+                                    <a href="claims-center.html" class="font-16">Claim Centers</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Feedback / Complaint</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-link-box js_accordion">
+                            <h4 class="font-18 footer-link-heading">Knowledge Center</h4>
+                            <ul>
+                                <li>
+                                    <a href="blogs-and-videos.html" class="font-16">Blogs & Videos</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Advertisements</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Advisories</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Downloads</a>
+                                </li>
+                                <li>
+                                    <a href="" class="font-16">Site Map</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-social-links">
+                <div class="socials-box">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/policyboss" target="_blank">
+                                <img src="images/icons/facebook.png" alt="Facebook" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/user/policyboss" target="_blank">
+                                <img src="images/icons/youtube.png" alt="Youtube" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/policyboss/" target="_blank">
+                                <img src="images/icons/linkedIn.png" alt="LinkedIn" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Policyboss" target="_blank">
+                                <img src="images/icons/twitter.png" alt="Twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/policyboss/" target="_blank">
+                                <img src="images/icons/instagram.png" alt="Instagram" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-other-details">
+                <div class="box">
+                    <h5 class="heading-text font-16">Registered By</h5>
+                    <a href="" title="IRDA" class="icon-box">
+                        <img src="images/icons/irda-logo.png" alt="IRDA" />
+                    </a>
+                </div>
+                <div class="payment-box">
+                    <h5 class="heading-text font-16">Payment By</h5>
+                    <ul>
+                        <li>
+                            <a href="" title="Master Card">
+                                <div class="icon-box">
+                                    <img class="master-card" src="images/icons/master-card.png" alt="Master card" />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Visa Card">
+                                <div class="icon-box">
+                                    <img class="visa-card" src="images/icons/visa-icon.png" alt="Visa card" />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Maestro Card">
+                                <div class="icon-box">
+                                    <img class="maestro-card" src="images/icons/maestro-icon.png" alt="Maestro card" />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Rupay Card">
+                                <div class="icon-box">
+                                    <img class="rupay-card" src="images/icons/rupay-icon.png" alt="Rupay card" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="our-security">
+                    <h5 class="heading-text font-16">Secured By</h5>
+                    <ul>
+                        <li>
+                            <a href="" class="box">
+                                <div class="icon-box">
+                                    <img src="images/icons/macafee.png" alt="Macafee" />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="box bg-blue">
+                                <div class="icon-box">
+                                    <img class="lock-icon" src="images/icons/logo-secure-blue.png" alt="Secure" />
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="box bg-green">
+                                <div class="icon-box">
+                                    <img class="lock-icon" src="images/icons/logo-secure-green.png" alt="Secure" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="read-instruction-text text-uppercase">FOR MORE DETAILS ON RISK FACTORS, TERMS AND CONDITIONS PLEASE READ SALES BROCHURE CAREFULLY BEFORE PURCHASING THE INSURANCE POLICY/CONCLUDING A SALE.</p>
+                <div class="our-branch-section">
+                    <h5 class="heading-text font-16 text-white">Branch Offices:</h5>
+                    <ul class="branch-title-row">
+                        <li>Ahmedabad</li>
+                        <li>Aurangabad</li>
+                        <li>Bangalore</li>
+                        <li>Bhopal</li>
+                        <li>Chandigarh</li>
+                        <li>Chennai</li>
+                        <li>Cochin</li>
+                        <li>Goa</li>
+                        <li>Hyderabad</li>
+                        <li>Indore</li>
+                        <li>Jaipur</li>
+                        <li>Kolkata</li>
+                        <li>Lucknow</li>
+                        <li>Ludhiana</li>
+                        <li>Mumbai</li>
+                        <li>Mumbai-Dombivili</li>
+                        <li>Nagpur</li>
+                        <li>Nashik</li>
+                        <li>New Delhi</li>
+                        <li>Pune</li>
+                        <li>Raipur</li>
+                        <li>Rajkot</li>
+                        <li>Surat</li>
+                        <li>Thane</li>
+                        <li>Thiruvananthapuram</li>
+                        <li>Vadodara</li>
+                    </ul>
+                </div>
+                <p class="text-white detail">LANDMARK INSURANCE BROKERS PRIVATE LIMITED </br> CIN U66030PN2002PTC017009</p>
+                <p class="detail-description">IRDAI CoR No: 216 | Broker Code: DB 089/03 | Valid From 13/10/2018 till 12/10/2021 (originally licensed on 13/10/2003 and renewed thereafter) | Category: Direct (Life & General) | A member of IBAI</p>
+                <p class="address">Regd. Off: 1187/22, 4th Floor (above ICICI Bank ATM), Venkatesh Meher, Ghole Road, Shivaji Nagar, Pune (Maharashtra) - 411005.</p>
+                <div class="link-box">
+                    <a href="www.policyboss.com" title="www.policyboss.com" target="_blank">Website: www.policyboss.com</a>
+                    <a href="tel:1800-419-419-9" title="call:1800-419-419-9">Toll Free: 1800-419-419-9*</a>
+                </div>
+                <p class="info-text">* Working hours: 9:30 a.m. to 6:30 p.m. (Monday to Saturday)</p>
+                <p class="copyright-text">Copyright &#169; 2021 PolicyBoss. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="js/validate_init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        $('.language-dropdown-select').select2({});
+    </script>
+</body>
+
+</html>

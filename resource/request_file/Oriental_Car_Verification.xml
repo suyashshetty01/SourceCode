@@ -1,0 +1,30 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CreatePolicy xmlns="http://MotorService/">
+      <objCreatePolicyETT>
+        <PROPOSAL_NO>___dbmaster_insurer_transaction_identifier___</PROPOSAL_NO>
+        <MODE_OF_PAY>3</MODE_OF_PAY>
+        <CHEQUE_TYPE />
+        <CHEQUE_NO />
+        <CHEQUE_DT />
+        <CHEQUE_BANK_NAME />
+        <CHEQUE_BRANCH />
+        <CHEQUE_AMT>___transaction_amount___</CHEQUE_AMT>
+        <CHEQUE_ISSUED_BY />
+        <PAYINSLIP_NO />
+        <PAYINSLIP_DT />
+        <UNIQUE_REF_NO>___pg_reference_number_1___</UNIQUE_REF_NO>
+        <FLEX_01 />
+        <FLEX_02 />
+        <FLEX_03 />
+        <FLEX_04 />
+        <FLEX_05 />
+        <FLEX_06 />
+        <FLEX_07 />
+        <FLEX_08 />
+        <FLEX_09 />
+        <FLEX_10 />
+      </objCreatePolicyETT>
+    </CreatePolicy>
+  </soap:Body>
+</soap:Envelope>

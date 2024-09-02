@@ -1,0 +1,19 @@
+{
+    "policyTypeName": "___Plan_Code___",
+    "postalCode": "___permanent_pincode___",
+    "sumInsuredId": ___health_insurance_si_id___,
+    "schemeId": ___scheme_id___,
+    "period": ___policy_tenure___,
+    "isInstallment": 0,
+    "installmentType": 0,   
+    "insureds": [
+         <!--InsurersDetail_Start-->
+        {
+            "dob": "___member_array_birth_date___",
+            "sumInsuredId": ___health_insurance_si_id___,
+            "buyBackPED": 0
+        }     
+         <!--InsurersDetail_End-->
+    ]
+    
+}

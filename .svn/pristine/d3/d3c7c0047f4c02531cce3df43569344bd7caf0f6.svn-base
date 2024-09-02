@@ -1,0 +1,248 @@
+/* These mixins handle IE < 9, which doesn't respond to media queries.
+ * To "activate" them in ye-olde-ie stylesheet, set $dim to NUMpx and
+ * set $ye-olde-ie to a version number and then import the main stylesheet. */
+/* line 61, ../sass/partials/_utils.sass */
+.touch .touch-not {
+  display: none;
+}
+
+/* line 65, ../sass/partials/_utils.sass */
+.no-touch .touch-only {
+  display: none;
+}
+
+/* line 4, ../sass/partials/_grid.sass */
+.container, .q-container, main, header {
+  margin: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 64em) {
+  /* line 4, ../sass/partials/_grid.sass */
+  .container, .q-container, main, header {
+    /*width: 980px;*/
+  }
+}
+
+/* line 118, ../sass/partials/_grid.sass */
+.q-container {
+  margin: 20px 0;
+}
+
+/* These mixins handle IE < 9, which doesn't respond to media queries.
+ * To "activate" them in ye-olde-ie stylesheet, set $dim to NUMpx and
+ * set $ye-olde-ie to a version number and then import the main stylesheet. */
+/* line 61, ../sass/partials/_utils.sass */
+.touch .touch-not {
+  display: none;
+}
+
+/* line 65, ../sass/partials/_utils.sass */
+.no-touch .touch-only {
+  display: none;
+}
+
+/* line 10, ../sass/partials/_base.sass */
+pre {
+  overflow-x: auto;
+}
+
+
+/* line 4, ../sass/veronica/_forms.sass */
+fieldset {
+  border: none;
+}
+
+
+/* line 19, ../sass/veronica/_forms.sass */
+.field {
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+
+/* line 24, ../sass/veronica/_forms.sass */
+.subfield {
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+@media screen and (max-width: 63em) {
+  /* line 24, ../sass/veronica/_forms.sass */
+  .subfield {
+    padding-left: 2em;
+  }
+}
+@media screen and (min-width: 64em) {
+  /* line 31, ../sass/veronica/_forms.sass */
+  .subfield label {
+    padding-left: 1em;
+  }
+}
+
+/* line 44, ../sass/veronica/_forms.sass */
+input:disabled {
+  border: solid 1px #eeeeee;
+}
+/* line 46, ../sass/veronica/_forms.sass */
+input:focus {
+  outline: none;
+  border: solid 1px #222222;
+}
+/* line 49, ../sass/veronica/_forms.sass */
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+}
+/* line 55, ../sass/veronica/_forms.sass */
+input[type="search"] {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+}
+/* line 61, ../sass/veronica/_forms.sass */
+input[type="number"] {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+}
+
+
+/* line 97, ../sass/veronica/_forms.sass */
+input[type="submit"] {
+  float: right;
+}
+
+/* line 105, ../sass/veronica/_forms.sass */
+.required-field label::after {
+  content: "*";
+  color: #cd6a50;
+}
+
+/* line 109, ../sass/veronica/_forms.sass */
+.required {
+  color: #cd6a50;
+}
+
+/* line 113, ../sass/veronica/_forms.sass */
+.field-error input {
+  border: solid 1px #cd6a50;
+}
+
+/* line 116, ../sass/veronica/_forms.sass */
+.form-error-msg {
+  font-size: 0.9em;
+  color: #cd6a50;
+}
+
+/* line 123, ../sass/veronica/_forms.sass */
+select {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
+  border: solid 1px #cccccc;
+  @-moz-document url-prefix() {
+    background-image: none;
+}
+
+}
+/* line 91, ../sass/partials/_utils.sass */
+select::-ms-expand {
+  display: none;
+}
+/* line 131, ../sass/veronica/_forms.sass */
+select:disabled {
+  border: solid 1px #eeeeee;
+}
+/* line 133, ../sass/veronica/_forms.sass */
+select:focus {
+  outline: none;
+  border: solid 1px #222222;
+}
+
+
+/* line 12, ../sass/veronica/main.sass */
+body, html {
+  min-height: 100%;
+}
+
+
+/* line 35, ../sass/veronica/main.sass */
+section {
+  overflow: hidden;
+}
+/* line 25, ../sass/main.sass */
+.form-section-nav {
+  margin-top: 1em;
+  text-align: right;
+}
+
+/* line 29, ../sass/main.sass */
+.btn-std, .btn-secondary {
+  display: inline-block;
+}
+
+/* line 33, ../sass/main.sass */
+.btn-secondary {
+  border-color: #aaaaaa;
+}
+
+/* line 36, ../sass/main.sass */
+#global {
+  display: none;
+}
+
+@media screen and (max-width: 63em) {
+  /* line 39, ../sass/main.sass */
+  #global-nav {
+    text-align: center;
+    overflow: hidden;
+  }
+  /* line 43, ../sass/main.sass */
+  #global-nav span {
+    float: left;
+    width: calc(50% - 3em - 4px);
+  }
+}
+@media screen and (min-width: 64em) {
+  /* line 39, ../sass/main.sass */
+  #global-nav {
+    position: fixed;
+    margin-left: -10em;
+  }
+  /* line 49, ../sass/main.sass */
+  #global-nav span {
+    display: block;
+  }
+}
+
+/* line 79, ../sass/partials/_utils.sass */
+.valid legend::after {
+  content: "Valid";
+  text-transform: uppercase;
+  color: #5c9159;
+  font-size: 0.7em;
+  padding-left: 1em;
+}
+/* line 81, ../sass/partials/_utils.sass */
+.valid legend:after {
+  content: "Valid";
+  text-transform: uppercase;
+  color: #5c9159;
+  font-size: 0.7em;
+  padding-left: 1em;
+}
+/* line 83, ../sass/partials/_utils.sass */
+.valid legend > iea {
+  content: "Valid";
+  text-transform: uppercase;
+  color: #5c9159;
+  font-size: 0.7em;
+  padding-left: 1em;
+}
+
+/* line 61, ../sass/main.sass */
+/* Removed as per Nakul Request on 03.05.2016*/
+input {
+  font-family: "PT Sans";
+}

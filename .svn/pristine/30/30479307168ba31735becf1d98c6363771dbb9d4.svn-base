@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prem="http://premiumwrapper.motor.itgi.com">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <prem:getVehicleIdv>
+      <prem:idvWebServiceRequest>
+        <prem:dateOfRegistration>___vehicle_registration_date___</prem:dateOfRegistration>
+        <prem:inceptionDate>___vehicle_registration_date___ 00:00:00</prem:inceptionDate>
+        <prem:makeCode>___dbmaster_insurer_vehicle_make_code___</prem:makeCode>
+        <prem:rtoCity>MAHMUMBAI</prem:rtoCity>
+      </prem:idvWebServiceRequest>
+    </prem:getVehicleIdv>
+  </soapenv:Body>
+</soapenv:Envelope>

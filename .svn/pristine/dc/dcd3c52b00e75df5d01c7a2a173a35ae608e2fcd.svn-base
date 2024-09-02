@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:IDVCompute>
+         <!--Optional:-->
+         <tem:objInput>
+            <!--Optional:-->
+            
+            <tem:Policy_start_date>___policy_start_date___</tem:Policy_start_date><!--19/07/2019-->
+            <tem:vehicle_class_cd>___product_id___</tem:vehicle_class_cd><!--45-->
+            <tem:RTOLocationCode>___dbmaster_insurer_rto_city_code___</tem:RTOLocationCode><!--20482-->
+            <tem:Vehiclemodelcode>___dbmaster_insurer_vehicle_model_code___</tem:Vehiclemodelcode><!--10026-->
+            <tem:manufacturer_code>___dbmaster_insurer_vehicle_make_code___</tem:manufacturer_code><!--368-->
+            <tem:purchaseregndate>___vehicle_registration_date___</tem:purchaseregndate><!--19/07/2019-->
+            <tem:prev_policy_end_date></tem:prev_policy_end_date>
+            <tem:Typeofbusiness>___vehicle_insurance_type___</tem:Typeofbusiness><!--New Business-->
+            <tem:OfficeCode></tem:OfficeCode>
+            <tem:IntermediaryCode>___insurer_integration_agent_code___</tem:IntermediaryCode><!--200264572663-->
+            <tem:VehicleCategoryCode></tem:VehicleCategoryCode>
+            <tem:VehicleSubClassCode></tem:VehicleSubClassCode>
+            <tem:VehicleType>___product_id_2___</tem:VehicleType><!--PCP-->
+         </tem:objInput>
+      </tem:IDVCompute>
+   </soapenv:Body>
+</soapenv:Envelope>

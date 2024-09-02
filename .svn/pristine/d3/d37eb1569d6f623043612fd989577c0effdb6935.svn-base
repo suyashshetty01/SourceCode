@@ -1,0 +1,89 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "quickQuote",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        "ProductCode": "___Plan_Code___",
+        "ProductVersion": "1.0",
+        "EffectiveDate": "___policy_start_date___",
+        "ExpiryDate": "___policy_end_date___T23:59:59",
+        "SPCode": "SPCode",
+        "SPEOAPartyID": "SPEOAPartyID",
+        "SPEOAUserID": "SPEOAUserID",
+        "CommercialConsideration": 0,
+        "IMDCODE": "",
+        "IMDDiscount": 0,
+        "Vat": "",
+        "SimFlowId": "",
+        "CustomerSegment": "",
+        "NewBizClassification": "",
+        "BusinessType": "",
+        "CustomerGSTINNo": "CustomerGST",
+        "TransactionInitiatedBy": "",
+        "IssuingBranchCode": "",
+        "IssuingBranchGSTN": "",
+        "SecondarySalesMgr": "",
+        "AgreementCode": "___agreement_code___",
+        "SBIGBranchCode": "HO",
+        "SBIGBranchStateCode": "MH",
+        "PolicyDuration": ___policy_tenure___,
+        "SiCurrencyCode": "INR",
+        "PremiumCurrencyCode": "INR",
+        "PremiumLocalExchangeRate": "",
+        "ChannelType": "1",
+        "UINNumber": "___timestamp___",
+        "FamilyFloaterCategory": "___get_member_type___",
+        "CostofSalePercentage": 1.00,
+        "ArogyaPolicyTenure": "___policy_tenure___",
+        "ArogyaPolicyType": ___policy_type___,
+        "PolicyCustomerList": [
+            {
+                "Mobile": "___mobile___",
+                "ContactEmail": "___email___",
+                "State": "MH"
+            }
+        ],
+        "PolicyLobList": [
+            {
+                "ProductCode": "___Plan_Code___",
+                "PolicyRiskList": [
+                     <!--InsurersDetail_Start-->
+                    {
+                        "ProductElementCode": "R10007",
+                        "InsuredName": "___member_array_first_name___ ___member_array_last_name___",
+                        "DateOfBirth": "___member_array_birth_date___",
+                        "ArgInsuredRelToProposer": "___member_array_rel___",
+                        "Questionnaire2b": "0",
+                        "IsSmoker": "0",
+                        "AlcoholStatus": "0",
+                        "Questionnaire3a2": "0",
+                        "Questionnaire3a1": "0",
+                        "Questionnaire3a3": "0",
+                        "OtherImpairment": "0",
+                        "QueHealthInsDenied": "0",
+                        "DetailsOfInsDenial": "NIL",
+                        "NomineeName": "",
+                        "NomineeGender": "",
+                        "NomineeRelToProposer": "",
+                        "NomineeDOB": "",
+                        "AppointeeName": "",
+                        "AppointeeRelToNominee": "",
+                        "PolicyCoverageList": [
+                            {
+                                "ProductElementCode": "HVSC01",
+                                "EffectiveDate": "___policy_start_date___",
+                                "ExpiryDate": "___policy_end_date___T23:59:59",
+                                "PremiumBeforeTaxOpt1": "1",
+                                "ArogPlus_1stYearCoverageSI": ___health_insurance_si_2___
+                            }
+                        ]
+                    }
+                    <!--InsurersDetail_End-->
+                ]
+            }
+        ]
+    }
+}

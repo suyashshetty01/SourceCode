@@ -1,0 +1,38 @@
+body{margin: 0;padding: 0;font-family: arial;font-size: 13px;}
+.logo{padding: 20px;text-align: center;}
+.container{max-width: 80%;margin: auto;background-color: white;padding: 0;box-shadow: 0px 5px 10px #cacaca;}
+.container .title{background-color: #2165cd;margin: 0;font-size: 20px;text-align: center;padding: 20px;
+	font-weight: bold;color: white;}
+form{margin: 10px auto;width: 95%;padding: 5px 40px 20px;}
+form p{font-weight: bold;font-size: 18px;text-align: center;margin-bottom: 25px;}
+input{padding:8px;font-size:12px;width: 100%;border: 1px solid #797979;background-color: white;border-radius: 5px;
+	margin: 5px auto 20px;}
+::placeholder{color:#B2B4B3;}
+form label{font-size: 13px;font-weight: bold;text-align: left !important;margin-bottom: 0;}
+button{font-size: 15px;text-align: center;font-weight: bold;bottom: 0;padding: 8px 15px;border-radius:5px;
+	transition-duration: 0.4s;cursor: pointer;background-color: white;border: 1px solid #2165cd;color: #2165cd;
+	width: 120px;margin-top: 20px;}
+.cancel{float: right;}
+input:focus,button:focus{outline: none;}
+.submit:hover{background-color: #2165cd;color: white;border: 1px solid #2165cd;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.20), 0 17px 50px 0 rgba(0,0,0,0.15);}
+.cancel:hover{background-color: red;color: white;border: 1px solid red;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.20), 0 17px 50px 0 rgba(0,0,0,0.15);}
+.active{background-color: #2165cd;color: white;border: 1px solid #2165cd;}
+.error{color: #5a5a5a;position: relative;top: -9px;display: block;font-size: 10px;margin-top: -10px;}
+
+
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
+	html{min-height: 100%;}
+	.logo{padding: 15px;}
+	.logo img{width: 90px;}
+	.container{max-width: 100%;box-shadow: none;}
+	.container .title{ font-size: 18px; padding: 15px; }
+	form{padding: 5px 25px 20px;}
+	form p{ margin-bottom: 20px; font-size: 16px;}
+	.col-md-6{padding: 0;}
+	.button .col-md-6{padding: 0;width: 50%;}
+	form label{font-size: 12px;}
+	button{font-size: 14px; padding: 8px; cursor: pointer; width: 100px;  margin: 0 10px; margin-top: 10px;}
+}

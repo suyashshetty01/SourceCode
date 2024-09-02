@@ -1,0 +1,65 @@
+{
+    "LimitPerSending": "___limit_per_sending___",
+    "LimitPerLocation": "___limits_per_location___",
+    "InvoiceDate": "___invoice_date___",
+    "SubCommodityCode": "___dbmaster_insurer_sub_commodity_code___",
+    "SubCommodityType": "___dbmaster_insurer_sub_commodity_name___",
+    "Coverage": "___Plan_Code___",
+    "IntermediaryStorageRequired": "No",
+    "DescriptionOfCargo": "___description_Of_Cargo___",
+    "InvoiceNumber": "___invoice_number___",
+    "LRRRNumber": "___bill_number___",
+    "LRRRDate": "___bill_date___",
+    "DescriptionofPacking": "___description_Of_Packing___",
+    "TransitFrom": "___Transit_From___",
+    "TransitTo": "___Transit_To___",
+    "ModeOfTransit": "___mode_of_transit___",
+    "NoOfDays": 0,
+    "IntermediaryStorageRequiredLocation": "",
+    "CoverageType": "",
+    "OwnSharePSL": "___sum_insured___",
+    "BasisOfValuation": "INVOICE",
+    "SingleExcessType": true,
+    "DeductibleValue": 1,
+    "DeductibleType": "Whole Shipment Value",
+    "Amount": "___amount___",
+    "SumInsured": "___sum_insured___",
+    "Rate": 1.2,
+    "Premium": "___final_premium___",
+    "CommodityCode": "___dbmaster_insurer_commodity_code___",
+    "CommodityType": "___dbmaster_insurer_commodity_name___",
+    "CoverDetails":
+            [{
+                    "CoverGroups": "ITC(A)",
+                    "Applicable": "true",
+                    "SumInsured": "___sum_insured___",
+                    "Rate": "___ninety_FivePercent_Rate___",
+                    "Premium": "___ninety_FivePercent_Premium___"
+                },
+                {
+                    "CoverGroups": "SRCC Cover",
+                    "Applicable": true,
+                    "SumInsured": "___sum_insured___",
+                    "Rate": "___five_Percent_Rate___",
+                    "Premium": "___five_Percent_Premium___"
+                }
+            ],
+    "PolicyStartDate": "___policy_start_date___",
+    "PolicyEndDate": "___policy_end_date___",
+    "DealId": "___insurer_integration_agent_code___", 
+    "CustomerDetails":
+            {
+                "CustomerType": "C",
+                "CustomerName": "___first_name___",
+                "DateOfBirth": "___birth_date___",
+                "PinCode": "___dbmaster_pb_pincode___",
+                "PANCardNo": "",
+                "Email": "___email___",
+                "MobileNumber": "___mobile___",
+                "AddressLine1": "___communication_address_1___",
+                "CountryCode": 100,
+                "StateCode": "___dbmaster_pb_state_code___",                           
+                "CityCode": "___dbmaster_pb_district_code___"
+            },
+    "CorrelationId": "___dbmaster_insurer_transaction_identifier___"
+}

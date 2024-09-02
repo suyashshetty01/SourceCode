@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Health Insurance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/genricvehicle.css">      
+</head>
+<body>
+        
+     <div class="container-fluid head_wrap">
+        <div class="connect text-right">
+                <i class="fa fa-envelope-o"></i>
+                <i class="fa fa-phone"></i>
+        </div>
+        <div class="d-flex nav_wrap">
+                <div class="logo flex-grow-1"></div>
+                <div class="menu "><i class="fa fa-bars" ></i></div>
+        </div>
+        
+     </div>
+     <div class="main_wrap">
+        <div class="ins_heading">
+
+           <h1>HEALTH INSURANCE</h1>
+
+        </div>
+        <div class="form_container">
+                <div class="dashbord_btn">
+                <i  id="dbb" class="fa  fa-clipboard"></i>
+                                         
+             </div>
+            <div class="form_wrap" id="health_form" >
+                <div class="form_heading">GET YOUR HEALTH COVERED</div>
+                
+                <div class="input_row ">
+                                <label for="members">
+                                       Members
+                                        <input id="memform" type="text" placeholder="Members"  readonly  >
+                                </label>
+                            <div class="mem_wrap">
+                            <div class="member_insured">
+                            <div class="self active">MYSELF</div>
+                            <div class="members">MEMBERS</div>    
+                            </div>
+                            <div class="member_detail ">
+                           <div class="mem_row p-2 " id ="selfform" >
+                                
+                               <div class="user">Self</div>
+                               <div class="user_age"><input type="text" maxlength="2"></div>
+                               <div class="gender">
+                                
+                                <div class="d-flex text-center justify-content-center">
+                                <div class="radiobtn active">M</div>
+                                <div class="radiobtn">F</div>
+                                </div>
+                                   
+                               </div>
+                                
+                            </div>
+                            <div class="mem_row p-2 " id ="mem_form" >
+                                
+                               <div class="memberAdd">
+                                 ADD MEMBERS +
+                                </div>
+                                
+                            </div>    
+                                
+                            </div>
+                        </div>   
+                            
+                       
+                    
+                        </div>
+                <div class="input_row ">
+                                <label for="city">
+                                       City
+                                        <input type="text" placeholder="City" >
+                                </label>
+                               
+                        </div>
+                <div class="input_row ">
+                                <label for="dateofbirth">
+                                      Sum Insured
+                                        <input type="text" placeholder="Sum Insured" >
+                                </label>
+                               
+                        </div>
+                 <div class="input_row ">
+                                <label for="name">
+                                    Name
+                                        <input type="text" placeholder="Name" >
+                                </label>
+                               
+                        </div>
+                 <div class="input_row ">
+                                <label for="mobile">
+                                    Mobile
+                                        <input type="number" placeholder="mobile" >
+                                </label>
+                               
+                        </div>
+                 <div class="input_row ">
+                                <label for="email">
+                                  Email
+                                        <input type="email" placeholder="email" >
+                                </label>
+                               
+                        </div>
+                
+                 <div class="input_row text-center">
+
+                                <div class="btn_3" id="#get_quote" >Get Quote</div>
+
+                        </div>
+                
+            </div>
+         </div>
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+        
+        $("#memform").click(function(){
+            
+            $(".mem_wrap").slideToggle();
+            
+        })
+            
+        
+    })
+    
+</script>
+</body>
+</html>    
+

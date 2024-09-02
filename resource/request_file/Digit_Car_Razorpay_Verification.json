@@ -1,0 +1,13 @@
+{
+    "payment": {
+        "paymentType": "ONLINE",
+        "premiumAmount": "INR ___final_premium___.00",
+        "transactionId": "___pg_reference_number_1___",
+        "paymentDate": "___pg_reference_number_2___",
+        "instrumentNumber": "___pg_reference_number_3___",
+        "ifscCode": null,
+        "micrCode": null
+    },
+    "enquiryId": "___dbmaster_insurer_transaction_identifier___",
+    "externalPolicyNumber": ""
+}

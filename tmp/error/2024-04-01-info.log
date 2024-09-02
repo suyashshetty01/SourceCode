@@ -1,0 +1,73 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:33:11 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:33:11 AM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"10:33:11 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"10:33:11 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:33:11 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"10:33:11 AM"}
+{"meta":"","level":"info","message":"","timestamp":"10:33:11 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"2:05:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:05:44 PM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"2:05:44 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"2:05:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:05:44 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"2:05:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"2:05:44 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:55:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:55:42 PM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"4:55:42 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:55:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:55:42 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:55:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:55:42 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:02:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:35 PM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"5:02:35 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:02:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:35 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:02:35 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:35 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:11:29 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:11:29 PM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"5:11:29 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:11:29 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:11:29 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:11:29 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:11:29 PM"}
+{"level":"info","message":"**************************","timestamp":"5:11:55 PM"}
+{"level":"info","message":"Main_Error { Error: listen EADDRINUSE :::3000\n    at Object.exports._errnoException (util.js:1022:11)\n    at exports._exceptionWithHostPort (util.js:1045:20)\n    at Server._listen2 (net.js:1259:14)\n    at listen (net.js:1295:10)\n    at Server.listen (net.js:1391:5)\n    at Object.<anonymous> (D:\\Suyash Files\\SourceCode\\bin\\www:35:8)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Timeout.Module.runMain [as _onTimeout] (module.js:604:10)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  code: 'EADDRINUSE',\n  errno: 'EADDRINUSE',\n  syscall: 'listen',\n  address: '::',\n  port: 3000 }","timestamp":"5:11:55 PM"}
+{"level":"info","message":"**************************","timestamp":"5:11:55 PM"}
+{"level":"info","message":"**************************","timestamp":"5:25:56 PM"}
+{"level":"info","message":"Main_Error { Error: listen EADDRINUSE :::3000\n    at Object.exports._errnoException (util.js:1022:11)\n    at exports._exceptionWithHostPort (util.js:1045:20)\n    at Server._listen2 (net.js:1259:14)\n    at listen (net.js:1295:10)\n    at Server.listen (net.js:1391:5)\n    at Object.<anonymous> (D:\\Suyash Files\\SourceCode\\bin\\www:35:8)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Timeout.Module.runMain [as _onTimeout] (module.js:604:10)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  code: 'EADDRINUSE',\n  errno: 'EADDRINUSE',\n  syscall: 'listen',\n  address: '::',\n  port: 3000 }","timestamp":"5:25:56 PM"}
+{"level":"info","message":"**************************","timestamp":"5:25:56 PM"}
+{"level":"info","message":"**************************","timestamp":"5:29:13 PM"}
+{"level":"info","message":"Main_Error { Error: listen EADDRINUSE :::3000\n    at Object.exports._errnoException (util.js:1022:11)\n    at exports._exceptionWithHostPort (util.js:1045:20)\n    at Server._listen2 (net.js:1259:14)\n    at listen (net.js:1295:10)\n    at Server.listen (net.js:1391:5)\n    at Object.<anonymous> (D:\\Suyash Files\\SourceCode\\bin\\www:35:8)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Timeout.Module.runMain [as _onTimeout] (module.js:604:10)\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)\n  code: 'EADDRINUSE',\n  errno: 'EADDRINUSE',\n  syscall: 'listen',\n  address: '::',\n  port: 3000 }","timestamp":"5:29:13 PM"}
+{"level":"info","message":"**************************","timestamp":"5:29:13 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:48:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:48:44 PM"}
+{"level":"info","message":"Production Environment is Listening on port 3000","timestamp":"5:48:44 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:48:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:48:44 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:48:44 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:48:44 PM"}
+{"level":"info","message":"working","timestamp":"5:50:03 PM"}
+{"level":"info","message":"working","timestamp":"5:51:15 PM"}
+{"level":"info","message":"working","timestamp":"5:51:59 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:54:40 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:40 PM"}
+{"level":"info","message":"Production_l Environment is Listening on port 3000","timestamp":"5:54:40 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:54:40 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:40 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:54:40 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:40 PM"}
+{"level":"info","message":"working","timestamp":"5:54:51 PM"}
+{"level":"info","message":"{ Error: ENOENT: no such file or directory, open 'D:\\Suyash Files\\SourceCode\\Admin\\views\\website\\cms22\\UI22_claim-settlement-information_ver_1042024141133.ejs'\n    at Error (native)\n  errno: -4058,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: 'D:\\\\Suyash Files\\\\SourceCode\\\\Admin\\\\views\\\\website\\\\cms22\\\\UI22_claim-settlement-information_ver_1042024141133.ejs' }","timestamp":"5:58:26 PM"}
+{"level":"info","message":"working","timestamp":"5:58:30 PM"}
+{"level":"info","message":"{ Error: ENOENT: no such file or directory, open 'D:\\Suyash Files\\SourceCode\\Admin\\views\\website\\cms22\\UI22_claim-settlement-information_ver_1042024141133.ejs'\n    at Error (native)\n  errno: -4058,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: 'D:\\\\Suyash Files\\\\SourceCode\\\\Admin\\\\views\\\\website\\\\cms22\\\\UI22_claim-settlement-information_ver_1042024141133.ejs' }","timestamp":"5:58:39 PM"}
+{"level":"info","message":"working","timestamp":"6:01:39 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"6:04:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:04:33 PM"}
+{"level":"info","message":"Production_l Environment is Listening on port 3000","timestamp":"6:04:33 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"6:04:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:04:33 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"6:04:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"6:04:33 PM"}

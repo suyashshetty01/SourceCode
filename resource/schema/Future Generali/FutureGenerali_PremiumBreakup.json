@@ -1,0 +1,49 @@
+﻿{
+    "own_damage": {
+        "od_basic": "OD-IDV",
+        "od_elect_access": "OD-EAV",
+        "od_non_elect_access": "OD-NEA",
+        "od_cng_lpg": "OD-CNG",
+        "od_disc_ncb": "OD-NCB",
+        "od_disc_vol_deduct": "OD-VD",
+        "od_disc_anti_theft": "OD-THF",
+        "od_disc_aai": "OD-AAI",
+        "od_loading": "OD-LOADDISC",
+        "od_disc": "",//loading discount was assigned , no seoparate tag for it 
+        "od_final_premium": ""//no specific tag it is calculated from tags = ( OD-Gross Premium) -( OD-MOTADON)
+    },
+    "liability": {
+        "tp_basic": "TP-IDV",
+        "tp_cover_owner_driver_pa": "TP-CPA",
+        "tp_cover_unnamed_passenger_pa": "TP-APA",
+        "tp_cover_named_passenger_pa": "",//not available
+        "tp_cover_paid_driver_pa": "",//Not available
+        "tp_cover_paid_driver_ll": "TP-LLDE",
+        "tp_cng_lpg": "TP-CNG",
+        "tp_final_premium": "TP-Gross Premium"
+    },
+    "addon": {// add on amount is received in tag OD-MOTADON and only one cover is covered in one call
+        "addon_zero_dep_cover": "",
+        "addon_road_assist_cover": "",
+        "addon_ncb_protection_cover": null,
+        "addon_engine_protector_cover": "",
+        "addon_invoice_price_cover": null,
+        "addon_key_lock_cover": null,
+        "addon_consumable_cover": null,
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": null,
+        "addon_final_premium": 0
+    },
+    "net_premium": "",//obtained by adding tags (OD-Gross Premium)+(TP-Gross Premium)
+    "service_tax": "",//obtained by adding tags (OD-ServTax)+(TP-ServTax)(OD-ServTax)+(TP-ServTax)Gross Premium + ServTax
+}

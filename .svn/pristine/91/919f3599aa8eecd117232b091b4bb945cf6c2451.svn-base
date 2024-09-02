@@ -1,0 +1,86 @@
+{
+    "Product_Insurer_ID" : 7,
+    "Insurer_ID" : 33,
+    "IsActive" : 0,
+    "Agent_Code" : "IMD1005463",
+    "Location_Code" : null,
+    "Service_User" : null,
+    "Service_Password" : null,
+    "Payment_Gateway_URL" : "http://115.112.62.214:1761/CustomerPAYU_Test/CustPayU.aspx",
+    "Name" : "Liberty::Car",
+    "Lib_Class" : "LibertyVideoconMotor",
+    "Method_List" : [ 
+        {
+            "Method_Id" : 6,
+            "Method_Name" : "LibertyVideocon_Car_IDV",
+            "Method_Type_ID" : 1,
+            "Method_Action" : "PostPremium",
+            "Method_Request_File" : "LibertyVideocon_Car_Premium.txt",
+            "Method_Calling_Type" : "Rest",
+            "WSDL_URL" : null,
+            "Service_URL" : "http://115.112.62.214:1762/API/IMDTPService/",
+            "Service_File" : null,
+            "Checkpoint_URL" : null,
+            "Service_User" : "",
+            "Service_Password" : "",
+            "Product_Insurer_ID" : 1,
+            "IsActive" : true,
+            "Method_Type" : "Idv",
+            "Product_Id" : 1,
+            "Insurer_Id" : 33
+        }, 
+        {
+            "Method_Id" : 7,
+            "Method_Name" : "LibertyVideocon_Car_Premium",
+            "Method_Type_ID" : 2,
+            "Method_Action" : "PostPremium",
+            "Method_Request_File" : "LibertyVideocon_Car_Premium.txt",
+            "Method_Calling_Type" : "Rest",
+            "WSDL_URL" : null,
+            "Service_URL" : "http://115.112.62.214:1762/API/IMDTPService/",
+            "Service_File" : null,
+            "Checkpoint_URL" : null,
+            "Service_User" : "",
+            "Service_Password" : "",
+            "Product_Insurer_ID" : 1,
+            "IsActive" : true,
+            "Method_Type" : "Premium",
+            "Product_Id" : 1,
+            "Insurer_Id" : 33
+        }, 
+        {
+            "Method_Id" : 8,
+            "Method_Name" : "LibertyVidecon_Car_Proposal",
+            "Method_Type_ID" : 2,
+            "Method_Action" : "CreateFullCustomer",
+            "Method_Request_File" : "LibertyVidecon_Car_Proposal.txt",
+            "Method_Calling_Type" : "SOAP",
+            "WSDL_URL" : null,
+            "Service_URL" : "http://115.112.62.214:1762/API/IMDTPService/",
+            "Service_File" : "",
+            "Checkpoint_URL" : null,
+            "Service_User" : "",
+            "Service_Password" : "",
+            "Product_Insurer_ID" : 1,
+            "IsActive" : true,
+            "Method_Type" : "Proposal",
+            "Product_Id" : 1,
+            "Insurer_Id" : 33
+        }
+    ],
+	"Plan_List":[
+	{
+    "Plan_Id" : 8,
+    "Plan_Name" : "Basic",
+    "Plan_Addon_List" : {
+	"addon_zero_dep_cover": 'yes',
+        "addon_road_assist_cover": 'yes',        
+        "addon_engine_protector_cover": 'yes',        
+        "addon_key_lock_cover": 'yes',
+        "addon_consumable_cover": 'yes',                
+        "addon_passenger_assistance_cover": 'yes'        
+    },
+    "IsActive" : true
+}
+	]
+}

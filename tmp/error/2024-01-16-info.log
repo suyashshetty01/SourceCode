@@ -1,0 +1,113 @@
+{"level":"info","message":"[ { _id: 5ec65934370b6d7152853a6f,\n    Product_Id: [ '1', '2', '10', '12', '3' ],\n    Category_Id: 2,\n    Category: 'Quotation',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745,106154',\n    Level_2: '110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a70,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 3,\n    Category: 'Proposal',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a71,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 4,\n    Category: 'Policy not received',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a72,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 5,\n    Category: 'Post Sale Query',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a73,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 6,\n    Category: 'Endorsement',\n    Level_1: '110560,109745,109740,102571,111548,100004,111162,107602,104449',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a74,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 7,\n    Category: 'Claim Related',\n    Level_1: '110560,109745,109740,102571,111548,100004,111162,107602,104449',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a75,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 8,\n    Category: 'Finmart',\n    Level_1: '111548,109740,109745,111162,110560,107602,104449,104450',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'app' ] },\n  { _id: 5ec65934370b6d7152853a76,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 9,\n    Category: 'Received policy copy, CRN is not marked as sell',\n    Level_1: '111548,109740,109745,111162,110560,107602,104449',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec65934370b6d7152853a77,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 10,\n    Category: 'Done payment but not received policy copy',\n    Level_1: '111548,109740,109745,111162,110560,107602,104449',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 5ec6666760ce99ede9f05f99,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 11,\n    Category: 'Sign up issue',\n    Level_1: '111548,109740,109745,111162,110560,107602,104449',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'app' ] },\n  { _id: 5ec6666760ce99ede9f05f9b,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 12,\n    Category: 'Login issue',\n    Level_1: '111548,109740,109745,111162,110560,107602,104449',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'app' ] },\n  { _id: 60e4175bce97a8d70db845f3,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 15,\n    Category: 'Send to selles team',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745,106154',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 60e417b3ce97a8d70db8981a,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 14,\n    Category: 'Send to IT',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745,106154',\n    Level_2: '110513,110646,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 6246946e88f461f725bf79f5,\n    Product_Id: [ '2' ],\n    Category_Id: 17,\n    Category: 'Health Claims',\n    Level_1: '119801,14726,110560',\n    Level_2: '119801,14726,110560',\n    Level_3: '119801,14726,110560',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 6278d52288f461f72592d6a1,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 18,\n    Category: 'POSP',\n    Level_1: '110560,114118',\n    Level_2: '110560,114118',\n    Level_3: '110560,114118',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 6278d64788f461f725944c2a,\n    Product_Id: [ '1', '10', '12' ],\n    Category_Id: 19,\n    Category: 'Policy not updated in Parivahan',\n    Level_1: '110560,114118',\n    Level_2: '110560,114118',\n    Level_3: '110560,114118',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 627f38ed88f461f72551e830,\n    Product_Id: [ '1', '10', '12', '2' ],\n    Category_Id: 20,\n    Category: 'Wallet',\n    Level_1: '110560,114118',\n    Level_2: '110560,114118',\n    Level_3: '110560,114118',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] },\n  { _id: 63c79dfab9d55d22598cee55,\n    Product_Id: [ '1', '2', '10', '12' ],\n    Category_Id: 21,\n    Category: 'KYC',\n    Level_1: '110560,111221,110847,111100,111162,111548,110646,110513,107602,104449,102572,102571,103595,109745',\n    Level_2: '104449,107602',\n    Level_3: '104449,107602',\n    Display_Source: [ 'policyboss', 'horizon', 'app' ] } ]","timestamp":"9:33:33 AM"}
+{"level":"info","message":"user_detailsInsert null { result: { ok: 1, n: 1 },\n  ops: \n   [ { Ticket_Id: 2728,\n       Ticket_code: 'CAEN7228',\n       Product: 1,\n       Category: 'Endorsement',\n       SubCategory: 'Address Correction',\n       From: 'Anuj Baliram Singh(110560)',\n       To: 'Anuj Baliram Singh(110560)',\n       Status: 'Open',\n       Created_By: 'Anuj Baliram Singh',\n       Created_On: 2024-01-16T04:05:18.682Z,\n       Modified_By: 8067,\n       Modified_On: 2024-01-16T04:05:18.682Z,\n       CRN: 1128206,\n       Mobile_No: '9999999999',\n       Vehicle_No: 'MH-02-AA-1234',\n       Remark: 'Endorsement',\n       ss_id: 8067,\n       CRN_owner: '0',\n       fba_id: 56265,\n       CRN_fba_id: '0',\n       channel: 'DIRECT',\n       subchannel: 'DIRECT',\n       Agent_Email_Id: 'anuj.singh@policyboss.com',\n       Transaction_On: '2024-01-12T04:53:46.217Z',\n       Source: 'horizon',\n       RM_Email_Id: '',\n       RM_Agent_Name: 'POLICY BOSS WEBSITE',\n       Insurer_Id: 13,\n       _id: 65a60080766d505c10532a4a } ],\n  insertedCount: 1,\n  insertedIds: [ 65a60080766d505c10532a4a ] }","timestamp":"9:35:20 AM"}
+{"level":"info","message":"TicketUpdated null CommandResult {\n  result: { n: 1, nModified: 1, ok: 1 },\n  connection: \n   Connection {\n     domain: null,\n     _events: \n      { close: [Object],\n        error: [Object],\n        timeout: [Object],\n        parseError: [Object] },\n     _eventsCount: 4,\n     _maxListeners: undefined,\n     options: \n      { host: '65.0.176.149',\n        port: 27017,\n        size: 5,\n        connectionTimeout: 30000,\n        socketTimeout: 30000,\n        keepAlive: true,\n        keepAliveInitialDelay: 0,\n        noDelay: true,\n        ssl: false,\n        checkServerIdentity: true,\n        ca: null,\n        cert: null,\n        key: null,\n        passPhrase: null,\n        rejectUnauthorized: false,\n        promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false,\n        reconnect: true,\n        reconnectInterval: 1000,\n        reconnectTries: 30,\n        domainsEnabled: false,\n        disconnectHandler: [Object],\n        cursorFactory: [Object],\n        emitError: true,\n        socketOptions: {},\n        clientInfo: [Object],\n        readPreference: [Object],\n        promiseLibrary: [Function: Promise],\n        bson: BSON {} },\n     id: 5,\n     logger: Logger { className: 'Connection' },\n     bson: BSON {},\n     tag: undefined,\n     messageHandler: [Function],\n     maxBsonMessageSize: 67108864,\n     port: 27017,\n     host: '65.0.176.149',\n     keepAlive: true,\n     keepAliveInitialDelay: 0,\n     noDelay: true,\n     connectionTimeout: 30000,\n     socketTimeout: 30000,\n     destroyed: false,\n     domainSocket: false,\n     singleBufferSerializtion: true,\n     serializationFunction: 'toBinUnified',\n     ca: null,\n     cert: null,\n     key: null,\n     passphrase: null,\n     ssl: false,\n     rejectUnauthorized: false,\n     checkServerIdentity: true,\n     responseOptions: \n      { promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false },\n     flushing: false,\n     queue: [],\n     connection: \n      Socket {\n        connecting: false,\n        _hadError: false,\n        _handle: [Object],\n        _parent: null,\n        _host: null,\n        _readableState: [Object],\n        readable: true,\n        domain: null,\n        _events: [Object],\n        _eventsCount: 8,\n        _maxListeners: undefined,\n        _writableState: [Object],\n        writable: true,\n        allowHalfOpen: false,\n        destroyed: false,\n        _bytesDispatched: 697,\n        _sockname: null,\n        _pendingData: null,\n        _pendingEncoding: '',\n        server: null,\n        _server: null,\n        _idleTimeout: 30000,\n        _idleNext: [Object],\n        _idlePrev: [Object],\n        _idleStart: 56815319,\n        read: [Function],\n        _consuming: true },\n     writeStream: null,\n     hashedName: '7dcd4ef3ecd47c37fdf12446987419743124214f',\n     workItems: [],\n     buffer: null,\n     sizeOfMessage: 0,\n     bytesRead: 0,\n     stubBuffer: null },\n  message: \n   Response {\n     parsed: true,\n     index: 75,\n     raw: <Buffer 4b 00 00 00 ae c9 42 31 d4 07 00 00 01 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 27 00 00 00 10 6e 00 01 00 00 00 10 6e 4d ... >,\n     data: <Buffer 4b 00 00 00 ae c9 42 31 d4 07 00 00 01 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 27 00 00 00 10 6e 00 01 00 00 00 10 6e 4d ... >,\n     bson: BSON {},\n     opts: \n      { promoteLongs: true,\n        promoteValues: true,\n        promoteBuffers: false },\n     length: 75,\n     requestId: 826460590,\n     responseTo: 2004,\n     responseFlags: 8,\n     cursorId: Long { _bsontype: 'Long', low_: 0, high_: 0 },\n     startingFrom: 0,\n     numberReturned: 1,\n     documents: [ [Object] ],\n     cursorNotFound: false,\n     queryFailure: false,\n     shardConfigStale: false,\n     awaitCapable: true,\n     promoteLongs: true,\n     promoteValues: true,\n     promoteBuffers: false,\n     hashedName: '7dcd4ef3ecd47c37fdf12446987419743124214f' } }","timestamp":"9:35:20 AM"}
+{"level":"info","message":"emailupdate null { n: 1, nModified: 1, ok: 1 }","timestamp":"9:35:21 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"9:52:14 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:52:14 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"9:52:14 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"9:52:14 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:52:14 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"9:52:14 AM"}
+{"meta":"","level":"info","message":"","timestamp":"9:52:14 AM"}
+{"level":"info","message":"Success","timestamp":"10:49:28 AM"}
+{"level":"info","message":"Success","timestamp":"10:51:47 AM"}
+{"level":"info","message":"Success","timestamp":"10:52:34 AM"}
+{"level":"info","message":"Success","timestamp":"10:52:48 AM"}
+{"level":"info","message":"Success","timestamp":"10:55:19 AM"}
+{"level":"info","message":"Success","timestamp":"10:57:38 AM"}
+{"level":"info","message":"Success","timestamp":"10:57:38 AM"}
+{"level":"info","message":"Success","timestamp":"10:57:57 AM"}
+{"level":"info","message":"Success","timestamp":"10:58:43 AM"}
+{"level":"info","message":"Success","timestamp":"10:58:43 AM"}
+{"level":"info","message":"Success","timestamp":"11:15:10 AM"}
+{"level":"info","message":"Success","timestamp":"11:18:42 AM"}
+{"level":"info","message":"Success","timestamp":"11:20:01 AM"}
+{"level":"info","message":"Success","timestamp":"11:20:07 AM"}
+{"level":"info","message":"Success","timestamp":"11:20:31 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:45:25 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:45:25 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"11:45:25 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"11:45:25 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:45:25 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:45:25 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:45:25 AM"}
+{"level":"info","message":"Success","timestamp":"11:45:39 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:47:57 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:47:57 AM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"11:47:57 AM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"11:47:57 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:47:57 AM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"11:47:57 AM"}
+{"meta":"","level":"info","message":"","timestamp":"11:47:57 AM"}
+{"level":"info","message":"Success","timestamp":"11:49:44 AM"}
+{"level":"info","message":"Success","timestamp":"11:53:22 AM"}
+{"level":"info","message":"Success","timestamp":"12:04:05 PM"}
+{"level":"info","message":"Success","timestamp":"12:22:44 PM"}
+{"level":"info","message":"Success","timestamp":"12:36:18 PM"}
+{"level":"info","message":"Success","timestamp":"12:37:07 PM"}
+{"level":"info","message":"Success","timestamp":"12:38:56 PM"}
+{"level":"info","message":"Success","timestamp":"1:28:42 PM"}
+{"level":"info","message":"Success","timestamp":"1:28:45 PM"}
+{"level":"info","message":"Success","timestamp":"1:29:42 PM"}
+{"level":"info","message":"Success","timestamp":"1:34:48 PM"}
+{"level":"info","message":"Success","timestamp":"1:36:47 PM"}
+{"level":"info","message":"Success","timestamp":"1:36:51 PM"}
+{"level":"info","message":"Success","timestamp":"1:37:36 PM"}
+{"level":"info","message":"Success","timestamp":"1:37:37 PM"}
+{"level":"info","message":"Success","timestamp":"1:37:38 PM"}
+{"level":"info","message":"Success","timestamp":"1:38:43 PM"}
+{"level":"info","message":"Success","timestamp":"1:40:26 PM"}
+{"level":"info","message":"Success","timestamp":"1:42:12 PM"}
+{"level":"info","message":"Success","timestamp":"1:47:56 PM"}
+{"level":"info","message":"Success","timestamp":"1:49:28 PM"}
+{"level":"info","message":"Success","timestamp":"1:54:23 PM"}
+{"level":"info","message":"Success","timestamp":"1:56:34 PM"}
+{"level":"info","message":"Success","timestamp":"1:56:41 PM"}
+{"level":"info","message":"Success","timestamp":"2:34:59 PM"}
+{"level":"info","message":"Success","timestamp":"2:41:50 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:00:17 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:00:17 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:00:17 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:00:17 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:00:17 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:00:17 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:00:17 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:31:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:31:33 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:31:33 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:31:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:31:33 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:31:33 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:31:33 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:32:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:32:46 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:32:46 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:32:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:32:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:32:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:32:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:35:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:35:42 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:35:42 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:35:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:35:42 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:35:42 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:35:42 PM"}
+{"level":"info","message":"Success","timestamp":"5:23:28 PM"}
+{"level":"info","message":"Success","timestamp":"5:26:55 PM"}
+{"level":"info","message":"Success","timestamp":"5:32:09 PM"}
+{"level":"info","message":"Success","timestamp":"5:33:10 PM"}
+{"level":"info","message":"Success","timestamp":"5:33:46 PM"}
+{"level":"info","message":"Success","timestamp":"5:45:05 PM"}
+{"level":"info","message":"Success","timestamp":"5:51:05 PM"}
+{"level":"info","message":"Success","timestamp":"5:51:33 PM"}
+{"level":"info","message":"Success","timestamp":"5:51:36 PM"}
+{"level":"info","message":"Success","timestamp":"5:51:56 PM"}
+{"level":"info","message":"Success","timestamp":"5:52:01 PM"}
+{"level":"info","message":"Success","timestamp":"5:52:04 PM"}
+{"level":"info","message":"Success","timestamp":"5:52:43 PM"}
+{"level":"info","message":"Success","timestamp":"5:52:55 PM"}
+{"level":"info","message":"Success","timestamp":"5:54:04 PM"}
+{"level":"info","message":"Success","timestamp":"5:54:55 PM"}
+{"level":"info","message":"Success","timestamp":"5:54:58 PM"}
+{"level":"info","message":"Success","timestamp":"5:57:31 PM"}

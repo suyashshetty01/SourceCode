@@ -1,0 +1,104 @@
+<!--singleStart-->
+{
+  "ApplicationNumber": null,
+  "TransactionID": "___custom_txnID___",
+  "GoGreen": false,
+  "Request_IP": "216.48.179.246",
+  "Customer_Details": null,
+  "Policy_Details": {
+    "PolicyStartDate": "___policy_start_date___",
+    "ProposalDate": "___proposalDate___"
+  },
+  "Req_RetailTravel": {
+    "PropRisks_PolicyType": "___trip_type___",
+    "PropRisks_PlanType": "___Plan_Name___",
+    "PropRisks_GeographicCoverage_Mandatary": "___visiting_region___",
+    "PropRisks_PlacesofVisit": "___visiting_region___",
+    "PropRisks_CountriesofVisit_Mandatary": "___visiting_region___",
+    "PropRisks_FamilyPlan": "___family_plan_type___",
+    "Insured_Details": 
+    <!--members_start-->
+    []
+     <!--members_end-->
+  }
+}
+<!--singleEnd-->
+<!--familyStart-->
+{
+  "TransactionID": "___custom_txnID___",
+  "GoGreen": "false",
+  "IsReadyToWait": null,
+  "PolicyCertifcateNo": null,
+  "PolicyNo": null,
+  "Customer_Details": null,
+  "Policy_Details": {
+    "PolicyStartDate": "___policy_start_date___",
+    "ProposalDate": "___proposalDate___",
+    "AgreementType": null,
+    "FinancierCode": null,
+    "BranchName": null,
+    "PreviousPolicy_CorporateCustomerId_Mandatary": null,
+    "PreviousPolicy_NCBPercentage": "0",
+    "PreviousPolicy_PolicyEndDate": null,
+    "PreviousPolicy_PolicyStartDate": null,
+    "PreviousPolicy_PolicyNo": null,
+    "PreviousPolicy_PolicyClaim": null,
+    "BusinessType_Mandatary": null,
+    "VehicleModelCode": null,
+    "DateofDeliveryOrRegistration": null,
+    "DateofFirstRegistration": null,
+    "YearOfManufacture": null,
+    "Registration_No": null,
+    "EngineNumber": null,
+    "ChassisNumber": null,
+    "RTOLocationCode": null,
+    "Vehicle_IDV": "0",
+    "PolicyEndDate": null,
+    "EndorsementEffectiveDate": null,
+    "SumInsured": "0",
+    "Premium": "0",
+    "EXEMPTED_KERALA_FLOOD_CESS": null,
+    "CUSTOMER_STATE_CD": "0"
+  },
+  "Req_GCV": null,
+  "Req_MISD": null,
+  "Req_PCV": null,
+  "Payment_Details": null,
+  "IDV_DETAILS": null,
+  "Req_ExtendedWarranty": null,
+  "Req_Policy_Document": null,
+  "Req_PEE": null,
+  "Req_TW": null,
+  "Req_RE": null,
+  "Req_Fire2111": null,
+  "Req_ClaimIntimation": null,
+  "Req_ClaimStatus": null,
+  "Req_Renewal": null,
+  "Req_PvtCar": null,
+  "Req_HInsurance": null,
+  "Req_IPA": null,
+  "Req_CI": null,
+  "Req_HomeInsurance": null,
+  "Req_RetailTravel": {
+    "PropRisks_PolicyType": "___trip_type___",
+    "PropRisks_PlanType": "___Plan_Name___",
+    "PropRisks_GeographicCoverage_Mandatary": "___visiting_region___",
+    "PropRisks_PlacesofVisit": "___visiting_region___",
+    "PropRisks_CountriesofVisit_Mandatary": "___visiting_region___",
+    "PropRisks_FamilyPlan": "___family_plan_type___",
+    "Insured_Details": 
+      <!--members_start-->
+     []
+      <!--members_end-->
+  },
+  "Req_HCA": null,
+  "Req_HF": null,
+  "Req_HI": null,
+  "Req_HSTPI": null,
+  "Req_HSTPF": null,
+  "Req_ST": null,
+  "Req_WC": null,
+  "Req_BSC": null,
+  "Req_Discount": null
+}
+<!--familyEnd-->

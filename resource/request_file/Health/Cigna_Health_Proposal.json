@@ -1,0 +1,1865 @@
+{
+    "listofPolicyTO": [
+        {
+            "policySeq": null,
+            "policyNum": "___insurer_customer_identifier___",
+            "applicationID": "___insurer_customer_identifier___",
+            "applicationRefNum": "",
+            "proposalSignedDt": "",
+            "proposalRejectDt": "",
+            "proposalReceivedDt": "___policy_received_date___",
+            "proposalEntryDt": "___policy_received_date___",
+            "baseAgentId": "___insurer_integration_agent_code___",
+            "parentAgencyId": "",
+            "servicingBranchId": "",
+            "channelId": "___channel_id___",
+            "shgName": "",
+            "baseProductId": "___dbmaster_pb_plan_code___",
+            "baseProductVersion": 1,
+            "baseProductTypeCd": "SUBPLAN",
+            "baseProductFamilyCd": "HEALTHREVISED",
+            "policyInsuredCatgCd": "",
+            "groupCd": "",
+            "schemeCd": "",
+            "policyIssueDt": "",
+            "policyMaturityDt": "___policy_end_date___",
+            "policyCommencementDt": "___policy_start_date___",
+            "riskCommencementDt": "",
+            "policyDispatchDt": "",
+            "firstPremiumReceiptDt": "",
+            "statusCd": "",
+            "totSumAssured": null,
+            "totAnnualPremium": null,
+            "totModalPremium": ___quote_amount___,
+            "totalRiderPremium": null,
+            "totExtraPremium": null,
+            "totTax": null,
+            "totCharge": null,
+            "totDiscount": null,
+            "signatureCd": "",
+            "signatureInVernacularFl": "",
+            "agentSignatureFl": "",
+            "witnessSignatureFl": "",
+            "statusDt": "",
+            "stageCd": "",
+            "stageLevel": "",
+            "processStatusCd": "ENFORCED",
+            "applicationMode": "",
+            "quotationRefNum": "",
+            "imageName": "",
+            "accountNum": "",
+            "missingInfoCd": "",
+            "branchCd": "026",
+            "parentBranchCd": "",
+            "uwDecisionCd": "",
+            "dispatchDt": "",
+            "dispatchModeCd": "",
+            "courierName": "",
+            "courierRecvDt": "",
+            "consignmentNum": "",
+            "reason": "",
+            "uwDecisionValue": "",
+            "deferPeriodUnit": "",
+            "remarks": "",
+            "purposeOfInsuranceCd": "",
+            "intimationSourceCd": "PORTAL",
+            "batchDispatchDt": "",
+            "batchReceivedDt": "",
+            "batchCourierRefNum": "",
+            "batchId": "",
+            "counterOfferDecisionCd": "",
+            "counterOfferReasonCd": "",
+            "counterOfferAcceptDt": "",
+            "counterOfferRemarks": "",
+            "iteration": null,
+            "subStageCd": "",
+            "policyStatusCd": "",
+            "leadGenerationCd": "",
+            "statCd": "",
+            "productPlanOptionCd": "___base_plan_option_code___",
+            "leadGeneratorRemarks": "",
+            "medicalStatusCd": "",
+            "lastModifiedDt": "",
+            "workFlow": "",
+            "productTerm": ___policy_tenure___,
+            "productTermUnitCd": "YEARS",
+            "monitoringStaffId": "",
+            "subChannelId": "",
+            "monitoringOfficeId": "",
+            "monitoringLocationId": "",
+            "paymentTypeCd": "CREDITCARD",
+            "paymentFrequencyCd": "",
+            "numberOfAdult": ___adult_count___,
+            "numberOfChildren": ___child_count___,
+            "ageBand1Count": null,
+            "ageBand2Count": null,
+            "ageBand3Count": null,
+            "maxTripPeriod": null,
+            "travelGeographyCd": "",
+            "ageGroupOfEldestMember": "",
+            "sumInsured": "___health_insurance_si___",
+            "coverType": "___health_insurance_type_2___",
+            "quoteAmount": ___quote_amount___,
+            "lastPaymentDt": "",
+            "nextPremiumDueDt": "",
+            "alterationEffectiveDt": "",
+            "oldPremium": null,
+            "serviceTax": null,
+            "eduCess": null,
+            "endorsementEffectiveDt": "",
+            "noOfAdultDependents": null,
+            "noOfChildDependents": null,
+            "noOfSRAdultDependents": null,
+            "noOfLives": null,
+            "masterPolicySeq": null,
+            "quoteId": "___quote_id___",
+            "inwardTypeCd": "NEWBUSINESS",
+            "inwardSubTypeCd": "PROPOSALDOCUMENT",
+            "receivedFrom": "ONLINE",
+            "zoneCd": "___zone___",
+            "planId": "___plan_id___",
+            "higherEduCess": null,
+            "uwReqFl": "NO",
+            "ppmcFl": "NO",
+            "isManualFl": "",
+            "policyExpiryDt": "___policy_end_date___",
+            "workflowInwardNum": "",
+            "contents": "",
+            "modalPremium": null,
+            "initialPremium": null,
+            "caseType": "",
+            "previousPolicyExpiryDt": "",
+            "renewalNoticeSentFl": "",
+            "renewalDate": "",
+            "renewalYear": null,
+            "cummulativeBonusAmt": null,
+            "prevCummulativeBonus": null,
+            "actualCummulativeBonus": null,
+            "cummulativeBonusPerc": null,
+            "claims": "",
+            "renewalDueStatus": "",
+            "totUWLoadingAmount": null,
+            "renewalFl": "",
+            "portOutFl": "",
+            "retentionFl": "",
+            "premiumToBeCollected": null,
+            "premiumSuspenseAmount": null,
+            "uwLoadingPerc": null,
+            "totUWLoadingInclOfTaxes": null,
+            "totPremiumBeforeTaxes": null,
+            "pointsOnPremiumPaid": null,
+            "totalRewardPoints": null,
+            "pointsFromWellnessPrograms": null,
+            "agencyId": "",
+            "subagencyId": "",
+            "employeeCd": "",
+            "partnerBranchId": "1602817",
+            "refCodeA": "___elite_id___",
+            "refCodeB": "",
+            "refCodeC": "",
+            "gst": null,
+            "gstCess": null,
+            "uwLoadGST": null,
+            "uwLoadGSTCess": null,
+            "utilizeHMBForPremium": "",
+            "hmbUtilizedTowardPremium": null,
+            "splitPolicyDO": [
+                {
+                    "splitCustomerId": "",
+                    "splitPolicyNum": ""
+                }
+            ],
+            "migrationFlag": "",
+            "splitType": "",
+            "splitPolicy": "",
+            "policyPortabilityDO": [
+                {
+                    "expPolicyEndDt": "",
+                    "expDtForExtendedPolicy": "",
+                    "expPolicyNum": "",
+                    "expPolicyTerm": null,
+                    "periodLapsed": null,
+                    "expPolicyStartDt": "",
+                    "expPolicyTypeCd": "",
+                    "expProductId": "",
+                    "expPolicyPlanName": "",
+                    "expPolicyBusinessTypeCd": "",
+                    "registrationOfTPA": "",
+                    "expPolicyInsurerName": "",
+                    "discountInPremium": null,
+                    "loadingInPremium": null,
+                    "firstExpPolicyNum": "",
+                    "firstExpPolicyStartDt": "",
+                    "sameAsExpPolicyFl": "",
+                    "sentDt": "",
+                    "receivedDt": "",
+                    "isClaimedFl": "",
+                    "portabilityFromOtherInsurer": ""
+                }
+            ],
+            "policyProductDOList": [
+                {
+                    "productSeq": null,
+                    "productId": "___dbmaster_pb_plan_code___",
+                    "productVersion": null,
+                    "productTypeCd": "SUBPLAN",
+                    "productFamilyCd": "HEALTHREVISED",
+                    "productSetSeq": null,
+                    "baseSumAssured": ___health_insurance_si___,
+                    "baseAnnualPremium": null,
+                    "modalPremium": null,
+                    "extraPremium": null,
+                    "discount": null,
+                    "paidUpValue": null,
+                    "productTerm": ___policy_tenure___,
+                    "productTermUnitCd": "YEARS",
+                    "premiumPayingTerm": null,
+                    "premiumPayingTermUnitCd": "",
+                    "combinedEntryAge": null,
+                    "riskCommencementDt": "",
+                    "productCommencementDt": "",
+                    "nonForfeitureOptionCd": "",
+                    "loanLendersName": "",
+                    "loanAccNo": "",
+                    "loanAmount": null,
+                    "loanTerm": null,
+                    "loanTermUnitCd": "",
+                    "loanEffectiveDt": "",
+                    "interestRate": null,
+                    "interestRestFrequencyCd": "",
+                    "interestRateTypeCd": "",
+                    "interestCapitalsnFreqCd": "",
+                    "defermentPeriod": null,
+                    "defermentPeriodUnitCd": "",
+                    "repaymentPeriod": null,
+                    "repaymentPeriodUnitCd": "",
+                    "servicingInterestPeriod": null,
+                    "servicingInterestPeriodUnitCd": "",
+                    "premiumFinancingOptionCd": "",
+                    "splitPercentage": null,
+                    "serviceTax": null,
+                    "computedmodalPremium": null,
+                    "coverContinuanceOptionCd": "",
+                    "portfolioModelCd": "",
+                    "multiplier": null,
+                    "vestingAge": null,
+                    "benefitStructureOptionCd": "",
+                    "singleLifeAllowed": "",
+                    "riderType": "",
+                    "saIndexationCd": "",
+                    "premiumIndexationCd": "",
+                    "fixedPrmIndexationVal": null,
+                    "fixedSAIndexationVal": null,
+                    "paymentTypeCd": "",
+                    "paymentFrequencyCd": "SINGLE",
+                    "payoutFrequencyCd": "",
+                    "productPlanOptionCd": "___base_plan_option_code___",
+                    "systTransferOptionCd": "",
+                    "coverTypeCd": "___health_insurance_type_2___",
+                    "tripTypeCd": "",
+                    "maxTripPeriod": null,
+                    "travelGeographyCd": "",
+                    "visitPurposeCd": "",
+                    "voluntaryDedAmt": null,
+                    "zoneCd": "___zone___",
+                    "productName": "",
+                    "payoutOption": "",
+                    "reducingBalanceSI": "",
+                    "recurringPremPayMethod": "",
+                    "deleteFl": "",
+                    "refGuid": "",
+                    "policyProductInsuredDOList": [<!--InsurersQues_Start-->
+                        {
+                            "policyProductSeq": null,
+                            "partyId": "___crn_______member_array_inc___",
+                            "issueAge": null,
+                            "uwClassCd": "",
+                            "insuredSequenceTypeCd": "",
+                            "refGuid": "___crn_______member_array_inc___",
+                            "decisionCd": "",
+                            "decisionValue": "",
+                            "unit": "",
+                            "reason": "",
+                            "customerId": "",
+                            "score": null,
+                            "weight": ___member_array_weight___,
+                            "scoreWeight": null,
+                            "prevInsurerClientId": "",
+                            "nonStandardAgeProof": "",
+                            "zoneCd": "___zone___",
+                            "level": "",
+                            "loadingPerc": null,
+                            "grpEmp": "",
+                            "maritalStatusCd": "",
+                            "occupationCd": "",
+                            "annualGrossIncome": null,
+                            "height": ___member_array_height___,
+                            "bmi": null,
+                            "cityCd": "",
+                            "annualIncome": null,
+                            "uwReqFl": "NO",
+                            "ppmcFl": "NO",
+                            "productPlanOptionCd": "___member_array_base_plan_code___",
+                            "baseSumAssured": ___member_array_si___,
+                            "natureOfJob": "",
+                            "smokerStatusCd": "",
+                            "chewTobaccoCd": "",
+                            "consumeAlcoholCd": "",
+                            "insuredCategoryCd": "",
+                            "riskClass": "",
+                            "ppmcTestSet": "",
+                            "modalPremium": null,
+                            "extraPremium": null,
+                            "discount": null,
+                            "sumInsured": ___member_array_si___,
+                            "cummulativeBonusAmt": null,
+                            "cummulativeBonusPerc": null,
+                            "prevCummulativeBonus": null,
+                            "actualCummulativeBonus": null,
+                            "uwLoadingPerc": null,
+                            "uwLoadingAmount": null,
+                            "pointsFromWellnessPrograms": null,
+                            "isInsuredAddressDifferent": "",
+                            "splitFlag": "",
+                            "remarks": "",
+                            "policyQuestionSetDOList": [
+                                {
+                                    "questionSetCd": "Lvl01_O801",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl01_O801",
+                                            "dataElementCd": "Lvl01_O801",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_1_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_01",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_01",
+                                            "dataElementCd": "Lvl02_O801_01",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_02",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_02",
+                                            "dataElementCd": "Lvl02_O801_02",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_03",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_03",
+                                            "dataElementCd": "Lvl02_O801_03",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_04",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_04",
+                                            "dataElementCd": "Lvl02_O801_04",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_05",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_05",
+                                            "dataElementCd": "Lvl02_O801_05",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_06",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_06",
+                                            "dataElementCd": "Lvl02_O801_06",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O801_07",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O801_07",
+                                            "dataElementCd": "Lvl02_O801_07",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "NO",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl01_O802",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl01_O802",
+                                            "dataElementCd": "Lvl01_O802",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_2_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_01",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_01",
+                                            "dataElementCd": "Lvl02_O802_01",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_3_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_02",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_02",
+                                            "dataElementCd": "Lvl02_O802_02",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_4_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_03",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_03",
+                                            "dataElementCd": "Lvl02_O802_03",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_5_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_04",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_04",
+                                            "dataElementCd": "Lvl02_O802_04",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_6_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_05",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_05",
+                                            "dataElementCd": "Lvl02_O802_05",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_7_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_06",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_06",
+                                            "dataElementCd": "Lvl02_O802_06",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_8_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_07",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_07",
+                                            "dataElementCd": "Lvl02_O802_07",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_9_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_08",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_08",
+                                            "dataElementCd": "Lvl02_O802_08",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_10_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_09",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_09",
+                                            "dataElementCd": "Lvl02_O802_09",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_11_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_10",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_10",
+                                            "dataElementCd": "Lvl02_O802_10",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_12_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_11",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_11",
+                                            "dataElementCd": "Lvl02_O802_11",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_13_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_12",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_12",
+                                            "dataElementCd": "Lvl02_O802_12",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_14_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_13",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_13",
+                                            "dataElementCd": "Lvl02_O802_13",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_15_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_O802_14",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_O802_14",
+                                            "dataElementCd": "Lvl02_O802_14",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_16_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl01_Q803",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl01_Q803",
+                                            "dataElementCd": "Lvl01_Q803",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_17_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl01_Q804",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl01_Q804",
+                                            "dataElementCd": "Lvl01_Q804",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_18_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_Q805_01",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_Q805_01",
+                                            "dataElementCd": "Lvl02_Q805_01",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_19_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl03_Q805_01_01",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl03_Q805_01_01",
+                                            "dataElementCd": "Lvl03_Q805_01_01",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_19_details_smoke___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_Q805_02",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_Q805_02",
+                                            "dataElementCd": "Lvl02_Q805_02",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_20_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl03_Q805_02_01",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl03_Q805_02_01",
+                                            "dataElementCd": "Lvl03_Q805_02_01",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_20_details_tobacco___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl02_Q805_03",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl02_Q805_03",
+                                            "dataElementCd": "Lvl02_Q805_03",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_21_details___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "questionSetCd": "Lvl03_Q805_02_03",
+                                    "policySeq": null,
+                                    "policyProductSeq": null,
+                                    "policyProductInsuredseq": null,
+                                    "partyGuid": "___crn_______member_array_inc___",
+                                    "policyQuestionDOList": [
+                                        {
+                                            "policyQuestionSetSeq": null,
+                                            "questionCd": "Lvl03_Q805_02_03",
+                                            "dataElementCd": "Lvl03_Q805_02_03",
+                                            "policyQuestionResponseDOList": [
+                                                {
+                                                    "policyQuestionSeq": null,
+                                                    "responseValue": "___member_array_question_21_details_alcohol___",
+                                                    "rowGuid": ""
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "policyPortabilityMemberDOList": [
+                                {
+                                    "clientId": "",
+                                    "memberAttachmentDt": "",
+                                    "expPolicyCumulativeBonus": null,
+                                    "expPolicySA": null,
+                                    "total": null,
+                                    "memberPresentOnPolicy": "",
+                                    "policyPortabilityDO": {
+                                        "expPolicyEndDt": "",
+                                        "expDtForExtendedPolicy": "",
+                                        "expPolicyNum": "",
+                                        "expPolicyTerm": null,
+                                        "periodLapsed": null,
+                                        "expPolicyStartDt": "",
+                                        "expPolicyTypeCd": "",
+                                        "expProductId": "",
+                                        "expPolicyPlanName": "",
+                                        "expPolicyBusinessTypeCd": "",
+                                        "registrationOfTPA": "",
+                                        "expPolicyInsurerName": "",
+                                        "discountInPremium": null,
+                                        "loadingInPremium": null,
+                                        "firstExpPolicyNum": "",
+                                        "firstExpPolicyStartDt": "",
+                                        "sameAsExpPolicyFl": "",
+                                        "sentDt": "",
+                                        "receivedDt": "",
+                                        "isClaimedFl": "",
+                                        "portabilityFromOtherInsurer": ""
+                                    },
+                                    "policyPortabilityMemberClaimDOList": [
+                                        {
+                                            "clientId": "",
+                                            "previousClaimNum": "",
+                                            "visitDt": "",
+                                            "hospitalId": "",
+                                            "otherHospital": "",
+                                            "amountPaid": null,
+                                            "paymentDt": "",
+                                            "claimOutstandingFl": "",
+                                            "coPayments": null,
+                                            "claimReason": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "policyProductInsuredBenefitTO": [
+                                {
+                                    "benefitTypeCd": "",
+                                    "benefitId": "",
+                                    "amount": null,
+                                    "productId": ""
+                                }
+                            ],
+                            "policyProductInsuredPortabilityTO": [
+                                {
+                                    "partyGuid": "",
+                                    "refGuid": "",
+                                    "portedSI": null,
+                                    "siWaived1Yr": null,
+                                    "siWaived2Yr": null,
+                                    "siWaived3Yr": null,
+                                    "siWaived4Yr": null,
+                                    "appliedBy": ""
+                                }
+                            ]
+                        }<!--InsurersQues_End-->
+                    ],
+                    "policyProductAddOnsDOList": [
+                        {
+                            "productSeq": null,
+                            "productId": "",
+                            "productFamilyCd": "",
+                            "baseSumAssured": null,
+                            "baseAnnualPremium": null,
+                            "modalPremium": null,
+                            "productPlanOptionCd": "",
+                            "benefitStructureOptionCd": "",
+                            "extraPremium": null,
+                            "discount": null,
+                            "productName": "",
+                            "deleteFl": "",
+                            "refGuid": ""
+                        }
+                    ],
+                    "policyProductChargeDOList": [
+                        {
+                            "policyProductSeq": null,
+                            "chargeClassCd": "",
+                            "chargeEventCd": "",
+                            "chargeWithPremiumFl": "",
+                            "chargeBasisCd": "",
+                            "recoverMechanismCd": "",
+                            "chargeAmount": null,
+                            "chargePercentage": null,
+                            "actualAmount": null,
+                            "relationCd": "",
+                            "minimumAmount": null,
+                            "maximumAmount": null
+                        }
+                    ],
+                    "policyProductDiscountDOList": [
+                        {
+                            "policyProductSeq": null,
+                            "discountId": "",
+                            "discountAmount": null,
+                            "parameterTypeCd": "",
+                            "discountBasisTypeCd": "",
+                            "productId": "",
+                            "description": "",
+                            "deleteFl": "",
+                            "refGuid": ""
+                        }
+                    ]
+                }
+            ],
+            "policyPaymentDOList": [
+                {
+                    "paymentMethodCd": "",
+                    "paymentInstructionTypeCd": "",
+                    "partyFinAccountSeq": null,
+                    "partyFinAccRefGuid": "",
+                    "payerPartyId": "",
+                    "payerPartyRefGuid": ""
+                }
+            ],
+            "policyAgentDOList": [
+                {
+                    "agentId": "___insurer_integration_agent_code___",
+                    "primaryAgentFl": "",
+                    "yearFrom": null,
+                    "yearTo": null,
+                    "commPercent": null,
+                    "prodnPercent": null
+                }
+            ],
+            "policyPartyRoleDOList": [
+                {
+                    "roleCd": "PROPOSER",
+                    "partyId": "___crn____0",
+                    "age": null,
+                    "percentage": null,
+                    "nomineeTypeCd": "",
+                    "nomineeCatgCd": "",
+                    "irrevocableFl": "",
+                    "assignmentTypeCd": "",
+                    "effectiveFromDt": "",
+                    "effectiveToDt": "",
+                    "remark": "",
+                    "refGuid": "___crn____0",
+                    "customerId": ""
+                }<!--InsurersDetailGuid_Start-->,
+                {
+                    "roleCd": "PRIMARY",
+                    "partyId": "___crn_______member_array_inc___",
+                    "age": null,
+                    "percentage": null,
+                    "nomineeTypeCd": "",
+                    "nomineeCatgCd": "",
+                    "irrevocableFl": "",
+                    "assignmentTypeCd": "",
+                    "effectiveFromDt": "",
+                    "effectiveToDt": "",
+                    "remark": "",
+                    "refGuid": "___crn_______member_array_inc___",
+                    "customerId": ""
+                }<!--InsurersDetailGuid_End-->
+            ],
+            "partyDOList": [
+                {
+                    "partyId": "",
+                    "partyTypeCd": "",
+                    "customerId": "",
+                    "firstName1": "___first_name___",
+                    "firstName2": "",
+                    "middleName1": "___middle_name___",
+                    "middleName2": "",
+                    "lastName1": "___last_name___",
+                    "lastName2": "",
+                    "roleCd": "PROPOSER",
+                    "corporateName1": "",
+                    "corporateName2": "",
+                    "fatherFirstName1": "",
+                    "fatherFirstName2": "",
+                    "fatherMiddleName1": "",
+                    "fatherMiddleName2": "",
+                    "fatherLastName1": "",
+                    "fatherLastName2": "",
+                    "birthDt": "___birth_date___",
+                    "placeOfBirth": "",
+                    "genderCd": "___gender_2___",
+                    "maritalStatusCd": "___marital___",
+                    "contactPerson": "",
+                    "contactDesignation": "",
+                    "identityTypeCd": "",
+                    "identityNum": "",
+                    "citizenshipCd": "IND",
+                    "otherCitizenship": "",
+                    "nonResidentFl": "",
+                    "age": null,
+                    "titleCd": "___salutation___",
+                    "preferredComnLangCd": "",
+                    "pepCd": "",
+                    "politicalDet": "",
+                    "annualIncome": null,
+                    "duplicateCheckDoneFl": "",
+                    "convictionDetailsFl": "",
+                    "criminalDetails": "",
+                    "maidenName": "",
+                    "totalSAR": null,
+                    "intimationSourceCd": "",
+                    "baseProductFamilyCd": "",
+                    "policyExist": "",
+                    "partyModified": "",
+                    "accountName": "",
+                    "acceptOrDeclined": "",
+                    "marriageDt": "",
+                    "noOfChildren": null,
+                    "noOfYearOfStay": null,
+                    "nomineeTitleCd": "___nominee_title___",
+                    "nomineeFirstName": "___nominee_name___",
+                    "nomineeLastName": "",
+                    "nomineePANNum": "",
+                    "spouseTitleCd": "",
+                    "spouseFirstName": "",
+                    "spouseLastName": "",
+                    "spouseRelationCd": "",
+                    "spouseQualificationCd": "",
+                    "spouseOccupationCd": "",
+                    "workLocation": "",
+                    "langKnown": "",
+                    "prefAddress": "",
+                    "prevInsurerClientId": "",
+                    "isGroupEmployeeFl": "",
+                    "nonStandardAgeProof": "",
+                    "pinCode": "",
+                    "pepFlag": "NO",
+                    "zoneCd": "___zone___",
+                    "level": "",
+                    "loadingPerc": null,
+                    "grpEmp": "",
+                    "partyGuid": "___crn____0",
+                    "partyIdentityDOList": [
+                        {
+                            "primaryFl": "",
+                            "identityTypeCd": "PAN",
+                            "identityNum": "___pan___",
+                            "issuingAuthority": "",
+                            "issueDt": "",
+                            "expiryDt": ""
+                        }
+                    ],
+                    "partyEducationDOList": [
+                        {
+                            "educationLevelCd": "___member_1_qualification___",
+                            "qualificationCd": ""
+                        }
+                    ],
+                    "partyAddressDOList": [
+                        {
+                            "addressTypeCd": "COMMUNICATION",
+                            "addressLine1Lang1": "___permanent_address_1___",
+                            "addressLine1Lang2": "",
+                            "addressLine2Lang1": "___permanent_address_2___",
+                            "addressLine2Lang2": "",
+                            "addressLine3Lang1": "",
+                            "addressLine3Lang2": "",
+                            "addressLine4": "",
+                            "villageCd": "",
+                            "countryCd": "IND",
+                            "talukaCd": "",
+                            "districtCd": "___city___",
+                            "stateCd": "___communication_state___",
+                            "cityCd": "___city___",
+                            "pinCode": "___permanent_pincode___",
+                            "areaCd": "",
+                            "postalZone": "___zone___"
+                        },
+                        {
+                            "addressTypeCd": "PERMANENT",
+                            "addressLine1Lang1": "___permanent_address_1___",
+                            "addressLine1Lang2": "",
+                            "addressLine2Lang1": "___permanent_address_2___",
+                            "addressLine2Lang2": "",
+                            "addressLine3Lang1": "",
+                            "addressLine3Lang2": "",
+                            "addressLine4": "",
+                            "villageCd": "",
+                            "countryCd": "IND",
+                            "talukaCd": "",
+                            "districtCd": "___city___",
+                            "stateCd": "___communication_state___",
+                            "cityCd": "___city___",
+                            "pinCode": "___permanent_pincode___",
+                            "areaCd": "",
+                            "postalZone": "___zone___"
+                        }
+                    ],
+                    "partyContactDOList": [
+                        {
+                            "partyAddressSeq": null,
+                            "priority": null,
+                            "contactTypeCd": "MOBILE",
+                            "contactNum": ___mobile___,
+                            "extensionNum": null,
+                            "stdCode": ""
+                        }
+                    ],
+                    "partyEmailDOList": [
+                        {
+                            "preferredFl": "",
+                            "emailTypeCd": "PERSONAL",
+                            "emailAddress": "___email___"
+                        }
+                    ],
+                    "partyEmploymentDOList": [
+                        {
+                            "currentEmployerFl": "",
+                            "employmentStatusCd": "",
+                            "employerName": "",
+                            "yearsWithJob": null,
+                            "annualIncome": null,
+                            "annualGrossIncome": "___annualGrossIncome___",
+                            "industryCd": "",
+                            "occupationCd": "",
+                            "effectiveFromDt": "",
+                            "effectiveToDt": "",
+                            "natureOfDuty": "",
+                            "otherDetails": "",
+                            "employerAddress": "",
+                            "monthsWithJob": null,
+                            "jobDescription": ""
+                        }
+                    ],
+                    "partyOccupationDOList": [
+                        {
+                            "occupationCd": "___occupation___",
+                            "otherOccupation": "___otherOccupation___",
+                            "natureOfDuty": "",
+                            "occupationClass": "",
+                            "natureOfJobOthers": ""
+                        }
+                    ],
+                    "partyRelationDOList": [
+                        {
+                            "relationCd": "___relation___",
+                            "relationTypeCd": "",
+                            "relatedToPartyId": "___crn____0"
+                        }
+                    ],
+                    "partyFinancialAccountDOList": [
+                        {
+                            "accountCategoryCd": "",
+                            "accountTypeCd": "",
+                            "bankCd": "",
+                            "sortCd": "",
+                            "branchCd": "",
+                            "bankName": "",
+                            "branchName": "",
+                            "accountNum": "",
+                            "ledgerFolioNum": "",
+                            "accountHolderName": "",
+                            "cardTypeCd": "",
+                            "cardExpiryDt": "",
+                            "ifscCd": "",
+                            "state": "",
+                            "city": "",
+                            "micrNum": ""
+                        }
+                    ]
+                }<!--InsurersDetail_Start-->,
+                {
+                    "partyId": "",
+                    "partyTypeCd": "",
+                    "customerId": "",
+                    "firstName1": "___member_array_first_name___",
+                    "firstName2": "",
+                    "middleName1": "___member_array_middle_name___",
+                    "middleName2": "",
+                    "lastName1": "___member_array_last_name___",
+                    "lastName2": "",
+                    "roleCd": "PRIMARY",
+                    "corporateName1": "",
+                    "corporateName2": "",
+                    "fatherFirstName1": "",
+                    "fatherFirstName2": "",
+                    "fatherMiddleName1": "",
+                    "fatherMiddleName2": "",
+                    "fatherLastName1": "",
+                    "fatherLastName2": "",
+                    "birthDt": "___member_array_birth_date___",
+                    "placeOfBirth": "",
+                    "genderCd": "___member_array_gender_2___",
+                    "maritalStatusCd": "___member_array_marital_status___",
+                    "contactPerson": "",
+                    "contactDesignation": "",
+                    "identityTypeCd": "",
+                    "identityNum": "",
+                    "citizenshipCd": "IND",
+                    "otherCitizenship": "",
+                    "nonResidentFl": "",
+                    "age": null,
+                    "titleCd": "___member_array_salutation___",
+                    "preferredComnLangCd": "",
+                    "pepCd": "",
+                    "politicalDet": "",
+                    "annualIncome": null,
+                    "duplicateCheckDoneFl": "",
+                    "convictionDetailsFl": "",
+                    "criminalDetails": "",
+                    "maidenName": "",
+                    "totalSAR": null,
+                    "intimationSourceCd": "",
+                    "baseProductFamilyCd": "",
+                    "policyExist": "",
+                    "partyModified": "",
+                    "accountName": "",
+                    "acceptOrDeclined": "",
+                    "marriageDt": "",
+                    "noOfChildren": null,
+                    "noOfYearOfStay": null,
+                    "nomineeTitleCd": "___nominee_title___",
+                    "nomineeFirstName": "___nominee_name___",
+                    "nomineeLastName": "",
+                    "nomineePANNum": "",
+                    "spouseTitleCd": "",
+                    "spouseFirstName": "",
+                    "spouseLastName": "",
+                    "spouseRelationCd": "",
+                    "spouseQualificationCd": "",
+                    "spouseOccupationCd": "",
+                    "workLocation": "",
+                    "langKnown": "",
+                    "prefAddress": "",
+                    "prevInsurerClientId": "",
+                    "isGroupEmployeeFl": "",
+                    "nonStandardAgeProof": "",
+                    "pinCode": "",
+                    "pepFlag": "NO",
+                    "zoneCd": "___zone___",
+                    "level": "",
+                    "loadingPerc": null,
+                    "grpEmp": "",
+                    "partyGuid": "___crn_______member_array_inc___",
+                    "partyIdentityDOList": [
+                        {
+                            "primaryFl": "",
+                            "identityTypeCd": "PAN",
+                            "identityNum": "___pan___",
+                            "issuingAuthority": "",
+                            "issueDt": "",
+                            "expiryDt": ""
+                        }
+                    ],
+                    "partyEducationDOList": [
+                        {
+                            "educationLevelCd": "",
+                            "qualificationCd": ""
+                        }
+                    ],
+                    "partyAddressDOList": [
+                        {
+                            "addressTypeCd": "COMMUNICATION",
+                            "addressLine1Lang1": "___permanent_address_1___",
+                            "addressLine1Lang2": "",
+                            "addressLine2Lang1": "___permanent_address_2___",
+                            "addressLine2Lang2": "",
+                            "addressLine3Lang1": "",
+                            "addressLine3Lang2": "",
+                            "addressLine4": "",
+                            "villageCd": "",
+                            "countryCd": "IND",
+                            "talukaCd": "",
+                            "districtCd": "___city___",
+                            "stateCd": "___communication_state___",
+                            "cityCd": "___city___",
+                            "pinCode": "___permanent_pincode___",
+                            "areaCd": "",
+                            "postalZone": "___zone___"
+                        },
+                        {
+                            "addressTypeCd": "PERMANENT",
+                            "addressLine1Lang1": "___permanent_address_1___",
+                            "addressLine1Lang2": "",
+                            "addressLine2Lang1": "___permanent_address_2___",
+                            "addressLine2Lang2": "",
+                            "addressLine3Lang1": "___permanent_address_3___",
+                            "addressLine3Lang2": "",
+                            "addressLine4": "",
+                            "villageCd": "",
+                            "countryCd": "IND",
+                            "talukaCd": "",
+                            "districtCd": "___city___",
+                            "stateCd": "___communication_state___",
+                            "cityCd": "___city___",
+                            "pinCode": "___permanent_pincode___",
+                            "areaCd": "",
+                            "postalZone": "___zone___"
+                        }
+                    ],
+                    "partyContactDOList": [
+                        {
+                            "partyAddressSeq": null,
+                            "priority": null,
+                            "contactTypeCd": "MOBILE",
+                            "contactNum": ___mobile___,
+                            "extensionNum": null,
+                            "stdCode": ""
+                        }
+                    ],
+                    "partyEmailDOList": [
+                        {
+                            "preferredFl": "",
+                            "emailTypeCd": "PERSONAL",
+                            "emailAddress": "___email___"
+                        }
+                    ],
+                    "partyEmploymentDOList": [
+                        {
+                            "currentEmployerFl": "",
+                            "employmentStatusCd": "",
+                            "employerName": "",
+                            "yearsWithJob": null,
+                            "annualIncome": null,
+                            "annualGrossIncome": "",
+                            "industryCd": "",
+                            "occupationCd": "",
+                            "effectiveFromDt": "",
+                            "effectiveToDt": "",
+                            "natureOfDuty": "",
+                            "otherDetails": "",
+                            "employerAddress": "",
+                            "monthsWithJob": null,
+                            "jobDescription": ""
+                        }
+                    ],
+                    "partyOccupationDOList": [
+                        {
+                            "occupationCd": "___member_array_occupation___",
+                            "otherOccupation": "___member_array_otherOccupation___",
+                            "natureOfDuty": "",
+                            "occupationClass": "",
+                            "natureOfJobOthers": ""
+                        }
+                    ],
+                    "partyRelationDOList": [
+                        {
+                            "relationCd": "___member_array_relation___",
+                            "relationTypeCd": "",
+                            "relatedToPartyId": "___crn____0"
+                        }
+                    ],
+                    "partyFinancialAccountDOList": [
+                        {
+                            "accountCategoryCd": "",
+                            "accountTypeCd": "",
+                            "bankCd": "",
+                            "sortCd": "",
+                            "branchCd": "",
+                            "bankName": "",
+                            "branchName": "",
+                            "accountNum": "",
+                            "ledgerFolioNum": "",
+                            "accountHolderName": "",
+                            "cardTypeCd": "",
+                            "cardExpiryDt": "",
+                            "ifscCd": "",
+                            "state": "",
+                            "city": "",
+                            "micrNum": ""
+                        }
+                    ]
+                }<!--InsurersDetail_End-->
+            ],
+            "inwardDOList": [],
+            "policyDocumentDOList": [
+                {
+                    "docCategoryCd": "",
+                    "documentCd": "",
+                    "partyId": "",
+                    "policyProductSeq": null,
+                    "isSubStandardFl": "",
+                    "receivedStatusCd": "",
+                    "remarks": "",
+                    "receivedDt": "",
+                    "requestor": "",
+                    "imageURL": "",
+                    "docRequestedDt": "",
+                    "questionSetCd": "",
+                    "receivedUser": "",
+                    "partyRefGuid": "",
+                    "docCategoryTypeCd": "",
+                    "customerId": "",
+                    "score": null,
+                    "weight": null,
+                    "scoreWeight": null,
+                    "currentStatus": "",
+                    "uploadDt": "",
+                    "auditTrail": "",
+                    "medicalTestDt": "",
+                    "reportUploadDt": ""
+                },
+                {
+                    "docCategoryCd": "",
+                    "documentCd": "",
+                    "partyId": "",
+                    "policyProductSeq": null,
+                    "isSubStandardFl": "",
+                    "receivedStatusCd": "",
+                    "remarks": "",
+                    "receivedDt": "",
+                    "requestor": "",
+                    "imageURL": "",
+                    "docRequestedDt": "",
+                    "questionSetCd": "",
+                    "receivedUser": "",
+                    "partyRefGuid": "",
+                    "docCategoryTypeCd": "",
+                    "customerId": "",
+                    "score": null,
+                    "weight": null,
+                    "scoreWeight": null,
+                    "currentStatus": "",
+                    "uploadDt": "",
+                    "auditTrail": "",
+                    "medicalTestDt": "",
+                    "reportUploadDt": ""
+                }
+            ],
+            "policyQuestionSetDOList": [{}],
+            "policyAdditionalFieldsDOList": [
+                {
+                    "allInsIndNatResFlag": "YES",
+                    "IsNomSameAsCgFlag": "NO",
+                    "SubsAlertOnWA": "NO",
+                    "HniFlag": "NO",
+                    "BankForElectronicTrfrFlag": "NO",
+                    "BankCancCheqForRefundFlag": "NO",
+                    "BankAcctNonExistFlag": "NO",
+                    "AstpFlag": "NO",
+                    "availPolicy": "",
+                    "applPayRecd": "",
+                    "businessTypeCd": "2",
+                    "nomineeTitleCd": "___nominee_title___",
+                    "nomineeFirstName1": "___nominee_name___",
+                    "nomineeLastName": "",
+                    "nomineeRelationCd": "___nominee_rel___",
+                    "nomineeBirthDt": "",
+                    "businessSourceCd": "PORTAL",
+                    "receiverId": "",
+                    "receiverName": "",
+                    "verifierId": "",
+                    "verifierName": "",
+                    "qcId": "",
+                    "qcName": "",
+                    "callCentreId": "",
+                    "challanNum": "",
+                    "challanDt": "",
+                    "challanAmount": null,
+                    "campaignCd": "",
+                    "transactionTypeCd": "",
+                    "ifscCd": "",
+                    "micrNum": "",
+                    "bankName": "",
+                    "branchName": "",
+                    "cityCd": "Mumbai",
+                    "accountNum": "",
+                    "availSoftCopy": "",
+                    "emiOptionCd": "",
+                    "cardNum": "",
+                    "cardExpiryDt": "",
+                    "cardTypeCd": "",
+                    "accountName": "",
+                    "grnNum": "",
+                    "grnDt": "",
+                    "grnAmount": null,
+                    "autoRenewalOptionFl": "",
+                    "emiFrequencyCd": "",
+                    "addInfoStatusCd": "",
+                    "addInfoDecisionCd": "",
+                    "ppmcStatusCd": "",
+                    "ppmcDecisionCd": "",
+                    "receiptId": "",
+                    "fileCreation": "",
+                    "markForCancellation": "",
+                    "uploadStatus": "",
+                    "previousPolicyNum": "",
+                    "previousPolicyExpiryDt": "",
+                    "splitPolicyNum1": "",
+                    "splitPolicyNum2": "",
+                    "changeInPolHolReason": "",
+                    "changeInPolHolOther": "",
+                    "delInsuredReason": "",
+                    "delInsuredOther": "",
+                    "appointeeName": "",
+                    "appointeeRelation": "",
+                    "eiaPolicyDoc": "",
+                    "eiaNumExists": "NO",
+                    "eiaNum": "",
+                    "eiaPreferRepo": "",
+                    "gstAvail": "",
+                    "sezUnit": "",
+                    "nomineeAge": "___nominee_age___",
+                    "isEmployerPayorFl": "",
+                    "employeeId": null,
+                    "initialPaymentUnit": null
+                }
+            ],
+            "policyPortabilityMemberDOList": [
+                {
+                    "clientId": "",
+                    "memberAttachmentDt": "",
+                    "expPolicyCumulativeBonus": null,
+                    "expPolicySA": null,
+                    "total": null,
+                    "memberPresentOnPolicy": "",
+                    "policyPortabilityDO": {
+                        "expPolicyEndDt": "",
+                        "expDtForExtendedPolicy": "",
+                        "expPolicyNum": "",
+                        "expPolicyTerm": null,
+                        "periodLapsed": null,
+                        "expPolicyStartDt": "",
+                        "expPolicyTypeCd": "",
+                        "expProductId": "",
+                        "expPolicyPlanName": "",
+                        "expPolicyBusinessTypeCd": "",
+                        "registrationOfTPA": "",
+                        "expPolicyInsurerName": "",
+                        "discountInPremium": null,
+                        "loadingInPremium": null,
+                        "firstExpPolicyNum": "",
+                        "firstExpPolicyStartDt": "",
+                        "sameAsExpPolicyFl": "",
+                        "sentDt": "",
+                        "receivedDt": "",
+                        "isClaimedFl": "",
+                        "portabilityFromOtherInsurer": ""
+                    },
+                    "policyPortabilityMemberClaimDOList": [
+                        {
+                            "clientId": "",
+                            "previousClaimNum": "",
+                            "visitDt": "",
+                            "hospitalId": "",
+                            "otherHospital": "",
+                            "amountPaid": null,
+                            "paymentDt": "",
+                            "claimOutstandingFl": "",
+                            "coPayments": null,
+                            "claimReason": ""
+                        }
+                    ]
+                }
+            ],
+            "policyPortabilityMemberClaimDOList": [
+                {
+                    "clientId": "",
+                    "previousClaimNum": "",
+                    "visitDt": "",
+                    "hospitalId": "",
+                    "otherHospital": "",
+                    "amountPaid": null,
+                    "paymentDt": "",
+                    "claimOutstandingFl": "",
+                    "coPayments": null,
+                    "claimReason": ""
+                }
+            ],
+            "WSPolicyAdditionalMedicalDtlsDOList": [<!--Additnl_Med_Start-->
+                {
+                    "partyGuid": "___crn_______member_array_inc___",
+                    "illness": "",
+                    "exactDiagnosis": "___member_array_additnl_Med_Questn_1___",
+                    "diagnosisDt": "",
+                    "treatment": "",
+                    "curedFl": "",
+                    "natureOfHazardousOccupation": "",
+                    "natureOfHazardousOccupation1": "",
+                    "natureOfHazardousOccupation2": "",
+                    "detailsOfPastClaimAmount": "",
+                    "diseaseForClaimMade": "",
+                    "customerId": null,
+                    "sufferingFlag": "",
+                    "complicationReccurenceFlag": "___member_array_additnl_Med_Questn_5___",
+                    "histopathbiopsyFlag": "___member_array_additnl_Med_Questn_7___",
+                    "lastConsultDt": "___member_array_additnl_Med_Questn_6___",
+                    "treatmentCd": "___member_array_additnl_Med_Questn_3___",
+                    "currentStatusVal": "___member_array_additnl_Med_Questn_4___",
+                    "questionSetCd": "___member_array_additnl_Med_Questn_9___",
+                    "Comments": "___member_array_additnl_Med_Questn_8___",
+                    "yrOfDiagnosis": ___member_array_additnl_Med_Questn_2___
+                }<!--Additnl_Med_End-->
+            ],
+            "WSPolicyPreviousInsuranceDtlsDOList": [
+                {
+                    "partyGuid": "",
+                    "policyNum": "",
+                    "fromDt": "",
+                    "toDt": "",
+                    "baseSumAssured": null,
+                    "claimNum": "",
+                    "claimAmount": null,
+                    "ailment": "",
+                    "bonusPercentage": null,
+                    "bonusAmount": null,
+                    "insurerName": "",
+                    "typeOfPolicy": "",
+                    "portabilityFl": "",
+                    "prevAddOnRidersTakenFlag": "",
+                    "propCBConvToEnhSIFlag": "",
+                    "portReasonCd": "",
+                    "prevPolDeclinedFlag": ""
+                }
+            ],
+            "policyChangeDOList": [
+                {
+                    "alterationType": "",
+                    "policyChangeDetailTOList": [
+                        {
+                            "refGuid": null,
+                            "customerId": null
+                        }
+                    ]
+                }
+            ],
+            "policyMandateDOList": [
+                {
+                    "policyNum": "",
+                    "statusCd": "",
+                    "recurringPaymentMethod": "",
+                    "nachRegistration": "",
+                    "nachStatus": "",
+                    "rejectionReason": "",
+                    "maxAmt": null,
+                    "frequency": "",
+                    "debitType": "",
+                    "uniqueId": "",
+                    "cardTokenId": "",
+                    "userCredential": "",
+                    "expiryDt": "",
+                    "paymentFrequencyCd": "",
+                    "decisionCd": "",
+                    "entrySourceCd": "",
+                    "processStatusCd": "",
+                    "mandateVersion": "",
+                    "mandateCreatedDt": "",
+                    "inwardTypeCd": "",
+                    "changeTypeCd": "",
+                    "renewalYear": 0,
+                    "accountNum": "",
+                    "registrationStatusCd": "",
+                    "batchStatusCd": "",
+                    "batchUpdatedDt": "",
+                    "fileName": "",
+                    "umrNumber": "",
+                    "registrationDate": "",
+                    "initialRejectReason": "",
+                    "processedOnWithURMN": "",
+                    "stageCd": "",
+                    "payerPartyId": "",
+                    "merchantId": "PAYU",
+                    "policyMandateDetailsDOList": [
+                        {
+                            "accountTypeCd": null,
+                            "accountHolderName": null,
+                            "accountNum": null,
+                            "ifscCd": null,
+                            "micrNum": null,
+                            "bankName": null,
+                            "bankBranch": null,
+                            "city": null,
+                            "statusCd": null,
+                            "branchCd": null,
+                            "relationCd": null
+                        }
+                    ]
+                }
+            ],
+            "subIntermediaryName": "",
+            "subIntermediaryPAN": "",
+            "others": "",
+            "classificationCd": "",
+            "modalLoadingPremium": null
+        }
+    ]
+}

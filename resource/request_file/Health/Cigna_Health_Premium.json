@@ -1,0 +1,205 @@
+{
+    "listofquotationTO": [
+        {
+            "quoteId": "",
+            "channelId": "___channel_id___",
+            "productId": "PACT01POSSF",
+            "parentProductId": null,
+            "parentProductVersion": "___plan_id___",
+            "noOfAdults": "___adult_count___",
+            "noOfKids": "___child_count___",
+            "tenure": "___policy_tenure___",
+            "productPlanOptionCd": "IN-PACT5",      //this is SI options for addons
+            "policyType": "___health_insurance_type___",
+            "saveFl": "YES",
+            "quoteTypeCd": "PORTAL",
+            "totPremium": null,
+            "quotationDt": "___policy_start_date___",
+            "agentId": "___insurer_integration_agent_code___",
+            "campaignCd": "DEFCMP03",
+            "productFamilyCd": null,
+            "policyNum": null,   // renewal case node
+            "applicationID": null,
+            "inwardTypeCd": "NEWBUSINESS",   // keep hardcoded
+            "inwardSubTypeCd": "PROPOSALDOCUMENT",
+            "modalPremium": null,
+            "initialPremium": null,
+            "ppmcFl": null,
+            "uwFl": null,
+            "caseType": null,
+            "premiumToBeCollected": null,
+            "premiumSuspenseAmount": null,
+            "renewalYear": null,
+            "totUWLoadingAmount": null,
+            "uwLoadingPerc": null,
+            "totUWLoadingInclOfTaxes": null,
+            "modalServiceTax": null,
+            "modalEduCess": null,
+            "modalHigherEduCess": null,
+            "baseModalPremium": null,
+            "cummulativeBonusAmt": null,
+            "prevCummulativeBonus": null,
+            "actualCummulativeBonus": null,
+            "cummulativeBonusPerc": null,
+            "totRenewalLoadingAmount": null,
+            "totRenewalLoadingInclOfTaxes": null,
+            "sezUnit": null,
+            "stateCd": null,
+            "standaloneChild": null,
+            "srNum": null,
+            "migrationFlag": null,
+            "gstAvailFlg": null,
+            "productTermUnitCd": null,
+            "utilizeHMBForPremium": null,
+            "hmbUtilizedTowardPremium": null,
+            "astpFlag": null,
+            "quotationProductDOList": [
+                {
+                    "productId": "PACT01POSSF",
+                    "productVersion": 1,
+                    "productPlanOptionCd": "IN-PACT5",
+                    "basePremium": 0.0,
+                    "sumInsured": null,
+                    "zoneCd": "ZONE2",
+                    "productTypeCd": "SUBPLAN",
+                    "extraPremium": 0.0,
+                    "discount": 0.0,
+                    "payoutOption": null,
+                    "reducingBalanceSI": null,
+                    "paymentFrequencyCd": "SINGLE",
+                    "astpLoadingPerc": null,
+                    "quotationProductBenefitDOList": [
+                        {
+                            "benefitTypeCd": null,
+                            "benefitId": null,
+                            "amount": 0.0,
+                            "productId": null
+                        }
+                    ],
+                    "quotationProductInsuredDOList": [
+                        {
+                            "issueAge": "___member_array_age___",
+                            "genderCd": "___member_array_gender_2___"
+                            "insuredTypeCd": "PRIMARY",
+                            "cityCd": ,
+                            "mobileNum": "___mobile___",
+                            "emailAddress": "___email___",
+                            "dob": "___member_array__birth_date___",
+                            "zoneCd": "ZONE2",
+                            "smokerStatusCd": null,
+                            "chewTobaccoCd": null,
+                            "consumeAlcoholCd": null,
+                            "relationCd": "___member_array_relation___",
+                            "modalPremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productPlanOptionCd": "IN-PACT5",
+                            "bmi": null,
+                            "height": "___member_array_height___",
+                            "weight": "___member_array_height___",
+                            "sumInsured": "___health_insurance_si___",
+                            "refGuid": "multi_insured_0",
+                            "ppmcFl": null,
+                            "uwFl": null,
+                            "ppmcSetName": null,
+                            "customerId": null,
+                            "uwLoadingPerc": null,
+                            "uwLoadingAmount": null,
+                            "cummulativeBonusAmt": null,
+                            "prevCummulativeBonus": null,
+                            "actualCummulativeBonus": null,
+                            "cummulativeBonusPerc": null,
+                            "astpLoadingPerc": null,
+                            "annualIncome": null,
+                            "quotationProductInsuredBenefitDOList": [
+                                {
+                                    "benefitTypeCd": null,
+                                    "benefitId": null,
+                                    "amount": 0.0,
+                                    "productId": null
+                                }
+                            ]
+                        }                        
+                    ],
+                    "quotationProductChargeDOList": [
+                        {
+                            "chargeClassCd": null,
+                            "chargeAmount": 0.0,
+                            "chargePercentage": 0.0
+                        }
+                    ],
+                    "quotationProductAddOnDOList": [
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRNMI01"
+                        },
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRWOD01"
+                        },
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRWAEH01"
+                        },
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRHCP01"
+                        },
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRWMC01"
+                        },
+                        {
+                            "productPlanOptionCd": null,
+                            "sumInsured": null,
+                            "basePremium": 0.0,
+                            "extraPremium": 0.0,
+                            "discount": 0.0,
+                            "productId": "OPPRWEL01"
+                        }
+                    ]
+                }
+            ],
+            "quotationChargeDOList": null,
+            "quotationChangeDOList": null,
+            "uwLoadingModalPremium": 0.0,
+            "uwLoadingModalPremiumInclOfTaxes": 0.0,
+            "renewalLoadingModalAmount": null,
+            "renewalLoadingModalInclOfTaxes": null,
+            "modalLoadingPremium": null,
+            "noOfInstallments": null,
+            "initialPayment": null,
+            "migrationProductId": null,
+            "coverageType": null,
+            "coverageIllness": null,
+            "totAlterationModalUWLoadingAmt": null,
+            "totAlterationModalUWLoadingTax": null,
+            "alterationInitialModalUWLoadingAmt": null,
+            "alterationInitialModalUWLoadingTax": null,
+            "alterationInstalmentModalUWLoadingAmt": null,
+            "alterationInstalmentModalUWLoadingTax": null,
+            "endorsementIntialAmount": null,
+            "endorsementIntialAndInstallmentAmount": null
+        }
+    ]
+}

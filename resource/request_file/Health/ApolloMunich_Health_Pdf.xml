@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:b2b="http://www.apollomunichinsurance.com/B2BService" xmlns:doc="http://schemas.datacontract.org/2004/07/DocumentUploadServiceLibrary" xmlns:ser="http://schemas.datacontract.org/2004/07/ServiceObjects">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <b2b:DocumentUpload>
+         <b2b:documentUploadServiceRequest>
+            <doc:DocumentDetails>
+               <ser:DocumentType>NSTP Proposal</ser:DocumentType>               
+                <ser:EncodedDocData>___encoded_data___</ser:EncodedDocData>
+               <ser:FileType>Pdf</ser:FileType>
+               <ser:IdentityNo>___dbmaster_pb_insurer_transaction_identifier___</ser:IdentityNo>
+               <ser:IdentityType>Application</ser:IdentityType>
+            </doc:DocumentDetails>
+            <doc:Partner>
+               <ser:PartnerCode>___insurer_integration_agent_code___</ser:PartnerCode>
+               <ser:Password>___insurer_integration_service_password___</ser:Password>
+               <ser:UserName>___insurer_integration_service_user___</ser:UserName>
+            </doc:Partner>
+         </b2b:documentUploadServiceRequest>
+      </b2b:DocumentUpload>
+   </soapenv:Body>
+</soapenv:Envelope>

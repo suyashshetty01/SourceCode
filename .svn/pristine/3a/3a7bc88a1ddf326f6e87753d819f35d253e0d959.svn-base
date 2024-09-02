@@ -1,0 +1,50 @@
+{
+    "own_damage": {
+        "od_basic": "OwnDamagePremium",
+        "od_elect_access": "ElectronicSI",
+        "od_non_elect_access": "NonElectronicSI",
+        "od_cng_lpg": "",
+        "od_disc_ncb": "NCB",
+        "od_disc_vol_deduct": "VoluntaryDeduction",
+        "od_disc_anti_theft": "",
+        "od_disc_aai": "",
+        "od_loading": "",
+        "od_disc": "",
+        "od_final_premium": ""//=TotalPremiumOwnDamage - RSA - ReturnToInvoice - EngineProtect - DepreciationCover - ConsumableCover;
+    },
+    "liability": {
+        "tp_basic": "BasicTPPremium",
+        "tp_cover_owner_driver_pa": "PACoverForOwnerDriver",
+        "tp_cover_unnamed_passenger_pa": "PAForUnnamedPassengerSI",
+        "tp_cover_named_passenger_pa": "",
+        "tp_cover_paid_driver_pa": "PAToPaidDriverSI",
+        "tp_cover_paid_driver_ll": "LegalLiabilityToPaidDriverNo",
+        "tp_cng_lpg": "LiabilityForBiFuel",
+        "tp_final_premium": "TotalPremiumLiability"
+    },
+    "addon": {
+        "addon_zero_dep_cover": "DepreciationCover",
+        "addon_road_assist_cover": "RSA",
+        "addon_ncb_protection_cover": null,
+        "addon_engine_protector_cover": "EngineProtect",
+        "addon_invoice_price_cover": "ReturnToInvoice",
+        "addon_key_lock_cover": null,
+        "addon_consumable_cover": "ConsumableCover",
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": null,
+        "addon_final_premium": 0
+    },
+    "net_premium": "NetPremium",
+    "service_tax": "ServiceTax",//15% of net premium
+    "final_premium": "TotalPremium"
+}

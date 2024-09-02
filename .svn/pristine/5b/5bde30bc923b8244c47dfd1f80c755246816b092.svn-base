@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CALCULATEPREMIUMREQUEST>
+    <authenticationDetails>
+        <agentId>___insurer_integration_agent_code___</agentId><!--AG026676-->
+        <apikey>___insurer_integration_service_password___</apikey><!--310ZQmv/bYJMYrWQ1iYa7s43084=-->
+    </authenticationDetails>
+    <process>___insurer_integration_method_action___</process><!--calculate premium-->
+    <clientCode>___insurer_integration_service_user___</clientCode><!--OZ103736-->
+    <isNewUser>Yes</isNewUser>
+    <isproductcheck>No</isproductcheck>
+    <istranscheck>No</istranscheck>
+    <partner>___insurer_integration_agent_code___</partner><!--AG026676-->
+    <dop_dd>___vehicle_registration_date_2___</dop_dd><!--13 format dd-->
+    <dop_mm>___vehicle_registration_date_3___</dop_mm><!--06 format mm-->
+    <dop_yy>___vehicle_registration_date_4___</dop_yy><!--16 format yy-->
+    <premium>0.0</premium>
+    <proposerDetails>
+        <addressOne></addressOne>
+        <addressTwo></addressTwo>
+        <contactAddress1></contactAddress1>
+        <contactAddress2></contactAddress2>
+        <contactCity>NAGPUR</contactCity>
+        <contactPincode>400070</contactPincode>
+        <dateOfBirth>___birth_date___</dateOfBirth><!--format is dd-MM-yyyy-->
+        <dob_dd>___birth_date_2___</dob_dd>
+        <dob_mm>___birth_date_3___</dob_mm>
+        <dob_yy>___birth_date_4___</dob_yy>
+        <guardianAge></guardianAge>
+        <guardianName></guardianName>
+        <nomineeAge>30</nomineeAge>
+        <nomineeName>Sudhir</nomineeName>
+        <occupation>Student</occupation>
+        <regCity>NAGPUR</regCity>
+        <regPinCode></regPinCode>
+        <relationshipWithNominee>Cousin</relationshipWithNominee>
+        <relationshipwithGuardian></relationshipwithGuardian>
+        <sameAdressReg>No</sameAdressReg>
+        <strPhoneNo>22322232</strPhoneNo>
+        <strStdCode>022</strStdCode>
+        <userName>ravi.sehare@rupeeboss.com</userName>
+        <strEmail>ravi.sehare@rupeeboss.com</strEmail>
+        <strFirstName>___first_name___</strFirstName>
+        <strLastName>___last_name___</strLastName>
+        <strMobileNo>9999999999</strMobileNo>
+        <strTitle>Mr</strTitle>
+    </proposerDetails>
+    <reqType>XML</reqType>
+    <respType>XML</respType>
+    <vehicleDetails>
+        <accidentCoverForPaidDriver>___pa_paid_driver_si___</accidentCoverForPaidDriver><!--  default value 0 -->
+        <addonValue>0</addonValue>
+        <automobileAssociationMembership>___is_aai_member___</automobileAssociationMembership><!--No-->
+        <averageMonthlyMileageRun>2000</averageMonthlyMileageRun>
+        <carRegisteredCity>NAGPUR</carRegisteredCity>
+        <chassisNumber>72VC72VC</chassisNumber>
+        <claimAmountReceived>0</claimAmountReceived><!-- 0-->
+        <claimsMadeInPreviousPolicy>___is_claim_exists___</claimsMadeInPreviousPolicy><!--No-->
+        <claimsReported>___is_claim_exists_3___</claimsReported>
+        <ncbprevious>___vehicle_ncb_current___</ncbprevious>
+        <companyNameForCar></companyNameForCar>
+        <cover_dri_othr_car_ass>No</cover_dri_othr_car_ass>
+        <cover_elec_acc>___electrical_accessory_2___</cover_elec_acc>
+        <cover_non_elec_acc>___non_electrical_accessory_2___</cover_non_elec_acc>
+        <depreciationWaiver>___addon_zero_dep_cover_2___</depreciationWaiver>
+        <drivingExperience>2</drivingExperience>
+        <electricalAccessories>
+            <electronicAccessoriesDetails>
+                <makeModel>72VC</makeModel>
+                <nameOfElectronicAccessories>72VC</nameOfElectronicAccessories>
+                <value>___electrical_accessory___</value>
+            </electronicAccessoriesDetails>
+        </electricalAccessories>
+        <engineCapacityAmount>___dbmaster_insurer_vehicle_cubiccapacity___CC</engineCapacityAmount>
+        <engineNumber>72VC72VC</engineNumber>
+        <engineprotector>___addon_engine_protector_cover___</engineprotector>
+        <fibreGlass>No</fibreGlass>
+        <financierName>___is_financed_2___</financierName>
+        <fuelType>___dbmaster_insurer_vehicle_fueltype___</fuelType><!--Petrol-->
+        <hdnDepreciation>___addon_zero_dep_cover___</hdnDepreciation><!-- -->
+        <hdnInvoicePrice>___addon_invoice_price_cover___</hdnInvoicePrice>
+        <hdnKeyReplacement>___addon_key_lock_cover___</hdnKeyReplacement>
+        <hdnLossOfBaggage>___addon_personal_belonging_loss_cover___</hdnLossOfBaggage>
+        <hdnNCBProtector>___addon_ncb_protection_cover_2___</hdnNCBProtector>
+        <hdnProtector>false</hdnProtector>
+        <hdnRoadTax>false</hdnRoadTax>
+        <hdnSpareCar>false</hdnSpareCar>
+        <hdnWindShield>___addon_windshield_cover___</hdnWindShield><!-- -->
+        <idv>___vehicle_idv___</idv><!--  4389000  IDV from dastabase ??/-->
+        <invoicePrice>___addon_invoice_price_cover_2___</invoicePrice>
+        <isBiFuelKit>___is_bifuel___</isBiFuelKit><!-- externally or internally -->
+        <isBiFuelKitYes>___is_bifuel_kit_type___</isBiFuelKitYes><!--inbuilt or ADD On(externally)-->
+        <isCarFinanced>___is_financed___</isCarFinanced>
+        <isCarFinancedValue></isCarFinancedValue>;<!--fiannce value??-->
+        <isCarOwnershipChanged>No</isCarOwnershipChanged>
+        <isPreviousPolicyHolder>___vehicle_insurance_type___</isPreviousPolicyHolder><!--  -->
+        <keyreplacement>___addon_key_lock_cover_2___</keyreplacement>
+        <legalliabilityToPaidDriver>___is_llpd___</legalliabilityToPaidDriver>
+        <modified_idv_value>___vehicle_idv___</modified_idv_value><!-- 4389000  from database-->
+        <modify_your_idv>0</modify_your_idv>
+        <ncbcurrent>___vehicle_ncb_next___</ncbcurrent><!---->
+        <ncbprotector>___addon_ncb_protection_cover___</ncbprotector>
+        <noClaimBonusPercent>___vehicle_ncb_current___</noClaimBonusPercent><!---->
+        <ncbcureent>___vehicle_ncb_next___</ncbcureent><!---->
+        <nonElectricalAccesories>
+            <nonelectronicAccessoriesDetails>
+                <makeModel>72VC</makeModel>
+                <nameOfElectronicAccessories>72VC</nameOfElectronicAccessories>
+                <value>___non_electrical_accessory___</value>
+            </nonelectronicAccessoriesDetails>
+        </nonElectricalAccesories>
+        <original_idv>___vehicle_expected_idv___</original_idv><!--4389000  IDV from data base-->
+        <personalAccidentCoverForUnnamedPassengers>___pa_unnamed_passenger_si___</personalAccidentCoverForUnnamedPassengers><!--default value 0 hard coded 100000-->
+        <policyED>___policy_end_date___</policyED><!--date format dd/mm/yyyy 12/06/2018-->
+        <policySD>___policy_start_date___</policySD><!--date format dd/mm/yyyy 13/06/2017-->
+        <previousInsurerName>Bajaj Allianz General Insurance Co. Ltd.</previousInsurerName><!--from data base-->
+        <previousPolicyExpiryDate>___policy_expiry_date___</previousPolicyExpiryDate><!--12/06/2017 date format dd/mm/yyyy-->
+        <ppe_dd>___policy_expiry_date___</ppe_dd><!--12 date format dd-->
+        <ppe_mm>___policy_expiry_date___</ppe_mm><!--06 date format mm-->
+        <ppe_yy>___policy_expiry_date___</ppe_yy><!--17 date format yy-->
+        <previousPolicyType>Comprehensive</previousPolicyType>
+        <previousinsurersCorrectAddress></previousinsurersCorrectAddress>
+        <previuosPolicyNumber>TEST123</previuosPolicyNumber>
+        <ProductName>___vehicle_insurance_type_2___</ProductName>
+        <region>West Region</region>
+        <registrationchargesRoadtax>off</registrationchargesRoadtax>
+        <spareCar>off</spareCar>
+        <totalIdv>___vehicle_expected_idv___</totalIdv><!--4389000  IDV from data-->
+        <valueOfLossOfBaggage>0</valueOfLossOfBaggage>
+        <valueofelectricalaccessories>___electrical_accessory___</valueofelectricalaccessories>
+        <valueofnonelectricalaccessories>___non_electrical_accessory___</valueofnonelectricalaccessories>
+        <vehicleManufacturerName>___dbmaster_insurer_vehicle_make_name___</vehicleManufacturerName><!--BMW-->
+        <vehicleModelCode>___dbmaster_insurer_vehicle_model_code___</vehicleModelCode><!--CMH383-->
+        <vehicleMostlyDrivenOn>Highways</vehicleMostlyDrivenOn>
+        <vehicleRegisteredInTheNameOf>___vehicle_registration_type___</vehicleRegisteredInTheNameOf><!--Individual-->
+        <vehicleSubLine>___product_id___</vehicleSubLine><!-- for two wheeler???-->
+        <vehicleregDate>___vehicle_registration_date___</vehicleregDate><!--13/06/2016date format dd/mm/yyyy-->
+        <voluntarydeductible>___voluntary_deductible___</voluntarydeductible>
+        <windShieldGlass>___addon_windshield_cover_2___</windShieldGlass>
+        <yearOfManufacture>___vehicle_manf_year___</yearOfManufacture><!--format yyyy-->
+    </vehicleDetails>
+</CALCULATEPREMIUMREQUEST>

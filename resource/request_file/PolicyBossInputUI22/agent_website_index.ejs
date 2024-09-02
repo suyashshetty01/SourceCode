@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta itemprop="title" content="Policy Boss">
+    <meta name="keywords" content="Policy Boss">
+    <meta itemprop="description" content="Policy Boss">
+    <!-- Required meta tags End -->
+    <title>Policy Boss | Dashboard</title>	
+
+    <!-- FAVICON -->
+    <% include partials/website_header_link %>
+</head>
+
+<body>
+    <!-- <div class="loader"></div> -->
+    <div class="overlay-appear"></div>
+<!----------------------------------------- Header Section ------------------------------------------>
+<% include partials/website_header %>
+    <!----------------------------------- Notification Label Section --------------------------------------->
+    <div class="notification-section section-padding-50 posp_onboarding_note"  style="display: none;">
+        <div class="container">
+            <div class="notification-box warning-bg">
+                <div class="notification-description-title-box">
+                    <div class="icon-box">
+                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/notification-icon.svg" alt="Notification" />
+                    </div>
+                    <p class="font-18 notification-title">
+                        <span>Important :</span> POSP onboarding process is pending.
+                    </p>
+                </div>
+                <a href="" class="main-btn complete-now-btn" style="display: none;">
+                    Complete Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------- Insurance Listing Section --------------------------------------->
+    <div class="insurance-type-listing-section">
+        <div class="container">
+            <div class="insurance-type-listing-area">
+                <div class="insurance-type-listing-box">
+                    <h2 class="font-24 title-text text-extralight">Motor Insurance</h2>
+                    <div class="insurance-product-list-row">
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/car-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/car-insurance.png" alt="Car">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Car</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/two-wheeler-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/bike-insurance.png" alt="Bike">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Bike</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/commercial-vehicle-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/commercial-vehical-insurance.png" alt="CV">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">CV</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col" style="display: none;">
+                            <div class="select-tab-item">
+                                <a href="#" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/express-car.png" alt="Express Car">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Express Car</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/2w-policy-whizz" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/express-bike.png" alt="Express Bike">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Express Bike</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="insurance-type-listing-box">
+                    <h2 class="font-24 title-text text-extralight">Health and Life Insurance</h2>
+                    <div class="insurance-product-list-row">
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/health-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/health.png" alt="Health">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Health</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/Health_Advisory/advisory_input.html" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/health-advisory.png" alt="Health Advisory">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Health Advisory</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/travel-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/travel.png" alt="Travel">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Travel</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/personal-accident-insurance/" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/personal-accident.png" alt="Personal
+                                            Accident">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Personal
+                                    Accident</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://term.policyboss.com/term-insurance" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/term.png" alt="Term">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">Term</span>
+                            </div> 
+                        </div>
+                        <div class="insurance-product-list-col">
+                            <div class="select-tab-item">
+                                <a href="https://www.policyboss.com/WorkmenCompensation/corp_product.html" class="select-tab-box">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/agent-dashboard/sme-insurance.png" alt="SME Insurance">
+                                        </div>
+                                    </div>
+                                </a>
+                                <span class="radio-name-text text-extralight font-18">SME Insurance</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------- Business Section --------------------------------------->
+    <div class="business-section section-padding-50 pedding-top-0" style="display:none;">
+        <div class="container">
+            <div class="result-title-box">
+                <div class="title-box">
+                    <h2 class="font-30 title-text">
+                        My Business 
+                    </h2>
+                </div>
+                <div class="result-filter-box-area">
+                    <button class="btn dropdown-toggle dropdown-toggle-custom sort-dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="filter-box">
+                            <div class="filter-title-box">
+                                <span class="filter-title-text">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/filter-icon.svg" alt="Filter">
+                                    Filter by :
+                                </span> 
+                            </div>
+                            <div class="filter-dropdown-box">
+                                <p class="filter-dropdown-text js-dropdown-value">FY 2022-23</p>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-box custom-dropdown-box sort-dropdown-box" aria-labelledby="dropdownMenuButton5">
+                        <div class="dropdown-content-wrapper">
+                            <form class="dropdown-form">
+                                <ul class="dropdown-list-row js-dropdown-field" id="js-dropdown-links-3">
+                                    <li class="dropdown-list-col active">
+                                       <a href="javascript:void(0)" class="dropdown-list-link js_click_link">FY 2022-23</a> 
+                                    </li>
+                                    <li class="dropdown-list-col">
+                                        <a href="javascript:void(0)" class="dropdown-list-link js_click_link">FY 2023-24</a>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-listing">
+                <div class="card-listing-row">
+                    <div class="card-listing-col">
+                        <div class="card-listing-box">
+                            <div class="custom-card-heading">
+                                <h3 class="font-18 title-text">Motor Insurance</h3>
+                            </div>
+                            <div class="custom-card-body">
+                                <div class="insurance-card-detail">
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Private Car</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">2</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹25,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text"> Bike</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">5</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹6,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Commercial Vehicle</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">1</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹15,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-listing-col">
+                        <div class="card-listing-box">
+                            <div class="custom-card-heading">
+                                <h3 class="font-18 title-text">Health Insurance</h3>
+                            </div>
+                            <div class="custom-card-body">
+                                <div class="insurance-card-detail">
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Health</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">1</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹15,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text"> Personal Accident</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">0</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">--</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Commercial Vehicle</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">0</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">--</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-listing-col">
+                        <div class="card-listing-box">
+                            <div class="custom-card-heading">
+                                <h3 class="font-18 title-text">Life Insurance</h3>
+                            </div>
+                            <div class="custom-card-body">
+                                <div class="insurance-card-detail">
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Term</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">1</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹15,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text"> Investment</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">2</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹2,00,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Others</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">0</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">--</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-listing-col">
+                        <div class="card-listing-box">
+                            <div class="custom-card-heading">
+                                <h3 class="font-18 title-text">SME Insurance</h3>
+                            </div>
+                            <div class="custom-card-body">
+                                <div class="insurance-card-detail">
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Fire</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">2</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹25,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text"> GMC</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">5</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹6,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insurance-card-detail-box">
+                                        <h4 class="inner-title font-16 title-text">Others</h4>
+                                        <div class="extra-detail-box">
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">NOP:</span>
+                                                <span class="insurance-value title-text font-14">1</span>
+                                            </div>
+                                            <div class="extra-detail-col">
+                                                <span class="insurance-text font-14">Premium:</span>
+                                                <span class="insurance-value title-text font-14">₹15,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!----------------------------------- Marketing Material Section --------------------------------------->
+    <div class="marketing-material-section section-padding-50 pedding-top-0" style="display: none;">
+        <div class="container">
+            <div class="result-title-box">
+                <div class="title-box">
+                    <h2 class="font-30 title-text">
+                        Marketing Material
+                    </h2>
+                </div>
+                <div class="flex-box extra-box-area">
+                    <div class="result-filter-box-area">
+                        <button class="btn dropdown-toggle dropdown-toggle-custom sort-dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="filter-box">
+                                <div class="filter-dropdown-box">
+                                    <p class="filter-dropdown-text js-dropdown-value">All Insurance Products</p>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-box custom-dropdown-box sort-dropdown-box" aria-labelledby="dropdownMenuButton6">
+                            <div class="dropdown-content-wrapper">
+                                <form class="dropdown-form">
+                                    <ul class="dropdown-list-row js-dropdown-field" id="js-dropdown-links-4">
+                                        <li class="dropdown-list-col active">
+                                        <a href="javascript:void(0)" class="dropdown-list-link js_click_link">All Insurance Products</a> 
+                                        </li>
+                                        <li class="dropdown-list-col">
+                                            <a href="javascript:void(0)" class="dropdown-list-link js_click_link">Car Insurance</a>
+                                        </li>
+                                        <li class="dropdown-list-col">
+                                            <a href="javascript:void(0)" class="dropdown-list-link js_click_link">Bike Insurance</a>
+                                        </li>
+                                        <li class="dropdown-list-col">
+                                            <a href="javascript:void(0)" class="dropdown-list-link js_click_link">Term Insurance</a>
+                                        </li>
+                                        <li class="dropdown-list-col">
+                                            <a href="javascript:void(0)" class="dropdown-list-link js_click_link">Travel Insurance</a>
+                                        </li>
+                                        <li class="dropdown-list-col">
+                                            <a href="javascript:void(0)" class="dropdown-list-link js_click_link">Health Insurance</a>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language-change-btn-area">
+                        <button class="language-change-btn font-15 active" id="toggle_english" type="button">English</button>
+                        <button class="language-change-btn font-15" id="toggle_hindi" type="button">Hindi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-listing">
+                <div class="content-type english">
+                    <div class="card-listing-row">
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/bike-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/travel-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/car-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/car-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/travel-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/term-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/health-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/health-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/bike-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/term-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-type hindi">
+                    <div class="card-listing-row">
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/car-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/bike-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/travel-eng-1.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/travel-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-listing-col">
+                            <div class="card-listing-box">
+                                <div class="image-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/dashboard/car-eng-2.png" alt="" />
+                                </div>
+                                <div class="download-and-share-area">
+                                    <div class="flex-box">
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/download-icon-primary.svg" alt="" />
+                                            </div>
+                                            Download
+                                        </button>
+                                        <button class="unstyled-btn btn-icon primary-text font-14">
+                                            <div class="icon-box">
+                                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/whatsapp-blue.png" alt="" />
+                                            </div>
+                                            Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.language-dropdown-select').select2({});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Landmark Dashboard</title>
+        <!-- Favicon-->
+        <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+        <!-- Styles -->
+        <style>
+            #chartdiv {
+                width: 100%;
+                height: 500px;
+            }
+            body,*,html {
+                font-family: 'Google Sans',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+        </style>
+
+        <!-- Resources -->
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+        <!-- Chart code -->
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script src="//www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
+        <link href="/adminpanel/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
+        <link href="/adminpanel/plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
+        <link href="/adminpanel/plugins/animate-css/animate.css" rel="stylesheet" />
+
+        <!-- Morris Chart Css-->
+        <link href="/adminpanel/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link href="/adminpanel/css/style.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="/adminpanel/css/themes/all-themes.css" rel="stylesheet" />
+
+        <!-- Jquery Core Js -->
+
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="../plugins/jquery-countto/jquery.countTo.js"></script>
+        <!-- Bootstrap Core Js -->
+        <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+        <!-- Include Required Prerequisites -->
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <script type="text/javascript" src="https://illyism.github.io/jquery.vibrate.js/build/jquery/jquery.vibrate.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+        <style>
+            .tabcontent {
+                width		: 90%;
+                height		: 270px;
+                font-size	: 13px;
+                top: -30px;
+                left: -30px;
+            }
+            .tab-pane{
+                height		: 320px;
+            }			
+        </style>
+    <body>
+        <div class="container-fluid"> 
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+                    <h3>PolicyBoss Horizon Live</h3>
+                    <h4 id="channeltitle"></h4>                    
+                    <h5 id="cachetitle" style="display:none;color:purple;"></h5>
+                    <div id="historic_btn" style="padding-bottom: 5px">
+                        <button type="button" class="btn btn-success waves-effect" onclick="showHistoricModal('2018_2019');">Summary 2018-2019</button>
+                        &nbsp;&nbsp;
+                        <button type="button" class="btn btn-success waves-effect" onclick="showHistoricModal('2019_2020');">Summary 2019-2020</button>
+                    </div>                    
+                </div>
+            </div>
+            <div class="row clearfix" style="padding-bottom:5px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">                    
+                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                        <span></span> <b class="caret"></b>
+                    </div>
+                </div>                                
+            </div>
+            <div class="row clearfix" id="waitloader" style="display:none;padding:2px" >
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 100%">
+                        <span class="sr-only">100% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" style="display:none">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">FUNNEL</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="all_funnel" style="height:300px">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sale_report">                
+                <!-- Widgets -->
+                <div class="row clearfix"  id="quote_widget">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-red hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">search</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">SEARCH</div>
+                                <div id="Search" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-yellow hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">search</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">UNIQUE SEARCH</div>
+                                <div id="Unique_Search" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-cyan hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">mail</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">LINK</div>
+                                <div id="Link" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">publish</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">PROPOSAL</div>
+                                <div id="Proposal" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-orange hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">gavel</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">POLICY</div>
+                                <div id="Policy" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-purple hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons fa fa-inr">attach_money</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">PREMIUM</div>
+                                <div id="Premium" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="1000"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons fa fa-inr">attach_money</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">Commissionable Premium</div>
+                                <div id="Comm_Premium" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="1000"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-indigo hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">gavel</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">CS</div>
+                                <div id="ErpCs" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-lime hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">directions_car</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">CAR</div>
+                                <div id="Car" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-blue hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">motorcycle</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">TW</div>
+                                <div id="Tw" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-pink hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">local_shipping</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">CV</div>
+                                <div id="CV" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-amber hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">local_hospital</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">HEALTH</div>
+                                <div id="Health" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-brown hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">airplanemode_active</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">TRAVEL</div>
+                                <div id="Travel" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+                    <h3>Link-Breakup(<span id="link_cnt">0</span>)</h3>
+                </div>
+            </div>
+            <div id="proposal_report">                
+                <!-- Widgets -->
+                <div class="row clearfix"  id="quote_widget">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" onclick="showDropOffModal('DropoffList', 'Customer whose PG status is unknown');">
+                        <div class="info-box bg-red hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">attach_money</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">PG DROPOFF</div>
+                                <div id="PG_Dropoff" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" onclick="showDropOffModal('LinkDropoffList', 'Customer did not open link');">
+                        <div class="info-box bg-orange hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">mail</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">LINK DROPOFF</div>
+                                <div id="LINK_Dropoff" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" onclick="showDropOffModal('SaleList', 'Successful Transaction');">
+                        <div class="info-box bg-pink hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">gavel</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">SALE</div>
+                                <div id="Sale" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" onclick="showDropOffModal('FailList', 'Fail Transaction List - Customer did not pay');">
+                        <div class="info-box bg-cyan hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">mail</i>
+                            </div>
+                            <div class="content" >
+                                <div class="text">FAIL</div>
+                                <div id="Fail" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">publish</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">PAYPASS</div>
+                                <div id="Paypass" class="number count-to" data-from="0" data-to="0" data-speed="500" data-fresh-interval="5"></div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="row clearfix" id="car_summary">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">CAR SALE BEHAVIOUR</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" ><a href="#tabNOP" data-toggle="tab" id="title_car_insurer_nop" >NOP</a></li>
+                                <li role="presentation" class="active"><a href="#tabPREMIUM" data-toggle="tab" id="title_car_insurer_premium">PREMIUM</a></li>
+                                <li role="presentation"><a href="#tabMAKE" data-toggle="tab" id="title_car_make">MAKE</a></li>
+                                <li role="presentation"><a href="#tabRTO" data-toggle="tab" id="title_car_rto">RTO</a></li>
+                                <li role="presentation"><a href="#tabFUEL" data-toggle="tab" id="title_car_fuel">FUEL</a></li>
+                                <li role="presentation"><a href="#tabTYPE" data-toggle="tab" id="title_car_policy_type">TYPE</a></li>
+                                <li role="presentation"><a href="#tabSUBTYPE" data-toggle="tab" id="title_car_policy_sub_type">SUBTYPE</a></li>
+                                <li role="presentation"><a href="#tabROLLOVER" data-toggle="tab" id="title_car_rollover">ROLLOVER</a></li>
+                                <li role="presentation"><a href="#tabNCB" data-toggle="tab" id="title_car_ncb">NCB</a></li>
+                                <li role="presentation"><a href="#tabZD" data-toggle="tab" id="title_car_zd">ZD</a></li>
+                                <li role="presentation"><a href="#tabDURATION" data-toggle="tab" id="title_car_duration">DURATION</a></li>
+                                <li role="presentation"><a href="#tabPREFERRED" data-toggle="tab" id="title_car_preferred_payment_time">PREFERRED PAYMENT HOUR</a></li>
+                                <li role="presentation"><a href="#tabPLATFORM" data-toggle="tab" id="title_car_platform">PLATFORM</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="tabNOP" style="height:600px;">
+                                    <div id="chart_car_insurer_nop" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade  in active" id="tabPREMIUM" style="height:auto;">
+                                    <div id="chart_car_insurer_premium" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabMAKE" style="height:auto;">
+                                    <div id="chart_car_make" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabRTO" style="height:auto;">
+                                    <div id="chart_car_rto" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabFUEL"  style="height:auto;">
+                                    <div id="chart_car_fuel" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTYPE"  style="height:auto;">
+                                    <div id="chart_car_policy_type" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>								
+                                <div role="tabpanel" class="tab-pane fade" id="tabSUBTYPE"  style="height:auto;">
+                                    <div id="chart_car_policy_sub_type" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>	
+                                <div role="tabpanel" class="tab-pane fade" id="tabROLLOVER"  style="height:auto;">
+                                    <div id="chart_car_rollover" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabNCB"  style="height:auto;">
+                                    <div id="chart_car_ncb" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabZD"  style="height:auto;">
+                                    <div id="chart_car_zd" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabDURATION"  style="height:auto;">
+                                    <div id="chart_car_duration" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabPREFERRED"  style="height:auto;">
+                                    <div id="chart_car_preferred_payment_time" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabPLATFORM"  style="height:auto;">
+                                    <div id="chart_car_platform" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" id="tw_summary">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">TW SALE BEHAVIOUR</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" ><a href="#tabTWNOP" data-toggle="tab" id="title_tw_insurer_nop" >NOP</a></li>
+                                <li role="presentation" class="active"><a href="#tabTWPREMIUM" data-toggle="tab" id="title_tw_insurer_premium">PREMIUM</a></li>
+                                <li role="presentation"><a href="#tabTWMAKE" data-toggle="tab" id="title_tw_make">MAKE</a></li>
+                                <li role="presentation"><a href="#tabTWRTO" data-toggle="tab" id="title_tw_rto">RTO</a></li>
+                                <li role="presentation"><a href="#tabTWFUEL" data-toggle="tab" id="title_tw_fuel">FUEL</a></li>
+                                <li role="presentation"><a href="#tabTWTYPE" data-toggle="tab" id="title_tw_policy_type">TYPE</a></li>
+                                <li role="presentation"><a href="#tabTWSUBTYPE" data-toggle="tab" id="title_tw_policy_sub_type">SUBTYPE</a></li>
+                                <li role="presentation"><a href="#tabTWROLLOVER" data-toggle="tab" id="title_tw_rollover">ROLLOVER</a></li>
+                                <li role="presentation"><a href="#tabTWZD" data-toggle="tab" id="title_tw_zd">ZD</a></li>
+                                <li role="presentation"><a href="#tabTWNCB" data-toggle="tab" id="title_tw_ncb">NCB</a></li>
+                                <li role="presentation"><a href="#tabTWDURATION" data-toggle="tab" id="title_tw_duration">DURATION</a></li>
+                                <li role="presentation"><a href="#tabTWPREFERRED" data-toggle="tab" id="title_tw_preferred_payment_time">PREFERRED PAYMENT HOUR</a></li>
+                                <li role="presentation"><a href="#tabTWPLATFORM" data-toggle="tab" id="title_tw_platform">PLATFORM</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWNOP" style="height:600px;">
+                                    <div id="chart_tw_insurer_nop" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade  in active" id="tabTWPREMIUM" style="height:auto;">
+                                    <div id="chart_tw_insurer_premium" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWMAKE" style="height:auto;">
+                                    <div id="chart_tw_make" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWRTO" style="height:auto;">
+                                    <div id="chart_tw_rto" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWFUEL"  style="height:auto;">
+                                    <div id="chart_tw_fuel" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWTYPE"  style="height:auto;">
+                                    <div id="chart_tw_policy_type" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>								
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWSUBTYPE"  style="height:auto;">
+                                    <div id="chart_tw_policy_sub_type" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWROLLOVER"  style="height:auto;">
+                                    <div id="chart_tw_rollover" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWZD"  style="height:auto;">
+                                    <div id="chart_tw_zd" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWNCB"  style="height:auto;">
+                                    <div id="chart_tw_ncb" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWDURATION"  style="height:auto;">
+                                    <div id="chart_tw_duration" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWPREFERRED"  style="height:auto;">
+                                    <div id="chart_tw_preferred_payment_time" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWPLATFORM"  style="height:auto;">
+                                    <div id="chart_tw_platform" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" id="health_summary">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">HEALTH SALE BEHAVIOUR</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" ><a href="#tabHealthNOP" data-toggle="tab" id="title_health_insurer_nop" >NOP</a></li>
+                                <li role="presentation" class="active"><a href="#tabHealthPREMIUM" data-toggle="tab" id="title_health_insurer_premium">PREMIUM</a></li>
+                                <li role="presentation"><a href="#tabHealthSI" data-toggle="tab" id="title_health_si">SUM INSURED</a></li>
+                                <li role="presentation"><a href="#tabHealthCITY" data-toggle="tab" id="title_health_city">CITY</a></li>
+                                <li role="presentation"><a href="#tabHealthMEMBER" data-toggle="tab" id="title_health_member_count">MEMBER COUNT</a></li>
+                                <li role="presentation"><a href="#tabHealthTYPE" data-toggle="tab" id="title_health_policy_type">TYPE</a></li>
+                                <li role="presentation"><a href="#tabHealthRM" data-toggle="tab" id="title_health_rm">REPORTING</a></li>
+                                <li role="presentation"><a href="#tabHealthDURATION" data-toggle="tab" id="title_health_duration">DURATION</a></li>
+                                <li role="presentation"><a href="#tabHealthPREFERRED" data-toggle="tab" id="title_health_preferred_payment_time">PREFERRED PAY HOUR</a></li>
+                                <li role="presentation"><a href="#tabHealthPLATFORM" data-toggle="tab" id="title_health_platform">PLATFORM</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthNOP" style="height:600px;">
+                                    <div id="chart_health_insurer_nop" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade  in active" id="tabHealthPREMIUM" style="height:auto;">
+                                    <div id="chart_health_insurer_premium" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthSI" style="height:auto;">
+                                    <div id="chart_health_si" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthCITY" style="height:auto;">
+                                    <div id="chart_health_city" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthMEMBER" style="height:auto;">
+                                    <div id="chart_health_member_count" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthTYPE"  style="height:auto;">
+                                    <div id="chart_health_policy_type" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthRM"  style="height:auto;">
+                                    <div id="chart_health_rm" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthDURATION"  style="height:auto;">
+                                    <div id="chart_health_duration" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthPREFERRED"  style="height:auto;">
+                                    <div id="chart_health_preferred_payment_time" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthPLATFORM"  style="height:auto;">
+                                    <div id="chart_health_platform" class="tabcontent" style="min-width: 330px; max-width: 900px;height:570px;   margin: 0 auto"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" id="all_channel_summary">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">ALL CHANNEL SUMMARY</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" ><a href="#tabSummarySEARCH" data-toggle="tab" id="title_summary_search" >SEARCH</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummaryUNIQUESEARCH" data-toggle="tab" id="title_summary_unique_search" >UNIQUE SEARCH</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummaryLINK" data-toggle="tab" id="title_summary_link" >LINK</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummaryPROPOSAL" data-toggle="tab" id="title_summary_proposal" >PROPOSAL</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummarySALE" data-toggle="tab" id="title_summary_sale" >SALE</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummaryPREMIUM" data-toggle="tab" id="title_summary_premium" >PREMIUM</a></li>                                                                
+                                <li role="presentation" ><a href="#tabSummaryCOMMPREMIUM" data-toggle="tab" id="title_summary_comm_premium" >COMMISSIONABLE PREMIUM</a></li>                                                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummarySEARCH" style="height:600px;">
+                                    <div id="chart_summary_search" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummaryUNIQUESEARCH" style="height:600px;">
+                                    <div id="chart_summary_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummaryLINK" style="height:600px;">
+                                    <div id="chart_summary_link" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummaryPROPOSAL" style="height:600px;">
+                                    <div id="chart_summary_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummarySALE" style="height:600px;">
+                                    <div id="chart_summary_sale" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>                                
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummaryPREMIUM" style="height:600px;">
+                                    <div id="chart_summary_premium" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>                                
+                                <div role="tabpanel" class="tab-pane fade" id="tabSummaryCOMMPREMIUM" style="height:600px;">
+                                    <div id="chart_summary_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix" id="all_channel_agent_summary">
+                <!-- Area Chart -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale_behaviour">ALL CHANNEL AGENT SUMMARY</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" ><a href="#tabAGENTSEARCH" data-toggle="tab" id="title_summary_agent_search" >SEARCH</a></li>                                                                
+                                <li role="presentation" ><a href="#tabAGENTLINK" data-toggle="tab" id="title_summary_agent_link" >LINK</a></li>                                                                
+                                <li role="presentation" ><a href="#tabAGENTPROPOSAL" data-toggle="tab" id="title_summary_agent_proposal" >PROPOSAL</a></li>                                                                
+                                <li role="presentation" ><a href="#tabAGENTSALE" data-toggle="tab" id="title_summary_agent_sale" >SALE</a></li>                                                               
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade" id="tabAGENTSEARCH" style="height:600px;">
+                                    <div id="chart_summary_agent_search" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabAGENTLINK" style="height:600px;">
+                                    <div id="chart_summary_agent_link" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabAGENTPROPOSAL" style="height:600px;">
+                                    <div id="chart_summary_agent_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabAGENTSALE" style="height:600px;">
+                                    <div id="chart_summary_agent_sale" class="tabcontent" style="min-width: 330px; max-width: 900px; height:570px; "></div>
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_search">SEARCH</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllSearch" data-toggle="tab" id="title_all_search">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarSearch" data-toggle="tab" id="title_car_search">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWSearch" data-toggle="tab" id="title_tw_search">TW</a></li>
+                                <li role="presentation"><a href="#tabCVSearch" data-toggle="tab" id="title_cv_search">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthSearch" data-toggle="tab" id="title_health_search">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelSearch" data-toggle="tab" id="title_travel_search">TRAVEL</a></li>
+                                <li role="presentation"><a href="#tabTermSearch" data-toggle="tab" id="title_term_search">TERM</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllSearch" style="height:400px;">
+                                    <div id="chart_all_search" class="tabcontent" style="min-width: 330px; max-width: 900px; height:270px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarSearch">
+                                    <div id="chart_car_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWSearch">
+                                    <div id="chart_tw_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVSearch">
+                                    <div id="chart_cv_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthSearch">
+                                    <div id="chart_health_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelSearch">
+                                    <div id="chart_travel_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTermSearch">
+                                    <div id="chart_term_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_unique_search">UNIQUE SEARCH</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllUnique_Search" data-toggle="tab" id="title_all_unique_search">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarUnique_Search" data-toggle="tab" id="title_car_unique_search">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWUnique_Search" data-toggle="tab" id="title_tw_unique_search">TW</a></li>
+                                <li role="presentation"><a href="#tabCVUnique_Search" data-toggle="tab" id="title_cv_unique_search">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthUnique_Search" data-toggle="tab" id="title_health_unique_search">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelUnique_Search" data-toggle="tab" id="title_travel_unique_search">TRAVEL</a></li>
+                                <li role="presentation"><a href="#tabTermUnique_Search" data-toggle="tab" id="title_term_unique_search">TERM</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllUnique_Search" style="height:400px;">
+                                    <div id="chart_all_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px; height:270px; "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarUnique_Search">
+                                    <div id="chart_car_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWUnique_Search">
+                                    <div id="chart_tw_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVUnique_Search">
+                                    <div id="chart_cv_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthUnique_Search">
+                                    <div id="chart_health_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelUnique_Search">
+                                    <div id="chart_travel_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTermUnique_Search">
+                                    <div id="chart_term_unique_search" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_link">LINK</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllLink" data-toggle="tab" id="title_all_link">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarLink" data-toggle="tab" id="title_car_link">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWLink" data-toggle="tab" id="title_tw_link">TW</a></li>
+                                <li role="presentation"><a href="#tabCVLink" data-toggle="tab" id="title_cv_link">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthLink" data-toggle="tab" id="title_health_link">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelLink" data-toggle="tab" id="title_travel_link">TRAVEL</a></li>
+                                <li role="presentation"><a href="#tabTermLink" data-toggle="tab" id="title_term_link">TERM</a></li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllLink" style="height:400px;">
+                                    <div id="chart_all_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarLink">
+                                    <div id="chart_car_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWLink">
+                                    <div id="chart_tw_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVLink">
+                                    <div id="chart_cv_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthLink">
+                                    <div id="chart_health_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelLink">
+                                    <div id="chart_travel_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTermLink">
+                                    <div id="chart_term_link" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_proposal">PROPOSAL</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllProposal" data-toggle="tab" id="title_all_proposal">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarProposal" data-toggle="tab" id="title_car_proposal">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWProposal" data-toggle="tab" id="title_tw_proposal">TW</a></li>
+                                <li role="presentation"><a href="#tabCVProposal" data-toggle="tab" id="title_cv_proposal">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthProposal" data-toggle="tab" id="title_health_proposal">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelProposal" data-toggle="tab" id="title_travel_proposal">TRAVEL</a></li>
+                                <li role="presentation"><a href="#tabTermProposal" data-toggle="tab" id="title_term_proposal">TERM</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllProposal"  style="height:400px;">
+                                    <div id="chart_all_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarProposal">
+                                    <div id="chart_car_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWProposal">
+                                    <div id="chart_tw_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVProposal">
+                                    <div id="chart_cv_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthProposal">
+                                    <div id="chart_health_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelProposal">
+                                    <div id="chart_travel_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTermProposal">
+                                    <div id="chart_term_proposal" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tabstart -->
+            </div>
+
+            <div class="row clearfix">
+                <!-- tabstart -->
+
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sale">SALE</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllSale" data-toggle="tab" id="title_all_sale">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarSale" data-toggle="tab" id="title_car_sale">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWSale" data-toggle="tab" id="title_tw_sale">TW</a></li>
+                                <li role="presentation"><a href="#tabCVSale" data-toggle="tab" id="title_cv_sale">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthSale" data-toggle="tab" id="title_health_sale">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelSale" data-toggle="tab" id="title_travel_sale">TRAVEL</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllSale"  style="height:400px;">
+                                    <div id="chart_all_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarSale">
+                                    <div id="chart_car_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWSale">
+                                    <div id="chart_tw_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVSale">
+                                    <div id="chart_cv_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthSale">
+                                    <div id="chart_health_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 								
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelSale">
+                                    <div id="chart_travel_sale" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div> 								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tabstart -->
+                <!-- tabstart -->
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_premium">PREMIUM</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllPremium" data-toggle="tab" id="title_all_premium">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarPremium" data-toggle="tab" id="title_car_premium">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWPremium" data-toggle="tab" id="title_tw_premium">TW</a></li>
+                                <li role="presentation"><a href="#tabCVPremium" data-toggle="tab" id="title_tw_premium">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthPremium" data-toggle="tab" id="title_health_premium">HEALTH</a></li>
+                                <li role="presentation"><a href="#tabTravelPremium" data-toggle="tab" id="title_travel_premium">TRAVEL</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllPremium"  style="height:400px;">
+                                    <div id="chart_all_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarPremium">
+                                    <div id="chart_car_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWPremium">
+                                    <div id="chart_tw_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVPremium">
+                                    <div id="chart_cv_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthPremium">
+                                    <div id="chart_health_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTravelPremium">
+                                    <div id="chart_travel_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 "></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tabstart -->
+            </div>
+
+            <div class="row clearfix">
+                <!-- tabstart -->
+
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_od">OD</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllOd" data-toggle="tab" id="title_all_comm_premium">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarOd" data-toggle="tab" id="title_car_comm_premium">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWOd" data-toggle="tab" id="title_tw_comm_premium">TW</a></li>
+                                <li role="presentation"><a href="#tabCVOd" data-toggle="tab" id="title_cv_comm_premium">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthOd" data-toggle="tab" id="title_health_comm_premium">HEALTH</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllOd"  style="height:400px;">
+                                    <div id="chart_all_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarOd">
+                                    <div id="chart_car_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWOd">
+                                    <div id="chart_tw_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVOd">
+                                    <div id="chart_cv_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>                                                                                               
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthOd">
+                                    <div id="chart_health_comm_premium" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>                                                                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tabstart -->
+                <!-- tabstart -->
+
+                <!-- Area Chart -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2 id="title_sum_insured">Sum Insured</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#tabAllSum_Insured" data-toggle="tab" id="title_all_sum_insured">ALL</a></li>
+                                <li role="presentation" ><a href="#tabCarSum_Insured" data-toggle="tab" id="title_car_sum_insured">CAR</a></li>
+                                <li role="presentation"><a href="#tabTWSum_Insured" data-toggle="tab" id="title_tw_sum_insured">TW</a></li>
+                                <li role="presentation"><a href="#tabCVSum_Insured" data-toggle="tab" id="title_cv_sum_insured">CV</a></li>
+                                <li role="presentation"><a href="#tabHealthSum_Insured" data-toggle="tab" id="title_health_sum_insured">HEALTH</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabAllSum_Insured"  style="height:400px;">
+                                    <div id="chart_all_sum_insured" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCarSum_Insured">
+                                    <div id="chart_car_sum_insured" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabTWSum_Insured">
+                                    <div id="chart_tw_sum_insured" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabCVSum_Insured">
+                                    <div id="chart_cv_sum_insured" class="tabcontent" style="min-width: 330px; max-width: 900px;  "></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabHealthSum_Insured">
+                                    <div id="chart_health_sum_insured" class="tabcontent" style="min-width: 330px; max-width: 900px;  margin: 0 auto"></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tabstart -->
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="myModal_title"></h4>
+                        </div>
+                        <div class="modal-body table-responsive" >
+                            <table class="table table-striped" style="width:90%">                                
+                                <tbody>
+                                    <tr>
+                                        <td id="modalsummary"></td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped" style="width:90%" id="agent_body_table">
+                                <thead>
+                                    <tr>
+                                        <th>Channel</th>
+                                        <th>SS_ID</th>
+                                        <th>FBA_ID</th>
+                                        <th>Name</th>
+                                        <th>Region</th>
+                                        <th>EventCount</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modalbody">
+
+                                </tbody>
+                            </table>                            
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Modal -->
+            <div id="myDropModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" ></h4>
+                        </div>
+                        <div class="modal-body table-responsive">
+                            <table class="table table-striped" style="width:90%">                                
+                                <tbody>
+                                    <tr>
+                                        <td id="modal_dropoff_summary"></td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped" style="width:90%" id="dropoff_body">
+                                <!--
+AGENT: "SHARAD.WANKAR_Nagpur_MO:9881164191"
+CHANNEL: "DC-POSP"
+CRN: 811110
+CUSTOMER: "sharad.wankar"
+PREMIUM: 1558
+PRODUCT: "TW"
+                                
+                                -->
+                                <thead>
+                                    <tr>
+                                        <th>Channel</th>
+                                        <th>CRN</th>
+                                        <th>Product</th>
+                                        <th>Agent</th>
+                                        <th>Customer</th>
+                                        <th>Premium</th>
+                                        <th>Reporting</th>
+                                        <th>Region</th>
+                                        <th>On</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modal_dropoff_body">
+
+                                </tbody>
+                            </table>                            
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Modal -->
+            <div id="myHistoricModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" >Historic Data FY 2018-2019</h4>
+                        </div>
+                        <div class="modal-body table-responsive">
+                            <!--<div class="card">-->                                
+                            <div class="body">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                    <li role="presentation" class="active" id="tab_all_channel_li"><a href="#tab_all_channel" data-toggle="tab" id="title_all_channel">ALL</a></li>
+                                    <li role="presentation" id="tab_pb-direct_li"><a href="#tab_pb-direct_channel" data-toggle="tab" id="title_pb-direct_channel">PB-DIRECT</a></li>
+                                    <li role="presentation" id="tab_dc_channel_li"><a href="#tab_dc_channel" data-toggle="tab" id="title_dc_channel">DC-CHANNEL</a></li>
+                                    <li role="presentation" id="tab_sm_channel_li"><a href="#tab_sm_channel" data-toggle="tab" id="title_sm_channel">SM-CHANNEL</a></li>
+                                    <li role="presentation" id="tab_gs_channel_li"><a href="#tab_gs_channel" data-toggle="tab" id="title_gs_channel">GS-CHANNEL</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content" style="min-height: 470px;">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="tab_all_channel"  >
+                                        <div id="table_all_channel" class="tabcontent">
+                                            <table class="table table-striped" style="width:90%;font-size: 11px;">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th><th colspan="6" style="text-align: center;" class="bg-orange">All</th><th colspan="6" style="text-align: center" class="bg-yellow">Car</th><th colspan="6" style="text-align: center" class="bg-orange">TW</th><th colspan="6" style="text-align: center" class="bg-yellow">Health</th><th colspan="6" style="text-align: center" class="bg-orange">Term</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_all_body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_pb-direct_channel">
+                                        <div id="table_pb-direct_channel" class="tabcontent" >
+                                            <table class="table table-striped" style="width:90%;font-size: 11px;" >
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th><th colspan="6" style="text-align: center;" class="bg-orange">All</th><th colspan="6" style="text-align: center" class="bg-yellow">Car</th><th colspan="6" style="text-align: center" class="bg-orange">TW</th><th colspan="6" style="text-align: center" class="bg-yellow">Health</th><th colspan="6" style="text-align: center" class="bg-orange">Term</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_pb-direct_body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_dc_channel">
+                                        <div id="table_dc_channel" class="tabcontent">
+                                            <table class="table table-striped" style="width:90%;font-size: 11px;" >
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th><th colspan="6" style="text-align: center;" class="bg-orange">All</th><th colspan="6" style="text-align: center" class="bg-yellow">Car</th><th colspan="6" style="text-align: center" class="bg-orange">TW</th><th colspan="6" style="text-align: center" class="bg-yellow">Health</th><th colspan="6" style="text-align: center" class="bg-orange">Term</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_dc-channel_body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_sm_channel">
+                                        <div id="table_sm_channel" class="tabcontent" >
+                                            <table class="table table-striped" style="width:90%;font-size: 11px;" >
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th><th colspan="6" style="text-align: center;" class="bg-orange">All</th><th colspan="6" style="text-align: center" class="bg-yellow">Car</th><th colspan="6" style="text-align: center" class="bg-orange">TW</th><th colspan="6" style="text-align: center" class="bg-yellow">Health</th><th colspan="6" style="text-align: center" class="bg-orange">Term</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_sm-channel_body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_gs_channel">
+                                        <div id="table_gs_channel" class="tabcontent" >
+                                            <table class="table table-striped" style="width:90%;font-size: 11px;" >
+                                                <thead>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th><th colspan="6" style="text-align: center;" class="bg-orange">All</th><th colspan="6" style="text-align: center" class="bg-yellow">Car</th><th colspan="6" style="text-align: center" class="bg-orange">TW</th><th colspan="6" style="text-align: center" class="bg-yellow">Health</th><th colspan="6" style="text-align: center" class="bg-orange">Term</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="30%" class="bg-green">Month</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                        <th>Unique_Search</th><th>Sale</th><th>Premium</th><th>Conversion</th><th>Agent_Search</th><th>Agent_Sale</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table_gs-channel_body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--</div>-->                            
+
+                        </div>
+                        <div class="modal-footer" style="display:none">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var Report_Data = null;
+            var arr_channel_group = ['PB-DIRECT', 'DC-CHANNEL', 'SM-CHANNEL', 'GS-CHANNEL', 'OTHERS'];
+            var arr_agent_group = ['PB-SS', 'DC-CHANNEL', 'SM-CHANNEL', 'GS-CHANNEL'];
+            function getQS(name, url) {
+                if (!url)
+                    url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                        results = regex.exec(url);
+                if (!results)
+                    return null;
+                if (!results[2])
+                    return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+            ;
+            var CONS_CHANNEL = '';
+            CONS_CHANNEL = getUrlParameter('channel');
+            if (CONS_CHANNEL !== '') {
+                $('#historic_btn').hide();
+            } else {
+                $('#historic_btn').show();
+            }
+            $('#channeltitle').html('Channel - ' + ((CONS_CHANNEL !== '') ? CONS_CHANNEL : 'ALL'));
+            function GetReport(datefrom, dateto) {
+                $('#waitloader').show();
+                var call_url = '/report/daily_1?datefrom=' + datefrom + '&dateto=' + dateto;
+                if (getUrlParameter('posp_reporting_agent_uid') !== '') {
+                    call_url += '&posp_reporting_agent_uid=' + getUrlParameter('posp_reporting_agent_uid');
+                }
+                if (CONS_CHANNEL !== '') {
+
+                    call_url += '&channel=' + CONS_CHANNEL;
+                }
+                $.get(call_url, function (res) {
+                    //$('#waitloader').hide();
+                    Report_Data = res;
+                    $('#title_search').html('SEARCH (Total:' + Report_Data.All.Summary.Search.total + ')');
+                    $('#title_unique_search').html('UNIQUE SEARCH (Total:' + Report_Data.All.Summary.Unique_Search.total + ')');
+                    $('#title_link').html('LINK (Total:' + Report_Data.All.Summary.Link.total + ')');
+                    $('#title_proposal').html('PROPOSAL (Total:' + Report_Data.All.Summary.Proposal.total + ')');
+                    $('#title_sale').html('SALE (Total:' + Report_Data.All.Summary.Sale.total + ')');
+                    $('#title_premium').html('PREMIUM (Total:' + IndianMoneyFormat(Report_Data.All.Summary.Premium.total) + ' INR)');
+                    $('#title_sum_insured').html('SUM_INSURED (Total:' + IndianMoneyFormat(Report_Data.All.Summary.Sum_Insured.total) + ' INR)');
+                    $('#title_od').html('Commissionable (Total:' + IndianMoneyFormat(Report_Data.All.Summary.Comm_Premium.total) + ' INR)');
+                    $('#Search').html(Report_Data['All'].Summary.Search.total);
+                    $('#Unique_Search').html(Report_Data['All'].Summary.Unique_Search.total);
+                    $('#Link').html(Report_Data['All'].Summary.Link.total);
+                    $('#Proposal').html(Report_Data['All'].Summary.Proposal.total);
+                    $('#Policy').html(Report_Data['All'].Summary.Sale.total);
+                    //$('#Renewal').html(Report_Data['All'].Summary.Renewal.total);
+                    $('#Car').html(Report_Data['Car'].Summary.Sale.total);
+                    $('#Tw').html(Report_Data['TW'].Summary.Sale.total);
+                    $('#CV').html(Report_Data['CV'].Summary.Sale.total);
+                    $('#Travel').html(Report_Data['Travel'].Summary.Sale.total);
+                    $('#Health').html(Report_Data['Health'].Summary.Sale.total);
+                    $('#Premium').html(Report_Data['All'].Summary.Premium.total);
+                    $('#Comm_Premium').html(Report_Data['All'].Summary.Comm_Premium.total);
+                    $('#ErpCs').html(Report_Data['All'].Summary.ErpCs.total);
+                    $('#proposal_cnt').html(Report_Data['All'].Summary.Proposal.total);
+                    $('#link_cnt').html(Report_Data['All'].Summary.Link.total);
+                    $('#Sale').html(Report_Data['All'].Summary.Sale.total);
+                    $('#Paypass').html(Report_Data['All'].Summary.Paypass.total);
+                    $('#PG_Dropoff').html(Report_Data['All'].Summary.Dropoff.total);
+                    var link_dr_cnt = Report_Data['All'].Summary.Link.total - Report_Data['All'].Summary.Proposal.total;
+                    if (Report_Data['All']['Summary'].hasOwnProperty('LinkDropoffList') && Object.keys(Report_Data['All']['Summary']['LinkDropoffList']).length) {
+                        link_dr_cnt = Object.keys(Report_Data['All']['Summary']['LinkDropoffList']).length;
+                    }
+                    $('#LINK_Dropoff').html(link_dr_cnt);
+                    $('#Fail').html(Report_Data['All'].Summary.Fail.total);
+                    $("#car_summary,#tw_summary,#health_summary").show();
+                    if (Report_Data['Health'].Summary.Sale.total === 0) {
+                        $("#health_summary").hide();
+                    }
+                    if (Report_Data['Car'].Summary.Sale.total === 0) {
+                        $("#car_summary").hide();
+                    }
+
+                    if (Report_Data['TW'].Summary.Sale.total === 0) {
+                        $("#tw_summary").hide();
+                    }
+
+                    GenerateChart('All');
+                    GenerateChart('Car');
+                    GenerateChart('TW');
+                    GenerateChart('CV');
+                    GenerateChart('Health');
+                    GenerateChart('Travel');
+                    GenerateChart('Term');
+                    //$("#title_car_insurer_premium").tab('show');
+                    $("#title_car_insurer_nop").click();
+                    GenerateBar('Insurer', 'NOP', 'chart_car_insurer_nop', Report_Data['Car']['Summary']['Insurer_Nop'], 'title_car_insurer_nop');
+                    //$("#title_tw_insurer_premium").tab('show');
+                    $("#title_tw_insurer_nop").click();
+                    GenerateBar('Insurer', 'NOP', 'chart_tw_insurer_nop', Report_Data['TW']['Summary']['Insurer_Nop'], 'title_tw_insurer_nop');
+                    $("#title_health_insurer_nop").click();
+                    GenerateBar('Insurer', 'NOP', 'chart_health_insurer_nop', Report_Data['Health']['Summary']['Insurer_Nop'], 'title_health_insurer_nop');
+                    var arr_duration = {0: 'NCB_0', 20: 'NCB_20', 25: 'NCB_25', 35: 'NCB_35', 45: 'NCB_45', 50: 'NCB_50', 60: 'WITH_CLAIM'};
+                    var arr_product = ['Car', 'TW'];
+                    for (var k in arr_product) {
+                        var duration = Report_Data[arr_product[k]]['Summary']['NCB'];
+                        var duration_tmp = {};
+                        for (var k1 in arr_duration) {
+                            if (duration.hasOwnProperty(arr_duration[k1])) {
+                                duration_tmp[arr_duration[k1]] = duration[arr_duration[k1]];
+                            }
+                        }
+                        Report_Data[arr_product[k]]['Summary']['NCB'] = duration_tmp;
+                    }
+
+                    var arr_duration = {6: 'LESS THAN 6 HRS', 24: 'BETN 6 TO 24 HRS', 48: 'BETN 1 TO 2 DAYS', 120: 'BETN 2 TO 5 DAYS', 5000: 'MORE THEN 5 DAYS'};
+                    var arr_product = ['Car', 'TW', 'Health'];
+                    for (var k in arr_product) {
+                        var duration = Report_Data[arr_product[k]]['Summary']['Duration'];
+                        var duration_tmp = {};
+                        for (var k1 in arr_duration) {
+                            if (duration.hasOwnProperty(arr_duration[k1])) {
+                                duration_tmp[arr_duration[k1]] = duration[arr_duration[k1]];
+                            }
+                        }
+                        Report_Data[arr_product[k]]['Summary']['Duration'] = duration_tmp;
+                    }
+                    //for agent summary
+                    var objSummaryGroupChannel = {
+                        'PB-DIRECT': ['PB-Direct', 'BOT', 'PB-SS'],
+                        'DC-CHANNEL': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+                        'SM-CHANNEL': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA', 'SM-FOS'],
+                        'GS-CHANNEL': ['GS-POSP', 'GS-FOS'],
+                        'OTHERS': ['FINPEACE', 'RBS']
+                    };
+                    for (var k in Report_Data) {
+
+                        for (var k1 in Report_Data[k]['Summary']) {
+
+                            Report_Data[k]['SummaryGroup'][k1] = {
+                                'total': 0,
+                                'PB-DIRECT': 0,
+                                'DC-CHANNEL': 0,
+                                'SM-CHANNEL': 0,
+                                'GS-CHANNEL': 0,
+                                'OTHERS': 0
+                            };
+                            Report_Data[k]['SummaryGroup'][k1]['total'] = Report_Data[k]['Summary'][k1]['total'];
+                            for (var k2 in Report_Data[k]['Summary'][k1]) {
+                                var ind_val = (Report_Data[k]['Summary'][k1][k2] - 0);
+                                for (var k3 in arr_channel_group) {
+                                    if (objSummaryGroupChannel[arr_channel_group[k3]].indexOf(k2) > -1) {
+                                        Report_Data[k]['SummaryGroup'][k1][arr_channel_group[k3]] += ind_val;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    $("#title_summary_search").click();
+                    GenerateStackedBar('Insurer', 'Search', 'chart_summary_search', Report_Data, 'title_summary_search', 'SummaryGroup', arr_channel_group);
+                    //for agent summary
+                    var objAgentGroupChannel = {
+                        'PB-SS': ['PB-SS'],
+                        'DC-CHANNEL': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+                        'SM-CHANNEL': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA', 'SM-FOS'],
+                        'GS-CHANNEL': ['GS-POSP', 'GS-FOS']
+                    };
+                    for (var k in Report_Data) {
+                        Report_Data[k]['AgentGroup'] = {};
+                        for (var k1 in Report_Data[k]['Summary']) {
+
+                            Report_Data[k]['AgentGroup'][k1] = {
+                                'total': 0,
+                                'PB-SS': 0,
+                                'DC-CHANNEL': 0,
+                                'SM-CHANNEL': 0,
+                                'GS-CHANNEL': 0
+                            };
+                            console.log('AgentGroup', k, k1);
+                            if (Report_Data[k]['Agent'].hasOwnProperty(k1)) {
+                                Report_Data[k]['AgentGroup'][k1]['total'] = Report_Data[k]['Agent'][k1]['total'];
+                                for (var k2 in Report_Data[k]['Agent'][k1]) {
+                                    var ind_val = (Report_Data[k]['Agent'][k1][k2] - 0);
+                                    for (var k3 in arr_agent_group) {
+                                        if (objAgentGroupChannel[arr_agent_group[k3]].indexOf(k2) > -1) {
+                                            Report_Data[k]['AgentGroup'][k1][arr_agent_group[k3]] += ind_val;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    $("#title_summary_agent_search").click();
+                    GenerateStackedBar('Insurer', 'Search', 'chart_summary_agent_search', Report_Data, 'title_summary_agent_search', 'AgentGroup', arr_agent_group);
+                    //funnel
+                    GenerateFunnel('Insurer', 'Search', 'all_funnel', Report_Data, 'title_summary_search');
+                    var tabtitle = "Unique Search(#" + Report_Data['All']['SummaryGroup']['Unique_Search']['total'] + ')';
+                    $('#title_summary_unique_search').html(tabtitle);
+                    var tabtitle = "Link(#" + Report_Data['All']['SummaryGroup']['Link']['total'] + ')';
+                    $('#title_summary_link').html(tabtitle);
+                    var tabtitle = "Proposal(#" + Report_Data['All']['SummaryGroup']['Proposal']['total'] + ')';
+                    $('#title_summary_proposal').html(tabtitle);
+                    var tabtitle = "Sale(#" + Report_Data['All']['SummaryGroup']['Sale']['total'] + ')';
+                    $('#title_summary_sale').html(tabtitle);
+                    var tabtitle = "Premium(#" + Report_Data['All']['SummaryGroup']['Premium']['total'] + ')';
+                    $('#title_summary_premium').html(tabtitle);
+                    var tabtitle = "Commissionable Premium(#" + Report_Data['All']['SummaryGroup']['Comm_Premium']['total'] + ')';
+                    $('#title_summary_comm_premium').html(tabtitle);
+                    var tabtitle = "Link(#" + Report_Data['All']['AgentGroup']['Link']['total'] + ')';
+                    $('#title_summary_agent_link').html(tabtitle);
+                    var tabtitle = "Proposal(#" + Report_Data['All']['AgentGroup']['Proposal']['total'] + ')';
+                    $('#title_summary_agent_proposal').html(tabtitle);
+                    var tabtitle = "Sale(#" + Report_Data['All']['AgentGroup']['Sale']['total'] + ')';
+                    $('#title_summary_agent_sale').html(tabtitle);
+                    if (Report_Data.hasOwnProperty('Stats')) {
+                        $('#cachetitle').show();
+                        $('#cachetitle').html('<i>Cached On - ' + (new Date(Report_Data.Stats.mtime)).toLocaleString() + '</i>');
+                    } else {
+                        $('#cachetitle').hide();
+                    }
+
+
+                });
+            }
+            var arr_stage = ['Search', 'Link', 'Proposal', 'Sale'];
+            $("#title_summary_search").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Search', 'chart_summary_search', Report_Data, 'title_summary_search', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_unique_search").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Unique_Search', 'chart_summary_unique_search', Report_Data, 'title_summary_unique_search', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_link").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Link', 'chart_summary_link', Report_Data, 'title_summary_link', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_proposal").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Proposal', 'chart_summary_proposal', Report_Data, 'title_summary_proposal', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_sale").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Sale', 'chart_summary_sale', Report_Data, 'title_summary_sale', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_premium").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Premium', 'chart_summary_premium', Report_Data, 'title_summary_premium', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_comm_premium").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Comm_Premium', 'chart_summary_comm_premium', Report_Data, 'title_summary_comm_premium', 'SummaryGroup', arr_channel_group);
+            });
+            $("#title_summary_agent_search").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Search', 'chart_summary_agent_search', Report_Data, 'title_summary_agent_search', 'AgentGroup', arr_agent_group);
+            });
+            $("#title_summary_agent_link").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Link', 'chart_summary_agent_link', Report_Data, 'title_summary_agent_link', 'AgentGroup', arr_agent_group);
+            });
+            $("#title_summary_agent_proposal").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Proposal', 'chart_summary_agent_proposal', Report_Data, 'title_summary_agent_proposal', 'AgentGroup', arr_agent_group);
+            });
+            $("#title_summary_agent_sale").on('shown.bs.tab', function (e) {
+                GenerateStackedBar('Insurer', 'Sale', 'chart_summary_agent_sale', Report_Data, 'title_summary_agent_sale', 'AgentGroup', arr_agent_group);
+            });
+            $("#title_car_insurer_nop").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'NOP', 'chart_car_insurer_nop', Report_Data['Car']['Summary']['Insurer_Nop'], 'title_car_insurer_nop');
+                //$('#title_car_insurer_nop').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_insurer_premium").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'PREMIUM', 'chart_car_insurer_premium', Report_Data['Car']['Summary']['Insurer_Premium'], 'title_car_insurer_premium');
+                //$('#title_car_insurer_premium').html('PREMIUM#' + Report_Data['Car']['Summary']['Premium']['total']);
+            });
+            $("#title_car_make").on('shown.bs.tab', function (e) {
+                GenerateBar('Make', 'NOP', 'chart_car_make', Report_Data['Car']['Summary']['Make'], 'title_car_make');
+                //$('#title_car_insurer_nop').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_rto").on('shown.bs.tab', function (e) {
+                GenerateBar('Rto', 'NOP', 'chart_car_rto', Report_Data['Car']['Summary']['Rto'], 'title_car_rto');
+                //$('#title_car_insurer_nop').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_fuel").on('shown.bs.tab', function (e) {
+                GenerateBar('Fuel', 'NOP', 'chart_car_fuel', Report_Data['Car']['Summary']['Fuel'], 'title_car_fuel');
+                //$('#title_car_fuel').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_policy_type").on('shown.bs.tab', function (e) {
+                GenerateBar('Policy_Type', 'NOP', 'chart_car_policy_type', Report_Data['Car']['Summary']['Policy_Type'], 'title_car_policy_type');
+                //$('#title_car_policy_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_policy_sub_type").on('shown.bs.tab', function (e) {
+                GenerateBar('Policy_Sub_Type', 'NOP', 'chart_car_policy_sub_type', Report_Data['Car']['Summary']['Policy_Sub_Type'], 'title_car_policy_sub_type');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_rollover").on('shown.bs.tab', function (e) {
+                GenerateBar('Rollover', 'NOP', 'chart_car_rollover', Report_Data['Car']['Summary']['Rollover'], 'title_car_rollover');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_rm").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_car_rm', Report_Data['Car']['Summary']['RM'], 'title_car_rm');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_ncb").on('shown.bs.tab', function (e) {
+                GenerateBar('Ncb', 'NOP', 'chart_car_ncb', Report_Data['Car']['Summary']['NCB'], 'title_car_ncb');
+            });
+            $("#title_car_zd").on('shown.bs.tab', function (e) {
+                GenerateBar('Zd', 'NOP', 'chart_car_zd', Report_Data['Car']['Summary']['ZD'], 'title_car_zd');
+            });
+            $("#title_car_duration").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_car_duration', Report_Data['Car']['Summary']['Duration'], 'title_car_duration');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_preferred_payment_time").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_car_preferred_payment_time', Report_Data['Car']['Summary']['Payment_Preferred_Time'], 'title_car_preferred_payment_time');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_car_platform").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_car_platform', Report_Data['Car']['Summary']['Platform'], 'title_car_platform');
+            });
+            //tw
+            $("#title_tw_insurer_nop").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'NOP', 'chart_tw_insurer_nop', Report_Data['TW']['Summary']['Insurer_Nop'], 'title_tw_insurer_nop');
+            });
+            $("#title_tw_insurer_premium").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'PREMIUM', 'chart_tw_insurer_premium', Report_Data['TW']['Summary']['Insurer_Premium'], 'title_tw_insurer_premium');
+            });
+            $("#title_tw_make").on('shown.bs.tab', function (e) {
+                GenerateBar('Make', 'NOP', 'chart_tw_make', Report_Data['TW']['Summary']['Make'], 'title_tw_make');
+            });
+            $("#title_tw_rto").on('shown.bs.tab', function (e) {
+                GenerateBar('Rto', 'NOP', 'chart_tw_rto', Report_Data['TW']['Summary']['Rto'], 'title_tw_rto');
+            });
+            $("#title_tw_fuel").on('shown.bs.tab', function (e) {
+                GenerateBar('Fuel', 'NOP', 'chart_tw_fuel', Report_Data['TW']['Summary']['Fuel'], 'title_tw_fuel');
+            });
+            $("#title_tw_policy_type").on('shown.bs.tab', function (e) {
+                GenerateBar('Policy_Type', 'NOP', 'chart_tw_policy_type', Report_Data['TW']['Summary']['Policy_Type'], 'title_tw_policy_type');
+            });
+            $("#title_tw_policy_sub_type").on('shown.bs.tab', function (e) {
+                GenerateBar('Policy_Sub_Type', 'NOP', 'chart_tw_policy_sub_type', Report_Data['TW']['Summary']['Policy_Sub_Type'], 'title_tw_policy_sub_type');
+            });
+            $("#title_tw_rollover").on('shown.bs.tab', function (e) {
+                GenerateBar('Rollover', 'NOP', 'chart_tw_rollover', Report_Data['TW']['Summary']['Rollover'], 'title_tw_rollover');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_tw_rm").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_tw_rm', Report_Data['TW']['Summary']['RM'], 'title_tw_rm');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_tw_ncb").on('shown.bs.tab', function (e) {
+                GenerateBar('Ncb', 'NOP', 'chart_tw_ncb', Report_Data['TW']['Summary']['NCB'], 'title_tw_ncb');
+            });
+            $("#title_tw_zd").on('shown.bs.tab', function (e) {
+                GenerateBar('Zd', 'NOP', 'chart_tw_zd', Report_Data['TW']['Summary']['ZD'], 'title_tw_zd');
+            });
+            $("#title_tw_duration").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_tw_duration', Report_Data['TW']['Summary']['Duration'], 'title_tw_duration');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_tw_preferred_payment_time").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_tw_preferred_payment_time', Report_Data['TW']['Summary']['Payment_Preferred_Time'], 'title_tw_preferred_payment_time');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_tw_platform").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_tw_platform', Report_Data['TW']['Summary']['Platform'], 'title_tw_platform');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            //health
+            $("#title_health_insurer_nop").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'NOP', 'chart_health_insurer_nop', Report_Data['Health']['Summary']['Insurer_Nop'], 'title_health_insurer_nop');
+            });
+            $("#title_health_insurer_premium").on('shown.bs.tab', function (e) {
+                GenerateBar('Insurer', 'PREMIUM', 'chart_health_insurer_premium', Report_Data['Health']['Summary']['Insurer_Premium'], 'title_health_insurer_premium');
+            });
+            $("#title_health_policy_type").on('shown.bs.tab', function (e) {
+                GenerateBar('Policy_Type', 'NOP', 'chart_health_policy_type', Report_Data['Health']['Summary']['Policy_Type'], 'title_health_policy_type');
+            });
+            $("#title_health_city").on('shown.bs.tab', function (e) {
+                GenerateBar('City', 'NOP', 'chart_health_city', Report_Data['Health']['Summary']['City'], 'title_health_city');
+            });
+            $("#title_health_si").on('shown.bs.tab', function (e) {
+                GenerateBar('SI', 'NOP', 'chart_health_si', Report_Data['Health']['Summary']['SI'], 'title_health_si');
+            });
+            $("#title_health_rm").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_health_rm', Report_Data['Health']['Summary']['RM'], 'title_health_rm');
+            });
+            $("#title_health_member_count").on('shown.bs.tab', function (e) {
+                GenerateBar('Member_Count', 'NOP', 'chart_health_member_count', Report_Data['Health']['Summary']['Member_Count'], 'title_health_member_count');
+            });
+            $("#title_health_duration").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_health_duration', Report_Data['Health']['Summary']['Duration'], 'title_health_duration');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_health_preferred_payment_time").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_health_preferred_payment_time', Report_Data['Health']['Summary']['Payment_Preferred_Time'], 'title_health_preferred_payment_time');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            $("#title_health_platform").on('shown.bs.tab', function (e) {
+                GenerateBar('Reporting', 'NOP', 'chart_health_platform', Report_Data['Health']['Summary']['Platform'], 'title_health_platform');
+                //$('#title_car_policy_sub_type').html('NOP#' + Report_Data['Car']['Summary']['Sale']['total']);
+            });
+            function GenerateChart(product) {
+                $('#productTitle').html('REPORT ::' + product);
+                $('#waitloader').show();
+                $.each(Report_Data[product]['Summary'], function (index, value) {
+                    if (['Insurer_Nop', 'Insurer_Premium', 'Make', 'Rto', 'Fuel', 'Policy_Type', 'Policy_Sub_Type', 'Rollover', 'SI', 'City', 'Member_Count', 'RM', 'Duration', 'NCB', 'ZD', 'Payment_Preferred_Time', 'Platform'].indexOf(index) < 0) {
+                        console.log('data', index, value);
+                        var chartname = 'chart_' + product + '_' + index;
+                        var charttitle = 'title_' + product + '_' + index;
+                        chartname = chartname.toLowerCase();
+                        charttitle = charttitle.toLowerCase();
+                        if ($('#' + chartname.toLowerCase()).length > 0 && index !== 'Total') {
+                            if (['Premium', 'Sum_Insured', 'Od'].indexOf(index) > -1) {
+                                $('#' + charttitle).html(product + '(#' + IndianMoneyFormat(Report_Data[product]['Summary'][index]['total']) + ')');
+                            } else {
+                                $('#' + charttitle).html(product + '(#' + Report_Data[product]['Summary'][index]['total'] + ')');
+                            }
+                            //console.log('Final', categories, PolicyBoss, Finmart, ASR, PB_Emp_App);
+                            console.log('area', chartname);
+                            var chartData = [];
+                            $.each(value, function (index1, value1) {
+                                if (index1 != 'total') {
+                                    console.log('data1', index1, value1);
+                                    var jsonStr = JSON.parse('{"source":"' + index1 + '","' + index.toString().toLowerCase() + '":' + value1 + '}');
+                                    chartData.push(jsonStr);
+                                }
+                            });
+                            console.log('Final', chartData);
+                            var chart = AmCharts.makeChart(chartname, {
+                                "type": "pie",
+                                "theme": "light",
+                                autoMargins: false,
+                                marginTop: 0,
+                                marginBottom: 0,
+                                marginLeft: 0,
+                                marginRight: 0,
+                                "innerRadius": "40%",
+                                "gradientRatio": [-0.4, -0.4, -0.4, -0.4, -0.4, -0.4, 0, 0.1, 0.2, 0.1, 0, -0.2, -0.5],
+                                "dataProvider": chartData,
+                                //"balloonText": "[[value]]",
+                                "valueField": index.toString().toLowerCase(),
+                                "titleField": "source",
+                                //"labelText": "",
+                                "labelText": "[[percents]]%",
+                                /*"balloon": {
+                                 "drop": true,
+                                 "adjustBorderColor": false,
+                                 "color": "#FFFFFF",
+                                 "fontSize": 16
+                                 },*/
+                                "export": {
+                                    "enabled": true
+                                },
+                                "legend": {
+                                    "position": "absolute",
+                                    "maxColumns": 3,
+                                    "top": 200,
+                                    "align": "left"
+                                }
+                            });
+                        }
+                    }
+                });
+                $('#waitloader').hide();
+            }
+            function sleep(delay) {
+                var start = new Date().getTime();
+                while (new Date().getTime() < start + delay)
+                    ;
+            }
+            function GenerateBar(key_1, key_2, barid, bardata, tabid) {
+                if (!$('#' + barid).length) {
+                    return;
+                }
+                //sleep(1000);
+                // Themes begin
+                am4core.useTheme(am4themes_kelly);
+                am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+                $('#' + barid).html('');
+                var chart = am4core.create(barid, am4charts.XYChart3D);
+                var arr_chart_data = [];
+                var ind_obj = bardata;
+                for (var key in ind_obj) {
+                    if (ind_obj.hasOwnProperty(key) && ind_obj[key] > 0) {
+                        var chart_json = JSON.parse('{"' + key_1 + '":"' + key + '","' + key_2 + '":"' + ind_obj[key] + '","color":""}');
+                        chart_json.color = chart.colors.next();
+                        arr_chart_data.push(chart_json);
+                    }
+
+                }
+                console.log(key_1, key_2, barid, arr_chart_data);
+// Add data
+                chart.data = arr_chart_data;
+// Create axes
+                var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+                categoryAxis.dataFields.category = key_1;
+                categoryAxis.autoGridCount = false;
+                categoryAxis.gridCount = arr_chart_data.length;
+                categoryAxis.minHorizontalGap = 0;
+                categoryAxis.numberFormatter.numberFormat = "#";
+                categoryAxis.renderer.inversed = true;
+                var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+                valueAxis.inside = true;
+                valueAxis.labelsEnabled = true;
+// Create series
+                var series = chart.series.push(new am4charts.ColumnSeries3D());
+                series.dataFields.valueX = key_2;
+                series.dataFields.categoryY = key_1;
+                series.name = key_2;
+                series.columns.template.propertyFields.fill = "color";
+                series.columns.template.tooltipText = "{categoryY} :: {valueX}";
+                series.columns.template.column3D.stroke = am4core.color("#fff");
+                series.columns.template.column3D.strokeOpacity = 0.2;
+                var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+                labelBullet.locationX = 0.2;
+                labelBullet.label.text = "{valueX}";
+                //labelBullet.label.fill = am4core.color("#fff");
+
+                $('#waitloader').hide();
+            }
+            function GenerateStackedBar(key_1, key_2, barid, bardata, tabid, category = 'SummaryGroup', arr_group) {
+                if (!$('#' + barid).length) {
+                    return;
+                }
+                console.log('GenerateStackedBar', key_1, key_2, barid, tabid)
+                //sleep(1000);
+                // Themes begin
+                am4core.useTheme(am4themes_kelly);
+                am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+                $('#' + barid).html('');
+                var tabtitle = key_2 + "(#" + bardata['All'][category][key_2]['total'] + ')';
+                $('#' + tabid).html(tabtitle);
+                var chart = am4core.create(barid, am4charts.XYChart3D);
+                //var chart = am4core.create(barid, am4charts.XYChart);
+                var arr_chart_data = [];
+                var ind_obj = bardata;
+                //var arr_channel_group = ['PB-DIRECT', 'DC-CHANNEL', 'SM-CHANNEL', 'OTHERS'];
+                for (var k4 in arr_group) {
+
+                    var key = arr_group[k4];
+                    if (ind_obj['All'][category][key_2][key] > 0) {
+                        console.log('Loop', key);
+                        var chart_json = {
+                            'source': key + '_' + key_2 + '(#' + ind_obj['All'][category][key_2][key] + ')',
+                            //'source': key,
+                            'car': ind_obj['Car'][category][key_2][key],
+                            'tw': ind_obj['TW'][category][key_2][key],
+                            'cv': ind_obj['CV'][category][key_2][key],
+                            'health': ind_obj['Health'][category][key_2][key],
+                            'travel': ind_obj['Travel'][category][key_2][key],
+                            'term': ind_obj['Term'][category][key_2][key]
+                        };
+                        arr_chart_data.push(chart_json);
+                    }
+                }
+                console.log('arr_chart_data', arr_chart_data, ind_obj['All'][category][key_2][key]);
+                chart.data = arr_chart_data;
+                chart.legend = new am4charts.Legend();
+                chart.legend.position = "bottom";
+// Create axes
+                var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                categoryAxis.dataFields.category = "source";
+                categoryAxis.renderer.grid.template.location = 0;
+                var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                valueAxis.renderer.inside = true;
+                valueAxis.renderer.labels.template.disabled = true;
+                valueAxis.min = 0;
+// Create series
+                function createSeries(field, name) {
+
+                    // Set up series
+                    var series = chart.series.push(new am4charts.ColumnSeries3D());
+                    series.name = name;
+                    series.dataFields.valueY = field;
+                    series.dataFields.categoryX = "source";
+                    series.sequencedInterpolation = true;
+                    // Make it stacked
+                    series.stacked = true;
+                    // Configure columns
+                    series.columns.template.width = am4core.percent(60);
+                    series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}: {valueY}";
+                    series.columns.template.column3D.stroke = am4core.color("#fff");
+                    series.columns.template.column3D.strokeOpacity = 0.2;
+                    series.columns.template.events.on("hit", function (ev) {
+                        console.log("clicked on ", ev.target, ev.target.column._dataItem._dataContext);
+                        showAgentModal(ev.target.column._dataItem._dataContext.source);
+                    }, this);
+                    // Add label
+                    var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+                    labelBullet.label.text = "{valueY}";
+                    labelBullet.locationY = 0.5;
+                    return series;
+                }
+                createSeries("car", "Car");
+                createSeries("tw", "Two Wheeler");
+                createSeries("cv", "Commercial");
+                createSeries("health", "Health");
+                createSeries("travel", "Travel");
+                createSeries("term", "Term");
+                $('#waitloader').hide();
+            }
+            function sortObject(preObj) {
+                var newO = {};
+                Object.keys(preObj).sort(function (a, b) {
+                    return preObj[b] - preObj[a]
+                }).map(key => newO[key] = preObj[key]);
+                return newO;
+            }
+            function showAgentModal(category, title = '') {
+                var arr_category = category.split('(')[0].split('_');
+                var channel = arr_category[0];
+                var status = arr_category[1];
+                $('#myModal .modal-title').html(title);
+                $('#modalbody').html('');
+                var objAgentGroupChannel = {
+                    'PB-SS': ['PB-SS'],
+                    'DC-CHANNEL': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+                    'SM-CHANNEL': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA', 'SM-FOS'],
+                    'GS-CHANNEL': ['GS-POSP', 'GS-FOS']
+                };
+                var arr_channel = objAgentGroupChannel[channel];
+                $('#modalsummary').html('');
+                for (var a in arr_channel) {
+                    //Report_Data['All']['Agent_List']['Sale']['SM-POSP']
+                    console.log(status, arr_channel[a]);
+                    var arr_agent_data = Report_Data['All']['Agent_List'][status][arr_channel[a]];
+                    if (CONS_CHANNEL != '') {
+                        for (var k in arr_agent_data) {
+                            console.log('Loop', arr_agent_data[k]);
+                            var arr_ind_agent_data = arr_agent_data[k].split('_');
+                            var rowhtml = '<tr><td>' + arr_ind_agent_data[0] + '</td><td>' + arr_ind_agent_data[1] + '</td><td>' + arr_ind_agent_data[2] + '</td><td>' + arr_ind_agent_data[3] + '</td><td>' + arr_ind_agent_data[4] + '</td><td>' + arr_ind_agent_data[6] + '</td></tr>';
+                            $('#modalbody').append(rowhtml);
+                        }
+                    }
+                    $('#modalsummary').append(arr_channel[a] + ':' + arr_agent_data.length.toString() + ' <BR> ');
+                }
+
+                if (CONS_CHANNEL !== '') {
+                    $('#agent_body').show();
+                } else {
+                    $('#agent_body').hide();
+                }
+                //$('#mdErpProcess .modal-content').removeAttr('class').addClass('modal-content modal-col-orange');
+                $('#myModal').modal('show');
+            }
+            function showDropOffModal(dropoff_type, title) {
+                /*var arr_category = category.split('(')[0].split('_');
+                 var channel = arr_category[0];
+                 var status = arr_category[1];
+                 */
+                /*if(dropoff_type == 'PG'){
+                 dropoff_type = 'DropoffList';
+                 }*/
+                $('#myDropModal .modal-title').html(title);
+                $('#modal_dropoff_body').html('');
+                var objAgentGroupChannel = {
+                    'PB-SS': ['PB-SS'],
+                    'DC-CHANNEL': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+                    'SM-CHANNEL': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA', 'SM-FOS'],
+                    'GS-CHANNEL': ['GS-POSP', 'GS-FOS'],
+                    'FINPEACE': ['FINPEACE']
+                };
+                var objAgentGroupChannel = {
+                    'PB-DIRECT': ['PB-Direct', 'BOT', 'PB-SS'],
+                    'DC-CHANNEL': ['DC-POSP', 'DC-NON-POSP', 'DC-FBA'],
+                    'SM-CHANNEL': ['SM-POSP', 'SM-NON-POSP', 'SM-FBA', 'SM-FOS'],
+                    'GS-CHANNEL': ['GS-POSP', 'GS-FOS'],
+                    'OTHERS': ['FINPEACE', 'RBS']
+                };
+                var current_channel = '';
+                for (var k in objAgentGroupChannel) {
+                    if (k.indexOf(CONS_CHANNEL) > -1) {
+                        current_channel = k;
+                        break;
+                    }
+                }
+                $('#modal_dropoff_summary').html('');
+                var obj_summary = {};
+                for (var a in Report_Data['All']['Summary'][dropoff_type]) {
+                    var ind_drop = Report_Data['All']['Summary'][dropoff_type][a];
+                    /*if (obj_summary.hasOwnProperty(ind_drop['CHANNEL']) === false) {
+                     obj_summary[ind_drop['CHANNEL']] = 0;
+                     }
+                     obj_summary[ind_drop['CHANNEL']]++;
+                     */
+                    for (var k1 in objAgentGroupChannel) {
+                        if (objAgentGroupChannel[k1].indexOf(ind_drop['CHANNEL']) > -1) {
+                            c_channel = k1;
+                            break;
+                        }
+                    }
+                    if (obj_summary.hasOwnProperty(c_channel) === false) {
+                        obj_summary[c_channel] = {'NOP': 0, 'PREMIUM': 0};
+                    }
+                    obj_summary[c_channel]['NOP']++;
+                    obj_summary[c_channel]['PREMIUM'] += ind_drop['PREMIUM'] - 0;
+
+                    //&& objAgentGroupChannel[current_channel].indexOf(ind_drop['CHANNEL']) > -1
+                    //if (CONS_CHANNEL != '' && (current_channel != '' || CONS_CHANNEL == 'KM')) {
+                    if (true) {
+                        var arr_ind_agent_data = ind_drop['AGENT'].split('_');
+                        var arr_ind_reporting_data = ind_drop['REPORTING'].split('_');
+                        var agent_name = arr_ind_agent_data[3] + '<br/>SS: ' + arr_ind_agent_data[1] + ',Fba: ' + arr_ind_agent_data[2];
+                        var reporting = arr_ind_reporting_data[0].split('.')[1];
+                        var rowhtml = '<tr><td>' + ind_drop['CHANNEL'] + '</td><td>' + ind_drop['CRN'] + '</td><td>' + ind_drop['PRODUCT'] + '</td><td>' + agent_name + '</td><td>' + ind_drop['CUSTOMER'] + '</td><td>' + ind_drop['PREMIUM'] + '</td><td>' + reporting + '</td><td>' + arr_ind_agent_data[4] + '</td><td>' + ind_drop['On'] + '</td></tr>';
+                        $('#modal_dropoff_body').append(rowhtml);
+                    }
+
+                }
+                var summary_html = [];
+                /*var c_channel = '';
+                 var c_summary = {};
+                 for (var k in obj_summary) {
+                 for (var k1 in objAgentGroupChannel) {
+                 if (objAgentGroupChannel[k1].indexOf(k) > -1) {
+                 c_channel = k1;
+                 break;
+                 }
+                 }
+                 if (c_summary.hasOwnProperty(c_channel) === false) {
+                 c_summary[c_channel] = {'NOP': 0, 'PREMIUM': 0};
+                 }
+                 c_summary[c_channel]['NOP'] += obj_summary[k];
+                 
+                 }*/
+                for (var k2 in obj_summary) {
+                    summary_html.push(k2 + ' : NOP - ' + obj_summary[k2]['NOP'] + ', PREMIUM - ' + obj_summary[k2]['PREMIUM']);
+                }
+                $('#modal_dropoff_summary').html('<b>' + summary_html.join('<br>') + '</b>');
+                if (CONS_CHANNEL !== '' || true) {
+                    $('#dropoff_body').show();
+                } else {
+                    $('#dropoff_body').hide();
+                }
+
+                //$('#mdErpProcess .modal-content').removeAttr('class').addClass('modal-content modal-col-orange');
+                $('#myDropModal').modal('show');
+            }
+            function showHistoricModal(year_range) {
+                var arr_historic = ['tab_all_channel', 'tab_pb-direct', 'tab_dc_channel', 'tab_sm_channel'];
+                if (year_range == '2019_2020') {
+                    arr_historic.push('tab_gs_channel');
+                }
+                if (CONS_CHANNEL !== '') {
+                    for (var k in arr_historic) {
+                        //console.log(arr_historic[k]);
+                        if (arr_historic[k].indexOf(CONS_CHANNEL.toString().toLowerCase()) === -1) {
+                            $('#' + arr_historic[k]).remove();
+                            $('#' + arr_historic[k] + '_li').remove();
+                        }
+                    }
+                }
+                $.get('/report/historic_' + year_range, function (res) {
+                    var historic = res;
+
+                    for (var month in historic) {
+                        if (month == 'Stats') {
+                            continue;
+                        }
+                        for (var channel in historic[month]) {
+                            var table_div = 'table_' + channel.toString().toLowerCase() + '_body';
+                            console.log('historic', table_div);
+                            var color = (month === 'TOTAL-' + year_range) ? (' class="bg-purple"') : '';
+                            $('#' + table_div).append('<tr id="' + month + '_' + channel + '" ' + color + '><td  class="bg-pink">' + month.replace('-', '_') + '</td></tr>');
+                            for (var product in historic[month][channel]) {
+                                for (var status in historic[month][channel][product]) {
+                                    if (['Unique_Search', 'Sale', 'Premium', 'Conversion', 'Agent_Search', 'Agent_Sale'].indexOf(status) > -1) {
+                                        if (month === 'TOTAL-' + year_range && ['Agent_Search', 'Agent_Sale'].indexOf(status) > -1) {
+                                            $('#' + month + '_' + channel).append('<td>NA</td>');
+                                        } else {
+                                            $('#' + month + '_' + channel).append('<td>' + historic[month][channel][product][status] + '</td>');
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    $('#myHistoricModal .modal-title').html('Historic Data FY ' + year_range);
+                    $('#myHistoricModal').modal('show');
+                });
+
+            }
+            function GenerateFunnel(key_1, key_2, barid, bardata, tabid) {
+                if (!$('#' + barid).length) {
+                    return;
+                }
+                console.log('GenerateFunnel', key_1, key_2, barid, tabid)
+                //sleep(1000);
+                // Themes begin
+                am4core.useTheme(am4themes_kelly);
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+
+                // Create chart instance
+                $('#' + barid).html('');
+
+                var chart = am4core.create(barid, am4charts.SlicedChart);
+                chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+
+                chart.data = [{
+                        "name": "Search",
+                        "value": bardata['All']['SummaryGroup']['Search']['total']
+                    }, {
+                        "name": "Link",
+                        "value": bardata['All']['SummaryGroup']['Link']['total']
+                    }, {
+                        "name": "Proposal",
+                        "value": bardata['All']['SummaryGroup']['Proposal']['total']
+                    }, {
+                        "name": "Sale",
+                        "value": bardata['All']['SummaryGroup']['Sale']['total']
+                    }];
+
+                var series = chart.series.push(new am4charts.FunnelSeries());
+                series.colors.step = 2;
+                series.dataFields.value = "value";
+                series.dataFields.category = "name";
+                series.alignLabels = true;
+
+                series.labelsContainer.paddingLeft = 15;
+                series.labelsContainer.width = 200;
+
+                //series.orientation = "horizontal";
+                //series.bottomRatio = 1;
+
+                chart.legend = new am4charts.Legend();
+                chart.legend.position = "bottom";
+                chart.legend.valign = "bottom";
+                chart.legend.margin(5, 5, 20, 5);
+                $('#waitloader').hide();
+            }
+            function create_graph(index, objChart) {
+                Highcharts.chart('report_' + index, objChart);
+            }
+        </script>
+        <script type="text/javascript">
+
+            $(function () {
+
+                //var start = moment().subtract(10, 'days');
+                var start = moment();
+                var end = moment();
+                function cb(start, end) {
+                    var day_diff = end.diff(start, 'days');
+                    console.log(day_diff, 'days');
+                    if (day_diff > 31) {
+                        alert('Report not allowed more than month');
+                    } else {
+                        $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+                        console.log(start.format('YYYY-MM-DD') + '::' + end.format('YYYY-MM-DD'));
+                        GetReport(start.format('YYYY-MM-DD'), end.format('YYYY-MM-DD'));
+                    }
+                }
+
+                $('#reportrange').daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    }
+                }, cb);
+
+                cb(start, end);
+
+            });
+            function IndianMoneyFormat(x) {
+                x = Math.round(x - 0);
+                x = x.toString();
+                var lastThree = x.substring(x.length - 3);
+                var otherNumbers = x.substring(0, x.length - 3);
+                if (otherNumbers !== '')
+                    lastThree = ',' + lastThree;
+                var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+                return res;
+            }
+            function count(options) {
+                var $this = $(this);
+                options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                $this.countTo(options);
+            }
+
+        </script>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,2040 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width,initial-scale=1, minimum-scale=1.0' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Magic FinMart</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min-3.3.7.css">
+    <!-- <script src="bootstrap/js/jquery.min-3.3.1.js"></script> -->
+	<!-- <script src="bootstrap/js/jquery-1.12.3.min.js"></script> -->	 
+    <!-- <script src="bootstrap/js/bootstrap.min-3.3.7.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="bootstrap/js/awesomplete.js"></script>
+    <script src="bootstrap/js/swal.js"></script>
+    <link rel="stylesheet" href="https://projects.verou.me/awesomplete/awesomplete.css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- ---------------------*************************------------------------- -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"/> -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-material-datetimepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <!-- <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script> -->
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <!-- <script type="text/javascript" src="bootstrap/js/moment-with-locales.min"></script> -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap-material-datetimepicker.js"></script>
+    <link href="bootstrap/css/custom.css" rel="stylesheet">
+    <style>
+        .awesomplete {
+            display: block;
+        }
+
+            .awesomplete span {
+                display: none;
+            }
+
+        .swal2-popup .swal2-content {
+            justify-content: center;
+            font-family: inherit !important;
+            font-family: inherit !important;
+            margin: 0;
+            padding: 0;
+            color: #545454;
+            font-size: 1.125em;
+            font-weight: 300;
+            line-height: normal;
+            word-wrap: break-word;
+            height: auto !important;
+            width: auto !important;
+            overflow: hidden !important;
+            outline-style: 0px !important;
+        }
+
+        .GenderError {
+            border: 1px solid #de2222 !important;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .infoPanel div:last-child {
+            margin-bottom: 0px !important;
+        }
+
+        div.ui-datepicker {
+            font-size: 10px !important;
+        }
+
+        .TopSpace {
+            margin-top: 5px;
+        }
+
+        .modal {
+            position: fixed;
+            background-color: black;
+            z-index: 99;
+            opacity: 0.5;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .error_popupbox {
+            position: fixed; /* Sit on top of the page content */
+            box-shadow: 0 0 1px 1px #e5e5e5;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+            display: none;
+            font-family: inherit;
+        }
+
+            .error_popupbox .AgepopScreen {
+                top: 20%;
+                max-width: 94%;
+                margin: 20% auto;
+                height: auto;
+                background: #fff;
+                animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+                display: flex;
+                flex-flow: column;
+            }
+
+                .error_popupbox .AgepopScreen .popupheading {
+                    background: #bfbfbf;
+                    color: #fff;
+                    font-weight: 100;
+                    padding-bottom: 5px;
+                    border-bottom: 3px solid #2196f3;
+                    margin-top: 0px;
+                    font-size: 18px;
+                    padding: 4px;
+                    text-align: center;
+                }
+
+                    .error_popupbox .AgepopScreen .popupheading .closepopup {
+                        float: right;
+                        font-weight: bold;
+                        color: #2196f3;
+                        font-size: 22px;
+                    }
+
+                .error_popupbox .AgepopScreen .Agebox_wrap {
+                    padding: 10px;
+                    margin: 6px;
+                }
+
+                    .error_popupbox .AgepopScreen .Agebox_wrap .AgeBox_grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 300px 1fr;
+                        padding: 5px;
+                    }
+
+                        .error_popupbox .AgepopScreen .Agebox_wrap .AgeBox_grid .popup_data {
+                            padding: 5px;
+                        }
+
+                            .error_popupbox .AgepopScreen .Agebox_wrap .AgeBox_grid .popup_data input {
+                                padding: 6px;
+                                border: 1px solid #2196f3;
+                            }
+
+                            .error_popupbox .AgepopScreen .Agebox_wrap .AgeBox_grid .popup_data .calIcon {
+                                display: inline-block;
+                                background: #2196f3;
+                                margin-left: -5px;
+                                padding: 6px;
+                            }
+
+        .editloader {
+            z-index: 99999;
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+            .editloader img {
+                height: 40px;
+                vertical-align: middle;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                position: absolute;
+                left: 50%;
+            }
+			.gender_selBox{width: 65%;border-width: 0px;border-bottom: 1px solid rgb(0 71 109);}
+			.gender_error {  border:1px red solid !important; }
+    </style>
+</head>
+<body onload=" myEditFunc();">
+
+	<!--Health - Popup Image  -->
+        <div class="overlay_popupImg" >
+            <div class="health_PopupImg" >
+				 <img src="images/health_grid.jpg">
+                <button class="close_popupImg" onclick="continue_func()">Continue</button>
+            </div>
+		</div> 
+    <!--Health - Popup Image - END  -->   
+<div class="editloader" style="display: none" id="editloader_id"><img src="images/mipmap-hdpi/loading.gif" style="height: 120px;"></div>
+
+    <div class="container-fluid healthmaindiv" style="margin-bottom:130px;">
+        <ul class="navigation">
+            <li class="TopSpace">
+                <a><img src="./images/mipmap-hdpi/list-(1).png" class="img-responsive text-center"></a>
+            </li>
+            <li class="Active"><a>INPUT</a></li>
+            <li class="TopSpace disbl_mem_input" style="margin-top: 5px;"><a>QUOTE</a></li>
+            <li class="TopSpace disbl_mem_input" style="margin-top: 5px;"><a>BUY</a></li>
+        </ul>
+
+		
+        <div class="app-content">
+            <div style="position:relative;">
+                <h5 class="memtype_cover">WHO DO YOU WANT TO COVER?</h5>
+                <div style="text-align:center;display:none;" >
+                    <input type="radio" name="insurance_type" checked value="new" onclick="insurance_typeChange();" style="vertical-align:sub;"> Buy a new policy
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="insurance_type" value="renew" onclick="insurance_typeChange();" style="vertical-align:sub;"> Renew existing policy
+                </div>
+                <div class="membertype">
+                    <div class="mem_add_div">
+                        <div>
+                            <div class="mem_Div">
+                                <span class="grab mem_sub" onclick="FuncAdult(-1)"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                <span class="mem_txt">Adult <span id="Adult_count"></span></span>
+                                <span class="grab mem_add adult_mem_add" onclick="FuncAdult(1)"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="mem_1_input" name="mem_1_input" />
+                        <input type="hidden" id="mem_2_input" name="mem_2_input" />
+                        <input type="hidden" id="mem_3_input" name="mem_3_input" />
+                        <input type="hidden" id="mem_4_input" name="mem_4_input" />
+                        <input type="hidden" id="mem_5_input" name="mem_5_input" />
+                        <input type="hidden" id="mem_6_input" name="mem_6_input" />
+                        <div>
+                            <div class="mem_Div">
+                                <span class="grab mem_sub" onclick="FuncChild(-1)"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                <span class="mem_txt">Child <span id="Child_count"></span></span>
+                                <span class="grab mem_add" onclick="FuncChild(1)"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="loader" style="display:none" id="loader_id"><img src="images/mipmap-hdpi/quote-page.gif" style="height: 40px;"></div>
+
+                    <div>
+                        <div class="Elder_Member">
+                            <div class="elderTxt">Eldest Member</div>
+                            <div>
+								<select class="gender_selBox mem1gen" id="Eldest_mem_gen">
+                                        <option disabled selected>Gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                        <option value="TM">Trans-Male</option>
+                                        <option value="TF">Trans-Female</option>
+                                </select>
+                            </div>
+                            <div style="float:right">
+                                <div class="age_input_elder" onclick="AgeBoxDropdown()">
+                                    <div class="drop">
+                                        <input type="text" placeholder="Age" id="Elder_Member_Age" style="width:35px;text-align: center;padding:1px;" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="gen_1_input" name="gen_1_input" />
+                    <input type="hidden" id="gen_2_input" name="gen_2_input" />
+                    <input type="hidden" id="gen_3_input" name="gen_3_input" />
+                    <input type="hidden" id="gen_4_input" name="gen_4_input" />
+                    <input type="hidden" id="gen_5_input" name="gen_5_input" />
+                    <input type="hidden" id="gen_6_input" name="gen_6_input" />
+                    <div class="popupbox">
+                        <div class="popScreen">
+                            <h3 class="text-center popupheading">
+                                Age
+                                <span class="close" onclick="closeAgebox()">&times;</span>
+                            </h3>
+                            <div style="overflow-y:scroll">
+                                <div class="Age_count">
+                                    <br><br><br>
+                                    <ul>
+                                        <li id="print_age" class="print_age" value="value"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="popupbox1">
+                        <div class="popScreen1">
+                            <h3 class="text-center popupheading1">
+                                Member Information
+                                <span class="close" onclick="MemberPopupClose()">&times;</span>
+                            </h3>
+                            <div class="Member_Info">
+                                <div>
+                                    <div class="centralign gender">
+                                        <span class="genderMale male grab" id="Gendermale">
+                                            <img class="img-responsive" id="gen_1_input">
+                                        </span>
+                                        <span class="genderFemale female grab" id="Genderfemale">
+                                            <img class="img-responsive" id="gen_2_input">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="centralign">Eldest Member</div>
+                                <div>
+                                    <div class="age_input">
+                                        <input type="text" placeholder="DOB" id="date">
+                                        <div class="calIcn">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Age_label">
+                                    <div style="display: inline-block">Age - </div>
+                                    <div style="display: inline-block">
+                                        <div class="totalAge">
+                                            <input type="text" style="width:20px" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Member_Info">
+                                <div>
+                                    <div class="centralign gender">
+                                        <span class="genderMale male grab" id="Gendermale">
+                                            <img class="img-responsive" id="gen_1_input">
+                                        </span>
+                                        <span class="genderFemale female grab" id="Genderfemale">
+                                            <img class="img-responsive" id="gen_2_input">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="centralign">Child 1</div>
+                                <div class="age_input">
+                                    <input type="text" placeholder="DOB" id="date">
+                                    <div class="calIcn">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="Age_label">
+                                    <div style="display: inline-block">Age - </div>
+                                    <div style="display: inline-block">
+                                        <div class="totalAge">
+                                            <input type="text" style="width:20px" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="col-md-12 space grab" style="text-align: center;">
+                                <button class="hover-shadow">SUBMIT</button>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <h5 class="text-center">COVER REQUIRED</h5>
+
+                    <div class="coverPanel">
+                        <button class="btn btn-cover" value="300000">3 LACS</button>
+                        <button class="btn btn-cover" value="500000">5 LACS</button>
+                        <button class="btn btn-cover" value="1000000">10 LACS</button>
+                        <button class="btn btn-cover Active MoreBtn" id="more">MORE +  </button>
+                    </div>
+
+                    <div class="coverPanel MoreInsurer" style="overflow-y: scroll;">
+                        <div class="suminsuTitle">
+                            Sum Insured
+                            <span class="cancelbtn" id="CloseCover" onclick="$('.MoreInsurer').hide();">&times</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-cover" value="100000">1 LAC</button>
+						<button class="btn btn-cover" value="150000">1.5 LAC</button>
+                        <button class="btn btn-cover" value="200000">2 LACS</button>
+						<button class="btn btn-cover" value="250000">2.5 LACS</button>
+                        <button class="btn btn-cover" value="300000">3 LACS</button>
+						<button class="btn btn-cover" value="350000">3.5 LACS</button>
+                        <button class="btn btn-cover" value="400000">4 LACS</button>
+						<button class="btn btn-cover" value="450000">4.5 LACS</button>
+                        <button class="btn btn-cover" value="500000">5 LACS</button>
+                        <button class="btn btn-cover" value="600000">6 LACS</button>
+                        <button class="btn btn-cover" value="700000">7 LACS</button>
+                        <button class="btn btn-cover" value="750000">7.5 LACS</button>
+                        <button class="btn btn-cover" value="800000">8 LACS</button>
+                        <button class="btn btn-cover" value="900000">9 LACS</button>
+                        <button class="btn btn-cover" value="1000000">10 LACS</button>
+                        <button class="btn btn-cover" value="1100000">11 LACS</button>
+                        <button class="btn btn-cover" value="1200000">12 LACS</button>
+                        <button class="btn btn-cover" value="1300000">13 LACS</button>
+                        <button class="btn btn-cover" value="1400000">14 LACS</button>
+                        <button class="btn btn-cover" value="1500000">15 LACS</button>
+                        <button class="btn btn-cover" value="2000000">20 LACS</button>
+                        <button class="btn btn-cover" value="2500000">25 LACS</button>
+                        <button class="btn btn-cover" value="3000000">30 LACS</button>
+                        <button class="btn btn-cover" value="3500000">35 LACS</button>
+                        <button class="btn btn-cover" value="4000000">40 LACS</button>
+                        <button class="btn btn-cover" value="4500000">45 LACS</button>
+                        <button class="btn btn-cover" value="5000000">50 LACS</button>
+                        <button class="btn btn-cover" value="5500000">55 LACS</button>
+                        <button class="btn btn-cover" value="6000000">60 LACS</button>
+                        <button class="btn btn-cover" value="6500000">65 LACS</button>
+                        <button class="btn btn-cover" value="7000000">70 LACS</button>
+                        <button class="btn btn-cover" value="7500000">75 LACS</button>
+                        <button class="btn btn-cover" value="8000000">80 LACS</button>
+                        <button class="btn btn-cover" value="8500000">85 LACS</button>
+                        <button class="btn btn-cover" value="9000000">90 LACS</button>
+                        <button class="btn btn-cover" value="9500000">95 LACS</button>
+                        <button class="btn btn-cover" value="10000000">100 LACS</button>
+                        <button class="btn btn-cover" value="15000000">150 LACS</button>
+                        <button class="btn btn-cover" value="20000000">200 LACS</button>
+                        <button class="btn btn-cover" value="30000000">300 LACS</button>
+                        <button class="btn btn-cover" value="60000000">600 LACS</button>
+                    </div>
+
+                    <div style="display: none;">
+                        <h5 class="text-center">TENURE</h5>
+                        <div class="tenure_panel">
+                            <div>1 YEAR</div>
+                            <div>2 YEAR</div>
+                            <div>3 YEAR</div>
+                        </div>
+                    </div>
+                    <div style="position:relative">
+                        <form name="myForm">
+                            <div class="infoPanel Fields">
+                                <div class="col-xs-6" style="display:none;">
+                                    <label class="label">
+                                        CITY
+                                        <input type="text" id="City" name="City" required>
+                                    </label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="label">
+                                        PINCODE
+                                        <input type="number" class="Fields" id="Pincode" name="Pincode" required onkeypress="if (this.value.length == 6) return false;" autocomplete="nope">
+                                    </label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="label">
+                                        AMOUNT
+                                        <input type="number" id="Amount" name="Amount" readonly>
+                                    </label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="label">
+                                        CUSTOMER NAME
+                                        <input type="text" class="Fields" id="Name" name="Name" maxlength="50" autocomplete="nope">
+                                    </label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label class="label">
+                                        MOBILE
+                                        <input type="number" id="Mobile" name="Mobile" onkeypress="if (this.value.length == 10) return false;" autocomplete="nope">
+                                    </label>
+                                </div>
+                                <input type="hidden" id="hdCity_ID" name="hdCity_ID">
+                                <input type="hidden" id="hdPincode" name="hdPincode">
+                                <input type="hidden" id="hdCity_name" name="hdCity_name">
+                                <input type="hidden" id="hdState_name" name="hdState_name">
+								<input type="hidden" id="hdZone" name="hdZone">
+								<input type="hidden" id="hdState_Code" name="hdState_Code">
+                            </div>
+                            <div>
+                                <a href="#" onclick="validateForm()"><div class="btn btn-block btn-custom footerbtn" style="background: #00476d!important;" id="loadingbtn">GET QUOTES</div></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="warningmsg" style="display:none;padding-top: 169px;">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center; font-family:Roboto-Regular, arial, sans-serif;font-size: 16px;font-weight: 700;">ss_id , fba_id , app_version is mandatory</h3>
+		<h3 style="text-align: center; color: red;"><u>Query String</u></h3>
+        <div style="text-align: center; word-wrap: break-word;margin: 10px;font-weight: 600;font-size: 16px;" id="error_query_str"></div>
+    </div>
+
+    <!-- premium initiate error window -->
+    <div class="error_popupbox">
+        <div class="AgepopScreen">
+            <div class="error_popupbox_header" style="color:red;margin:10px;padding:8px;text-align:center;font-size:21px;">
+                <span>Error Message</span>
+            </div>
+            <div class="Age_box">
+                <div class="Agebox_wrap" style="text-align:center;">
+
+                </div>
+            </div>
+            <div class="closeErrpopup" style="background:#009ee3;color:#fff;padding:8px;text-align:center;width:35%;margin-left:34%;margin-bottom:10px;margin-top:10px;">OK</div>
+        </div>
+    </div>
+    <!-- premium initiate error window -->
+    <script type="text/javascript">
+        var geo_lat, geo_long, ss_id, fba_id, ip_address, app_version, mac_address, mobile_no, inputs,udid,origin_crn ="",origin_udid = "";
+        var memberInp, age_val, gendertype, memType;
+        var date_now = new Date();
+        var year = date_now.getFullYear();
+        var Maxyear = year;
+        var Minyear = Maxyear - 100;
+        var new_mem_count;
+        var new_mem_count_child = false;
+        var drp_year_par;
+        var drp_month;
+        var drp_month_child;
+        var drp_year_child;
+        var i = 1;
+		var insurer_selected = "";
+        var log = console.log;
+        var cityName = [];
+        var pincodeName = [];
+        var cityID = [];
+        var cnt_child = 0;
+        var selected_child_count = 0;
+        var cnt_adult = 1;
+        var member_count = 1;
+        var memID = 1;
+        var member1age, member2age, member3age, member4age, member5age, member6age;
+        var member1gender, member2gender, member3gender, member4gender, member5gender, member6gender;
+        var member_1_birth_date, member_2_birth_date, member_3_birth_date, member_4_birth_date, member_5_birth_date, member_6_birth_date;
+
+
+        var amount = 500000;
+        var policy_tenure = 1, multiplyBy = 1;
+        var siteURL = "";
+
+        
+        function continue_func(){
+            $('.overlay_popupImg').hide();
+        }
+        function GeteditUrl() {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            //newurl = "http://qa.policyboss.com";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:50111";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+        var getUrlVars = function() {
+            var vars = [],
+                hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        function Horizon_Method_Convert(method_action,data,type){
+            var obj_horizon_method = {
+                'url': (type=="POST")?"/TwoWheelerInsurance/call_horizon_post":"/TwoWheelerInsurance/call_horizon_get?method_name="+method_action,
+                "data":{
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id:"2"
+                }
+            };
+            return obj_horizon_method;
+        }
+
+        function getClientBrowserDetails() {
+            if (window.navigator && window.navigator.geolocation) {
+                window.navigator.geolocation.getCurrentPosition(
+                    position => {
+                        this.showPosition(position)
+                    },
+                    error => {
+                        console.log('Position Unavailable');
+                    }
+                );
+            }
+        }
+
+        var getIpAddress = $.getJSON("https://ipinfo.io/json", function(data) {});
+        function showPosition(position) {
+            geo_lat = position.coords.latitude;
+            geo_long = position.coords.longitude;
+            ip_address = getIpAddress.responseJSON['ip'];
+        }
+
+        var getStart = function() {
+            //validateForm();
+            var srn = "";
+            //var mainUrl = "quote/premium_initiate";
+
+            mac_address = getParameterByName('mac_address');
+            ss_id = getParameterByName('ss_id');
+            fba_id = getParameterByName('fba_id');
+            ip_address = getParameterByName('ip_address');
+            app_version = getParameterByName('app_version');
+            if (getParameterByName('mobile_no') == "" || getParameterByName('mobile_no') == null) {
+                mobile_no = 0;
+            } else {
+                mobile_no = getParameterByName('mobile_no');
+            }
+            // Pratik
+            var member1Age = parseInt(document.getElementById("mem_1_input").value);
+            var member2Age = parseInt(document.getElementById("mem_2_input").value);
+            var member3Age = parseInt(document.getElementById("mem_3_input").value);
+            var member4Age = parseInt(document.getElementById("mem_4_input").value);
+            var member5Age = parseInt(document.getElementById("mem_5_input").value);
+            var member6Age = parseInt(document.getElementById("mem_6_input").value);
+            // Pratik
+            var str = {
+                "city_id": parseInt(document.getElementById("hdCity_ID").value),
+                "city_name": document.getElementById("hdCity_name").value,
+                "state_name": document.getElementById("hdState_name").value,
+                "health_insurance_si": parseInt(document.getElementById("Amount").value),
+                "adult_count": cnt_adult,
+                "child_count": selected_child_count,
+                "member_1_age": isNaN(member1Age) == true ? "" : parseInt(member1Age),
+                "member_2_age": isNaN(member2Age) == true ? "" : parseInt(member2Age),
+                "member_3_age": isNaN(member3Age) == true ? "" : parseInt(member3Age),
+                "member_4_age": isNaN(member4Age) == true ? "" : parseInt(member4Age),
+                "member_5_age": isNaN(member5Age) == true ? "" : parseInt(member5Age),
+                "member_6_age": isNaN(member6Age) == true ? "" : parseInt(member6Age),
+                "member_1_gender": document.getElementById("gen_1_input").value,
+                "member_2_gender": document.getElementById("gen_2_input").value,
+                "member_3_gender": document.getElementById("gen_3_input").value,
+                "member_4_gender": document.getElementById("gen_4_input").value,
+                "member_5_gender": document.getElementById("gen_5_input").value,
+                "member_6_gender": document.getElementById("gen_6_input").value,
+                "member_1_birth_date": member_1_birth_date == undefined ? "" : member_1_birth_date,
+                "member_2_birth_date": member_2_birth_date == undefined ? "" : member_2_birth_date,
+                "member_3_birth_date": member_3_birth_date == undefined ? "" : member_3_birth_date,
+                "member_4_birth_date": member_4_birth_date == undefined ? "" : member_4_birth_date,
+                "member_5_birth_date": member_5_birth_date == undefined ? "" : member_5_birth_date,
+                "member_6_birth_date": member_6_birth_date == undefined ? "" : member_6_birth_date,
+                "contact_name": document.getElementById("Name").value,
+                "mobile": document.getElementById("Mobile").value,
+                "email": "",
+                "product_id": 2,
+                "policy_tenure": policy_tenure,
+                // "selectedTenure": parseInt(policy_tenure),
+                "tenureDiscount": multiplyBy,
+                "method_type": "Premium",
+                "health_insurance_type": member_count > 1 ? "floater" : "individual",
+                "execution_async": "yes",
+                "crn": 0,
+                "ss_id": ss_id,
+                "agent_source": "0",
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+                "fba_id": fba_id,
+                "ip_address": ip_address,
+                "geo_lat": geo_lat,
+                "geo_long": geo_long,
+                "app_version": app_version,
+                "mac_address": mac_address,
+                "permanent_pincode": parseInt(document.getElementById("hdPincode").value),
+                "quick_quote":true,
+                "topup_applied" : "none",
+				"zone" : document.getElementById("hdZone").value,
+				"State_Code" : document.getElementById("hdState_Code").value,
+				"addon_uar" : "no",
+                "addon_ncb" : "no",
+                "addon_dsi" : "no",
+                "addon_aru" : "no",
+                "addon_ursi" : "no",
+                "addon_sncp" : "no",
+				"addon_cover": "no",
+                "addon_time": "no",
+                "addon_global": "no",
+				"freeAddOnCover": "no",
+				"insurer_selected": insurer_selected
+               
+            };
+            console.log(str);
+            console.log(JSON.stringify(str));
+            //console.log(GetUrl() + '/' + mainUrl);
+            if(cnt_adult==0 && selected_child_count > 1){
+                str["multi_individual"]= "yes"
+            }
+            else{
+                str["multi_individual"]= "no"
+            }
+            if(origin_crn != "" && origin_udid !== ""){
+                str['origin_crn'] = origin_crn;
+                str['origin_udid'] = origin_udid;
+				str['lead_type'] = "cross_sell";
+            }
+            var obj_horizon_data = Horizon_Method_Convert("/quote/premium_initiate",str,"POST");
+            //var returnurl = GetUrl() + '/' + mainUrl;
+            $.ajax({
+                type: "POST",
+                //data: JSON.stringify(str),
+                //url: returnurl,
+                //data: JSON.stringify(obj_horizon_data['data']),
+                //url: obj_horizon_data['url'],
+                data : siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) :  JSON.stringify(str),
+                url :  siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_initiate" ,
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function(data) {
+                    if((data.hasOwnProperty("Details")) && ((data.hasOwnProperty("Summary")) ? ((data.Summary.hasOwnProperty("Request_Unique_Id")) || (data.Summary.Request_Unique_Id == "")) : true )) {
+                        var msg = data.Details.join('<br/>');
+                        $('.error_popupbox').show();
+                        $(".Agebox_wrap").html(msg);
+                    }else{
+
+                        $('.error_popupbox').hide();
+                        $(".Agebox_wrap").empty();
+
+                        console.log(data);
+                        srn = data['Summary']['Request_Unique_Id'];
+                        //alert(srn);
+                        window.location.href = './health_quote.html?srn=' + srn + '&client_id=2';
+                        //alert("success");
+                        $("#loadingbtn").html('Getting Quote . . .');
+
+                    }
+                },
+                error: function(result) {
+                    //alert("Error");
+                }
+            });
+            //$("#loadingbtn").html('Getting Quote . . .');
+        }
+
+        var GetUrl = function() {
+            var url = window.location.href;
+            var newurl;
+            newurl = "http://qa-horizon.policyboss.com:3000";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+                // newurl = "http://horizon.policyboss.com:5000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            //newurl = "http://qa-horizon.policyboss.com:3000";
+            return newurl;
+        }
+        var getParameterByName = function(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results)
+                return null;
+            if (!results[2])
+                return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function stringparam() {
+            mac_address = getParameterByName('mac_address');
+            ss_id = getParameterByName('ss_id');
+            fba_id = getParameterByName('fba_id');
+            ip_address = getParameterByName('ip_address');
+            app_version = getParameterByName('app_version');
+            udid = getParameterByName('udid');
+
+           
+
+            if (getParameterByName('mobile_no') == "" || getParameterByName('mobile_no') == null) {
+                mobile_no = "";
+            } else if((app_version=='FinPeace') && getParameterByName('mobile_no') !="") {
+                mobile_no = getParameterByName('mobile_no');
+                document.getElementById("Mobile").value = getParameterByName('mobile_no');
+            }
+            var arr = ["ss_id", "fba_id", "ip_address", "app_version"];
+            for (var i = 0; i < arr.length; i++) {
+                var qs_val = getParameterByName(arr[i]);
+                fba_id = getParameterByName('fba_id');
+                ip_address = getParameterByName('ip_address');
+                app_version = getParameterByName('app_version');
+                 if (fba_id == "" || fba_id == undefined || fba_id == "0" || app_version == "" || app_version == "0" || app_version == undefined || ss_id == "" || ss_id == undefined || ss_id == "0") {
+                    $('.overlay_popupImg').hide();
+                    $(".healthmaindiv").hide();
+                    $(".warningmsg").show();
+					$("#error_query_str").text(window.location.href.split('?')[1]);
+                }
+                else if(app_version=='FinPeace' && (mobile_no=="" || mobile_no == null || mobile_no==0)){
+                    $('.overlay_popupImg').hide();
+                    $(".healthmaindiv").hide();
+                    $(".warningmsg").show();
+                }
+                else {
+					var srn = getUrlVars()["srn"]
+					if(srn != "" && srn != undefined){
+						$(".healthmaindiv").show();
+						$('.overlay_popupImg').hide();
+					}else{
+						$('.overlay_popupImg').show();
+						$(".healthmaindiv").show();
+					}
+                   
+                    $(".warningmsg").hide();
+                }
+            }
+            if(udid !== "" && udid !== undefined && udid !== null){
+                origin_udid = udid;
+                get_crosssell();
+            }
+        }
+
+        function cities() {
+            $.ajax({
+                type: "GET",
+                //url: url,
+                dataType: "json",
+                //data: {'method_name': "/cities/list"},
+                data : siteURL.indexOf('https') == 0 ?  { 'method_name': "/cities/list" } : "",
+                url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + '/' + "cities/list",
+                success: function(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        cityName.push({
+                            label: data[i]["City_Name"] + "( " + data[i]["State_Name"] + ')',
+                            value: data[i]["City_ID"] + "+" + data[i]["pincode"]
+                        });
+                    }
+                    awesomplete.list = cityName;
+                    console.log(awesomplete.list);
+                },
+                error: function(result) {
+                   
+                }
+            });
+           
+        }
+
+        // pincodes Pratik
+        function pincodes () {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data : siteURL.indexOf('https') == 0 ?  { 'method_name': "/quote/getPincodes" } : "",
+                url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() + "/quote/getPincodes",
+                success: function (data) {
+                    
+                    for (var i = 0; i < data.length; i++) {
+                        pincodeName.push({
+                            label: data[i]["Pincode"] + "(" + data[i]["City"]+ ")",
+                            value: data[i]["City"] + "+" + data[i]["State"] + "+" + data[i]["City_Id"] + "+" + data[i]["Pincode"]+ "+" + data[i]["ZONECD"]+ "+" + data[i]["State_Code"]
+                        });
+                    }
+                    PincodeLst.list = pincodeName;
+                    console.log(PincodeLst._list);
+                },
+                error: function (result) {
+                
+                }
+            });
+           
+        }
+
+        var input_city = document.getElementById("City");
+        var awesomplete = new Awesomplete(input_city, {
+            minChars: 1,
+            autoFirst: true,
+            maxItems: 10,
+            replace: function(suggestion) {
+                console.log('suggestion', suggestion);
+                this.input.value = suggestion.label;
+                var Value = suggestion.value.split('+');
+                document.getElementById('hdCity_ID').value = suggestion.value.split('+')[0];
+                document.getElementById('City').value = suggestion.label;
+                document.getElementById('hdPincode').value = suggestion.value.split('+')[1];
+                document.getElementById('hdCity_name').value = suggestion.label.split('(')[0];
+                var stateName = suggestion.label.split('(')[1];
+                stateName = stateName.substring(0, stateName.length - 1);
+                document.getElementById('hdState_name').value = stateName.trim();
+            }
+        });
+
+        var input_pincode = document.getElementById("Pincode");
+        var PincodeLst = new Awesomplete(input_pincode, {
+            minChars: 1,
+            autoFirst: true,
+            maxItems: 10,
+            replace: function (suggestion) {
+               
+                console.log('suggestion', suggestion);
+                this.input.value = suggestion.label.split('(')[0]; //suggestion.label;
+                document.getElementById('City').value = suggestion.value.split('+')[0] + " (" + suggestion.value.split('+')[1] + ") ";
+                document.getElementById('hdState_name').value = suggestion.value.split('+')[1];
+                document.getElementById('hdCity_ID').value = suggestion.value.split('+')[2];
+                document.getElementById('hdPincode').value = suggestion.value.split('+')[3];
+				document.getElementById('hdZone').value = suggestion.value.split('+')[4];
+				document.getElementById('hdState_Code').value = suggestion.value.split('+')[5];
+                document.getElementById('hdCity_name').value = suggestion.value.split('+')[0];
+
+            }
+        });
+
+        // Pratik
+        function validateForm() {
+		
+		    getPremanent();   // Check pincode data 
+			
+			var name = document.forms["myForm"]["Name"];
+            var city = document.forms["myForm"]["City"];
+            var phone = document.forms["myForm"]["Mobile"];
+            var ElderGender = document.getElementById("Eldest_mem_gen");
+            var ElderAge = document.getElementById("Elder_Member_Age");
+            var Pincode = document.getElementById("Pincode");
+            var testMemberValidation = false;
+
+            var err = 0;
+            var _rex = /^[a-zA-Z ]+$/;
+
+            //if (amount.value == "") {
+            // amount.value = "0"
+            //}
+
+            var sminsured = parseInt(amount.value);
+
+            if (cnt_adult == 1 && cnt_child > 0) {
+                new_mem_count_child = true;
+            }
+            if(cnt_adult ==0 && selected_child_count >0){
+                ElderGender = document.getElementById("gen_3_input");
+            }
+
+            if (ElderGender.value == "" || ElderGender.value == undefined || ElderGender.value == "Gender") {
+                err++;
+                swal({ text: "Please Select Gender" }).then((result) => { });
+				$(".mem1gen").addClass('gender_error');
+                //GenderError
+                //Gendermale
+                //Genderfemale
+
+                return false;
+            }
+            else {
+                if(cnt_adult > 0){
+                    member1gender = ElderGender.value; $(".mem1gen").removeClass('gender_error');
+                }else{
+                    member3gender = ElderGender.value; $(".mem1gen").removeClass('gender_error');
+                }
+            }
+
+            if(cnt_adult > 0){
+                if (ElderAge.value == "" || ElderAge.value < 18 || ElderAge.value > 83) {
+                    err++;
+                    swal({ text: "Please Enter Valid Age" }).then((result) => { ElderAge.focus(); });
+                    return false;
+                } else { member1age = ElderAge.value; }
+            }else{
+                if (ElderAge.value == "" || ElderAge.value < 1 || ElderAge.value > 25) {
+                    err++;
+                    swal({ text: "Please Enter Valid Age" }).then((result) => { ElderAge.focus(); });
+                    return false;
+                } else { member3age = ElderAge.value; }
+            }
+
+            //if (ElderAge.value > 0 || ElderAge.value != "") {
+            //    if (ElderAge.value < 18 || ElderAge.value > 83) {
+            //        err++;
+            //        swal({ text: "Please Enter Valid Age" }).then((result) => { ElderAge.focus(); });
+            //        return false;
+            //    }
+            //    else { member1age = ElderAge.value; }
+            //} else {
+            //    err++;
+            //    swal({ text: "Please Enter Age" }).then((result) => { ElderAge.focus(); });
+            //    return false;
+            //}
+
+            //for (var j = 1; j <= member_count; j++) {
+            //    if (cnt_adult == 1 && j == 2) { j++; }
+            //    if (($('#mem_' + j + '_input').val() == "" || $('#mem_' + j + '_input').val() == "nan") || ($('#gen_' + j + '_input').val() == "") || ($('#month_' + j + '_input').val() == "Month" || $('#month_' + j + '_input').val() == "")) {
+            //        testMemberValidation = true;
+            //        break;
+            //    }
+            //}
+
+            //if (testMemberValidation) {
+            //    err++;
+            //    swal({text: "Please Enter All Member Details."});
+            //    return false;
+            //}
+
+
+            if (Pincode.value == "" || Pincode.value.length !== 6) {
+                err++;
+                swal({ text: "Please Enter Your Pincode." }).then((result) => { Pincode.focus(); });
+                return false;
+            }
+
+            if (city.value == "" || document.getElementById("hdCity_ID").value == ""){
+                err++;
+                swal({ text: "Please Select Your Pincode." }).then((result) => { Pincode.focus(); });
+                return false;
+            }
+
+            if (amount.value == "") {
+                err++;
+                swal({text: "Please Enter Your Amount." }).then((result) => { amount.focus(); });
+                return false;
+            }
+
+            <!-- if (name.value == "") { -->
+                <!-- err++; -->
+                <!-- swal({text: "Please Enter Valid Customer Name." }).then((result) => { name.focus(); }); -->
+                <!-- return false; -->
+            <!-- } -->
+
+            if (name.value.length > 0) {
+                if (!name.value.trim().match(/^[a-zA-Z ]+$/)) {
+                    err++;
+                    swal({text: "Please Enter Valid Customer Name." }).then((result) => {name.focus();});
+                    return false;
+                }
+            }
+
+            <!-- if (phone.value == "") { -->
+                <!-- err++; -->
+                <!-- swal({text: "Please Enter Your Valid Mobile Number." }).then((result) => { phone.focus(); }); -->
+                <!-- return false; -->
+            <!-- } -->
+
+            if (phone.value.length > 0) {
+                if (!phone.value.match(/^[6-9]{1}[0-9]{9}$/)) {
+                    err++;
+                    swal({text: "Please Enter Your Valid Mobile Number."
+                    }).then((result) => {phone.focus();});
+                    return false;
+                }
+            }
+			if(cnt_adult>0){
+                member1gender = document.getElementById("Eldest_mem_gen").value;
+                document.getElementById("gen_1_input").value = member1gender;
+            }
+			
+            if(cnt_adult>0){
+                member1age = parseInt(document.getElementById("Elder_Member_Age").value);
+                document.getElementById("mem_1_input").value = parseInt(member1age);
+            }else{
+                member3age = parseInt(document.getElementById("Elder_Member_Age").value);
+                document.getElementById("mem_3_input").value = parseInt(member3age);
+            }
+
+            if (cnt_adult === 2) {
+                if (member1age == 18 || member1age == 19) {
+                    member2age = member1age;
+                }
+                else {
+                    member2age = parseInt(member1age - 2);
+                }
+                //member2age = parseInt(member1age - 2);
+                document.getElementById("mem_2_input").value = parseInt(member2age);
+            }
+
+            member_count = cnt_adult + selected_child_count;
+
+            if (member_count > 1 && cnt_adult > 0) {
+                setDummyValues(member1age, member1gender);
+            }
+            if(member_count > 1 && cnt_adult==0){
+                setChildDummyValues(member3age, member3gender);
+            }
+			if(cnt_adult > 0){
+				if (member1gender === 'TM' || member1gender === 'TF' || member2gender === 'TM' || member2gender === 'TF') {
+				 insurer_selected = "42,10";
+				}
+			}
+			if (cnt_adult == 0 && selected_child_count > 0) {
+				if (member3gender === 'TM' || member3gender === 'TF') {
+					insurer_selected = "42,10";
+				}
+			}
+            if (err <= 0) {
+                getStart();
+            }
+            //return true;
+        }
+        function setDummyValues(mem1age, mem1gender) {
+            var youngerAdult = 0;
+            if (cnt_adult > 1) {
+                member2gender = (mem1gender == "M" || mem1gender == "TM") ? "F" : "M";
+
+                if (mem1age == 18 || mem1age == 19) { member2age = mem1age; }
+                else { member2age = parseInt(mem1age - 2); }
+                //member2age = parseInt(member1age - 2);
+
+                youngerAdult = (mem1gender == "M" || mem1gender == "TM") ? member2age : mem1age;
+                document.getElementById("gen_2_input").value = member2gender;
+                document.getElementById("mem_2_input").value = member2age;
+            }
+            else {
+                youngerAdult = mem1age;
+            }
+
+            if (selected_child_count > 0) {
+                for (var i = 3; i <= selected_child_count + 2; i++) {
+                    if (i == 3) {
+                        member3gender = "M";
+                        member3age = youngerAdult - 20;
+                        if (member3age >= 18) { member3age = 17; }
+                        if (member3age < 0) { member3age = 0; }
+
+                        document.getElementById("gen_3_input").value = member3gender;
+                        document.getElementById("mem_3_input").value = parseInt(member3age);
+                    }
+                    else {
+                        var j = i - 1;
+                        document.getElementById("gen_" + i + "_input").value = document.getElementById("gen_" + j + "_input").value == "M" ? "F" : "M";
+                        document.getElementById("mem_" + i + "_input").value = parseInt(document.getElementById("mem_" + j + "_input").value) - 2;
+                        if (document.getElementById("mem_" + i + "_input").value < 0) {
+                            document.getElementById("mem_" + i + "_input").value = 0;
+                        }
+
+                        //var MemberGenderi = (member + '' + i + '' + gender), MemberGenderj = (member + '' + j + '' + gender);
+                        //var MemberAgei = (member + '' + i + '' + age), MemberAgej = (member + '' + j + '' + age);
+
+                        //MemberGenderi = MemberGenderj == "M" ? "F" : "M";
+                        //MemberAgei = MemberAgej - 2;
+
+                        //(member + '' + i + '' + gender) = ((member + '' + j + '' + gender) == "M" ? "F" : "M");
+                        //(member + '' + i + '' + age) = (member + '' + j + '' + age) - 2;
+
+                    }
+                }
+            }
+        }
+        $('#drp_year_par').attr("data-max-year", Maxyear);
+        $('#drp_year_par').attr('data-min-year', Minyear);
+        $('#drp_year_child').attr("data-max-year", Maxyear);
+        $('#drp_year_child').attr('data-min-year', Maxyear - 24);
+        $(document).ready(function () {
+            siteURL =  window.location.href;
+            getClientBrowserDetails();
+			cities();
+			pincodes();
+			stringparam();
+            $('#loader_id').hide();
+            $('.app-content').show();
+            new_mem_count = 1;
+            $('#mem_1').show();
+            $('#mem_2,#mem_3,#mem_4,#mem_5,#mem_6').hide();
+            $('.popupbox').hide();
+            $('.popupbox1').hide();
+            $('#Amount').val(amount);
+            $('#Adult_count').text("[" + cnt_adult + "]");
+            $('#Child_count').text("[" + selected_child_count + "]");
+            // Open section for all member
+            $(".member-content .member_section").click(function(e) {
+                memID = $(this).attr("id").split('_')[1];
+                var gender = $("#gen_" + memID + "_input").val();
+                var Age = $("#mem_" + memID + ' input').val();
+                var dt = new Date();
+                var currentYear = dt.getFullYear();
+                if (memID == 1 || memID == 2) {
+                    if ($("#mem_" + memID + " input").attr('disabled') != 'disabled') {
+                        $(".adult-box").fadeIn('slow');
+                        $('#adultboxtitle').html('ENTER THE AGE &amp; GENDER OF MEMBER ' + memID);
+                        $('.adult-box').show();
+                        $('.gender div').removeClass("Active");
+                        $('#drp_month').val('Month');
+                        $('#drp_year_par').val('Year');
+
+                        if (gender == "") {
+                            $("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/user_selected.png");
+                        } else if (gender == "M") {
+                            $("#Gendermale").addClass("male_img");
+                            $("#mem_" + i + " img").attr("src", "images/mipmap-hdpi/men_selected.png");
+                            //$("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/men_selected.png");
+                            $(".gender").removeClass("disabledbutton");
+                        } else if (gender == "F") {
+                            $("#Genderfemale").addClass("female_img");
+                            $("#mem_" + i + " img").attr("src", "images/mipmap-hdpi/women_selected.png");
+                            //$("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/women_selected.png");
+                            $(".gender").removeClass("disabledbutton");
+                        }
+                        if (Age != "" || Age != 0) {
+
+                            $('#drp_year_par').val($("#year_" + memID + "_input").val());
+
+                            $(".gender").removeClass("disabledbutton");
+                        }
+                        if ($("#month_" + memID + "_input").val() != "") {
+                            $('#drp_month').val($("#month_" + memID + "_input").val());
+                            $(".gender").removeClass("disabledbutton");
+                        }
+                        console.log(this);
+                        //}
+                    } else {
+                        $("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/user_unselected.png");
+                        $('.adult-box').hide();
+                    }
+                }
+                if (memID >= 3) {
+                    //if (cnt_child > 0 ) {
+                    $(".child-box").fadeIn('slow');
+                    $('#childboxtitle').html('ENTER THE AGE &amp; GENDER OF MEMBER ' + (cnt_adult == 2 ? memID : (memID - 1)));
+                    $('.child-box').show();
+
+                    $('.gender_child div').removeClass("Active");
+                    $('#drp_month_child').val('Month');
+
+                    /*}else if(Age !=""){
+                     $('#childboxtitle').html('ENTER THE AGE &amp; GENDER OF MEMBER ' + (cnt_adult == 2 ? memID : (memID - 1)));
+                    $('.child-box').show();
+                     $('.gender_child div').removeClass("Active");
+                        $('#drp_month_child').val('Month');
+                    }*/
+                    if (gender == "") {
+                        $("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/user_selected.png");
+                    } else if (gender == "M") {
+                        $("#Gendermale_child").addClass("Active");
+                        $("#mem_" + i + " img").attr("src", "images/mipmap-hdpi/men_selected.png");
+                    } else if (gender == "F") {
+                        $("#Genderfemale_child").addClass("Active");
+                        $("#mem_" + i + " img").attr("src", "images/mipmap-hdpi/women_selected.png");
+                    }
+                    if (Age != "" || Age != 0) {
+                        $('#drp_year_child').val($("#year_" + memID + "_input").val());
+                    }
+                    if ($("#month_" + memID + "_input").val() != "") {
+                        $('#drp_month_child').val($("#month_" + memID + "_input").val());
+                        //$(".gender_child").removeClass("disabledbutton");
+                    }
+                }
+            });
+
+            function upnextAgeDiv() {
+                var dt = new Date();
+                var currentYear = dt.getFullYear();
+                var mem_cnt_increase = parseInt(memID) + 1;
+                var gender = $("#gen_" + memID + "_input").val();
+                var Age = $("#mem_" + memID + '_input').val();
+                var month = $("#month_" + memID + '_input').val();
+
+                var next_mem_age = $("#mem_" + mem_cnt_increase + ' input').val();
+                if ((Age == "" || Age == "0") || (gender == "" || gender == "0") || (month == "" || month == "Month")) {
+                    return true;
+                } else {
+                    if (memID >= 1 && memID <= 6) {
+                        if (chkDetails() == true) {} else {
+                            //$(".gender").addClass("disabledbutton");
+                            var meber = $("#Family_combi_box").val();
+
+                            if (meber.includes('adult2')) {
+                                // $(".gender").removeClass("disabledbutton");
+                                var mem1_gen = $("#gen_1_input").val();
+                                if (mem1_gen == "M") {
+                                    $("#mem_2 img").attr("src", "images/mipmap-hdpi/women_selected.png");
+                                    $("#gen_2_input").val('F');
+                                } else if (mem1_gen == "F") {
+                                    $("#mem_2 img").attr("src", "images/mipmap-hdpi/men_selected.png");
+                                    $("#gen_2_input").val('M');
+                                }
+                            }
+                            if (new_mem_count != 1) {
+                                var nxtmem = 0;
+                                if (meber.includes('adult1') && memID == 1) {
+                                    nxtmem = parseInt(memID) + 2;
+                                    if ((next_mem_age == null || next_mem_age == "") ) {
+                                        if(memID<=new_mem_count){
+                                            $('#mem_' + nxtmem + " input").trigger("click");
+                                            $('#mem_' + memID).removeClass("disbl_mem_input");
+                                            cnt_child = cnt_child - 1;
+                                        }
+                                    }
+                                }
+                                else if (meber.includes('adult1')){
+
+                                    if(memID<=new_mem_count) {
+                                        nxtmem = parseInt(memID) + 1;
+                                        if ((next_mem_age == null || next_mem_age == "") ) {
+                                            if(memID<=new_mem_count){
+                                                $('#mem_' + nxtmem + " input").trigger("click");
+                                                $('#mem_' + memID).removeClass("disbl_mem_input");
+                                                cnt_child = cnt_child - 1;
+                                            }
+                                        }
+                                    }
+                                }
+                                else if(memID<new_mem_count) {
+                                    nxtmem = parseInt(memID) + 1;
+                                    if ((next_mem_age == null || next_mem_age == "") ) {
+                                        if(memID<=new_mem_count){
+                                            $('#mem_' + nxtmem + " input").trigger("click");
+                                            $('#mem_' + memID).removeClass("disbl_mem_input");
+                                            cnt_child = cnt_child - 1;
+                                        }
+                                    }
+                                }
+                                var mem1_age = $("#mem_1_input").val();
+                                var mem2_age = $("#mem_2_input").val();
+                                var min_age = mem1_age > mem2_age ? mem2_age : mem1_age;
+                                var inputvalue = min_age == "" ? mem1_age : min_age;
+                                child_calender(inputvalue);
+
+                                //if ((next_mem_age == null || next_mem_age == "") && memID<nxtmem) {
+                            }
+                        }
+                    }
+                }
+            }
+
+            //////////////////////////////////////////////////////////////
+            $(".coverPanel button").click(function(e) {
+                if ($(this).hasClass("Active")) {
+                    console.log("allready selected");
+                } else {
+                    $(".coverPanel button").removeClass("Active");
+                    $(this).addClass("Active");
+                }
+
+                var coverPanel_val = parseInt($(this).attr("value"));
+
+                if ($(this).attr('id') != 'more') {
+                    $("#Amount").val(coverPanel_val);
+                }
+            });
+
+            $(".MoreBtn").click(function(e) {
+                $('.MoreInsurer').toggle();
+            });
+            $(".valueSelect").click(function() {
+                $('.MoreInsurer').toggle();
+            });
+
+            $('.membertype div:contains("self")').trigger('click');
+            $(".gender_child div").click(function(e) {
+                $(".gender_child div").removeClass("Active");
+                $(this).addClass("Active");
+                var gendertype = e.currentTarget.innerHTML;
+                console.log(gendertype);
+                if (!$(this).hasClass("Active")) {
+                    $("gender_child").css("border", "red");
+                } else {
+                    if (gendertype == "MALE") {
+                        $("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/men_selected.png");
+                        $("#gen_" + memID + "_input").val('M');
+                        //console.log(memID);
+                    } else if (gendertype == "FEMALE") {
+                        $("#mem_" + memID + " img").attr("src", "images/mipmap-hdpi/women_selected.png");
+                        $("#gen_" + memID + "_input").val('F');
+                    }
+                }
+                //upnextAgeDiv();
+            });
+
+            $('.tenure_panel div:contains("1 YEAR")').trigger("click");
+            $(".tenure_panel div").click(function(e) {
+                var tenure_period = $(this).text().split(" ")[0];
+
+                if ($(this).hasClass("Active")) {
+                    console.log(tenure_period);
+                } else {
+                    console.log(tenure_period);
+                    $(".tenure_panel div").removeClass("Active");
+                    $(this).addClass("Active");
+                }
+            })
+
+            $(function() {
+                createSticky($(".navigation"));
+            });
+
+            function createSticky(sticky) {
+                if (typeof sticky !== "undefined") {
+                    var pos = sticky.offset().top + 1,
+                        win = $(window);
+                    win.on("scroll", function() {
+                        win.scrollTop() >= pos ? sticky.addClass("fixed") : sticky.removeClass("fixed");
+                        $(".container-fluid").addClass("marginBottom");
+                    });
+                }
+            }
+            $("#drp_year_par").on("change", function() {
+
+                var year = $("#drp_year_par").val() == "" ? 0000 : $("#drp_year_par").val();
+                $('#year_' + memID + '_input').val(year);
+                var month = $("#drp_month").val() == "" ? 00 : $("#drp_month").val();
+                var age = calculateAge(year, month);
+
+                $('#mem_' + memID + '_input').val(age > 0 ? age : "");
+                if ($("#mem_" + memID + "_input").val() <= 18 && memID >= 3) {
+                    $("#mem_" + memID + " img ").css({
+                        'transform': 'scale(0.7)',
+                        'transition': 'all .2s ease-in-out'
+                    });
+                } else if ($("#mem_" + memID + "_input").val() >= 18 && memID >= 3) {
+                    $("#mem_" + memID + " img ").css({
+                        'transform': 'scale(1)',
+                        'transition': 'all .2s ease-in-out'
+                    });
+                }
+                //}
+                upnextAgeDiv();
+            })
+
+            $("#drp_month").on("change", function() {
+                drp_month = $(this).val();
+                $('#month_' + memID + '_input').val(drp_month);
+
+                var year = $("#drp_year_par").val() == "" ? 0000 : $("#drp_year_par").val();
+                var month = $("#drp_month").val() == "" ? 00 : $("#drp_month").val();
+                var age = calculateAge(year, month);
+
+                $('#mem_' + memID + '_input').val(age > 0 ? age : "");
+                upnextAgeDiv();
+            })
+            $("#drp_month_child").on("change", function() {
+                drp_month_child = $(this).val();
+                $('#month_' + memID + '_input').val(drp_month_child);
+
+                var year = $("#drp_year_child").val() == "" ? 0000 : $("#drp_year_child").val();
+                var month = $("#drp_month_child").val() == "" ? 00 : $("#drp_month_child").val();
+                var age = calculateAge(year, month);
+
+                $('#mem_' + memID + '_input').val(age > 0 ? age : "");
+                upnextAgeDiv();
+            })
+            $("#drp_year_child").on("change", function() {
+                var year = $("#drp_year_child").val() == "" ? 0000 : $("#drp_year_child").val();
+                $('#year_' + memID + '_input').val(year);
+                var month = $("#drp_month_child").val() == "" ? 00 : $("#drp_month_child").val();
+                var age = calculateAge(year, month);
+
+                $('#mem_' + memID + '_input').val(age > 0 ? age : "");
+                if ($("#mem_" + memID + "_input").val() <= 25 && memID >= 3) {
+                    $("#mem_" + memID + " img ").css({
+                        'transform': 'scale(0.7)',
+                        'transition': 'all .2s ease-in-out'
+                    });
+                } else if ($("#mem_" + memID + "_input").val() >= 25 && memID >= 3) {
+                    $("#mem_" + memID + " img ").css({
+                        'transform': 'scale(1)',
+                        'transition': 'all .2s ease-in-out'
+                    });
+                }
+                //}
+                upnextAgeDiv();
+            })
+            $('ul.navigation li').click(function(e) {
+
+                $('ul.navigation li').removeClass("Active");
+                $(this).addClass("Active");
+                console.log($('li.Active').children('.img-responsive'));
+                if ($('li.Active').text() == 'INPUT') {
+                    location.reload(true);
+                } else if ($('li.Active').text() == 'QUOTE') {
+                    //window.location.href = './health_quote.html?client_id=2&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version;
+                } else if ($('li.Active').text() == 'BUY') {} else if ($('li.Active').children().children('.img-responsive').length > 0) {
+                    window.location.href = './quote_list.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile_no;
+                }
+            })
+
+            //************************* Priti-Calender *********************************************************
+            var startyear = 1929;
+            var d = new Date();
+            var curryear = d.getFullYear() - 18;
+            var setadultyr = curryear - startyear;
+            var year = [];
+
+            for (var i = 0; i < setadultyr; i++) {
+                year.push(1929 + i);
+            }
+            var new_arr = year.reverse();
+            for (var i = 0; i < new_arr.length; i++) {
+                var opt = new Option(new_arr[i]);
+                $("#drp_year_par").append(opt);
+            }
+            SetSI();
+            //************************* Priti-Calender End********************************************************
+            //$(".btn-cover").each(function () {
+            //    if ($(this).attr('value') == amount) {
+            //        $(this).addClass('backclr');
+            //    }
+            //});
+            $(".print_age").click(function (str) {
+                var selectedvar = str;
+                var selctvalue = parseInt(selectedvar.target.innerText.trim());
+                $("#Elder_Member_Age").val(selctvalue);
+                $('.popupbox').hide();
+            });
+            $(".gender span").click(function (e) {
+                var gendertype = e.currentTarget.id;
+                $("#Gendermale, #Genderfemale").removeClass('GenderError');
+                if(cnt_adult > 0){
+                    memID=1;
+                }
+                else{
+                    memID=3;
+                }
+                if (gendertype == "Gendermale") {
+                    $(this).addClass("male_img");
+                    var value = $("#gen_" + memID + "_input").val('M');
+                    console.log('member' + memID);
+                    console.log(value.val());
+                    $("#Genderfemale").removeClass("female_img");
+                }
+                else if (gendertype == "Genderfemale") {
+                    $(this).addClass("female_img");
+                    var value = $("#gen_" + memID + "_input").val('F');
+                    console.log('member' + memID);
+                    console.log(value.val());
+                    $("#Gendermale").removeClass("male_img");
+                }
+            });
+			$(".gender_selBox").click(function (e) {
+                var gendertype = e.currentTarget.value;
+                if(cnt_adult === 0){
+                     $("#gen_3_input").val(gendertype);   
+                }	
+            });
+            $(".membertype").on('change', function (e) {
+                memType = e.target.selectedOptions[0].value;
+                setmember_cnt(memType);
+                member_type_selection(memType);
+            });
+            $(".Fields").focus(function () {
+                $('html, body').animate({ scrollTop: $(document).height() }, 1200);
+            });
+        });
+
+        function child_calender(value) {
+            $("#drp_year_child").empty();
+            $("#drp_year_child").append($('<option></option>').val('Year').html('Year'));
+            var range_year = parseInt(value) - 17;
+
+            var d = new Date();
+            var curfullyr = range_year >= 26 ? 26 : range_year;
+            var curryear = d.getFullYear() - (range_year >= 26 ? 25 : range_year);
+
+            var year = [];
+
+            for (var i = 0; i < curfullyr; i++) {
+                year.push(curryear + i);
+            }
+            var new_arr = year.reverse();
+            for (var i = 0; i < new_arr.length; i++) {
+                var opt = new Option(new_arr[i]);
+                $("#drp_year_child").append(opt);
+            }
+        }
+
+        $('#Name').on('keypress', function(event) {
+            var inputValue = event.which;
+            var regex = new RegExp("^[a-zA-Z ]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+        //clear button
+        function clearinfo() {
+            $("#mem_" + memID + ' img').attr('src', 'images/mipmap-hdpi/user_unselected.png');
+            $("#mem_" + memID + ' input').val("");
+            $(".gender div").removeClass("Active");
+            $('#drp_month').val('Month');
+            $('#drp_year_par').val('Year');
+            $('.age-box').hide();
+        }
+
+        //validation
+
+        function chkDetails() {
+            var Gender = $("#mem_" + memID + ' img').attr('src')
+            var Age = $("#mem_" + memID + ' input').val();
+
+            if (Age == "" || Age == "0") {
+                swal({text: "please specify Age."});
+                return true;
+            } else if (Gender == 'images/mipmap-hdpi/user_selected.png') {
+                //alert("please select gender");
+                return true;
+            } else {
+                $('.age-box').hide();
+                return false;
+            }
+        }
+
+        //function myEditFunc() {
+        var myEditFunc = function () {
+            var Srn = getUrlVars()["srn"];
+            /*if (mobile_no) {
+                document.getElementById("Mobile").value = mobile_no;
+            }*/
+            if (Srn != '' && Srn != undefined) {
+                //var maineditUrl = "quote/premium_list_db";
+                $('#editloader_id').show();
+                var str1 = {
+                    "search_reference_number": Srn,
+                    "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                    "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+                };
+                var obj_horizon_data = Horizon_Method_Convert("/quote/premium_list_db",str1,"POST");
+                //var returnediturl = GetUrl() + '/' + maineditUrl;
+
+                $.ajax({
+                    type: "POST",
+                    //data: JSON.stringify(str1),
+                    //url: returnediturl,
+                    //data: JSON.stringify(obj_horizon_data['data']),
+                    //url: obj_horizon_data['url'],
+                    data : siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) :  JSON.stringify(str1),
+                    url :  siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_list_db" ,
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+
+                        if((data.hasOwnProperty("Details")) && ((data.hasOwnProperty("Summary")) ? ((data.Summary.hasOwnProperty("Request_Unique_Id")) || (data.Summary.Request_Unique_Id == "")) : true )) {
+                            var msg = data.Details.join('<br/>');
+                            $('.error_popupbox').show();
+                            $(".Agebox_wrap").html(msg);
+                        }else{
+
+                            $('.error_popupbox').hide();
+                            $(".Agebox_wrap").empty();
+
+                            $(".btn-cover").removeClass('backclr');
+                            console.log(data);
+                            if (data['Msg'] != "Not Authorized") {
+                                setFamilyCombo(data);
+                                member_count = data['Summary']['Request_Core'].adult_count + data['Summary']['Request_Core'].child_count;
+                                document.getElementById("Name").value = data['Summary']['Request_Core'].contact_name;
+                                document.getElementById("Amount").value = data['Summary']['Request_Core'].health_insurance_si;
+                                document.getElementById("Mobile").value = data['Summary']['Request_Core'].mobile;
+                                document.getElementById("City").value = data['Summary']['Request_Core'].city_name + '(' + data['Summary']['Request_Core'].state_name + ')';
+                                document.getElementById("hdCity_ID").value = data['Summary']['Request_Core'].city_id;
+                                document.getElementById("hdCity_name").value = data['Summary']['Request_Core'].city_name;
+                                document.getElementById("hdState_name").value = data['Summary']['Request_Core'].state_name;
+								document.getElementById("hdZone").value = data['Summary']['Request_Core'].zone;
+								document.getElementById("hdState_Code").value = data['Summary']['Request_Core'].State_Code;
+                                document.getElementById("Pincode").value = data['Summary']['Request_Core'].permanent_pincode;
+								document.getElementById('hdPincode').value = data['Summary']['Request_Core'].permanent_pincode;
+
+                                for (var i = 1; i <= 6; i++) {
+                                    document.getElementById("mem_" + i + "_input").value = data['Summary']['Request_Core']['member_' + i + '_age'];
+                                    document.getElementById("gen_" + i + "_input").value = data['Summary']['Request_Core']['member_' + i + '_gender'];
+                                    //document.getElementById("month_" + i + "_input").value = data['Summary']['Request_Core']['month_' + i + '_input'];
+                                    //document.getElementById("year_" + i + "_input").value = data['Summary']['Request_Core']['year_' + i + '_input'];
+
+                                    if ($("#mem_" + i + "_input").val() <= 25 && i >= 3) {
+                                        $("#mem_" + i + " img ").css({
+                                            'transform': 'scale(0.7)',
+                                            'transition': 'all .2s ease-in-out'
+                                        });
+                                    } else if ($("#mem_" + i + "_input").val() >= 25 && i >= 3) {
+                                        $("#mem_" + i + " img ").css({
+                                            'transform': 'scale(1)',
+                                            'transition': 'all .2s ease-in-out'
+                                        });
+                                    }
+                                }
+
+                                //if (data['Summary']['Request_Core'].member_1_birth_date != "") {
+                                //    member_1_birth_date = data['Summary']['Request_Core'].member_1_birth_date;
+                                //}
+                                //if (data['Summary']['Request_Core'].member_2_birth_date != "") {
+                                //    member_2_birth_date = data['Summary']['Request_Core'].member_2_birth_date;
+                                //}
+                                //if (data['Summary']['Request_Core'].member_3_birth_date != "") {
+                                //    member_3_birth_date = data['Summary']['Request_Core'].member_3_birth_date;
+                                //}
+                                //if (data['Summary']['Request_Core'].member_4_birth_date != "") {
+                                //    member_4_birth_date = data['Summary']['Request_Core'].member_4_birth_date;
+                                //}
+                                //if (data['Summary']['Request_Core'].member_5_birth_date != "") {
+                                //    member_5_birth_date = data['Summary']['Request_Core'].member_5_birth_date;
+                                //}
+                                //if (data['Summary']['Request_Core'].member_6_birth_date != "") {
+                                //    member_6_birth_date = data['Summary']['Request_Core'].member_6_birth_date;
+                                //}
+								
+								if(member_count >= 1 && cnt_adult > 0){
+                                    $("#Eldest_mem_gen").val(data['Summary']['Request_Core'].member_1_gender);
+                                }
+
+                                if(member_count >= 1 && cnt_adult==0){
+                                    $("#Eldest_mem_gen").val(data['Summary']['Request_Core'].member_3_gender);
+                                }
+
+                                $("#Elder_Member_Age").val(data['Summary']['Request_Core'].elder_member_age);
+                                cnt_adult = data['Summary']['Request_Core'].adult_count;
+                                $('#Adult_count').text("[" + cnt_adult + "]");
+                                selected_child_count = data['Summary']['Request_Core'].child_count;
+                                $('#Child_count').text("[" + selected_child_count + "]");
+
+                                if(member_count > 1 && cnt_adult > 0){
+                                    var mem1_age = $("#mem_1_input").val();
+                                    var mem2_age = $("#mem_2_input").val();
+                                    var min_age = mem1_age > mem2_age ? mem2_age : mem1_age;
+                                    var inputvalue = min_age == "" ? mem1_age : min_age;
+                                    child_calender(inputvalue);
+                                }
+                                if(member_count > 1 && cnt_adult==0){
+                                    var mem3_age = $("#mem_3_input").val();
+                                    var mem4_age = $("#mem_4_input").val();
+                                    var min_age = mem3_age > mem4_age ? mem4_age : mem3_age;
+                                    var inputvalue = min_age == "" ? mem3_age : min_age;
+                                    child_calender(inputvalue);
+                                }
+                                setGender();
+                                //setInsuranceType(data['Summary']['Request_Core'].health_insurance_type);
+                                $('.app-content').show();
+                                $('#editloader_id').hide();
+                                amount = parseInt(data['Summary']['Request_Core'].health_insurance_si);
+                                SetSI();
+                            }
+
+                        }
+
+
+                    },
+                    error: function(result) {
+                        //alert("Error");
+                    }
+                });
+            }
+            //stringparam();
+        }
+
+        function setFamilyCombo(data) {
+            var adultcnt, childcnt;
+            adultcnt = data['Summary']['Request_Core'].adult_count;
+            childcnt = data['Summary']['Request_Core'].child_count;
+            //selected_child_count = data['Summary']['Request_Core'].child_count;
+            var value
+            if (childcnt != 0 && childcnt != null && childcnt != "") {
+                value = "adult" + adultcnt + "_child" + childcnt;
+            } else {
+                value = "adult" + adultcnt;
+            }
+            setmember_cnt(value);
+            member_type_selection(value);
+            $("#Family_combi_box").val(value);
+            $('#mem_2,#mem_3,#mem_4,#mem_5,#mem_6').removeClass("disbl_mem_input");
+        }
+
+        var setGender = function() {
+            for (var i = 1; i <= 6; i++) {
+                if ($("#gen_" + i + "_input").val() != "") {
+                    $("#mem_" + i + "_input").removeAttr('disabled');
+                }
+            }
+        }
+
+        var setInsuranceType = function(type) {
+            if (type == "floater") {
+                $('#member_family').addClass("Active");
+                $('#member_self').removeClass("Active");
+
+            } else if (type == "individual") {
+                $('#member_family').removeClass("Active");
+                $('#member_self').addClass("Active");
+            }
+        }
+
+        function forceKeyPressUppercase(e) {
+            var name = e.target.value;
+            var input_length = name.length;
+            var charInput = e.keyCode;
+            if ((charInput >= 97) && (charInput <= 122) && (input_length < 50)) { // lowercase
+                if (!e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKEY) { // no modifier key
+                    var newChar = charInput - 32;
+                    var start = e.target.selectionStart;
+                    var end = e.target.selectionEnd;
+                    e.target.value = e.target.value.substring(0, start) + String.fromCharCode(newChar) + e.target.value.substring(end);
+                    e.target.setSelectionRange(start + 1, start + 1);
+                    e.preventDefault();
+                }
+            }
+        }
+        document.getElementById("Name").addEventListener("keypress", forceKeyPressUppercase, false);
+
+        function member_type_selection(memType) {
+
+            $('#mem_2,#mem_3,#mem_4,#mem_5,#mem_6').addClass("disbl_mem_input");
+            member = 1;
+            var collection = document.getElementById("Family_combi_box");
+            $('.age-box').hide(clearinfo());
+            $(".age-box .nav_cursor").css("display", "block");
+            $(".member_section").removeClass("mem_margin_div");
+            new_mem_count = cnt_adult + cnt_child;
+            if (cnt_adult == 1 && cnt_child > 0) {
+                new_mem_count_child = true;
+            }
+            $('.member_section').hide();
+            for (var k = 1; k <= cnt_adult; k++) {
+                $('#mem_' + k).show();
+            }
+            for (var k = 3; k <= (cnt_child + 2); k++) {
+                $('#mem_' + k).show();
+            }
+            $(".member-content input").val('');
+            $(".member-content div img").attr("src", "images/mipmap-hdpi/user_unselected.png");
+            for (i = 1; i <= 6; i++) {
+                if (i <= member) {
+                    var memID = "#" + $(".member-content div:nth-child(" + i + ")").attr("id");
+                    $(memID + " img").attr("src", "images/mipmap-hdpi/user_unselected.png");
+                    $(memID + "_input").removeAttr('disabled').attr('readonly', 'true');
+                } else {
+                    var memID = "#" + $(".member-content div:nth-child(" + i + ")").attr("id");
+                    $(memID + " img").attr("src", "images/mipmap-hdpi/user_unselected.png");
+                }
+            }
+            if (cnt_adult == 2) {
+                cnt_child = cnt_child + 1;
+            }
+        }
+
+        $(".adult_mem_add").click(function(e) {
+
+        });
+        $(".btn-cover").click(function (e) {
+            if ($(this).attr('id')!="more") {
+                $(".btn-cover").removeClass('backclr');
+            }
+            $(this).addClass('backclr');
+        });
+        $("#CloseCover").click(function (e) {
+            $("#more").removeClass('backclr');
+        });
+        //CloseCover
+
+
+        function calculateAge(year, month) { // birthday is a date
+            var age = 0;
+            if (year != "" && year != "Year" && month != "Month" && month != "") {
+                var birthday = year + "-" + month + "-01";
+                dob = new Date(birthday);
+                var today = new Date();
+                age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+            }
+            return age;
+        }
+        function setmember_cnt(memType) {
+            member_count = 1;
+            cnt_adult = 1;
+            cnt_child = 0;
+            selected_child_count = 0;
+            var arr_member = memType.split('_');
+            cnt_adult = arr_member[0].replace('adult', '') - 0;
+            for (i = 1; i <= 6; i++) {
+                $("mem_" + i + "_input").val("");
+                $("gen_" + i + "_input").val("");
+                $("month_" + i + "_input").val("");
+                $("year_" + i + "_input").val("");
+            }
+            if (arr_member.length > 1) {
+                cnt_child = arr_member[1].replace('child', '') - 0;
+                selected_child_count = arr_member[1].replace('child', '') - 0;
+            }
+            member_count = cnt_adult == 2 ? (cnt_child + cnt_adult) : (cnt_child + (cnt_adult - 1));
+        }
+        function AgeBoxDropdown1() {
+            $('.popupbox').show();
+            var array = [];
+            for(var i = 18; i <= 83; i++){
+                array.push(i)
+            }
+            var str = array.toString();
+            str = str.split(",");
+            document.getElementById("print_age").innerHTML = str.join(" <li> ");
+        }
+        //Pratik
+        function AgeBoxDropdown() {
+            $('.popupbox').show();
+            var array = [];
+            document.getElementById("print_age").innerHTML = "";
+            if(cnt_adult > 0){
+                for (var i = 18; i <= 83; i++) {
+                    document.getElementById("print_age").innerHTML = document.getElementById("print_age").innerHTML + " <li> " + i + " </li> ";
+                }
+            }
+            else{
+                for (var j = 1; j <= 25; j++) {
+                    document.getElementById("print_age").innerHTML = document.getElementById("print_age").innerHTML + " <li> " + j + " </li> ";
+                }
+            }
+        }
+
+        function closeAgebox(){
+            $('.popupbox').hide();
+        }
+
+        function MemberPopupOpen(){
+            $('.popupbox1').show();
+        }
+        function MemberPopupClose(){
+            $('.popupbox1').hide();
+        }
+
+        function FuncAdult(adult){
+            if (adult === -1 && cnt_adult !== 0) {
+                document.getElementById("gen_"+cnt_adult+"_input").value = "";
+                document.getElementById("mem_"+cnt_adult+"_input").value = "";
+                cnt_adult--;
+                $('#Adult_count').text("[" + cnt_adult + "]");
+            }
+            if( adult===1 && cnt_adult !==2){
+                cnt_adult++;
+                $('#Adult_count').text("[" + cnt_adult + "]");
+            }
+			if(cnt_adult === 0){
+			$("#Eldest_mem_gen").val('Gender');
+			}
+        }
+        function FuncChild(child){
+
+            if( child===-1 && selected_child_count !==0){
+                document.getElementById("gen_"+selected_child_count+"_input").value = "";
+                document.getElementById("mem_"+selected_child_count+"_input").value = "";
+                selected_child_count--;
+                $('#Child_count').text("[" + selected_child_count + "]");
+            }
+            if( child===1 && selected_child_count !==4){
+                selected_child_count++;
+                $('#Child_count').text("[" + selected_child_count + "]");
+            }
+        }
+        function OpenCal(){
+            var datepicker = new ej.calendars.DatePicker({ width: "155px" });
+            datepicker.appendTo('#datepicker');
+        }
+        function closebox(){
+            var gender = $("#gen_" + memID + "_input").val();
+            var Age = $("#mem_" + memID + '_input').val();
+            if(Age !="" && gender !=""){
+                $('.adult-box').hide();
+                $('.child-box').hide();
+            } else {
+                swal({text: "Please complete details."});
+            }
+        }
+        function SetSI() {
+            $(".btn-cover").each(function () {
+                if ($(this).attr('value') == amount) {
+                    $(this).addClass('backclr');
+                }
+            });
+        }
+
+        $('.closeErrpopup').click(function(){
+            $('.error_popupbox').hide();
+        });
+
+        function setChildDummyValues(member3age, member3gender){
+            for (var i = 3; i <= selected_child_count + 2; i++) {
+                if (i == 3) {
+                    document.getElementById("gen_3_input").value = member3gender;
+                    document.getElementById("mem_3_input").value = parseInt(member3age);
+                }
+                else {
+                    var j = i - 1;
+                    document.getElementById("gen_" + i + "_input").value = document.getElementById("gen_" + j + "_input").value == "M" ? "F" : "M";
+                    document.getElementById("mem_" + i + "_input").value = parseInt(document.getElementById("mem_" + j + "_input").value) - 2;
+                    if (document.getElementById("mem_" + i + "_input").value < 0) {
+                        document.getElementById("mem_" + i + "_input").value = 0;
+                    }
+                }
+            }
+            document.getElementById("gen_1_input").value = "";
+            document.getElementById("mem_1_input").value = "";
+            document.getElementById("gen_2_input").value = "";
+            document.getElementById("mem_2_input").value = "";
+        }
+        function insurance_typeChange(){
+            window.location = './health_renewal.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile_no;
+        }
+
+        function get_crosssell(){
+
+            $.ajax({
+                type: "GET",
+                data : siteURL.indexOf('https') == 0 ?  { 'method_name': "/user_datas/view/"+udid } : "",
+                url :  siteURL.indexOf('https') == 0 ?   GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : GetUrl() +"/user_datas/view/"+udid,
+                dataType: "json",
+                success: function(data) {
+                    
+                    origin_crn = data['0'].PB_CRN;
+                    console.log('udid data', data['0'].Proposal_Request);
+                    var prm_data = data['0'].Proposal_Request;
+                    var erp_data = data['0'].Erp_Qt_Request_Core;
+                    if (prm_data != undefined) {
+                        document.getElementById("Name").value = prm_data["first_name"] + " " + prm_data["last_name"];
+                        document.getElementById("Mobile").value = prm_data["mobile"];
+                        document.getElementById("Pincode").value = prm_data["permanent_pincode"];
+                        document.getElementById("gen_1_input").value = prm_data["gender"]
+                        document.getElementById("Elder_Member_Age").value =  SetAge(prm_data["birth_date"]);
+                        if (prm_data["gender"] == "M") {
+                            $("#Gendermale").addClass("male_img");
+                            var value = $("#gen_1_input").val('M');                       
+                            $("#Genderfemale").removeClass("female_img");
+                        }
+                        else if (prm_data["gender"] == "F") {
+                            $("#Genderfemale").addClass("female_img");
+                            var value = $("#gen_1_input").val('F');
+                            $("#Gendermale").removeClass("male_img");
+                        }
+						
+						
+                    }
+                }
+            });
+
+
+        }
+		function getPremanent(){
+		var index = PincodeLst._list.findIndex(x => x.label.split('(')[0] === document.getElementById("Pincode").value)
+						if(index !== -1){
+						var Pincode = PincodeLst._list[index];
+						document.getElementById('City').value = Pincode.label.split('+')[0] + " (" + Pincode.label.split('+')[1] + ") ";
+						document.getElementById('hdState_name').value = Pincode.value.split('+')[1];
+						document.getElementById('hdCity_ID').value = Pincode.value.split('+')[2];
+						document.getElementById('hdPincode').value = Pincode.value.split('+')[3];
+						document.getElementById('hdZone').value = Pincode.value.split('+')[4];
+						document.getElementById('hdState_Code').value = Pincode.value.split('+')[5];
+						document.getElementById('hdCity_name').value = Pincode.value.split('+')[0];
+						}
+		}
+        function SetAge(DOB) {
+            var Age =0;
+            var Dob, Today;
+			var month ,day,year;
+			var date = DOB.split('-');
+			day= date[0];
+			month= date[1];
+			year = date[2];
+			var DTPDateVal= month+'-'+day+'-'+year;
+            //var DTPDateVal = DOB;
+			
+            if (DTPDateVal != "") {
+                Dob = new Date(DTPDateVal);
+                Today = new Date();
+                Age = Math.floor((Today - Dob) / (365.25 * 24 * 60 * 60 * 1000));
+                
+            }
+            return Age;
+        }
+    </script>
+</body>
+</html>

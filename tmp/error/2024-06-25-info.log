@@ -1,0 +1,149 @@
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:58:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:58:59 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"3:58:59 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"3:58:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:58:59 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"3:58:59 PM"}
+{"meta":"","level":"info","message":"","timestamp":"3:58:59 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"3:59:00 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:00:16 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:00:16 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:00:16 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:00:16 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:00:16 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:00:16 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:00:16 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:00:16 PM"}
+{"level":"info","message":"emailsendgrid","timestamp":"4:19:32 PM"}
+{"level":"info","message":"emailsendgrid","timestamp":"4:19:34 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:19:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:19:54 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:19:54 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:19:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:19:54 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:19:54 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:19:54 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:19:54 PM"}
+{"level":"info","message":"emailsendgrid","timestamp":"4:20:08 PM"}
+{"level":"info","message":"emailsendgrid","timestamp":"4:20:12 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:25:53 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:25:53 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:25:53 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:25:53 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:25:53 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:25:53 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:25:53 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:25:54 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:30:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:30:07 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:30:07 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:30:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:30:07 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:30:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:30:07 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:30:07 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:33:58 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:33:58 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:33:58 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:33:58 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:33:58 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:33:58 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:33:58 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:33:59 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:40:00 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:40:00 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:40:00 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:40:00 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:40:00 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:40:00 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:40:00 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:40:00 PM"}
+{"level":"info","message":"err is { ValidationError: content_management validation failed: Category: `insurance-agent` is not a valid enum value for path `Category`.\n    at MongooseError.ValidationError.inspect (D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\error\\validation.js:57:23)\n    at formatValue (util.js:352:36)\n    at inspect (util.js:186:10)\n    at Function.exports.format (util.js:130:20)\n    at formatArgs (D:\\Suyash Files\\SourceCode\\libs\\Logging.js:55:25)\n    at Console.console.log (D:\\Suyash Files\\SourceCode\\libs\\Logging.js:59:39)\n    at D:\\Suyash Files\\SourceCode\\routes\\postservicecall.js:4146:41\n    at D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\model.js:3919:16\n    at D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\services\\model\\applyHooks.js:167:17\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)\n  errors: \n   { Category: \n      { ValidatorError: `insurance-agent` is not a valid enum value for path `Category`.\n          at MongooseError.ValidatorError (D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\error\\validator.js:25:11)\n          at validate (D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\schematype.js:758:13)\n          at D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\schematype.js:805:11\n          at Array.forEach (native)\n          at SchemaString.SchemaType.doValidate (D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\schematype.js:765:19)\n          at D:\\Suyash Files\\SourceCode\\node_modules\\mongoose\\lib\\document.js:1506:9\n          at _combinedTickCallback (internal/process/next_tick.js:67:7)\n          at process._tickCallback (internal/process/next_tick.js:98:9)\n        message: '`insurance-agent` is not a valid enum value for path `Category`.',\n        name: 'ValidatorError',\n        properties: [Object],\n        kind: 'enum',\n        path: 'Category',\n        value: 'insurance-agent',\n        reason: undefined,\n        '$isValidatorError': true } },\n  _message: 'content_management validation failed',\n  name: 'ValidationError' }","timestamp":"4:41:12 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:47:11 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:47:11 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:47:11 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:47:11 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:47:11 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:47:11 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:47:11 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:47:11 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:53:12 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:53:12 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:53:12 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:53:12 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:53:12 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:53:12 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:53:12 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:53:12 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:59:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:59:07 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"4:59:07 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"4:59:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:59:07 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"4:59:07 PM"}
+{"meta":"","level":"info","message":"","timestamp":"4:59:07 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"4:59:08 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:02:04 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:04 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:02:04 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:02:04 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:04 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:02:04 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:02:04 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:02:05 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:06:50 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:06:50 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:06:50 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:06:50 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:06:50 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:06:50 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:06:50 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:06:51 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:14:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:14:46 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:14:46 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:14:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:14:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:14:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:14:46 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:14:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:36:03 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:36:03 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:36:03 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:36:03 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:36:03 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:36:03 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:36:03 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:36:04 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:38:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:38:46 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:38:46 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:38:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:38:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:38:46 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:38:46 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:38:46 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:43:06 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:43:06 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:43:06 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:43:06 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:43:06 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:43:06 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:43:06 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:43:06 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:44:52 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:44:52 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:44:52 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:44:52 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:44:52 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:44:52 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:44:52 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:44:53 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:54:21 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:21 PM"}
+{"level":"info","message":"Development Environment is Listening on port 3000","timestamp":"5:54:21 PM"}
+{"level":"info","message":"Web URL : http://localhost:3000","timestamp":"5:54:21 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:21 PM"}
+{"level":"info","message":"$$$$$$$$$$$$$$$$$$$$$$$$","timestamp":"5:54:21 PM"}
+{"meta":"","level":"info","message":"","timestamp":"5:54:21 PM"}
+{"level":"info","message":"Connected to Database","timestamp":"5:54:22 PM"}

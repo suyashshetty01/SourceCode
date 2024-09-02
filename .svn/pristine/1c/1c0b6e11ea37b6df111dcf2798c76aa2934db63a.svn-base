@@ -1,0 +1,42 @@
+<PartnerIntegration>
+<UserID type="string">___insurer_integration_agent_code___</UserID>
+<Password type="string">___insurer_integration_location_code___</Password>
+<ProductType type="string">two wheeler (T)</ProductType>
+<TransactionType type="string">___vehicle_insurance_type___</TransactionType>
+<TransactionID type="string">___transaction_id___</TransactionID>
+<PolicyNo type="string">___policy_no___</PolicyNo>
+<ProposalDate type="date">___pg_reference_number_1___</ProposalDate>
+<ProposalTime type="time">00:00:00</ProposalTime>
+<PolicyStartDate type="datetime">___policy_start_date___</PolicyStartDate>
+<PolicyEndDate type="date">___policy_end_date___</PolicyEndDate>
+<ProposerType type="string">I</ProposerType>
+<CustomerName type="string">___salutation___ ___first_name___ ___middle_name___ ___last_name___</CustomerName>
+<EngineNos type="string">___engine_number___</EngineNos>
+<ChassisNos type="string">___chassis_number___</ChassisNos>
+<Make type="string">___dbmaster_insurer_vehicle_make_name___</Make>
+<Model type="string">___dbmaster_insurer_vehicle_model_name___</Model>
+<Variant type="string">___dbmaster_insurer_vehicle_variant_name___</Variant>
+<IDV type="int">___vehicle_expected_idv___</IDV>
+<TotalA type="int">___od_final_premium___</TotalA>
+<TotalB type="int">___tp_final_premium___</TotalB>
+<GrossPremium type="int">___final_premium___</GrossPremium>
+<ServiceORSalesTax type="int">___tax___</ServiceORSalesTax>
+<NetPremium type="int">___net_premium___</NetPremium>
+<TransactionReference type="int">___pg_reference_number_2___</TransactionReference>
+<TransactionDate type="date">___pg_reference_number_1___</TransactionDate>
+<TransactionAmount type="int">___transaction_amount___</TransactionAmount>
+<Prefix>LPB</Prefix>
+<VehicleRegistrationNumber type="string">___registration_no_1______registration_no_2______registration_no_3______registration_no_4___</VehicleRegistrationNumber>
+<BiFuelKit type="string">No</BiFuelKit>
+<BiFuelKitIDV type="int">0</BiFuelKitIDV>
+<NCB type="int">___vehicle_ncb_next___</NCB>
+<LegalLiabilityPaidDriver type="string">No</LegalLiabilityPaidDriver>
+<ZeroDepreciation type="string">___addon_zero_dep_cover___</ZeroDepreciation>
+<EngineProtector type="string">___addon_engine_protector_cover___</EngineProtector>
+<ReturnToInvoice type="string">No</ReturnToInvoice>
+<PAUnnamedPassengerSI type="string">No</PAUnnamedPassengerSI>
+<Consumables_Addon type="string">___addon_consumable_cover___</Consumables_Addon>
+<RoadsideAssistance type="string">No</RoadsideAssistance>
+<IMTNos type="string">IMT21</IMTNos>
+<Additional_Info type="string">extra</Additional_Info>
+</PartnerIntegration>

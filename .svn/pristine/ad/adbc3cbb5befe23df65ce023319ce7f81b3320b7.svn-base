@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+	<title>Wining Wheel</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<style>
+ .StatusPopup {
+        position: fixed;
+        width: 100%;
+        background: rgba(250, 250, 250, 0.2);
+        height: 100%;
+        z-index: 9999;
+        display: none;
+    }
+	.StatuspopScreen {
+        width:96%;
+		top: 50%;
+		left:50%;
+		text-align:center;
+		transform: translate(-50%,-50%);
+		position: absolute;
+        background: #fff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        max-height: 500px;
+    }
+	.StatusPopHeader{background: #000000;padding: 8px;}
+	.StatusPopHeader h4{color:#fff;font-weight:600; margin:1px;font-size:14px;}
+	.ErrorMsg {
+        color: red !important;
+        font-size: 14px;
+    }
+	.Statuspopup_txt{padding:8px;font-size:14px;color:#333}
+	.SubmitDiv{text-align:center:}
+	.SubmitDiv button{padding:6px 12px;background:red;border:1px solid red;margin:10px;color:#fff;}
+</style>
+<div class="StatusPopup">
+			<div class="StatuspopScreen">
+			<div class="StatusPopHeader">
+				<!-- <div class="addpopupclose">&times;</div> -->
+				<h4>STATUS</h4>
+			</div>
+			<div class="Statuspopup_txt">
+				<div class="uploadImg" style="text-align:center;" id="txt_statusmsg">
+				</div>
+				
+				<div class="SubmitDiv">
+					<button class="ImgSubmit"  id="statusClosed">OK</button>
+				</div>
+			</div>
+			<br>
+			</div>
+	</div>
+	<div class="container">
+		<form method="post" id="formdata" action="">
+			<div>
+				<img src="Header.jpg">
+			</div>
+			<div style="padding: 10px;">
+			<div class="row">
+				<div>
+					<label>NAME:<br></label>
+					<input type="text" name="name" id="name" required=""/>
+					<span id="ErContactName" class="tooltiptext ErrorMsg" style="display:none;"></span>
+				</div>
+				<div class="details">
+					<div>
+						<label>MOBILE No.:<br></label>
+						<input type="number" name="mobile" id="mobile" onkeypress="if (this.value.length == 10) return false;" required=""/ max="9999999999" maxlength="10">
+						<span id="ErContactMobile" class="tooltiptext ErrorMsg" style="display:none;"></span>
+					</div>
+					<div>
+						<label>PIN CODE:<br></label>
+						<input type="number" name="pincode" id="pincode" onkeypress="if (this.value.length == 6) return false;" required=""/ max="999999" maxlength="6">
+						<span id="Erpincode" class="tooltiptext ErrorMsg" style="display:none;"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<label>What all types of insurance policies do you have?<br></label>
+				<input type="checkbox" name="product" id="Motor" value="Motor"/><span>&nbsp;Motor</span><br>
+				<input type="checkbox" name="product" id="Health" value="Health"/><span>&nbsp;Health</span><br>
+				<input type="checkbox" name="product" id="Life" value="Life"/><span>&nbsp;Life</span><br>
+				<input type="checkbox" name="product" value="No" id="No-policy"/><span>&nbsp;No</span><br>
+			</div>
+			<div class="row"  id="premium">
+				<label>Average annual premium expense?<br></label>
+				<input type="radio" name="annual_expense" value="Less 25K"/><span>Less 25K</span><br>
+				<input type="radio" name="annual_expense" value="25K To 50K"/><span>25K To 50K</span><br>
+				<input type="radio" name="annual_expense" value="50K To 75K"/><span>50K To 75K</span><br>
+				<input type="radio" name="annual_expense" value="More Than 75K"/><span>More Than 75K</span><br>
+				<input type="radio" name="annual_expense" value ="" id="none"/><span>None</span><br>
+			</div>
+			<div class="row">
+				<label>Would you like to hear from our experts to get a good discount on any of the insurance products?</label><br>
+				<textarea rows="3" name="remarks" id="remarks" cols="30"></textarea>
+			</div>
+			</div>
+			<div><input type="button" name="SUBMIT" value="SUBMIT" class="button" onclick="Submit_wining_wheel_rewards()"/></div>
+		</form>
+		
+	</div>
+	
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+var siteURL="";
+$(document).ready(function () {
+
+	siteURL =  window.location.href;
+	
+	 $("#No-policy").click(function () {
+		            if ($(this).is(":checked")) {
+		                $("#premium").hide();
+						$("#Motor").attr('disabled', 'disabled');
+						$("#Health").attr('disabled', 'disabled');
+						$("#Life").attr('disabled', 'disabled');
+		            } else {
+		                $("#premium").show();
+						$('#Motor').removeAttr("disabled");
+						$('#Health').removeAttr("disabled");
+						$('#Life').removeAttr("disabled");
+		            }
+		        });
+	});
+	$('#statusClosed').click(function(e){
+	location.reload();
+	})
+	function GetUrl() {
+    var url = window.location.href;
+    var newurl;
+    //newurl = "http://qa.policyboss.com";
+    if (url.includes("request_file")) {
+       // newurl = "http://qa-horizon.policyboss.com:3000";
+        newurl = "http://localhost:3000";
+    } else if (url.includes("qa")) {
+        newurl = "http://qa-horizon.policyboss.com:3000";
+    } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+        newurl = "http://horizon.policyboss.com:5000";
+    }
+    return newurl;
+}
+function mobileValid(_Mobile) {
+    var regMobile = new RegExp("^[6-9]{1}[0-9]{9}$");
+    return regMobile.test(_Mobile);
+}
+
+function nameValid(_str) {
+    var reg = /^[a-zA-Z ]+$/;
+    return reg.test(_str);
+}
+    function Submit_wining_wheel_rewards() {
+		var Error =0;
+		if ($("#name").val() != "") {
+        var _rex = /^[a-zA-Z ]+$/;
+        var CName =  ($("#name").val()).trim();
+        var bool = _rex.test(CName);
+        if (bool && $("#name").val().length < 50) {
+            var Name = CName.split(" ");
+            if (Name[1] == "" || Name[1] == undefined) {
+                Error++; $("#ErContactName").show().html("Please Enter Full Name");
+            }
+            else {
+                $("#ErContactName").hide().html("");
+            }
+        }
+        else { Error++; $("#ErContactName").show().html("Please Enter Valid Name"); }
+    }
+    else { 
+        Error++; $("#ErContactName").show().html("Please Enter Valid Name"); 
+    }
+
+
+    if ($("#mobile").val() == "") {
+        Error++;
+        $("#ErContactMobile").show().html("Please Enter Mobile Number");
+    }
+
+    if ($("#mobile").val() != "") {
+		
+		//if (mobileValid($("#ContactMobile").val()) || ($("#ContactMobile").val().length > 10 && $("#ContactMobile").val().length < 10)) {
+        if (mobileValid($("#mobile").val()) && $("#mobile").val().length == 10) {
+            $("#ErContactMobile").hide().html("");
+        } else {
+            Error++;
+            $("#ErContactMobile").show().html("Please Enter Valid Mobile Number");
+        }
+    }
+	if ($("#pincode").val() == "") {
+        Error++;
+        $("#Erpincode").show().html("Please Enter Pin Code");
+    }
+	if ($("#pincode").val() != "") {
+		
+		//if (mobileValid($("#ContactMobile").val()) || ($("#ContactMobile").val().length > 10 && $("#ContactMobile").val().length < 10)) {
+        if ($("#pincode").val().length == 6) {
+            $("#Erpincode").hide().html("");
+        } else {
+            Error++;
+            $("#Erpincode").show().html("Please Enter Valid Pin Code");
+        }
+    }
+	
+	    if(Error == 0){
+		var product="";
+		if($('#Motor').prop("checked") == true){
+			product +="Motor"
+		} 
+		if($('#Health').prop("checked") == true){
+			product +="/Health"
+		}
+		if($('#Life').prop("checked") == true){
+			product +="/Life"
+		}
+		
+		if($('#No-policy').prop("checked") == true){
+			product = "No";
+		}
+		
+		
+		//var data = $('#formdata :input').serializeArray();
+        var objdata = {
+            "name": $('#name').val(),
+			"mobile":$('#mobile').val(),
+			"pincode":$('#pincode').val(),
+			"product":product,
+			"annual_expense":$('input[name="annual_expense"]:checked').val(),
+			"remarks":$('#remarks').val()
+        };
+        console.log(JSON.stringify(objdata));
+        var obj_horizon_data = Horizon_Method_Convert("/wining_wheel_rewards/generate_wining_wheel_reward", objdata, "POST");
+        //var obj_horizon_data = Horizon_Method_Convert("/quote/wining_wheel_rewards/generate_wining_wheel_reward", objdata, "POST");
+        $.ajax({
+            type: "POST",
+			data : siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) :  JSON.stringify(objdata),
+			//url :  siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/wining_wheel_rewards/generate_wining_wheel_reward" ,
+			url :  siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/wining_wheel_rewards/generate_wining_wheel_reward" ,
+            //data: JSON.stringify(objdata),
+            //url: 'http://localhost:3000/quote/wining_wheel_rewards/generate_wining_wheel_reward',
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response["Status"] === "Success") {
+					//alert(response["Msg"]);
+					$('.StatusPopup').show();
+					$('#txt_statusmsg').text(response["Msg"]);
+                } else {
+                    alert(response["Msg"]);
+                }
+            }
+        });
+}
+    }
+	function Horizon_Method_Convert(method_action, data, type) {
+        var obj_horizon_method = {
+		      //'url':'http://localhost:3000/quote/wining_wheel_rewards/generate_wining_wheel_reward',
+            'url': (type === "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+            "data": {
+                request_json: JSON.stringify(data),
+                method_name: method_action,
+                client_id: "2"
+            }
+        };
+        return obj_horizon_method;
+    }
+</script>
+</html>

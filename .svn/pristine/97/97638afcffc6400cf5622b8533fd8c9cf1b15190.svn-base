@@ -1,0 +1,89 @@
+<Session>
+    <SessionData>
+        <Index>2</Index>
+        <InitTime>___timestamp___ GMT</InitTime>
+        <UserName>lmkStr</UserName>
+        <Password>/UhO4EVCIemPuEhcK+0HVPQuSF4UYmNUVoFljmYfbLAziuozxjzsmhJQ3DXTx91nGqDxK9w5jdDh9YOxBZ0PIA==</Password>
+        <OrderNo>___order_number___</OrderNo>
+        <QuoteNo>___quote_number___</QuoteNo>
+        <Route>INT</Route>
+        <Contract>STR</Contract>
+        <ProductType>B2C</ProductType>
+        <Channel>lmkStr</Channel>
+        <TransactionType>Quote</TransactionType>
+        <TransactionStatus>Fresh</TransactionStatus>
+        <ID />
+        <UserAgentID />
+        <Source />
+    </SessionData>
+    <Travel>
+        <TypeOfBusiness>NB</TypeOfBusiness>
+        <TypeOfPolicy>I/F</TypeOfPolicy>
+        <TypeOfTrip>___trip_type___</TypeOfTrip>
+        <DepartureDate>___policy_start_date___</DepartureDate>
+        <ReturnDate>___policy_end_date___</ReturnDate>
+        <TripDuration>___travel_days___</TripDuration>
+        <TypeOfCover>___cover_type___</TypeOfCover>
+        <TypeOfTavel>___travel_type___</TypeOfTavel>
+        <MaxPerTripDuration>___max_days___</MaxPerTripDuration>
+        <GeographicalExtension>___geo_extension___</GeographicalExtension>
+        <FamilyType>___family_type___</FamilyType>
+    </Travel>
+    <Quote>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <AgentNumber/>
+        <AgentName/>
+        <PlanSelected>21</PlanSelected>
+        <Stage/>
+    </Quote>
+    <Client>
+        <ClientType>Individual</ClientType>
+        <CltDOB>___birth_date___</CltDOB>
+        <GivName>___first_name___ ___middle_name___</GivName>
+        <SurName>___last_name___</SurName>
+        <EmailID>___email___</EmailID>
+        <MobileNo>___mobile___</MobileNo>
+        <TPClientRefNo>PBOSS___crn___</TPClientRefNo>
+        <CltSex>___gender___</CltSex>
+        <Age>___proposer_age___</Age>
+        <Salut>___salutation___</Salut>
+        <Occupation />
+        <CltAddr01>___permanent_address_1___</CltAddr01>
+        <CltAddr02>___permanent_address_2___</CltAddr02>
+        <CltAddr03>___permanent_address_3___</CltAddr03>
+        <City>___permanent_city___</City>
+        <State>___permanent_state___</State>
+        <PinCode>___permanent_pincode___</PinCode>
+        <MemberDetails>
+            <!--InsurersDetail_Start-->
+            <Member>
+                <CurrentLocation>INDIA</CurrentLocation>
+                <FirstName>___member_array_first_name___ ___member_array_middle_name___</FirstName>
+                <Gender>___member_array_gender___</Gender>
+                <HoldPassport>Y</HoldPassport>
+                <LastName>___member_array_last_name___</LastName>
+                <MemberDOB>___member_array_birth_date___</MemberDOB>
+                <Nationality>INDIA</Nationality>
+                <NomineeName/>
+                <AppointeeName />
+                <AppointeeRelationCode />
+                <NomineeRelationCode/>
+                <PassportNo>K1471903</PassportNo>
+                <ProposerRelationCode>___member_array_relation___</ProposerRelationCode>
+                <Salut>___member_array_salutation___</Salut>
+            </Member>
+            <!--InsurersDetail_End-->
+        </MemberDetails>
+        <Nominee>
+            <Name>___nominee_name___</Name>
+            <Age>___nominee_age___</Age>
+            <NomineeRelationCode>___nominee_relation___</NomineeRelationCode>
+            <AppointeeName />
+            <AppointeeRelationCode />
+        </Nominee>
+        <SportsPerson>___question_201_details___</SportsPerson>
+        <DangerousActivity>___question_202_details___</DangerousActivity>
+        <PreExistingIllness>___member_has_ped___</PreExistingIllness>
+    </Client>
+</Session>

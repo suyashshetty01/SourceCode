@@ -1,0 +1,13 @@
+{
+    "APIKEY": "___insurer_integration_service_user___",
+    "SECRETKEY": "___insurer_integration_service_password___",
+    "policyTypeName": "OMPIND",
+    "travelStartOn": "___policy_start_date___",
+    "travelEndOn": "___policy_end_date___",
+    "planId": ___Plan_Code___,
+    <!--InsurersDetail_Start-->
+    "insureds[___member_array_inc___]": {
+        "dob": "___member_array_birth_date___"
+    }
+    <!--InsurersDetail_End-->
+}

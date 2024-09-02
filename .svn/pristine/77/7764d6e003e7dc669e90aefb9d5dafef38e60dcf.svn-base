@@ -1,0 +1,53 @@
+<soapenv:Envelope
+	xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>
+	<soapenv:Body
+		xmlns:ns1='http://iims.services/types/'>
+		<ns1:createPolicyHol_GenElement>
+			<ns1:userCode>POLICYBOSS</ns1:userCode>
+			<ns1:rolecode>SUPERUSER</ns1:rolecode>
+			<ns1:PRetCode>1</ns1:PRetCode>
+			<ns1:userId/>
+			<ns1:stakeCode>BROKER</ns1:stakeCode>
+			<ns1:roleId/>
+			<ns1:userroleId/>
+			<ns1:branchcode/>
+			<ns1:PRetErr/>
+			<ns1:startDate>27-06-2017</ns1:startDate>
+			<ns1:stakeName/>
+			<ns1:title/>
+			<ns1:typeOfOrg/>
+			<ns1:address>c89, shiv tower, near mahalaxm,andheri</ns1:address>
+			<ns1:firstName>parvati</ns1:firstName>
+			<ns1:partyCode/>
+			<ns1:company>NA</ns1:company>
+			<ns1:sex>M</ns1:sex>
+			<ns1:address2>MUMBAI, MAHARASHTRA</ns1:address2>
+			<ns1:EMailid2/>
+			<ns1:partyStakeCode>POLICY-HOL</ns1:partyStakeCode>
+			<ns1:partyType>I</ns1:partyType>
+			<ns1:regNo/>
+			<ns1:midName/>
+			<ns1:city/>
+			<ns1:phNo3>8401994133</ns1:phNo3>
+			<ns1:regDate/>
+			<ns1:contactType>Permanent</ns1:contactType>
+			<ns1:businessName/>
+			<ns1:status/>
+			<ns1:EMailid1>parvati.nandpal@policyboss.com</ns1:EMailid1>
+			<ns1:clientType>Corporate</ns1:clientType>
+			<ns1:birthDate>14/06/1989</ns1:birthDate>
+			<ns1:lastName>nandpal</ns1:lastName>
+			<ns1:sector>NA</ns1:sector>
+			<ns1:country/>
+			<ns1:pinCode>400053</ns1:pinCode>
+			<ns1:prospectId/>
+			<ns1:state/>
+			<ns1:address3/>
+			<ns1:phNo1/>
+			<ns1:businessAddress/>
+			<ns1:phNo2/>
+			<ns1:partyName/>
+			<ns1:panNo/>
+		</ns1:createPolicyHol_GenElement>
+	</soapenv:Body>
+</soapenv:Envelope>

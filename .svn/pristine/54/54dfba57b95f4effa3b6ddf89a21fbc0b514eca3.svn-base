@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<title>Index</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+        <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" />-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<link href="Style/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+        <script src="Scripts/jquery.min.js"></script>
+        <script src="Scripts/jquery-ui.min.js"></script>
+		<style>
+			.header{
+				width:100%;
+				box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+			}
+			img{
+				padding:8px 50px;
+			}
+            .mainContetnt{width:90%;margin:20px auto;padding:10px;}
+			.Header_content{width:100%;padding:5px;}
+			.uploadBtn{width:40%;float:left;}
+			.displayBlock{display:inline-block;}
+			.procBtn{width:59%;float:left;}
+			.rightalign{float:right}
+			input[type="button"]{padding:10px 15px;margin:0px 5px;background:#2196f3;border:2px solid #2196f3;color:#fff;font-size:14px;cursor:pointer;}
+			.Emp_content{width:95%;margin:70px auto;}
+			.emp_tabel{border-collapse: collapse;width: 100%;}
+			.emp_tabel tr:nth-child(even){background-color: #f2f2f2;}
+			.emp_tabel td, .emp_tabel th {border: 1px solid #ddd;padding:6px;width: 7%;}
+			.emp_tabel th {
+			  padding-top: 7px;
+			  padding-bottom:7px;
+			  text-align: left;
+			  background-color:gray;
+			  color: white;
+			}
+			ul{padding:0px 15px;margin:0px;}
+			.downFile{margin-right: 10px;line-height: 42px;margin-left: 10px;font-weight: 600;font-size: 18px;}
+			.loadDiv{text-align:center;margin-top:10%;}
+			<!-- html>body div.empdata {overflow: hidden;}
+			thead.fixedHeader tr {
+				position: relative;
+			}
+			.scrollContent {
+				display: block;
+				height: 100%;
+				overflow-y: auto;
+				width: 100%
+			}
+			html>body thead.fixedHeader {
+				display: table;
+				overflow: auto;
+				width: 100%
+			} -->
+		</style>
+  </head>
+  <body>
+	<div>
+		<div class="header">
+			<img src="Images/policyboss.png">
+		</div>
+		<div class="mainContetnt">
+		
+				<div class="Header_content">
+					<div class="uploadBtn">
+						<div class="dynamic_fileup displayBlock" id="uploadFile">
+							<input type="file" id="filePicker" class="filecls">
+							<input type="hidden" id="hdfilePicker" />
+							<input type="hidden" id="hdfile_ext" />
+							<div id="EruploadFile" class="ErrorMsg" style="display:none;"></div>
+						</div>
+						<div class="wrapelm_box displayBlock">
+							<input type="button" class="submitbtn" id="btn_Submit" onclick="UploadFileData();" value="Upload File">
+						</div>
+					</div>
+					<div class="procBtn">
+						<div class="wrapelm_box displayBlock rightalign">
+							<input type="button" class="submitbtn" id="btn_delete" value="Delete Data" onclick="DeleteAllData();">
+						</div>
+						<div class="wrapelm_box displayBlock rightalign" style="margin-right:10px;">
+							<input type="button" class="submitbtn" id="btn_proceed" value="Proceed" onclick="ProceedFileData();">
+						</div>
+						<div id="download_excel_div" class="wrapelm_box displayBlock rightalign downFile" style="display:none;">
+							<a href="http://download.policyboss.com/emp_data/emp_data_link.xlsx">
+								<i class="fa fa-download" aria-hidden="true" style="font-size:20px;"></i>
+								<span>Download File</span>
+							</a>
+						</div>
+					</div>
+					<div id="loaderimage" class="loadDiv" style="display:none;">
+							<img src="https://www.policyboss.com/Images/loadingproposal.gif" alt="Smiley face" width="250" height="250">
+							</div>
+					<div class="Emp_content" id="empdata_div" style="display:none">
+						​
+						<div class="empdata">
+							<table id="tlbempdata" class="emp_tabel" style="height:500px;">
+								<thead class="fixedHeader">
+								<tr>
+									<th>Employee_Code</th>
+									<th>Name</th>
+									<th>Branch</th>
+									<th>Files</th>
+								</tr>
+								</thead>
+								<tbody class="scrollContent">
+								
+								</tbody>
+							</table>
+						</div> 
+					</div>
+				</div>
+			
+				<!-- <div class="dynamic_fileup" id="uploadFile">
+                    <input type="file" id="filePicker" class="filecls">
+                    <input type="hidden" id="hdfilePicker" />
+                    <input type="hidden" id="hdfile_ext" />
+                    <div id="EruploadFile" class="ErrorMsg" style="display:none;"></div>
+				</div>
+                    <div class="wrapelm_box textCenter">
+                        <input type="button" class="submitbtn" id="btn_Submit" onclick="UploadFileData();" value="UploadFile">
+                    </div>
+					<div class="empdata">
+						<table id="tlbempdata" border='1'>
+						</table>
+					</div> -->
+			
+		</div>
+	</div>
+    <script>
+		var filePicker = "";
+        var extension = "";
+        function FileUpload() {
+        if ($('input.chkfileupload').is(':checked')) {
+            $("dynamic_fileup").css('display', 'flex')
+            $('#uploadFile').css( 'display','flex' );
+            $('#uploadFile').css({ 'width': '100%', 'margin': '0px auto' });
+
+        }
+        else {
+            $('#uploadFile').hide();
+        }
+    }
+
+   function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+
+        function UploadFileData() {
+		 
+          if($('#hdfilePicker').val() != "" && $('#hdfile_ext').val() != ""){
+		  var objdata = {             
+                "file": $('#hdfilePicker').val(),
+                "file_ext": $('#hdfile_ext').val()
+            };
+			 $('#empdata_div').innerHTML = "";
+             $('#loaderimage').show();
+			  $('#empdata_div').hide();
+			  $('#download_excel_div').hide();
+            var obj_horizon_data = Horizon_Method_Convert("/empdata/upload_emp_data", objdata, "POST");	//QA		
+            $.ajax({
+                type: "POST",
+				//data: objdata,//Local
+				//url : "http://localhost:3000/emp_data/upload_emp_data",//Local
+                data: JSON.stringify(obj_horizon_data['data']),//QA
+                url: obj_horizon_data['url'],//QA
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+				debugger;
+                    console.log(response);
+
+                    if (response["Status"] == "Success") {
+					
+					EmpData();
+
+                    } else {
+                        alert('File Uploading failed');
+                    }
+                }
+            });
+		  }else{
+		  alert('Please select file');
+		  }
+            
+
+        }
+      
+	  function EmpData(){
+	  $('#tlbempdata').empty();
+	   var obj_horizon_data = Horizon_Method_Convert("/empdata/get_emp_details","", "GET");//QA
+	   $.ajax({
+                type: "GET",
+				//url : "http://localhost:3000/emp_data/get_emp_details",//Local
+                url: obj_horizon_data['url'],
+				contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+					$('#loaderimage').hide();
+					$('#empdata_div').show();
+					$('#tlbempdata').append('<thead class="fixedHeader">'
+								+'<tr>'
+									+'<th>Employee_Code</th>'
+									+'<th>Name</th>'
+									+'<th>Branch</th>'
+									+'<th>Files</th>'
+								+'</tr>'
+								+'</thead>'
+								+'<tbody class="scrollContent">'
+								
+								+'</tbody>');
+					for(var i in response){
+					$('#tlbempdata').append('<tr><td>'+response[i]['Employee_Code']+'</td>'
+											+'<td>'+response[i]['Name']+'</td>'
+											+'<td>'+response[i]['Branch']+'</td>'
+											+'<td>--</td></tr>'
+					)
+					}
+                    
+                }
+            });
+	  }
+	  function EmpData_Proceed(){
+	  $('#tlbempdata').empty();
+	   var obj_horizon_data = Horizon_Method_Convert("/empdata/get_emp_details","", "GET");//QA
+	   $.ajax({
+                type: "GET",
+				//url : "http://localhost:3000/emp_data/get_emp_details",//Local
+                url: obj_horizon_data['url'],
+				contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+					$('#loaderimage').hide();
+					$('#empdata_div').show();
+					$('#tlbempdata').append('<thead class="fixedHeader">'
+								+'<tr>'
+									+'<th>Employee_Code</th>'
+									+'<th>Name</th>'
+									+'<th>Branch</th>'
+									+'<th>Files</th>'
+								+'</tr>'
+								+'</thead>'
+								+'<tbody class="scrollContent">'
+								
+								+'</tbody>');
+					for(var i in response){
+					$('#tlbempdata').append('<tr><td>'+response[i]['Employee_Code']+'</td>'
+											+'<td>'+response[i]['Name']+'</td>'
+											+'<td>'+response[i]['Branch']+'</td>'
+											+'<td><a href="'+response[i]['Letter']+'" target="_blank">Download File</a></td></tr>'
+					)
+					}
+                    
+                }
+            });
+	  }
+ function DeleteAllData()
+ {
+		$('#empdata_div').hide();
+		$('#download_excel_div').hide();
+		$('#loaderimage').show();
+		var obj_horizon_data = Horizon_Method_Convert("/empdata/emp_data_delete","", "GET");
+	   $.ajax({
+                type: "GET",
+				//url : "http://localhost:3000/emp_data/emp_data_delete",
+                url: obj_horizon_data['url'],
+				contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("Delete data",response);
+					if (response["Status"] == "Success") {
+					$('#loaderimage').hide();
+					alert("Data Deleted Successfully");
+                    } else {
+                        alert('Failed to delete data');
+                    }
+                    
+                }
+            });
+ }
+ function ProceedFileData()
+ {
+		$('#empdata_div').innerHTML = "";
+		$('#empdata_div').hide();
+		$('#loaderimage').show();
+		$('#download_excel_div').hide();
+		var obj_horizon_data = Horizon_Method_Convert("/empdata/print_emp_pdf","", "GET");
+	   $.ajax({
+                type: "GET",
+				//url : "http://localhost:3000/emp_data/print_emp_pdf",
+                url: obj_horizon_data['url'],
+				contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("emp_data",response);
+					if (response["Status"] == "Success") {
+					CretaeNewFileData();
+					//$('#download_excel_div').show();
+                    } else {
+                        alert('File Uploading failed');
+                    }
+                    
+                }
+            });
+ }
+ function CretaeNewFileData()
+ {
+		var obj_horizon_data = Horizon_Method_Convert("/empdata/emp_data_download","", "GET");
+	   $.ajax({
+                type: "GET",
+				//url : "http://localhost:3000/emp_data/emp_data_download",
+                url: obj_horizon_data['url'],
+				contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log("emp_data",response);
+					if (response["Status"] == "Success") {				
+					EmpData_Proceed();
+					$('#download_excel_div').show();
+                    } else {
+                        alert('File Uploading failed');
+                    }
+                    
+                }
+            });
+ }
+ 
+        var file_extention = {
+            "application/pdf": "pdf",
+            "text/plain": "txt",
+            "image/png": "png",
+            "image/jpeg": "jpg",
+			
+        }
+        var handleFileSelect = function (evt) {
+		
+            var files = evt.target.files;
+            var file = files[0];
+
+            var file_id = evt.target.id;
+            var i = evt.target.id.split('_')[1];
+            $('#hdfile_ext').val(files[0]['name'].split('.')[1]);
+            if (files && file) {
+                var reader = new FileReader();
+
+                reader.onload = function (readerEvt) {
+                    var binaryString = readerEvt.target.result;
+                    $('#hdfilePicker').val(encodeURIComponent(btoa(binaryString)));
+                };
+
+                reader.readAsBinaryString(file);
+            }
+        };
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+        } else {
+            alert('The File APIs are not fully supported in this browser.');
+        }
+		
+       
+	</script>
+  </body>
+  </html>

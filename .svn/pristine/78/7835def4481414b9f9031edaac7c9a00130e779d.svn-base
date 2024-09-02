@@ -1,0 +1,16 @@
+{
+    "RequestHeader": {
+        "requestID": "___timestamp___",
+        "action": "getPDF",
+        "channel": "SBIG",
+        "transactionTimestamp": "___transactionTimestamp___"
+    },
+    "RequestBody": {
+        "PolicyNumber": "___policy_code___",
+        "Regeneration": "N",
+        "SourceSystem": "Saral",
+        "IntermediateCode": null,
+        "ProductName": "",
+        "Offline": "N"
+    }
+}

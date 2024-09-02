@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CAR INSURANCE </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+        <link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/genricvehicle.css">  
+        <link rel="stylesheet" href="./css/jquery-ui.css">
+		
+		
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="./js/jquery-ui.js"></script>
+		 <script src="./js/moment.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+
+        <script src="./js/moment-with-locales.min.js"></script>
+        <script src="./js/bootstrap-material-datetimepicker.js"></script>
+        <style>
+			.ui-widget-content{
+				line-height: 18px !important;
+				font-size: 12px !important;
+				padding: 10px !important;
+			}
+			.ui-menu .ui-menu-item
+			{margin-top: 7px !important;}
+			
+		</style>
+    </head>
+    <body>
+<div class="loader" style="display:none"  id="QuoteLoader"><img src="images/quote-page.gif" style="height: 40px;"></div>
+        <div class="container-fluid head_wrap">
+            <div class="connect text-right">
+                <i class="fa fa-envelope-o"></i>
+                <i class="fa fa-phone"></i>
+            </div>
+            <div class="d-flex nav_wrap">
+                <div class="logo flex-grow-1"></div>
+                <div class="menu "><i class="fa fa-bars" ></i></div>
+            </div>
+
+        </div>
+        <div class="main_wrap motor_maindiv">
+            <form action="http://www.policyboss.com/car-insurance" method="post">
+                <div class="ins_heading">
+
+                    <h1>CAR INSURANCE</h1>
+
+                </div>
+                <div class="form_container">
+                    <div class="dashbord_btn">
+                        <i  id="dbb" class="fa  fa-clipboard" onclick="Quote_page();"></i>
+
+                    </div>
+                    <div class="form_wrap" id="register_vehicle" >
+                        <div class="form_heading">COMPARE &amp; BUY<br> CAR INSURANCE PLANS</div>
+                        <div class="compare_input"><input id="RegistrationNo" onkeypress="if (this.value.length == 10) return false;" type="text" name="RegistrationNo" placeholder="EG.MH01AB1234"></div>
+                        <div class="btn_wrap">
+                            <div class="btn compare" onclick="CheckType('FastLane');">COMPARE NOW</div>
+							 <div id="RegistrationNoError" class="validationclass"></div>
+                        </div>
+
+
+                        <div class="links"><a href="#" id="notremem">I DON'T REMEMBER MY VEHICLE NO.</a></div>
+                        <div class="links"><a href="#" id="ihave">I HAVE A NEW CAR</a></div>
+                    </div>
+                    <div class="form_wrap detailSection" style="display:none" id="dont_remember">
+                        <div class="d-flex title_wrap mb-2 pb-2">
+                            <div class="back"><i class="fa fa-chevron-left" id="prevbtn"></i></div>
+                            <div class="form_title flex-grow-1 text-center"><strong>Vehicle Details</strong></div>
+                        </div>
+                        <form name="form_1 ">
+                            <div class="input_row d-flex text-center mt-3 mb-3 justify-content-center">
+                                <div class="flex-fill grpbtn active">INDIVIDUAL</div>
+                                <div class="flex-fill grpbtn" style="display:none">COMPANY</div>
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Policy Type
+                                    <select name="policy_type" class="custom_select" id="TPCompPlan">
+                                        <!-- <option value="">Select</option> -->
+                                        <!-- <option value="0CH_1TP">TP ONLY (1 year)</option> -->
+                                        <!-- <option value="1CH_0TP">Comprehensive Plan (1 Yr)</option> -->
+										 <!-- <option value="0CH_3TP">TP ONLY (3 year)</option> -->
+										 <!-- <option value="3CH_0TP">Comprehensive Plan (3 Yr)</option> -->
+										  <!-- <option value="1CH_2TP">Comprehensive (1 Yr) + T.P. (2 Yrs)</option> -->
+
+                                    </select>
+									 <div id="ErTPCompPlan" class="ErrorMsg" style="display:none;"></div>
+                                    <input   id="VehicleType"  type="hidden" value=""> 
+                                </label>
+                                <!-- <label for="policy_type">
+                                        Policy Type
+                                        <input type="text" placeholder="policy type" readonly>
+                                </label> -->
+
+                            </div>
+
+                            <div class="input_row ">
+                                <label for="MakeModel" class="control-label">Vehicle Make &amp; Model (e.g. Honda, City)</label>
+                                <div class="form-control-wrapper is-empty">
+                                    <div class="form-group label-floating is-empty">
+                                        <input type="text" id="MakeModel" onkeyup="BindMakeModel()" style="top:-34px;" class="form-control ui-autocomplete-input" data-tooltip="Please Select Make And Model" data-tooltip-animate-function="foldin" data-tooltip-stickto="top" data-tooltip-color="bottom" autocomplete="off" placeholder="Vehicle Make &amp; Model (e.g. Honda, City)">
+                                    </div>
+                                    <input type="hidden" id="MakeModelID" name="MakeModelID">
+                                    <div id="ErMakeModel" class="ErrorMsg" style="display:none;"></div>
+                                </div>
+                            </div>
+                            <div class="input_row ">
+                                <label for="FuelType" class="control-label" >Fuel Type</label>
+                                <div class="form-control-wrapper">
+                                    <select id="FuelType" class="form-control floating-label"><option value="0" >Select Fuel Type</option></select>
+                                    <div id="ErFuelType" class="ErrorMsg" style="display:none;"></div>
+                                </div>
+
+                            </div>
+                            <div class="input_row " style="display:none;" id="divValueOfBiFuelKit">
+                                <div class="form-control-wrapper">
+                                    <label for="ValueOfBiFuelKit" class="control-label">Bi-fuel CNG/LPG Kit Value</label>
+                                    <div class="is-empty"><div class="form-group label-floating is-empty">
+                                            <input class="form-control" data-val="true" data-val-number="The field ValueOfBiFuelKit must be a number." data-val-required="The ValueOfBiFuelKit field is required." id="ValueOfBiFuelKit" maxlength="6" name="ValueOfBiFuelKit" type="number" value="0">
+                                        </div> </div>
+                                    <div id="ErValueOfBiFuelKit" class="ErrorMsg" style="display:none;"></div>
+                                </div>
+
+                            </div>
+                            <div class="input_row " id="dvVariantID">
+                                <label for="Variant" class="control-label">Variant</label>
+                                <select id="VariantID"  class="form-control floating-label" ></select>
+                                <div id="ErVariantID" class="ErrorMsg" style="display:none;"></div>
+                                <input   id="hdVariantID"  type="hidden" value="0"> 
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">First Registration/Invoice Date </label>
+                                <input type="text" id="DOPCRenew" class="Datepicker DateofPurchaseofCar" placeholder="First Registration/Invoice Date" onchange="myfunction();" >
+                                <input type="text" id="DOPCNew" class="Datepicker DateofPurchaseofCar" placeholder="First Registration/Invoice Date" onchange="myfunction();" >
+                                <input id="DateofPurchaseofCar" name="DateofPurchaseofCar" type="hidden" value="">
+                                <div id="ErDOPCNew" class="ErrorMsg" style="display:none;"></div>
+                                <div id="ErDOPCRenew" class="ErrorMsg" style="display:none;"></div>
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">Year Month Of Manufacturing</label>
+                                <input type="text" id="ManufactureDate" class="Datepicker" placeholder="Year Month Of Manufacturing" >
+                                <input data-val="true" data-val-number="The field ManufactureYear must be a number." data-val-required="The ManufactureYear field is required." id="ManufactureYear" name="ManufactureYear" type="hidden" value="0">  
+                                <input data-val="true" data-val-number="The field ManufactureMonth must be a number." data-val-required="The ManufactureMonth field is required." id="ManufactureMonth" name="ManufactureMonth" type="hidden" value="0">
+
+                                <div id="ErManufactureDate" class="ErrorMsg" style="display:none;"></div>
+                            </div>
+                            <div class="input_row ">
+                                <div class="form-control-wrapper is-empty">
+                                    <label for="CityofRegitration" class="control-label">Place Of Registration</label>
+                                    <div class="form-group label-floating is-empty"><input type="text" id="CityofRegitration" name="CityofRegitration" style="top:-34px;" class="form-control ui-autocomplete-input" data-tooltip="Please Select Make And Model" data-tooltip-animate-function="foldin" data-tooltip-stickto="top" data-tooltip-color="bottom" autocomplete="off"></div>
+                                    <input type="hidden" id="CityofRegitrationID" name="CityofRegitrationID">
+                                    <div id="ErCityofRegitration" class="ErrorMsg" style="display:none;"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="input_row text-center">
+
+                                <div class="btn_3 back" id="prev">Back</div> <div class="btn_3" id="next">Next</div>
+
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                    <div class="form_wrap previousinsurance hidden " style="display:none" id="policy_details" >
+                        <div class="d-flex title_wrap mb-2 pb-2">
+                            <div class="back"><i class="fa fa-chevron-left"></i></div>
+                            <div class="form_title flex-grow-1 text-center"><strong>Previous Policy Details</strong></div>
+                        </div>
+                        <form name="form_2 ">
+
+
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Your Policy Expiry Date
+                                    <input type="text" id="PolicyExpiryDate" placeholder="Your Policy Expiry Date"  onchange = "myfunction1();" >
+                                <div id="ErPolicyExpiryDate" class="ErrorMsg" style="display:none;"></div>
+								</label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="Previous_insurer">
+                                    Select Variant
+                                    <select name="previous_insurer" class="custom_select" id="PreviousInsurer">
+
+                                        <option value="0">Select Previous Insurer</option>
+                                        <option value="1">Bajaj Allianz</option>
+                                        <option value="2">Bharti Axa</option>
+                                        <option value="3">Cholamandalam MS</option>
+                                        <option value="4">Future Generali</option>
+                                        <option value="5">HDFC ERGO</option>
+                                        <option value="6">ICICI Lombard</option>
+                                        <option value="7">IFFCO Tokio</option>
+                                        <option value="15">L&amp;T General</option>
+                                        <option value="33">Liberty Videocon</option>
+                                        <option value="35">Magma HDI</option>
+                                        <option value="8">National Insurance</option>
+                                        <option value="16">Raheja QBE</option>
+                                        <option value="9">Reliance General</option>
+                                        <option value="10">Royal Sundaram</option>
+                                        <option value="17">SBI General</option>
+                                        <option value="18">Shriram General</option>
+                                        <option value="11">Tata AIG</option>
+                                        <option value="12">New India Assurance</option>
+                                        <option value="13">Oriental Insurance</option>
+                                        <option value="14">United India</option>
+                                        <option value="19">Universal Sompo</option>
+
+
+                                    </select>
+                                    <div id="ErPreviousInsurer" class="ErrorMsg" style="display:none;"></div>
+                                </label>
+
+                            </div>
+							<div class="NOTP">
+                            <div class="some_headings">Claim on Last Year Policy</div>
+                            <div class="input_row d-flex text-center mt-1 mb-3 justify-content-center">
+
+
+                                <button style="padding:5px 30px;margin-right: 15px;" type="button" id="lblHaveNCBCertificate-No" class="btn btn-UnSelected primary NCBYes">Yes</button>
+                                <button style="padding:5px 30px;" type="button" id="lblHaveNCBCertificate-Yes" class="btn btn-UnSelected dropdown-toggle NCBNo primary">No</button>
+                            </div>
+                            <div id="divNoClaimBonusPercent" class="col-md-12" style="display:none;">
+                                <div class="form-group label-floating">
+                                    <select class="form-control empty Unselected" data-val="true" data-val-number="The field No claim bonus rate in the certificate must be a number." data-val-required="The No claim bonus rate in the certificate field is required." id="NoClaimBonusPercent" name="NoClaimBonusPercent" data-tooltip-animate-function="foldin" data-tooltip-stickto="top" data-tooltip-color="black" placeholder="No Claim Bonus Percent">
+                                        <option selected="selected" value="0">0% (less than 1 year)</option>
+                                        <option value="20">20% (1 year age)</option>
+                                        <option value="25">25% (2 year age)</option>
+                                        <option value="35">35% (3 year age)</option>
+                                        <option value="45">45% (4 year age)</option>
+                                        <option value="50">50% (5 year age)</option>
+                                    </select><label for="NoClaimBonusPercent" class="control-label" style="display: none;">No Claim Bonus Percent</label>
+                                </div>
+                                <div id="ErNoClaimBonusPercent" class="ErrorMsg" style="display:none;"></div>
+                            </div>
+							</div>
+                            <div class="input_row text-center">
+
+                                <div class="btn_3 back" id="prev">Back</div> <div class="btn_3" id="next1">Next</div>
+
+                            </div>
+
+                        </form>     
+
+                    </div>
+                    <div class="form_wrap hidden" style="display:none" id="personal_details" >
+                        <div class="d-flex title_wrap mb-2 pb-2">
+                            <div class="back"><i class="fa fa-chevron-left"></i></div>
+                            <div class="form_title flex-grow-1 text-center"><strong>Personal Details</strong></div>
+                        </div>
+                        <form name="form_2 ">
+
+
+                            <div class="input_row ">
+                                <label for="full_name">
+                                    Full Name
+                                    <input type="text" onkeypress="if (this.value.length == 50) return false;" id="ContactName" placeholder="full name" >
+									<div id="ErContactName" class="ErrorMsg" style="display:none;"></div>
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="Mobile_Number">
+                                    Mobile Number
+                                    <input type="number"  onkeypress="if (this.value.length == 10) return false;" id="ContactMobile" placeholder="Mobile Number" >
+									 <div id="ErContactMobile" class="ErrorMsg" style="display:none;"></div>
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="Email_id">
+                                    Email Id
+                                    <input type="email" id="ContactEmail" placeholder="Email" >
+									<div id="ErContactEmail" class="ErrorMsg" style="display:none;"></div>
+                                </label>
+
+                            </div>
+
+                            <div class="input_row text-center">
+
+                                <div class="btn_3 back" id="prev_1">Back</div> <div class="btn_3" id="btnCompareQuote" >Calculate Quote</div>
+
+                            </div>
+							<div class="text-center" id="LoadingQuote" style="display:none;padding-bottom: 40px; font-size: 12px;"><img src="images/spinningwheel.gif" style=" height:33px;" />Please Wait While Loading Quote...</div>
+                        </form>     
+
+                    </div>
+                    <input value="2.0" id="app_version" name="app_version" type="hidden">
+                    <input id="PeronalAccidentCoverforDriver" name="PeronalAccidentCoverforDriver" type="hidden" value="">
+                    <input id="HiddenPlanningtoAddAccessory" name="HiddenPlanningtoAddAccessory" type="hidden" value="">
+                    <input id="RegisterintheName" name="RegisterintheName" type="hidden" value="individual">
+                    <input data-val="true" data-val-required="The IsLanding field is required." id="IsLanding" name="IsLanding" type="hidden" value="False">
+                    <input id="HaveNCBCertificate" name="HaveNCBCertificate" type="hidden" value="">
+                    <input id="SelectAdditionalCoverage" name="SelectAdditionalCoverage" type="hidden" value="">
+                    <input id="IsAntiTheftDevice" name="IsAntiTheftDevice" type="hidden" value="">
+                    <input data-val="true" data-val-number="The field CustomerReferenceID must be a number." data-val-required="The CustomerReferenceID field is required." id="CustomerReferenceID" name="CustomerReferenceID" type="hidden" value="0">
+                    <input data-val="true" data-val-number="The field RequestID must be a number." data-val-required="The RequestID field is required." id="RequestID" name="RequestID" type="hidden" value="0">
+                    <input data-val="true" data-val-regex="- The value of Electrical Accessories should be in numbers" data-val-regex-pattern="^\d+$" id="ElectricalAccessories" name="ElectricalAccessories" type="hidden" value="">
+                    <input data-val="true" data-val-regex="- The value of Non - Electrical Accessories should be in numbers" data-val-regex-pattern="^\d+$" id="NonElectricalAccessories" name="NonElectricalAccessories" type="hidden" value="">
+                    <input id="rdoPlanningtoAddAccessory" name="rdoPlanningtoAddAccessory" type="hidden" value="">
+                    <input data-val="true" data-val-number="The field VehicleType must be a number." data-val-required="The VehicleType field is required." id="VehicleType" name="VehicleType" type="hidden" value="0">
+                    <input id="VehicleInsuranceSubtype" name="VehicleInsuranceSubtype" type="hidden" value="">
+                    <input id="MemberofAA" name="MemberofAA" type="hidden" value="">
+                    <input id="OwnerDriverPersonalAccidentCover" name="OwnerDriverPersonalAccidentCover" type="hidden" value="">
+                    <input id="PaidDriverPersonalAccidentCover" name="PaidDriverPersonalAccidentCover" type="hidden" value="">
+                    <input data-val="true" data-val-required="The TermCondition field is required." id="TermCondition" name="TermCondition" type="hidden" value="False">
+                    <input id="ErrorMessage" name="ErrorMessage" type="hidden" value="">
+                    <input id="MakeName" name="MakeName" type="hidden" value="">
+                    <input id="ModelName" name="ModelName" type="hidden" value="">
+                    <input id="CustomerSMSVerified" name="CustomerSMSVerified" type="hidden" value="">
+                    <input data-val="true" data-val-number="The field RequestTypeID must be a number." data-val-required="The RequestTypeID field is required." id="RequestTypeID" name="RequestTypeID" type="hidden" value="0">
+                    <input id="IsAlreadyVerified" name="IsAlreadyVerified" type="hidden" value="">
+                    <input id="CustomerSentCode" name="CustomerSentCode" type="hidden" value="">
+                    <input id="IsLandmarkEmp" name="IsLandmarkEmp" type="hidden" value="">
+
+                    <input id="IsBiFuelKit" name="IsBiFuelKit" type="hidden" value="">
+                    <input id="BiFuelType" name="BiFuelType" type="hidden" value="">
+                    <div class="form_wrap" id="have_bike">
+                        <div class="d-flex title_wrap mb-2 pb-2">
+                            <div class="back"><i class="fa fa-chevron-left"></i></div>
+                            <div class="form_title flex-grow-1 text-center"><strong>Vehicle Details</strong></div>
+                        </div>
+                        <form name="form_1 ">
+                            <div class="input_row d-flex text-center mt-3 mb-3 justify-content-center">
+                                <div class="flex-fill grpbtn active">INDIVIDUAL</div>
+                                <div class="flex-fill grpbtn">COMPANY</div>
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Policy Type
+                                    <select name="policy_type" class="custom_select">
+                                        <option selected disabled>Policy Type</option>
+                                        <option value="TP ONLY (1 year)">TP ONLY (5 Years)</option>
+                                        <option value="Comprehensive Plan (1 Yr)">Comprehensive Plan (1 Yr)+T.P.(4 Yrs)</option>
+                                        <option value="Comprehensive Plan (1 Yr)">Comprehensive Plan (5 Yrs)</option>
+
+                                    </select>
+                                </label>
+                                <!-- <label for="policy_type">
+                                        Policy Type
+                                        <input type="text" placeholder="policy type" readonly>
+                                </label> -->
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="makemodel">
+                                    Vehicle Make &amp; Model (e.g. Honda, City)
+                                    <input type="text" placeholder="  Vehicle Make &amp; Model" >
+                                </label>
+                            </div>
+                            <div class="input_row ">
+                                <label for="Fuel_type">
+                                    Select Fuel Type
+                                    <select name="Fuel_type" class="custom_select">
+                                        <option selected>Fuel Type</option>
+                                        <option value="Petrol">Petrol</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="CNG">CNG</option>
+
+                                    </select>
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Bi-fuel CNG/LPG Kit Value
+                                    <input type="text" placeholder="Bi-fuel CNG/LPG Kit Value" >
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="Variant_type">
+                                    Select Variant
+                                    <select name="Variant_type" class="custom_select">
+                                        <option selected>Variant Type</option>
+                                        <option value="Petrol">Petrol</option>
+
+
+                                    </select>
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    First Registration/Invoice Date
+                                    <input type="date" placeholder="First Registration/Invoice Date" >
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Year Month Of Manufacturing
+                                    <input type="date" placeholder="Year Month Of Manufacturing" >
+                                </label>
+
+                            </div>
+                            <div class="input_row ">
+                                <label for="policy_type">
+                                    Place Of Registration
+                                    <input type="text" placeholder="Registration" >
+                                </label>
+
+                            </div>
+
+
+                            <div class="input_row text-center">
+
+                                <div class="btn_3" id="prev">BACK</div> <div class="btn_3" id="next">NEXT</div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+		 <div class="warningmsg" style="display:none;padding-top: 169px;">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center; color:white">ss_id , fba_id ,ip_address , app_version ,mobile_no is mandatory</h3>
+    </div>
+
+        <div class="meet_exp">
+            <div class="me_head">
+                Meet Our Expert
+            </div>
+            <div class="book_appoinement">
+                <div class="info_head">Book an appointment with our Policy Expert to get competitive quotes</div>
+                <div class="btn_wrap">
+                    <div class="btn_2 book">Book Now</div>
+                </div>
+
+            </div>
+            <div class="me_head">
+                Subscribe
+            </div>
+            <div class="subscribe">
+                <div class="info_head">Get the latest updates on Insurance</div>
+                <div class="btn_wrap">
+                    <div class="btn_2 subs">Subscribe</div>
+                </div>
+            </div>
+        </div>
+        <div class="other_links">
+            <div class="link_row"></div>
+            <div class="link_row"></div>
+            <div class="link_row"></div>
+
+        </div>
+
+        <script src="./js/client_details.js"></script>
+		 <script src="./js/CustomValidations.js"></script>
+        <script>
+                                        setProduct("Car")
+                                        $(document).ready(function () {
+                                            $("#notremem").click(function (e) {
+                                                //e.preventDefault();
+                                                $("#register_vehicle").hide()
+                                                $("#dont_remember").show();
+                                                $("#DOPCRenew").show();
+                                                $("#DOPCNew").hide();
+												$('#VehicleType').val('renew');
+
+                                            })
+
+                                           
+                                            $("#policy_details #next").click(function (e) {
+												debugger;
+                                                $("#policy_details").hide();
+                                                $("#personal_details").show();
+
+                                            })
+                                            $("#ihave").click(function (e) {
+debugger;
+                                                $("#register_vehicle").hide()
+                                                $("#dont_remember").show()
+                                                $("#DOPCRenew").hide();
+                                                $("#DOPCNew").show();
+												$('#VehicleType').val('new');
+
+                                            })
+                                            $("#have_bike #next").click(function (e) {
+debugger;
+                                                $("#have_bike").hide();
+                                                $("#personal_details").show();
+
+                                            })
+
+
+
+                                            $("#dont_remember .back").click(function (e) {
+debugger;
+                                                $("#dont_remember").hide();
+                                                $("#register_vehicle").show();
+
+                                            })
+                                            $("#policy_details .back").click(function (e) {
+debugger;
+                                                $("#policy_details").hide();
+                                                $("#dont_remember").show();
+
+                                            })
+                                            $("#personal_details .back").click(function (e) {
+debugger;
+												if($('#VehicleType').val()=="renew"){
+                                                $("#personal_details").hide();
+                                                $("#policy_details").show();}
+												else{
+												 $("#personal_details").hide();
+												 $("#dont_remember").show();
+												}
+
+                                            })
+                                            $("#have_bike .back").click(function (e) {
+                                                $("#have_bike").hide();
+                                                $("#register_vehicle").show();
+                                            })
+                                        });
+        </script>
+		
+	
+
+    </body>
+</html>    
+

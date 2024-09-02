@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PolicyDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <CoverDetails />
+   <TrailerDetails />
+   <ClientDetails>
+      <ClientType>___vehicle_registration_type___</ClientType>
+   </ClientDetails>
+   <Policy>
+      <BusinessType>___vehicle_insurance_type___</BusinessType>
+      <Cover_From>___policy_start_date___</Cover_From>
+      <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+      <AgentName>___insurer_integration_agent_code___</AgentName>
+      <productcode>2311</productcode>
+      <OtherSystemName>1</OtherSystemName>
+      <isMotorQuote>true</isMotorQuote>
+   </Policy>	
+   <Risk>
+      <VehicleMakeID>___dbmaster_insurer_vehicle_make_code___</VehicleMakeID>
+      <VehicleModelID>___dbmaster_insurer_vehicle_model_code___</VehicleModelID>
+      <Zone>B</Zone>
+      <RTOLocationID>756</RTOLocationID>
+      <ExShowroomPrice>489120</ExShowroomPrice>
+      <IDV>___vehicle_idv___</IDV>
+      <DateOfPurchase>___vehicle_registration_date___</DateOfPurchase>
+      <ManufactureMonth>___vehicle_manf_date_1___</ManufactureMonth>
+      <ManufactureYear>___vehicle_manf_date_2___</ManufactureYear>
+      <IsVehicleHypothicated>false</IsVehicleHypothicated>
+      <VehicleVariant>___dbmaster_insurer_vehicle_variant_name___</VehicleVariant>
+      <StateOfRegistrationID>30</StateOfRegistrationID>
+      <Rto_RegionCode>TN01</Rto_RegionCode>
+   </Risk>
+   <Vehicle>
+      <Registration_Number>TN-01-W-2642</Registration_Number>
+      <RegistrationNumber_New />
+      <Registration_date>___vehicle_registration_date___</Registration_date>
+      <SeatingCapacity>___dbmaster_insurer_vehicle_seatingcapacity___</SeatingCapacity>
+      <TypeOfFuel>___dbmaster_insurer_vehicle_fueltype___</TypeOfFuel>
+      <MiscTypeOfVehicleID />
+   </Vehicle>
+   <Cover>
+      <IsVoluntaryDeductableOpted>___voluntary_deductible_2___</IsVoluntaryDeductableOpted>
+      <VoluntaryDeductableAmount>___voluntary_deductible___</VoluntaryDeductableAmount>
+      <IsAntiTheftDeviceFitted>___is_antitheft_fit___</IsAntiTheftDeviceFitted>
+      <IsAutomobileAssociationMember>___is_aai_membership___</IsAutomobileAssociationMember>
+      <IsPAToUnnamedPassengerCovered>___pa_unnamed_passenger_si_2___</IsPAToUnnamedPassengerCovered>
+      <NoOfUnnamedPassenegersCovered>___dbmaster_insurer_vehicle_seatingcapacity___</NoOfUnnamedPassenegersCovered>
+      <UnnamedPassengersSI>___pa_unnamed_passenger_si___</UnnamedPassengersSI>
+      <IsElectricalItemFitted>___electrical_accessory_2___</IsElectricalItemFitted>
+      <ElectricalItemsTotalSI>___electrical_accessory___</ElectricalItemsTotalSI>
+      <IsNonElectricalItemFitted>___non_electrical_accessory_2___</IsNonElectricalItemFitted>
+      <NonElectricalItemsTotalSI>___non_electrical_accessory___</NonElectricalItemsTotalSI>
+      <IsBiFuelKit>___is_external_bifuel___</IsBiFuelKit>
+      <BiFuelKitSi>___external_bifuel_value___</BiFuelKitSi>
+      <IsTPPDCover>___pa_paid_driver_si_2___</IsTPPDCover>
+      <IsBasicODCoverage>true</IsBasicODCoverage>
+      <IsBasicLiability>true</IsBasicLiability>
+      <IsPAToOwnerDriverCoverd>___pa_owner_driver_si_2___</IsPAToOwnerDriverCoverd>
+	  <IsNilDepreciation>___addon_zero_dep_cover___</IsNilDepreciation>
+      <PACoverToOwner>
+         <PACoverToOwner>
+            <NomineeName />
+            <NomineeDOB />
+            <NomineeRelationship />
+         </PACoverToOwner>
+      </PACoverToOwner>
+      <BifuelKit>
+         <BifuelKit>
+            <IsChecked>false</IsChecked>
+            <ISLpgCng>false</ISLpgCng>
+            <SumInsured>___external_bifuel_value___</SumInsured>
+         </BifuelKit>
+      </BifuelKit>
+      <VoluntaryDeductible>
+         <VoluntaryDeductible>
+            <IsMandatory>false</IsMandatory>
+            <PolicyCoverID />
+            <SumInsured>2500</SumInsured>
+            <IsChecked>false</IsChecked>
+            <NoOfItems />
+            <PackageName />
+         </VoluntaryDeductible>
+      </VoluntaryDeductible>
+      <AntiTheftDeviceDiscount>
+         <AntiTheftDeviceDiscount>
+            <IsMandatory>false</IsMandatory>
+            <IsChecked>true</IsChecked>
+            <NoOfItems />
+            <PackageName />
+         </AntiTheftDeviceDiscount>
+      </AntiTheftDeviceDiscount>
+      <AutomobileAssociationMembershipDiscount>
+         <AutomobileAssociationMembershipDiscount>
+            <IsMandatory>false</IsMandatory>
+            <IsChecked>true</IsChecked>
+            <NoOfItems />
+            <PackageName />
+         </AutomobileAssociationMembershipDiscount>
+      </AutomobileAssociationMembershipDiscount>
+      <PAToUnNamedPassenger>
+         <PAToUnNamedPassenger>
+            <IsMandatory>false</IsMandatory>
+            <IsChecked>true</IsChecked>
+            <NoOfItems>___dbmaster_insurer_vehicle_seatingcapacity___</NoOfItems>
+            <PackageName />
+            <PolicyCoverID />
+            <SumInsured>___pa_unnamed_passenger_si___</SumInsured>
+         </PAToUnNamedPassenger>
+      </PAToUnNamedPassenger><ElectricItems>
+            <ElectricalItems>
+                <ElectricalItemsID />
+                <PolicyId />
+                <SerialNo />
+                <MakeModel />
+                <ElectricPremium />
+                <Description />
+                <ElectricalAccessorySlNo />
+                <SumInsured>0</SumInsured>
+            </ElectricalItems>
+        </ElectricItems>
+        <NonElectricItems>
+            <NonElectricalItems>
+                <NonElectricalItemsID />
+                <PolicyID />
+                <SerialNo />
+                <MakeModel />
+                <NonElectricPremium />
+                <Description />
+                <Category />
+                <NonElectricalAccessorySlNo />
+                <SumInsured>0</SumInsured>
+            </NonElectricalItems>
+        </NonElectricItems>
+        <LiabilityToPaidDriver>
+            <LiabilityToPaidDriver>
+                <IsMandatory>false</IsMandatory>
+                <IsChecked>false</IsChecked>
+                <NoOfItems>1</NoOfItems>
+                <PackageName />
+                <PolicyCoverID />
+            </LiabilityToPaidDriver>
+        </LiabilityToPaidDriver>	  <NilDepreciationCoverage>
+      <NilDepreciationCoverage>
+        <IsMandatory>false</IsMandatory>
+        <IsChecked>false</IsChecked>
+        <NoOfItems />
+        <PackageName />
+        <PolicyCoverID />
+        <ApplicableRate>___doubt___</ApplicableRate>
+      </NilDepreciationCoverage>
+      </NilDepreciationCoverage>
+   </Cover>
+   <PreviousInsuranceDetails>
+      <IsVehicleOfPreviousPolicySold>___vehicle_insurance_type_2___</IsVehicleOfPreviousPolicySold>
+      <PrevYearPolicyStartDate>___pre_policy_start_date___</PrevYearPolicyStartDate>
+      <PrevYearPolicyEndDate>___policy_expiry_date___</PrevYearPolicyEndDate>
+      <PrevYearNCB>___vehicle_ncb_current___</PrevYearNCB>
+   </PreviousInsuranceDetails>
+   <NCBEligibility>
+      <IsNCBApplicable>___is_claim_exists___</IsNCBApplicable>
+      <NCBEligibilityCriteria>2</NCBEligibilityCriteria>
+      <PreviousNCB>___vehicle_ncb_current___</PreviousNCB>
+      <CurrentNCB />
+   </NCBEligibility>
+   <UserID>___insurer_integration_service_user___</UserID>
+   <ProductCode>2311</ProductCode>
+   <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+   <AuthToken>___insurer_integration_Service_Password___</AuthToken>
+</PolicyDetails>

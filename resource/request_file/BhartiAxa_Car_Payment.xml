@@ -1,0 +1,19 @@
+<UserName>___insurer_integration_service_user___</UserName>
+<Password>___insurer_integration_service_password___</Password>
+<RequestType>S</RequestType>
+<PaymentDetails>
+    <BankName>___bank_name___</BankName>
+    <BankCode>___bank_code___</BankCode>
+    <Branch>___bank_branch___</Branch>
+    <ChequeNo>___cheque_no___</ChequeNo>
+    <ChequeDate>___cheque_date___</ChequeDate>
+    <TotalPayablePremium>___amount___</TotalPayablePremium>
+    <Remarks>___remark___</Remarks>
+    <PaymentType>Cheque</PaymentType>
+    <ChequeType>Agent</ChequeType>
+</PaymentDetails>
+<Policy>
+    <PolicyTransactionType>S</PolicyTransactionType>
+    <OrderNo>___order_no___</OrderNo>
+    <Product>MTR</Product>
+</Policy>           

@@ -1,0 +1,95 @@
+{
+   "enquiryId": "___enquiryId___",
+   "partnerName": "AGENT",
+   "payment": {
+      "paymentType": "ONLINE",
+      "paymentDate": "___current_date___"
+   },
+   "contract": {
+      "policyType": "___policyType___",
+      "imd": "___imd___",
+      "startDate": "___policy_start_date___",
+      "policyNumber": null,
+      "subInsuranceProductCode": "___subInsuranceProductCode___",
+      "nonAbsProductCode": "___nonABSProductCode___",
+      "policyPeriod": ___policy_tenure___
+   },
+   "persons": [ <!--InsurersDetail_Start-->
+      {
+         "personType": "NATURALPERSON",
+         "isPrimaryInsuredPerson": ___member_array_isPrimaryInsuredPerson___,
+         "uniqueIdentifier": null,
+         "firstName": "___member_array_first_name___",
+         "middleName": "___member_array_middle_name___",
+         "lastName": "___member_array_last_name___",
+         "dateOfbirth": "___member_array_birth_date___",
+         "profession": "___member_array_occupation___",
+         "gender": "___member_array_gender_2___",
+         "relationship": "___member_array_rel___",
+         "maritalStatus": "___member_array_marital_status___",
+         "physicalCharacteristics": {
+            "height": "___member_array_height___",
+            "weight": "___member_array_weight___"
+         },
+         "nominee": {
+            "firstName": "___member_array_nominee_fname___",
+            "middleName": "___member_array_middle_name___",
+            "lastName": "___member_array_nominee_lname___",
+            "dateOfbirth": "___member_array_nominee_dob___",
+            "profession": null,
+            "relationship": "___member_array_nominee_rel___"
+         },
+         "addresses": [
+            {
+               "flatNumber": null,
+               "streetNumber": null,
+               "street": "___permanent_address_1___, ___permanent_address_2___, ___permanent_address_3___",
+               "pincode": "___permanent_pincode___",
+               "zone": "___zone___"
+            }
+         ],
+         "communications": [
+            {
+               "communicationType": "EMAIL",
+               "communicationId": "___email___",
+               "isPrefferedCommunication": true
+            },
+            {
+               "communicationType": "MOBILE",
+               "communicationId": "___mobile___",
+               "isPrefferedCommunication": true
+            }
+         ],
+         "identificationDocuments": [
+            {
+               "documentType": "PAN_CARD",
+               "documentId": "___pan___",
+               "issueDate": "___current_date___"
+            }
+         ],
+         "coverages": [
+            {
+               "coverType": "___coverType1___",
+               "sumInsuredAmount": "___member_array_si___"
+            },
+            {
+               "coverType": "___coverType2___",
+               "sumInsuredAmount": "___member_array_si___"
+            }
+         ],
+         "medical": {
+            "medicalQuestions": [<!--___member_array_medquestn-->]
+         }
+      }<!--InsurersDetail_End-->
+   ],
+   "contractCoverages": [
+      {
+         "coverType": "48745",
+         "sumInsuredAmount": "0.00"
+      },
+      {
+         "coverType": "___contract_coverType___",
+         "sumInsuredAmount": "2.00"
+      }
+   ]
+}

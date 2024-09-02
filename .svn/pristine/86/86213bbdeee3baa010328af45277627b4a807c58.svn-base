@@ -1,0 +1,73 @@
+[
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"New Business\",\"renew\":\"Roll Over\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "vehicle_manf_date_2",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "custom",
+        "Field_Value": "yyyy",
+        "Field_Group": "Registration",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_registration_date"
+    },
+   {
+    "Field_Name": "is_external_bifuel",
+    "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type" : "list_key",
+        "Field_Value" : "{\"yes\":\"CNG\",\"no\":\"NA\"}",
+        "Field_Group" : "Vehicle",
+    "Field_Category": "input",
+     "Field_Parent": "is_external_bifuel"
+    },
+    {
+        "Field_Name": "is_aai_member",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_aai_member"
+    },
+    {
+        "Field_Name": "is_antitheft_fit",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_antitheft_fit"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type_2",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"false\",\"renew\":\"true\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "6",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"Yes\",\"no\":\"No\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+	
+]

@@ -1,0 +1,141 @@
+{
+    "db": {
+        "connection": "mongodb://horizonqaapp:H%40r!z0nQA2108@",
+        "name": "lm-api-qa"       
+    },
+    "razor_pay":{
+        "rzp_sbi":{
+            "account_id" : "acc_HkHhn0PQVj5NfV",
+            "username" : "rzp_test_PR1nbJKsdaLPop",
+            "password" : "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_kotak": {
+            "account_id": "acc_IVgOUicAfckBpp",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_icici": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_edelweiss": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_chola": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        },
+        "rzp_future": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        }, 
+        "rzp_digit": {
+            "account_id": "acc_HkHhn0PQVj5NfV",
+            "username": "rzp_test_PR1nbJKsdaLPop",
+            "password": "CoNzrJZbBry80jMzzAbXSckP"
+        }
+    },
+    "rzp_landmark" : {
+        "account_id" : "acc_HkHhn0PQVj5NfV",
+        "username" : "rzp_test_PR1nbJKsdaLPop",
+        "password" : "CoNzrJZbBry80jMzzAbXSckP"
+    },
+    "icici_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/Cerberus/connect/token"
+    },
+    "icici_health_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    },
+    "icici_marine_auth":{
+        "auth_url":"https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    },
+    "icici_travel_auth": {
+        "auth_url": "https://ilesb.southindia.cloudapp.azure.com/cerberus/connect/token"
+    },
+    "environment": {
+        "pdf_url_qa": "http://qa.policyboss.com:3000/html2pdf?o=download&u=",
+        "pdf_url": "https://blog.policyboss.com/html2pdf.php?o=download&u=",
+        "testing_ssid": [7582, 7583, 7601],
+        "sbi_pg_type" : "rzrpay",
+        "kotak_pg_type" : "rzrpay",
+        "icici_pg_type" : "rzrpay",
+        "edelweiss_pg_type" : "rzrpay",
+        "chola_pg_type": "rzrpay",
+        "name": "Production",
+        "port": "3000",
+        "weburl": "http://localhost:3000",
+        "downloadurl": "http://localhost:3000",
+        "portalurl": "http://qa.policyboss.com",
+        "notification_email" : "horizonlive.2020@gmail.com",
+        "google_api_key": "AIzaSyDGHQ8Bqez5QDi4tzorkLU4mRn98uzSYpo",
+        "shorten_url" : "http://horizon.policyboss.com:5000/short_url/create",
+        "insurer_env": ""
+    },
+    "sms": {
+        "sendsms": true
+    },
+    "portalsqldb": {
+        "user": "newsstest",
+        "password": "sir@1234",
+        "server": "POLICYBOSS\\TESTPOLICYBOSS",
+        "port": "1433",
+        "database": "QA_PolicyBoss"
+    },
+    "email": {
+        "send": true,
+        "sg_api_key": "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"
+    },
+    "auth_url": {
+        "user": "horizon",
+        "pass": "horizon007"
+    },
+    "pb_config":{
+        "api_crn_url":"http://qa.policyboss.com/Quotes/Api/MotorCRN",
+        "api_health_crn_url":"http://qa.policyboss.com/quotes/api/HealthCRN",
+        "api_marine_crn_url":"http://qa.policyboss.com/quotes/api/MarineCRN",
+        "horizon_api_crn_url": "http://qa-horizon.policyboss.com:3000/quote/horizon_crn_create",
+        "api_crn_user":"test",
+        "api_crn_pass":"test@123",
+        "pdf_system_loc": "D:\\QA\\PolicyBoss\\pdf-files\\policy\\",
+        "pdf_web_loc": "/pdf-files/policy/"
+    },
+    "erp_config":{
+        "api_login_url":"http://202.131.96.98:8099/Account/Login",
+        "api_qt_url":"http://202.131.96.98:8889/PushNewLeadIDToSolSof.svc?wsdl"
+    },
+    "channel": {
+        "Const_FOS_Code": {
+            "28": "MISP",
+            "29": "FOS",
+            "34": "GS-FOS",
+            "39": "DC-FOS",
+            "41": "EM-FOS",
+            "43": "LA-FOS"
+        },
+        "Const_FOS_Channel": {
+            "29": "SM",
+            "34": "GS",
+            "39": "DC",
+            "41": "EM",
+            "43": "LA"
+        },
+        "Const_POSP_Channel": {
+            "1": "DC",
+            "2": "SM",
+            "4": "SG",
+            "8": "GS",
+            "11": "EM",
+            "12": "LA"
+        }
+    },
+    "icici_auth": {
+        "auth_url": "https://ilesbsanity.insurancearticlez.com/cerberus/connect/token"
+    }
+}
+
+

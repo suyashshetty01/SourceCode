@@ -1,0 +1,147 @@
+<HealthDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ClientDetails>
+        <ClientTypeID>___health_insurance_type___</ClientTypeID>
+        <DOB>___birth_date___</DOB>
+        <Email>___email___</Email>
+        <ForeName>___first_name___</ForeName>
+        <Gender>___gender___</Gender>
+        <LastName>___last_name___</LastName>
+        <MaritalStatusID>1951</MaritalStatusID>
+        <MidName />
+        <MobileNo>___mobile___</MobileNo>
+        <OccupationID>26</OccupationID>
+        <PhoneNo/>
+        <Salutation>MR.</Salutation>
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1></Address1>
+                <Address2></Address2>
+                <Address3></Address3>
+                <CityID />
+                <Country>India</Country>
+                <DistrictID/>
+                <Email>___email___</Email>
+                <Fax />
+                <MobileNo>___mobile___</MobileNo>
+                <NearestLandmark />
+                <PanNo />
+                <PhoneNo />
+                <Pincode />
+                <AreaID />
+                <StateID />
+            </CommunicationAddress>
+            <PermanentAddress>
+                <Address>
+                    <Address1 />
+                    <Address1 />
+                    <Address1 />
+                    <CityID />
+                    <Country>India</Country>
+                    <DistrictID />
+                    <NearestLandmark />
+                    <Pincode />
+                    <AreaID />
+                    <StateID />
+                </Address>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <InsuredDetailsList>
+        <InsuredDetail>
+            <RelationshipWithProposerID>345</RelationshipWithProposerID>
+            <Salutation>2</Salutation>
+            <FirstName>___first_name___</FirstName>
+            <LastName>___last_name___</LastName>
+            <Gender>___member_1_gender___</Gender>
+            <Age>___member_1_age___</Age>
+            <DOB>___member_1_birth_date___</DOB>
+            <MaritalStatusID>1</MaritalStatusID>
+            <OccupationID>0</OccupationID>
+            <PreExistingDisease>
+                <IsExistingIllness>false</IsExistingIllness>
+                <DiseaseList />
+                <IsInsuredConsumetobacco />
+                <HasAnyPreClaimOnInsured />
+                <DetailsOfPreClaimOnInsured />
+                <HasAnyPreHealthInsuranceCancelled />
+            </PreExistingDisease>
+            <OtherInsuranceList />
+        </InsuredDetail>       
+    </InsuredDetailsList>
+    <Policy>
+        <Tenure>___policy_tenure___</Tenure>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <AgentID>___insurer_integration_agent_code___</AgentID>
+        <AgentName>___insurer_integration_agent_code___</AgentName>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <BusinessType>1</BusinessType>
+        <ProductCode>2828</ProductCode>
+        <ExternalSystemID>0</ExternalSystemID>
+        <BranchName>BranchName</BranchName>
+    </Policy>
+    <UploadDetails>
+        <DocumentType />
+    </UploadDetails>
+    <RiskDetails>
+        <PlanID>___health_insurance_si_2___</PlanID>
+        <DOBofSeniorMost>___elder_member_birth_date___</DOBofSeniorMost>
+        <MemberCount>___member_count___</MemberCount>
+        <MaxAge>___elder_member_age___</MaxAge>
+        <CoverTypeID>___health_insurance_type___</CoverTypeID>
+        <SumInsured>___health_insurance_si___</SumInsured>
+        <IsServiceTaxExemptionApplicable>false</IsServiceTaxExemptionApplicable>
+        <ServiceTaxExemptionID />
+        <IsAnyEmployeeOfRelianceADAGroup />
+        <CompanyNameID />
+        <EmployeeCode />
+        <EmailID>___email___</EmailID>
+        <Iscrosssell />
+        <CrossSellPolicyNo />
+        <NoofMembersAbove21>___member_above21___</NoofMembersAbove21>
+        <NoofMembersBelow21>___member_below21___</NoofMembersBelow21>
+        <Category></Category>
+        <PreviousCumulativeBonus />
+        <PreviousCumulativeBonusrate />
+        <CumulativeBonus/>
+        <CumulativeBonusrate />
+        <ChangeinCoverageType>false</ChangeinCoverageType>
+        <AdditionofMemberatRenewal>false</AdditionofMemberatRenewal>
+        <DeletionofMemberatRenewal>false</DeletionofMemberatRenewal>
+    </RiskDetails>
+    <NomineeDetails></NomineeDetails>
+    <Premium>
+        <BasicPremium />
+        <TotalPremium />
+        <EducationalCess />
+        <EducationalCessPercentage />
+        <FinalPremium />
+        <NetPremium />
+        <SalesTax />
+        <SalesTaxPercentage />
+        <SecondaryAndHigherEducationalCess />
+        <SecondaryAndHigherEducationalCessPercentage />
+        <ServiceTax />
+        <ServiceTaxPercentage />
+        <Surcharge />
+        <SurchargePercentage />
+    </Premium>
+    <LstDiscount />
+    <ErrorMessages>
+        <ErrMessages />
+    </ErrorMessages>
+    <LstHealthCoverDetails />
+    <PreviousInsuranceDetails>
+        <PrevInsuranceID />
+        <PrevYearPolicyNo />
+        <PrevYearPolicyStartDate />
+        <PrevYearPolicyEndDate />
+    </PreviousInsuranceDetails>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+    <CoverDetails/>
+    <IsQuickquote>true</IsQuickquote>
+    <CIServicePEDList />
+    <CIServicePreviousInsuraceDetailsList />
+</HealthDetails>

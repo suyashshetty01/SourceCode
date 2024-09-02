@@ -1,0 +1,169 @@
+<HealthDetails xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+    <ClientDetails>
+        <ClientTypeID>0</ClientTypeID>
+        <DOB>___member_1_birth_date___</DOB>
+        <Email>___email___</Email>
+        <ForeName>___first_name___</ForeName>
+        <Gender>___member_1_gender___</Gender>
+        <LastName>___last_name___</LastName>
+        <MaritalStatusID>___member_1_marital_status___</MaritalStatusID>
+        <MidName>___middle_name___</MidName>
+        <MobileNo>___mobile___</MobileNo>
+        <OccupationID>___occupation___</OccupationID>
+        <PhoneNo />
+        <Salutation>___member_1_salutation___</Salutation>
+        <ClientAddress>
+            <CommunicationAddress>
+                <Address1>___permanent_address_1___</Address1>
+                <Address2>___permanent_address_2___</Address2>
+                <Address3>___permanent_address_3___</Address3>
+                <CityID>___communication_locality_code___</CityID>
+                <Country>India</Country>
+                <DistrictID>___communication_district_code___</DistrictID>
+                <Email>___email___</Email>
+                <Fax />
+                <MobileNo>___mobile___</MobileNo>
+                <NearestLandmark />
+                <PanNo>___pan___</PanNo>
+                <PhoneNo />
+                <Pincode>___permanent_pincode___</Pincode>
+                <AreaID />
+                <StateID>___communication_state_code___</StateID>
+            </CommunicationAddress>
+            <PermanentAddress>
+                <Address>
+                    <Address1>___permanent_address_1___</Address1>
+                    <Address2>___permanent_address_2___</Address2>
+                    <Address3>___permanent_address_3___</Address3>
+                    <CityID>___communication_locality_code___</CityID>
+                    <Country>India</Country>
+                    <DistrictID>___communication_district_code___</DistrictID>
+                    <NearestLandmark />
+                    <Pincode>___permanent_pincode___</Pincode>
+                    <AreaID />
+                    <StateID>___communication_state_code___</StateID>
+                </Address>
+            </PermanentAddress>
+        </ClientAddress>
+    </ClientDetails>
+    <!--InsurersDetail_Start-->
+    <InsuredDetailsList>
+        <InsuredDetail>
+            <RelationshipWithProposerID>___member_array_relation___</RelationshipWithProposerID>
+            <Salutation>___member_array_salutation___</Salutation>
+            <FirstName>___member_array_first_name___</FirstName>
+            <LastName>___member_array_last_name___</LastName>
+            <Gender>___member_array_gender___</Gender>
+            <Age>___member_array_age___</Age>
+            <DOB>___member_array_birth_date___</DOB>
+            <MaritalStatusID>___member_array_marital_status___</MaritalStatusID>
+            <OccupationID>___member_array_occupation___</OccupationID>
+            <Height>___member_array_height___</Height>
+            <Weight>___member_array_weight___</Weight>
+            <PreExistingDisease>
+                <IsExistingIllness>false</IsExistingIllness>
+                <DiseaseList />
+                <IsInsuredConsumetobacco />
+                <HasAnyPreClaimOnInsured />
+                <DetailsOfPreClaimOnInsured />
+                <HasAnyPreHealthInsuranceCancelled />
+            </PreExistingDisease>
+            <OtherInsuranceList />
+        </InsuredDetail>
+    </InsuredDetailsList>
+    <!--InsurersDetail_End-->
+    <Policy>
+        <Tenure>___policy_tenure___</Tenure>
+        <PolicyStartDate>___policy_start_date___</PolicyStartDate>
+        <PolicyEndDate>___policy_end_date___</PolicyEndDate>
+        <AgentID>___insurer_integration_agent_code___</AgentID>
+        <AgentName>___insurer_integration_agent_code___</AgentName>
+        <Branch_Code>___insurer_integration_location_code___</Branch_Code>
+        <BusinessType>1</BusinessType>
+        <ProductCode>2828</ProductCode>
+        <ExternalSystemID>0</ExternalSystemID>
+        <BranchName>BranchName</BranchName>
+    </Policy>
+    <UploadDetails>
+        <DocumentType />
+    </UploadDetails>
+    <RiskDetails>
+        <PlanID>___health_insurance_si_2___</PlanID>
+        <DOBofSeniorMost>___elder_member_birth_date___</DOBofSeniorMost>
+        <MemberCount>___member_count___</MemberCount>
+        <MaxAge>___elder_member_age___</MaxAge>
+        <CoverTypeID>___health_insurance_type___</CoverTypeID>
+        <SumInsured>___health_insurance_si___</SumInsured>
+        <IsServiceTaxExemptionApplicable>false</IsServiceTaxExemptionApplicable>
+        <ServiceTaxExemptionID />
+        <IsAnyEmployeeOfRelianceADAGroup />
+        <CompanyNameID />
+        <EmployeeCode />
+        <EmailID>___email___</EmailID>
+        <Iscrosssell />
+        <CrossSellPolicyNo />
+        <NoofMembersAbove21>___member_above21___</NoofMembersAbove21>
+        <NoofMembersBelow21>___member_below21___</NoofMembersBelow21>
+        <Category></Category>
+        <PreviousCumulativeBonus />
+        <PreviousCumulativeBonusrate />
+        <CumulativeBonus />
+        <CumulativeBonusrate />
+        <ChangeinCoverageType>false</ChangeinCoverageType>
+        <AdditionofMemberatRenewal>false</AdditionofMemberatRenewal>
+        <DeletionofMemberatRenewal>false</DeletionofMemberatRenewal>
+    </RiskDetails>
+    <NomineeDetails>
+        <FirstName>___nominee_first_name___</FirstName>
+        <Salutation>___salutation___</Salutation>
+        <MiddleName>___nominee_middle_name___</MiddleName>
+        <LastName>___nominee_last_name___</LastName>
+        <DOB>___nominee_birth_date___</DOB>
+        <NomineeRelationshipID>___nominee_relation___</NomineeRelationshipID>
+        <NomineeRelationshipOther />
+        <NomineeAddress>
+            <Address1>___nominee_address___</Address1>
+            <Address2>___nominee_address___</Address2>
+            <Address3 />
+            <CityID>___communication_locality_code___</CityID>
+            <Country>India</Country>
+            <DistrictID>___communication_district_code___</DistrictID>
+            <NearestLandmark />
+            <Pincode>___permanent_pincode___</Pincode>
+            <AreaID />
+            <StateID>___communication_state_code___</StateID>
+        </NomineeAddress>
+    </NomineeDetails>
+    <Premium>
+        <BasicPremium />
+        <TotalPremium />
+        <EducationalCess />
+        <EducationalCessPercentage />
+        <FinalPremium />
+        <NetPremium />
+        <SalesTax />
+        <SalesTaxPercentage />
+        <SecondaryAndHigherEducationalCess />
+        <SecondaryAndHigherEducationalCessPercentage />
+        <ServiceTax />
+        <ServiceTaxPercentage />
+        <Surcharge />
+        <SurchargePercentage />
+    </Premium>
+    <LstDiscount />
+    <ErrorMessages>
+        <ErrMessages />
+    </ErrorMessages>
+    <LstHealthCoverDetails />
+    <PreviousInsuranceDetails>
+        <PrevInsuranceID />
+        <PrevYearPolicyNo />
+        <PrevYearPolicyStartDate />
+        <PrevYearPolicyEndDate />
+    </PreviousInsuranceDetails>
+    <UserID>___insurer_integration_service_user___</UserID>
+    <SourceSystemID>___insurer_integration_service_user___</SourceSystemID>
+    <AuthToken>___insurer_integration_service_password___</AuthToken>
+    <CoverDetails />
+    <IsQuickquote>false</IsQuickquote>
+</HealthDetails>

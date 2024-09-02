@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:b2b="http://www.apollomunichinsurance.com/B2BService" xmlns:tran="http://schemas.datacontract.org/2004/07/TransactionVerificationLibrary" xmlns:ser="http://schemas.datacontract.org/2004/07/ServiceObjects">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <b2b:VerifyTransaction>
+         <!--Optional:-->
+         <b2b:TransactionVerificationRequest>
+            <!--Optional:-->
+            <tran:Partner>
+               <!--Optional:-->
+                <ser:PartnerCode>___insurer_integration_agent_code___</ser:PartnerCode>
+               <!--Optional:-->
+               <ser:Password>___insurer_integration_service_password___</ser:Password>
+               <!--Optional:-->
+               <ser:UserName>___insurer_integration_service_user___</ser:UserName>
+            </tran:Partner>
+            <!--Optional:-->
+            <tran:PaymentId>___pg_reference_number_1___</tran:PaymentId>
+            <!--Optional:-->
+            <tran:TransactionId>___transaction_id___</tran:TransactionId>
+         </b2b:TransactionVerificationRequest>
+      </b2b:VerifyTransaction>
+   </soapenv:Body>
+</soapenv:Envelope>

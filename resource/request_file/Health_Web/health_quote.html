@@ -1,0 +1,3145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magic FinMart</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min-3.3.7.css">
+    <!--         <script src="bootstrap/js/jquery.min-3.3.1.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap/js/jquery-1.12.3.min.js"></script> -->
+    <!-- <script src="bootstrap/js/bootstrap.min-3.3.7.js"></script> -->
+
+    <script src="bootstrap/js/awesomplete.js"></script>
+    <script src="bootstrap/js/swal.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://leaverou.github.io/awesomplete/awesomplete.css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- ---------------------*************************------------------------- -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"/> -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-material-datetimepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap-material-datetimepicker.js"></script>
+    <link href="bootstrap/css/custom.css" rel="stylesheet">
+
+    <style>
+        .CRN {
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #009fdd;
+            font-weight: bold;
+        }
+
+        #cover {
+            text-transform: uppercase;
+        }
+
+        #type {
+            text-transform: uppercase;
+        }
+
+        /* Center the loader */
+        #myloader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        .loader {
+            padding-top: 0px;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s;
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+
+        .ansbox {
+            display: none;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 50%;
+            font-size: 12px;
+        }
+
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #fdfdfd;
+            text-shadow: 0 1px 0 #FFF;
+            filter: alpha(opacity=20);
+            opacity: 1;
+        }
+
+        .popScreen1 {
+            overflow-y: auto !important;
+        }
+
+        .ErrorBorder {
+            border: 1px solid red;
+        }
+
+        .dtpClass {
+            font-size: 12px !important;
+        }
+
+        .TopSpace {
+            margin-top: 5px;
+        }
+
+        .loader {
+            z-index: 999;
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .loader img {
+            height: 40px;
+            vertical-align: middle;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            position: absolute;
+            left: 50%;
+        }
+
+        .swal2-popup {
+            top: 8%;
+        }
+
+        .coverdetpopup {
+            position: fixed;
+            box-shadow: 0 0 1px 1px #e5e5e5;
+            width: 100%;
+            background: rgba(50, 55, 59, 0.5);
+            height: 100%;
+            z-index: 99;
+            display: none;
+            top: 0px;
+            left: 0px;
+        }
+
+        .coverDetails {
+            padding: 10px;
+            position: absolute;
+            z-index: 99;
+            text-align: left;
+            font-size: 13px;
+            font-weight: normal;
+            border-radius: 6px;
+            color: #333;
+            background: #fff;
+            width: 99%;
+            left: 1%;
+            top: 20%;
+        }
+
+        .coverpopupclose {
+            font-size: 14px;
+            font-weight: 700;
+            color: #00476d;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .coverpopupclose div {
+            margin-top: -10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #00476d;
+            float: right;
+            display: inline;
+        }
+
+        .coverDetails h3 {
+            padding: 0px;
+            margin: 5px;
+            text-align: center;
+            margin-top: -30px;
+            font-size: 20px;
+        }
+
+        #div_SI_Amt div {
+            margin: 6px;
+        }
+
+        .SIPopup {
+            cursor: pointer;
+        }
+
+        #quotemain_list {
+            padding-bottom: 50px;
+        }
+
+        .quote-wrap {
+            padding: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto;
+            padding: 1px;
+        }
+
+        .gender_selBox {
+            width: 100%;
+            border-width: 0px;
+            border-bottom: 1px solid rgb(0 71 109);
+        }
+
+        .gender_error {
+            border: 1px red solid !important;
+        }
+
+        .filter_top_header {
+            background: rgb(0 71 109);
+            border: 1px solid rgb(0 71 109);
+            width: 100%;
+            padding: 8px;
+            color: rgb(255 255 255);
+            font-size: 16px;
+        }
+
+        .close_filter_popup {
+            color: rgb(255 255 255) !important;
+        }
+
+        .sel_practitnr {
+            margin-right: 22px;
+            border-radius: 0px;
+            border: 1px solid #9a9a9a;
+            padding: 0px 3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            cursor: pointer;
+            margin: 7px 23px 7px 13px;
+            width: 70px;
+        }
+
+        .med_Error {
+            border: 1px red solid !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader" style="display: none" id="loader_id">
+        <img src="images/mipmap-hdpi/loading.gif" style="height: 120px;">
+    </div>
+    <!-- <div id="myloader" ></div> -->
+    <!-- Filter popup -->
+    <div class="filter_section">
+        <div class="filter_panel">
+            <div class="filter_header filter_top_header">Filter
+                <div class="close_filter_popup" onclick="CloseFilterPopup();">X</div>
+            </div>
+            <div class="filter_container">
+                <div class="filter_content">
+                    <select name="sum_insured" id="sum_insured" class="SumInsurer_selected">
+                    </select>
+                </div>
+                <div class="filter_content">
+                    <select class="Tenure_Id">
+                        <option selected disabled>Tenure</option>
+                        <option value="1">1 year</option>
+                        <option value="2">2 year</option>
+                        <option value="3">3 year</option>
+                    </select>
+                </div>
+                <div class="filter_content">
+                    <select class="plans_Filter">
+                        <option selected value="base_plan">Base Plan</option>
+                        <option value="arogya_plan">Arogya Sanjivani</option>
+                        <!--<option>Super Top-Up</option>-->
+                    </select>
+                </div>
+                <br>
+                <div class="filter_content">
+                    <p style="font-size: 14px;color: #00476d;"><b>Insurers</b></p>
+                    <div id="Insurer_list" class="selected_insurer">
+                    </div>
+                </div>
+                <br>
+                <div class="filter_content FMSec">
+                    <p><b>Select Policy Type</b></p>
+                    <input class="floater" type="radio" id="floater" onclick="Floater();" value="Floater">
+                    <label style="font-size:13px;font-weight:600">Floater</label>
+                    <input class="multi_individual" type="radio" id="multi_individual" onclick="MultiIndividual();"
+                        value="MultiIndividual">
+                    <label style="font-size:13px;font-weight:600">Multi-Individual</label>
+                </div>
+            </div>
+        </div>
+        <button class="filter_apply_btn" onclick="ApplyFilter();">Apply</button>
+    </div>
+    <!-- Filter popup- End -->
+
+
+    <div class="container-fluid main_health_div">
+        <ul class="navigation">
+            <li class="TopSpace">
+                <a id="salesIcon" class="nav_quote_list">
+                    <img src="./images/mipmap-hdpi/list-(1).png" class="img-responsive text-center">
+                </a>
+            </li>
+            <li class="TopSpace disbl_mem_input"><a href="#" class="nav_Input">INPUT</a></li>
+            <li><a href="" class="Active">QUOTE</a></li>
+            <li class="TopSpace disbl_mem_input"><a href="#">BUY</a></li>
+        </ul>
+        <form id="abc">
+            <div class="sticky_btn">
+                <div class="refresh_quote">
+                    <span class="filter_img" onclick="OpenFilterPopup();">
+                        <img src="./images/funnel.png">
+                    </span>
+                    <span onclick="Reload();">
+                        <img src="./images/mipmap-hdpi/refresh.png">
+                    </span>
+                </div>
+            </div>
+            <div class="fullbox">
+                <div id="member">
+                    <img id="img_member" src="images/mipmap-hdpi/adult.png" /><!-- <span id="membercount"></span>  -->
+                </div>
+                <div>
+                    <div class="policy CRN"></div>
+                    <div class="coverprice" id="type"></div>
+                    <!-- <div class="coverprice" id="cover"></div> -->
+                </div>
+                <div>
+                    <a class="EditDiv" onclick="Editmethod()">
+                        <img src="images/mipmap-hdpi/edit_icon.png" style="width:27%;margin:10px 5px;" />
+                    </a>
+                    <a class="shareDiv" onclick="Sharemethod()">
+                        <img src="images/mipmap-hdpi/share_icon_white.png" style="width:25%;margin:10px 5px;" />
+                    </a>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <div class="link">
+                    <span><span id="insurercnt"></span>Insurer(s) <span id="Plancnt"></span>plan(s) available from
+                        Policyboss.com </span>
+                </div>
+            </div>
+
+
+            <div id="quotemain_list">
+            </div>
+            <div class="quote-wrap ansbox animate-bottom Insuere_id " id="Quotelist">
+                <div id="DivList">
+                    <!-- <div class="compare text-right"><span>COMPARE&nbsp;&nbsp;&nbsp;</span><input type="checkbox" ></div> -->
+                    <div class="quotebox">
+                        <div class="plan_name"><span class="PlanName"></span><a href="health_quote.html"></a></div>
+                        <div class="row_1">
+                            <img src="" class="imgLogo img-responsive">
+                            <div>
+                                <div class="title">SUM INSURED</div>
+                                <div class="section SumAsured"></div>
+                            </div>
+                            <div>
+                                <div class="title">DEDUCTABLE</div>
+                                <div class="section">0</div>
+                            </div>
+                            <div>
+                                <div class="premium">&#8377; /-</div>
+                                <a href="#" class="buy_Redirect">
+                                    <div class="buy1">BUY NOW</div>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="feature">
+                                    <div class="info"><span class="glyphicon glyphicon-ok"></span>ROOM RENT</div>
+                                    <div class="detail">for SI 2 to 4 Lac...</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="info"><span class="glyphicon glyphicon-ok"></span>PRE-HOSP</div>
+                                    <div class="detail">30 DAYS</div>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div class="feature">
+                                    <div class="info"><span class="glyphicon glyphicon-ok"></span>ROOM RENT</div>
+                                    <div class="detail">for SI 2 to 4 Lac...</div>
+                                </div>
+                                <div class="feature">
+                                    <div class="info"><span class="glyphicon glyphicon-ok"></span>PRE-HOSP</div>
+                                    <div class="detail">30 DAYS</div>
+                                </div>
+
+                            </div>
+                            <div class="brochre" style="display: none">
+                                Brochure|Detail
+                            </div>
+                            <div class="">
+                            </div>
+                            <div class="text-center">
+                                <div class="more moresection">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    <span class="more" id="totalcnt" onclick="showplan(this.id)">&nbsp; MORE </span>
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                                <div class="more lesssection" style="display: none;">
+                                    <span class="more" id="Less" onclick="hideplan(this.id)">Hide Options</span>
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coverdetpopup">
+                <div class="coverDetails">
+                    <div class="coverpopupclose">Multi-Individual Sum Insured <div>&times;</div>
+                    </div>
+                    <div id="div_SI_Amt">
+
+                    </div>
+                </div>
+            </div>
+            <div class="coverPanel MoreInsurer">
+                <div class="suminsuTitle">
+                    Sum Insured
+                    <span class="cancelbtn" id="CloseCover" onclick="$('.MoreInsurer').hide();">&times</span>
+                </div>
+                <br>
+                <div class="InsurerBtns">
+                    <button class="btn btn-cover" value="100000">1 LAC</button>
+                    <button class="btn btn-cover" value="200000">2 LACS</button>
+                    <button class="btn btn-cover" value="300000">3 LACS</button>
+                    <button class="btn btn-cover" value="400000">4 LACS</button>
+                    <button class="btn btn-cover" value="500000">5 LACS</button>
+                    <button class="btn btn-cover" value="600000">6 LACS</button>
+                    <button class="btn btn-cover" value="700000">7 LACS</button>
+                    <button class="btn btn-cover" value="770000">7.7 LACS</button>
+                    <button class="btn btn-cover" value="800000">8 LACS</button>
+                    <button class="btn btn-cover" value="900000">9 LACS</button>
+                    <button class="btn btn-cover" value="1000000">10 LACS</button>
+                    <button class="btn btn-cover" value="1100000">11 LACS</button>
+                    <button class="btn btn-cover" value="1200000">12 LACS</button>
+                    <button class="btn btn-cover" value="1300000">13 LACS</button>
+                    <button class="btn btn-cover" value="1400000">14 LACS</button>
+                    <button class="btn btn-cover" value="1500000">15 LACS</button>
+                    <button class="btn btn-cover" value="2000000">20 LACS</button>
+                    <button class="btn btn-cover" value="2500000">25 LACS</button>
+                    <button class="btn btn-cover" value="3000000">30 LACS</button>
+                    <button class="btn btn-cover" value="3500000">35 LACS</button>
+                    <button class="btn btn-cover" value="4000000">40 LACS</button>
+                    <button class="btn btn-cover" value="4500000">45 LACS</button>
+                    <button class="btn btn-cover" value="5000000">50 LACS</button>
+                    <button class="btn btn-cover" value="5500000">55 LACS</button>
+                    <button class="btn btn-cover" value="6000000">60 LACS</button>
+                    <button class="btn btn-cover" value="6500000">65 LACS</button>
+                    <button class="btn btn-cover" value="7000000">70 LACS</button>
+                    <button class="btn btn-cover" value="7500000">75 LACS</button>
+                    <button class="btn btn-cover" value="8000000">80 LACS</button>
+                    <button class="btn btn-cover" value="8500000">85 LACS</button>
+                    <button class="btn btn-cover" value="9000000">90 LACS</button>
+                    <button class="btn btn-cover" value="9500000">95 LACS</button>
+                    <button class="btn btn-cover" value="10000000">100 LACS</button>
+                    <button class="btn btn-cover" value="15000000">150 LACS</button>
+                    <button class="btn btn-cover" value="20000000">200 LACS</button>
+                    <button class="btn btn-cover" value="30000000">300 LACS</button>
+                    <button class="btn btn-cover" value="60000000">600 LACS</button>
+                </div>
+            </div>
+            <div class="popupbox" id="popupbox1" style="display: none; background: rgba(0,0,0,0.5) !important;">
+                <div class="popScreen1">
+                    <h3 class="text-center popupheading1">
+                        Member Information
+                        <span class="close" onclick="MemberPopupClose()">&times;</span>
+                    </h3>
+                    <div class="Age_wrap_box Member1" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_1_gen" id="Member_1_Gender"
+                                            onchange="setGender(1,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Eldest</div>
+                            <div>
+                                <div class="age_input Member_1_dtp" id="div_Member_1_dtp">
+                                    <input type="text" placeholder="DOB" class="dtpClass grab" id="Member_1_dtp"
+                                        readonly />
+                                    <!-- <i class="fa fa-calendar"><span class="calIcn" id="Member_1_dtp"></span></i>-->
+                                    <!--<input type="text" id="Member_1_dtp" placeholder="DOB" class="dtpClass" id="Member_1_dtp" style="width:134px;">-->
+                                </div>
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age</div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" readonly id="Member_1_Age" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_1_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_1')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_1"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Age_wrap_box Member2" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_2_gen" id="Member_2_Gender"
+                                            onchange="setGender(2,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Spouse</div>
+                            <div>
+                                <div class="age_input Member_2_dtp" id="div_Member_2_dtp">
+                                    <input type="text" placeholder="DOB" class="dtpClass grab" id="Member_2_dtp"
+                                        readonly>
+                                    <!-- <div class="calIcn" id="Member_2_dtp_img"><i class="fa fa-calendar" aria-hidden="true"></i></div> "-->
+                                </div>
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age </div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" id="Member_2_Age" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_2_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_2')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_2"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Age_wrap_box Member3" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_3_gen" id="Member_3_Gender"
+                                            onchange="setGender(3,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Child 1</div>
+
+                            <div class="age_input Member_3_dtp" id="div_Member_3_dtp">
+                                <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_3_dtp"
+                                    readonly>
+                                <!-- <div class="calIcn" id="Member_3_dtp_img"><i class="fa fa-calendar" aria-hidden="true"></i></div> -->
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age </div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" id="Member_3_Age" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_3_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_3')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_3"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Age_wrap_box Member4" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_4_gen" id="Member_4_Gender"
+                                            onchange="setGender(4,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Child 2</div>
+
+                            <div class="age_input Member_4_dtp" id="div_Member_4_dtp">
+                                <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_4_dtp"
+                                    readonly>
+                                <!-- <div class="calIcn" id="Member_4_dtp_img"><i class="fa fa-calendar" aria-hidden="true"></i></div> -->
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age </div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" id="Member_4_Age" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_4_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_4')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_4"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Age_wrap_box Member5" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_5_gen" id="Member_5_Gender"
+                                            onchange="setGender(5,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Child 3</div>
+
+                            <div class="age_input Member_5_dtp" id="div_Member_5_dtp">
+                                <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_5_dtp"
+                                    readonly>
+                                <!-- <div class="calIcn" id="Member_5_dtp_img"><i class="fa fa-calendar" aria-hidden="true"></i></div> -->
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age </div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" id="Member_5_Age" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_5_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_5')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_5"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Age_wrap_box Member6" style="display: none;">
+                        <div class="Member_Info">
+                            <div>
+                                <div class="centralign gender">
+                                    <div>
+                                        <select class="gender_selBox mem_6_gen" id="Member_6_Gender"
+                                            onchange="setGender(6,this.value)">
+                                            <option disabled selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                            <option value="TM">Trans-Male</option>
+                                            <option value="TF">Trans-Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="centralign">Child 4</div>
+
+                            <div class="age_input Member_6_dtp" id="div_Member_6_dtp">
+                                <input type="text" placeholder="DOB" class="dtpClass Memberdtp grab" id="Member_6_dtp"
+                                    readonly>
+                                <!-- <div class="calIcn" id="Member_6_dtp_img"><i class="fa fa-calendar" aria-hidden="true"></i></div> -->
+                            </div>
+                            <div class="Age_label">
+                                <div style="display: inline-block">Age </div>
+                                <div style="display: inline-block">
+                                    <div class="totalAge">
+                                        <input type="text" style="width: 20px" id="Member_6_Age" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MultiFloatinfo">
+                            <div class="MF_grid">
+                                <div class="multi_ind_hidediv">
+                                    <strong> SI:</strong>&nbsp; <span id="member_6_sum_insured"></span>
+                                </div>
+                                <div class="MoreBtn multi_ind_hidediv" id="More1" onclick="MoreBtn('member_6')"
+                                    style="text-align:right;">
+                                    <span class="SIPopup" id="more_6"><u><strong>More</strong></u></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="showMedPract"
+                        style="color: #333; margin-left: 7px; display: inline-flex; padding-bottom: 20px;">
+                        <b>Is any of the insured member a medical practitioner?</b>&nbsp;&nbsp;
+                        <select class="sel_practitnr" id="sel_practitnr" onchange="setGender(5,this.value)">
+                            <option disabled selected>Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-md-12 space grab" style="text-align: center;">
+                        <button type="button" class="hover-shadow" onclick="validateForm()">VERIFY</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="popupbox" id="popupbox2" style="display: none; background: rgba(0,0,0,0.5) !important;">
+                <div class="popScreen1">
+                    <h3 class="text-center popupheading1">
+                        Attention<span class="close" onclick="dismissPremipopup()">&times;</span>
+                    </h3>
+                    <div class="Member1">
+                        <div class="popup_txt" style="padding: 15px !important;">
+                            There is a premium mismatch. Previous premium was ₹ <span id="prevFinalPremium"></span> and
+                            newly calculated premium is ₹ <span id="selPremium"></span>. Proceed?
+                        </div>
+                        <br>
+                        <div class="col-md-12 space grab" style="text-align: center;">
+                            <button type="button" class="hover-shadow" id="PopupOk"
+                                onclick="proposal_redirect(selARN);">Ok</button>&nbsp;
+                            <button type="button" class="hover-shadow" onclick="dismissPremipopup();">Cancel</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="popupbox" id="addonPopup" style="display: none; background: rgba(0,0,0,0.5) !important;">
+                <div class="popScreen1">
+                    <h3 class="text-center popupheading1">
+                        Attention<span class="close" onclick="dismissAddonPopup();">&times;</span>
+                    </h3>
+                    <div class="Member1">
+                        <div class="popup_txt" style="padding: 15px !important;">
+                            Please select atleast one add-on free of cost to proceed further.
+                        </div>
+                        <br>
+                        <div class="col-md-12 space grab" style="text-align: center;">
+                            <button type="button" class="hover-shadow" id="PopupOk"
+                                onclick="dismissAddonPopup();">Ok</button>&nbsp;
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <!--<div class="advanceBtn"><p>Advance</p></div>-->
+        </form>
+    </div>
+    <div class="container" style="display:none;" id="tblshareQuote">
+
+
+
+    </div>
+
+
+    <!-- <table width="100%" cellpadding="0" cellspacing="0" border="0" style="display:none;" > -->
+    <!-- <tr> -->
+    <!-- <td> -->
+    <!-- </td> -->
+    <!-- </tr> -->
+    <!-- </table> -->
+    <div id="editor"></div>
+    <script type="text/javascript">
+        var myVar;
+        var res, Response_1, Response, Request_Core;
+        var crn, srn, arn;
+        var client_id, cover_type;
+        var geo_lat, geo_long, app_version, ss_id, fba_id, ip_address, mac_address;
+        var insurer_selected = "34";
+        var mobile, email;
+        var StatusCount = 0;
+        var final_premium = 0;
+        var insurerId_Addon;
+        var PremiumwithAddon = 0;
+        var addon_list = [];
+        var plan_show = [];
+        var freeaddonId = [];
+        var si_list = [];
+        var chk_insurer = [];
+        var insurer_filter = [];
+        var si_filter_insurer = [];
+        var plan_filter_insurer = [];
+        var static_response = [];
+        var filter_insurer = [];
+        var FilterResponse = [];
+        var plan_list = [1001, 100002, 1704, 82, 157];
+        var addons = {};
+        addon_list = [
+            "addon_uar"
+            , "addon_ncb"
+            , "addon_dsi"
+            , "addon_aru"
+            , "addon_ursi"
+            , "addon_sncp"
+            , "addon_cover"
+            , "addon_time"
+            , "addon_global"];
+
+        var Addon_uar = 'no';
+        var Addon_ncb = 'no';
+        var Addon_dsi = 'no';
+        var Addon_aru = 'no';
+        var Addon_ursi = 'no';
+        var Addon_sncp = 'no';
+        var Addon_cover = 'no';
+        var Addon_time = 'no';
+        var Addon_global = 'no';
+        var freeAddOnCover = 'no';
+        var is_med_practitioner;
+        var adult_count, child_count, member_count, contact_name, first_name, middle_name, last_name;
+
+        var member_1_age, member_2_age, member_3_age, member_4_age, member_5_age, member_6_age;
+        var member_1_gender, member_2_gender, member_3_gender, member_4_gender, member_5_gender, member_6_gender;
+        var member_1_birth_date, member_2_birth_date, member_3_birth_date, member_4_birth_date, member_5_birth_date, member_6_birth_date;
+        var member_1_sum_insured, member_2_sum_insured, member_3_sum_insured, member_4_sum_insured, member_5_sum_insured, member_6_sum_insured;
+
+        var city_id, city_name, state_name, state_code, zone_name, permanent_pincode, health_insurance_si;
+        var IsQuoteComplete = false;
+        var addonPopup = false;
+        var isQuickQuote = true, quickSearch = true;
+        var siteURL = "";
+
+        var Multi_Individual_type = false;
+        var origin_crn = "", origin_udid = "";
+        var apply_filter = false;
+
+        var const_insurerlogo = {
+            "21": "Hdfc_Ergo_Health.png",
+            "42": "AdityaBirla.png",
+            "9": "Reliance_new.png",
+            "34": "care.png",
+            "26": "star_health.png",
+            "38": "Cigna_TTK.png",
+            "33": "Liberty.png",
+            "6": "ICICI.png",
+            "19": "universal_sompo.png",
+            "4": "Future_Generali_General.png",
+            "20": "Niva_Bupa_Health.png",
+            "46": "edelweiss.png",
+            "5": "HDFC.png",
+            "35": "magma_hdi.png",
+            "44": "Go_Digit.png",
+            "16": "Raheja.png",
+            "17": "SBI_General.png",
+            "10": "RoyalSundaram.png"
+        };
+
+        var tenure2_multiplyBy = {
+            "6": "0.1"
+        }
+
+        function GeteditUrl() {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            //newurl = "http://qa.policyboss.com";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:50111";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+
+        function Horizon_Method_Convert(method_action, data, type) {
+            var obj_horizon_method = {
+                'url': (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                "data": {
+                    request_json: JSON.stringify(data),
+                    method_name: method_action,
+                    client_id: "2"
+                }
+            };
+            return obj_horizon_method;
+        }
+
+        var arr_preference = ["1", "33", "21", "42", "9", "26", "34", "38", "17", "16"];
+        var arr_preference = ['1', '38', '34', '26', '9', '42', '21', '33', '17', '16'];
+        var memID = 1;
+        var range;
+        var prevSelectedPlan, prevFinalPremium;
+        var policy_tenure = 1, multiplyBy = 1;
+        var selPremium, selARN;
+
+        $(document).ready(function () {
+
+            siteURL = window.location.href;
+            getUrlVars();
+            getClientBrowserDetails();
+            buynowUrl();
+            $('#loader_id').show();
+            //$('.main_health_div').addClass('modal');
+            srn = getUrlVars()["srn"];
+            if (srn != '' && srn != null) {
+                setTimeout(() => {
+                    getQuote();
+                }, 5000);
+            }
+
+            range = parseInt(member_1_age);
+            //range = new Date().getFullYear() - member_1_age;
+
+            $('#Member_1_dtp').on('change', function (e, date) {
+                var dt = $('#Member_1_dtp').val();
+                var mydate = new Date(dt);
+
+                // var dtVal = $("#Member_1_dtp").val();
+                // var DTPDate = dtVal.split('-')[2] + "-" + dtVal.split('-')[1] + "-" + dtVal.split('-')[0];
+                // var mydate = new Date(DTPDate);
+
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+                var currentyear = new Date().getFullYear();
+                console.log(day);
+                SetAge(1);
+
+                if (adult_count == 1) {
+                    Child_cal();
+                } else {
+                    $('#Member_2_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            //format: 'DD-MM-YYYY',
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(year, month, day),
+                            maxDate: new Date(currentyear - 18, new Date().getMonth(), day)
+                        });
+                }
+            });
+            $('#Member_2_dtp').on('change', function (e, date) {
+                SetAge(2);
+                Child_cal();
+            });
+            $('.Memberdtp').on('change', function (e, date) {
+                for (var i = 3; i <= 6; i++) {
+                    SetAge(i);
+                }
+            });
+            $('#Member_3_dtp').on('change', function (e, date) {
+                SetAge(3);
+                Child_cal();
+            });
+
+            $("#sel_practitnr").change(function () {
+                is_med_practitioner = $(this).attr("value");
+                $(".sel_practitnr").removeClass('med_Error');
+            });
+
+            //            //$('#Tenure_Id').on('change', function () {
+            //            //    var Thisval = parseInt($(this).val());
+            //            //    Tenure_selected(Thisval);
+            //            //});
+            //            $('.Tenure_Id').on('change', function () {
+            //                //var Filterplancount=0;
+            //                //var Filterinsurer_cnt =0;
+            //                //var is_added = false;
+            //                //var Tenure_insurer = ['6', '34','44','16'];
+            //				var Tenure_insurer = ['33', '26', '34', '10'];
+            //				var Tenure_hide_insurer = ['21', '6','20','16'];
+            //				var Tenure_plans = ['157','1704','100002','112'];
+            //				var Filter_plan_name = $('.plans_Filter').val();
+            //				var filter_si = parseInt($('.SumInsurer_selected').val());
+            //                //$('.Tenure_Id').removeClass('backclr');
+            //                //var ThisId = $(this).attr('id');
+            //                //$("#" + ThisId).addClass('backclr');
+            //                var Thisval = $(this).children("option:selected").val();
+            //                Tenure_selected(parseInt(Thisval));
+            //				var hide_insurerCnt = 0;
+            //				var hide_planCnt = 0;
+            //                $(".buy").each(function () {
+            //                    //console.log($(this).parent().parent().parent().parent().attr('id').slice(7));
+            //                    var ins = $(this).parent().parent().parent().parent().attr('id');
+            //					var insurer = ins.slice(ins.indexOf('_') + 1);
+            //					var insurerid = $(this).attr('id');
+            //					var plan_id = insurerid.slice(insurerid.lastIndexOf('_') + 1);
+            //                    var multiply_value = multiplyBy;
+            //                    if (insurer == 6 && policy_tenure == 2) {
+            //                        multiply_value = policy_tenure * 0.9
+            //                    }
+            //                    if (policy_tenure != 1) {
+            //						if(Tenure_insurer.indexOf(insurer) >= 0){
+            //							//hide_insurerCnt ++;
+            //							hide_planCnt ++;
+            //							
+            //							$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+            //						}
+            //						if(policy_tenure == 3){
+            //								if(Tenure_hide_insurer.indexOf(insurer) >= 0){
+            //									if(Tenure_plans.indexOf(plan_id) >= 0){
+            //									
+            //									}else{
+            //									hide_planCnt ++;
+            //									}
+            //									$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+            //								}
+            //							}else {
+            //						    if(Tenure_hide_insurer.indexOf(insurer) >= 0){
+            //								$('.parent_' + insurer).show();
+            //								$('.child_' + insurer).hide();
+            //								$('.parent_' + insurer+' .moresection').show();
+            //								$('.parent_' + insurer+' .lesssection').hide();
+            //							}
+            //						}
+            //						if(Tenure_plans.indexOf(plan_id) >= 0){
+            //							hide_planCnt ++;
+            //							
+            //							$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+            //							for(var i=0;i<Response.length;i++){
+            //							if((Response[i]['Insurer'].Insurer_ID == insurer) && ((Response[i]['Plan_List'].length) == 1)){
+            //								//hide_insurerCnt ++;
+            //							console.log(hide_insurerCnt + "hide_insurerCnt");
+            //							}
+            //							if((Response[i]['Insurer'].Insurer_ID == insurer) && ((Response[i]['Plan_List'].length) == 2)){
+            //							$('#hide_' + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][0]['Plan_Id']).hide();
+            //							$('.parent_' + insurer+' .moresection').hide();
+            //							   }
+            //							  }
+            //							}
+            //                        is_added = true;	
+            //                    }
+            //                    else {
+            //                        $('.parent_' + insurer).show();
+            //						$('.child_' + insurer).hide();
+            //						$('.parent_' + insurer+' .moresection').show();
+            //						$('.parent_' + insurer+' .lesssection').hide();
+            //						
+            //						$('#insurercnt').text(res.Summary.Insurer_Cnt + hide_insurerCnt+" ");
+            //						$('#Plancnt').text(res.Summary.Plan_Cnt + hide_planCnt +" ");
+            //                    }
+            //					
+            //                    console.log(multiply_value);
+            //
+            //                    var Premium, EditedPremium, TenureText;
+            //                    Premium = $(this).attr('finalpremium');
+            //                    EditedPremium = $(this).attr('editedfinalpremium');
+            //                    Premium = parseInt(Premium * multiply_value);
+            //                    if (policy_tenure != 1) {
+            //                        TenureText = "/" + policy_tenure + "yrs"
+            //                    }
+            //                    else { TenureText = "/" + policy_tenure + "yr" }
+            //
+            //                    $(this).text(Premium + " " + TenureText);
+            //                    $(this).attr('editedfinalpremium', Premium);
+            //                });
+            //				hide_insurerCnt=$('#quotemain_list').children('div .clsparent').filter(function() {
+            //									return $(this).css('display') === 'block';
+            //								}).length;
+            //				$('#insurercnt').text(hide_insurerCnt +" ");
+            //				$('#Plancnt').text(res.Summary.Plan_Cnt - hide_planCnt +" ");	
+            //				if((chk_insurer.length > 0 || filter_si > 0 || Filter_plan_name == "arogya_plan")){
+            //				all_filter();
+            //				}
+            //            });
+        });
+
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        function getClientBrowserDetails() {
+            if (window.navigator && window.navigator.geolocation) {
+                window.navigator.geolocation.getCurrentPosition(
+                    position => {
+                        this.showPosition(position)
+                    },
+                    error => {
+                        console.log('Position Unavailable');
+                    }
+                );
+            }
+        }
+
+        function showPosition(position) {
+            geo_lat = position.coords.latitude;
+            geo_long = position.coords.longitude;
+            ip_address = getIpAddress.responseJSON['ip'];
+        }
+        function getQuote() {
+            $("#popupbox1").hide();
+            srn = getUrlVars()["srn"];
+            //var mainUrl = "quote/premium_list_db";
+            var str1 = {
+                "search_reference_number": srn,
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9"
+            };
+
+            //var returnurl = GetUrl() + '/' + mainUrl;
+            var obj_horizon_data = Horizon_Method_Convert("/quote/premium_list_db", str1, "POST");
+            $.ajax({
+                type: "POST",
+                //data: JSON.stringify(str1),
+                //url: returnurl,
+                //data: JSON.stringify(obj_horizon_data['data']),
+                //url: obj_horizon_data['url'],
+                data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str1),
+                url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_list_db",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.Msg != "Not Authorized") {
+                        console.log(data);
+                        var siList = [];
+                        filter_insurer = [];
+                        res = data;
+                        srn = data['Summary']['Request_Unique_Id'];
+                        Response = data['Response'];
+                        static_response = data['Response'];
+                        Response_1 = data["Response_1"];
+                        Request_Core = data['Summary']['Request_Core'];
+                        client_id = getUrlVars()["client_id"];
+                        cover_type = data['Summary']['Request_Core']['health_insurance_type'];
+
+                        origin_crn = Request_Core["origin_crn"] !== undefined ? Request_Core["origin_crn"] : "";
+                        origin_udid = Request_Core["origin_udid"] !== undefined ? Request_Core["origin_udid"] : "";
+
+                        insurer_selected = data['Summary']['Request_Core'].insurer_selected;
+
+                        data['Summary']['Request_Core'].PremiumwithAddon = PremiumwithAddon;
+                        data['Summary']['Request_Core'].addon_uar = Addon_ncb;
+                        data['Summary']['Request_Core'].addon_ncb = Addon_uar;
+                        data['Summary']['Request_Core'].addon_dsi = Addon_dsi;
+
+                        data['Summary']['Request_Core'].addon_aru = Addon_aru;
+                        data['Summary']['Request_Core'].addon_ursi = Addon_ursi;
+                        data['Summary']['Request_Core'].addon_sncp = Addon_sncp;
+
+                        data['Summary']['Request_Core'].addon_cover = Addon_cover;
+                        data['Summary']['Request_Core'].addon_time = Addon_time;
+                        data['Summary']['Request_Core'].addon_global = Addon_global;
+                        data['Summary']['Request_Core'].freeAddOnCover = freeAddOnCover;
+
+                        ss_id = Request_Core.ss_id;
+                        fba_id = Request_Core.fba_id;
+                        ip_address = Request_Core.ip_address;
+                        mac_address = Request_Core.mac_address;
+                        app_version = Request_Core.app_version;
+
+                        first_name = Request_Core.first_name;
+                        middle_name = Request_Core.middle_name;
+                        last_name = Request_Core.last_name;
+                        contact_name = Request_Core.contact_name;
+                        mobile = Request_Core.mobile;
+                        email = Request_Core.email;
+
+                        $(".EditDiv").attr("href", './health_main.html?srn=' + srn + '&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+                        $(".nav_Input").attr("href", './health_main.html?srn=' + srn + '&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+
+                        if (ss_id === "117277" && app_version === 'highway_delite_customer') {
+                            $("#salesIcon").hide();
+                        } else {
+                            $(".nav_quote_list").attr("href", './quote_list.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile);
+                        }
+
+                        city_id = Request_Core.city_id;
+                        city_name = Request_Core.city_name;
+                        state_name = Request_Core.state_name;
+                        zone_name = Request_Core.zone;
+                        state_code = Request_Core.State_Code;
+                        permanent_pincode = Request_Core.permanent_pincode;
+                        health_insurance_si = Request_Core.health_insurance_si;
+                        policy_tenure = Request_Core.policy_tenure;
+                        health_insurance_type = Request_Core.health_insurance_type;
+                        //execution_async
+                        crn = data['Summary'].PB_CRN == "" ? data['Summary']['Request_Core']['crn'] : data['Summary'].PB_CRN;
+
+                        $("#insurercnt").html(data['Summary'].Insurer_Cnt + '&nbsp;');
+                        $(".CRN").html('CRN : ' + crn);
+                        $("#cover").html('SI - ' + Request_Core.health_insurance_si);
+
+                        if (Request_Core.multi_individual == "yes") {
+                            $("#type").html('Type - Multi-Individual');
+                        } else {
+                            $("#type").html('Type - ' + data['Summary']['Request_Product'].health_insurance_type);
+                        }
+
+                        $("#Plancnt").html(data['Summary'].Plan_Cnt + '&nbsp;');
+                        var CreateTime = new Date(data['Summary'].Created_On);
+                        var CurrentTime = new Date();
+                        var DateDiff = Date.parse(CurrentTime) - Date.parse(CreateTime);
+                        console.log(DateDiff);
+
+                        adult_count = Request_Core.adult_count;
+                        child_count = Request_Core.child_count;
+                        member_count = adult_count + child_count;
+                        isQuickQuote = Request_Core.quick_quote;
+
+                        member_1_age = Request_Core.member_1_age;
+                        member_2_age = Request_Core.member_2_age;
+                        member_3_age = Request_Core.member_3_age;
+                        member_4_age = Request_Core.member_4_age;
+                        member_5_age = Request_Core.member_5_age;
+                        member_6_age = Request_Core.member_6_age;
+
+
+                        member_1_gender = Request_Core.member_1_gender;
+                        member_2_gender = Request_Core.member_2_gender;
+                        member_3_gender = Request_Core.member_3_gender;
+                        member_4_gender = Request_Core.member_4_gender;
+                        member_5_gender = Request_Core.member_5_gender;
+                        member_6_gender = Request_Core.member_6_gender;
+
+                        setGender(1, Request_Core.member_1_gender);
+                        if (Request_Core.adult_count > 0) {
+                            $("#Member_1_Gender").val(member_1_gender);
+                        }
+
+                        //member_1_birth_date = Request_Core.member_1_birth_date;
+                        //member_2_birth_date = Request_Core.member_2_birth_date;
+                        //member_3_birth_date = Request_Core.member_3_birth_date;
+                        //member_4_birth_date = Request_Core.member_4_birth_date;
+                        //member_5_birth_date = Request_Core.member_5_birth_date;
+                        //member_6_birth_date = Request_Core.member_6_birth_date;
+
+                        //$("#Member_1_dtp").val(member_1_birth_date);
+                        //$("#Member_2_dtp").val(member_2_birth_date);
+                        //$("#Member_3_dtp").val(member_3_birth_date);
+                        //$("#Member_4_dtp").val(member_4_birth_date);
+                        //$("#Member_5_dtp").val(member_5_birth_date);
+                        //$("#Member_6_dtp").val(member_6_birth_date);
+
+                        $("#Member_1_Age").val(member_1_age);
+                        //$("#Member_2_Age").val(member_2_age);
+                        if (Request_Core.adult_count == 0) {
+                            $("#Member_3_Age").val(member_3_age);
+                        }
+                        //$("#Member_3_Age").val(member_3_age);
+                        //$("#Member_4_Age").val(member_4_age);
+                        //$("#Member_5_Age").val(member_5_age);
+                        //$("#Member_6_Age").val(member_6_age);
+                        for (var i = 3; i < child_count + 3; i++) {
+                            $(".Member" + i).show();
+                            //$(".MultiFloatinfo" + i).show();
+                        }
+
+                        if (Request_Core.adult_count > 0) {
+                            range = new Date().getFullYear() - member_1_age;
+                            console.log("range:" + range);
+                            $('#Member_1_dtp').bootstrapMaterialDatePicker
+                                ({
+                                    time: false, clearButton: true,
+                                    //format: 'DD-MM-YYYY',
+                                    format: 'YYYY-MM-DD',
+                                    // currentDate: new Date(range, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    //yearRange: (range - 2) + ':' + (range + 1),
+                                    minDate: new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    maxDate: new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate()),
+                                    onSelect: function () { SetAge(1); }
+                                });
+                        } else {
+                            range = new Date().getFullYear() - member_3_age;
+                            console.log("range:" + range);
+                            $('#Member_3_dtp').bootstrapMaterialDatePicker
+                                ({
+                                    time: false, clearButton: true,
+                                    format: 'YYYY-MM-DD',
+                                    // currentDate: new Date(range, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    //yearRange: (range - 2) + ':' + (range + 1),
+                                    minDate: new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1),
+                                    maxDate: new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate()),
+                                    onSelect: function () { SetAge(3); }
+                                });
+                        }
+
+                        //$('#date').bootstrapMaterialDatePicker('setMinDate', date);
+                        console.log(new Date(range - 2, (new Date()).getMonth(), (new Date()).getDate() + 1) + " Min date");
+                        console.log(new Date(range + 1, (new Date()).getMonth(), (new Date()).getDate()) + " Max date");
+
+                        if (adult_count > 0) {
+                            $(".Member1").show();
+                        }
+                        if (adult_count == 2) {
+                            $(".Member2").show();
+                            //$(".MultiFloatinfo").show();
+                        }
+
+                        $('#member').html("");
+                        for (var i = 0; i < member_count; i++) {
+                            var img = $('<img id="dynamic' + i + '">');
+                            img.attr('src', 'images/mipmap-hdpi/adult.png');
+                            img.appendTo('#member');
+                        }
+                        for (var resp = 0; resp < static_response.length; resp++) {
+                            for (var plan = 0; plan < static_response[resp]['Plan_List'].length; plan++) {
+                                filter_insurer.push({ "Id": static_response[resp].Insurer_Id, "Plan_Id": parseInt(static_response[resp].Plan_List[plan].Plan_Id), "SI": static_response[resp].Plan_List[plan].Sum_Insured });
+                            }
+                        }
+
+                        //Div append start
+                        $("#quotemain_list").html("");
+                        for (var i = 0; i < Response.length; i++) {
+                            ss_id = Request_Core.ss_id;
+                            for (var j = 0; j < Response[i]['Plan_List'].length; j++) {
+                                var Service_Log_Unique_Id = Response[i]['Plan_List'][j]['Service_Log_Unique_Id'];
+                                var InsRes = JSON.stringify(Response[i]);
+                                var PlanName1 = Response[i]['Plan_List'][j]['Plan_Name'];  //BundlePlan.replace(new RegExp('___BundleName___', 'gi'), BuffetPlanName);
+                                PlanName = PlanName1.replace(new RegExp(' ', 'gi'), '_');
+                                var PlanId = Response[i]['Plan_List'][j]['Plan_Id'];
+                                var Premium = "";
+                                var ARN = "";
+                                var benefits = [];
+                                insurerId_Addon = Response[i]['Insurer'].Insurer_ID;
+                                Tenure_selected(Request_Core.policy_tenure);
+                                var res2 = JSON.stringify(Response[i]);
+
+                                SetBenfits(Response[i]['Insurer'].Insurer_ID, Response[i]['Plan_List'][j]['Plan_Id'], cover_type);
+                                if (prevSelectedPlan != undefined && prevSelectedPlan == PlanId) {
+                                    selPremium = Math.round((Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium));
+                                    selARN = Response[i]['Plan_List'][j].Service_Log_Unique_Id;
+                                    $("#selPremium").text(selPremium);
+                                    $("#prevFinalPremium").text(prevFinalPremium);
+                                    callProposal(selPremium, selARN);
+                                }
+                                var item = Response[i]['Plan_List'][0]['Sum_Insured'];
+                                if (siList.indexOf(item) === -1) {
+                                    siList.push(parseInt(item));
+                                }
+                                si_list = siList.sort((n1, n2) => n1 - n2);
+
+
+                                if (j == 0) {
+                                    $('#quotemain_list').append("<div style='display:block;border:1px solid #d4cfcf' class='quote-wrap ansbox animate-bottom Insurer_" + Response[i]['Insurer'].Insurer_ID + " parent_" + Response[i]['Insurer'].Insurer_ID + " clsparent' pref='" + arr_preference.indexOf(Response[i]['Insurer'].Insurer_ID.toString()) + j.toString() + "' id='Insurer_Plan_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' >"
+                                        + "<div id='DivList_" + Response[i]['Insurer'].Insurer_ID + "'>"
+                                        + "<div class='quotebox'>"
+                                        + "<div class='plan_name'>"
+
+                                        + "<a href='health_quote.html'></a>"
+                                        + "<input type='checkbox'  onclick='chk_shareSelect(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ")' class='chk_SelectInsurer' id='chk_seleted" + Response[i]['Insurer'].Insurer_ID + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                        + "<span class='PlanName' style='font-size:11px;'>" + Response[i]['Plan_List'][j]['Plan_Name'] + "</span>"
+                                        + "</div>"
+                                        + "<div class='row_1'>"
+                                        + "<img src='images/InsurerLogo/" + const_insurerlogo[Response[i]['Insurer'].Insurer_ID] + "' class='imgLogo img-responsive' >"
+                                        + "<div>"
+                                        + "<div class='title SI_floater'>SUM INSURED</div>"
+                                        + "<div class='section SumAsured SI_floater'>" + Response[i]['Plan_List'][j]['Sum_Insured'] + "</div>"
+                                        + "</div>"
+
+                                        + "<div>"
+                                        + "<div class='title' style='display:none'>DEDUCTABLE</div>"
+                                        + "<div class='section' style='display:none'>0</div>"
+                                        + "<div  class='SI_Mlt_Ind' style='text-align:right'><span onclick='SI_Moreclick(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ")'><i class='fa fa-lightbulb-o'  style='font-size:17px;color:#333' aria-hidden='true'></i></span>"
+                                        + "	</div>"
+                                        + "</div>"
+                                        + "<div>"
+                                        //+ "<div class='buy' onclick='BuyNow("+client_id+",\""+Service_Log_Unique_Id+"\","+ss_id+")' >&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        //+ "<div class='buy' onclick='OpenAgePopup(" + InsRes + ");'>&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        //+ "<div class='buy' onclick='OpenAgePopup(" + Response[i]['Plan_List'][j]['Plan_Name'] + "," + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + ",\"" + Service_Log_Unique_Id + "\");'>&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        + " <div class='buy'  id='Premium_Amount_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' onclick='OpenAgePopup(this)' Arn=" + Service_Log_Unique_Id + " PlanName=" + PlanName + " FinalPremium=" + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + " EditedFinalPremium=" + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + ">&#8377; " + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + "/" + policy_tenure + "yr</div>"
+                                        + "<div class='premium' onclick='More_benefits(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ",\"" + cover_type + "\")' >DETAILS"
+                                        + "</div>"
+                                        + " <div id='Premium_Amount_perday_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='padding-left: 24px;' Arn=" + Service_Log_Unique_Id + " PlanName=" + PlanName + " FinalPremium=" + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " EditedFinalPremium=" + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + ">&#8377; " + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium / 365) + " /day</div>"
+                                        + "<div class='Insurer_addon'>"
+                                        + "</div>"
+                                        + "</div>"
+
+                                        + "<div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;ROOM RENT</div>"
+                                        + "<div class='detail' id='room_rent" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;PRE-HOSP</div>"
+                                        + "<div class='detail' id='pre_hosp" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;ICU RENT</div>"
+                                        + "<div class='detail' id='icu_rent" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;POST-HOSP</div>"
+                                        + "<div class='detail' id='post_hosp" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+
+                                        + "</div>"
+                                        + "</div>"
+
+                                        + "<div class='text-center' id='MorePlans" + Response[i]['Insurer'].Insurer_ID + "'>"
+                                        + "<div class='more moresection' id='show_" + Response[i]['Insurer'].Insurer_ID + '_' + Response[i]['Plan_List'][j]['Plan_Id'] + "' onclick='showplan(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");'>"
+                                        + "<span class='glyphicon glyphicon-plus'></span>"
+                                        + "<span class='more' id='totalcnt' >" + (Response[i]['Plan_List'].length - 1) + " MORE </span>"
+                                        + "<span class='glyphicon glyphicon-chevron-down'></span>"
+                                        + "</div>"
+                                        + "<div class='more lesssection'  id='hide_" + Response[i]['Insurer'].Insurer_ID + '_' + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='display: none;' onclick='hideplan(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");'>"
+                                        + "<span class='more'  id='Less'>Hide Options</span>"
+                                        + "<span class='glyphicon glyphicon-chevron-down'></span>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        //<!--  + "</div>" -->
+                                        // <!-- + "</div>" -->
+                                    )
+                                    if (insurerId_Addon == "34" && PlanName1.includes('Care')) {
+                                        $("#DivList_" + insurerId_Addon).append("<div class='grid-container' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='uar_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Unlimited Recharge' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='ncb_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'No Claim Bonus' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='dsi_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Additional Sum Insured for Accidental Hospitalisation' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "</div>");
+                                        addons.care = {};
+                                        addons.care.opt_ncb = false;
+                                        if (Number(health_insurance_si) === 300000 || Number(health_insurance_si) === 400000 || (Number(health_insurance_si) === 500000 && member_1_age < 46)) {
+                                            addons.care.opt_ncb = true;
+                                            addons.care.plan = Response[i]['Plan_List'][j];
+                                        }
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+                                    if (insurerId_Addon == "42" && PlanName1.includes('Diamond') && isQuickQuote == true) {
+                                        $("#DivList_" + insurerId_Addon).append("<div class='grid-container' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='aru_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Upgrade Room' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='ursi_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Unlimited Reload' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='super_ncb_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'No Claim Bonus' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "</div>");
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+                                    if (insurerId_Addon == "9" && PlanName1.includes('HEALTH INFINITY') && isQuickQuote == true) {
+                                        $("#DivList_" + insurerId_Addon).append("<div class='grid-container' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Cover_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Cover' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div id = 'tenure_addon_hide'>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Time_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Time' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Global_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Global' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<span style='color: red;'>Grab one addon of your choice at no additional cost</span>"
+                                            + "</div>");
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+
+                                    morePlan((Response[i]['Plan_List'].length - 1), Response[i]['Insurer'].Insurer_ID);
+                                }
+                                else {
+                                    $('#quotemain_list').append("<div style='display:none'  class='quote-wrap ansbox animate-bottom Insurer_" + Response[i]['Insurer'].Insurer_ID + " child_" + Response[i]['Insurer'].Insurer_ID + " clschild' id='Insurer_Plan_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' pref='" + arr_preference.indexOf(Response[i]['Insurer'].Insurer_ID.toString()) + j.toString() + "'>"
+                                        + "<div id='DivList1_" + Response[i]['Insurer'].Insurer_ID + "'>"
+                                        + "<div class='quotebox'>"
+                                        + "<div class='plan_name'>"
+                                        + "<a href='health_quote.html'></a>"
+                                        + "<input type='checkbox'  onclick='chk_shareSelect(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ")' class='chk_SelectInsurer' id='chk_seleted" + Response[i]['Insurer'].Insurer_ID + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                        + "<span class='PlanName' style='font-size:11px;'>" + Response[i]['Plan_List'][j]['Plan_Name'] + "</span>"
+                                        + "</div>"
+                                        + "<div class='row_1'>"
+                                        + "<img src='images/InsurerLogo/" + const_insurerlogo[Response[i]['Insurer'].Insurer_ID] + "' class='imgLogo img-responsive' >"
+                                        + "<div>"
+                                        + "<div class='title SI_floater'>SUM INSURED</div>"
+                                        + "<div class='section SumAsured SI_floater'>" + Response[i]['Plan_List'][j]['Sum_Insured'] + "</div>"
+                                        + "</div>"
+                                        + "<div>"
+                                        + " <div class='title' style='display:none'>DEDUCTABLE</div>"
+                                        + " <div class='section' style='display:none'>0</div>"
+                                        + "<div  class='SI_Mlt_Ind' style='text-align:right'><span onclick='SI_Moreclick(" + Response[i]['Insurer'].Insurer_ID + ")'><i class='fa fa-lightbulb-o'  style='font-size:17px;color:#333' aria-hidden='true'></i></span>"
+                                        + "	</div>"
+                                        + "</div>"
+                                        + " <div>"
+                                        //+ " <div class='buy' onclick='BuyNow(" + client_id + ",\"" + Service_Log_Unique_Id + "\"," + ss_id + ")' >&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        //+ " <div class='buy' onclick='OpenAgePopup(" + InsRes + ");'>&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        //+ "<div class='buy' onclick='OpenAgePopup(" + Response[i]['Plan_List'][j]['Plan_Name'] + "," + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + ",\"" + Service_Log_Unique_Id + "\");'>&#8377; " + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " / yr</div>"
+                                        + " <div class='buy' id='Premium_Amount_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' onclick='OpenAgePopup(this)' Arn=" + Service_Log_Unique_Id + " PlanName=" + PlanName + " FinalPremium=" + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + " EditedFinalPremium=" + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + ">&#8377; " + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium) + "/" + policy_tenure + "yr</div>"
+                                        + "<div class='premium' onclick='More_benefits(" + Response[i]['Insurer'].Insurer_ID + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ",\"" + cover_type + "\")' >DETAILS"
+                                        + "</div>"
+                                        + " <div id='Premium_Amount_perday_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='padding-left: 24px;' Arn=" + Service_Log_Unique_Id + " PlanName=" + PlanName + " FinalPremium=" + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + " EditedFinalPremium=" + Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium + ">&#8377; " + Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium / 365) + " /day</div>"
+                                        + "<div class='Insurer_addon'>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;ROOM RENT</div>"
+                                        + "<div class='detail'  id='room_rent" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;PRE-HOSP</div>"
+                                        + "<div class='detail' id='pre_hosp" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "<div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;ICU RENT</div>"
+                                        + "<div class='detail' id='icu_rent" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "<div class='feature'>"
+                                        + "<div class='info'><span class='glyphicon glyphicon-ok'></span>&nbsp;POST-HOSP</div>"
+                                        + "<div class='detail' id='post_hosp" + Response[i]['Plan_List'][j]['Plan_Id'] + "'>NA</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                        + "</div>"
+                                    )
+                                    if (insurerId_Addon == "34" && PlanName1.includes('Care')) {
+                                        $("#DivList1_" + insurerId_Addon).append("<div  class='grid-container Arogyahide' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='uar_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Unlimited Recharge' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='ncb_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'No Claim Bonus' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='dsi_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Additional Sum Insured for Accidental Hospitalisation' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "</div>");
+                                        addons.care = {};
+                                        addons.care.opt_ncb = false;
+                                        if (Number(health_insurance_si) === 300000 || Number(health_insurance_si) === 400000 || (Number(health_insurance_si) === 500000 && member_1_age < 46)) {
+                                            addons.care.opt_ncb = true;
+                                            addons.care.plan = Response[i]['Plan_List'][j];
+                                        }
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+                                    if (insurerId_Addon == "42" && PlanName1.includes('Diamond') && isQuickQuote == true) {
+                                        $("#DivList1_" + insurerId_Addon).append("<div  class='grid-container' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='aru_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Upgrade Room' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='ursi_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'Unlimited Reload' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer' id='super_ncb_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'No Claim Bonus' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "</div>");
+
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+                                    if (insurerId_Addon == "9" && PlanName1.includes('HEALTH INFINITY') && isQuickQuote == true) {
+                                        $("#DivList1_" + insurerId_Addon).append("<div class='grid-container' id='checkbox1'>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Cover_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Cover' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div id = 'tenure_addon_hide'>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Time_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Time' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<div>"
+                                            + "<input type='checkbox'  onclick='addonpremium(" + JSON.stringify(Response[i]['Plan_List'][j]) + "," + Response[i]['Plan_List'][j]['Plan_Id'] + ");' class='chk_SelectInsurer addonCheck' id='Global_" + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id'] + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>"
+                                            + "<span class='PlanName' style='font-size:11px;'>" + "<b>" + 'More Global' + "</b>" + "</span>"
+                                            + "</div>"
+                                            + "<span style='color: red;'>Grab one addon of your choice at no additional cost</span>"
+                                            + "</div>");
+                                    } else {
+                                        $("#Insurer_addon").hide();
+
+                                    }
+
+                                }
+
+                                if (isQuickQuote == false) {
+                                    Selected_Tenure(Request_Core.policy_tenure, Response[i]['Insurer'].Insurer_ID.toString(), Response[i]['Plan_List'][j]['Plan_Id'].toString());
+                                }
+                            }
+                            if (Request_Core.multi_individual == "yes") {
+                                for (var k = 1; k <= adult_count; k++) {
+                                    $('#member_' + k + '_sum_insured').text(Response[i].Plan_List[0]['member_' + k + '_si']);
+                                }
+                                var childcnt = child_count + 2;
+                                for (var l = 3; l <= childcnt; l++) {
+                                    $('#member_' + l + '_sum_insured').text(Response[i].Plan_List[0]['member_' + l + '_si']);
+                                }
+                            }
+
+                            // var insResponse = [];
+
+                        }
+
+                        if (addons.hasOwnProperty('care') && addons.care.opt_ncb) {
+                            $("#ncb_34_81").prop("checked", true).attr("disabled", true);
+                            addonpremium(addons.care.plan, addons.care.plan.Plan_Id);
+                        }
+
+                        $("#quotemain_list .quote-wrap").sort(function (a, b) {
+                            return parseInt($(a).attr('pref')) - parseInt($(b).attr('pref'));
+                        }).each(function () {
+                            var elem = $(this);
+                            elem.remove();
+                            $(elem).appendTo("#quotemain_list");
+                        });
+                        if (Request_Core.multi_individual == "yes") {
+                            $('.SI_floater').hide();
+                            $('.SI_Mlt_Ind').show();
+                            Multi_Individual_type = true;
+                            //$('#floater').removeClass('backclr');
+                            //$('#multi_individual').addClass('backclr');
+                            $(".multi_individual").prop("checked", true);
+                            $(".floater").prop("checked", false);
+                            $('.multi_ind_hidediv').show();
+                            $(".Member_Info").css("grid-template-columns", "1fr 1fr 1fr 1fr");
+
+                        } else {
+                            $('.SI_floater').show();
+                            $('.SI_Mlt_Ind').hide();
+                            Multi_Individual_type = false;
+                            //$('#floater').addClass('backclr');
+                            //$('#multi_individual').removeClass('backclr');
+                            $(".multi_individual").prop("checked", false);
+                            $(".floater").prop("checked", true);
+                            $('.multi_ind_hidediv').hide();
+                            $(".Member_Info").css("grid-template-columns", "1fr 1fr 1fr 1fr");
+                        }
+
+                        StatusCount++;
+                        var is_complete = false;
+                        if (StatusCount > 3 || DateDiff >= 30000 || data['Summary']['Status'] === "complete") {
+                            is_complete = true;
+                            $('#loader_id').hide();
+                            //$('.main_health_div').removeClass('modal');
+                            console.log("STOP1");
+                            IsQuoteComplete = true;
+                        }
+                        var si_append = false;
+                        if (is_complete == true) {
+                            $('#sum_insured').html("");
+                            for (i = 0; i < si_list.length; i++) {
+                                if (si_append == false) {
+                                    $('#sum_insured').append('<option value="0">Sum Insured</option>' + '<option value="' + si_list[i] + '">' + si_list[i] + '</option>');
+                                    si_append = true;
+                                } else {
+                                    $('#sum_insured').append('<option value="' + si_list[i] + '">' + si_list[i] + '</option>');
+                                }
+                            }
+                        }
+                        if (is_complete === false) {
+                            setTimeout(() => {
+                                //$('#myloader').hide();
+                                getQuote();
+                            }, 3000);
+                        }
+
+                        if (Request_Core.member_count > 1 && Request_Core.adult_count > 0) {
+                            $(".FMSec").show();
+                        }
+                        else {
+                            $(".FMSec").hide();
+                            $(".TenureSec").css("border-bottom", "0px solid #cccfd1");
+                        }
+                        $(".selected_insurer").html("");
+                        for (i = 0; i < Response.length; i++) {
+                            $('.selected_insurer').append("<div>" + "<input type='checkbox' class='filter_Insurer' id='filter_Insurer_" + Response[i]['Insurer'].Insurer_ID + "' style='vertical-align: sub;margin:0px 5px;width:15px;height:15px;'/>" + Response[i]['Insurer'].Insurer_Code + "</div>");
+                        }
+                    } else {
+                        //console.log("Not Authorized");
+                        $('#myloader').hide();
+                    }
+                    if (isQuickQuote == false) {
+                        $("#checkbox1").hide();
+
+                        if (Request_Core.member_count == 1 || (Request_Core.adult_count == 0 && Request_Core.child_count > 0)) {
+                            $('#advancesearch').hide();
+                            $('.advanceBtn').hide();
+                            $('.filter_img').hide();
+                        } else {
+                            $('.filter_img').hide();
+                        }
+                    }
+
+                    // End
+                },
+                error: function (result) {
+                    // console.log("Error");
+                }
+            });
+        }
+        $(".gender span").click(function (e) {
+            var gendertype = e.currentTarget.id;
+            //$("#Gendermale, #Genderfemale").removeClass('GenderError');
+            var GenderSelect = gendertype.split('_')[2];
+            var Mem = gendertype.split('_')[1];
+            var GenderVal = "";
+            if (Mem > 2 && Mem < 7) {
+                if (GenderSelect == "Male") {
+                    $("#Gender_" + Mem + "_Male").addClass('male_img');
+                    $("#Gender_" + Mem + "_Female").removeClass("female_img");
+                    GenderVal = "M"; //male_img
+                }
+                if (GenderSelect == "Female") {
+                    $("#Gender_" + Mem + "_Male").removeClass('male_img');
+                    $("#Gender_" + Mem + "_Female").addClass("female_img");
+                    GenderVal = "F";
+                }
+                $("#Member_" + Mem + "_Gender").val(GenderVal);
+
+
+
+            }
+            for (i = 1; i < 7; i++) { console.log($("#Member_" + i + "_Gender").val()) }
+        });
+        var buynowUrl = function () {
+            var url = window.location.href;
+            var buyurl;
+            //buyurl = "http://qa.policyboss.com";
+            if (url.includes("qa") || url.includes("localhost")) {
+                buyurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                buyurl = "https://www.policyboss.com";
+            }
+            return buyurl;
+        }
+        var GetUrl = function () {
+            var url = window.location.href;
+            var newurl;
+            //newurl = "http://qa-horizon.policyboss.com:3000";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:3000";
+                //  newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+        }
+
+        function showplan(Insurer_id, Plan_Id) {
+            const plan_show = [];
+            $(".child_" + Insurer_id).show();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .lesssection").show();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .moresection").hide();
+            if (policy_tenure != 1) {
+                var Tenure_plans = ['157', '1704', '100002', '112'];
+                for (var i = 0; i < Tenure_plans.length; i++) {
+                    policy_tenure != 1 ? $('#Insurer_Plan_' + Insurer_id + "_" + Tenure_plans[i]).hide() : $('#Insurer_Plan_' + Insurer_id + "_" + Tenure_plans[i]).show();
+                }
+                for (var j = 0; j < Response.length; j++) {
+                    if ((Response[j]['Insurer'].Insurer_ID == Insurer_id) && ((Response[j]['Plan_List'].length) == 2)) {
+                        for (var k = 0; k < Response[j]['Plan_List'].length; k++) {
+                            plan_show.push(Response[j]['Plan_List'][k].Plan_Id.toString());
+                        }
+                        for (var l = 0; l < Tenure_plans.length; l++) {
+                            if (plan_show.indexOf(Tenure_plans[l]) >= 0) {
+                                $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .lesssection").hide();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        function hideplan(Insurer_id, Plan_Id) {
+            $(".child_" + Insurer_id).hide();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .lesssection").hide();
+            $("#Insurer_Plan_" + Insurer_id + "_" + Plan_Id + " .moresection").show();
+        }
+        function morePlan(planCount, Insurer_id) {
+            if (planCount == 0) {
+                $('#MorePlans' + Insurer_id).hide();
+            }
+        }
+
+        $(function () {
+            createSticky($(".navigation"));
+        });
+
+        function createSticky(sticky) {
+            if (typeof sticky !== "undefined") {
+                var pos = sticky.offset().top + 20,
+                    win = $(window);
+                win.on("scroll", function () {
+                    win.scrollTop() >= pos ? sticky.addClass("fixed") : sticky.removeClass("fixed");
+                });
+            }
+        }
+
+        var getParameterByName = function (name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results)
+                return null;
+            if (!results[2])
+                return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var stringparam = function () {
+            var arr = ["ss_id", "fba_id", "ip_address", "app_version"];
+            for (var i = 0; i < arr.length; i++) {
+                var qs_val = getParameterByName(arr[i]);
+                if (qs_val == null || qs_val == '' || qs_val == '0') {
+                    $(".healthmaindiv").hide();
+                    $(".warningmsg").show();
+                } else {
+                    $(".healthmaindiv").show();
+                    $(".warningmsg").hide();
+                }
+            }
+        }
+
+        ss_id = getParameterByName('ss_id');
+        if (ss_id == null || ss_id == "") {
+            ss_id = 0;
+        }
+        fba_id = getParameterByName('fba_id');
+        if (fba_id == null || fba_id == '') {
+            fba_id = 0;
+        }
+        ip_address = getParameterByName('ip_address');
+        if (ip_address == null || ip_address == '') {
+            ip_address = 0;
+        }
+        mac_address = getParameterByName('mac_address');
+        if (mac_address == null || mac_address == '') {
+            mac_address = 0;
+        }
+        app_version = getParameterByName('app_version');
+        if (app_version == null || app_version == '') {
+            app_version = 0;
+        }
+        $('ul.navigation li').click(function (e) {
+            $('ul.navigation li').removeClass("Active");
+            $(this).addClass("Active");
+
+            if ($('li.Active').text() == 'INPUT') {
+                location.reload(true);
+            } else if ($('li.Active').text() == 'QUOTE') {
+                //window.location.href = './health_quote.html?client_id=2&ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version;
+            } else if ($('li.Active').text() == 'BUY') {
+
+            } else if ($('li.Active').children().children('.img-responsive').length > 0) {
+                window.location.href = './quote_list.html?ss_id=' + ss_id + '&fba_id=' + fba_id + '&ip_address=' + ip_address + '&mac_address=' + mac_address + '&app_version=' + app_version + '&mobile_no=' + mobile;
+            }
+        })
+        //window.location.href='./health_main_new.html?ss_id='+ss_id +'&fba_id='+fba_id+'&ip_address='+ip_address+'&mac_address='+mac_address+'&app_version='+app_version;
+
+        function SetBenfits(Insurer_Id, Plan_Id, health_insurance_type) {
+            health_insurance_type = health_insurance_type.charAt(0).toUpperCase() + health_insurance_type.substr(1);
+            var benefitsarrays = [];
+            var url = GetUrl() + '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si
+            // var url = GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get';
+            $.ajax({
+                type: "GET",
+                //url: url,
+                dataType: "json",
+                //data: {'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si},
+                data: siteURL.indexOf('https') == 0 ? { 'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si } : "",
+                url: siteURL.indexOf('https') == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : url,
+                success: function (data) {
+                    if (data.length != 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var benefits_key = data[i]['Benefit_Key'];
+                            var benefits_Value = data[i]['Benefit_Value'];
+                            benefitsarrays.push({ benefits_key, benefits_Value })
+                        }
+                        if (benefitsarrays.length != 0) {
+                            $('div#room_rent' + Plan_Id).text(benefitsarrays[0]['benefits_Value']);
+                            $('div#icu_rent' + Plan_Id).text(benefitsarrays[1]['benefits_Value']);
+                            $('div#pre_hosp' + Plan_Id).text(benefitsarrays[2]['benefits_Value']);
+                            $('div#post_hosp' + Plan_Id).text(benefitsarrays[3]['benefits_Value']);
+                        }
+                    }
+                },
+                error: function (result) {
+                    //console.log("Benefits Error");
+                }
+            });
+            return benefitsarrays;
+        }
+
+        function More_benefits(Insurer_Id, Plan_Id, Health_insurance_type) {
+
+            Health_insurance_type = Health_insurance_type.charAt(0).toUpperCase() + Health_insurance_type.substr(1);
+            var benefitsarrays = [];
+            var htmlstring = "";
+            var url = GetUrl() + '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + Health_insurance_type + '/' + health_insurance_si
+            //var url = GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get';
+            console.log(url);
+            $.ajax({
+                type: "GET",
+                data: siteURL.indexOf('https') == 0 ? { 'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + health_insurance_type + '/' + health_insurance_si } : "",
+                url: siteURL.indexOf('https') == 0 ? GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get' : url,
+                //url: url,
+                dataType: "json",
+                //data: {'method_name': '/benefits/' + Insurer_Id + '/' + Plan_Id + '/' + Health_insurance_type + '/' + health_insurance_si},
+                success: function (data) {
+                    htmlstring += "<div>";
+                    if (data.length != 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var benefits_key = data[i]['Benefit_Key'];
+                            var benefits_Value = data[i]['Benefit_Value'];
+                            benefitsarrays.push({ benefits_key, benefits_Value })
+                        }
+                    }
+                    else {
+                        if (benefitsarrays.length == 0) {
+                            htmlstring += "<div style='text-align: center; font-size: 13px; font-family: Lato-Regular;'>No benefits applicable. </div>";
+                        }
+                    }
+                    for (var i = 0; i < benefitsarrays.length; i++) {
+                        //htmlstring += "<ul><li style='text-align: left; font-size: 13px; font-family: Lato-Regular;'><span style='font-weight:900'>" + benefitsarrays[i]['benefits_key'] + ":</span> " + benefitsarrays[i]['benefits_Value'] + "</li></ul>"
+                        htmlstring += "<table><tr><td>" + benefitsarrays[i]['benefits_key'] + "</td><td>" + benefitsarrays[i]['benefits_Value'] + "</td></tr></table>"
+                    }
+
+                    htmlstring += "</div>"
+                    swal({
+                        title: 'Benefits',
+                        html: htmlstring,
+                        showCloseButton: true,
+                        width: '600px'
+                    })
+                },
+                error: function (result) {
+                    //console.log("Benefits Error");
+                }
+            });
+        }
+
+        function BuyNow(client_id, Service_Log_Unique_Id, ss_id) {
+            return false;
+            //alert(buynowUrl()+"/Health/proposal-details?client_id=" + client_id + "&arn=" + Service_Log_Unique_Id + "&is_posp=NonPOSP&ss_id=" + ((app_version=='FinPeace')?0:ss_id))
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + Service_Log_Unique_Id + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+        }
+        function BuyNow(res) {
+            //alert(buynowUrl()+"/Health/proposal-details?client_id=" + client_id + "&arn=" + arn + "&is_posp=NonPOSP&ss_id=" + ((app_version=='FinPeace')?0:ss_id))
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + arn + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+        }
+        function Reload() {
+            location.reload(true)
+        }
+
+        // Pratik
+        function MemberPopupOpen() {
+            $('#popupbox1').show();
+        }
+        function MemberPopupClose() {
+            $('#popupbox1').hide();
+            $('.MoreInsurer').hide();
+        }
+
+        $('.buy').click(function () {
+            //OpenAgePopup(ClientID, ARNval, SSID);
+            OpenAgePopup();
+        });
+        function Tenure_selected(years) {
+            var discount = 1;
+            if (years == 2) {
+                policy_tenure = 2;
+                discount = 0.925;
+                multiplyBy = policy_tenure * discount;
+            }
+            else if (years == 3) {
+                policy_tenure = 3;
+                discount = 0.9;
+                multiplyBy = policy_tenure * discount;
+            }
+            else {
+                policy_tenure = 1;
+                multiplyBy = 1;
+            }
+            $(".chk_SelectInsurer").prop("checked", false);
+            Addon_aru = 'no';
+            Addon_ursi = 'no';
+            Addon_sncp = 'no';
+            Addon_uar = 'no';
+            Addon_ncb = 'no';
+            Addon_dsi = 'no';
+            Addon_cover = 'no';
+            Addon_time = 'no';
+            Addon_global = 'no';
+            freeaddonId = [];
+            for (var i = 0; i < Response.length; i++) {
+                for (var j = 0; j < Response[i]['Plan_List'].length; j++) {
+                    var premiumperday = (Response[i].Plan_List[j].Premium_Breakup.final_premium * this.multiplyBy) / 365;
+                    $('#Premium_Amount_perday_' + Response[i]['Insurer_Id'] + "_" + Response[i]['Plan_List'][j]['Plan_Id']).text("₹ " + (Math.round(premiumperday)).toLocaleString() + " /day");
+                }
+            }
+            years != 3 ? $('#tenure_addon_hide').show() : $('#tenure_addon_hide').hide();
+        }
+        function Selected_Tenure(policy_tenure, insurer, plan_id) {
+            var Tenure_insurer = ['33', '26', '34', '10'];
+            var Tenure_hide_insurer = ['21', '6', '20', '16'];
+            var Tenure_plans = ['157', '1704', '100002', '112'];
+            if (policy_tenure != 1) {
+                if (Tenure_insurer.indexOf(insurer) >= 0) {
+                    $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                }
+                if (policy_tenure == 3) {
+                    if (Tenure_hide_insurer.indexOf(insurer) >= 0) {
+                        $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                    }
+                }
+                if (Tenure_plans.indexOf(plan_id) >= 0) {
+                    $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                }
+            }
+        }
+        function OpenAgePopup1(ClientID, ARNval, SSID) {
+            var arn;
+            //$('#adultAge_1').val(member_1_age);
+
+            if (res.Selected_final_premium != undefined) {
+                prevSelectedPlan = res.Selected_Plan_Id;
+                prevFinalPremium = Math.round(res.Selected_final_premium * multiplyBy);
+                $('#prevFinalPremium').val(prevFinalPremium)
+                arn = res.Selected_ARN;
+            } else {
+                prevSelectedPlan = Response[0].Plan_List[0]['Plan_Id'];
+                prevFinalPremium = Math.round(Response[0].Plan_List[0]['Premium_Breakup']['final_premium'] * multiplyBy);
+                $('#prevFinalPremium').val(prevFinalPremium)
+                arn = Response[0].Plan_List[0]['Service_Log_Unique_Id'];
+            }
+            if (isQuickQuote == false) {
+                //window.location.href = '/Health/proposal-details' + '?client_id=' + client_id + '&arn=' + ARNval + '&is_posp=NonPOSP' + '&ss_id=' + SSID;//UAT
+                window.location.href = buynowUrl() + "/Health/proposal-details?client_id=" + client_id + "&arn=" + ARNval + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : SSID);
+            } else {
+                quickSearch = false;
+                Agepopup = true;
+                $('#popupbox1').show();
+                $("#getAge").show();
+            }
+        }
+        function OpenAgePopup(thisval) {
+            $('#showMedPract').hide();
+            var ins = $(thisval).attr('id').split('_')[2];
+            var planId = $(thisval).attr('id').split('_')[3];
+            if (ins == "9" && planId == "111") {
+                if (isQuickQuote == true) {
+                    if (!$('.addonCheck').is(':checked')) {
+                        addonPopup = true;
+                        $('#addonPopup').show();
+                    }
+                }
+            } else if (ins == "20" && planId == "62") {
+                $('#showMedPract').show();
+            }
+            if (IsQuoteComplete == true && addonPopup == false) {
+                var Arn = $(thisval).attr('Arn');
+                var PlanName = $(thisval).attr('PlanName');
+                PlanName = PlanName.replace(new RegExp('_', 'gi'), ' ');
+                var FinalPremium = $(thisval).attr('FinalPremium');
+                //                $('#adultAge_1').val(member_1_age);
+                if (res.Selected_final_premium != undefined) {
+                    prevSelectedPlan = res.Selected_Plan_Id;
+                    prevFinalPremium = Math.round(res.Selected_final_premium * multiplyBy);
+                    arn = Arn;
+                } else {
+                    prevSelectedPlan = planId;
+                    prevFinalPremium = Math.round(FinalPremium * multiplyBy);
+                    arn = Arn;
+                }
+                //                prevSelectedPlan = PlanName;
+                //                prevFinalPremium = Math.round(FinalPremium * multiplyBy);
+                //                arn = Arn;
+                if (PlanName.includes('AROGYA')) {
+                    Addon_uar = 'no';
+                    Addon_ncb = 'no';
+                    Addon_dsi = 'no';
+                }
+                if (isQuickQuote == false) {
+                    //proposal_redirect(arn);
+                    //window.location.href = '/Health/proposal-details' + '?client_id=' + client_id + '&arn=' + Arn + '&is_posp=NonPOSP' + '&ss_id=' + SSID;//UAT
+                    window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + Arn + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+                } else {
+                    quickSearch = false;
+                    Agepopup = true;
+                    $('#popupbox1').show();
+                    $("#getAge").show();
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        function SetAge(MemberNo) {
+            var Age;
+            var Dob, Today;
+            var DTPDateVal = $("#Member_" + MemberNo + "_dtp").val();
+            if (DTPDateVal != "") {
+                //var DTPDate = DTPDateVal.split('-')[2] + "-" + DTPDateVal.split('-')[1] + "-" + DTPDateVal.split('-')[0];
+                Dob = new Date(DTPDateVal);
+                Today = new Date();
+                Age = Math.floor((Today - Dob) / (365.25 * 24 * 60 * 60 * 1000));
+                $("#Member_" + MemberNo + "_Age").val(Age);
+                $(".Member_" + MemberNo + "_dtp").removeClass('ErrorBorder');
+            }
+        }
+        function setGender(member, value) {
+            if (adult_count > 0) {
+                if (member === 1) {
+                    if (adult_count === 2) {
+                        member_2_gender = (value === 'M' || value === 'TM') ? 'F' : 'M';
+                        (value === 'F' || value === 'TF') ? ($("#Member_2_Gender option[value='F']").hide() && $("#Member_2_Gender option[value='TF']").hide())
+                            : ($("#Member_2_Gender option[value='F']").show() && $("#Member_2_Gender option[value='TF']").show());
+                        (value === 'M' || value === 'TM') ? ($("#Member_2_Gender option[value='M']").hide() && $("#Member_2_Gender option[value='TM']").hide())
+                            : ($("#Member_2_Gender option[value='M']").show() && $("#Member_2_Gender option[value='TM']").show());
+                    }
+                }
+            } else {
+                if (member === 1) {
+                    member = 3;
+                }
+            }
+            this["member_" + member + "_gender"] = value;
+            console.log('member', member, 'value', this["member_" + member + "_gender"]);
+        }
+        function validateForm() {
+            var err = 0;
+            insurer_selected = "";
+
+            //var adult_count, child_count, member_count;
+            //var member_1_age, member_2_age, member_3_age, member_4_age, member_5_age, member_6_age;
+            //var member_1_gender, member_2_gender, member_3_gender, member_4_gender, member_5_gender, member_6_gender;
+            //var member_1_birth_date, member_2_birth_date, member_3_birth_date, member_4_birth_date, member_5_birth_date, member_6_birth_date;
+
+            for (var i = 1; i <= adult_count; i++) {
+                if ($("#Member_" + i + "_dtp").val() == "") {
+                    $(".Member_" + i + "_dtp").addClass('ErrorBorder');
+                    err++;
+                }
+                else {
+                    $(".Member_" + i + "_dtp").removeClass('ErrorBorder');
+                }
+
+                if ($(".mem_" + i + "_gen").val() == null) {
+                    $(".mem_" + i + "_gen").addClass('gender_error');
+                    err++;
+                }
+                else {
+                    $(".mem_" + i + "_gen").removeClass('gender_error');
+                    if (this["member_" + i + "_gender"] === 'TM' || this["member_" + i + "_gender"] === 'TF') {
+                        insurer_selected = "42,10";
+                    }
+                }
+            }
+            for (var i = 3; i < child_count + 3; i++) {
+                if ($("#Member_" + i + "_dtp").val() == "") {
+                    $(".Member_" + i + "_dtp").addClass('ErrorBorder');
+                    err++;
+                }
+                else {
+                    $(".Member_" + i + "_dtp").removeClass('ErrorBorder');
+                }
+                //$("#Member_" + Mem + "_Gender").val(GenderVal);
+                if ($(".mem_" + i + "_gen").val() == null) {
+                    $(".mem_" + i + "_gen").addClass('gender_error');
+                    err++;
+                }
+                else {
+                    $(".mem_" + i + "_gen").removeClass('gender_error');
+                    if (this["member_" + i + "_gender"] === 'TM' || this["member_" + i + "_gender"] === 'TF') {
+                        insurer_selected = "42,10";
+                    }
+                }
+            }
+            if ($("#showMedPract").is(":visible")) {
+                var isMedPractitnr = $("#sel_practitnr").val();
+                if (isMedPractitnr === null || isMedPractitnr === '') {
+                    $(".sel_practitnr").addClass('med_Error');
+                    err++;
+                } else {
+                    $(".sel_practitnr").removeClass('med_Error');
+                }
+            }
+
+            if (err <= 0) {
+                isQuickQuote = false;
+                member_1_birth_date = $("#Member_1_dtp").val();
+                member_1_age = $("#Member_1_Age").val() == "" ? "" : parseInt($("#Member_1_Age").val());
+                member_1_gender = $("#Member_1_Gender").val();
+                if (adult_count == 0 && child_count > 0) {
+                    member_1_gender = "";
+                }
+
+                member_2_birth_date = $("#Member_2_dtp").val();
+                member_2_age = $("#Member_2_Age").val() == "" ? "" : parseInt($("#Member_2_Age").val());
+                member_2_gender = $("#Member_2_Gender").val();
+
+                member_3_birth_date = $("#Member_3_dtp").val();
+                member_3_age = $("#Member_3_Age").val() == "" ? "" : parseInt($("#Member_3_Age").val());
+                member_3_gender = $("#Member_3_Gender").val();
+
+                member_4_birth_date = $("#Member_4_dtp").val();
+                member_4_age = $("#Member_4_Age").val() == "" ? "" : parseInt($("#Member_4_Age").val());
+                member_4_gender = $("#Member_4_Gender").val();
+
+                member_5_birth_date = $("#Member_5_dtp").val();
+                member_5_age = $("#Member_5_Age").val() == "" ? "" : parseInt($("#Member_5_Age").val());
+                member_5_gender = $("#Member_5_Gender").val();
+
+                member_6_birth_date = $("#Member_6_dtp").val();
+                member_6_age = $("#Member_6_Age").val() == "" ? "" : parseInt($("#Member_6_Age").val());
+                member_6_gender = $("#Member_6_Gender").val();
+                premium_initiate();
+            }
+            //return true;
+        }
+        function premium_initiate() {
+            var mainUrl = "quote/premium_initiate";
+            // Pratik
+            var str = {
+                "city_id": parseInt(city_id),
+                "city_name": city_name,
+                "state_name": state_name,
+                "zone": zone_name,
+                "State_Code": state_code,
+                "health_insurance_si": parseInt(health_insurance_si),
+                "adult_count": adult_count,
+                "child_count": child_count,
+                "member_1_age": member_1_age,
+                "member_2_age": member_2_age,
+                "member_3_age": member_3_age,
+                "member_4_age": member_4_age,
+                "member_5_age": member_5_age,
+                "member_6_age": member_6_age,
+                "member_1_gender": member_1_gender,
+                "member_2_gender": member_2_gender,
+                "member_3_gender": member_3_gender,
+                "member_4_gender": member_4_gender,
+                "member_5_gender": member_5_gender,
+                "member_6_gender": member_6_gender,
+                "member_1_birth_date": member_1_birth_date,
+                "member_2_birth_date": member_2_birth_date,
+                "member_3_birth_date": member_3_birth_date,
+                "member_4_birth_date": member_4_birth_date,
+                "member_5_birth_date": member_5_birth_date,
+                "member_6_birth_date": member_6_birth_date,
+                "contact_name": contact_name,
+                "mobile": mobile,
+                "email": "",
+                "product_id": 2,
+                "policy_tenure": policy_tenure,
+                //"selectedTenure": policy_tenure,
+                "tenureDiscount": multiplyBy,
+                "method_type": "Premium",
+                "health_insurance_type": member_count > 1 ? "floater" : "individual",
+                "execution_async": "yes",
+                "crn": crn,
+                "ss_id": ss_id,
+                "agent_source": "0",
+                "secret_key": "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW",
+                "client_key": "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9",
+                "fba_id": fba_id,
+                "ip_address": ip_address,
+                "geo_lat": geo_lat,
+                "geo_long": geo_long,
+                "app_version": app_version,
+                "mac_address": mac_address,
+                "permanent_pincode": parseInt(permanent_pincode),
+                "quick_quote": isQuickQuote,
+                "topup_applied": "none",
+                "PremiumwithAddon": PremiumwithAddon,
+                "addon_uar": Addon_uar,
+                "addon_ncb": Addon_ncb,
+                "addon_dsi": Addon_dsi,
+                "addon_aru": Addon_aru,
+                "addon_ursi": Addon_ursi,
+                "addon_sncp": Addon_sncp,
+                "addon_cover": Addon_cover,
+                "addon_time": Addon_time,
+                "addon_global": Addon_global,
+                "freeAddOnCover": freeAddOnCover,
+                "insurer_selected": insurer_selected
+
+            };
+            if (Multi_Individual_type) {
+                str['multi_individual'] = "yes";
+                str['member_1_si'] = $('#member_1_sum_insured').text();
+                str['member_2_si'] = $('#member_2_sum_insured').text();
+                str['member_3_si'] = $('#member_3_sum_insured').text();
+                str['member_4_si'] = $('#member_4_sum_insured').text();
+                str['member_5_si'] = $('#member_5_sum_insured').text();
+                str['member_6_si'] = $('#member_6_sum_insured').text();
+            } else {
+                str['multi_individual'] = "no";
+            }
+
+            if (origin_crn != "" && origin_udid !== "") {
+                str['origin_crn'] = origin_crn;
+                str['origin_udid'] = origin_udid;
+                str['lead_type'] = "cross_sell";
+            }
+            if ($("#showMedPract").is(":visible")) {
+                str['is_med_practitioner'] = is_med_practitioner;
+            }
+            console.log(str);
+            console.log(JSON.stringify(str));
+            var obj_horizon_data = Horizon_Method_Convert("/quote/premium_initiate", str, "POST");
+            $.ajax({
+                type: "POST",
+                data: siteURL.indexOf('https') == 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(str),
+                url: siteURL.indexOf('https') == 0 ? obj_horizon_data['url'] : GetUrl() + "/quote/premium_initiate",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    console.log(data);
+                    srn = data['Summary']['Request_Unique_Id'];
+                    if (history.pushState) {
+                        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?srn=' + srn + '&client_id=' + client_id;
+                        window.history.pushState({ path: newurl }, '', newurl);
+                    }
+                    $('#loader_id').show();
+                    //$('.main_health_div').addClass('modal');
+                    $("#quotemain_list").html("");
+                    StatusCount = 0;
+                    getQuote();
+                    //window.location.href = './health_quote.html?srn=' + srn + '&client_id='+client_id;
+                },
+                error: function (result) {
+                    //alert("Error");
+                }
+            });
+            $("#loadingbtn").html('Getting Quote . . .');
+
+
+        }
+
+        function callProposal(premium, selARN) {
+            if (prevFinalPremium == premium) {
+                proposal_redirect(selARN);
+            }
+            else {
+                $("#popupbox2").show();
+            }
+        }
+        function proposal_redirect(selARN) {
+            //window.location.href = buynowUrl() + "/Health/proposal-details?client_id=" + client_id + "&arn=" + selARN + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+            window.location.href = buynowUrl() + "/health-insurance/proposal-details?client_id=" + client_id + "&arn=" + selARN + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id);
+            //$("#PopupOk").attr('href', buynowUrl() + "/Health/proposal-details?client_id=" + client_id + "&arn=" + selARN + "&is_posp=NonPOSP&ss_id=" + ((app_version == 'FinPeace') ? 0 : ss_id));
+        }
+        function dismissPremipopup() {
+            $("#popupbox2").hide();
+        }
+        function dismissAddonPopup() {
+            addonPopup = false;
+            $("#addonPopup").hide();
+        }
+        function Child_cal() {
+            if (Request_Core.adult_count > 0) {
+                var Gen1 = $('#Member_1_Gender').val();
+                var Female_dt;
+                if (adult_count == 2) {
+                    var Gen2 = $('#Member_2_Gender').val();
+                    Female_dt = (Gen2 == "F") ? $('#Member_2_dtp').val() : $('#Member_1_dtp').val();
+                }
+                else {
+                    Female_dt = $('#Member_1_dtp').val();
+                }
+                //Female_dt = Female_dt.split('-')[2] + "-" + Female_dt.split('-')[1] + "-" + Female_dt.split('-')[0];
+                var mydate = new Date(Female_dt);
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+                var current_yr = new Date().getFullYear();
+
+
+                for (var i = 3; i <= 6; i++) {
+                    if ($("#showMedPract").is(":visible") && i === 3) {
+                        var range = (current_yr - (year + 19)) > 25 ? current_yr - 30 : year + 19;
+                    } else {
+                        var range = (current_yr - (year + 19)) > 25 ? current_yr - 25 : year + 19;
+                    }
+
+                    $('#Member_' + i + '_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            //format: 'DD-MM-YYYY',
+                            format: 'YYYY-MM-DD',
+                            //minDate: new Date(year + 10, month, 1),
+                            minDate: new Date(range, month - 1, (day)),
+                            maxDate: new Date(new Date().getFullYear(), new Date().getMonth() - 3, 1)
+                        });
+                }
+            } else {
+                var Gen1 = $('#Member_3_Gender').val();
+                var Child_dt = $('#Member_3_dtp').val();
+
+                var mydate = new Date(Child_dt);
+                var month = mydate.getMonth();
+                var day = mydate.getDate();
+                var year = mydate.getFullYear();
+                var currentyear = new Date().getFullYear();
+
+                for (var i = 4; i <= 6; i++) {
+                    $('#Member_' + i + '_dtp').bootstrapMaterialDatePicker
+                        ({
+                            time: false, clearButton: true,
+                            format: 'YYYY-MM-DD',
+                            minDate: new Date(year, month, day),
+                            maxDate: new Date(new Date().getFullYear(), new Date().getMonth() - 3, 1)
+                        });
+                }
+            }
+        }
+
+        var shareInsurer_id = [];
+
+        function chk_shareSelect(insurer_id, plan_id) {
+            shareInsurer_id.push({ "Insurer_id": insurer_id, "Plan_id": plan_id });
+            console.log(shareInsurer_id);
+        }
+
+        function Sharemethod() {
+
+            $('#Customer_Name').text(Request_Core['contact_name'])
+            if (shareInsurer_id.length > 0) {
+                // $('.main_health_div').hide();
+                //$('#tblshareQuote').show();
+
+                var MAINHTML = "";
+                MAINHTML = MAINHTML + '<div style="width:96%;margin:0px auto;font-family: sans-serif;font-size:13px;">';
+                MAINHTML = MAINHTML + '<div><p>Dear <b class="red-txt" id="name">' + Request_Core['contact_name'] + ',' + '</b></p><p>Please find below Your Health Insurance quotations.</p></div>';
+                var HTML = "";
+                HTML = HTML + '<div>';
+
+                for (var i = 0; i < Response.length; i++) {
+                    for (var k = 0; k < shareInsurer_id.length; k++) {
+                        if (Response[i]["Insurer_Id"] == shareInsurer_id[k]["Insurer_id"]) {
+                            for (var j = 0; j < Response[i]["Plan_List"].length; j++) {
+
+                                if (Response[i]["Plan_List"][j]["Plan_Id"] == shareInsurer_id[k]["Plan_id"] && Response[i]["Insurer_Id"] == shareInsurer_id[k]["Insurer_id"]) {
+                                    HTML = HTML + '<table style="width: 100%;max-width: 100%;margin-bottom: 20px;border: 1px solid rgb(221, 221, 221);border-collapse: collapse;"><tbody>';
+                                    HTML = HTML + '<tr>';
+                                    HTML = HTML + '<td style="width: 40%;padding:2px;border: 1px solid rgb(221, 221, 221);vertical-align: top;text-align: -webkit-center;"><img src="http://www.policyboss.com/Images/insurer_logo/' + const_insurerlogo[Response[i]['Insurer'].Insurer_ID] + '"  class="img-responsive center" /></td>';
+                                    HTML = HTML + '<td style="width: 30%;text-align: center;padding:2px;border: 1px solid rgb(221, 221, 221);vertical-align: top;"><p style="color: rgb(153, 153, 153);font-size: 11px;">SUM ASSURED</p><h5><b>₹ ' + Response[i]["Plan_List"][j]['Sum_Insured'] + '</h5></b></td>';
+                                    HTML = HTML + '<td style="width: 30%;padding:2px;text-align: center;border: 1px solid rgb(221, 221, 221);vertical-align: top;"><p style="color: rgb(153, 153, 153);font-size: 11px;">DEDUCT DLE</p><h5><b>₹ 0</b></h5></td>'
+                                    HTML = HTML + '</tr>';
+                                    HTML = HTML + '<tr>';
+                                    HTML = HTML + '<td style="width: 40%;text-align: center;padding:6px;border: 1px solid rgb(221, 221, 221);line-height: 1.42857143;vertical-align: top;text-align: center;"><p style="color: rgb(153, 153, 153);margin: 0 0 10px;font-size: 11px;">CARE FLOATER</p><h5><b style="font-weight: 700;font-size: 11px;">' + Response[i]["Plan_List"][j]["Plan_Name"] + '</b></h5> </td>';
+                                    HTML = HTML + '<td style="width: 40%;padding:6px;border: 1px solid rgb(221, 221, 221);line-height: 1.42857143;vertical-align: top;text-align: center;" colspan="2"><p style="color: rgb(153, 153, 153);margin: 0 0 10px;font-size: 11px;text-align: center;">PREMIUM</p> <span style="background: rgb(249, 95, 103);padding: 5px 15px;margin: 4px;font-size: 16px;color: rgb(255, 255, 255);display: block;text-align: center;">₹ ' + Response[i]["Plan_List"][j]['Premium_Breakup']['final_premium'] + '</span></td>';
+                                    HTML = HTML + '</tr>';
+                                    HTML = HTML + '</tbody></table>';
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+                HTML = HTML + '</div>';
+                HTML = HTML + '<div>';
+                HTML = HTML + '<p style="margin: 0 0 10px;">P.S: The about Quotations are subject to verification by respective insurance</p>';
+                HTML = HTML + '<h5><b>Please feel free to contact me for more details and renewal</b></h5>';
+                HTML = HTML + '</div>';
+                HTML = HTML + '<div>';
+                HTML = HTML + '<table style="width: 100%;max-width: 100%;margin-bottom: 20px;border: 1px solid rgb(221, 221, 221);border-collapse: collapse;">';
+                HTML = HTML + '<tr>';
+                HTML = HTML + '<td style="padding:6px;border: 1px solid rgb(221, 221, 221);line-height: 1.42857143;vertical-align: top;"><img src="https://www.policyboss.com/Images/policyboss_logo.jpg" class="img-responsive" width="100" id="pospPhoto"/></td>';
+                HTML = HTML + '<td colspan="3" style="padding:6px;border: 1px solid rgb(221, 221, 221);line-height: 1.42857143;vertical-align: top;">';
+                HTML = HTML + '<h4 style="color: rgb(182, 13, 42);font-size:15px;" id="pospName">' + Request_Core['posp_first_name'] + ' ' + Request_Core['posp_last_name'] + '</h4>';
+                HTML = HTML + '<p style="margin: 0 0 10px;" id="deg">' + Request_Core['posp_category'] + '</p>';
+                HTML = HTML + '<h4 style="margin-top: 10px;margin-bottom:10px;font-size:15px;" id="phone">' + Request_Core['posp_mobile_no'] + '</h4>';
+                HTML = HTML + '<p style="margin: 0 0 10px;" id="email">' + Request_Core['posp_email_id'] + '</p>';
+                HTML = HTML + '</td>';
+                HTML = HTML + '</tr>';
+                HTML = HTML + '</table>';
+                HTML = HTML + '</div>';
+                MAINHTML = MAINHTML + HTML;
+                MAINHTML = MAINHTML + '</div>';
+
+            } else {
+                alert('Please Select Insurer');
+            }
+            //console.log(MAINHTML);
+            //$('#tblshareQuote').append(MAINHTML);
+            if (app_version == "2.4.2" || true) {
+                Android.SendShareQuotePdf("", MAINHTML);
+            }
+            if (app_version == "2.0") {
+                window.webkit.messageHandlers.finmartios.postMessage("", MAINHTML);
+            }
+        }
+
+        function Floater() {
+            $('.filter_section').hide();
+            policy_tenure = 1;
+            $(".Tenure_Id").val('Tenure');
+            $('.plans_Filter').val('base_plan');
+            FilterResponse = [];
+            chk_insurer = [];
+            insurer_filter = [];
+            plan_filter_insurer = [];
+            si_filter_insurer = [];
+            //$('#advancesearch').hide();
+            Multi_Individual_type = false;
+            //$('#floater').addClass('backclr');
+            //$('#multi_individual').removeClass('backclr');
+            for (var i in Response) {
+                if (Response[i].Insurer_Id == 34 || Response[i].Insurer_Id == 42 || Response[i].Insurer_Id == 9) {
+                    for (var j = 0; j < Response[i]['Plan_List'].length; j++) {
+                        $(".chk_SelectInsurer").prop("checked", false);
+                        Addon_aru = 'no';
+                        Addon_ursi = 'no';
+                        Addon_sncp = 'no';
+                        Addon_uar = 'no';
+                        Addon_ncb = 'no';
+                        Addon_dsi = 'no';
+                        Addon_cover = 'no';
+                        Addon_time = 'no';
+                        Addon_global = 'no';
+                        $('#Premium_Amount_' + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id']).text(Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium).toLocaleString() + " / " + policy_tenure + "yr(s)");
+                    }
+                }
+            }
+            premium_initiate();
+        }
+
+        function MultiIndividual() {
+            $('.filter_section').hide();
+            policy_tenure = 1;
+            $(".Tenure_Id").val('Tenure');
+            $('.plans_Filter').val('base_plan');
+            FilterResponse = [];
+            chk_insurer = [];
+            insurer_filter = [];
+            plan_filter_insurer = [];
+            si_filter_insurer = [];
+            //$('#advancesearch').hide();
+            for (var i = 1; i <= adult_count; i++) {
+                this['member_' + i + '_sum_insured'] = this.health_insurance_si;
+                $('#member_' + i + '_sum_insured').text(this.health_insurance_si)
+            }
+
+            for (var j = 3; j <= child_count + 2; j++) {
+                this['member_' + j + '_sum_insured'] = this.health_insurance_si;
+                $('#member_' + j + '_sum_insured').text(this.health_insurance_si)
+            }
+            //$('#multi_individual').addClass('backclr');
+            //$('#floater').removeClass('backclr');
+            Multi_Individual_type = true;
+            for (var i in Response) {
+                if (Response[i].Insurer_Id == 34 || Response[i].Insurer_Id == 42) {
+                    for (var j = 0; j < Response[i]['Plan_List'].length; j++) {
+                        $(".chk_SelectInsurer").prop("checked", false);
+                        Addon_aru = 'no';
+                        Addon_ursi = 'no';
+                        Addon_sncp = 'no';
+                        Addon_uar = 'no';
+                        Addon_ncb = 'no';
+                        Addon_dsi = 'no';
+                        $('#Premium_Amount_' + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][j]['Plan_Id']).text(Math.round(Response[i]['Plan_List'][j]['Premium_Breakup'].final_premium).toLocaleString() + " / " + policy_tenure + "yr(s)")
+                    }
+                }
+            }
+            premium_initiate();
+        }
+
+        function SI_Moreclick(Insurer) {
+
+            $('#div_SI_Amt').empty();
+            var SI_amt;
+            for (var i in Response) {
+                if (Response[i]['Insurer_Id'] == Insurer) {
+                    console.log(Response[i]['Plan_List'][0]);
+
+                    for (var j = 1; j <= adult_count; j++) {
+                        $('#div_SI_Amt').append('<div><span>Adult' + j + '=>&nbsp;&nbsp; SI&nbsp; :&nbsp;</span><span> &nbsp;&nbsp;' + Response[i].Plan_List[0]['member_' + j + '_si'] + '</span></div>')
+                    }
+                    var childcnt = child_count + 2;
+                    for (var k = 3; k <= childcnt; k++) {
+                        var child_no = k;
+                        $('#div_SI_Amt').append('<div><span>Child' + (child_no - 2) + '=>&nbsp;&nbsp; SI&nbsp; :&nbsp;</span><span> &nbsp;&nbsp;' + Response[i].Plan_List[0]['member_' + k + '_si'] + '</span></div>')
+                    }
+
+                }
+            }
+            $('.coverdetpopup').show();
+        }
+
+        $(".coverpopupclose").click(function (e) {
+            $('.coverdetpopup').hide();
+        });
+
+        $('.advanceBtn').click(function () {
+            $('#advancesearch').show();
+        });
+
+        $('.Close_popup').click(function () {
+            $('#advancesearch').hide();
+        });
+
+        $('.Tenure_Id').click(function () {
+            $('#advancesearch').hide();
+        });
+
+        var selectedmember;
+        $(".coverPanel button").click(function (e) {
+            console.log(e);
+            $('#' + selectedmember + '_sum_insured').text(parseInt($(this).attr("value")));
+            console.log(selectedmember + "_sum_insured");
+            this[selectedmember + '_sum_insured'] = parseInt($(this).attr("value"));
+            e.preventDefault();
+        });
+
+        var more_id;
+        function MoreBtn(member) {
+            selectedmember = member;
+            more_id = member.split('_')[1];
+            var more_posi = $('#more_' + more_id).position();
+            $('.MoreInsurer').css('top', more_posi.top);
+            $(".MoreInsurer").slideDown(500, function () {
+                $('.MoreInsurer').show();
+                $('.MoreInsurer').css('overflow-y', 'scroll');
+            });
+        }
+
+        $("#Member_2_dtp").click(function () {
+            if (adult_count > 1) {
+                if ($("#Member_1_dtp").val() == "") {
+                    $(".Member_1_dtp").addClass('ErrorBorder');
+                }
+                else {
+                    $(".Member_1_dtp").removeClass('ErrorBorder');
+                }
+            }
+        });
+        $(".Memberdtp").click(function () {
+            for (var i = 1; i <= adult_count; i++) {
+                if ($("#Member_" + i + "_dtp").val() == "") {
+                    $(".Member_" + i + "_dtp").addClass('ErrorBorder');
+                }
+                else {
+                    $(".Member_" + i + "_dtp").removeClass('ErrorBorder');
+                }
+            }
+        });
+        $("#Member_4_dtp").click(function () {
+            if (adult_count > 0) {
+                if ($("#Member_1_dtp").val() == "") {
+                    $(".Member_1_dtp").addClass('ErrorBorder');
+                }
+                else {
+                    $(".Member_1_dtp").removeClass('ErrorBorder');
+                }
+            } else {
+                if ($("#Member_3_dtp").val() == "") {
+                    $(".Member_3_dtp").addClass('ErrorBorder');
+                }
+                else {
+                    $(".Member_3_dtp").removeClass('ErrorBorder');
+                }
+            }
+        });
+
+        function OpenFilterPopup() {
+            $('.filter_section').show();
+        }
+        function CloseFilterPopup() {
+            $('.filter_section').hide();
+            if (apply_filter == false) {
+                $(".SumInsurer_selected").val('Sum Insured');
+                $(".Tenure_Id").val('Tenure');
+                $('.plans_Filter').val('base_plan');
+                FilterResponse = [];
+                chk_insurer = [];
+                insurer_filter = [];
+                plan_filter_insurer = [];
+                si_filter_insurer = [];
+                x = document.querySelectorAll(".filter_Insurer");
+                for (i = 0; i < x.length; i++) {
+                    x[i].checked = false;
+                }
+            }
+        }
+        function ApplyFilter() {
+            apply_filter = true;
+            TenureApply();
+            all_filter();
+            $('.filter_section').hide();
+            if (addons.hasOwnProperty('care') && addons.care.opt_ncb) {
+                $("#ncb_34_81").prop("checked", true).attr("disabled", true);
+                addonpremium(addons.care.plan, addons.care.plan.Plan_Id);
+            }
+        }
+        function all_filter() {
+            var Filter_plan_name = $('.plans_Filter').val();
+            var chk_insurer = [];
+            var ins_count = [];
+            var plan_count = [];
+            var hide_insurerCnt = 0;
+            var hide_planCnt = 0;
+            var Tenure_insurer = [33, 26, 34, 10];
+            var Tenure_hide_insurer = [21, 6, 20, 16];
+            var Tenure_plans = [157, 1704, 100002, 112];
+            var filter_si = parseInt($('.SumInsurer_selected').val());
+            var myPopup = document.getElementById("Insurer_list").children;
+            for (var i = 0; i < myPopup.length; i++) {
+                if (myPopup[i].children[0]["checked"]) {
+                    chk_insurer.push(parseInt(myPopup[i].children[0]["id"].split('_')[2]));
+                }
+            }
+            var resp = [];
+            var ins_selected = [];
+            if (chk_insurer.length > 0 || filter_si > 0 || Filter_plan_name == "arogya_plan") {
+                FilterResponse = filter_insurer.filter(res => {
+                    return filter_si == res.SI;
+                });
+                if (FilterResponse.length == 0) {
+                    FilterResponse = filter_insurer;
+                }
+                if (chk_insurer.length > 0) {
+                    FilterResponse = FilterResponse.filter(res => {
+                        return chk_insurer.includes(res.Id);
+                    });
+                }
+                //console.log(FilterResponse);
+                if (FilterResponse.length > 0 && Filter_plan_name == "arogya_plan") {
+                    FilterResponse = FilterResponse.filter(res => {
+                        return plan_list.includes(res.Plan_Id);
+                    });
+                }
+            } else {
+                FilterResponse = filter_insurer.filter(res => {
+                    return res.Id;
+                });
+            }
+
+            if (FilterResponse.length == 0) {
+                $('#insurercnt').text(0 + " ");
+                $('#Plancnt').text(0 + " ");
+            } else if (FilterResponse.length > 0) {
+                for (var i = 0; i < FilterResponse.length; i++) {
+                    if (ins_count.indexOf(FilterResponse[i].Id) == -1) {
+                        ins_count.push(FilterResponse[i].Id);
+                    }
+                }
+                $('#insurercnt').text(ins_count.length + " ");
+                $('#Plancnt').text(FilterResponse.length + " ");
+            }
+            for (var i = 0; i < filter_insurer.length; i++) {
+                $('#Insurer_Plan_' + filter_insurer[i].Id + "_" + filter_insurer[i].Plan_Id).hide();
+            }
+            for (var j = 0; j < FilterResponse.length; j++) {
+                $('#Insurer_Plan_' + FilterResponse[j].Id + "_" + FilterResponse[j].Plan_Id).show();
+                if (Filter_plan_name == "base_plan") {
+                    $('.child_' + FilterResponse[j].Id).hide();
+                    $('.parent_' + filter_insurer[j].Id + ' .moresection').show();
+                    $('.parent_' + filter_insurer[j].Id + ' .lesssection').hide();
+                }
+            }
+            if (policy_tenure != 1) {
+                for (var k = 0; k < FilterResponse.length; k++) {
+                    var insurer = FilterResponse[k].Id;
+                    var plan_id = FilterResponse[k].Plan_Id;
+                    if (Tenure_insurer.indexOf(insurer) >= 0) {
+                        hide_planCnt++;
+                        $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                    }
+                    if (policy_tenure == 3) {
+                        if (Tenure_hide_insurer.indexOf(insurer) >= 0) {
+                            if (Tenure_plans.indexOf(plan_id) >= 0) {
+
+                            } else {
+                                hide_planCnt++;
+                            }
+                            $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                        }
+                    }
+                    if (Tenure_plans.indexOf(plan_id) >= 0) {
+                        hide_planCnt++;
+                        $('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                    }
+                }
+                hide_insurerCnt = $('#quotemain_list').children('div .clsparent').filter(function () {
+                    return $(this).css('display') === 'block';
+                }).length;
+                $('#insurercnt').text(hide_insurerCnt + " ");
+                $('#Plancnt').text(FilterResponse.length - hide_planCnt + " ");
+                is_added = true;
+            } else if (policy_tenure == 1) {
+                for (var k = 0; k < FilterResponse.length; k++) {
+                    $('#Insurer_Plan_' + FilterResponse[k].Id + "_" + FilterResponse[k].Plan_Id).show();
+                    if (Filter_plan_name == "base_plan") {
+                        $('.child_' + FilterResponse[k].Id).hide();
+                        $('.parent_' + filter_insurer[k].Id + ' .moresection').show();
+                        $('.parent_' + filter_insurer[k].Id + ' .lesssection').hide();
+                    }
+                }
+            }
+        }
+        function TenureApply() {
+            var Tenure_insurer = ['33', '26', '34', '10'];
+            var Tenure_hide_insurer = ['21', '6', '20', '16'];
+            var Tenure_plans = ['157', '1704', '100002', '112'];
+            var Filter_plan_name = $('.plans_Filter').val();
+            var filter_si = parseInt($('.SumInsurer_selected').val());
+            var Thisval = parseInt($('.Tenure_Id').val());
+            Tenure_selected(parseInt(Thisval));
+            var hide_insurerCnt = 0;
+            var hide_planCnt = 0;
+            $(".buy").each(function () {
+                var ins = $(this).parent().parent().parent().parent().attr('id');
+                var insurer = ins.slice(ins.indexOf('_') + 1);
+                var insurerid = $(this).attr('id');
+                var plan_id = insurerid.slice(insurerid.lastIndexOf('_') + 1);
+                var multiply_value = multiplyBy;
+                if (insurer == 6 && policy_tenure == 2) {
+                    multiply_value = policy_tenure * 0.9
+                }
+                //                    if (policy_tenure != 1) {
+                //						if(Tenure_insurer.indexOf(insurer) >= 0){
+                //							//hide_insurerCnt ++;
+                //							hide_planCnt ++;
+                //							
+                //							$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                //						}
+                //						if(policy_tenure == 3){
+                //								if(Tenure_hide_insurer.indexOf(insurer) >= 0){
+                //									if(Tenure_plans.indexOf(plan_id) >= 0){
+                //									
+                //									}else{
+                //									hide_planCnt ++;
+                //									}
+                //									$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                //								}
+                //							}else {
+                //						    if(Tenure_hide_insurer.indexOf(insurer) >= 0){
+                //								$('.parent_' + insurer).show();
+                //								$('.child_' + insurer).hide();
+                //								$('.parent_' + insurer+' .moresection').show();
+                //								$('.parent_' + insurer+' .lesssection').hide();
+                //							}
+                //						}
+                //						if(Tenure_plans.indexOf(plan_id) >= 0){
+                //							hide_planCnt ++;
+                //							
+                //							$('#Insurer_Plan_' + insurer + "_" + plan_id).hide();
+                //							for(var i=0;i<Response.length;i++){
+                //							if((Response[i]['Insurer'].Insurer_ID == insurer) && ((Response[i]['Plan_List'].length) == 1)){
+                //								//hide_insurerCnt ++;
+                //							console.log(hide_insurerCnt + "hide_insurerCnt");
+                //							}
+                //							if((Response[i]['Insurer'].Insurer_ID == insurer) && ((Response[i]['Plan_List'].length) == 2)){
+                //							$('#hide_' + Response[i]['Insurer'].Insurer_ID + "_" + Response[i]['Plan_List'][0]['Plan_Id']).hide();
+                //							$('.parent_' + insurer+' .moresection').hide();
+                //							   }
+                //							  }
+                //							}
+                //                        is_added = true;	
+                //                    }
+                //                    else {
+                //                        $('.parent_' + insurer).show();
+                //						$('.child_' + insurer).hide();
+                //						$('.parent_' + insurer+' .moresection').show();
+                //						$('.parent_' + insurer+' .lesssection').hide();
+                //						
+                //						$('#insurercnt').text(res.Summary.Insurer_Cnt + hide_insurerCnt+" ");
+                //						$('#Plancneditedfinalpremiumt').text(res.Summary.Plan_Cnt + hide_planCnt +" ");
+                //                    }
+
+                console.log(multiply_value);
+
+                var Premium, EditedPremium, TenureText;
+                Premium = $(this).attr('finalpremium');
+                EditedPremium = $(this).attr('editedfinalpremium');
+                Premium = parseInt(Premium * multiply_value);
+                if (policy_tenure != 1) {
+                    TenureText = "/" + policy_tenure + "yrs"
+                }
+                else { TenureText = "/" + policy_tenure + "yr" }
+
+                $(this).text(Premium + " " + TenureText);
+                $(this).attr('editedfinalpremium', Premium);
+            });
+            //				hide_insurerCnt=$('#quotemain_list').children('div .clsparent').filter(function() {
+            //									return $(this).css('display') === 'block';
+            //								}).length;
+            //				$('#insurercnt').text(hide_insurerCnt +" ");
+            //				$('#Plancnt').text(res.Summary.Plan_Cnt - hide_planCnt +" ");	
+        }
+        function addonpremium(response, plan_id) {
+            var addons = response.Premium_Breakup.addon;
+            var addonarray = {};
+            if (policy_tenure === 1) {
+                PremiumwithAddon = response.Premium_Breakup.final_premium;
+                PremiumwithAddon = response.Selected_final_premium != undefined ? response.Selected_final_premium : response.Premium_Breakup.final_premium;
+                for (var k in addons) {
+                    addonarray[k] = addons[k];
+                }
+            } else {
+                PremiumwithAddon = response.Premium_Breakup.final_premium * this.multiplyBy;
+                for (var k in addons) {
+                    addonarray[k] = addons[k]
+                }
+                for (var k in addonarray) {
+                    addonarray[k] = addons[k] * this.multiplyBy;
+                }
+            }
+
+            if (response.Insurer_Id == 42) {
+                if (document.getElementById("aru_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                    if (document.getElementById("ursi_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                        PremiumwithAddon += addonarray['addon_ursi'];
+                        Addon_ursi = 'yes';
+                    }
+                    if (document.getElementById("super_ncb_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                        PremiumwithAddon += addonarray['addon_sncp'];
+                        Addon_sncp = 'yes';
+                    }
+                    PremiumwithAddon = PremiumwithAddon + (PremiumwithAddon * 0.1);
+                    Addon_aru = 'yes';
+                } else {
+                    Addon_aru = 'no';
+                    if (document.getElementById("ursi_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                        PremiumwithAddon += addonarray['addon_ursi'];
+                        Addon_ursi = 'yes';
+                    } else {
+                        Addon_ursi = 'no';
+                    }
+                    if (document.getElementById("super_ncb_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                        PremiumwithAddon += addonarray['addon_sncp'];
+                        Addon_sncp = 'yes';
+                    } else {
+                        Addon_sncp = 'no';
+                    }
+                }
+            }
+            if (response.Insurer_Id == 34) {
+                if (document.getElementById("uar_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                    PremiumwithAddon += response.Premium_Breakup.addon.addon_uar;
+                    Addon_uar = 'yes';
+                } else {
+                    Addon_uar = 'no';
+                }
+                if (document.getElementById("ncb_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                    PremiumwithAddon += response.Premium_Breakup.addon.addon_ncb;
+                    Addon_ncb = 'yes';
+                } else {
+                    Addon_ncb = 'no';
+                }
+                if (document.getElementById("dsi_" + response.Insurer_Id + "_" + response.Plan_Id).checked) {
+                    PremiumwithAddon += response.Premium_Breakup.addon.addon_dsi;
+                    Addon_dsi = 'yes';
+                } else {
+                    Addon_dsi = 'no';
+                }
+            }
+            if (response.Insurer_Id == 9) {
+                var checkboxes = document.querySelectorAll(".addonCheck");
+                for (var i = 0; i < checkboxes.length; i++) {
+                    var checkbox = checkboxes[i];
+                    if (checkbox['checked'] == true) {
+                        if (freeaddonId.indexOf(checkbox['id'].split('_')[0]) == -1) {
+                            freeaddonId.push(checkbox['id'].split('_')[0]);
+                        }
+                    } else {
+                        for (let p in freeaddonId) {
+                            if (freeaddonId[p] == checkbox['id'].split('_')[0]) {
+                                var index = freeaddonId.indexOf(checkbox['id'].split('_')[0]);
+                                freeaddonId.splice(index, 1);
+                            }
+                        }
+                    }
+                }
+                if (document.getElementById("Cover_" + response.Insurer_Id + "_" + response.Plan_Id).checked && freeaddonId[0] !== "Cover") {
+                    PremiumwithAddon += addonarray['addon_cover'];
+                    Addon_cover = 'yes';
+                } else {
+                    Addon_cover = 'no';
+                }
+                if (document.getElementById("Time_" + response.Insurer_Id + "_" + response.Plan_Id).checked && freeaddonId[0] !== "Time") {
+                    PremiumwithAddon += addonarray['addon_time'];
+                    Addon_time = 'yes';
+                } else {
+                    Addon_time = 'no';
+                }
+                if (document.getElementById("Global_" + response.Insurer_Id + "_" + response.Plan_Id).checked && freeaddonId[0] !== "Global") {
+                    PremiumwithAddon += addonarray['addon_global'];
+                    Addon_global = 'yes';
+                } else {
+                    Addon_global = 'no';
+                }
+                freeAddOnCover = freeaddonId[0];
+            }
+            var premium_perday = PremiumwithAddon / 365;
+            document.getElementById("Premium_Amount_" + response.Insurer_Id + "_" + response.Plan_Id).innerHTML = "";
+            $('#Premium_Amount_' + response.Insurer_Id + "_" + response.Plan_Id).text("₹ " + (Math.round(PremiumwithAddon)).toLocaleString() + " / " + this.policy_tenure + "yr(s)");
+            document.getElementById("Premium_Amount_perday_" + response.Insurer_Id + "_" + response.Plan_Id).innerHTML = "";
+            $('#Premium_Amount_perday_' + response.Insurer_Id + "_" + response.Plan_Id).text("₹ " + (Math.round(premium_perday)).toLocaleString() + " /day");
+        }
+    </script>
+</body>
+
+</html>

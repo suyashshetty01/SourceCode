@@ -1,0 +1,243 @@
+{
+  "enquiryId": "___quote_number___",
+  "contract": {
+    "insuranceProductCode": "___vehicle_insurance_subtype_2___",
+    "subInsuranceProductCode": "___vehicle_insurance_subtype___",
+    "startDate": "___policy_start_date___",
+    "endDate": "___policy_end_date___",
+    "policyHolderType": "___vehicle_registration_type___",
+    "externalPolicyNumber": "PARTNER_POL_NO",
+    "isNCBTransfer": null,
+    "coverages": {
+      "voluntaryDeductible": "ZERO",
+      "thirdPartyLiability": {
+        "isTPPD": ___is_tppd___
+      },
+      "ownDamage": {
+        "discount": {
+          "userSpecialDiscountPercent": 0,
+          "discounts": []
+        },
+        "surcharge": {
+          "loadings": []
+        }
+      },
+       "personalAccident": {
+                "selection": "___is_pa_od___",
+                "coverTerm": ___cpa_tenure___,
+                "coverAvailability": "AVAILABLE",
+                "netPremium": "___policy_od_amount___"
+            },
+      "accessories": {
+        "cng": {
+          "selection": ___is_external_bifuel___,
+          "insuredAmount": ___external_bifuel_value___
+        },
+        "electrical": {
+          "selection": ___electrical_accessory_2___,
+          "insuredAmount": ___electrical_accessory___
+        },
+        "nonElectrical": {
+          "selection": ___non_electrical_accessory_2___,
+          "insuredAmount": ___non_electrical_accessory___
+        }
+      },
+      "addons": {
+        "partsDepreciation": {
+          "claimsCovered": null,
+          "selection": ___addon_zero_dep_cover___
+        },
+        "roadSideAssistance": {
+          "selection": ___addon_road_assist_cover___
+        },
+        "engineProtection": {
+          "selection": ___addon_engine_protector_cover___
+        },
+        "tyreProtection": {
+          "selection": ___addon_tyre_coverage_cover___
+        },
+        "rimProtection": {
+          "selection": null
+        },
+        "returnToInvoice": {
+          "selection": ___addon_invoice_price_cover___
+        },
+        "consumables": {
+          "selection": ___addon_consumable_cover___
+        }
+      },
+      "legalLiability": {
+        "paidDriverLL": {
+          "selection": ___is_llpd___,
+          "insuredCount": 1
+        },
+        "employeesLL": {
+          "selection": null,
+          "insuredCount": null
+        },
+        "unnamedPaxLL": {
+          "selection": null,
+          "insuredCount": null
+        },
+        "cleanersLL": {
+          "selection": null,
+          "insuredCount": null
+        },
+        "nonFarePaxLL": {
+          "selection": null,
+          "insuredCount": null
+        },
+        "workersCompensationLL": {
+          "selection": null,
+          "insuredCount": null
+        }
+      },
+      "unnamedPA": {
+         "unnamedPax": {
+                    "selection": ___pa_unnamed_passenger_si_2___,
+                    "insuredAmount": ___pa_unnamed_passenger_si___,
+                    "insuredCount": ___dbmaster_insurer_vehicle_seatingcapacity___
+                },
+        "unnamedPaidDriver": {
+          "selection": null,
+          "insuredAmount": null,
+          "insuredCount": null
+        },
+        "unnamedHirer": {
+          "selection": null,
+          "insuredAmount": null,
+          "insuredCount": null
+        },
+        "unnamedPillionRider": {
+          "selection": null,
+          "insuredAmount": null,
+          "insuredCount": null
+        },
+        "unnamedCleaner": {
+          "selection": null,
+          "insuredAmount": null,
+          "insuredCount": null
+        },
+        "unnamedConductor": {
+          "selection": null,
+          "insuredAmount": null,
+          "insuredCount": null
+        }
+      }
+    }
+  },
+  "vehicle": {
+    "isVehicleNew": ___vehicle_insurance_type___,
+    "vehicleMaincode": "___dbmaster_insurer_vehicle_code___",
+    "licensePlateNumber": "___registration_no_1______registration_no_2______registration_no_3______registration_no_4___",
+    "vehicleIdentificationNumber": "___chassis_number___",
+    "engineNumber": "___engine_number___",
+    "manufactureDate": "___vehicle_manf_date___",
+    "registrationDate": "___vehicle_registration_date___",
+    "vehicleIDV": {
+            "idv": ___vehicle_expected_idv___,
+            "defaultIdv": ___vehicle_normal_idv___,
+            "minimumIdv": ___vehicle_min_idv___,
+            "maximumIdv": ___vehicle_max_idv___
+        },
+    "usageType": null,
+    "permitType": null,
+    "motorType": null
+  },
+  "previousInsurer": {
+    "isPreviousInsurerKnown": "___is_policy_exist___",
+    "previousInsurerCode": "___dbmaster_previousinsurer_code___",
+    "previousPolicyNumber": "___previous_policy_number___",
+    "previousPolicyExpiryDate": "___policy_expiry_date___",
+    "isClaimInLastYear": ___is_claim_exists___,
+    "originalPreviousPolicyType": "___og_prev_policy_type___",
+    "previousPolicyType": null,
+    "previousNoClaimBonus": "___vehicle_ncb_current_1___",
+    "currentThirdPartyPolicy": ___tp_policy_details___
+  },
+  "persons": [
+    {
+      "personType": "___vehicle_registration_type___",
+      "addresses": [
+        {
+          "addressType": "PRIMARY_RESIDENCE",
+          "flatNumber": "___communication_address_1___",
+          "streetNumber": null,
+          "street": "___communication_address_2___",
+          "district": "___communication_address_3___",
+          "state": "___permanent_state_code___",
+          "city": "___communication_city___",
+          "country": "IN",
+          "pincode": "___communication_pincode___"
+        }
+      ],
+      "communications": [
+                {
+                    "communicationType": "MOBILE",
+                    "communicationId": "___mobile___",
+                    "isPrefferedCommunication": true
+                },
+                {
+                    "communicationType": "EMAIL",
+                    "communicationId": "___email___",
+                    "isPrefferedCommunication": true
+                }
+            ],
+         "identificationDocuments": [
+        {
+          "identificationDocumentId": "",
+          "documentType": "AADHAR_CARD",
+          "documentId": "___aadhar___",
+          "issuingAuthority": "",
+          "issuingPlace": "IN",
+          "issueDate": "2019-11-22",
+          "expiryDate": "2019-11-22"
+        }
+      ],
+      "isPolicyHolder": true,
+      "isVehicleOwner": true,
+      "firstName": "___first_name___",
+      "middleName": "___middle_name___",
+      "lastName": "___last_name___",
+      "dateOfBirth": "___birth_date___",
+      "gender": "___gender_2___",
+      "isDriver": true,
+      "isInsuredPerson": true
+    }
+  ],
+  "nominee": {
+    "firstName": "___nominee_name___",
+    "middleName": "",
+    "lastName": "",
+    "dateOfBirth": "___nominee_birth_date___",
+    "relation": "___nominee_relation___",
+    "personType": "___vehicle_registration_type___"
+  },
+  "pospInfo": {
+    "isPOSP": ___is_posp___,
+    "pospName": "___posp_first_name___ ___posp_middle_name___ ___posp_last_name___",
+    "pospUniqueNumber": "",
+    "pospLocation": "___posp_agent_city___",
+    "pospPanNumber": "___posp_pan_no___",
+    "pospAadhaarNumber": "___posp_aadhar___",
+    "pospContactNumber": "___posp_mobile_no___"
+  },
+  "dealer": {
+    "dealerName": "",
+    "city": "",
+    "deliveryDate": null
+  },
+  "motorQuestions" : {
+    "furtherAgreement" : null,
+    "selfInspection" : ___self_inspection___,
+    "financer" : "___financial_institute_name___"
+  },
+  "motorBreakIn" : {
+    "isBreakin" : ___self_inspection_2___,
+    "breakinExcess" : null,
+    "breakinComments" : null,
+    "isPreInspectionWaived" : false,
+    "isPreInspectionCompleted" : null,
+    "isDocumentUploaded" : false
+  }
+}

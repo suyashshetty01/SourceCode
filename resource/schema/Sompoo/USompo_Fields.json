@@ -1,0 +1,206 @@
+[
+    {
+       
+        "Field_Name": "product_id",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"PC\",\"10\":\"TW\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+
+        "Field_Name": "product_id_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"Private Car Package Policy\",\"10\":\"Two Wheeler Package Policy\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "electrical_accessory_2",
+         "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"Empty\":\"False\",\"non empty \":\"True\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "hidden",
+            "Field_Parent": "electrical_accessory"
+    },
+    {
+        "Field_Name": "non_electrical_accessory_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"Empty\":\"False\",\"non empty \":\"True\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "hidden",
+        "Field_Parent": "non_electrical_accessory"
+    },
+    {
+        "Field_Name": "is_external_bifuel",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "is_external_bifuel"
+    },
+    {
+        "Field_Name": "is_llpd_3",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+
+    },
+    {
+        "Field_Name": "is_llpd_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+
+    },
+    {
+        "Field_Name": "pa_unnamed_passenger_si_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"50000\":\"INR 50,000\",\"100000\":\"INR 1,00,000\",\"200000\":\"INR 2,00,000\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "pa_unnamed_passenger_si"
+    },
+    {
+        "Field_Name": "is_antitheft_fit",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_antitheft_fit"
+    },
+    {
+        "Field_Name": "addon_ncb_protection_cover",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Addon",
+        "Field_Category": "input",
+        "Field_Parent": "addon_ncb_protection_cover"
+    },
+    {
+        "Field_Name": "vehicle_manf_date_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "Date",
+        "Field_Value": "yyyy",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_manf_date"
+    },
+    {
+        "Field_Name": "is_antitheft_fit",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "input",
+        "Field_Parent": "is_antitheft_fit"
+    },
+     {
+        "Field_Name": "is_llpd_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"true\",\"no\":\"false\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+    },
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"yes\":\"false\",\"no\":\"true\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_key",
+        "Field_Value": "{\"new\":\"New\",\"renew\":\"Rollover\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "pa_unnamed_passenger_si_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"Empty\":\"false\",\"non empty \":\"true\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "hidden",
+        "Field_Parent": "pa_unnamed_passenger_si"
+    },
+    {
+        "Field_Name": "voluntary_deductible_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"empty\":\"false\",\"non empty\":\"true\"}",
+        "Field_Group": "Discount",
+        "Field_Category": "hidden",
+        "Field_Parent": "voluntary_deductible"
+    },
+     {
+        "Field_Name": "vehicle_ncb_next_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value" : "{\"0\":\"false\",\"20\":\"true\",\"25\":\"true\",\"35\":\"true\",\"45\":\"true\",\"50\":\"true\"}",
+        "Field_Group" : "Policy",
+        "Field_Category": "derived",
+        "Field_Parent": "vehicle_ncb_current"
+    }
+	 {
+		"Field_Name": "is_aai_member_2",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type" : "list_val",
+        "Field_Value" : "{\"yes\":\"True\",\"no\":\"False\"}",
+        "Field_Group" : "Discount",
+        "Field_Category" : "input",
+		"Field_Parent": "is_aai_member"
+    },
+	{
+		"Field_Name": "us_pospolicy_number",
+        "Insurer_ID": "19",
+        "Product_Id": "1",
+        "Field_Type" : "string",
+        "Field_Value" : "",
+        "Field_Group" : "Policy",
+        "Field_Category" : "custom",
+		"Field_Parent": "us_pospolicy_number"
+    }
+]

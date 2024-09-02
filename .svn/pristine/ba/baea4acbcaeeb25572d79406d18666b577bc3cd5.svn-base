@@ -1,0 +1,115 @@
+{
+    "listofquotationTO": [
+        {
+            "quoteId": "",
+            "channelId": "___channel_id___",
+            "productId": "___Plan_Code___",
+            "parentProductId": "NULL",
+            "parentProductVersion": 1,
+            "noOfAdults": ___adult_count___,
+            "noOfKids": ___child_count___,
+            "tenure": ___policy_tenure___,
+            "productPlanOptionCd": "___base_plan_option_code___",
+            "policyType": "___health_insurance_type_2___",
+            "saveFl": "YES",
+            "quoteTypeCd": "PORTAL",
+            "quotationDt": "___policy_received_date___",
+            "agentId": "___insurer_integration_agent_code___",
+            "campaignCd": "Brkonlin01",
+            "productFamilyCd": "",
+            "policyNum": "",
+            "inwardTypeCd": "NEWBUSINESS",
+            "inwardSubTypeCd": "PROPOSALDOCUMENT",
+            "ppmcFl": "",
+            "uwFl": "",
+            "caseType": "",
+            "sezUnit": "",
+            "stateCd": "",
+            "srNum": "",
+            "migrationFlag": "",
+            "astpFlag": "NO",
+            "quotationProductDOList": [
+                {
+                    "productId": "___Plan_Code___",
+                    "productVersion": 1,
+                    "productPlanOptionCd": "___base_plan_option_code___",
+                    "zoneCd": "___zone___",
+                    "productTypeCd": "SUBPLAN",
+                    "payoutOption": "",
+                    "reducingBalanceSI": "",
+                    "paymentFrequencyCd": "SINGLE",
+                    "astpLoadingPerc": 0,
+                    "quotationProductBenefitDOList": [
+                        {
+                            "benefitTypeCd": "",
+                            "benefitId": "",
+                            "amount": 0,
+                            "productId": ""
+                        }
+                    ],
+                    "quotationProductInsuredDOList": [<!--InsurersDetail_Start-->
+                        {
+                            "issueAge": ___member_array_age___,
+                            "genderCd": "___member_array_gender_2___",
+                            "insuredTypeCd": "PRIMARY",
+                            "cityCd": "___dbmaster_pb_city_name___",
+                            "mobileNum": ___mobile___,
+                            "emailAddress": "___email___",
+                            "dob": "___member_array_birth_date___",
+                            "zoneCd": "___zone___",
+                            "smokerStatusCd": "",
+                            "chewTobaccoCd": "",
+                            "consumeAlcoholCd": "",
+                            "relationCd": "___member_array_relation___",
+                            "modalPremium": 0,
+                            "extraPremium": 0,
+                            "discount": 0,
+                            "productPlanOptionCd": "___member_array_base_plan_code___",
+                            "height": 155,
+                            "weight": 55,
+                            "sumInsured": ___member_array_si___,
+                            "refGuid": "",
+                            "ppmcFl": "",
+                            "uwFl": "",
+                            "ppmcSetName": "",
+                            "customerId": "",
+                            "annualIncome": 500000,
+                            "astpLoadingPerc": 0,
+                            "quotationProductInsuredBenefitDOList": [
+                                {
+                                    "benefitTypeCd": "",
+                                    "benefitId": "",
+                                    "amount": 0,
+                                    "productId": ""
+                                }
+                            ]
+                        }<!--InsurersDetail_End-->
+                    ],
+                    "quotationProductChargeDOList": [
+                        {
+                            "chargeClassCd": "",
+                            "chargeAmount": 0,
+                            "chargePercentage": 0
+                        }
+                    ],
+                    "quotationProductAddOnDOList": [
+                        {
+                            "productPlanOptionCd": "",
+                            "productId": ""
+                        }
+                    ]
+                }
+            ],
+            "quotationChargeDOList": [
+                {
+                    "chargeClassCd": ""
+                }
+            ],
+            "quotationChangeDOList": [
+                {
+                    "alterationType": ""
+                }
+            ]
+        }
+    ]
+}

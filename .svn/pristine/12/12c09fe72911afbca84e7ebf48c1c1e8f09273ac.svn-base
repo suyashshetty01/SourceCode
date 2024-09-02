@@ -1,0 +1,50 @@
+{
+    "own_damage": {
+        "od_basic": "Basic Own Damage",
+        "od_elect_access": "",
+        "od_non_elect_access": "",
+        "od_cng_lpg": "",
+        "od_disc_ncb": "ncbAmt",
+        "od_disc_vol_deduct": "",
+        "od_disc_anti_theft": "",
+        "od_disc_aai": "",
+        "od_loading": "addLoadPrem",
+        "od_disc": "Commercial Discount",
+        "od_final_premium": "totalOdPremium"
+    },
+    "liability": {
+        "tp_basic": "Basic Third Party Liability",
+        "tp_cover_owner_driver_pa": "PA Cover For Owner-Driver",
+        "tp_cover_unnamed_passenger_pa": "",
+        "tp_cover_named_passenger_pa": "",
+        "tp_cover_paid_driver_pa": "",
+        "tp_cover_paid_driver_ll": "",
+        "tp_cng_lpg": "",
+        "tp_final_premium": "totalActPremium"
+    },
+    "addon": {
+        "addon_zero_dep_cover": "Depreciation Shield",
+        "addon_road_assist_cover": "24x7 SPOT ASSISTANCE",
+        "addon_ncb_protection_cover": null,
+        "addon_engine_protector_cover": "Engine Protector",
+        "addon_invoice_price_cover": null,
+        "addon_key_lock_cover": "KEYS AND LOCKS REPLACEMENT COVER",
+        "addon_consumable_cover": null,
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": null,
+        "addon_final_premium": 0
+    },
+    "net_premium": "netPremium",
+    "service_tax": "serviceTax",
+    "final_premium": "finalPremium"
+}

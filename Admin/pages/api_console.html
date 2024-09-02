@@ -1,0 +1,511 @@
+<!-- Bootstrap Core Css -->
+<link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+<!-- Waves Effect Css -->
+<link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+<!-- Animation Css -->
+<link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+<!-- Wait Me Css -->
+<link href="../../plugins/waitme/waitMe.css" rel="stylesheet" />
+
+<!-- Bootstrap Select Css -->
+<link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+<!-- Custom Css -->
+<link href="../../css/style.css" rel="stylesheet">
+<div class="container-fluid">
+    <div class="block-header">
+        <h2>Web API Console</h2>
+    </div>
+
+    <!-- Textarea -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>Insurance Request</h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-6">
+                            <form id="frmRequest" name="frmRequest">
+                                <h2 class="card-inside-title">Request Form</h2>
+                                <div class="demo-switch">
+                                    <div class="switch">
+                                        <label>Bike<input type="checkbox" checked  data-toggle="toggle" onchange="if (this.checked) {
+                                                    $('#product_id').val(1);
+                                                } else {
+                                                    $('#product_id').val(10);
+                                                }
+                                                ;"><span class="lever switch-col-deep-orange"></span>Car</label>
+                                        <input type="hidden" id="product_id"  name="product_id" value="1"/>
+                                    </div>
+                                    <div class="switch">
+                                        <label>Renew<input type="checkbox" checked id="switch_vehicle_insurance_type" ><span class="lever switch-col-purple"></span>New</label>
+                                        <input type="hidden" id="vehicle_insurance_type"  name="vehicle_insurance_type" value="new"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-line">                                    
+                                        <select id="vehicle_id" name="vehicle_id" class="form-control selectpicker with-ajax" data-live-search="true"></select>                                    
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-line">                                    
+                                        <select id="rto_id" name="rto_id" class="form-control selectpicker with-ajax" data-live-search="true"></select>                                    
+                                    </div>
+                                </div>                            
+                                <div class="form-group">
+                                    <div class="col-sm-6">                                      
+                                        <div class="form-line">
+                                            <input id="vehicle_manf_date" name="vehicle_manf_date" type="text" class="form-control  floating-label" placeholder="Manufacture date...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">  
+                                        <div class="form-line">
+                                            <input id="vehicle_registration_date"  name="vehicle_registration_date" type="text" class=" form-control" placeholder="Registration date...">
+                                        </div>
+                                    </div>
+                                </div>                            
+                                <div class="form-group">                                
+                                    <div class="col-sm-6">
+                                        <div class="form-line">
+                                            <input id="policy_expiry_date"  name="policy_expiry_date" type="text" class=" form-control" placeholder="Expiry date...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-line">
+                                            <select class="form-control show-tick" id="claim_ncb" name="claim_ncb" onchange="">
+                                                <option>Claim Status</option>
+                                                <option value="yes" >Yes, I had Claim</option>
+                                                <option value="0">NCB :: 0%</option>
+                                                <option value="20">NCB :: 20%</option>
+                                                <option value="25">NCB :: 25%</option>
+                                                <option value="35">NCB :: 35%</option>
+                                                <option value="45">NCB :: 45%</option>
+                                                <option value="55">NCB :: 55%</option>                                            
+                                            </select>
+                                            <input type="hidden" id="is_claim_exists"  name="is_claim_exists"/>
+                                            <input type="hidden" id="vehicle_ncb_current"  name="vehicle_ncb_current"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input name="electrical_accessory" id="electrical_accessory"  type="text" class="form-control"/>
+                                            <label class="form-label">Electrical Accessory</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="non_electrical_accessory" name="non_electrical_accessory" type="text" class="form-control"> 
+                                            <label class="form-label">Non Electrical Accessory</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="card-inside-title">Request JSON</h2>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea id="txtServiceRequestJson" rows="10" class="form-control no-resize" placeholder="Please type or paste Request JSON..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btn btn-primary m-t-15 waves-effect" id="btnFormToJson">Form to JSON</button>                                
+                    <button type="button" class="btn btn-primary m-t-15 waves-effect" id="btnServiceCall">Service Call</button>
+                    <button type="button" class="btn btn-primary m-t-15 waves-effect" id="btnCancelTO">Cancel Quote Retrieval</button>
+                    <br>
+                    <br>
+                    <div class="row clearfix">
+                        <div class="col-md-12">
+                            <form id="frmDB" name="frmDB">
+                                <h2 class="card-inside-title">DB Quote</h2>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input name="search_reference_number" id="search_reference_number"  type="text" class="form-control"/>
+                                        <label class="form-label">Search Reference Number</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary m-t-15 waves-effect" id="btnDB">Get DB Quote</button>
+                    <div class="preloader pl-size-xl" style="display: none;">
+                        <div class="spinner-layer">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>API RESPONSE</h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">                    
+                    <div class="row clearfix">                                            
+                        <div class="col-md-6">
+                            <h2 class="card-inside-title">Response JSON</h2>
+                            <div class="form-group">                                
+                                <div class="form-line">
+                                    <textarea id="txtServiceResponseJson" rows="15" class="form-control no-resize" placeholder="This will be filled by Webservice Response..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2 class="card-inside-title">Response Summary</h2>
+                            <div class="body table-responsive">
+                                <table class="table table-bordered">                                
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Request_Id</th>
+                                            <td id="Request_Id"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total Request</th>
+                                            <td id="Total"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Pending Request</th>
+                                            <td id="Pending" ></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Complete Request</th>
+                                            <td  id="Complete"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Success Request</th>
+                                            <td  id="Success"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fail Request</th>
+                                            <td  id="Fail"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total Time</th>
+                                            <td  id="Total_Execution_Time"></td>                                        
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Actual Time</th>
+                                            <td  id="Actual_Time"></td>                                        
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                                    
+                        </div>
+                    </div>
+                    <div class="row clearfix">                                            
+                        <div class="col-md-12">
+                            <h2 class="card-inside-title">Search Reference Number</h2>
+                            <div class="form-group">                                
+                                <div class="form-line">
+                                    <label class="form-label" id="lblSrn"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Textarea -->
+    <!-- Widgets -->
+    <div class="row clearfix" id="quote_widget">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">playlist_add_check</i>
+                </div>
+                <div class="content">
+                    <div class="text">INSURERS</div>
+                    <div id="insurer_cnt" class="number count-to" data-from="0" data-to="0" data-speed="2000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-cyan hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">help</i>
+                </div>
+                <div class="content">
+                    <div class="text">REQUESTS</div>
+                    <div id="request_cnt"  class="number count-to" data-from="0" data-to="0" data-speed="2000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-light-green hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">forum</i>
+                </div>
+                <div class="content">
+                    <div class="text">AVERAGE IDV</div>
+                    <div  id="avgidv_cnt" class="number count-to" data-from="0" data-to="0" data-speed="2000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">person_add</i>
+                </div>
+                <div class="content">
+                    <div class="text">AVERAGE PREMIUM</div>
+                    <div  id="avgprem_cnt" class="number count-to" data-from="0" data-to="0" data-speed="2000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Widgets -->    
+    <div class="progress" id="quote_progress" style="display:none;">
+        <div id="quote_progress_data" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+             aria-valuemax="100" style="width: 10%">
+            <span class="sr-only">0% Complete (success)</span>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Boss is Calling for Quotes...                        
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body table-responsive">
+                    <table class="table bordered">
+                        <thead>
+                            <tr  class="bg-purple" >
+                                <th width="20%">Calling_For_Quotes</th>
+                                <th width="20%">Within_5_Secs</th>
+                                <th width="20%">5_to_10_Secs</th>
+                                <th width="20%">10_to_15_Secs</th>
+                                <th width="20%">Beyond_15_Secs</th>
+                                <th width="20%">Wont_give_Quotes</th>                                
+                            </tr>
+                        </thead>                
+                        <tbody>
+                            <tr>
+                                <td class="calling"></td>
+                                <td class="0_to_5"></td>
+                                <td class="5_to_10"></td>
+                                <td class="10_to_15"></td>
+                                <td class="15_to_200"></td>
+                                <td class="quote_na"></td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Basic Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Quote Summary                        
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body table-responsive">
+                    <table class="table ">
+                        <thead>
+                            <tr id="quotelistheader"  class="bg-purple" >
+                                <th>ID</th>
+                                <th>Insurer</th>
+                                <th>Plan Name</th>
+                                <th>IDV</th>
+                                <th>OD</th>
+                                <th>TP</th>
+                                <th>Addon</th>
+                                <th>Net</th>
+                                <th>Tax</th>
+                                <th>Final</th>
+                                <th>Status</th>                                                                
+                                <th>Time</th>                                                                
+                                <th>Detail</th>
+                            </tr>
+                        </thead>                
+                        <tbody id="rowTemplate">
+                            <tr style="display:none" class="___Row_Color___" >
+                                <th scope="row"   >___Service_Log_Id___</th>
+                                <td>___Insurer_Name___</td>
+                                <td>___Plan_Name___</td>
+                                <td>___IDV___</td>
+                                <td><button id="btn_od____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                            data-placement="bottom" title="Own Damage Breakup" data-content="">___OD___</button></td>
+                                <td><button id="btn_tp____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                            data-placement="bottom" title="Liability Breakup" data-content="">___TP___</button></td>
+                                <td><button id="btn_addon____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                            data-placement="bottom" title="Addon Breakup" data-content="">___Addon___</button></td>
+                                <td>___Net___</td>
+                                <td>___Tax___</td>
+                                <td>___Final___</td>
+                                <td><button id="btn_err____Service_Log_Id___" type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover"
+                                            data-placement="bottom" title="Exception Details" data-content="">___Status___</button></td>                                
+                                <td>___Time___</td>                                
+                                <td><a href="javascript:void(0);" onclick="ServiceLogView('___Service_Log_Id___');">View</a></td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Basic Table -->
+    <!-- For Material Design Colors -->
+    <div class="modal fade" id="mdModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="defaultModalLabel">Quote Time Summary</h4>
+                </div>
+                <div class="modal-body">
+                    <!--
+                    '0_to_5': [],
+        '5_to_10': [],        
+        '10_to_15': [],
+        '15_to_100': []
+                    
+                    -->
+                    <table class="table ">
+                        <thead><tr><th>Time&nbsp;Slab(Seconds)</th><th>List&nbsp;of&nbsp;Insurer(s)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Within 5 Sec</td><td id="0_to_5">NA</td></tr>
+                            <tr><td>Between 5 to 10 Sec</td><td id="5_to_10">NA</td></tr>
+                            <tr><td>Between 10 to 15 Sec</td><td id="10_to_15">NA</td></tr>
+                            <tr><td>Beyond 15 Sec</td><td id="15_to_100">NA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="mdLog" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="defaultModalLabel">Log Viewer</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table ">
+                        <thead><tr><th>Field </a></th><th>Action</th></tr></thead>
+                        <tbody>
+                            <tr><td>LM Request</td><td><a href="___HorizonDomain___/service_logs/___Service_Log_Id___/LM_Custom_Request" target="_BLANK">View</a></td>
+                            <tr><td>Insurer_Request</td><td><a href="___HorizonDomain___/service_logs/___Service_Log_Id___/Insurer_Request" target="_BLANK">View</a></td>
+                            <tr><td>Insurer_Response</td><td><a href="___HorizonDomain___/service_logs/___Service_Log_Id___/Insurer_Response" target="_BLANK">View</a></td>
+                            <tr><td>Insurer_Response_Core</td><td><a href="___HorizonDomain___/service_logs/___Service_Log_Id___/Insurer_Response_Core" target="_BLANK">View</a></td>
+                            <tr><td>Premium_Breakup</td><td><a href="___HorizonDomain___/service_logs/___Service_Log_Id___/Premium_Breakup" target="_BLANK">View</a></td>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">                    
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Input -->    
+</div>
+<!-- Autosize Plugin Js -->
+<script src="../../plugins/autosize/autosize.js"></script>
+
+<!-- Moment Plugin Js -->
+<script src="../../plugins/momentjs/moment.js"></script>
+
+<!-- Bootstrap Material Datetime Picker Plugin Js -->
+<script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+<!-- Custom Js -->
+<!-- Jquery CountTo Plugin Js -->
+
+<script src="../../plugins/jquery-countto/jquery.countTo.js"></script>
+<!-- Waves Effect Plugin Js -->
+<script src="../../plugins/node-waves/waves.js"></script>
+<script src="../../js/admin.js"></script>
+<!--
+<script src="../../js/pages/index.js"></script>
+-->
+<script src="../../js/pages/forms/basic-form-elements.js"></script>
+<script src="../../js/pages/ui/tooltips-popovers.js"></script>
+
+
+
+<script src="../../js/pages/api_console.js"></script>

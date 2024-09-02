@@ -1,0 +1,50 @@
+{
+    "own_damage": {
+        "od_basic": "PropCoverDetails_Premium", //when PropCoverDetails_CoverGroups = Own Damage
+        "od_elect_access": "PropRisks_Premium",
+        "od_non_elect_access": "",
+        "od_cng_lpg": "",
+        "od_disc_ncb": "",
+        "od_disc_vol_deduct": "",
+        "od_disc_anti_theft": "",
+        "od_disc_aai": "",
+        "od_loading": "",
+        "od_disc": "",
+        "od_final_premium": "PropPremiumCalculation_NetODPremium "//NetODPremium
+    },
+    "liability": {
+        "tp_basic": "PropCoverDetails_Premium",////when PropCoverDetails_CoverGroups = Basic TP  including TPPD premium
+        "tp_cover_owner_driver_pa": "PropCoverDetails_Premium",//when PropCoverDetails_CoverGroups = Owner Driver
+        "tp_cover_unnamed_passenger_pa": "",
+        "tp_cover_named_passenger_pa": "",
+        "tp_cover_paid_driver_pa": "",
+        "tp_cover_paid_driver_ll": "",//this is included in tp_basic
+        "tp_cng_lpg": "",
+        "tp_final_premium": "PropPremiumCalculation_NetTPPremium"
+    },
+    "addon": {
+        "addon_zero_dep_cover": null,
+        "addon_road_assist_cover": "PropCoverDetails_Premium", ///when PropCoverDetails_CoverGroups = RoadSide Assist
+        "addon_ncb_protection_cover": "No Claim Bonus NCB Protection",
+        "addon_engine_protector_cover": "",
+        "addon_invoice_price_cover": null,
+        "addon_key_lock_cover": null,
+        "addon_consumable_cover": null,
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": null,
+        "addon_final_premium": 0
+    },
+    "net_premium": "PropPremiumCalculation_NetPremium",
+    "service_tax": "PropPremiumCalculation_ServiceTax",
+    "final_premium": "PropPremiumCalculation_TotalPremium"
+}

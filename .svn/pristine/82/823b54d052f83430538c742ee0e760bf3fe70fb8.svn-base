@@ -1,0 +1,50 @@
+<html>
+<head>
+    <style>
+    .button {
+        background-color: #4CAF50; 
+        border: none;
+        color: white;
+        padding: 5px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+    }    
+    .button2 {background-color: #008CBA;}
+    </style>
+<title>Session Management in NodeJS using Node and Express</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var email,pass;
+    $("#submit").click(function(){
+        email=$("#email").val();
+        pass=$("#password").val();
+        /*
+        * Perform some validation here.
+        */
+        $.post("/quote/login",{email:email,pass:pass},function(data){
+            if(data==='done') {
+                window.location.href="testsession.html";
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+<table align="center" border="1">
+<tr><td>Uername : </td>
+<td><input type="text" size="20" placeholder="Type your email" id="email"></td></tr>
+<tr><td>Paaword : </td>
+<td><input type="password" size="20" placeholder="Type your password" id="password"></td></tr>
+<tr><td colspan="2"><input  type="button" value="Login" id="submit" class="button button2"></td>
+</tr>
+
+</table>
+</body>
+</html>

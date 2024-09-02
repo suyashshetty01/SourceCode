@@ -1,0 +1,69 @@
+﻿<html lang=�en�>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Name of your awesome camera app -->
+    <title>Camera App</title>
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Camera -->
+	
+    <main id="camera">
+		<div id="cameraDIV">
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+		<!-- Camera output -->
+        <img src="//:0" alt="" id="camera--output">
+		<!-- Camera trigger -->
+            <button id="camera--trigger">Take A Photo</button>
+            <button id="flip--button"><img src="https://img.icons8.com/metro/26/000000/switch-camera.png"></button>
+			<button id="upload--button"><img src="https://img.icons8.com/metro/26/000000/upload.png"></button>
+		</div>
+		<div id="saveDIV" style="display:none;">
+		<!-- Camera output -->
+		<div class="gridView">
+			<div class="ImgDiv"><img src="//:0" alt="" id="camera--output1" class="img-responsive"></div>
+        </div>
+		<button id="camera--trigger1">Upload</button>
+		<!-- <button class="btn-primary uploadBtn">Upload</button> -->
+		</div>
+		<div id="successDIV" style="display:none;">
+			<div class="popupMsg">
+				Photo Uploaded Successfully.
+				<div>
+					<button id="BacktoMain"><a href="index.html">Ok</a></button>
+				</div>
+			</div>
+		</div>
+		<div id="failDIV" style="display:none;">
+		<div class="popupMsg">
+				Oops! Something went wrong.
+				<div>
+					<button id="BacktoMain"><a href="index.html">Ok</a></button>
+				</div>
+			</div>
+		</div>
+	<div id="uploadDIV" style="display:none;">
+	</br>
+	<h3 align="center">Please Choose An Image</h3>
+	<div class="fileInput"><input align="center" id="file" type="file" accept="image/*"></div>
+	<div>
+			<p id="output"></p>
+        </div>
+		<div id="upload"></div>
+			</div>
+	
+	</main>
+	
+    <!-- Reference to your JavaScript file -->
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Helvetica-regular-400;
+  src: url("../fonts/helvetica-now-display/HelveticaNowDisplay-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Helvetica-medium-500;
+  src: url("../fonts/helvetica-now-display/HelveticaNowDisplay-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: Helvetica-bold-700;
+  src: url("../fonts/helvetica-now-display/HelveticaNowDisplay-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Helvetica-bolder-800;
+  src: url("../fonts/helvetica-now-display/HelveticaNowDisplay-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Jumper-400;
+  src: url("../fonts/jumper/JumperPersonalUseOnlyRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Jumper-700;
+  src: url("../fonts/jumper/JumperPersonalUseOnlyBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Axure;
+  src: url("../fonts/Axure/AxureHandwriting.woff") format("woff");
+}
+/*# sourceMappingURL=mixins.css.map */

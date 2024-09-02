@@ -1,0 +1,155 @@
+﻿/*------- CSS for Ticket - Start ------------*/
+	.SeeMorePopup{
+		  position: absolute;
+		  box-shadow: 0 0 1px 1px #e5e5e5;
+		  width: 100%;
+		  height: 100%;
+		  top: 0%;
+		  left: 0%;
+		  right: 0;
+		  bottom: 0;
+		  background:rgba(0,0,0,0.7);
+		  z-index: 2;
+		  cursor: pointer;
+		  display:none;
+          color:#000000;
+		 }
+	.SeeMoreScreen{
+		margin: 20px auto;
+		background: #ffffff;   
+		width: 62%;
+		border-radius: 10px;
+		
+	}
+
+    .SeeMorePopupReliance{
+		  position: fixed;
+		  box-shadow: 0 0 1px 1px #e5e5e5;
+		  width: 100%;
+		  height: 100%;
+		  top: 0%;
+		  left: 0%;
+		  right: 0;
+		  bottom: 0;
+		  /*background:rgba(0,0,0,0.7);*/
+		  z-index: 2;
+		  cursor: pointer;
+		  display:none;
+          color:#000000;
+		 }
+
+    .SeeMorePopupStar{
+		  position: fixed;
+		  box-shadow: 0 0 1px 1px #e5e5e5;
+		  width: 100%;
+		  height: 100%;
+		  top: 0%;
+		  left: 0%;
+		  right: 0;
+		  bottom: 0;
+		  /*background:rgba(0,0,0,0.7);*/
+		  z-index: 2;
+		  cursor: pointer;
+		  display:none;
+          color:#000000;
+		 }
+	
+	
+	.maincontainer{margin:0px auto;width: 848px;}
+    .contenTitle{background:gray;text-align:center;color:#fff;border-top-left-radius:9px;border-top-right-radius:9px;border-right: 0px solid;}
+    .SeeMoreForm{text-align:left;margin:3px;padding:10px;}
+    .selectbx{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:90%;padding: 5px;margin:5px;outline:none;background: #ffffff;}
+     .margin.checkregion .crnbtn{width:17px !important;height:17px !important;vertical-align:middle !important;margin: 0px !important;cursor:pointer}
+	 .margin,.filecls{margin:5px;}
+	 .SeeMoreForm .inputbox{border-width: 0px;border-bottom: 1px solid #c1c1c1 !important;width:90%;padding: 5px;margin:15px auto;outline:none;display:block;background: #ffffff;}
+	 #IhaveCRNdiv,#DonthaveCRNdiv,#uploadFile,#ticketicondropdwn,#ticketmenudropdwn{display:none}
+	 .submitbtn{text-align:center;padding:10px 28px 10px 28px;margin:0px auto;color:#fff;background:#ca0b0b;font-size:18px;width:30%}
+	 .FileUpload{width:18px;height:18px;vertical-align:middle;margin: 0px !important;cursor:pointer}
+	.remark{width:90%;border:1px solid #c1c1c1;background: #ffffff;margin:2px;}
+	.checkregion{width:90%;margin:10px auto;text-align: left;}
+	 .headertitle{display: inline-block;font-size: 23px;font-weight: bold;border-right: 0px solid !important;}
+	 .closepopup{float: right;margin: 8px;}
+     .checkregion label {font-weight:normal;color:#333;}
+     #myticket{cursor:pointer}
+     .SeeMoreScreen::placeholder{color:#333;}
+      .filecls {display:inline-block !important;width:45%}
+	
+	@media screen and (max-width:768px) {
+	.SeeMoreScreen{margin:10px auto;
+		background: #ffffff;   
+		width: 98%;
+		border-radius: 10px;
+		}
+		.inputbox{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:94%;padding: 5px;margin:16px auto;outline:none;display:block;background: #ffffff;}
+		#selectbx{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:90%;padding: 5px;margin:5px;outline:none;background: #ffffff;}
+		.remark{width:95%;border: 1px solid #c1c1c1;background: #ffffff;margin:2px;}
+		.checkregion{width: 93%;margin: 17px auto;text-align: left;}
+		.submitbtn{padding:10px 28px 10px 28px;margin:30px auto;color:#fff;background:#ca0b0b;font-size:18px;width:19%}
+		.ticketdropdownMenu {
+			width: 45%;
+			margin:10px;
+			border: 1px solid #d2cece;
+			border-top:3px solid #000000;
+			box-shadow: 0px 0px 6px 2px #c1c1c1c1;
+			display:none;
+		}
+		.head .dropdown-menu::after {
+		  content: "";
+		  position: absolute;
+		  bottom: 90%;
+		  left: 24%;
+		  margin-left: -5px;
+		  border-width: 8px;
+		  border-style: solid;
+		  border-color: transparent transparent black transparent;
+		}
+	}
+	.Popup{
+	  position: fixed; /* Sit on top of the page content */
+	  box-shadow: 0 0 1px 1px #e5e5e5;
+	  width: 100%;
+	  height: 100%;
+	  top: 0%;
+	  left: 0%;
+	  right: 0;
+	  bottom: 0;
+	  z-index: 2;
+	  cursor: pointer;
+      color : #333 !important;
+      text-align :left !important;
+	  display:none;
+  }
+	.popupScreen{
+	  max-width:30%;
+	  margin: 0px auto;
+	  background: #fff;
+	  animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+	  display: block;
+	  box-sizing: border-box;
+	  border: 1px solid #c1c1c1;
+	  box-shadow: 1px 10px 10px 10px #797474c9;
+	  margin-top:20%;
+       color : #333 !important;
+      text-align :left !important;
+  }
+	.mainpopupcont{
+		padding:30px;
+  }
+
+.ErrorMsg
+{
+     margin-left: -217px;
+     color:red;
+}
+
+.ErrorMsg1
+{
+    margin-left: -154px;
+    color:red;
+}
+
+/*------- CSS for Ticket - End ------------*/
+
+
+
+

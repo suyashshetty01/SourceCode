@@ -1,0 +1,89 @@
+<Session>
+    <SessionData xmlns="http://schemas.cordys.com/bagi/b2c/emotor/bpm/1.0">
+        <Index>1</Index>
+        <InitTime>Fri, 17 Mar 2017 11:58:13 GMT</InitTime>
+        <UserName>landmarkmtr</UserName>
+        <Password>AZg3Q1SktWKLz0Os/H0MlAxFfI75pjnpKjn9xrV9vimyyS7/5Ilil/ftcP5oHxC7IFYLVF0C3MAJcIznwrZvDA==</Password>
+        <OrderNo>NA</OrderNo>
+        <QuoteNo>NA</QuoteNo>
+        <Route>INT</Route>
+        <Contract>MTR</Contract>
+        <Channel />
+        <TransactionType>Quote</TransactionType>
+        <TransactionStatus>Fresh</TransactionStatus>
+        <ID />
+        <UserAgentID />
+        <Source />
+    </SessionData>
+    <tns:Vehicle xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:TypeOfBusiness>TR</tns:TypeOfBusiness>
+        <tns:AccessoryInsured></tns:AccessoryInsured><!--N-->
+        <tns:AccessoryValue></tns:AccessoryValue><!--0-->
+        <tns:BiFuelKit>
+            <tns:IsBiFuelKit></tns:IsBiFuelKit><!--N-->
+            <tns:BiFuelKitValue></tns:BiFuelKitValue><!--0-->
+            <tns:ExternallyFitted></tns:ExternallyFitted><!--N-->
+        </tns:BiFuelKit>
+        <tns:DateOfRegistration>2016-01-05T00:00:00.000</tns:DateOfRegistration>
+        <tns:RiskType>FPV</tns:RiskType>
+        <tns:Make>HONDA</tns:Make><!--HONDA-->
+        <tns:Model>BRIO (PETROL)</tns:Model><!--AMAZE (PETROL)-->
+        <tns:FuelType>P</tns:FuelType><!--P-->
+        <tns:Variant>1.2 E MT</tns:Variant><!--1.2 E-MT-->
+        <tns:IDV>390923</tns:IDV>
+        <tns:VehicleAge>1</tns:VehicleAge>
+        <tns:DateOfManufacture>2016-01-01T00:00:00.000</tns:DateOfManufacture><!--2017-03-01-->
+        <tns:CC>1198</tns:CC><!--1198-->
+        <tns:PlaceOfRegistration>(MH03) Mumbai-East</tns:PlaceOfRegistration>
+        <tns:SeatingCapacity>5</tns:SeatingCapacity><!--5-->
+        <tns:AntiTheftDevice></tns:AntiTheftDevice>
+        <tns:VehicleExtraTag01 />
+        <tns:RegistrationNo></tns:RegistrationNo>
+        <tns:ExShowroomPrice>457220</tns:ExShowroomPrice><!--535067-->
+    </tns:Vehicle>
+    <tns:Quote xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:ExistingPolicy>
+            <tns:Claims>0</tns:Claims><!--0-->
+            <tns:PolicyType>Comprehensive</tns:PolicyType>
+            <tns:EndDate>2017-03-29T23:59:59.000</tns:EndDate>
+            <tns:NCB>20</tns:NCB>
+        </tns:ExistingPolicy>
+        <tns:PolicyStartDate>2017-03-30T00:00:00.000</tns:PolicyStartDate>
+        <tns:Deductible></tns:Deductible>
+        <tns:PAFamilySI>0</tns:PAFamilySI>
+        <tns:AgentNumber />
+        <tns:DealerId />
+        <tns:Premium>
+            <tns:Discount />
+        </tns:Premium>
+        <tns:SelectedCovers>
+            <tns:CarDamageSelected>True</tns:CarDamageSelected>
+            <tns:TPLiabilitySelected>True</tns:TPLiabilitySelected>
+            <tns:PADriverSelected>False</tns:PADriverSelected>
+            <tns:ZeroDepriciationSelected>True</tns:ZeroDepriciationSelected>
+            <tns:RoadsideAssistanceSelected></tns:RoadsideAssistanceSelected>
+            <tns:InvoicePriceSelected></tns:InvoicePriceSelected>
+            <tns:HospitalCashSelected>False</tns:HospitalCashSelected>
+            <tns:MedicalExpensesSelected>False</tns:MedicalExpensesSelected>
+            <tns:AmbulanceChargesSelected>False</tns:AmbulanceChargesSelected>
+            <tns:PAFamilyPremiumSelected>False</tns:PAFamilyPremiumSelected>
+        </tns:SelectedCovers>
+        <tns:PolicyEndDate>2018-03-29T23:59:59.000</tns:PolicyEndDate>
+    </tns:Quote>
+    <tns:Client xmlns:tns="http://schemas.cordys.com/bagi/b2c/emotor/2.0">
+        <tns:ClientType>Individual</tns:ClientType>
+        <tns:CltDOB>19811207</tns:CltDOB><!--19530904-->
+        <tns:FinancierDetails>
+            <tns:IsFinanced></tns:IsFinanced><!--0-->
+        </tns:FinancierDetails>
+        <tns:GivName>SY1N7RDIWR</tns:GivName>
+        <tns:SurName>Z00HYYYB86</tns:SurName>
+        <tns:ClientExtraTag01>MAHARASHTRA</tns:ClientExtraTag01>
+        <tns:CityOfResidence>Mumbai Wadala</tns:CityOfResidence>
+        <tns:EmailID>4ALL636250999752291526@policyboss.com</tns:EmailID>
+        <tns:MobileNo>9999999999</tns:MobileNo>
+        <tns:RegistrationZone>A</tns:RegistrationZone>
+    </tns:Client>
+</Session>
+          
+       

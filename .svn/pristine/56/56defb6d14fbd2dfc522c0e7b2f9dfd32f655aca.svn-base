@@ -1,0 +1,43 @@
+{
+    "ProposalObj": [{
+            "Quote_Number": "",
+            "Vendor_TxnId": "TXN001",
+            "Intermediary_Code": "___insurer_integration_agent_code___",
+            "Flag": "2",
+            "Product_Code": "4212",
+            "Plan_Code": "___Plan_Code___",
+            "Policy_Varient": "___health_insurance_type___",
+            "Policy_StartDate": "___policy_start_date___",
+            "Policy_Duration": "___policy_tenure___",
+            "Floater_Suminsured": "___health_insurance_si___",
+            "Floater_Suminsured_Unit": "01",
+            "Proposer_FName": "___first_name___",
+            "Proposer_LName": "___last_name___",
+            "Proposer_Email": "___email___",
+            "Proposer_Mobile": "___mobile___",
+            "Source_Name": "Policy Boss",
+            "Floater_deductible": "0",
+            "IsLoyaltyApplicable": "0",
+            "Policy_No": "",
+            "POSPCode": "",
+            "StateCode": "___state_code___"
+        }],
+    "InsuredObj": [<!--InsurersDetail_Start-->
+        {
+            "Member_No": "___member_array_inc___",
+            "Member_FName": "___member_array_first_name___",
+            "Member_LName": "___member_array_last_name___",
+            "Member_DOB": "___member_array_birth_date___",
+            "Member_Suminsured": "___health_insurance_si___",
+            "Member_Suminsured_Unit": "0",
+            "Member_RelationCode": "___member_array_relation___",
+            "Member_OccupationCode": "O001",
+            "Wellness_program": "0",
+            "Member_Deductible": "0",
+            "OptionalCover": [{
+                    "covercode": "",
+                    "coverValue": ""
+                }]
+        }<!--InsurersDetail_End-->
+    ]
+}

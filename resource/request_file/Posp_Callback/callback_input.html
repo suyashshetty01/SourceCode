@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="UTF-8">
+      <title> POSP Callback | Policyboss </title>
+      <link rel="stylesheet" href="./css/style.css">
+	  <link rel="stylesheet" type="text/css" href="./css/jquery.datetimepicker.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div style="text-align:right"><img id ='logo' src="https://www.policyboss.com/Images/lmdesign/PolicyBoss-Logo.jpg"></div>
+         <div class="title">Please select suitable date & time slot</div>
+         <div class="content" style='padding-top: 10px;'>
+			<div class="inpElements">
+               <div class="user-details">
+                  <div class="input-box">
+                     <span class="details">Full Name</span>
+                     <input type="text" class = "input_err" id="full_name" placeholder="Enter your name" required disabled>
+                  </div>
+                  <div class="input-box">
+                     <span class="details">Mobile Number</span>
+                     <input type="text" class = "input_err" id="mob_no" placeholder="Enter your contact number" maxlength='10' onkeyup="forceNumeric(event)" disabled >
+                  </div>
+                  <div class="input-box">
+                     <span class="details">Calling Time</span>
+                     <input  class = "input_err" id = "call"type="text" placeholder="Select calling date & time" onkeyup="forceNumeric(event)" autocomplete="off" readonly>
+                  </div>
+                  <div class="input-box">
+                     <span class="details">Remark</span>
+                     <textarea  class = "input_err" id = "remark"type="text" placeholder="Enter Remark" autocomplete="off"></textarea>
+                  </div>
+               </div>
+               <div class="button">
+                  <input id= "submit_form" type="submit" value="Submit" onclick="ValidateForm()">
+				  <span class="msg" id="success_msg" style ="color: #11a947;display: flex;font-size: 18px;font-weight: 44px;justify-content: center;display: none;">Slot booked successfully</span>
+               </div>
+			   </div>
+         </div>
+      </div>
+      <div class="Popup_thank">
+         <div class="popup">
+		    <span class="close">×</span>
+            <h1>Thank you for confirming, our experts will call you as per your selected slot.</h1>
+         </div>
+      </div>
+      <script src="./js/jquery.datetimepicker.full.min.js"></script>
+      
+	  <script>  
+ var url_params;
+ var full_name;
+ var mobile;
+ var posp_enquiry_id;
+ var ip_address;
+$(document).ready(function (e) {
+	getClientBrowserDetails();
+	full_name = getUrlVars()["name"];
+	mobile = getUrlVars()["mobile"];
+	posp_enquiry_id = getUrlVars()["posp_enquiry_id"] - 0;
+	$('#full_name').val(full_name);
+    $('#mob_no').val(mobile);
+	
+    $(".close").click(function () {
+        $('.Popup_thank').fadeOut();
+    });
+
+    var d = new Date();
+    $('#call').datetimepicker({
+        format: 'd/m/Y H:i',
+        formatDate: 'd/m/Y',
+        minDateTime: true,
+        maxDate: d.setMonth(d.getMonth() + 1),
+        yearStart: new Date().getFullYear(),
+        yearEnd: new Date().getFullYear() + 1,
+        monthStart: new Date().getMonth(),
+        monthEnd: new Date().getMonth() + 1,
+        validateOnBlur: true,
+        step: 30,
+        minTime: "09:30",
+        maxTime: "19:30",
+        disabledWeekDays: [0]
+    });
+});
+var getUrlVars = function () {
+    var vars = [],
+    hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+};
+
+function forceNumeric(e) {
+    e.target.value = e.target.value.replace(/[^\d]/g, '');
+    return false;
+}
+function ValidateForm() {
+    var err = 0;
+    var input_val;
+    $('.input_err').removeClass('err');
+	
+	input_val = $('#full_name').val();
+	    if (input_val == "") {
+        $('#full_name').addClass('err');
+        err++;
+    }
+	
+		input_val = $('#mob_no').val();
+	    if (input_val == "") {
+        $('#mob_no').addClass('err');
+        err++;
+    }
+	
+    input_val = $('#call').val();
+    if (input_val == "") {
+        $('#call').addClass('err');
+        err++;
+    }
+    input_val = $('#remark').val();
+    if (input_val == "") {
+        $('#remark').addClass('err');
+        err++;
+    }
+	
+    if (err > 0) {
+        event.preventDefault();
+    } else {
+        posp_callback();
+    }
+}
+
+function posp_callback() {
+
+    var post = {
+        "posp_enquiry_id": posp_enquiry_id,
+        "name": full_name,
+        "mobile": mobile,
+        "call_time": $('#call').val(),
+        "remark": $('#remark').val(),
+		"ip_address":ip_address == undefined ? '':ip_address
+    }
+    //console.log(JSON.stringify(post));
+	var service_url;
+	var url = window.location.href;
+    var service_url;
+	 if (url.includes("qa") || url.includes("request_file")) {
+		service_url = "/postservicecall/posp_callback";
+	} else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+		service_url = "/posp_callback";
+	}
+
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(post),
+        url: GetUrl() + service_url,
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            if (data.Status == "Success") {
+                $('.Popup_thank').fadeIn();
+                $('#submit_form').hide();
+                $('#success_msg').show();
+            }
+        },
+        error: function (result) {
+            alert("Error");
+        }
+    });
+};
+function GetUrl() {
+    var url = window.location.href;
+    var newurl;
+    if (url.includes("request_file")) {
+        newurl = "http://localhost:3000";
+    } else if (url.includes("qa")) {
+        newurl = "http://qa-horizon.policyboss.com:3000";
+    } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+        newurl = "https://horizon.policyboss.com:5443";
+    }
+    return newurl;
+}
+function getClientBrowserDetails() {
+    if (window.navigator && window.navigator.geolocation) {
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                this.showPosition(position)
+            },
+            error => {
+                console.log('Location - Permission not granted');
+            });
+    }
+}
+function showPosition(position) {
+    geo_lat = position.coords.latitude;
+    geo_long = position.coords.longitude;
+    $.getJSON('https://api.ipify.org?format=json', function (data) {
+        ip_address = data.ip;
+    });
+}
+		</script>
+	</body>
+</html>

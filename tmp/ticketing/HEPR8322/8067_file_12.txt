@@ -1,0 +1,50 @@
+https://www.policyboss.com/blog?category=term-insurance&page=5
+
+.video-listing-row
+
+
+<div class="pagination-wrapper claimVidoePagination" >
+                    <div class="pagination-inner">
+                      <div class="VidoePager">
+                        <li class="pagination-prev previousVideoPage" onclick='navigateVideoPage("previousPage")'><button title="prev" class="prev"><img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-left.png" alt="prev" /></button></li>
+                        <li class="VideoPagination" id="Videopagination"></li>
+                        <li class="pagination-next nextPage" onclick='navigateVideoPage("nextPage")'><button title="next" class="next"><img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-right.png" alt="next" /></button></li>
+                      </div>
+                    </div>
+                  </div>
+				  
+				  
+				  
+				  <div class="pagination-wrapper claimpagination" style=display:none;>
+                      <div class="pagination-inner">
+                        <div class="pager">
+                          <li class="pagination-prev previousPage" onclick='navigatePage("previousPage")'><button
+                              title="prev" class="prev"><img
+                                src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-left.png"
+                                alt="prev" /></button></li>
+                          <li class="pagination" id="pagination"></li>
+                          <li class="pagination-next nextPage" onclick='navigatePage("nextPage")'><button title="next"
+                              class="next"><img
+                                src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-right.png"
+                                alt="next" /></button></li>
+                        </div>
+                      </div>
+                    </div>
+					
+					<div class="pagination-wrapper claimVidoePagination">
+                      <div class="pagination-inner">
+                        <div class="VidoePager">
+                          <li class="pagination-prev previousVideoPage" onclick='navigateVideoPage("previousPage")'>
+                            <button title="prev" class="prevVideo"><img
+                                src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-left.png"
+                                alt="prev" /></button></li>
+                          <li class="Videopagination" id="Videopagination"></li>
+                          <li class="pagination-next nextVideoPage" onclick='navigateVideoPage("nextPage")'><button
+                              title="next" class="nextVideo"><img
+                                src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/chevron-right.png"
+                                alt="next" /></button></li>
+                        </div>
+                      </div>
+                    </div>
+					
+					    margin-top: 15%;

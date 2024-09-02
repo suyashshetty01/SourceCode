@@ -1,0 +1,50 @@
+{
+    "own_damage": {
+        "od_basic": 'BasicODPremium',
+        "od_elect_access": 'ElectricalAccessoriesValue',
+        "od_non_elect_access": 'NonElectricalAccessoriesValue',
+        "od_cng_lpg": 'FuelKitValueODpremium',
+        "od_disc_ncb": 'DisplayNCBDiscountvalue',
+        "od_disc_vol_deduct": 'VoluntaryExcessValue',
+        "od_disc_anti_theft": 'AntiTheftDiscountValue',
+        "od_disc_aai": 'AAIMembershipValue',
+        "od_loading": 'LoadingDisocuntPerFirstYr',
+        "od_disc": 'Discount',
+        "od_final_premium": 'TotalODPremiumValue'
+    },
+    "liability": {
+        "tp_basic": 'BasicTPPremium',
+        "tp_cover_owner_driver_pa": 'PAToOwnerDrivervalue',
+        "tp_cover_unnamed_passenger_pa": 'PAToUnnmaedPassengerValue',
+        "tp_cover_named_passenger_pa": 'PatoNamedPassengerValue',
+        "tp_cover_paid_driver_pa": 'TPPDCoverValue',
+        "tp_cover_paid_driver_ll": 'LegalliabilityToPaidDriverValue',
+        "tp_cng_lpg": 'FuelKitValueTPpremium',
+        "tp_final_premium": 'TotalTPPremiumValue'
+    },
+    "addon": {
+        "addon_zero_dep_cover": 'NilDepValue',
+        "addon_road_assist_cover": 'RoadAssistCoverValue',
+        "addon_ncb_protection_cover": null,
+        "addon_engine_protector_cover": 'EngineCoverValue',
+        "addon_invoice_price_cover": null,
+        "addon_key_lock_cover": 'KeyLossCoverValue',
+        "addon_consumable_cover": null,
+        "addon_daily_allowance_cover": null,
+        "addon_windshield_cover": null,
+        "addon_passenger_assistance_cover": null,
+        "addon_tyre_coverage_cover": null,
+        "addon_personal_belonging_loss_cover": null,
+        "addon_inconvenience_allowance_cover": null,
+        "addon_medical_expense_cover": null,
+        "addon_hospital_cash_cover": null,
+        "addon_ambulance_charge_cover": null,
+        "addon_rodent_bite_cover": null,
+        "addon_losstime_protection_cover": null,
+        "addon_hydrostatic_lock_cover": null,
+        "addon_final_premium": 0
+    },
+    "net_premium": 'NetPremium',
+    "service_tax": 'ServiceTax',
+    "final_premium": 'TotalPremium'
+}

@@ -1,0 +1,102 @@
+{
+    "functionality": "validateproposal",
+    "quotation_no": "___dbmaster_insurer_transaction_identifier___",
+    "sol_id": "___insurer_integration_location_code___",
+    "lead_id": "",
+    "pol_sdate": "___policy_start_date___",
+    "sp_name": "___first_name___ ___middle_name___ ___last_name___",
+    "sp_license": "",
+    "sp_place": "Mahbubnagar",
+    "productcod": "___product_id___",
+    "customer": {
+        "salutation": "___salutation___",
+        "client_type": "___vehicle_registration_type___",
+        "organization_name": "___company_name___",
+        "first_name": "___first_name___",
+        "middle_name": "___middle_name___",
+        "last_name": "___last_name___",
+        "gender": "___gender_2___",
+        "dob": "___birth_date___",
+        "marital_status": "___marital___",
+        "address_1": "___communication_address_1___",
+        "address_2": "___communication_address_2___",
+        "address_3": "___communication_address_3___",
+        "address_4": "",
+        "pincode": "___communication_pincode___",
+        "account_no": "",
+        "cust_aadhaar": "",
+        "mobile_no": "___mobile___",
+        "email_id": "___email___"
+    },
+    "vehicle": {
+        "engine_no": "___engine_number___",
+        "chassis_no": "___chassis_number___",
+		"PucDecFlag":"___is_valid_pucc___"
+    },
+    "prevpolicy": {
+        "flag": "___tata_prevPolicy___",
+        "code": "___dbmaster_previousinsurer_code___",
+        "name": "___dbmaster_insurername___",
+        "address1": "___dbmaster_pb_previousinsurer_address___",
+        "address2": "",
+        "address3": "",
+        "polno": "___previous_policy_number___",
+        "pincode": "___dbmaster_pb_previousinsurer_pincode___",
+        "doc_name": "abc"
+    },
+    "financier": {
+        "type": "___financial_agreement_type_2___",
+        "name": "___financial_institute_name___",
+        "address": "",
+        "loanacno": ""
+    },
+    "automobile": {
+        "flag": "N",
+        "number": "",
+        "name": "",
+        "expiry_date": ""
+    },
+    "nominee": {
+        "name": "___nominee_name___",
+        "age": "___nominee_age___",
+        "relation": "___nominee_relation___"
+    },
+    "driver": {
+        "flag": "___is_llpd___",
+        "fname": "___first_name___",
+        "lname": "___last_name___",
+        "gender": "___gender_2___",
+        "age": "___insured_age___",
+        "drivingexp": "___drivingexp___",
+        "marital_status": "___marital___"
+    },
+    "inspection": {
+        "flag": "",
+        "number": "",
+        "date": "",
+        "agency_name": "",
+        "imagename_1": "",
+        "imagename_2": "",
+        "imagename_3": ""
+    },
+    "bundpolicy":
+            {
+                "flag": "___is_standalone___",
+                "code": "___dbmaster_pb_insurer_id___",
+                "name": "___dbmaster_pb_insurer_code___",
+                "address1": "___dbmaster_pb_previousinsurer_address___",
+                "address2": "",
+                "address3": "",
+                "pincode": "___dbmaster_pb_previousinsurer_pincode___",
+                "bp_no": "",
+                "bp_edate": "",
+                "op_sdate": "___pre_policy_start_date___",
+                "op_edate": "___policy_expiry_date___",
+                "cpap_sdate": "",
+                "cpap_edate": "",
+                "cpap_tenure": "",
+                "tp_polnum": "___tp_policy_number___",
+                "tp_pol_sdate": "___tp_start_date___",
+                "tp_pol_edate": "___tp_end_date___"
+            }
+}

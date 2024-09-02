@@ -1,0 +1,63 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+    <title>Declaration Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <style>
+        *{margin-top: 10px;}
+        .box{border: 1px solid #ccc;padding: 20px 50px;margin-bottom: 20px}
+        input[type="text"]{border: none;border-bottom: 2px solid #bbb;text-transform: uppercase;font-weight: bold}
+        input:focus{outline: none;}
+    </style>
+    <body>
+    <div class="container box">
+        <div class="row">
+            <h4 class="text-center"><u><strong>DECLARATION</strong></u></h4>
+            <!--<p style="line-height: 20px">I,  <input type="text" class="name" style="width: 500px" placeholder="___member_1_name___">  [ NSCI Membership No: <input type="text" class="memno" style="width: 200px" placeholder="___membership_no___"> ],<br> currently residing at  <input type="text" class="add" style="width: 500px"> , do hereby confirm and declare as under:</p>-->
+            <p style="line-height: 20px">I,  ___member_1_name___ [ NSCI Membership No: ___membership_no___ ],<br> currently residing at  <input type="text" class="add" style="width: 500px"> , do hereby confirm and declare as under:</p>
+            <ol style="text-align: justify">
+                <li>That I am aware that the existing Group Mediclaim Policy, taken out by National Sports Club of India (NSCI), from National Insurance Company Limited (Insurer), for the benefit of the enrolled members, is due to expire on the midnight of 2nd November, 2018;</li>
+                <li>
+                    That office of NSCI is using all its good efforts to renew the Group Mediclaim Policy with the existing Insurer for the benefit of its members, for the period 2018-2019 and has mandated Prudent Insurance Brokers Pvt. Ltd (Lead Broker) and Landmark Insurance Brokers Pvt. Ltd. (Co-Broker/Enrollment Broker), who are duly licensed insurance brokers, to facilitate the renewal of the said Group Mediclaim Policy;
+                </li>
+                <li>That I have been fully explained the terms and conditions of the proposed Group Mediclaim Policy (from the Insurer) and have understood the said terms and conditions;</li>
+                <li>That I have also been made aware that the renewal of the said Group Mediclaim Policy shall happen/go through only if the proposed members to be covered under the Group Mediclaim Policy collectively remit a minimum of INR Nine Crores (excluding applicable GST) of premium to the said Insurer (as per quotation received from the said Insurer) and that the said Insurer has agreed to start the Group Mediclaim Policy from such date when it receives the above said minimum premium with the condition that the premium to be received by Insurer on or before 18th November, 2018;</li>
+                <li>That the Group Mediclaim Policy shall be effective on or from the date the said premium amount is received by the Insurer. In order to clarify if the premium amount is received on 5th November, 2018, the Group Mediclaim Policy shall be effective from the said date and not from 3rd November, 2018. Accordingly, my cover and cover for other enrolled members shall begin from said date and not prior. In case of any uncalled for event from the expiry date of the current Group Mediclaim Policy and the effective start date of the renewed/fresh Group Mediclaim Policy, no claim of any nature whatsoever shall be payable by the Insurer, NSCI and/or the said insurance brokers; </li>
+                <li>That I have been also made aware by NSCI that in the event to be enrolled members collectively are unable to remit the above said minimum premium amount, the proposed Group Mediclaim Policy shall not be issued/renewed by the Insurer and in such an event I shall not raise any concern/grievance/claim against the Insurer, NSCI and/or the said insurance brokers.</li>
+                <li>I understand that the Group Mediclaim Policy is not a substitute for any individual mediclaim/health policy I currently have or may have hereinafter.</li>
+                <li>I am signing this declaration (electronically or otherwise) after having read and understood its contents.</li>
+            </ol><br>
+            <div class="row">
+                Place:<input type="text" class="place"><br><br>
+                Date:<input type="text" class="date"><br><br>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">Signature:</div>
+                <div class="col-xs-3"><input type="text" class="signature"></div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-2">Name of the Member:</div>
+                <div class="col-xs-3 ">___member_1_name___</div>
+
+                <div class="col-xs-2 text-right">PAN:</div>
+                <div class="col-xs-3"><input type="text" class="pan"></div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-2">NSCI Membership No:</div>
+                <div class="col-xs-3">___membership_no___</div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-2">Address:</div>
+                <div class="col-xs-3"><input type="text" class="address"></div>
+            </div>
+
+        </div>
+        </div>
+    </body>
+</html>

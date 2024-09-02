@@ -1,0 +1,344 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <ProposalCapture xmlns="http://www.apollomunichinsurance.com/B2BService">
+            <ProposalCaptureServiceRequest>
+                <Action xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">Create</Action>
+                <Partner xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">
+                    <PartnerCode xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_agent_code___</PartnerCode>
+                    <Password xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_password___</Password>
+                    <UserName xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___insurer_integration_service_user___</UserName>
+                </Partner>
+                <Prospect xmlns="http://schemas.datacontract.org/2004/07/ProposalCaptureServiceLibrary">
+                    <Application xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">
+                        <CrossSellCommonCode xsi:nil="true"/>
+                        <Namefor80D>___first_name___ ___last_name___</Namefor80D>
+                        <NomineeAddress>
+                            <AddressLine1>___permanent_address_1___</AddressLine1>
+                            <AddressLine2>___permanent_address_2___</AddressLine2>
+                            <AddressLine3>___permanent_address_3___</AddressLine3>
+                            <CountryCode>IN</CountryCode>
+                            <District xsi:nil="true"/>
+                            <PinCode>___permanent_pincode___</PinCode>
+                            <StateCode>___communication_state_code___</StateCode>
+                            <TownCode>___communication_district_code___</TownCode>
+                        </NomineeAddress>
+                        <NomineeName>___nominee_name___</NomineeName>
+                        <NomineeTitleCode/>
+                        <!--POS_CONFIG_START-->
+                        <POSPAadhaarNumber>___posp_aadhar___</POSPAadhaarNumber>
+                        <POSPCode>___posp_insurer_code___</POSPCode>
+                        <POSPName>___posp_first_name___ ___posp_last_name___</POSPName>
+                        <POSPPANNumber>___posp_pan_no___</POSPPANNumber>
+                        <!--POS_CONFIG_FINISH-->
+                        <Proposer>
+                            <Address>
+                                <Address>
+                                    <AddressLine1>___permanent_address_1___</AddressLine1>
+                                    <AddressLine2>___permanent_address_2___</AddressLine2>
+                                    <AddressLine3>___permanent_address_3___</AddressLine3>
+                                    <CountryCode>IN</CountryCode>
+                                    <District xsi:nil="true"/>
+                                    <PinCode>___permanent_pincode___</PinCode>
+                                    <StateCode>___communication_state_code___</StateCode>
+                                    <TownCode>___communication_district_code___</TownCode>
+                                </Address>
+                            </Address>
+                            <BirthDate>___member_1_birth_date___</BirthDate>
+                            <ClientCode xsi:nil="true"/>
+                            <ContactInformation>
+                                <ContactNumber>
+                                    <ContactNumber>
+                                        <Number>___mobile___</Number>
+                                        <Type>7</Type>
+                                    </ContactNumber>
+                                </ContactNumber>
+                                <Email>___email___</Email>
+                            </ContactInformation>
+                            <Dependants xsi:nil="true"/>
+                            <FirstName>___first_name___</FirstName>
+                            <GenderCode>___member_1_gender_2___</GenderCode>
+                            <GstinNumber/>
+                            <IDProofNumber/>
+                            <IDProofTypeCode/>
+                            <LastName>___last_name___</LastName>
+                            <LifeStyleHabits xsi:nil="true"/>
+                            <MaritalStatusCode>___marital___</MaritalStatusCode>
+                            <MiddleName>___middle_name___</MiddleName>
+                            <NationalityCode>IN</NationalityCode>
+                            <PreviousInsurer xsi:nil="true"/>
+                            <Product xsi:nil="true"/>
+                            <RelationshipCode>___member_1_relation___</RelationshipCode>
+                        </Proposer>
+                        <RelationToNomineeCode>___nominee_relation___</RelationToNomineeCode>
+                        <RuralFlag>0</RuralFlag>
+                        <TPANameCode>FHPL</TPANameCode>
+                    </Application>
+                    <BrandCode xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">ApolloMunich</BrandCode>
+                    <Client xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">
+                        <Address>
+                            <Address>
+                                <AddressLine1>___permanent_address_1___</AddressLine1>
+                                <AddressLine2>___permanent_address_2___</AddressLine2>
+                                <AddressLine3>___permanent_address_3___</AddressLine3>
+                                <CountryCode>IN</CountryCode>
+                                <District xsi:nil="true"/>
+                                <PinCode>___permanent_pincode___</PinCode>
+                                <StateCode>___communication_state_code___</StateCode>
+                                <TownCode>___communication_district_code___</TownCode>
+                            </Address>
+                        </Address>
+                        <Age>___member_1_age___</Age>
+                        <AnnualIncome>___annual_income___</AnnualIncome>
+                        <BirthDate>___member_1_birth_date___</BirthDate>
+                        <ClientCode>PolicyHolder</ClientCode>
+                        <ContactInformation>
+                            <ContactNumber>
+                                <ContactNumber>
+                                    <Number>___mobile___</Number>
+                                    <Type>7</Type>
+                                </ContactNumber>
+                            </ContactNumber>
+                            <Email>___email___</Email>
+                        </ContactInformation>
+                        <Dependants>
+                            <!--InsurersDetail_Start1-->
+                            <Client>
+                                <Address xsi:nil="true"/>
+                                <Age>___member_array_age___</Age>
+                                <BirthDate>___member_array_birth_date___</BirthDate>
+                                <ClientCode>Member ___member_array_inc___</ClientCode>
+                                <ContactInformation xsi:nil="true"/>
+                                <Dependants xsi:nil="true"/>
+                                <FirstName>___member_array_first_name___</FirstName>
+                                <GenderCode>___member_array_gender_2___</GenderCode>
+                                <Height>___member_array_height___</Height>
+                                <IDProofNumber xsi:nil="true"/>
+                                <IDProofTypeCode xsi:nil="true"/>
+                                <LastName>___member_array_last_name___</LastName>
+                                <LifeStyleHabits>
+                                    <BeerBottle>___member_array_question_1268_details___</BeerBottle>
+                                    <LiquorPeg>___member_array_question_1267_details___</LiquorPeg>
+                                    <Pouches>___member_array_question_1266_details___</Pouches>
+                                    <Smoking>___member_array_question_1265_details___</Smoking>
+                                    <WineGlass>___member_array_question_1269_details___</WineGlass>
+                                </LifeStyleHabits>
+                                <MaritalStatusCode>___member_array_marital_status___</MaritalStatusCode>
+                                <MiddleName/>
+                                <NationalityCode>IN</NationalityCode>
+                                <OccuptionCode>___member_array_occupation___</OccuptionCode>
+                                <PreviousInsurer xsi:nil="true"/>
+                                <Product>
+                                    <Product>
+                                        <BasePremiumAmount>___member_array_base_premium___</BasePremiumAmount>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <DiscountAmount>0</DiscountAmount>
+                                        <GrossPremiumAmount>___member_array_gross_premium___</GrossPremiumAmount>
+                                        <ProductCode>___dbmaster_pb_plan_code___</ProductCode>
+                                        <ProductGroup>___get_plan_group___</ProductGroup>
+                                        <ProductLine>___get_plan_line___</ProductLine>
+                                        <ProductType>___get_plan_category___</ProductType>
+                                        <ProductVersion>___get_plan_version___</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_si___</SumAssured>
+                                        <TaxAmount>___member_array_service_tax___</TaxAmount>
+                                    </Product>
+                                    <!--Addon_CA_Start-->
+                                    <Product>
+                                        <BasePremiumAmount>___member____member_array_inc____addon_ca_basePremium___</BasePremiumAmount>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <DiscountAmount>___member____member_array_inc____addon_ca_discountAmount___</DiscountAmount>
+                                        <GrossPremiumAmount>___member____member_array_inc____addon_ca_grossPremium___</GrossPremiumAmount>
+                                        <ProductCode>___addon_ca_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_ca_si___</SumAssured>
+                                        <TaxAmount>___member____member_array_inc____addon_ca_serviceTax___</TaxAmount>
+                                    </Product>
+                                    <!--Addon_CA_End-->
+                                    <!--Addon_CI_Start-->
+                                    <Product>
+                                        <BasePremiumAmount>___member____member_array_inc____addon_ci_basePremium___</BasePremiumAmount>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <DiscountAmount>___member____member_array_inc____addon_ci_discountAmount___</DiscountAmount>
+                                        <GrossPremiumAmount>___member____member_array_inc____addon_ci_grossPremium___</GrossPremiumAmount>
+                                        <ProductCode>___addon_ci_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_ci_si___</SumAssured>
+                                        <TaxAmount>___member____member_array_inc____addon_ci_serviceTax___</TaxAmount>
+                                    </Product>
+                                    <!--Addon_CI_End-->
+                                    <!--Addon_HDC_Start-->
+                                    <Product>
+                                        <BasePremiumAmount>___member____member_array_inc____addon_Hdc_basePremium___</BasePremiumAmount>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <DiscountAmount>___member____member_array_inc____addon_Hdc_discountAmount___</DiscountAmount>
+                                        <GrossPremiumAmount>___member____member_array_inc____addon_Hdc_grossPremium___</GrossPremiumAmount>
+                                        <ProductCode>___addon_hdc_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>1</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_hdc_si___</SumAssured>
+                                        <TaxAmount>___member____member_array_inc____addon_Hdc_serviceTax___</TaxAmount>
+                                    </Product>
+                                    <!--Addon_HDC_End-->
+                                    <!--Addon_PROTECTOR_Start-->
+                                    <Product>
+                                        <BasePremiumAmount>___member____member_array_inc____addon_protector_basePremium___</BasePremiumAmount>
+                                        <ClientCode>Member ___member_array_inc___</ClientCode>
+                                        <DiscountAmount>___member____member_array_inc____addon_protector_discountAmount___</DiscountAmount>
+                                        <GrossPremiumAmount>___member____member_array_inc____addon_protector_grossPremium___</GrossPremiumAmount>
+                                        <ProductCode>___addon_protector_code___</ProductCode>
+                                        <ProductGroup>1</ProductGroup>
+                                        <ProductLine>2</ProductLine>
+                                        <ProductType>2</ProductType>
+                                        <ProductVersion>1</ProductVersion>
+                                        <SACCode>___member_array_sac_code___</SACCode>
+                                        <SumAssured>___member_array_protector_si___</SumAssured>
+                                        <TaxAmount>___member____member_array_inc____addon_protector_serviceTax___</TaxAmount>
+                                    </Product>
+                                    <!--Addon_PROTECTOR_End-->
+                                </Product>
+                                <ProfessionCode xsi:nil="true"/>
+                                <RelationshipCode>___member_array_relation___</RelationshipCode>
+                                <TitleCode>___member_array_salutation___</TitleCode>
+                                <Weight>___member_array_weight___</Weight>
+                            </Client>
+                            <!--InsurersDetail_End1-->
+                        </Dependants>
+                        <FamilySize>___member_count___</FamilySize>
+                        <FirstName>___first_name___</FirstName>
+                        <GenderCode>___member_1_gender_2___</GenderCode>
+                        <GstinNumber/>
+                        <Height>___member_1_height___</Height>
+                        <IDProofNumber/>
+                        <IDProofTypeCode/>
+                        <LastName>___last_name___</LastName>
+                        <LifeStyleHabits>
+                            <BeerBottle>___member_1_question_1268_details___</BeerBottle>
+                            <LiquorPeg>___member_1_question_1267_details___</LiquorPeg>
+                            <Pouches>___member_1_question_1266_details___</Pouches>
+                            <Smoking>___member_1_question_1265_details___</Smoking>
+                            <WineGlass>___member_1_question_1269_details___</WineGlass>
+                        </LifeStyleHabits>
+                        <MaritalStatusCode>___marital___</MaritalStatusCode>
+                        <MiddleName>___middle_name___</MiddleName>
+                        <NationalityCode>IN</NationalityCode>
+                        <OccuptionCode>___occupation___</OccuptionCode>
+                        <PreviousInsurer xsi:nil="true"/>
+                        <Product>
+                            <Product>
+                                <BasePremiumAmount>___member_1_base_premium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>0</DiscountAmount>
+                                <GrossPremiumAmount>___member_1_gross_premium___</GrossPremiumAmount>
+                                <ProductCode>___dbmaster_pb_plan_code___</ProductCode>
+                                <ProductGroup>___get_plan_group___</ProductGroup>
+                                <ProductLine>___get_plan_line___</ProductLine>
+                                <ProductType>___get_plan_category___</ProductType>
+                                <ProductVersion>___get_plan_version___</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_si___</SumAssured>
+                                <TaxAmount>___member_1_service_tax___</TaxAmount>
+                            </Product>
+                            <!--Addon_ca_Start-->
+                            <Product>
+                                <BasePremiumAmount>___addon_ca_basePremium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>___addon_ca_discountAmount___</DiscountAmount>
+                                <GrossPremiumAmount>___addon_ca_grossPremium___</GrossPremiumAmount>
+                                <ProductCode>___addon_ca_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_ca_si___</SumAssured>
+                                <TaxAmount>___addon_ca_taxAmount___</TaxAmount>
+                            </Product>
+                            <!--Addon_ca_End-->
+                            <!--Addon_ci_Start-->
+                            <Product>
+                                <BasePremiumAmount>___addon_ci_basePremium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>___addon_ci_discountAmount___</DiscountAmount>
+                                <GrossPremiumAmount>___addon_ci_grossPremium___</GrossPremiumAmount>
+                                <ProductCode>___addon_ci_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_ci_si___</SumAssured>
+                                <TaxAmount>___addon_ci_taxAmount___</TaxAmount>
+                            </Product>
+                            <!--Addon_ci_End-->
+                            <!--Addon_hdc_Start-->
+                            <Product>
+                                <BasePremiumAmount>___addon_Hdc_basePremium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>___addon_Hdc_discountAmount___</DiscountAmount>
+                                <GrossPremiumAmount>___addon_Hdc_grossPremium___</GrossPremiumAmount>
+                                <ProductCode>___addon_hdc_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>1</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_hdc_si___</SumAssured>
+                                <TaxAmount>___addon_Hdc_taxAmount___</TaxAmount>
+                            </Product>
+                            <!--Addon_hdc_End-->
+                            <!--Addon_pa_Start-->
+                            <Product>
+                                <BasePremiumAmount>___addon_Pa_basePremium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>___addon_Pa_discountAmount___</DiscountAmount>
+                                <GrossPremiumAmount>___addon_Pa_grossPremium___</GrossPremiumAmount>
+                                <ProductCode>___addon_pa_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_pa_si___</SumAssured>
+                                <TaxAmount>___addon_Pa_taxAmount___</TaxAmount>
+                            </Product>
+                            <!--Addon_pa_End-->
+                            <!--Addon_protector_Start-->
+                            <Product>
+                                <BasePremiumAmount>___addon_protector_basePremium___</BasePremiumAmount>
+                                <ClientCode>PolicyHolder</ClientCode>
+                                <DiscountAmount>___addon_protector_discountAmount___</DiscountAmount>
+                                <GrossPremiumAmount>___addon_protector_grossPremium___</GrossPremiumAmount>
+                                <ProductCode>___addon_protector_code___</ProductCode>
+                                <ProductGroup>1</ProductGroup>
+                                <ProductLine>2</ProductLine>
+                                <ProductType>2</ProductType>
+                                <ProductVersion>1</ProductVersion>
+                                <SACCode>1</SACCode>
+                                <SumAssured>___member_1_protector_si___</SumAssured>
+                                <TaxAmount>___addon_protector_taxAmount___</TaxAmount>
+                            </Product>
+                            <!--Addon_protector_End-->
+                        </Product>
+                        <ProfessionCode xsi:nil="true"/>
+                        <RelationshipCode>___member_1_relation___</RelationshipCode>
+                        <TitleCode>___member_1_salutation___</TitleCode>
+                        <Weight>___member_1_weight___</Weight>
+                    </Client>
+                    <MedicalInformations xsi:nil="true" xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects"/>
+                    <TotalPremiumAmount xmlns="http://schemas.datacontract.org/2004/07/ServiceObjects">___final_premium___</TotalPremiumAmount>
+                </Prospect>
+            </ProposalCaptureServiceRequest>
+        </ProposalCapture>
+    </soap:Body>
+</soap:Envelope>

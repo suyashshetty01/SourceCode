@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header>
+      <tem:AuthHeader>
+         <!--Optional:-->
+         <tem:Username>___insurer_integration_service_user___</tem:Username>
+         <!--Optional:-->
+         <tem:Password>___insurer_integration_service_password___</tem:Password>
+      </tem:AuthHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <tem:PolicyScheduleURL>
+         <!--Optional:-->
+         <tem:strPolSysId>___transaction_id___</tem:strPolSysId>
+      </tem:PolicyScheduleURL>
+   </soapenv:Body>
+</soapenv:Envelope>

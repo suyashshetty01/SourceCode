@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Design</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/jquery.min.js" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <style>
+        p {
+            padding: 1px;
+            margin: 1px;
+        }
+
+        body {
+            background: #f6f6f6;
+        }
+
+        .white-bg {
+            background: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            box-shadow: 1px 1px 2px 0px #ddd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+    </div>
+	<div class="warningmsg">
+        <h3 style="text-align: center; color: red;"><u>Error</u></h3>
+        <h3 style="text-align: center;">ss_id , fba_id ,ip_address , app_version is mandatory</h3>
+    </div>
+</body>
+<script>
+  var getParameterByName = function (name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+ var stringparam = function () {
+debugger;
+            var arr = ["ss_id", "fba_id", "ip_address", "app_version"];
+            for (var i = 0; i < arr.length; i++) {
+			
+                var qs_val = getParameterByName(arr[i]);
+				
+                fba_id = getParameterByName('fba_id');
+                ip_address = getParameterByName('ip_address');
+                app_version = getParameterByName('app_version');
+                if (qs_val == null || qs_val == '' || qs_val == '0') {
+
+                    $(".healthmaindiv").hide();
+                    $(".warningmsg").show();
+                }
+                else {
+
+                    $(".healthmaindiv").show();
+                    $(".warningmsg").hide();
+                }
+            }
+        }
+ var  ss_id, fba_id, ip_address, app_version, mac_address;
+        var getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        ss_id = getUrlVars()["ss_id"];
+        fba_id = getUrlVars()["fba_id"];
+        ip_address = getUrlVars()["ip_address"];
+        app_version = getUrlVars()["app_version"];
+        mac_address = getUrlVars()["mac_address"];
+var GetUrl = function () {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            newurl = "http://qa-horizon.policyboss.com:3000";
+            if (url.includes("Horizon_v1")) {
+                //newurl = "http://localhost:3000";
+				newurl =  "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa-horizon.policyboss.com:3000";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                newurl = "http://horizon.policyboss.com:5000";
+            }
+            return newurl;
+        }
+		
+		function GeteditUrl() {
+            var url = window.location.href;
+            //alert(url.includes("health"));
+            var newurl;
+            //newurl = "http://qa.policyboss.com";
+            if (url.includes("request_file")) {
+                newurl = "http://localhost:50111";
+            } else if (url.includes("qa")) {
+                newurl = "http://qa.policyboss.com";
+            } else if (url.includes("www") || url.includes("cloudfront")) {
+                newurl = "https://www.policyboss.com";
+            }
+            return newurl;
+        }
+		
+		function Horizon_Method_Convert(method_action,data,type){
+        var obj_horizon_method = {
+            'url': (type=="POST")?"/TwoWheelerInsurance/call_horizon_post":"/TwoWheelerInsurance/call_horizon_get?method_name="+method_action,
+            "data":{
+                request_json: JSON.stringify(data),
+                method_name: method_action,
+                client_id:"2"
+            }
+        };
+        return obj_horizon_method;
+    }
+    $(document).ready(function () {
+		stringparam();
+		 var url = GeteditUrl() + '/TwoWheelerInsurance/call_horizon_get';
+        //var url = GetUrl()+"/user_datas/smslist/2/" + ss_id + "/" + fba_id + "/1"
+		
+        $.ajax({
+            type: "GET",
+            url: url,
+                dataType: "json",
+				data: {'method_name': '/user_datas/smslist/2/' + ss_id + '/' + fba_id + '/1'}, 
+                success: function (data) {
+			//debugger;
+                console.log(data);
+                //debugger;
+               // var obj = [
+                //"POLBOS-PROPOSAL-SUBMIT\n-------------------------------\nCustomer has submitted proposal and redirected to Payment Gateway.\nIn case of successful payment, Transaction status will be notified.\nIf policy not issued in next 15 minutes then kindly contact customer for followup.\n\nSource: PolicyBoss\nCRN: 212611\nProduct: HEALTH\nAgent: Direct Customer(Mob: 0 )\nCustomer: abc xyz(Mob: 9898989898 )\nInsurer: Cigna\nPremium: 8979 INR\nLinkSentOn: \nSubmittedOn: 11/2/2018, 2:29:23 PM\nProposalAttemptCount: 1",
+                //"POLBOS-PROPOSAL-SUBMIT\n-------------------------------\nCustomer has submitted proposal and redirected to Payment Gateway.\nIn case of successful payment, Transaction status will be notified.\nIf policy not issued in next 15 minutes then kindly contact customer for followup.\n\nSource: PolicyBoss\nCRN: 212602\nProduct: HEALTH\nAgent: Direct Customer(Mob: 0 )\nCustomer: abc xyz(Mob: 9696969696 )\nInsurer: Star\nPremium: 9568 INR\nLinkSentOn: \nSubmittedOn: 11/2/2018, 1:52:52 PM\nProposalAttemptCount: 1"
+                //]
+                for (var i in data) {
+                    var newStr = data[i].replace(/\n/g, '</p><p>');
+                    console.log(newStr);
+                    $('.container').append("<div class='col-md-4'>" +
+                                            "<div class='white-bg'>" + newStr + "</div></div>");
+                }
+            },
+            error: function (result) {
+
+            }
+        });
+    });
+
+    var pageIndex = 1;
+    var pageCount;
+    var iScrollPos = 0;
+
+    $(window).scroll(function () {
+        var iCurScrollPos = $(this).scrollTop();
+        if (iCurScrollPos > iScrollPos) {
+            //Scrolling Down
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                GetRecord();
+            }
+        }
+
+    });
+
+    function GetRecord() {
+        pageIndex++;
+		
+		var url = GetUrl()+"/user_datas/smslist/2/" + ss_id + "/" + fba_id + "/" + pageIndex
+        //var url = "http://horizon.policyboss.com:5000/user_datas/smslist/2 /" + ss_id + "/" + fba_id + "/" + pageIndex
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                
+                //var obj = [
+                //"POLBOS-PROPOSAL-SUBMIT\n-------------------------------\nCustomer has submitted proposal and redirected to Payment Gateway.\nIn case of successful payment, Transaction status will be notified.\nIf policy not issued in next 15 minutes then kindly contact customer for followup.\n\nSource: PolicyBoss\nCRN: 212611\nProduct: HEALTH\nAgent: Direct Customer(Mob: 0 )\nCustomer: abc xyz(Mob: 9898989898 )\nInsurer: Cigna\nPremium: 8979 INR\nLinkSentOn: \nSubmittedOn: 11/2/2018, 2:29:23 PM\nProposalAttemptCount: 1",
+                //"POLBOS-PROPOSAL-SUBMIT\n-------------------------------\nCustomer has submitted proposal and redirected to Payment Gateway.\nIn case of successful payment, Transaction status will be notified.\nIf policy not issued in next 15 minutes then kindly contact customer for followup.\n\nSource: PolicyBoss\nCRN: 212602\nProduct: HEALTH\nAgent: Direct Customer(Mob: 0 )\nCustomer: abc xyz(Mob: 9696969696 )\nInsurer: Star\nPremium: 9568 INR\nLinkSentOn: \nSubmittedOn: 11/2/2018, 1:52:52 PM\nProposalAttemptCount: 1"
+               // ]
+                for (var i in data) {
+                    var newStr = data[i].replace(/\n/g, '</p><p>');
+                    console.log(newStr);
+                    $('.container').append("<div class='col-md-4'>" +
+                                            "<div class='white-bg'>" + newStr + "</div></div>");
+                }
+            },
+            error: function (result) {
+
+            }
+        });
+    }
+</script>
+</html>

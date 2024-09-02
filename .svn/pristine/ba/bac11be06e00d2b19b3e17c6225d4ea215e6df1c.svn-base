@@ -1,0 +1,50 @@
+{
+    "userid": "___insurer_integration_service_user___",
+    "password": "___insurer_integration_service_password___",
+    "familyflag": "___travel_insurance_type___",
+    "puwFlag_out": "",
+    "travelpremiumin": {
+        "pspdiscount": "",
+        "ploading": "",
+        "ptodate": "___policy_end_date___",
+        "ptravelplan": "___Plan_Name___",
+        "pdateofbirth": "___member_1_birth_date___",
+        "pfromdate": "___policy_start_date___",
+        "pareaplan": "___areaname___",
+        "pdiscount": "___dbmaster_pb_pincode___"
+    },
+    "pTravelPremiumOut_out": {
+        "ploadingAmt": "",
+        "pextraCol": "",
+        "pfullTermPremium": "",
+        "pbasePremium": "",
+        "pdiscountAmt": "",
+        "pserviceTax": "",
+        "pextraCol2": "",
+        "peduCessAmt": "",
+        "ptotalPremium": "",
+        "pspDiscountAmt": "",
+        "pextraCol1": ""
+    },
+    "familyparamlist": [<!--InsurersDetail_Start-->
+        {
+            "pvassignee": "___member_array_first_name___ ___member_array_last_name___",
+            "pvpartnerid": "",
+            "pvrelation": "___member_array_relation___",
+            "pvname": "___member_array_first_name___ ___member_array_last_name___",
+            "pvpassportno": "ASASAS23S",
+            "pvage": "___member_array_age___",
+            "pvsex": "___member_array_gender___",
+            "pvdob": "___member_array_birth_date___"
+        }<!--InsurersDetail_End-->
+    ],
+    "pError_out": {
+        "errNumber": "",
+        "parName": "",
+        "property": "",
+        "errText": "",
+        "parIndex": "",
+        "errLevel": ""
+    },
+    "pErrorCode_out": "0"
+}

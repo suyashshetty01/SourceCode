@@ -1,0 +1,86 @@
+{
+    "getMotorPremium": {
+        "policyHeader": {
+            "messageId": "1234"
+        },
+        "policy": {
+            "contractType": "PCP",
+            "expiryDate": "___policy_end_date___ 00:00:00",
+            "inceptionDate": "___policy_start_date___ 00:00:00",
+            "previousPolicyEndDate": "___policy_expiry_date___",
+            "vehicle": {
+                "capacity": "___dbmaster_insurer_vehicle_seatingcapacity___",
+                "engineCpacity": "___dbmaster_insurer_vehicle_cubiccapacity___",
+                "make": "___dbmaster_insurer_vehicle_make_code___",
+                "regictrationCity": "MAHMUMBAI",
+                "registrationDate": "___vehicle_registration_date___",
+                "seatingCapacity": "___dbmaster_insurer_vehicle_seatingcapacity___",
+                "vehicleClass": "PCP",
+                "vehicleCoverage": {
+                    "item": [
+                        {
+                            "coverageId": "IDV Basic",
+                            "sumInsured": "___vehicle_expected_idv___"
+                        },
+                        {
+                            "coverageId": "PA Owner / Driver",
+                            "sumInsured": "Y"
+                        },
+                        {
+                            "coverageId": "TPPD",
+                            "sumInsured": "750000"
+                        },
+                        {
+                            "coverageId": "CNG Kit Company Fit",
+                            "sumInsured": "___external_bifuel_type_2___"
+                        },
+                        {
+                            "coverageId": "CNG Kit",
+                            "sumInsured": "___external_bifuel_value___"
+                        },
+                        {
+                            "coverageId": "Legal Liability to Driver",
+                            "sumInsured": "___is_llpd___"
+                        },
+                        {
+                            "coverageId": "PA to Passenger",
+                            "sumInsured": "___pa_unnamed_passenger_si_2___"
+                        },
+                        {
+                            "coverageId": "No Claim Bonus",
+                            "sumInsured": "___vehicle_ncb_current___"
+                        },
+                        {
+                            "coverageId": "Voluntary Excess",
+                            "sumInsured": "___voluntary_deductible___"
+                        },
+                        {
+                            "coverageId": "Anti-Theft",
+                            "sumInsured": "___is_antitheft_fit___"
+                        },
+                        {
+                            "coverageId": "Electrical Accessories",
+                            "sumInsured": "___electrical_accessory___"
+                        },
+                        {
+                            "coverageId": "Cost of Accessories",
+                            "sumInsured": "___non_electrical_accessory___"
+                        },
+                        {
+                            "coverageId": "AAI Discount",
+                            "sumInsured": "___is_aai_member___"
+                        }
+                    ]
+                },
+                "vehicleSubclass": "PCP",
+                "yearOfManufacture": "___vehicle_manf_year___",
+                "zcover": "CO"
+            }
+        },
+        "partner": {
+            "partnerBranch": "___insurer_integration_location_code___",
+            "partnerCode": "___insurer_integration_agent_code___",
+            "partnerSubBranch": "___insurer_integration_location_code___"
+        }
+    }
+}

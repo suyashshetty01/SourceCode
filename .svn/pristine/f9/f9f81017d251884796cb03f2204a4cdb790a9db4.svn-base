@@ -1,0 +1,51 @@
+{  
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 12,
+    "IsActive": 1,
+    "Agent_Code": "POLICYBOSS",
+    "Location_Code": "130200",
+    "Service_User": "policyboss1",
+    "Service_Password": "boss@12345",
+    "Payment_Gateway_URL": "https://pgi.billdesk.com/pgidsk/PGIMerchantPayment",
+    "Name": "NewIndia::Motor",
+    "Lib_Class": "NewIndiaMotor",
+    "Method_List": [         
+        {
+            "Method_Id": 7,
+            "Method_Name": "",
+            "Method_Type_ID": 2,
+            "Method_Action": "calculatePremium",
+            "Method_Request_File": "",
+            "Method_Calling_Type": "",
+            "WSDL_URL": null,
+            "Service_URL": "https://uatapps.newindia.co.in/B2B/LandmarkIns",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 12
+        }
+    ],
+    "Plan_List": [
+        {
+            "Plan_Id": 9,
+            "Plan_Name": "Basic",
+            "Plan_Addon_List": {
+                "nia_package_name": "PACKAGE"
+            },
+            "Is_Active": true
+        },
+        {
+            "Plan_Id": 10,
+            "Plan_Name": "All-Addon",
+            "Plan_Addon_List": {
+                "nia_package_name": "EHMNTCOVER"
+            },
+            "Is_Active": false
+        }
+    ]
+}

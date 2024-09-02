@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Policyboss - Transaction Details</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div class="logo"><img src="Image/PB_logo.png"></div>
+	<div class="container">
+		<div class="title">Wallet Available Balance : &#8377; <label id="balance"></label></div>
+	<form name="myForm" method="post" action="" style="align-content: center;">
+		<p>Transaction Details</p>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Customer Name :
+				</label><br>
+				<input type="text" id="username" autocomplete="off" name="username" placeholder="Customer Name" required>
+			</div>
+			<div class="col-md-6">
+				<label> 
+					CRN :
+				</label><br>
+				<input type="text" id="crn" autocomplete="off" name="crn" placeholder="CRN" required>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<label>
+					Product Name :
+				</label><br>
+				<input type="text" id="product" autocomplete="off" name="product" placeholder="Product Name" required>
+			</div>
+			<div class="col-md-6">
+				<label>
+					Premium Amount :
+				</label><br>
+				<input type="text" id="amount" autocomplete="off" name="amount" placeholder="Premium Amount" required>	
+			</div>
+		</div>
+		<div class="row button">
+			<div class="col-md-6">
+				<button type="submit" class="cancel">CANCEL</button>
+			</div>
+			<div class="col-md-6">
+				<button type="button" class="submit">PROCEED</button>
+			</div>
+		</div>
+	</form>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,176 @@
+{
+    "ClientCreation": {
+        "salutation": "Mr",
+        "firstName": "___first_name___",
+        "middleName": "___middle_name___",
+        "lastName": "___last_name___",
+        "dateofBirth": "___birth_date___",
+        "gender": "___member_1_gender___",
+        "educationalQualification": "",
+        "pinCode": "___permanent_pincode___",
+        "uidNo": "",
+        "maritalStatus": "Single",
+        "nationality": "Indian",
+        "occupation": "O001",
+        "primaryEmailID": "___email___",
+        "contactMobileNo": "___mobile___",
+        "stdLandlineNo": "",
+        "panNo": "",
+        "passportNumber": "",
+        "contactPerson": "",
+        "annualIncome": "___health_insurance_si___",
+        "remarks": "Remarks",
+        "startDate": "___policy_start_date___",
+        "endDate": "___policy_end_date___",
+        "IdProof": "",
+        "residenceProof": "",
+        "ageProof": "",
+        "others": "",
+        "homeAddressLine1": "MUMBAI",
+        "homeAddressLine2": "",
+        "homeAddressLine3": "MAHARASHTRA",
+        "homePinCode": "___permanent_pincode___",
+        "homeArea": "MUMBAI",
+        "homeContactMobileNo": "___mobile___",
+        "homeContactMobileNo2": "",
+        "homeSTDLandlineNo": "",
+        "homeSTDLandlineNo2": "",
+        "homeFaxNo": "",
+        "sameAsHomeAddress": "",
+        "mailingAddressLine1": "MUMBAI",
+        "mailingAddressLine2": "",
+        "mailingAddressLine3": "MAHARASHTRA",
+        "mailingPinCode": "___permanent_pincode___",
+        "mailingArea": "MUMBAI",
+        "mailingContactMobileNo": "___mobile___",
+        "mailingContactMobileNo2": "",
+        "mailingSTDLandlineNo": "",
+        "mailingSTDLandlineNo2": "",
+        "mailingFaxNo": "",
+        "bankAccountType": "",
+        "bankAccountNo": "",
+        "ifscCode": "",
+        "GSTIN": "fggfg"
+    },
+    "PolicyCreationRequest": {
+        "Product_Code": "___product_code___",
+        "Plan_Code": "___Plan_Code___",
+        "SumInsured_Type": "___suminsured_type___",
+        "Policy_Tanure": "___policy_tenure___",
+        "Member_Type_Code": "___get_member_type___",
+        "intermediaryCode": "___intermediary_code___",
+        "intermediaryBranchCode": "400401",
+        "agentSignatureDate": "",
+        "Customer_Signature_Date": "",
+        "businessSourceChannel": "",
+        "leadID": "Vendor001",
+        "IsPayment": 0,
+        "OfficeCode": "",
+        "Source_Name": "PolicyBoss",
+        "IsQuotationRequired": "1",
+        "familyDoctor": {
+            "fullName": "",
+            "qualification": "",
+            "emailId": "",
+            "RegistrationNumber": "",
+            "addressLine1": "",
+            "addressLine2": "",
+            "pinCode": "",
+            "contact_number": ""
+        }
+    },
+    "MemObj": {
+        "Member": [<!--InsurersDetail_Start-->
+            {
+                "MemberNo": "___member_array_inc___",
+                "Salutation": "___member_array_salutation___",
+                "First_Name": "___member_array_first_name___",
+                "Middle_Name": "",
+                "Last_Name": "___member_array_last_name___",
+                "Gender": "___member_array_gender___",
+                "DateOfBirth": "___member_array_birth_date___",
+                "Relation_Code": "___member_array_relation___",
+                "Marital_Status": "Single",
+                "height": "150",
+                "weight": "53",
+                "occupation": "O001",
+                "PrimaryMember": "Y",
+                "optionalCovers": [
+                    {
+                        "optionalCoverName": "",
+                        "optionalCoverValue": ""
+                    }
+                ],
+                "productComponents": [
+                    {
+                        "productComponentName": "SumInsured",
+                        "productComponentValue": "___member_array_si___"
+                    }
+                ],
+                "MemberPED": [
+                    {
+                        "PEDCode": "",
+                        "Remarks": ""
+                    }
+                ],
+                "MemberQuestionDetails": [],
+                "exactDiagnosis": "",
+                "dateOfDiagnosis": "",
+                "lastDateConsultation": "",
+                "detailsOfTreatmentGiven": "",
+                "doctorName": "",
+                "hospitalName": "",
+                "phoneNumberHosital": "",
+                "labReport": "",
+                "dischargeCardSummary": "",
+                "personalHabitDetail": [
+                    {
+                        "numberOfYears": "",
+                        "count": "",
+                        "type": ""
+                    },
+                    {
+                        "numberOfYears": "",
+                        "count": "",
+                        "type": ""
+                    },
+                    {
+                        "numberOfYears": "",
+                        "count": "",
+                        "type": ""
+                    }
+                ]
+            }<!--InsurersDetail_End-->
+        ],
+        "Nominee_First_Name": "",
+        "Nominee_Last_Name": "",
+        "Nominee_Contact_Number": "",
+        "Nominee_Home_Address": "",
+        "Member_Bank_IFSCCode": "",
+        "Member_Bank_MICRCode": "",
+        "Nominee_Relationship_Code": ""
+    },
+    "ReceiptCreation": {
+        "officeLocation": "Mumbai",
+        "modeOfEntry": "DIRECT",
+        "cdAcNo": "",
+        "expiryDate": "",
+        "payerType": "Proposer",
+        "payerCode": "",
+        "paymentBy": "Customer",
+        "paymentByName": "___first_name___ ___last_name___",
+        "paymentByRelationship": "R001",
+        "collectionAmount": "",
+        "collectionRcvdDate": "___current_date___",
+        "collectionMode": "Online Collections",
+        "remarks": "",
+        "instrumentNumber": "___instrument_number___",
+        "instrumentDate": "___current_date___",
+        "bankName": "",
+        "branchName": "",
+        "bankLocation": "",
+        "micrNo": "",
+        "chequeType": "",
+        "ifscCode": ""
+    }
+}

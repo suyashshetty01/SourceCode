@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta itemprop="title" content="Policy Boss">
+    <meta name="keywords" content="Policy Boss">
+    <meta itemprop="description" content="Policy Boss">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!-- Required meta tags End -->
+    <title>Policy Boss | Health Insurance</title>
+
+    <!-- FAVICON -->
+    <% include UI22/website_header_link %>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div class="overlay-appear"></div>
+
+    <div class="bg-light-gradient home-bg">
+        <!----------------------------------------- Header Section ------------------------------------------>
+        
+        <% include UI22/website_header %>
+
+        <!-------------------------------------- Home Banner Section ---------------------------------------->
+        <div class="home-banner-section health-insurance-home-banner-section section-padding pedding-bottom-0">
+            <a class="dashboardIcon" style="display:none">
+                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/dashboard-icon.png" class="dashboardImg" id="menu1" alt="" onclick="navDashBoard()">
+            </a>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mob-order-2">
+                        <div class="banner-detail-area">
+                            <h1 class="banner-title font-36">Health Insurance</h1>
+                            <div class="get-buddy-box">
+                                <p class="get-buddy-text font-20 block">Compare & Buy Best Fit Health Insaurance</p>
+
+                                <!--Hidd ibuddy functionality-->
+                                <!--<form class="validate-form" id="landing-banner-form">
+                                    <div class="input-area">
+                                        <div class="input-inner-box">
+                                            <input inputmode="numeric" name="number" id="findBuddyInput" class="home-banner-input input-field js-input-group" type="tel"
+                                                pattern="\d*" placeholder="Enter your mobile number" />
+                                        </div>
+                                        <button type="button" class="main-btn find-btn" id="findMyBuddyBtn">Find My iBuddy</button>
+                                    </div>
+                                </form>
+                                <span class="separator block">
+                                <span class="separator-text font-18 text-lightgrey">or</span>
+                                </span>
+
+                                <div class="tab-content hideDiv" id="pills-tabContent">-->
+
+                                <!-- Health Input start -->
+                                
+                                <% include health-popup %>
+                                <!-- Health Input close -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mob-order-1">
+                        <div class="home-banner-image-box">
+                            <img src="https://origin-cdnh.policyboss.com/website/UI22/images/insurance-landing-page/health-insurance-banner-image.png" alt="PolicyBoss" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------ insurance overview Section -------------------------------------->
+    <div class="insurance-overview-section health-insurance-overview-section section-padding">
+        <div class="container">
+            <div class="insurance-overview-area text-center">
+                <div class="insurance-overview-box">
+                    <h2 class="sub-title font-36 weight-700">Health Insurance & its Type</h2>
+                    <p class="font-18 insurance-overview-description">Health Insurance is also known as Mediclaim. It helps you to cover expenses related to hospitalisation
+                        arising out of any accident or medical disease. Once you buy Health Insurance, all or part of your
+                        expenses incurred in hospital will be paid by the Insurance company.
+                    </p>
+                </div>
+
+                <div class="insurance-type-area">
+                    <div class="benefits-row">
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/individual-health-insurance.svg" alt="Individual Health Insurance" />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text"> Individual Health Insurance
+                                    </h3>
+                                    <p class="font-18 text-extralight">It covers only a single Individual under the Health Insurance Policy. Insurance policy
+                                        will cover medical expenses related to hospitalisation, injury, room rent etc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/family-health-insurance.svg" alt="Family Floater Health Insurance
+                                    " />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text">Family Floater Health Insurance
+                                    </h3>
+                                    <p class="font-18 text-extralight">It covers the whole family of 2 or more person under a single health insurance policy.
+                                        Insurance Cover under this policy can be utilised by 1 person or all the members
+                                        covered under this policy. This is beneficial because the premium is comparatively
+                                        lower as compared to Individual Health Insurance policy for all members
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="benefits-col">
+                            <div class="benefits-box">
+                                <div class="icon-box">
+                                    <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/group-health-insurance.svg" alt="Group Health Insurance" />
+                                </div>
+                                <div class="inner-detail-box">
+                                    <h3 class="font-18 title-text">Group Health Insurance</h3>
+                                    <p class="font-18 text-extralight">Group Policy is mainly designed for corporates where group of employees are working together.
+                                        This policy is offered to employees at a very low cost premium.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------ key feature Section -------------------------------------->
+    <!-- <div class="key-features-section section-padding bg-light-blue">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Key Feature Table</h2>
+            </div>
+            <div class="key-feature-table-area">
+                <table class="table table-responsive">
+                    <tr>
+                      <th><span>  What Is Covered?</span></th>
+                      <th><span>Third-Party </span></th>
+                      <th><span>Comprehensive </span></th>
+                    </tr>
+                    <tr>
+                      <td><span>Third-Party Vehicle Damage</span></td>
+                      <td>
+                        <span>
+                            <img src="images/icons/not-included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                            <img src="images/icons/not-included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span>Third-Party Property Damage</span></td>
+                      <td>
+                        <span>
+                            <img src="images/icons/included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                            <img src="images/icons/not-included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span>Own Vehicle Damage</span> </td>
+                      <td>
+                        <span>
+                            <img src="images/icons/included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                            <img src="images/icons/included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span>Vehicle Theft</span></td>
+                      <td>
+                        <span>
+                            <img src="images/icons/not-included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                      <td> <span>Through add-on</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>Fire Damage</span></td>
+                      <td>
+                        <span>
+                            <img src="images/icons/not-included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                            <img src="images/icons/included-icon.svg" alt="" />
+                        </span>
+                      </td>
+                    </tr>
+                </table>
+            </div>
+            <button class="view-more-btn font-18">View More</button>
+        </div>
+    </div> -->
+
+    <!-------------------------------------- importance Section ---------------------------------------->
+    <!-- <div class="importance-section section-padding">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Why Car Insurance is Important?</h2>
+            </div>
+            <div class="importance-listing-area">
+                <div class="importance-listing-box">
+                    <div class="main-row">
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/physical-damage-icon.png" alt="Physical Damage to Your Car" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Physical Damage to Your Car</h3>
+                                        <p class="font-14 text-extralight">Protection from Repair expenses for your car resulting from an accident Protection from Repair expenses for your car resulting from an accident..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/third-party-liability.png" alt="Liability Towards Third-Party" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Liability Towards Third-Party</h3>
+                                        <p class="font-14 text-extralight">Protection from Legal Liability arising from death or disability of third-party due to an accident with your car.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/property-liability.png" alt="Liability Towards Property" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Liability Towards Property</h3>
+                                        <p class="font-14 text-extralight">Protection from Legal Liability arising from death or disability of third-party due to an accident with your car.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/accident-cover-icon.png" alt="Personal Accident Cover" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Personal Accident Cover</h3>
+                                        <p class="font-14 text-extralight">Protection from Legal Liability arising from death or disability of third-party due to an accident with your car.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/law-icon.png" alt="Mandatory by Law" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Mandatory by Law</h3>
+                                        <p class="font-14 text-extralight">Protection from Repair expenses for your car resulting from an accident Protection from Repair expenses for your car resulting from an accident..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/peace-of-mind-icon.png" alt="Complete Peace of Mind" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Complete Peace of Mind</h3>
+                                        <p class="font-14 text-extralight">Protection from Legal Liability arising from death or disability of third-party due to an accident with your car.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/natural-calamaties-icon.png" alt="Cover from Natural Calamities" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Cover from Natural Calamities</h3>
+                                        <p class="font-14 text-extralight">Protection from Repair expenses for your car resulting from an accident Protection from Repair expenses for your car resulting from an accident.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/event-icon.png" alt="Man Made Events" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Man Made Events</h3>
+                                        <p class="font-14 text-extralight">Protection from Legal Liability arising from death or disability of third-party due to an accident with your car.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/damage-icon.png" alt="Other Damage or Loss" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Other Damage or Loss</h3>
+                                        <p class="font-14 text-extralight">Protection from Repair expenses for your car resulting from an accident.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box">
+                                        <img src="images/icons/cashless-icon.png" alt="Cashless Service" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Cashless Service</h3>
+                                        <p class="font-14 text-extralight">Protection from Repair expenses for your car resulting from an accident.car resulting from an accident Protection from Repair expenses for your car </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-------------------------------------- policy cover Section ---------------------------------------->
+    <div class="benefits-section health-insurance-policy-cover-section section-padding bg-light-blue">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">What does Health Insurance Policy Cover? </h2>
+            </div>
+            <div class="benefits-listing-area">
+                <div class="benefits-row">
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/expenses-before-hospitalisation.svg" alt="Expenses Before Hospitalisation" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Expenses Before Hospitalisation
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/ambulance-charges.svg" alt="Ambulance Charges" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Ambulance Charges</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/hospitalisation-expenses.svg" alt="Hospitalisation Expenses " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Hospitalisation Expenses </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/expenses-after-hospitalisation.svg" alt="Expenses after Hospitalisation " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Expenses after Hospitalisation </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/acidential-hospitalisation.svg" alt="Accidental Hospitalisation" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Accidental Hospitalisation</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/critical-illness.svg" alt="Critical Illness " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Critical Illness </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/surgeries.svg" alt="Surgeries " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Surgeries </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/health-check-ups.svg" alt=" Health CheckUps " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text"> Health CheckUps </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/day-care-treatment.svg" alt="Day Care Treatment" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Day Care Treatment</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------- What to look Section ---------------------------------------->
+    <div class="importance-section section-padding">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">What to look for in Health Insurance?</h2>
+            </div>
+            <div class="importance-listing-area">
+                <div class="importance-listing-box">
+                    <div class="main-row">
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/insurance-cover.svg" alt="Insurance Cover" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Insurance Cover </h3>
+                                        <p class="font-18 text-extralight">Medical Expenses are increasing day by day therefore you should buy insurance cover
+                                            which is sufficient at the time of claim. Insurance cover of 10 lakh and above
+                                            is a good cover to buy Health insurance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/room-rent.svg" alt="Room Rent  " />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Room Rent </h3>
+                                        <p class="font-18 text-extralight">Room Rent is the most critical feature of any Health Insurance Policy as it has direct
+                                            effect on Claims. Look for Policy which has minimum of Single Private Room and
+                                            preferably No Limit. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/copay.svg" alt="Copay" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Copay</h3>
+                                        <p class="font-18 text-extralight">You need to be sure that insurance company is paying the complete bill at the time
+                                            of claim therefore look for policies with 0% Copay clause.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/existing-disease-waiting-period.svg" alt="Existing Disease Waiting Period" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Existing Disease Waiting Period</h3>
+                                        <p class="font-18 text-extralight">Waiting Period for any Existing Disease can lead to claim rejection if any claim
+                                            arises between that period, therefore look for policies with least waiting period.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/cashless-hospital.svg" alt="Cashless Hospital " />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Cashless Hospital </h3>
+                                        <p class="font-18 text-extralight">You would not want to end up paying from your pocket first and than getting that
+                                            reimbursed by insurance company after 15-20 days, therefore it is better to look
+                                            for policy which has tie up with Hospitals in your area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="horizontal-row">
+                                <div class="horizontal-col">
+                                    <div class="inner-icon-box bg-blue-shade-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/premium.svg" alt="Premium" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Premium</h3>
+                                        <p class="font-18 text-extralight">Most of the people give highest importance to Premium while buying Health Insurance
+                                            but in fact you should evaluate your requirement first and than whichever insurer
+                                            provide best value at the lowest price should be considered for buying health
+                                            insurance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="importance-section section-padding">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">What to look for in Car Insurance?</h2>
+            </div>
+            <div class="importance-listing-area">
+                <div class="importance-listing-box">
+                    <div class="main-row">
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="what-covered-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Insurance Cover </h3>
+                                        <p class="font-18 text-extralight">Medical Expenses are increasing day by day therefore you should buy insurance cover which is sufficient at the time of claim. Insurance cover of 10 lakh and above is a good cover to buy Health insurance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="what-covered-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Room Rent </h3>
+                                        <p class="font-18 text-extralight">Room Rent is the most critical feature of any Health Insurance Policy as it has direct effect on Claims. Look for Policy which has minimum of Single Private Room and preferably No Limit. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="what-covered-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Copay</h3>
+                                        <p class="font-18 text-extralight">You need to be sure that insurance company is paying the complete bill at the time of claim therefore look for policies with 0% Copay clause.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="horizontal-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Existing Disease Waiting Period</h3>
+                                        <p class="font-18 text-extralight">Waiting Period for any Existing Disease can lead to claim rejection if any claim arises between that period, therefore look for policies with least waiting period.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="what-covered-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text">Cashless Hospital 
+                                        </h3>
+                                        <p class="font-18 text-extralight">You would not want to end up paying from your pocket first and than getting that reimbursed by insurance company after 15-20 days, therefore it is better to look for policy which has tie up with Hospitals in your area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-col">
+                            <div class="what-covered-row">
+                                <div class="what-covered-col">
+                                    <div class="icon-box">
+                                        <img src="images/icons/included-check.svg" alt="check" />
+                                    </div>
+                                </div>
+                                <div class="what-covered-col">
+                                    <div class="inner-description-box">
+                                        <h3 class="font-18 title-text"> Premium</h3>
+                                        <p class="font-18 text-extralight">Most of the people give highest importance to Premium while buying Car Insurance but in fact you should evaluate Car Premium basis all the above mentioned parameters. Whichever Insurance company suffices your requirement and provide best value at the lowest price should be considered for buying car insurance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-------------------------------------- benefits Section ---------------------------------------->
+    <div class="benefits-section health-insurance-benefits-section section-padding bg-light-blue">
+        <div class="container">
+            <div class="title-box">
+                <h2 class="sub-title font-36 weight-700 text-center">Benefits of Health Insurance</h2>
+            </div>
+            <div class="benefits-listing-area">
+                <div class="benefits-row">
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/financial-security.svg" alt="Financial Security " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Financial Security </h3>
+                                <p class="font-15 text-extralight">1 Critical Illness or Major accident can wash away your hard earned savings of lifetime.
+                                    Health Insurance helps you to keep your savings intact by providing financial assistance
+                                    at the time of emergency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/mental-peace.svg" alt="Mental Peace" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Mental Peace</h3>
+                                <p class="font-15 text-extralight">With Health Insurance you will not have to worry about financing the hospital bills for emergency
+                                    situations like accident or any illness. You will have complete peace of mind without
+                                    worrying about future.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/seasonal-illnes.svg" alt="Covers Both Illness & Accident " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Covers Both Illness & Accident
+                                </h3>
+                                <p class="font-15 text-extralight">Health Insurance not only covers treatment for accident but it will also cover critical illness
+                                    like Cancer, Heart Attack, Paralysis etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/hospitalization-treatment.svg" alt="Covers Existing Diseases" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Covers Existing Diseases</h3>
+                                <p class="font-15 text-extralight">Existing Disease at the time of buying the policy will have waiting period of 1-4 years but
+                                    you can be rest assured as these will get covered after the waiting period is over.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/cashless-hospital.svg" alt="Cashless Treatment" />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Cashless Treatment</h3>
+                                <p class="font-15 text-extralight">Health Insurance will provide Cashless Treatment at the Network Hospital which means you
+                                    do not have to pay hospital bills upfront from your pocket, insurance company will directly
+                                    settle the hospital bills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-col">
+                        <div class="benefits-box">
+                            <div class="icon-box">
+                                <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/tax-benifits.svg" alt="Tax Benefit " />
+                            </div>
+                            <div class="inner-detail-box">
+                                <h3 class="font-18 title-text">Tax Benefit </h3>
+                                <p class="font-15 text-extralight">Premium paid for Health Insurance is eligible for deduction under section 80 D which means
+                                    you will save tax on it. You will be able to get tax deduction of upto Rs. 75,000 in
+                                    a financial year.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------- Footer Section ------------------------------------------>
+    
+    <% include UI22/website_footer %>
+     <div class="loading" style="display: none; position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 9999;background-color: #0000007a;" >
+        <img src="https://origin-cdnh.policyboss.com/website/UI22/images/icons/loading.gif" style="-webkit-user-select: none;height: 120px; position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);">
+    </div> 
+
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js" integrity="sha512-yrOmjPdp8qH8hgLfWpSFhC/+R9Cj9USL8uJxYIveJZGAiedxyIxwNw4RsLDlcjNlIRR4kkHaDHSmNHAkxFTmgg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/validate_init.js"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!--<script src="https://www.policyboss.com/UI22/js/motor.js"></script>-->
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/motor.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/custom.js"></script>
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/handle_Url.js"></script>
+    <!--<script src="js/website_custom.js"></script>-->
+    <script src="https://origin-cdnh.policyboss.com/website/UI22/js/website_validate_init.js"></script>
+
+    <script>
+        var tempGlobalModal = '';
+        $(document).ready(function () {
+
+            $('.language-dropdown-select').select2();
+            $('.selectpicker').selectpicker();
+            //Datepicker
+            $('.common-datepicker').datepicker({
+                format: "dd-M-yyyy",
+                viewMode: 'years',
+                changeMonth: false,
+                changeYear: false,
+                maxViewMode: 0,
+                startDate: new Date(),
+                endDate: '+7d'
+            });
+            $('.dob-datepicker').datepicker({
+                format: "dd-M-yyyy",
+            });
+            $('.common-timepicker').timepicker({
+                icons:
+                {
+                    up: 'fa fa-angle-up',
+                    down: 'fa fa-angle-down'
+                },
+                format: 'LT',
+                defaultTime: ''
+            });
+
+            $('#findMyBuddyBtn').click(function (e) {
+                $('.product-slider-area').removeClass('open');
+                if ($("#landing-banner-form").valid()) {
+                    var modal
+                    if ($('#findBuddyInput').val() == '9898989898') {
+                        $('#triggerNoRecordFoundModal').trigger('click');
+                    } else {
+                        $('#triggerStaticBackdropModal').trigger('click');
+                    }
+                }
+            })
+            $('#doItYourselfBtn').click(function (e) {
+                $('#triggerDoItYourselfModal').trigger('click');
+                $("#view-quote-form").valid();
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>

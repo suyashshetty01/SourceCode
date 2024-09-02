@@ -1,0 +1,26 @@
+<TPPremium>
+    <AgentCode>___insurer_integration_agent_code___</AgentCode>
+    <ProductCode>___product_code___</ProductCode>
+    <vehicleModelCode>___dbmaster_insurer_vehicle_model_code___</vehicleModelCode>
+    <Num_Of_Paid_Driver>___pa_paid_driver_si_num___</Num_Of_Paid_Driver>
+    <Num_Of_SI_Paid_Driver>___pa_paid_driver_si___</Num_Of_SI_Paid_Driver>
+    <Num_Of_UnNamedPasgr>___dbmaster_insurer_vehicle_seatingcapacity___</Num_Of_UnNamedPasgr>
+    <Num_Of_SI_UnNamedPasgr>___pa_unnamed_passenger_si___</Num_Of_SI_UnNamedPasgr>
+    <Num_Of_NamedPasgr>0</Num_Of_NamedPasgr><!--Fix_Value-->
+    <Num_Of_SI_NamedPasgr>0</Num_Of_SI_NamedPasgr><!--Fix_Value-->
+    <IB_LPG_CNGKit>___is_external_bifuel_3___</IB_LPG_CNGKit>
+    <EX_LPG_CNGKit>___is_external_bifuel_2___</EX_LPG_CNGKit>
+    <Num_Of_LL_Drivers>0</Num_Of_LL_Drivers><!--Fix_Value 0-->
+    <Num_Of_LL_Employee>0</Num_Of_LL_Employee>
+    <Num_Of_Trailers>0</Num_Of_Trailers>
+    <TPPD>___is_tppd___</TPPD>
+    <CustomerType>___vehicle_registration_type___</CustomerType>
+    <UnNamed_Pillion>N</UnNamed_Pillion><!--Fix_Value-->
+    <SI_Unnamed_Pillion>0</SI_Unnamed_Pillion><!--Fix_Value-->
+    <Num_Eff_Driving_Lic>___is_pa_od___</Num_Eff_Driving_Lic>
+    <Distance_To_From>0</Distance_To_From><!--Fix_Value-->
+    <RTO_Location_Code>___dbmaster_insurer_rto_city_code___</RTO_Location_Code>
+    <Policy_Effective_From_Date>___policy_start_date___</Policy_Effective_From_Date>
+    <POSPCOde></POSPCOde>
+    <PolicyTenure>___policy_tp_tenure___</PolicyTenure>
+</TPPremium>

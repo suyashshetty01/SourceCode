@@ -1,0 +1,67 @@
+{  
+   "TravellingRegionId":___travelling_region_id___,
+   "UniqueRequestID": "",
+   "TravelDays":___travel_days___,
+   "IsAnnualMultiTrip":___is_annual_multi_trip___,
+   "MaxAnnualTravelDays":___maximum_duration___,
+   "DepartureDate":"___policy_start_date___T00:00:00",
+   "ReturnDate":"___policy_end_date___T00:00:00",
+   "TravellingTo":"___placeOfVisit___",
+   "ConfigurationParam":{  
+      "AgentCode":"___insurer_integration_agent_code___"
+   },
+   "UserInfo":{
+      "IsCustomerAuthenticated":1,
+      "AuthentificationType":"otp"
+   },
+   "ProposalDetails":[  
+      {  
+         "QuoteSequenceNo":1,
+         "PlanDetail":{  
+            "PlanName":"___dbmaster_pb_plan_name___",
+            "AdultCount":___adult_count___,
+            "ChildCount":___child_count___,
+            "InsuredAge":___member_1_age_1___,
+            "BasePemiumAmount": ___net_premium___,
+            "TotalPremiumAmount": ___final_premium___,
+            "TaxAmount": ___service_tax___,
+            "TripTypeId":___trip_type_id___
+         },
+         "ProposerDetails":{  
+            "Salutation":"___salutation___",
+            "FirstName":"___first_name___",
+            "MiddleName":"___middle_name___",
+            "LastName":"___last_name___",
+            "DateOfBirth":"___birth_date___T00:00:00",
+            "Email":"___email___",
+            "MobileNo":"___mobile___",
+            "PinCode":"___permanent_pincode___",
+            "State":"___permanent_state___",
+            "StateId":___permanent_state_code___,
+            "City":"___permanent_city___",
+            "CityId":___permanent_city_code___,
+            "StreetSectorArea":"___permanent_address_2___ ___permanent_address_3___",
+            "HouseNo":"___permanent_address_1___",
+            "PanCard":null,
+            "GstInNo":null
+         },
+         "InsuredDetails":[ 
+            <!--InsurersDetail_Start-->
+            {  
+               "InsuredType":"___member_array_insured_type___",
+               "Salutation":"___member_array_salutation___",
+               "FullName":"___member_array_fullName___",
+               "DateOfBirth":"___member_array_birth_date___T00:00:00",
+               "PassportNo":"___member_array_passport___",
+               "Diseases":null,
+               "NomineeName":"___member_array_nominee_name___",
+               "NomineeAge":___member_array_nominee_age___,
+               "NomineeRelationship":"___member_array_nominee_rel___",
+               "InsuredAge":___member_array_age_1___,
+               "InsuredRelationship":"___member_array_relation___"
+            } 
+            <!--InsurersDetail_End-->
+         ]
+      }
+   ]
+}

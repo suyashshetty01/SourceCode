@@ -1,0 +1,87 @@
+{  
+    "Product_Insurer_ID": 7,
+    "Insurer_ID": 10,
+    "IsActive": 1,
+    "Agent_Code": "AG026676",
+    "Location_Code": null,
+    "Service_User": "OZ103736",
+    "Service_Password": "310ZQmv/bYJMYrWQ1iYa7s43084=",
+    "Payment_Gateway_URL": "https://www.royalsundaram.net/web/dtctest/paymentgateway",
+    "Name": "RoyalSundaram::Motor",
+    "Lib_Class": "RoyalSundaramMotor",
+    "Method_List": [         
+        {
+            "Method_Id": 7,
+            "Method_Name": "Royal_Car_Premium",
+            "Method_Type_ID": 2,
+            "Method_Action": "calculatePremium",
+            "Method_Request_File": "",
+            "Method_Calling_Type": "",
+            "WSDL_URL": null,
+            "Service_URL": "http://www.royalsundaram.net/DTCPWS/Services/Product/PrivateCar/CalculatePremium",
+            "Service_File": null,
+            "Checkpoint_URL": null,
+            "Service_User": "",
+            "Service_Password": "",
+            "Product_Insurer_ID": 1,
+            "IsActive": true,
+            "Method_Type": "Premium",
+            "Product_Id": 1,
+            "Insurer_Id": 10
+        }
+    ],
+    "Plan_List": [ 
+        {
+            "Plan_Id": 23,
+            "Plan_Name": "Basic",
+            "Plan_Addon_List": {
+                "addon_zero_dep_cover": "no",
+                "addon_road_assist_cover": "no",
+                "addon_ncb_protection_cover": "no",
+                "addon_engine_protector_cover": "no",
+                "addon_invoice_price_cover": "no",
+                "addon_key_lock_cover": "no",
+                "addon_consumable_cover": "no",
+                "addon_daily_allowance_cover": "no",
+                "addon_windshield_cover": "no",
+                "addon_passenger_assistance_cover": "no",
+                "addon_tyre_coverage_cover": "no",
+                "addon_personal_belonging_loss_cover": "no",
+                "addon_inconvenience_allowance_cover": "no",
+                "addon_medical_expense_cover": "no",
+                "addon_hospital_cash_cover": "no",
+                "addon_ambulance_charge_cover": "no",
+                "addon_rodent_bite_cover": "no",
+                "addon_losstime_protection_cover": "no",
+                "addon_hydrostatic_lock_cover": "no"
+            },
+            "Is_Active": true
+        }, 
+        {
+            "Plan_Id": 24,
+            "Plan_Name": "All-Addon",
+            "Plan_Addon_List": {
+                "addon_zero_dep_cover": "yes",
+                "addon_road_assist_cover": "yes",
+                "addon_ncb_protection_cover": "yes",
+                "addon_engine_protector_cover": "yes",
+                "addon_invoice_price_cover": "yes",
+                "addon_key_lock_cover": "yes",
+                "addon_consumable_cover": "yes",
+                "addon_daily_allowance_cover": "yes",
+                "addon_windshield_cover": "yes",
+                "addon_passenger_assistance_cover": "yes",
+                "addon_tyre_coverage_cover": "yes",
+                "addon_personal_belonging_loss_cover": "yes",
+                "addon_inconvenience_allowance_cover": "yes",
+                "addon_medical_expense_cover": "yes",
+                "addon_hospital_cash_cover": "yes",
+                "addon_ambulance_charge_cover": "yes",
+                "addon_rodent_bite_cover": "yes",
+                "addon_losstime_protection_cover": "yes",
+                "addon_hydrostatic_lock_cover": "yes"
+            },
+            "Is_Active": true
+        }
+    ]
+}

@@ -1,0 +1,236 @@
+{
+   "enquiryId": "___enquiryId___",
+   "partnerName": "AGENT",
+   "payment": {
+      "paymentType": "ONLINE",
+      "paymentDate": "___current_date___"
+   },
+   "contract": {
+      "policyType": "___policyType___",
+      "imd": "___imd___",
+      "startDate": "___policy_start_date___",
+      "policyNumber": null,
+      "subInsuranceProductCode": "___subInsuranceProductCode___",
+      "nonAbsProductCode": "___nonABSProductCode___",
+      "policyPeriod": ___policy_tenure___
+   },
+   "kyc": {
+        "isKYCDone": false,
+        "ckycReferenceDocId": "D07",
+        "ckycReferenceNumber": "",
+        "dateOfBirth": "___birth_date___",
+        "photo": "___photo_doc___"
+  },
+   "persons": [ <!--InsurersDetail_Start-->
+      {
+         "personType": "NATURALPERSON",
+        "isPrimaryInsuredPerson": ___member_array_isPrimaryInsuredPerson___,
+        "isPolicyHolder": true,
+        "isPrimaryPolicyHolder": ___member_array_isPrimaryInsuredPerson___,
+        "isPayer": true,
+        "isInsuredPerson": ___member_array_isPrimaryInsuredPerson___,
+         "uniqueIdentifier": null,
+         "firstName": "___member_array_first_name___",
+         "middleName": "___member_array_middle_name___",
+         "lastName": "___member_array_last_name___",
+         "dateOfbirth": "___member_array_birth_date___",
+         "profession": "___member_array_occupation___",
+         "gender": "___member_array_gender_2___",
+         "relationship": "___member_array_rel___",
+         "maritalStatus": "___member_array_marital_status___",
+         "physicalCharacteristics": {
+            "height": "___member_array_height___",
+            "weight": "___member_array_weight___"
+         },
+         "nominee": {
+            "firstName": "___member_array_nominee_fname___",
+            "middleName": "___member_array_middle_name___",
+            "lastName": "___member_array_nominee_lname___",
+            "dateOfbirth": "___member_array_nominee_dob___",
+            "profession": null,
+            "relationship": "___member_array_nominee_rel___"
+         },
+         "addresses": [
+            {
+               "flatNumber": null,
+               "streetNumber": null,
+               "street": "___permanent_address_1___, ___permanent_address_2___, ___permanent_address_3___",
+               "pincode": "___permanent_pincode___",
+               "zone": "___zone___"
+            }
+         ],
+         "communications": [
+            {
+               "communicationType": "EMAIL",
+               "communicationId": "___email___",
+               "isPrefferedCommunication": true
+            },
+            {
+               "communicationType": "MOBILE",
+               "communicationId": "___mobile___",
+               "isPrefferedCommunication": true
+            }
+         ],
+         "identificationDocuments": [
+            {
+               "documentType": "PAN_CARD",
+               "documentId": "___pan___",
+               "issueDate": "___current_date___"
+            }
+         ],
+         "coverages": [
+            {
+               "coverType": "___coverType1___",
+               "sumInsuredAmount": "___member_array_si___"
+            },
+            {
+               "coverType": "___coverType2___",
+               "sumInsuredAmount": "___member_array_si___"
+            }
+         ],
+         "medical": {
+            "medicalQuestions": [
+                    {
+                        "questionCode": "RPCVD",
+                        "answerType": "BOOLEAN",
+                        "isApplicable": ___member_array_addQue_isApplicable_RPCVD___,
+                        "detailAnswer": "___member_array_addQue_RPCVD___",
+                        "subQuestions": []
+                    },
+                    {
+                        "questionCode": "RPCVI",
+                        "answerType": "BOOLEAN",
+                        "isApplicable": ___member_array_addQue_isApplicable_RPCVI___,
+                        "detailAnswer": "___member_array_addQue_RPCVI___",
+                        "subQuestions": [
+                            {
+                                "questionCode": "RPCV1",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV1___,
+                                "detailAnswer": "___member_array_addQue_RPCV1___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPCV2",
+                                "answerType": "DOMAIN",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV2___,
+                                "detailAnswer": "___member_array_addQue_RPCV2___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPCV3",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV3___,
+                                "detailAnswer": "___member_array_addQue_RPCV3___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPCV4",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV4___,
+                                "detailAnswer": "___member_array_addQue_RPCV4___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPCV5",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV5___,
+                                "detailAnswer": "___member_array_addQue_RPCV5___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPCV6",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPCV6___,
+                                "detailAnswer": "___member_array_addQue_RPCV6___",
+                                "subQuestions": []
+                            }
+                        ]
+                    },
+                    {
+                        "questionCode": "RPVCN",
+                        "answerType": "BOOLEAN",
+                        "isApplicable": ___member_array_addQue_isApplicable_RPVCN___,
+                        "detailAnswer": "___member_array_addQue_RPVCN___",
+                        "subQuestions": [
+                            {
+                                "questionCode": "RPVC1",
+                                "answerType": "DOMAIN",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC1___,
+                                "detailAnswer": "___member_array_addQue_RPVC1___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC2",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC2___,
+                                "detailAnswer": "___member_array_addQue_RPVC2___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC3",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC3___,
+                                "detailAnswer": "___member_array_addQue_RPVC3___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC4",
+                                "answerType": "DOMAIN",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC4___,
+                                "detailAnswer": "___member_array_addQue_RPVC4___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC5",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC5___,
+                                "detailAnswer": "___member_array_addQue_RPVC5___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC6",
+                                "answerType": "DOMAIN",
+                                "isApplicable": ___member_array_addQue_isApplicable_RPVC6___,
+                                "detailAnswer": "___member_array_addQue_RPVC6___",
+                                "subQuestions": []
+                            },
+                            {
+                                "questionCode": "RPVC7",
+                                "answerType": "TEXT_DESCRIPTION",
+                                "isApplicable": false,
+                                "subQuestions": []
+                            }
+                        ]
+                    },
+                    {
+                        "questionCode": "RCOVI",
+                        "answerType": "BOOLEAN",
+                        "isApplicable": ___member_array_addQue_isApplicable_RCOVI___,
+                        "detailAnswer": "___member_array_addQue_RCOVI___",
+                        "subQuestions": []
+                    }
+                    <!--___member_array_medquestn-->]
+         }
+      }<!--InsurersDetail_End-->
+   ],
+   "contractCoverages": [
+      {
+         "coverType": "48745",
+         "sumInsuredAmount": "0.00"
+      },
+      {
+         "coverType": "___contract_coverType___",
+         "sumInsuredAmount": "2.00"
+      }
+   ],
+	"pospInfo": {
+		"isPOSP": ___is_posp___,
+		"pospName": "___posp_first_name___ ___posp_middle_name___ ___posp_last_name___",
+		"pospUniqueNumber": "",
+		"pospLocation": "___posp_agent_city___",
+		"pospPanNumber": "___posp_pan_no___",
+		"pospAadhaarNumber": "___posp_aadhar___",
+		"pospContactNumber": "___posp_mobile_no___"
+  }
+}

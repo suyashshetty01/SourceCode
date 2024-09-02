@@ -1,0 +1,634 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var config = require('config');
+var mongoose = require('mongoose');
+var Base = require('../libs/Base');
+var fs = require('fs');
+var moment = require('moment');
+var path = require('path');
+var appRoot = path.dirname(path.dirname(require.main.filename));
+mongoose.connect(config.db.connection + ':27017/' + config.db.name, {useMongoClient: true}); // connect to our database
+var mongojs = require('mongojs');
+var myDb = mongojs(config.db.connection + ':27017/' + config.db.name);
+var Employee = require('../models/employee');
+var User = require('../models/user');
+module.exports.controller = function (app) {
+    /**
+     * a home page route
+     */
+    app.get('/employees/view/:Employee_Id', function (req, res) {
+        Employee.findOne({Emp_Id: parseInt(req.params.Employee_Id)}, function (err, employee) {
+            if (err)
+                res.send(err);
+
+            res.json(employee['_doc']);
+        });
+    });
+    app.post('/employees', function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Modified_On': 'desc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 10
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+
+        }
+        var filter = obj_pagination.filter;
+        console.error('Filter', req.body);
+        if (req.body['search[value]'] !== '') {
+            if (isNaN(req.body['search[value]'])) {
+                filter = {
+                    $or: [
+                        {'Request_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Employee_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Method_Type': new RegExp(req.body['search[value]'], 'i')},
+                        {'Error_Code': new RegExp(req.body['search[value]'], 'i')}
+                    ]
+                };
+            } else {
+                filter = {'Product_Id': parseInt(req.body['Product_Id'])};
+            }
+        } else {
+            filter = {'Is_Active': true};
+            if (req.body['page_action'] === 'ch_employee_list') {
+                if (req.body['uid'] == '112666') {
+                    filter['Sources'] = '8';
+                }
+                if (req.body['uid'] == '100151') {
+                    filter['Sources'] = '2';
+                }
+                if (req.body['uid'] == '107124') {
+                    filter['Sources'] = '1';
+                }
+            }
+            if (req.body['page_action'] === 'employee_list') {
+                filter['Reporting_Agent_Uid'] = req.body['uid'] - 0;
+            }
+            if (typeof req.body['Col_Name'] == 'string' && req.body['Col_Name'] !== '' && req.body['txtCol_Val'] !== '') {
+                filter[req.body['Col_Name']] = (req.body['Col_Name'] === 'Ss_Id') ? req.body['txtCol_Val'] - 0 : req.body['txtCol_Val'];
+            }
+            if (req.body['Last_Status_Group'] !== '') {
+                var objStatusSummary = {
+                    'Lead/Cordinated/Registered': [1, 2, 3],
+                    'DocumentUpload/Verified': [4, 5],
+                    'Doc_Declined_Before_Certification': [6],
+                    'TrainingSchedule': [7, 10, 15],
+                    'TrainingPass': [8, 11, 16],
+                    'TrainingFail': [9, 12, 17],
+                    'Certified': [13, 14, 18],
+                    'Doc_Declined_After_Certification': [6]
+                };
+                if (objStatusSummary.hasOwnProperty(req.body['Last_Status_Group'])) {
+                    var arr_last_status = [];
+                    for (var k in objStatusSummary[req.body['Last_Status_Group']]) {
+                        arr_last_status.push(objStatusSummary[req.body['Last_Status_Group']][k].toString())
+                    }
+                    filter['Last_Status'] = {$in: arr_last_status};
+                }
+            }
+        }
+
+
+        Employee.paginate(filter, optionPaginate).then(function (employees) {
+            console.log(obj_pagination.filter, optionPaginate, employees);
+            res.json(employees);
+        });
+    });
+    app.post('/dsas', LoadSession, function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Modified_On': 'desc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 10
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+        }
+        var filter = obj_pagination.filter;
+        console.error('Filter', req.body);
+        if (req.body['search[value]'] !== '') {
+            if (isNaN(req.body['search[value]'])) {
+                filter = {
+                    $or: [
+                        {'Request_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Employee_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Method_Type': new RegExp(req.body['search[value]'], 'i')},
+                        {'Error_Code': new RegExp(req.body['search[value]'], 'i')}
+                    ]
+                };
+            } else {
+                filter = {'Product_Id': parseInt(req.body['Product_Id'])};
+            }
+        } else {
+            filter = {'IsActive': 1};
+            let obj_dsa_role = {
+                'SM': 29,
+                'GS': 34,
+                'DC': 39,
+                'EM': 41
+            };
+            filter['Role_ID'] = 0;
+            if (req.body['page_action'] === 'ch_dsa_list' && req.obj_session.user.role_detail.title === "ChannelHead") {
+                filter['Role_ID'] = obj_dsa_role[req.obj_session.user.role_detail.channel];
+            }
+
+            if (req.body['page_action'] === 'dsa_list' && req.obj_session.hasOwnProperty('users_assigned') && req.obj_session.users_assigned.hasOwnProperty('Team')) {
+                filter['Emp_Id'] = {$in: req.obj_session.users_assigned.Team.DSA};
+                filter['Role_ID'] = {$in: [29, 34, 39, 41]};
+            }
+            if (req.body['page_action'] === 'all_dsa_list') {
+                filter['Role_ID'] = {$in: [29, 34, 39, 41]};
+            }
+
+            if ((req.body['page_action'] === 'ch_cse_list' || req.body['page_action'] === 'cse_list') && req.obj_session.hasOwnProperty('users_assigned') && req.obj_session.users_assigned.hasOwnProperty('Team')) {
+                //console.error('Employee', '/dsas', req.obj_session.users_assigned.Team.CSE);
+                filter['Emp_Id'] = {$in: req.obj_session.users_assigned.Team.CSE};
+                filter['Role_ID'] = 23;
+            }
+            if (req.body['page_action'] === 'all_cse_list') {
+                filter['Role_ID'] = 23;
+            }
+
+            if (req.body['Col_Name'] !== '' && req.body['txtCol_Val'] !== '') {
+                filter[req.body['Col_Name']] = (isNaN(req.body['txtCol_Val']) === false) ? req.body['txtCol_Val'] - 0 : req.body['txtCol_Val'];
+            }
+        }
+        Employee.paginate(filter, optionPaginate).then(function (employees) {
+            console.log(obj_pagination.filter, optionPaginate, employees);
+            res.json(employees);
+        });
+    });
+    app.post('/employees/cses', LoadSession, function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Modified_On': 'desc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 10
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+        }
+        var filter = obj_pagination.filter;
+        console.error('Filter', req.body);
+        if (req.body['search[value]'] !== '') {
+            if (isNaN(req.body['search[value]'])) {
+                filter = {
+                    $or: [
+                        {'Request_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Employee_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Method_Type': new RegExp(req.body['search[value]'], 'i')},
+                        {'Error_Code': new RegExp(req.body['search[value]'], 'i')}
+                    ]
+                };
+            } else {
+                filter = {'Product_Id': parseInt(req.body['Product_Id'])};
+            }
+        } else {
+            filter = {'IsActive': 1};
+
+            if (req.body['page_action'] === 'ch_dsa_list') {
+                if (req.body['uid'] == '112666') { //gs
+                    filter['Role_ID'] = 34;
+                }
+                if (req.body['uid'] == '100151') { //sm
+                    filter['Role_ID'] = 29;
+                }
+            }
+            if (req.body['page_action'] === 'dsa_list') {
+                filter['Emp_Id'] = {$in: req.obj_session.users_assigned.Team.DSA};
+                filter['Role_ID'] = {$in: [29, 34]};
+            }
+            if (req.body['page_action'] === 'all_dsa_list') {
+                filter['Role_ID'] = {$in: [29, 34]};
+            }
+
+            if (req.body['page_action'] === 'ch_cse_list') {
+
+            }
+            if (req.body['page_action'] === 'cse_list') {
+                filter['Emp_Id'] = {$in: req.obj_session.users_assigned.Team.CSE};
+            }
+            if (req.body['page_action'] === 'all_cse_list') {
+                filter['Role_ID'] = {$in: [29, 34]};
+            }
+            if (req.body['Col_Name'] !== '' && req.body['txtCol_Val'] !== '') {
+                filter[req.body['Col_Name']] = (req.body['Col_Name'] === 'Ss_Id') ? req.body['txtCol_Val'] - 0 : req.body['txtCol_Val'];
+            }
+        }
+        Employee.paginate(filter, optionPaginate).then(function (employees) {
+            console.log(obj_pagination.filter, optionPaginate, employees);
+            if (req.body['page_action'] === 'cse_list') {
+                User.find({UID: {$in: req.obj_session.users_assigned.Team.CSE_UID}}, function (err, users) {
+                    if (err)
+                        res.send(err);
+
+                    var obj_users = {};
+                    for (let k in users) {
+                        var user_uid = users[k]._doc['UID'] - 0;
+                        obj_users[user_uid] = {
+                            "Employee_Name": users[k]._doc['Employee_Name'],
+                            "Company": users[k]._doc['Company'],
+                            "Designation": users[k]._doc['Designation'],
+                            "Dept_Short_Name": users[k]._doc['Dept_Short_Name'],
+                            "Dept_Segment": users[k]._doc['Dept_Segment'],
+                            "Direct_Reporting_UID": users[k]._doc['Direct_Reporting_UID']
+                        }
+                    }
+                    for (let j in employees.docs) {
+                        var emp_uid = employees.docs[j]['Emp_Code'] - 0;
+                        for (let h in obj_users[emp_uid]) {
+                            employees.docs[j][h] = obj_users[emp_uid][h];
+                        }
+                    }
+                    res.json(employees);
+                });
+            } else {
+                res.json(employees);
+            }
+
+        });
+    });
+    app.post('/dsas_summary', LoadSession, function (req, res) {
+
+        var filter = {};
+        console.error('Filter', req.body);
+
+        filter = {'IsActive': 1};
+
+        if (req.body['page_action'] === 'ch_dsa_list') {
+            if (req.body['uid'] == '112666') { //gs
+                filter['Role_ID'] = 34;
+            }
+            if (req.body['uid'] == '100151') { //sm
+                filter['Role_ID'] = 29;
+            }
+        }
+        if (req.body['page_action'] === 'dsa_list') {
+            filter['Emp_Id'] = {$in: req.obj_session.users_assigned.Team.DSA};
+            filter['Role_ID'] = {$in: [29, 34]};
+        }
+        if (req.body['page_action'] === 'all_dsa_list') {
+            filter['Role_ID'] = {$in: [29, 34]};
+        }
+        var obj_dsa_summary = {
+            'Branch': {},
+            'ReportingAllocation': {}
+        };
+        Employee.find(filter, function (err, employees) {
+            console.error('dsas_summary', filter, employees);
+            var obj_reporting_cnt = {};
+            for (let k in employees) {
+                var branch = employees[k]._doc['Branch'].toString().toUpperCase();
+                var uid = employees[k]._doc['UID'];
+
+                if (obj_dsa_summary['Branch'].hasOwnProperty(branch) === false) {
+                    obj_dsa_summary['Branch'][branch] = 0;
+                }
+                if (obj_reporting_cnt.hasOwnProperty(uid) === false) {
+                    obj_reporting_cnt[uid] = 0;
+                }
+                obj_dsa_summary['Branch'][branch]++;
+                obj_reporting_cnt[uid]++;
+            }
+            var obj_allocation = {
+                'Less_than_5': 5,
+                '5_to_10': 10,
+                '11_to_15': 15,
+                '16_to_20': 20,
+                '21_to_25': 25,
+                '26_to_50': 50,
+                '51_to_75': 75,
+                'More_than_75': 100
+            }
+            var obj_allocation_summary = {
+                'Less_than_5': 0,
+                '5_to_10': 0,
+                '11_to_15': 0,
+                '16_to_20': 0,
+                '21_to_25': 0,
+                '26_to_50': 0,
+                '51_to_75': 0,
+                'More_than_75': 0
+            }
+            for (let k in obj_reporting_cnt) {
+                for (let j in obj_allocation) {
+                    if (obj_reporting_cnt[k] < obj_allocation[j]) {
+                        obj_allocation_summary[j]++;
+                        break;
+                    }
+                }
+            }
+            obj_dsa_summary['ReportingAllocationSummary'] = obj_allocation_summary;
+            obj_dsa_summary['ReportingAllocationTotal'] = obj_reporting_cnt;
+            res.json(obj_dsa_summary);
+        });
+    });
+    app.get('/employees/view/:id', function (req, res) {
+
+        Employee.find(function (err, employee) {
+            if (err)
+                res.send(err);
+
+            res.json(employee);
+        });
+    });
+    app.get('/employees/tree/:uid', function (req, res) {
+        var objEmployeeOrgChart = {};
+        User.find({$or: [
+                {'Direct_Reporting_UID': req.params.uid - 0},
+                {UID: req.params.uid - 0}
+            ]}, function (err, users) {
+            if (err)
+                res.send(err);
+
+            var arr_emp = [];
+            for (var k in users) {
+                var uid = users[k]._doc['UID'] - 0;
+                var reporting_uid = users[k]._doc['Direct_Reporting_UID'] - 0;
+                if (reporting_uid > 0 && uid > 0) {
+                    if (uid == reporting_uid) {
+                        var obj_emp = {
+                            id: uid, name: users[k]._doc['Employee_Name'], title: users[k]._doc['Designation'], img: "https://balkangraph.com/js/img/3.jpg"
+                        }
+                    } else {
+                        var obj_emp = {
+                            id: uid, pid: reporting_uid, name: users[k]._doc['Employee_Name'], title: users[k]._doc['Designation'], img: "https://balkangraph.com/js/img/3.jpg"
+                        }
+                    }
+                    arr_emp.push(obj_emp);
+                }
+            }
+            res.json(arr_emp);
+        });
+
+    });
+
+    app.get('/employees/rm_list/:source', function (req, res) {
+        var objBase = new Base();
+        var obj_pagination = objBase.jqdt_paginate_process(req.body);
+
+        var optionPaginate = {
+            select: '',
+            sort: {'Modified_On': 'desc'},
+            //populate: null,
+            lean: true,
+            page: 1,
+            limit: 50
+        };
+
+        if (obj_pagination) {
+            optionPaginate['page'] = obj_pagination.paginate.page;
+            optionPaginate['limit'] = parseInt(obj_pagination.paginate.limit);
+        }
+        var filter = obj_pagination.filter;
+        console.error('Filter', req.body);
+        if (req.body['search[value]'] !== '') {
+            if (isNaN(req.body['search[value]'])) {
+                filter = {
+                    $or: [
+                        {'Request_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Employee_Unique_Id': new RegExp(req.body['search[value]'], 'i')},
+                        {'Method_Type': new RegExp(req.body['search[value]'], 'i')},
+                        {'Error_Code': new RegExp(req.body['search[value]'], 'i')}
+                    ]
+                };
+            } else {
+                filter = {'Product_Id': parseInt(req.body['Product_Id'])};
+            }
+        } else {
+            filter = {};
+            if (typeof req.body['Col_Name'] == 'string' && req.body['Col_Name'] !== '' && req.body['txtCol_Val'] !== '') {
+                filter[req.body['Col_Name']] = (req.body['Col_Name'] === 'Ss_Id') ? req.body['txtCol_Val'] - 0 : req.body['txtCol_Val'];
+            }
+        }
+
+
+        Employee.paginate(filter, optionPaginate).then(function (employees) {
+            console.log(obj_pagination.filter, optionPaginate, employees);
+            res.json(employees);
+        });
+    });
+    app.post('/employees/dsas/update_rm', LoadSession, function (req, res) {
+        var sql = require("mssql");
+        sql.close();
+        // config for your database   
+        var objrequestCore = req.body;
+        var obj_data = {
+            'ss_id': 1,
+            'fba_id': 1,
+            "Reporting_Agent_UID": 1,
+            "Reporting_Agent_Name": 1,
+            "Reporting_Mobile_Number": 1,
+            "Reporting_Email_ID": 1
+        };
+        var qry_str = "";
+        for (var k in obj_data) {
+            if (obj_data[k] == '') {
+                res.send('ERR_PARAMETER_MISSING');
+            }
+        }
+
+        qry_str = 'update Employee_Master set UID = ' + objrequestCore['Reporting_Agent_UID'].toString() + ' , Reporting_UID_Name = \'' + objrequestCore['Reporting_Agent_Name'].toString() + '\' , Reporting_Mobile_Number = ' + objrequestCore['Reporting_Mobile_Number'].toString() + ' , Reporting_Email_ID = \'' + objrequestCore['Reporting_Email_ID'].toString() + '\'    where Emp_Id = ' + objrequestCore["ss_id"].toString();
+        // connect to your database
+        sql.connect(config.portalsqldb, function (conn_err) {
+            var obj_status = {
+                'status': 'PENDING',
+                'msg': 'NA',
+                'qry': qry_str,
+                'old': null,
+                'new': objrequestCore
+            };
+            if (conn_err) {
+                console.error(conn_err);
+                obj_status['status'] = 'ERR';
+                obj_status['msg'] = conn_err;
+            } else {
+                var find_query = 'select * from Employee_Master where Emp_Id = ' + objrequestCore["ss_id"].toString();
+                var find_request = new sql.Request();
+
+                find_request.query(find_query, function (err, recordset) {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        var obj_posp = recordset.recordset[0];
+                        obj_status['old'] = obj_posp;
+                        let Sources = config.channel.Const_FOS_Role_Source[obj_posp['Role_ID'].toString()] - 0;
+                        Source_Name = config.channel.Const_FOS_Channel[obj_posp['Role_ID'].toString()] + '-FOS';
+                        let obj_email = {
+                            'status': 'DBG',
+                            'source': Sources,
+                            'source_name': Source_Name,
+                            'ss_id': objrequestCore["ss_id"],
+                            'fba_id': objrequestCore["fba_id"],
+                            'name': obj_posp["Emp_Name"],
+                            'agent_city': obj_posp["Branch"],
+                            'previous_rm_uid': obj_posp['UID'],
+                            'previous_rm_name': obj_posp['Reporting_UID_Name'],
+                            'previous_rm_email': obj_posp['Reporting_Email_ID'],
+                            'previous_rm_mobile': obj_posp['Reporting_Mobile_Number'],
+                            'new_rm_uid': objrequestCore['Reporting_Agent_UID'],
+                            'new_rm_name': objrequestCore['Reporting_Agent_Name'],
+                            'new_rm_email': objrequestCore['Reporting_Email_ID'],
+                            'new_rm_mobile': objrequestCore['Reporting_Mobile_Number'],
+                            'remarks': (objrequestCore['Remarks'] !== '') ? objrequestCore['Remarks'] : 'NA',
+                            'updated_by': req.obj_session.user.fullname + ' ( UID - ' + req.obj_session.user.erp_id + ' ,  SS_ID - ' + req.obj_session.user.ss_id + ' )',
+                            'updated_on': moment().utcOffset("+05:30").toLocaleString()
+                        };
+                        if (obj_email['previous_rm_uid'] == obj_email['new_rm_uid']) {
+                            obj_status['status'] = 'VALIDATION';
+                            obj_status['msg'] = 'SAME_RECORD';
+                            var today = moment().utcOffset("+05:30");
+                            var today_str = moment(today).format("YYYYMMD");
+                            var objRequest = {
+                                'dt': today.toLocaleString(),
+                                'req': req.body,
+                                'resp': obj_status
+                            };
+                            fs.appendFile(appRoot + "/tmp/log/rm_mapping_update_" + today_str + ".log", JSON.stringify(objRequest) + "\r\n", function (err) {});
+                            res.send(obj_status);
+                        } else {
+                            if (req.query['dbg'] === 'yes') {
+                                ReportingUpdateEmailSend(obj_email);
+                                res.send(obj_status);
+                            } else {
+                                // create Request object
+                                var update_request = new sql.Request();
+                                // query to the database and get the records            
+                                update_request.query(qry_str, function (qry_err, recordset) {
+                                    if (qry_err) {
+                                        console.error(qry_err);
+                                        obj_email['status'] = 'ERR';
+                                        obj_status['status'] = 'QUERY_ERR';
+                                        obj_status['msg'] = qry_err;
+                                    } else {
+                                        obj_email['status'] = 'SUCCESS';
+                                        obj_status['status'] = 'SUCCESS';
+                                        obj_status['msg'] = recordset;
+                                        var Client = require('node-rest-client').Client;
+                                        var client = new Client();
+                                        client.get(config.environment.weburl + '/report/sync_emp_master?ss_id=' + objrequestCore["ss_id"], {}, function (data, response) {});
+                                        client.get(config.environment.weburl + '/report/sync_posp_master?ss_id=' + objrequestCore["ss_id"], {}, function (data, response) {});
+                                        if (req.query['email'] === 'no') {
+
+                                        } else {
+                                            ReportingUpdateEmailSend(obj_email);
+                                        }
+                                    }
+                                    var today = moment().utcOffset("+05:30");
+                                    var today_str = moment(today).format("YYYYMMD");
+                                    var objRequest = {
+                                        'dt': today.toLocaleString(),
+                                        'req': req.body,
+                                        'resp': obj_status
+                                    };
+                                    fs.appendFile(appRoot + "/tmp/log/rm_mapping_update_" + today_str + ".log", JSON.stringify(objRequest) + "\r\n", function (err) {});
+                                    res.send(obj_status);
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+    function ReportingUpdateEmailSend(obj_email) {
+        var Email = require('../models/email');
+        let objModelEmail = new Email();
+        let sub = (config.environment.name.toString() === 'Production' ? "" : ('[' + config.environment.name.toString().toUpperCase() + ']')) + '[' + obj_email['status'] + '] REPORTING_MANAGER_UPDATION, SS_ID : ' + obj_email['ss_id'] + ' , FBA_ID : ' + obj_email['fba_id'];
+
+        let arr_to = [];
+        let arr_bcc = [config.environment.notification_email];
+        let arr_cc = [];
+        let contentSms_Log = "REPORTING_MANAGER_UPDATION<BR>------------------------<BR>";
+        for (let k in obj_email) {
+            contentSms_Log += k.replace(/_/g, ' ').toString().toUpperCase() + ' : ' + obj_email[k] + '<BR>';
+        }
+        let email_body = contentSms_Log.replace(/\n/g, '<BR>');
+        let email_data = '<!DOCTYPE html><html><head><style>*,body,html{font-family:\'Google Sans\' ,tahoma;font-size:14px;}</style><title>REPORTING_MANAGER_UPDATION_NOTIFICATION</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>';
+        email_data += '<div class="report"><span>Reporting Manager is updated for Following POSP as below summary.<br>For any query, Please write to techsupport@policyboss.com</span><br><br><table border="1" cellpadding="3" cellspacing="0" width="90%"  >';
+        email_data += '<tr><td  width="70%">' + email_body + '&nbsp;</td></tr>';
+
+        email_data += '</table></div><br></body></html>';
+        if (obj_email['status'] === 'DBG') {
+            arr_to.push('chirag.modi@policyboss.com');
+        } else {
+            arr_to.push(obj_email['new_rm_email']);
+            let Sources = obj_email['source'];
+            if (Sources === 1) {
+                arr_cc.push('transactions.1920@gmail.com');
+                arr_cc.push('srinivas@policyboss.com');
+                arr_cc.push('ashutosh.sharma@magicfinmart.com');
+            }
+            if (Sources === 2) {
+                arr_cc.push('susheel.menon@landmarkinsurance.in');
+                arr_cc.push('sandeep.nair@landmarkinsurance.in');
+            }
+            if (Sources === 8) {
+                arr_cc.push('gagandeep.singh@policyboss.com');
+                arr_cc.push('saroj.singh@policyboss.com');
+            }
+        }
+        objModelEmail.send('notifications@policyboss.com', arr_to.join(','), sub, email_data, arr_cc.join(','), arr_bcc.join(','), 0);
+
+    }
+}
+function LoadSession(req, res, next) {
+    try {
+        var objRequestCore = req.body;
+        if (req.method == "GET") {
+            objRequestCore = req.query;
+        }
+        objRequestCore = JSON.parse(JSON.stringify(objRequestCore));
+        if (objRequestCore.hasOwnProperty('session_id') && objRequestCore['session_id'] != '') {
+            var Session = require('../models/session');
+            Session.findOne({"_id": objRequestCore['session_id']}, function (err, dbSession) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    if (dbSession) {
+                        dbSession = dbSession._doc;
+                        var obj_session = JSON.parse(dbSession['session']);
+                        req.obj_session = obj_session;
+                        return next();
+                    } else {
+                        return res.status(401).json({'Msg': 'Session Expired.Not Authorized'});
+                    }
+                }
+            });
+        } else {
+            return next();
+        }
+    } catch (e) {
+        console.error('Exception', 'GetReportingAssignedAgent', e);
+        return next();
+
+    }
+}
+

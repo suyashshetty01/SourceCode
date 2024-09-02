@@ -1,0 +1,209 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sym="http://syminterface.insurance.symbiosys.c2lbiz.com" xmlns:xsd="http://io.syminterface.insurance.symbiosys.c2lbiz.com/xsd" xmlns:xsd1="http://transferobjects.syminterface.insurance.symbiosys.c2lbiz.com/xsd" xmlns:xsd2="http://security.transferobjects.syminterface.insurance.symbiosys.c2lbiz.com/xsd">
+    <soapenv:Header />
+    <soapenv:Body>
+        <sym:compute>
+            <!--Optional:-->
+            <sym:WSQuotationListIO>
+                <xsd:errorList>
+                    <xsd1:errActualMessage />
+                    <xsd1:errDescription />
+                    <xsd1:errField />
+                    <xsd1:errProcessStatusCd />
+                    <xsd1:errRecord />
+                    <xsd1:errSourceCd />
+                    <xsd1:exceptionCatgCd />
+                    <xsd1:exceptionCd />
+                </xsd:errorList>
+                <listofquotationTO>
+                    <channelId>___channel_id___</channelId>
+                    <productId>___Plan_Code___</productId>
+                    <parentProductId />
+                    <parentProductVersion>1</parentProductVersion>
+                    <noOfAdults>___adult_count___</noOfAdults>
+                    <noOfKids>___child_count___</noOfKids>
+                    <tenure>___policy_tenure___</tenure>
+                    <inwardTypeCd>NEWBUSINESS</inwardTypeCd>
+                    <inwardSubTypeCd>PROPOSALDOCUMENT</inwardSubTypeCd>
+                    <productPlanOptionCd>___base_plan_option_code___</productPlanOptionCd>
+                    <policyType>___health_insurance_type_2___</policyType>
+                    <saveFl>YES</saveFl>
+                    <quoteTypeCd>PORTAL</quoteTypeCd>
+                    <quotationDt>___policy_received_date___</quotationDt>
+                    <agentId>___insurer_integration_agent_code___</agentId>
+                    <campaignCd>Brkonlin01</campaignCd>
+                    <quotationChangeDOList>
+                        <alterationType />
+                    </quotationChangeDOList>
+                    <quotationProductDOList>
+                        <productId>___Plan_Code___</productId>
+                        <productVersion>1</productVersion>
+                        <productPlanOptionCd>___base_plan_option_code___</productPlanOptionCd>
+                        <basePremium>0.0</basePremium>
+                        <sumInsured>___health_insurance_si___</sumInsured>
+                        <zoneCd>___zone___</zoneCd>
+                        <productTypeCd>SUBPLAN</productTypeCd>
+                        <extraPremium>0.0</extraPremium>
+                        <paymentFrequencyCd>SINGLE</paymentFrequencyCd>
+                        <reducingBalanceSI />
+                        <payoutOption />
+                        <discount>0.0</discount>
+                        <quotationProductAddOnDOList>
+                            <productPlanOptionCd />
+                            <sumInsured />
+                            <basePremium>0</basePremium>
+                            <extraPremium>0</extraPremium>
+                            <discount>0</discount>
+                            <productId>OPCBB03</productId>
+                        </quotationProductAddOnDOList>
+                        <quotationProductAddOnDOList>
+                            <productPlanOptionCd />
+                            <sumInsured />
+                            <basePremium>0</basePremium>
+                            <extraPremium>0</extraPremium>
+                            <discount>0</discount>
+                            <productId>OPHDCB01</productId>
+                        </quotationProductAddOnDOList>
+                        <quotationProductAddOnDOList>
+                            <productPlanOptionCd />
+                            <sumInsured />
+                            <basePremium>0</basePremium>
+                            <extraPremium>0</extraPremium>
+                            <discount>0</discount>
+                            <productId>OPRMW03</productId>
+                        </quotationProductAddOnDOList>
+                        <quotationProductBenefitDOList>
+                            <benefitTypeCd />
+                            <benefitId />
+                            <amount>0.0</amount>
+                            <productId />
+                        </quotationProductBenefitDOList>
+                        <!--InsurersDetail_Start-->
+                        <quotationProductInsuredDOList>
+                            <issueAge>___member_array_age___</issueAge>
+                            <genderCd>___member_array_gender_2___</genderCd>
+                            <insuredTypeCd>PRIMARY</insuredTypeCd>
+                            <cityCd>___dbmaster_pb_city_name___</cityCd>
+                            <mobileNum>___mobile___</mobileNum>
+                            <emailAddress>___email___</emailAddress>
+                            <dob>___member_array_birth_date___</dob>
+                            <zoneCd>___zone___</zoneCd>
+                            <sumInsured>___member_array_si___</sumInsured>
+                            <refGuid>PolicyBoss</refGuid>
+                            <xsd1:actualCummulativeBonus></xsd1:actualCummulativeBonus>
+                            <xsd1:bmi></xsd1:bmi>
+                            <xsd1:cummulativeBonusAmt></xsd1:cummulativeBonusAmt>
+                            <xsd1:cummulativeBonusPerc></xsd1:cummulativeBonusPerc>
+                            <xsd1:customerId />
+                            <xsd1:ppmcFl />
+                            <xsd1:ppmcSetName />
+                            <xsd1:prevCummulativeBonus></xsd1:prevCummulativeBonus>
+                            <smokerStatusCd />
+                            <chewTobaccoCd />
+                            <consumeAlcoholCd />
+                            <relationCd>___member_array_relation___</relationCd>
+                            <modalPremium>0.0</modalPremium>
+                            <extraPremium>0.0</extraPremium>
+                            <discount>0.0</discount>
+                            <xsd1:uwFl></xsd1:uwFl>
+                            <xsd1:uwLoadingAmount></xsd1:uwLoadingAmount>
+                            <xsd1:uwLoadingPerc></xsd1:uwLoadingPerc>
+                            <productPlanOptionCd>___member_array_base_plan_code___</productPlanOptionCd>
+                            <quotationProductInsuredBenefitDOList>
+                                <benefitTypeCd />
+                                <benefitId />
+                                <amount>0.0</amount>
+                                <productId />
+                            </quotationProductInsuredBenefitDOList>
+                        </quotationProductInsuredDOList>
+                        <!--InsurersDetail_End-->
+                        <quotationProductChargeDOList>
+                            <chargeClassCd />
+                            <chargeAmount>0.0</chargeAmount>
+                            <chargePercentage>0.0</chargePercentage>
+                        </quotationProductChargeDOList>
+                        <quotationProductAddOnDOList>
+                            <basePremium>0.0</basePremium>
+                            <extraPremium>0.0</extraPremium>
+                            <discount>0.0</discount>
+                            <productId></productId>
+                        </quotationProductAddOnDOList>
+                        <quotationProductAddOnDOList>
+                            <basePremium />
+                            <extraPremium>0.0</extraPremium>
+                            <discount>0.0</discount>
+                            <productId></productId>
+                        </quotationProductAddOnDOList>
+                    </quotationProductDOList>
+                    <quotationProductDOList>
+                        <basePremium>0</basePremium>
+                        <discount>0</discount>
+                        <extraPremium>0</extraPremium>
+                        <paymentFrequencyCd>SINGLE</paymentFrequencyCd>
+                        <payoutOption />
+                        <productId>RCI07</productId>
+                        <productPlanOptionCd />
+                        <productTypeCd>RIDER</productTypeCd>
+                        <productVersion>1</productVersion>
+                        <quotationProductBenefitDOList>
+                            <benefitId />
+                            <benefitTypeCd />
+                            <productId />
+                        </quotationProductBenefitDOList>
+                        <quotationProductChargeDOList>
+                            <chargeAmount>0</chargeAmount>
+                            <chargeClassCd />
+                            <chargePercentage>0</chargePercentage>
+                        </quotationProductChargeDOList>
+                        <quotationProductInsuredDOList>
+                            <actualCummulativeBonus>0</actualCummulativeBonus>
+                            <bmi>0</bmi>
+                            <chewTobaccoCd />
+                            <cityCd>Mumbai</cityCd>
+                            <consumeAlcoholCd />
+                            <cummulativeBonusAmt>0</cummulativeBonusAmt>
+                            <cummulativeBonusPerc>0</cummulativeBonusPerc>
+                            <customerId />
+                            <discount>0</discount>
+                            <dob>01/07/1992</dob>
+                            <emailAddress />
+                            <extraPremium>0</extraPremium>
+                            <genderCd>FEMALE</genderCd>
+                            <height />
+                            <insuredTypeCd>PRIMARY</insuredTypeCd>
+                            <issueAge>0</issueAge>
+                            <mobileNum />
+                            <modalPremium>0</modalPremium>
+                            <ppmcFl />
+                            <ppmcSetName />
+                            <prevCummulativeBonus>0</prevCummulativeBonus>
+                            <productPlanOptionCd />
+                            <quotationProductInsuredBenefitDOList>
+                                <amount>0</amount>
+                                <benefitId />
+                                <benefitTypeCd />
+                                <productId />
+                            </quotationProductInsuredBenefitDOList>
+                            <refGuid>1</refGuid>
+                            <relationCd>SELF</relationCd>
+                            <smokerStatusCd />
+                            <sumInsured>350000</sumInsured>
+                            <uwFl />
+                            <uwLoadingAmount>0</uwLoadingAmount>
+                            <uwLoadingPerc>0</uwLoadingPerc>
+                            <weight />
+                            <zoneCd>ZONE1</zoneCd>
+                        </quotationProductInsuredDOList>
+                        <!--POSPDetail_Start-->
+                        <subIntermediaryName>___posp_name___</subIntermediaryName>
+                        <subIntermediaryPAN>___posp_pan_no___</subIntermediaryPAN>
+                        <others />
+                        <!--POSPDetail_End-->
+                        <reducingBalanceSI>NO</reducingBalanceSI>
+                        <sumInsured>350000</sumInsured>
+                        <zoneCd>ZONE1</zoneCd>
+                    </quotationProductDOList>
+                </listofquotationTO>
+            </sym:WSQuotationListIO>
+        </sym:compute>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,55 @@
+{
+  "proposer_name": "___first_name___ ___last_name___",
+  "producer_code": "___insurer_integration_service_user___",
+  "location": "___dbmaster_district___",
+  "contact_details": {
+    "salutation": "Mr",
+    "first_name": "___first_name___",
+    "middle_name": "___middle_name___",
+    "last_name": "___last_name___",
+    "Email": "___email___",
+    "phone": "___mobile___"
+  },
+  "address": {
+    "pincode": "___dbmaster_pincode___",
+    "address_1": "___permanent_address_1___",
+    "address_3": ""
+  },
+  "info_sheet": {
+    "commodity": "___dbmaster_insurer_sub_commodity_code___",
+    "commodity_desc": "___dbmaster_insurer_sub_commodity_name___",
+    "Voyage_Selected": "Inland",
+    "voyage_description": " ",
+    "cover_name": "___dbmaster_plan_name___",
+    "mode_transport": "___mode_transport___",
+    "start_country": "INDIA",
+    "start_country_code": "64",
+    "end_country": "INDIA",
+    "end_country_code": "64",
+    "Voyagefromcity": "___transit_from_cityName___",
+    "Voyagetocity": "___transit_to_cityName___",
+    "viaTranshipment": "",
+    "Survey_Destination": "India",
+    "currency_symbol": "INR",
+    "invoice_value": "___marine_insurance_si___",
+    "conversion_rate": 1,
+    "duty_value": "",
+    "basis_valuation": "Invoice Value",
+    "targetpremium": "",
+    "basis_valuationpercent": "___basis_of_valuation_rate___",
+    "Premiumratepercent": "___Premiumratepercent___"
+  },
+  "transit_details": {
+    "packing": "___package_txt___",
+    "subject_matter": "def",
+    "ProformaInvoiceandDate": "___ProformaInvoiceandDate___",
+    "Vesselname": "",
+    "BLAWBLRRRNumber": "___billNumber___",
+    "BLAWBLRRRDate": "___billDate___",
+    "ConsigneeName": "___consignee_name___",
+    "ConsigneeAddress": "___consignee_address___",
+    "MarksandNumbers": "",
+    "LCNumber": "___lc_no___",
+    "LCConditions": ""
+  }
+}

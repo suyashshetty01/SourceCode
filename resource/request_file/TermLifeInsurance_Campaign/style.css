@@ -1,0 +1,175 @@
+@font-face{
+	font-family:"Swis721 Cn BT Roman";
+	src:url("fonts/Swis721 Cn BT Roman.ttf");
+	}
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.container
+	{
+		width: 650px;
+		margin:0 auto;
+		padding:0px;
+		background-color:#ffff;
+	}
+	.content{
+		width: 620px;
+		margin:0 auto;
+		padding:0px;
+		background-color:#EBECEC;
+		font-size:18px;
+		margin-top: -6px;
+		font-family: "Swis721 Cn BT Roman";
+		padding-bottom: 10px;
+		}
+	.heading{padding: 23px 0px;text-align: center;margin: 0 auto;}
+	.title{
+		text-align: center;
+		font-size: 12px;
+		font-weight: bold;
+		margin: 0;
+	}
+	.article{
+		border: 2px dotted #434242;
+		display:grid;
+		grid-template-columns: 45% 55%;
+		padding: 20px;
+		margin: 0px 4px;
+	}
+	.articleTitle{
+	    padding: 10px 45px 10px 15px;
+	    font-weight: bold;
+	    text-align: left;
+	    background: white;
+	    font-size: 14px;
+	    border-radius: 5px;
+	    box-shadow: 0px 0px 10px grey;
+	    margin: 15px 0px;
+	    width: 200px;
+	}
+	.articleTitle a{color:#636363;text-decoration: none; }
+	.articleTitle a:hover{color: #036CA5;}
+	.form-H{
+		background-color:#036CA5;
+		color:#fff;
+		font-size:18px;
+		font-weight:bold;
+		padding: 7px;
+		border-radius: 15px 15px 0px 0px;
+		text-align: center;
+	}
+	.form{
+		background-color:#D0DCE6;
+		display:block;
+		border-radius: 15px;
+		width: 280px;
+	}
+.footer{
+		background-color: #bfc4c7;
+		padding: 1px 15px;
+		font-size: 9px;
+		color: #3c3c3c;
+		font-family: "Swis721 Cn BT Roman";
+		}
+.footer span{font-weight: bold;}
+form{margin: 10px;}
+input{
+	border:none;
+	padding:8px;
+	font-size:12px;
+	width: 93%;
+	border-bottom: 1px solid gray;
+	background-color: white;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+::placeholder{
+		color:#B2B4B3;
+}
+form label{
+		font-size:12px;
+		text-align: left;
+}
+button{
+	font-size:15px;
+	padding: 8px 15px;
+	
+
+}
+
+.submit{
+    color: #036CA5;
+    font-size: 15px;
+    text-align: center;
+    bottom: 0;
+    padding: 8px 15px;
+    border: 1px solid #036CA5;
+	border-radius:5px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	letter-spacing:1px;
+	margin:0 auto;
+}
+.submit:hover,.closebutton:hover{
+	background-color: #036CA5;
+	color:#ffffff;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.20), 0 17px 50px 0 rgba(0,0,0,0.15);
+}
+.wrong-input{
+		border-bottom:1px solid red;
+
+}
+
+.right-input{
+		border-bottom:1px solid black;
+
+}
+
+.error{
+	color:red;
+	font-size: 10px;
+}
+
+.valid{
+	border-bottom:1px solid green;
+}
+
+#successful .button{
+	height: 200px;
+	background: white;
+	width: 300px;
+	text-align: center;
+	margin: 20% auto;
+	font-family: "Swis721 Cn BT Roman";
+}
+#successful{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: none;
+}
+
+.succesTitle{
+	width: 93.5%;
+	padding: 10px;
+	background-color: #036ca5;
+	color: white;
+}
+.closebutton{
+	width: 15%;
+	cursor: pointer;
+	padding: 5px;
+	background-color: white;
+	color: #036ca5;
+	margin: 0px auto;
+	border-radius: 7px;
+	border: 2px solid #036ca5;
+	font-size: 15px;
+}

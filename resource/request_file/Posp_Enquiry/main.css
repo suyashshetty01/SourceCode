@@ -1,0 +1,133 @@
+@font-face{
+	font-family:"Swis721 Cn BT Roman";
+	src:url("fonts/Swis721 Cn BT Roman.ttf");
+	}
+body{padding: 0;margin: 0;background-color: #e8e8e8;}
+.container{width: 900px !important;margin: auto;background-color: white;color: #666666;font-size: 20px;font-family: Arial, Helvetica, sans-serif;}
+.header{font-family: "Swis721 Cn BT Roman";background-image: url(./Images/header.png);color: #4761ab;text-transform: uppercase;padding: 20px 20px 10px;background-size: contain;background-repeat: no-repeat;background-position: top right;}
+.header h1{margin-bottom: 5px;font-size: 50px;}
+.header h2{margin: 5px 0px;font-size: 35px;line-height: 45px;}
+.text{padding: 20px 20px 0px;}
+p{padding: 5px 0px;margin: 0;line-height: 25px;}
+.flex{display: flex;margin-top: 25px;}
+.flex table{font-size: 15px;background-color: #f9f9f9;margin-top: 8px;}
+.flex table td{border-bottom: 1px solid #e7e7e7;padding: 5px 10px;}
+.contactForm{width: 75%;margin: auto;}
+.contactForm .heading{background-color: #465ca5;color: white;text-align: center;font-weight: bold;padding: 15px 30px;border-radius: 20px 20px 0px 0px;text-transform: uppercase;}
+.contactForm form{padding: 10px 20px;background-color: #c4ebfd;border-radius: 0px 0px 20px 20px;}
+.contactForm form ::placeholder{font-size: 12px;color: #b8b9b9;}
+.contactForm form input[type="text"],input[type="email"]{width: 93%;border-radius: 5px;border: 1px solid #c9d1d3;padding: 8px;
+    font-size: 15px;margin: 10px auto 0px 0px;}
+.contactForm form input[type="button"]{border: none;background-color: #465ca5;color: white;padding: 10px;font-size: 15px;border-radius: 10px;
+    width: 45%;margin: 10px;text-transform: uppercase;cursor: pointer;}
+.container h3{text-align: center;text-transform: uppercase;margin-bottom: 10px;font-family: "Swis721 Cn BT Roman";}
+.container hr{width: 30%;}
+.container h4{margin-bottom: 10px;color: #465ca5;}
+.benifit{display: flex;flex-flow: row wrap;align-content: stretch;background-color: #f9f9f9;padding: 15px 10px;}
+.benifit div{padding: 10px 15px;margin-top: 10px;flex: 1 0 40%;text-align: center;}
+.footer{background-color: #e8f5fb;border-bottom: 5px solid #475c9f;font-size: 13px;padding: 20px;color: #545d62;}
+.footer p{line-height: 15px;}
+.wrong-input{border-bottom:1px solid red !important;}
+.right-input{border-bottom:1px solid #c9d1d3 !important;}
+.error{color:red;font-size: 11px;margin: -6px 4px;}
+.valid{border-bottom:1px solid green;}
+#successful .button{height: 160px;background: white;width: 300px;text-align: center;position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;}
+#successful{height: 100%;width: 100%;position: fixed;top: 0;left: 0;z-index: 1;background-color: rgba(0, 0, 0, 0.4);display: none;}
+.succesTitle{width: 93.5%;padding: 10px;background-color: #465ca5;color: white;}
+.closebutton{width: 15%;cursor: pointer;padding: 5px;background-color: #465ca5;color: white;margin: 0px auto;border-radius: 7px;
+    border: none;font-size: 15px;cursor: pointer;}
+	
+	
+	
+	
+/* Footer CSS - start */
+#footerMenu {
+    background: rgb(255 255 255);
+    padding: 10px;
+	border-top: 3px solid rgb(102 102 102);
+}
+#footerMenu h2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+#footerMenu ul {
+    margin: 0px;
+    padding: 0px;
+}
+#footerMenu ul li {
+    margin: 0px;
+    list-style: none;
+    padding: 3px;
+    font-size: 14px;
+}
+#footerMenu ul li a {
+    color: rgb(67 67 67) !important;
+    text-decoration: none;
+}
+.soc-link {
+    text-align: center;
+    padding: 5px;
+    list-style: none;
+    position: relative;
+    margin-bottom: 0px !important;
+}
+div .soc-link {
+    background-color: rgb(210 215 198);
+    font-size: 0 !important;
+}
+.soc-link li {
+    display: inline-block;
+    padding: 5px !important;
+}
+.soc-link li img {
+    width: 32px;
+}
+#contact {
+    background: rgb(232 232 232);
+    padding: 10px;
+    text-align: center;
+    font-size: 12px !important;
+}
+#contact p {
+    margin-bottom: 5px !important;
+    font-size: 12px !important;
+	margin:0px !important;
+	padding:0px;
+	line-height: 20px;
+}
+#copyright {
+    background: rgb(22 46 72);
+    color: rgb(255 255 255);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+.footerContainer{
+	background: rgb(232 232 232);width:855px;margin:0px;padding:0px;
+}
+
+/* CSS -End */
+
+
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
+	.footerContainer{
+	background: rgb(232 232 232);width:100%;margin:0px;padding:0px;}
+    .container{width: 100% !important;font-size: 13px;margin:0px !important;padding:0px !important;}
+    .header{padding: 10px;}
+    .header img{width: 90px;}
+    .header h1{font-size: 22px;}
+    .header h2{font-size: 16px;line-height: 28px;}
+    .text{padding: 0px 10px;}
+    p{padding: 3px 0px;margin: 0;line-height: 17px;}
+    .flex{margin-top: 0px;flex-direction: column-reverse;}
+    .flex table{font-size: 12px;}
+    .flex table td{border-bottom: 1px solid #e7e7e7;padding: 5px 10px;}
+    .contactForm{width: 95%;margin: 20px auto 40px;}
+    .benifit{padding:0px};
+    .benifit div{flex: 1 0 38%;}
+    .footer{font-size: 10px;padding: 10px;color: #000000;}
+    .footer p{line-height: 13px;}
+    .footer strong{color: #676767;}
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LMS Dashboard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+</head>
+
+<body>
+    <div id="dashbaord_panel">
+        <!-- Information Popup -->
+        <div class="information_Popup">
+            <div class="popup_content">
+                <div class="popup_header">
+                    Information
+                    <div class="close_btn">X</div>
+                </div>
+                <div class="details_panel basicdiv">
+                   
+                </div>
+                <div class="panel_footer mt-3 text-center">
+                    <button class="btn btn-primary m-1 ok_btn">Ok</button>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+        <!-- Filter Popup -->
+        <div class="filter_popup">
+            <div class="filter_section">
+                <div class="stycky_grid" >
+                    <div class="sticy_popup_txt">Filter</div>
+                    <div>
+                        <img src="Images/funnel.png " style="width:70%;" onclick="openSearchPopup()">
+                    </div>
+                </div>
+                <div class="stycky_grid" >
+                    <div class="sticy_popup_txt">Create Lead</div>
+                    <div>
+                        <img src="Images/pl.png " style="width:70%;" onclick="CreateLead()">
+                    </div>
+                </div>
+                <div class="stycky_grid">
+                    <div class="sticy_popup_txt">Refresh</div>
+                    <div>
+                        <img src="Images/refresh.png " style="width:70%;"  onclick="reloadPage();">
+                    </div>
+                </div>
+                <div class="stycky_grid" onclick="closeFilterPopup()">
+                    <div class="sticy_popup_txt"></div>
+                    <div>
+                        <img src="Images/cross.png " style="width:70%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+        <!-- Search Popup -->
+        <div class="searchPopup">
+            <div class="search_popup_section">
+                <div class="popup_header">
+                    Advanced Search
+                    <div class="close_btn" onclick="closeSearchPopup()">X</div>
+                </div>
+                <div class="search_content">
+                    <div>
+                        <div class="form-group">
+                            <label class="label_cls" for="name">Product Type:</label>
+                            <select onchange="onProductselect()"  class="form-control" id="Product_type">
+                                <option value="0" selected>-- Select Product Type --</option>
+                                
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label_cls" for="name">Sub-Product Type:</label>
+                            <select class="form-control" id="SubProduct_type">
+                                <option value="0" selected>-- Select Sub-Product Type --</option>
+                                
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label_cls" for="name">Name:</label>
+                            <input type="text" id="srch_Name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel_footer mt-3 text-center">
+                    <button class="btn btn-primary" style="width:48%" onclick="GetLeadData('search');">Apply</button>
+                    <button class="btn btn-warning" style="width:48%" onclick="SearchRest();">Reset</button>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+        <div class="sticky_btn" onclick="openFilterPopup()">
+            <div class="plus_quote">
+                <img src="Images/menu.png " style="width:80%;">
+            </div>
+        </div>
+		<div class="fixed_panel">
+            <div>
+                <a  onclick="CreateLead()"> <span class="plusicon">+</span></a>
+            </div>
+            <div class="header_txt">DASHBOARD</div>
+        </div>
+        <div class="fixed_header">
+             
+            <div class="header_grid">
+                <div class="header_colum">LeadId</div>
+                <div class="header_colum">Name</div>
+                <div class="header_colum">Product</div>
+                <div class="header_colum">Sub Product</div>
+            </div>
+        </div>
+        <div class="content_Panel" id ="lead_data">
+            
+            
+        </div>
+    </div>
+
+       <script src="js/lms_dashboard.js"></script>
+    <script>
+        function openSearchPopup(){
+            GetProductTypes();
+            $('.searchPopup').show();
+            $('.filter_popup').hide();
+        }
+        function closeSearchPopup(){
+            $('.searchPopup').hide();
+        }
+        function openFilterPopup() {
+            $('.filter_popup').show();
+        }
+        function closeFilterPopup() {
+            $('.filter_popup').hide();
+        }
+
+    </script>
+</body>
+
+</html>

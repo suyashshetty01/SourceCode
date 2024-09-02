@@ -1,0 +1,138 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+var config = require('config');
+var path = require('path');
+var fs = require('fs');
+var appRoot = path.dirname(path.dirname(require.main.filename));
+var sleep = require('system-sleep');
+var moment = require('moment');
+var multer = require('multer'); //multer is used for html form data
+//var store_path = appRoot + 'tmp/documents';
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, appRoot + 'tmp/documents');
+    },
+    filename: function (req, received_file, cb) {
+        var originalname = received_file.originalname;
+        var extension = originalname.split(".");
+        filename = Date.now() + extension[extension.length - 1];
+        cb(null, filename);
+    }
+});
+//var upload = multer({"storage": storage});
+const  multipart = require('connect-multiparty'); // multiparty is used for angular
+const multipartMiddleware = multipart({uploadDir: './tmp/documents'});
+
+module.exports.controller = function (app) {
+    app.post('/document_details/upload_document', (req, res) => {
+        try {
+            var formidable = require('formidable');
+            var form = new formidable.IncomingForm();
+            form.parse(req, function (err, fields, files) {
+                //var objRequest = fields;
+
+                var objRequest = fields;
+                var files = files;
+
+                //Upload documnent
+                var objfile = {
+                    "file_1": null,
+                    "file_2": null
+                };
+                let args = {
+                    "Document_Id": moment().unix(),
+                    "Document_Type": objRequest.Document_Type,
+                    "Product_Id": objRequest.Product_Id,
+                    "PB_CRN": objRequest.PB_CRN,
+                    "Status": objRequest.Status,
+                    "Doc1": "",
+                    "Doc2": "",
+                    "Created_On": new Date(),
+                    "Modified_On": new Date()
+                };
+                var todayDate_time = moment((args["Created_On"]), 'YYYY-MM-DD HH:MM:SS:ZZZ').format("DD-MM-YYYY") + "_" + moment((args["Created_On"]), 'YYYY-MM-DD_HH:MM:SS:ZZZ').format("HH:MM:SS");
+                todayDate_time = todayDate_time.replace(/:/g, '');
+                var objdata = {'UploadFiles': objfile};
+                //let doc_id = objRequest.Document_Id;
+                if (JSON.stringify(files) !== "{}") {
+                    if (!fs.existsSync(appRoot + "/tmp/documents/" + objRequest.PB_CRN + "_" + todayDate_time)) {
+                        fs.mkdirSync(appRoot + "/tmp/documents/" + objRequest.PB_CRN + "_" + todayDate_time);
+                    }
+                    for (var i in files) {
+                        var file_name = files[i].name.split('.')[0].replace(/ /g, '') + "." + files[i].name.split('.')[1];
+                        var file_sys_loc_horizon = appRoot + "/tmp/documents/" + objRequest.PB_CRN + "_" + todayDate_time + "/" + file_name;
+                        var file_web_path_horizon = config.environment.downloadurl + "/tmp/documents/" + objRequest.PB_CRN + "_" + todayDate_time + "/" + file_name;
+                        objdata.UploadFiles[i] = file_web_path_horizon;
+                        var doc_no = i.split("_")[1];
+                        args["Doc" + doc_no] = objdata.UploadFiles[i];
+                        var oldpath = files[i].path;
+                        fs.readFile(oldpath, function (err, data) {
+                            if (err)
+                            {
+                                console.error('Read', err);
+                            }
+                            console.log('File read!');
+
+                            // Write the file
+                            fs.writeFile(file_sys_loc_horizon, data, function (err) {
+                                if (err)
+                                {
+                                    console.error('Write', err);
+                                }
+                            });
+                            // Delete the file
+                            fs.unlink(oldpath, function (err) {
+                                if (err)
+                                    throw err;
+                                console.log('File deleted!');
+                            });
+                        });
+                        sleep(1000);
+                    }
+                    var document_details = require("../models/document_details");
+                    var document_details1 = new document_details(args);
+                    document_details1.save(function (err, response) {
+                        if (err) {
+                            console.log(err);
+                            res.json({"Status": err});
+                        } else {
+                            console.log(response);
+                            res.json({"Status": "Uploaded Successfully"});
+                        }
+                    });
+                }
+            });
+        } catch (e) {
+            console.log('Exception in upload_document() : ', e.stack);
+            res.json({'Status': e.stack});
+        }
+    });
+    app.get('/document_details/:PB_CRN', function (req, res) {
+        try {
+            let PB_CRN = req.params.PB_CRN - 0;
+            let document_details = require("../models/document_details");
+            if (req.query.hasOwnProperty('dbg') && req.query['dbg'] === 'yes') {
+                document_details.findOne({PB_CRN: PB_CRN}, function (err, dbDocumentDetails) {
+                    if (err)
+                        res.send(err);
+                    else {
+                        res.json(dbDocumentDetails);
+                    }
+                });
+            } else {
+                document_details.findOne({PB_CRN: PB_CRN}, null, {sort: {Created_On: -1}}, function (err, dbDocumentDetails) {
+                    if (err)
+                        res.send(err);
+                    else {
+                        res.json(dbDocumentDetails);
+                    }
+                });
+            }
+        } catch (err) {
+            res.json({'Status': err.stack});
+        }
+    });
+};

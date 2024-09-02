@@ -1,0 +1,481 @@
+<Root>
+    <Authentication>
+        <WACode>20000025</WACode>
+        <WAAppCode>30000027</WAAppCode>
+        <WAUserID>USER01</WAUserID>
+        <WAUserPwd>pass@123</WAUserPwd>
+        <WAType>0</WAType>
+        <DocumentType>Quotation</DocumentType>
+        <Versionid>1.1</Versionid>
+        <GUID />
+    </Authentication>
+    <Customer>
+        <CustomerType>Individual</CustomerType>
+        <CustomerName>gfdgfdg fgfd</CustomerName>
+        <DOB>17/06/1986</DOB>
+        <Gender>M</Gender>
+        <CanBeParent>0</CanBeParent>
+        <ContactTelephoneSTD>0</ContactTelephoneSTD>
+        <MobileNo>9564564456</MobileNo>
+        <Emailid>gfdgf@gmail.com</Emailid>
+        <PresentAddressLine1>DSFDSF DSFS</PresentAddressLine1>
+        <PresentAddressLine2>FSDFSF DSFSF</PresentAddressLine2>
+        <PresentStateCode>MAHARASHTRA</PresentStateCode>
+        <PresentCityDistCode>THANE</PresentCityDistCode>
+        <PresentPinCode>400601</PresentPinCode>
+        <PermanentAddressLine1>1204 Evershine Cosmic</PermanentAddressLine1>
+        <PermanentAddressLine2>Behram Baug Infinity Mall</PermanentAddressLine2>
+        <PermanentStateCode>MAHARASHTRA</PermanentStateCode>
+        <PermanentCityDistCode>THANE</PermanentCityDistCode>
+        <PermanentPinCode>400601</PermanentPinCode>
+        <CustGSTNo>00000000000</CustGSTNo>
+        <ProductName>Two Wheeler Package Policy</ProductName>
+        <ProductCode>2312</ProductCode>
+        <InstrumentNo>NULL</InstrumentNo>
+        <InstrumentDate>NULL</InstrumentDate>
+        <BankID>NULL</BankID>
+        <PosPolicyNo>50108651</PosPolicyNo>
+        <WAURN>NULL</WAURN>
+        <NomineeName>NULL</NomineeName>
+        <NomineeRelation> NULL</NomineeRelation>
+    </Customer>
+    <Product Name="Two Wheeler Package Policy">
+        <GeneralProposal Name="General Proposal">
+            <GeneralProposalGroup Name="General Proposal Group">
+                <DistributionChannel Name="Distribution Channel">
+                    <BranchDetails Name="Branch Details">
+                        <IMDBranchName Name="IMDBranchName" Value="" />
+                        <IMDBranchCode Name="IMDBranch Code" Value="" />
+                    </BranchDetails>
+                    <SPDetails Name="SP Details">
+                        <SPName Name="SP Name" Value="" />
+                        <SPCode Name="SP Code" Value="" />
+                    </SPDetails>
+                </DistributionChannel>
+                <GeneralProposalInformation Name="General Proposal Information">
+                    <TypeOfBusiness Name="Type Of Business" Value="FROM INTERMEDIARY" />
+                    <ServiceTaxExemptionCategory Name="Service Tax Exemption Category" Value="No Exemption" />
+                    <BusinessType Name="Transaction Type" Value="New Vehicle" />
+                    <Sector Name="Sector" Value="Others" />
+                    <ProposalDate Name="Proposal Date" Value="17/08/2016" />
+                    <DealId Name="Deal Id" Value="" />
+                    <PolicyNumberChar Name="PolicyNumberChar" Value="" />
+                    <VehicleLaidUpFrom Name="VehicleLaidUpFrom" Value="" />
+                    <VehicleLaidUpTo Name="VehicleLaidUpTo" Value="" />
+                    <PolicyEffectiveDate Name="Policy Effective Date">
+                        <Fromdate Name="From Date" Value="30/03/2017" />
+                        <Todate Name="To Date" Value="29/03/2018" />
+                        <Fromhour Name="From Hour" Value="00:00" />
+                        <Tohour Name="To Hour" Value="23:59" />
+                    </PolicyEffectiveDate>
+                </GeneralProposalInformation>
+            </GeneralProposalGroup>
+            <FinancierDetails Name="Financier Details">
+                <FinancierDtlGrp Type="Group" Name="Financier Dtl Group">
+                    <FinancierDtlGrpData Type="GroupData">
+                        <FinancierCode Name="Financier Code" Value="1" />
+                        <AgreementType Name="Agreement Type" Value="Hypothecation" />
+                        <BranchName Name="Branch Name" Value="HYDERABAD" />
+                        <FinancierName Name="Financier Name" Value="HDFC Bank" />
+                        <SrNo Name="Sr No" Value="1" />
+                    </FinancierDtlGrpData>
+                </FinancierDtlGrp>
+            </FinancierDetails>
+            <PreviousPolicyDetails Name="Previous Policy Details">
+                <PreviousPolDtlGroup Type="Group" Name="Previous Pol Dtl Group">
+                    <PreviousPolDtlGroupData Type="GroupData">
+                        <ProductCode Name="Product Code" Value="2312" />
+                        <ClaimSettled Name="Claim Settled" Value="" />
+                        <ClaimPremium Name="Claim Premium" Value="" />
+                        <ClaimAmount Name="Claim Amount" Value="" />
+                        <DateofLoss Name="Date Of Loss" Value="" />
+                        <NatureofLoss Name="Nature Of Loss" Value="" />
+                        <ClaimNo Name="Claim No" Value="9999999999" />
+                        <PolicyEffectiveTo Name="Policy Effective To" Value="" />
+                        <PolicyEffectiveFrom Name="Policy Effective From" Value="17/08/2016" />
+                        <DateOfInspection Name="DateOfInspection" Value="10/05/2016" />
+                        <PolicyPremium Name="PolicyPremium" Value="" />
+                        <PolicyNo Name="Policy No" Value="" />
+                        <PolicyYear Name="Policy Year" Value="" />
+                        <OfficeCode Name="Office Name" Value="" />
+                        <PolicyStatus Name="Policy Status" Value="Unexpired" />
+                        <CorporateCustomerId Name="Corporate Customer Id" Value=" " />
+                        <InsurerName Name="InsurerName" Value="INSURINGINDIA" />
+                        <InsurerAddress Name="InsurerAddress" Value="INSURINGINDIA" />
+                    </PreviousPolDtlGroupData>
+                </PreviousPolDtlGroup>
+                <PreviousPolicyType Name="Previous Policy Type" Value="Package Policy" />
+                <OfficeAddress Name="Office Address" Value="Insuringindia Pvt Ltd" />
+            </PreviousPolicyDetails>
+        </GeneralProposal>
+        <PremiumCalculation Name="Premium Calculation">
+            <NetPremium Name="Net Premium" Value="" />
+            <ServiceTax Name="Service Tax" Value="" />
+            <StampDuty2 Name="Stamp Duty" Value="" />
+            <CGST Name="CGST" Value="0" />
+            <SGST Name="SGST" Value="0" />
+            <UGST Name="UGST" Value="0" />
+            <IGST Name="IGST" Value="0" />
+            <TotalPremium Name="Total Premium" Value="" />
+        </PremiumCalculation>
+        <Risks Name="Risks">
+            <Risk Type="Group" Name="Risks">
+                <RisksData Type="GroupData">
+                    <De-tariffLoadings Name="De-tariffLoadings">
+                        <De-tariffLoadingGroup Type="Group" Name="De-tariff Loading Group">
+                            <De-tariffLoadingGroupData Type="GroupData">
+                                <LoadingAmount Name="Loading Amount" Value="" />
+                                <LoadingRate Name="Loading Rate" Value="2" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Rate Name="Rate" Value="0" />
+                                <Premium Name="Premium" Value="0" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="De-tariff Loading" />
+                            </De-tariffLoadingGroupData>
+                        </De-tariffLoadingGroup>
+                    </De-tariffLoadings>
+                    <De-tariffDiscounts Name="De-tariffDiscounts">
+                        <De-tariffDiscountGroup Type="Group" Name="De-tariff Discount Group">
+                            <De-tariffDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="" />
+                                <DiscountRate Name="Discount Rate" Value="0.55" />
+                                <SumInsured Name="SumInsured" Value="" />
+                                <Rate Name="Rate" Value="0" />
+                                <Premium Name="Premium" Value="0" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="De-tariff Discount" />
+                            </De-tariffDiscountGroupData>
+                        </De-tariffDiscountGroup>
+                    </De-tariffDiscounts>
+                    <CoverDetails Name="CoverDetails">
+                        <Covers Type="Group" Name="Covers">
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0.02" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Basic OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Basic TP" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="PA COVER TO OWNER DRIVER" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="ELECTRICAL ACCESSORY OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0.02" />
+                                <SumInsured Name="SumInsured" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="NON ELECTRICAL ACCESSORY OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="CNGLPG KIT OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="CNGLPG KIT TP" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="BUILTIN CNGLPG KIT OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="BUILTIN CNGLPG KIT TP" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="FIBERTANK OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="LEGAL LIABILITY TO PAID DRIVER" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="UNNAMED PA COVER TO PASSENGERS" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="PA COVER TO EMPLOYEES OF INSURED" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="PA COVER TO PASSENGERS" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="PA COVER TO PAID DRIVER" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Other OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Other TP" />
+                            </CoversData>
+                        </Covers>
+                    </CoverDetails>
+                    <AddonCoverDetails Name="AddonCoverDetails">
+                        <AddonCovers Type="Group" Name="AddonCovers">
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="Nil Depreciation Waiver cover" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="DAILY CASH ALLOWANCE" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="0" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="RETURN TO INVOICE" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="Road side Assistance" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0.05" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="COST OF CONSUMABLES" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0.05" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="DRIVING TRAIN PROTECT" />
+                            </AddonCoversData>
+                            <AddonCoversData Type="GroupData">
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0.05" />
+                                <SumInsured Name="SumInsured" Value="1000.00" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <AddonCoverGroups Name="AddonCoverGroups" Value="MANUFACTURER SELLING PRICE" />
+                            </AddonCoversData>
+                        </AddonCovers>
+                    </AddonCoverDetails>
+                    <OtherLoadings Name="OtherLoadings">
+                        <OtherLoadingGroup Type="Group" Name="Other Loading Group" />
+                    </OtherLoadings>
+                    <OtherDiscounts Name="OtherDiscounts">
+                        <OtherDiscountGroup Type="Group" Name="Other Discount Group">
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="" />
+                                <DiscountRate Name="Discount Rate" Value="" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Rate Name="Rate" Value="0" />
+                                <Premium Name="Premium" Value="0" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="Antitheft device discount" />
+                            </OtherDiscountGroupData>
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="5000" />
+                                <DiscountRate Name="Discount Rate" Value="2" />
+                                <SumInsured Name="SumInsured" Value="5000" />
+                                <Rate Name="Rate" Value="2" />
+                                <Premium Name="Premium" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="Voluntary deductable" />
+                            </OtherDiscountGroupData>
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="10000" />
+                                <DiscountRate Name="Discount Rate" Value="0.2" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Rate Name="Rate" Value="2" />
+                                <Premium Name="Premium" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="No claim bonus" />
+                            </OtherDiscountGroupData>
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="" />
+                                <DiscountRate Name="Discount Rate" Value="0" />
+                                <Premium Name="Premium" Value="" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="TPPD Discount" />
+                            </OtherDiscountGroupData>
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="" />
+                                <DiscountRate Name="Discount Rate" Value="" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Rate Name="Rate" Value="" />
+                                <Premium Name="Premium" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="Automobile Association discount" />
+                            </OtherDiscountGroupData>
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="" />
+                                <DiscountRate Name="Discount Rate" Value="" />
+                                <SumInsured Name="SumInsured" Value="10000" />
+                                <Rate Name="Rate" Value="" />
+                                <Premium Name="Premium" Value="" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="Handicap discount" />
+                            </OtherDiscountGroupData>
+                        </OtherDiscountGroup>
+                    </OtherDiscounts>
+                </RisksData>
+            </Risk>
+            <VehicleClassCode Name="VehicleClassCode" Value="37" />
+            <VehicleMakeCode Name="VehicleMakeCode" Value="100" />
+            <VehicleModelCode Name="VehicleModelCode" Value="12902" />
+            <RTOLocationCode Name="RTOLocationCode" Value="192" />
+            <NoOfClaimsOnPreviousPolicy Name="No Of Claims On Previous Policy" Value="" />
+            <RegistrationNumber Name="Registration Number" Value="MH013453" />
+            <BodyTypeCode Name="BodyTypeCode" Value="7" />
+            <ModelStatus Name="ModelStatus" Value="Active" />
+            <GrossVehicleWeight Name="GrossVehicleWeight" Value="0" />
+            <CarryingCapacity Name="CarryingCapacity" Value="2" />
+            <VehicleType Name="VehicleType" Value="NEW" />
+            <PlaceOfRegistration Name="Place Of Registration" Value="BHUBANESHWAR" />
+            <VehicleModel Name="VehicleModel" Value="PULSAR" />
+            <VehicleExShowroomPrice Name="VehicleExShowroomPrice" Value="66917" />
+            <DateOfDeliveryOrRegistration Name="DateOfDeliveryOrRegistration" Value="19/12/2015" />
+            <YearOfManufacture Name="Year Of Manufacture" Value="2015" />
+            <DateOfFirstRegistration Name="DateOfFirstRegistration" Value="19/12/2015" />
+            <RegistrationNumberSection1 Name="Regn No. Section 1" Value="MH" />
+            <RegistrationNumberSection2 Name="Regn No. Section 2" Value="013453" />
+            <RegistrationNumberSection3 Name="Regn No. Section 3" Value="MH" />
+            <RegistrationNumberSection4 Name="Regn No. Section 4" Value="" />
+            <EngineNumber Name="Engine Number" Value="34423424" />
+            <ChassisNumber Name="Chassis Number" Value="34324342" />
+            <BodyColour Name="Body Colour" Value="Metallic" />
+            <FuelType Name="Fuel Type" Value="Petrol" />
+            <ExtensionCountryName Name="Extension Country Name" Value="India" />
+            <RegistrationAuthorityName Name="Registration Authority Name" Value="MUMBAI-8" />
+            <AutomobileAssocnFlag Name="AutomobileAssocnFlag" Value="False" />
+            <AutomobileAssociationNumber Name="Automobile Association Number" Value="1234" />
+            <VoluntaryExcess Name="Voluntary Access" Value="" />
+            <TPPDLimit Name="TPPDLimit" Value="" />
+            <AntiTheftDiscFlag Name="AntiTheftDiscFlag" Value="False" />
+            <HandicapDiscFlag Name="HandicapDiscFlag" Value="" />
+            <NumberOfDrivers Name="NumberOfDrivers" Value="0" />
+            <NumberOfEmployees Name="NumberOfEmployees" Value="" />
+            <TransferOfNCB Name="TransferOfNCB" Value="" />
+            <TransferOfNCBPercent Name="TransferOfNCBPercent" Value="" />
+            <NCBDeclaration Name="NCBDeclaration" Value="" />
+            <PreviousVehicleSaleDate Name="PreviousVehicleSaleDate" Value="" />
+            <BonusOnPreviousPolicy Name="BonusOnPreviousPolicy" Value="" />
+            <VehicleClass Name="VehicleClass" Value="Two Wheeler" />
+            <VehicleMake Name="VehicleMake" Value="100" />
+            <BodyTypeDescription Name="BodyTypeDescription" Value="" />
+            <NumberOfWheels Name="NumberOfWheels" Value="2" />
+            <CubicCapacity Name="CubicCapacity" Value="150" />
+            <SeatingCapacity Name="SeatingCapacity" Value="2" />
+            <RegistrationZone Name="RegistrationZone" Value="A " />
+            <VehiclesDrivenBy Name="Vehicles Driven By" Value="" />
+            <DriversAge Name="Drivers Age" Value="" />
+            <DriversExperience Name="Drivers Experience" Value="" />
+            <DriversQualification Name="Drivers Qualification" Value="" />
+            <VehicleModelCluster Name="VehicleModelCluster" Value="11635" />
+            <OpenCoverNoteFlag Name="OpenCoverNote" Value="" />
+            <LegalLiability Name="LegalLiability" Value="" />
+            <PaidDriver Name="PaidDriver" Value="" />
+            <NCBConfirmation Name="NCBConfirmation" Value="" />
+            <RegistrationDate Name="RegistrationDate" Value="17/08/2016" />
+            <TPLoadingRate Name="TPLoadingRate" Value="0" />
+            <ExtensionCountry Name="ExtensionCountry" Value="" />
+            <VehicleAge Name="VehicleAge" Value="" />
+            <LocationCode Name="LocationCode" Value="" />
+            <RegistrationZoneDescription Name="RegistrationZoneDescription" Value="" />
+            <NumberOfWorkmen Name="NumberOfWorkmen" Value="" />
+            <VehicCd Name="VehicCd" Value="" />
+            <SalesTax Name="Sales Tax" Value="" />
+            <ModelOfVehicle Name="Model Of Vehicle" Value="" />
+            <PopulateDetails Name="Populate details" Value="" />
+            <VehicleIDV Name="VehicleInsuredDeclaredValue" Value="24000" />
+            <ShowroomPriceDeviation Name="ShowroomPriceDeviation" Value="" />
+            <NewVehicle Name="New Vehicle" Value="" />
+        </Risks>
+    </Product>
+    <PaymentDetails>
+        <PaymentEntry>
+            <PaymentId />
+            <MICRCheque />
+            <InstrumentDate />
+            <DraweeBankName />
+            <HOUSEBANKNAME />
+            <AmountPaid />
+            <PaymentType />
+            <PaymentMode />
+            <InstrumentNo />
+            <Status />
+            <DepositSlipNo />
+            <PayerType />
+        </PaymentEntry>
+    </PaymentDetails>
+    <Errors>
+        <ErrorCode />
+        <ErrDescription />
+    </Errors>
+</Root>

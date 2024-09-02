@@ -1,0 +1,128 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Header> 
+        <AuthHeader xmlns="http://tempuri.org/"> 
+            <Username>___insurer_integration_service_user___</Username>
+            <Password>___insurer_integration_service_password___</Password> 
+        </AuthHeader> 
+    </soap:Header>	
+    <soap:Body>
+        <GenerateProposal xmlns="http://tempuri.org/">
+            <objPolicyEntryETT>
+                <ReferenceNo></ReferenceNo>
+                <ProdCode>___product_id___</ProdCode>
+                <PolicyFromDt>___policy_start_date___</PolicyFromDt>
+                <PolicyToDt>___policy_end_date___</PolicyToDt>
+                <PolicyIssueDt>___current_date___</PolicyIssueDt>
+                <InsuredPrefix>___salutation___</InsuredPrefix>
+                <InsuredName>___first_name___ ___middle_name___ ___last_name___</InsuredName>
+                <Gender>___gender___</Gender>
+                <Address1>___communication_address_1___</Address1>
+                <Address2>___communication_address_2___</Address2>
+                <Address3>___communication_address_3___</Address3>
+                <State>___communication_state_code___</State>
+                <City>___communication_city___</City>
+                <PinCode>___communication_pincode___</PinCode>
+                <PanNo>___pan___</PanNo>
+                <GSTNo></GSTNo>
+                <TelephoneNo />
+                <FaxNo />
+                <EMailID>___email___</EMailID>
+                <PolicyType>___vehicle_insurance_subtype_2___</PolicyType>
+                <ProposalType>___vehicle_insurance_type_1___</ProposalType>
+                <MobileNo>___mobile___</MobileNo>
+                <DateOfBirth>___birth_date___</DateOfBirth>
+                <CoverNoteNo />
+                <CoverNoteDt />	
+                <VehicleCode>___dbmaster_insurer_vehicle_code___</VehicleCode>        
+                <EngineNo>___engine_number___</EngineNo>       
+                <FirstRegDt>___vehicle_registration_date___</FirstRegDt>
+                <VehicleType>___vehicle_insurance_type___</VehicleType>
+                <ChassisNo>___chassis_number___</ChassisNo>
+                <RegNo1>___registration_no_1___</RegNo1>
+                <RegNo2>___registration_no_2___</RegNo2>
+                <RegNo3>___registration_no_3___</RegNo3>
+                <RegNo4>___registration_no_4___</RegNo4>
+                <RTOCode>___dbmaster_insurer_rto_code___</RTOCode>
+                <IDV_of_Vehicle>___vehicle_expected_idv___</IDV_of_Vehicle>       
+                <Colour>___vehicle_color___</Colour>        
+                <NoEmpCoverLL>0</NoEmpCoverLL>
+                <VehiclePurposeYN />
+                <DriverAgeYN />        
+                <LimitOwnPremiseYN>0</LimitOwnPremiseYN>
+                <CNGKitYN>___is_external_bifuel___</CNGKitYN>
+                <CNGKitSI>___external_bifuel_value___</CNGKitSI>
+                <LimitedTPPDYN>0</LimitedTPPDYN>
+                <InBuiltCNGKitYN>___in_built_cngkit___</InBuiltCNGKitYN>
+                <VoluntaryExcess>___voluntary_deductible___</VoluntaryExcess>
+                <Bangladesh>0</Bangladesh>
+                <Bhutan>0</Bhutan>
+                <SriLanka>0</SriLanka>
+                <Pakistan>0</Pakistan>
+                <Nepal>0</Nepal>
+                <Maldives>0</Maldives>
+                <DeTariff />        
+                <PreInspectionReportYN/>
+                <PreInspection></PreInspection>
+                <BreakIn>NO</BreakIn>
+                <AddonPackage>___addon_pckg___</AddonPackage>     
+                <PAforUnnamedPassengerYN>___pa_unnamed_passenger_si_2___</PAforUnnamedPassengerYN>
+                <PAforUnnamedPassengerSI>___pa_unnamed_passenger_si___</PAforUnnamedPassengerSI>
+                <ElectricalaccessYN>___is_electrical_accessory___</ElectricalaccessYN>
+                <ElectricalaccessSI>___electrical_accessory___</ElectricalaccessSI>
+                <ElectricalaccessRemarks>electrical</ElectricalaccessRemarks>
+                <NonElectricalaccessYN>___is_non_electrical_accessory___</NonElectricalaccessYN>
+                <NonElectricalaccessSI>___non_electrical_accessory___</NonElectricalaccessSI>
+                <NonElectricalaccessRemarks>non_electrical</NonElectricalaccessRemarks>
+                <PAPaidDriverConductorCleanerYN></PAPaidDriverConductorCleanerYN>
+                <PAPaidDriverConductorCleanerSI></PAPaidDriverConductorCleanerSI>
+                <PAPaidDriverCount>___is_pa_paid_driver___</PAPaidDriverCount>
+                <PAPaidConductorCount></PAPaidConductorCount>
+                <PAPaidCleanerCount></PAPaidCleanerCount>
+                <NomineeNameforPAOwnerDriver>___nominee_name___</NomineeNameforPAOwnerDriver>
+                <NomineeAgeforPAOwnerDriver>___nominee_age___</NomineeAgeforPAOwnerDriver>
+                <NomineeRelationforPAOwnerDriver>___nominee_relation___</NomineeRelationforPAOwnerDriver>
+                <AppointeeNameforPAOwnerDriver />
+                <AppointeeRelationforPAOwnerDriver />
+                <LLtoPaidDriverYN>___is_llpd___</LLtoPaidDriverYN>
+                <AntiTheftYN>___is_antitheft_fit___</AntiTheftYN>
+                <PreviousPolicyNo>___previous_policy_number___</PreviousPolicyNo>
+                <PreviousInsurer>___dbmaster_previousinsurer_code___</PreviousInsurer>
+                <PreviousPolicyFromDt>___pre_policy_start_date___</PreviousPolicyFromDt>
+                <PreviousPolicyToDt>___policy_expiry_date___</PreviousPolicyToDt>
+                <PreviousPolicyUWYear/>
+                <PreviousPolicySI/>
+                <PreviousPolicyClaimYN>___is_claim_exists___</PreviousPolicyClaimYN>
+                <PreviousPolicyNCBPerc>___vehicle_ncb_current___</PreviousPolicyNCBPerc>
+                <PreviousPolicyType>___vehicle_insurance_subtype_2___</PreviousPolicyType>
+                <HypothecationType>___financial_agreement_type_2___</HypothecationType>
+                <HypothecationBankName>___financial_institute_code___</HypothecationBankName>
+                <HypothecationAddress1>___financial_institute_city___</HypothecationAddress1>
+                <HypothecationAddress2 />
+                <HypothecationAddress3 />
+                <HypothecationAgreementNo />
+                <HypothecationCountry />
+                <HypothecationState />
+                <HypothecationCity>___financial_institute_city___</HypothecationCity>
+                <HypothecationPinCode />
+                <SpecifiedPersonField></SpecifiedPersonField> 
+                <PAOwnerDriverExclusion>___is_pa_od___</PAOwnerDriverExclusion>    
+                <PAOwnerDriverExReason>___is_pa_od_2___</PAOwnerDriverExReason> 
+                <NilDepreciationCoverYN>___addon_zero_dep_cover_2___</NilDepreciationCoverYN>
+                <DepDeductWaiverYN>Y</DepDeductWaiverYN> 
+                <PreviousNilDepreciation>___addon_zero_dep_cover_2___</PreviousNilDepreciation>
+                <DailyExpRemYN>___addon_daily_allowance_cover___</DailyExpRemYN>  
+                <InvReturnYN>___addon_invoice_price_cover___</InvReturnYN>  
+                <LossOfPersonBelongYN>___addon_personal_belonging_loss_cover___</LossOfPersonBelongYN>  
+                <EmergencyTranHotelExpRemYN>___addon_emergency_transport_hotel___</EmergencyTranHotelExpRemYN>
+                <RSACover>___addon_road_assist_cover___</RSACover>
+                <KeyReplacementYN>___addon_key_lock_cover___</KeyReplacementYN>
+                <MultiCarBenefitYN>Y</MultiCarBenefitYN>
+                <TpFmDt>___tp_policy_start_date___</TpFmDt>
+                <TpToDt>___tp_policy_end_date___</TpToDt>
+                <TpPolNo>___tp_policy_number___</TpPolNo>
+                <TpCompName>___tp_insurer_code___</TpCompName>
+                <TpAddress>___tp_insurer_address___</TpAddress>
+            </objPolicyEntryETT>
+        </GenerateProposal>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,2579 @@
+[
+    {
+        "Integration_List": [
+            {
+                "Insurer_ID": 9,
+                "Is_Active": 0,
+                "Agent_Code": "Direct",
+                "Location_Code": "9202",
+                "Service_User": "100002",
+                "Service_User_Live": "17BRG116B327",
+                "Service_Password": "Pass@123",
+                "Service_Password_Live": "LANDMARK07092017",
+                "Payment_Gateway_URL": "https://rgipartners.reliancegeneral.co.in/PaymentIntegration/PaymentIntegration",
+                "Payment_Gateway_URL_Live": "http://rzonews.reliancegeneral.co.in/PaymentIntegration/PaymentIntegration",
+                "Pdf_URL": "http://rzonews.reliancegeneral.co.in:91/API/Service/GeneratePolicyschedule?PolicyNo=___policy_number___",
+                "Pdf_URL_Live": "https://rzonews.reliancegeneral.co.in:91/api/service/generatepolicyschedule",
+                "Name": "Reliance::Travel",
+                "Lib_Class": "RelianceTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 401,
+                        "Plan_Code": "Basic",
+                        "Plan_Name": "Basic Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 402,
+                        "Plan_Code": "Standard",
+                        "Plan_Name": "Standard Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 403,
+                        "Plan_Code": "Silver",
+                        "Plan_Name": "Silver Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 404,
+                        "Plan_Code": "Gold",
+                        "Plan_Name": "Gold Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 405,
+                        "Plan_Code": "Platinum",
+                        "Plan_Name": "Platinum Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 406,
+                        "Plan_Code": "Plus",
+                        "Plan_Name": "Corporate Plus",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 407,
+                        "Plan_Code": "Elite",
+                        "Plan_Name": "Corporate Elite",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "Reliance_Travel_Premium",
+                        "Method_Action": "PremiumCalulationForTravel",
+                        "Method_Request_File": "Travel/Reliance_Travel_Premium.xml",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://rgipartners.reliancegeneral.co.in/API/Service/",
+                        "Service_URL_Live": "http://rzonews.reliancegeneral.co.in/API/Service/",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 9
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "Reliance_Travel_Proposal",
+                        "Method_Action": "ProposalCreationForTravel",
+                        "Method_Request_File": "Travel/Reliance_Travel_Proposal.xml",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://rgipartners.reliancegeneral.co.in/API/Service/",
+                        "Service_URL_Live": "http://rzonews.reliancegeneral.co.in/API/Service/",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 9
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "Reliance_Travel_Verification",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Execute_API": "no",
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 9
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 34,
+                "Is_Active": 0,
+                "Agent_Code": "20574400",
+                "Agent_Code_Live": "20002388",
+                "Location_Code": "",
+                "Service_User": "",
+                "Service_Password": "",
+                "Payment_Gateway_URL": "https://apiuat.religarehealthinsurance.com/portalui/PortalPayment.run",
+                "Payment_Gateway_URL_Live": "https://api.religarehealthinsurance.com/portalui/PortalPayment.run",
+                "Pdf_URL": "",
+                "Name": "Care::Travel",
+                "Lib_Class": "CareTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 601,
+                        "Plan_Code": "40001130_10000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 602,
+                        "Plan_Code": "40001130_25000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 603,
+                        "Plan_Code": "40001130_50000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 604,
+                        "Plan_Code": "40001130_100000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 605,
+                        "Plan_Code": "40001141_10000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 606,
+                        "Plan_Code": "40001141_25000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 607,
+                        "Plan_Code": "40001141_50000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 608,
+                        "Plan_Code": "40001141_100000",
+                        "Plan_Name": "Explore - Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 609,
+                        "Plan_Code": "40001132_25000",
+                        "Plan_Name": "Explore - Africa",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 610,
+                        "Plan_Code": "40001132_50000",
+                        "Plan_Name": "Explore - Africa",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 611,
+                        "Plan_Code": "40001132_100000",
+                        "Plan_Name": "Explore - Africa",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 612,
+                        "Plan_Code": "40001146_50000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 613,
+                        "Plan_Code": "40001146_100000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 614,
+                        "Plan_Code": "40001146_200000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 615,
+                        "Plan_Code": "40001146_300000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 616,
+                        "Plan_Code": "40001146_500000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 617,
+                        "Plan_Code": "40001147_50000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 618,
+                        "Plan_Code": "40001147_100000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 619,
+                        "Plan_Code": "40001147_300000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 620,
+                        "Plan_Code": "40001147_500000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 621,
+                        "Plan_Code": "40001143_50000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 622,
+                        "Plan_Code": "40001143_100000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 623,
+                        "Plan_Code": "40001143_200000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 624,
+                        "Plan_Code": "40001143_300000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 625,
+                        "Plan_Code": "40001143_500000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 626,
+                        "Plan_Code": "40001144_50000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 627,
+                        "Plan_Code": "40001144_100000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 628,
+                        "Plan_Code": "40001144_300000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 629,
+                        "Plan_Code": "40001144_500000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 630,
+                        "Plan_Code": "40001139_50000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 631,
+                        "Plan_Code": "40001139_100000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 632,
+                        "Plan_Code": "40001139_200000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 633,
+                        "Plan_Code": "40001139_300000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 634,
+                        "Plan_Code": "40001139_500000",
+                        "Plan_Name": "Explore - Gold Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 635,
+                        "Plan_Code": "40001140_50000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 636,
+                        "Plan_Code": "40001140_100000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 637,
+                        "Plan_Code": "40001140_300000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 638,
+                        "Plan_Code": "40001140_500000",
+                        "Plan_Name": "Explore - Platinum Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 639,
+                        "Plan_Code": "40001136_50000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 640,
+                        "Plan_Code": "40001136_100000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 641,
+                        "Plan_Code": "40001136_200000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 642,
+                        "Plan_Code": "40001136_300000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 643,
+                        "Plan_Code": "40001136_500000",
+                        "Plan_Name": "Explore - Gold Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 644,
+                        "Plan_Code": "40001137_50000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 645,
+                        "Plan_Code": "40001137_100000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 646,
+                        "Plan_Code": "40001137_300000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 647,
+                        "Plan_Code": "40001137_500000",
+                        "Plan_Name": "Explore - Platinum Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 648,
+                        "Plan_Code": "40001133_30000",
+                        "Plan_Name": "Explore - Europe",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 649,
+                        "Plan_Code": "40001133_100000",
+                        "Plan_Name": "Explore - Europe",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 650,
+                        "Plan_Code": "40001135_25000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 651,
+                        "Plan_Code": "40001135_50000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 652,
+                        "Plan_Code": "40001135_100000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 653,
+                        "Plan_Code": "40001135_200000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 654,
+                        "Plan_Code": "40001138_25000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 655,
+                        "Plan_Code": "40001138_50000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 656,
+                        "Plan_Code": "40001138_100000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 657,
+                        "Plan_Code": "40001138_200000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 658,
+                        "Plan_Code": "40001142_25000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 659,
+                        "Plan_Code": "40001142_50000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 660,
+                        "Plan_Code": "40001142_100000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 661,
+                        "Plan_Code": "40001142_200000",
+                        "Plan_Name": "Explore - Silver Worldwide",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 662,
+                        "Plan_Code": "40001145_25000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 663,
+                        "Plan_Code": "40001145_50000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 664,
+                        "Plan_Code": "40001145_100000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 665,
+                        "Plan_Code": "40001145_200000",
+                        "Plan_Name": "Explore - Silver Worldwide (Excl. US & Canada)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 666,
+                        "Plan_Code": "40001131_25000",
+                        "Plan_Name": "Explore - Australia & New Zealand",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 667,
+                        "Plan_Code": "40001131_50000",
+                        "Plan_Name": "Explore - Australia & New Zealand",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 668,
+                        "Plan_Code": "40001131_100000",
+                        "Plan_Name": "Explore - Australia & New Zealand",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 669,
+                        "Plan_Code": "40001134_50000",
+                        "Plan_Name": "Explore - Canada +",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 700,
+                        "Plan_Code": "40001134_100000",
+                        "Plan_Name": "Explore - Canada +",
+                        "Is_Active": false
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "Care_Travel_Premium",
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "Database",
+                        "WSDL_URL": null,
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 34
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "Care_Travel_Proposal",
+                        "Method_Action": "createPolicyTravel",
+                        "Method_Request_File": "Travel/Care_Travel_Proposal.xml",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "/relinterface/services/RelSymbiosysServices.RelSymbiosysServicesHttpSoap12Endpoint/",
+                        "Service_URL_Live": "/relinterface/services/RelSymbiosysServices.RelSymbiosysServicesHttpSoap12Endpoint/",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 34
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "Care_Travel_Verification",
+                        "Method_Request_File": "Travel/Care_Travel_Proposal.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Execute_API": "no",
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 34
+                    },
+                    {
+                        "Method_Id": 9,
+                        "Method_Name": "Care_Travel_Pdf",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Care_Travel_Pdf.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "/relinterfacerestful/religare/restful/getPolicyPDFV2",
+                        "Service_URL_Live": "/relinterfacerestful/religare/restful/getPolicyPDFV2",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 34
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 4,
+                "Is_Active": 0,
+                "Agent_Code": "60000272",
+                "Agent_Code_Live": "60057104",
+                "Location_Code": "14",
+                "Location_Code_Live": "2J",
+                "Service_User": "webagg",
+                "Service_User_Live": "LANINS",
+                "Service_Password": "webagg",
+                "Service_Password_Live": "LANINS",
+                "Payment_Gateway_URL": "http://fglpg001.futuregenerali.in/Ecom_NL/WEBAPPLN/UI/Common/WebAggPay.aspx",
+                "Payment_Gateway_URL_Live": "https://online.futuregenerali.in/Ecom_NL/WEBAPPLN/UI/Common/WebAggPay.aspx",
+                "Name": "FutureGenerali::Travel",
+                "Lib_Class": "FutureGeneraliTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 421,
+                        "Plan_Code": "Standard",
+                        "Plan_Name": "Travel Suraksha Standard",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 422,
+                        "Plan_Code": "Silver",
+                        "Plan_Name": "Travel Suraksha Silver",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 423,
+                        "Plan_Code": "Gold",
+                        "Plan_Name": "Travel Suraksha Gold",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 424,
+                        "Plan_Code": "Platinum",
+                        "Plan_Name": "Travel Suraksha Platinum",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 9,
+                        "Method_Name": "FutureGenerali_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "CreatePolicy",
+                        "Method_Request_File": "Travel/FutureGenerali_Travel_Premium.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Service_URL": "http://fglpg001.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_URL_Live": "http://online.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "Is_Active": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 4
+                    },
+                    {
+                        "Method_Id": 9,
+                        "Method_Name": "FutureGenerali_Travel_Proposal",
+                        "Method_Type_ID": 2,
+                        "Method_Action": "CreatePolicy",
+                        "Method_Request_File": "Travel/FutureGenerali_Travel_Proposal.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Service_URL": "http://fglpg001.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_URL_Live": "http://online.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "Execute_API": "no",
+                        "Is_Active": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 4
+                    },
+                    {
+                        "Method_Id": 9,
+                        "Method_Name": "FutureGenerali_Travel_Verification",
+                        "Method_Type_ID": 3,
+                        "Method_Action": "CreatePolicy",
+                        "Method_Request_File": "Travel/FutureGenerali_Travel_Proposal.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Service_URL": "http://fglpg001.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_URL_Live": "http://online.futuregenerali.in/BO/Service.svc?wsdl",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 4
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 2,
+                "Is_Active": 0,
+                "Agent_Code": "Direct",
+                "Location_Code": "9202",
+                "Environment": "LIVE",
+                "Service_User": "landmtr",
+                "Service_User_Live": "lmkStr",
+                "Service_Password": "AZg3Q1SktWKLz0Os/H0MlAxFfI75pjnpKjn9xrV9vimyyS7/5Ilil/ftcP5oHxC7IFYLVF0C3MAJcIznwrZvDA==",
+                "Service_Password_Live": "/UhO4EVCIemPuEhcK+0HVPQuSF4UYmNUVoFljmYfbLAziuozxjzsmhJQ3DXTx91nGqDxK9w5jdDh9YOxBZ0PIA==",
+                "Payment_Gateway_URL": "https://uat.bhartiaxaonline.co.in/cordys/bagi/eSuite/B2C/payMe.aspx",
+                "Payment_Gateway_URL_Live": "https://awpservices.bhartiaxaonline.co.in/cordys/bagi/eSuite/B2C/payMe.jsp",
+                "Pdf_URL": "https://www.bhartiaxaonline.co.in/B2CReportFiles/___transaction_id___.PDF",
+                "Pdf_URL_Live": "https://awpservices.bhartiaxaonline.co.in/home/B2C/birt/reports/reportFiles/___transaction_id___.PDF",
+                "Name": "BhartiAxa::Travel",
+                "Lib_Class": "BhartiAxaTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 431,
+                        "Plan_Code": "Basic",
+                        "Plan_Name": "Smart Traveller Basic Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 432,
+                        "Plan_Code": "Regular",
+                        "Plan_Name": "Smart Traveller Regular Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 433,
+                        "Plan_Code": "Essential",
+                        "Plan_Name": "Smart Traveller Essential Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 434,
+                        "Plan_Code": "Silver",
+                        "Plan_Name": "Smart Traveller Silver Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 435,
+                        "Plan_Code": "Gold",
+                        "Plan_Name": "Smart Traveller Gold Plan",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 436,
+                        "Plan_Code": "MultiSilver",
+                        "Plan_Name": "Smart Traveller Annual Multi-trip Silver",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 437,
+                        "Plan_Code": "MultiGold",
+                        "Plan_Name": "Smart Traveller Annual Multi-trip Gold",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 438,
+                        "Plan_Code": "MultiPlatinum",
+                        "Plan_Name": "Smart Traveller Annual Multi-trip Platinum",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Name": "BhartiAxa_Travel_Premium",
+                        "Method_Request_File": "Travel/BhartiAxa_Travel_Premium.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uat.bhartiaxaonline.co.in/cordys/WSDLGateway.wcp?service=http%3A%2F%2Fschemas.cordys.com%2Fgateway%2FProvider/serve&organization=o%3DB2C%2Ccn%3Dcordys%2Ccn%3DdefaultInst106%2Co%3Dmydomain.com",
+                        "Service_URL_Live": "https://awpservices.bhartiaxaonline.co.in/cordys/WSDLGateway.wcp?service=http%3A%2F%2Fschemas.cordys.com%2Fgateway%2FProvider/serve&organization=o%3DB2C%2Ccn%3Dcordys%2Ccn%3DPROD01%2Co%3Daxa-in.intraxa",
+                        "Service_File": null,
+                        "Service_File_Live": null,
+                        "Checkpoint_URL": "http://uat.bhartiaxaonline.co.in/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=B2C,cn=cordys,cn=defaultInst106,o=mydomain.com",
+                        "Checkpoint_URL_Live": "https://awpservices.bhartiaxaonline.co.in/home/B2C/com.eibus.web.soap.Gateway.wcp?organization=o=B2C,cn=cordys,cn=PROD01,o=axa-in.intraxa",
+                        "Is_Active": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 2
+                    },
+                    {
+                        "Method_Name": "BhartiAxa_Travel_Proposal",
+                        "Method_Request_File": "Travel/BhartiAxa_Travel_Proposal.xml",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uat.bhartiaxaonline.co.in/cordys/WSDLGateway.wcp?service=http%3A%2F%2Fschemas.cordys.com%2Fgateway%2FProvider/serve&organization=o%3DB2C%2Ccn%3Dcordys%2Ccn%3DdefaultInst106%2Co%3Dmydomain.com",
+                        "Service_URL_Live": "https://awpservices.bhartiaxaonline.co.in/cordys/WSDLGateway.wcp?service=http%3A%2F%2Fschemas.cordys.com%2Fgateway%2FProvider/serve&organization=o%3DB2C%2Ccn%3Dcordys%2Ccn%3DPROD01%2Co%3Daxa-in.intraxa",
+                        "Service_File": null,
+                        "Service_File_Live": null,
+                        "Checkpoint_URL": "http://uat.bhartiaxaonline.co.in/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=B2C,cn=cordys,cn=defaultInst106,o=mydomain.com",
+                        "Checkpoint_URL_Live": "https://awpservices.bhartiaxaonline.co.in/home/B2C/com.eibus.web.soap.Gateway.wcp?organization=o=B2C,cn=cordys,cn=PROD01,o=axa-in.intraxa",
+                        "Is_Active": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 2
+                    },
+                    {
+                        "Method_Name": "BhartiAxa_Travel_Verification",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "SOAP",
+                        "WSDL_URL": null,
+                        "Execute_API": "no",
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "Service_File": "",
+                        "Service_File_Live": "",
+                        "Checkpoint_URL": "",
+                        "Checkpoint_URL_Live": "",
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 2
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 26,
+                "Is_Active": 1,
+                "Agent_Code": "Direct",
+                "Location_Code": "9202",
+                "Service_User": "53ab886c7c7e88d8e2f7a12872888b32",
+                "Service_User_Live": "af2d561cd6644c34bb8fc61926da5e8f",
+                "Service_Password": "c68ba59148d7012f352e7efdadffd06f",
+                "Service_Password_Live": "5aedbe3f7f1048bd81b60a31ef2e011b",
+                "Payment_Gateway_URL": "https://igsan.starhealth.in/policy/proposals/purchase/",
+                "Payment_Gateway_URL_Live": "https://ig.starhealth.in/policy/proposals/purchase/",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "Star::Travel",
+                "Lib_Class": "StarTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 441,
+                        "Plan_Name": "Plan B1",
+                        "Plan_Code": "1",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 442,
+                        "Plan_Name": "Plan C1",
+                        "Plan_Code": "2",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 443,
+                        "Plan_Name": "Plan B2 (Ex. US & CANADA)",
+                        "Plan_Code": "3",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 444,
+                        "Plan_Name": "Plan C2 (Ex. US & CANADA)",
+                        "Plan_Code": "4",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 445,
+                        "Plan_Name": "Plan A1",
+                        "Plan_Code": "5",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 446,
+                        "Plan_Name": "Plan A2 (Ex. US & CANADA)",
+                        "Plan_Code": "6",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "Star_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Star_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uatapigw.tataaig.com/travelapi/v1/quote-compose",
+                        "Service_URL_Live": "https://ig.starhealth.in/api/proposal/premium/calculate",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 26
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "Star_Travel_Customer",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Star_Travel_Customer.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://igsan.starhealth.in/api/policy/proposals",
+                        "Service_URL_Live": "https://ig.starhealth.in/api/policy/proposals",
+                        "IsActive": true,
+                        "Method_Type": "Customer",
+                        "Product_Id": 4,
+                        "Insurer_Id": 26
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "Star_Travel_Proposal",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Star_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://igsan.starhealth.in/api/policy/proposals/",
+                        "Service_URL_Live": "https://ig.starhealth.in/api/policy/proposals/",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 26
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "Star_Health_Verification",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Star_Travel_Verification.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://igsan.starhealth.in/api/policy/proposals/",
+                        "Service_URL_Live": "https://ig.starhealth.in/api/policy/proposals/",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 26
+                    },
+                    {
+                        "Method_Id": 5,
+                        "Method_Name": "Star_Travel_Pdf",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/Star_Health_Pdf.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://igsan.starhealth.in/api/policy/proposals/",
+                        "Service_URL_Live": "https://ig.starhealth.in/api/policy/proposals/",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 26
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 5,
+                "Is_Active": 1,
+                "Agent_Code": "TRC16741",
+                "Agent_Code_Live": "TRC21900",
+                "Service_User": "LANDMARK",
+                "Service_User_Live": "LANDMARK INSURANCE BROKERS PRIVATE LIMITED",
+                "Service_Password": "rH33FlSFavPvYHc+Bu5Fqg==",
+                "Service_Password_Live": "+7AXMNlO2uYveCX8uOYrGg==",
+                "Payment_Gateway_URL": "https://heapp21.hdfcergo.com/UAT/OnlineProducts/CCPGISUBSCRIBER/MakePayment.aspx",
+                "Payment_Gateway_URL_Live": "https://paga.hdfcergo.com/PaymentGateway/Payments.aspx",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "HDFCErgo::Travel",
+                "Lib_Class": "HDFCErgoTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 501,
+                        "Plan_Name": "Silver",
+                        "Plan_Code": "1",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 502,
+                        "Plan_Name": "Bronze",
+                        "Plan_Code": "2",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 503,
+                        "Plan_Name": "Gold",
+                        "Plan_Code": "3",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 504,
+                        "Plan_Name": "Platinum",
+                        "Plan_Code": "4",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 505,
+                        "Plan_Name": "Titanium",
+                        "Plan_Code": "5",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "HDFCErgo_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/HDFCErgo_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://accessuat.hdfcergo.com/cp/Integration/HEIIntegrationService/Integration/CalculatePremium",
+                        "Service_URL_Live": "https://chpa.heaggregator.com/TravelOnline/ChannelPartner/CalculatePremium",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 5
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "HDFCErgo_Travel_Proposal",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/HDFCErgo_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://accessuat.hdfcergo.com/cp/integration/heiintegrationservice/integration/createproposal",
+                        "Service_URL_Live": "https://chpa.heaggregator.com/TravelOnline/ChannelPartner/SaveTransaction",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 5
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "HDFCErgo_Travel_Verification",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/HDFCErgo_Travel_Verification.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://accessuat.hdfcergo.com/cp/integration/heiintegrationservice/integration/submitpaymentdetails",
+                        "Service_URL_Live": "https://chpa.heaggregator.com/TravelOnline/ChannelPartner/PolicyGeneration",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 5
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "HDFCErgo_Travel_Pdf",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/HDFCErgo_Travel_Pdf.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://accessuat.hdfcergo.com/cp/integration/heiintegrationservice/integration/getpolicydocument",
+                        "Service_URL_Live": "https://chpa.heaggregator.com/CPDownload/api/DownloadPolicy/PolicyDetails",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 5
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 11,
+                "Is_Active": 1,
+                "Agent_Code": "",
+                "Location_Code": "",
+                "Service_User": "",
+                "Service_User_Live": "",
+                "Service_Password": "",
+                "Service_Password_Live": "",
+                "Payment_Gateway_URL": "https://uatapigw.tataaig.com/payment/online?product=travel",
+                "Payment_Gateway_URL_Live": "https://foyer.tataaig.com/payment/online?product=travel",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "Star::Travel",
+                "Lib_Class": "StarTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 1101,
+                        "Plan_Name": "Travel Guard Policy Gold",
+                        "Plan_Code": "G",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1102,
+                        "Plan_Name": "Travel Guard Policy Platinum",
+                        "Plan_Code": "P",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1103,
+                        "Plan_Name": "Travel Guard Policy Silver",
+                        "Plan_Code": "S",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1104,
+                        "Plan_Name": "Travel Guard Policy Silver with family",
+                        "Plan_Code": "SWF",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1105,
+                        "Plan_Name": "Travel Guard Policy Silver Plus",
+                        "Plan_Code": "SP",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1106,
+                        "Plan_Name": "Travel Guard Policy Silver Plus with family",
+                        "Plan_Code": "SPWF",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1107,
+                        "Plan_Name": "Travel Guard Policy Senior",
+                        "Plan_Code": "Senior",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1108,
+                        "Plan_Name": "Travel Guard Policy Annual Gold",
+                        "Plan_Code": "AG",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1109,
+                        "Plan_Name": "Travel Guard Policy Annual Platinum",
+                        "Plan_Code": "AP",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1110,
+                        "Plan_Name": "Asia Guard Policy Gold",
+                        "Plan_Code": "G-Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1111,
+                        "Plan_Name": "Asia Guard Policy Silver",
+                        "Plan_Code": "S-Asia",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1112,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Gold",
+                        "Plan_Code": "G-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1113,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Platinum",
+                        "Plan_Code": "P-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1114,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Silver",
+                        "Plan_Code": "S-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1115,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Silver with family",
+                        "Plan_Code": "SWF-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1116,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Silver Plus",
+                        "Plan_Code": "SP-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1117,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Silver Plus with family",
+                        "Plan_Code": "SPWF-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1118,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Senior",
+                        "Plan_Code": "Senior-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1119,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Annual Gold",
+                        "Plan_Code": "AG-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1120,
+                        "Plan_Name": "Travel Guard Policy Without Sublimit Annual Platinum",
+                        "Plan_Code": "AP-SL",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 1121,
+                        "Plan_Name": "Asia Guard Policy Silver Plus",
+                        "Plan_Code": "SP-Asia",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "TataAIG_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/TataAIG_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uatapigw.tataaig.com/travelapi/v1/quote-compose",
+                        "Service_URL_Live": "https://foyer.tataaig.com/travelapi/v1/quote-compose",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 11
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "TataAIG_Travel_Customer",
+                        "Method_Type_ID": 2,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/TataAIG_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uatapigw.tataaig.com/travelapi/v1/quote-compose",
+                        "Service_URL_Live": "https://foyer.tataaig.com/travelapi/v1/quote-compose",
+                        "IsActive": true,
+                        "Method_Type": "Customer",
+                        "Product_Id": 4,
+                        "Insurer_Id": 11
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "TataAIG_Travel_Proposal",
+                        "Method_Type_ID": 3,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/TataAIG_Travel_Customer.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uatapigw.tataaig.com/travelapi/v1/proposal-compose",
+                        "Service_URL_Live": "https://foyer.tataaig.com/travelapi/v1/proposal-compose",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 11
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "TataAIG_Travel_Verification",
+                        "Method_Type_ID": 4,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/TataAIG_Travel_Verification.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": " https://uatapigw.tataaig.com/payment/verify?product=travel",
+                        "Service_URL_Live": "https://foyer.tataaig.com/payment/verify?product=travel",
+                        "IsActive": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 11
+                    },
+                    {
+                        "Method_Id": 5,
+                        "Method_Name": "TataAIG_Travel_Pdf",
+                        "Method_Type_ID": 5,
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://uatapigw.tataaig.com/travelapi/v1/policy-download/",
+                        "Service_URL_Live": "https://foyer.tataaig.com/travelapi/v1/policy-download/",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 11
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 1,
+                "Is_Active": 0,
+                "Agent_Code": "",
+                "Agent_Code_Live": "",
+                "Location_Code": "",
+                "Service_User": "webservice.pos@landmarkinsurance.com",
+                "Service_User_Live": "webservice.pos@landmarkinsurance.com",
+                "Service_Password": "Bagic123",
+                "Service_Password_Live": "L@ndMark1118",
+                "Payment_Gateway_URL": "",
+                "Payment_Gateway_URL_Live": "",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "BajajAllianz::Travel",
+                "Lib_Class": "BajajAllianzTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 101,
+                        "Plan_Code": "2",
+                        "Plan_Name": "Travel Prime Individual Gold 2 lakhs USD",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 102,
+                        "Plan_Code": "4",
+                        "Plan_Name": "Travel Prime Individual Silver 50000 USD",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 103,
+                        "Plan_Code": "6",
+                        "Plan_Name": "Travel Asia Elite Flair",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 104,
+                        "Plan_Code": "8",
+                        "Plan_Name": "Travel Prime Corporate Maximum with per trip limit of 45 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 105,
+                        "Plan_Code": "10",
+                        "Plan_Name": "Travel Prime Family Silver USD 100000",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 106,
+                        "Plan_Code": "11",
+                        "Plan_Name": "Travel Prime Corporate Lite with per trip limit of 60 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 107,
+                        "Plan_Code": "12",
+                        "Plan_Name": "Corporate Elite Plus",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 108,
+                        "Plan_Code": "14",
+                        "Plan_Name": "Travel Prime Age Gold 200000 USD",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 109,
+                        "Plan_Code": "15",
+                        "Plan_Name": "Travel Elite Family (Family Floater)",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 110,
+                        "Plan_Code": "16",
+                        "Plan_Name": "Travel Prime Family Standard USD 50000",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 111,
+                        "Plan_Code": "17",
+                        "Plan_Name": "Travel Prime Corporate Lite with per trip limit of 45 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 112,
+                        "Plan_Code": "23",
+                        "Plan_Name": "Travel Elite Gold",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 113,
+                        "Plan_Code": "24",
+                        "Plan_Name": "E-Travel",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 114,
+                        "Plan_Code": "28",
+                        "Plan_Name": "Corporate Elite Lite",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 115,
+                        "Plan_Code": "29",
+                        "Plan_Name": "Travel Asia Elite Supreme",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 116,
+                        "Plan_Code": "31",
+                        "Plan_Name": "Travel Prime Corporate Plus with per trip limit of 60 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 117,
+                        "Plan_Code": "35",
+                        "Plan_Name": "Travel Super Age Elite without medicals",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 118,
+                        "Plan_Code": "38",
+                        "Plan_Name": "Travel Corporate Age Elite Lite",
+                        "Is_Active": false
+                    },
+                    {
+                        "Plan_Id": 119,
+                        "Plan_Code": "39",
+                        "Plan_Name": "Travel Prime Asia Supreme",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 120,
+                        "Plan_Code": "41",
+                        "Plan_Name": "Travel Corporate Age Elite Plus",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 121,
+                        "Plan_Code": "42",
+                        "Plan_Name": "Travel Prime Corporate Lite with per trip limit of 30 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 122,
+                        "Plan_Code": "44",
+                        "Plan_Name": "Travel Prime Age Platinum 500000 USD",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 123,
+                        "Plan_Code": "45",
+                        "Plan_Name": "Travel Prime Corporate Plus with per trip limit of 45 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 124,
+                        "Plan_Code": "46",
+                        "Plan_Name": "Travel Prime Corporate Plus with per trip limit of 30 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 125,
+                        "Plan_Code": "47",
+                        "Plan_Name": "Travel Prime Asia Flair",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 126,
+                        "Plan_Code": "48",
+                        "Plan_Name": "Travel Elite Silver",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 127,
+                        "Plan_Code": "50",
+                        "Plan_Name": "Travel Prime Age Silver 50000 USD",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 128,
+                        "Plan_Code": "53",
+                        "Plan_Name": "Travel Elite Platinum",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 129,
+                        "Plan_Code": "55",
+                        "Plan_Name": "Travel Prime Corporate Maximum with per trip limit of 60 days",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 130,
+                        "Plan_Code": "60",
+                        "Plan_Name": "Travel Prime Corporate Maximum with per trip limit of 30 days",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "BajajAllianz_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/BajajAllianz_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://api.bagicsit2.bajajallianz.com/BjazTravelWebServices/calculatepremium",
+                        "Service_URL_Live": "https://pit.bajajallianz.com/BjazTravelWebServices/calculatepremium",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 1
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "BajajAllianz_Travel_Proposal",
+                        "Method_Type_ID": 2,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/BajajAllianz_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://api.bagicsit2.bajajallianz.com/BjazTravelWebServices/requestid",
+                        "Service_URL_Live": "https://pit.bajajallianz.com/BjazTravelWebServices/requestid",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 1
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "BajajAllianz_Travel_Verification",
+                        "Method_Type_ID": 3,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/BajajAllianz_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "Execute_API": "no",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Product_Insurer_ID": 1,
+                        "IsActive": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 1
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "",
+                        "Method_Type_ID": 4,
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "GET",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://api.bagicsit2.bajajallianz.com/bjazDownload/travel/downloadPdf/",
+                        "Service_URL_Live": "https://pit.bajajallianz.com/bjazDownload/travel/downloadPdf/",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 1
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 6,
+                "Is_Active": 1,
+                "Agent_Code": "DL-4129/1363694",
+                "Agent_Code_Live": "",
+                "Service_User": "",
+                "Service_User_Live": "",
+                "Service_Password": "",
+                "Service_Password_Live": "",
+                "Payment_Gateway_URL_Old": "https://ilesb.southindia.cloudapp.azure.com/pgi/payment/PaymentMethod",
+                "Payment_Gateway_URL": "https://ilesb.southindia.cloudapp.azure.com/pgi/payment/PaymentMethod",
+                "Payment_Gateway_URL_Live": "https://paygate.icicilombard.com/pgi/payment/paymentmethod",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "IciciLombard::Travel",
+                "Lib_Class": "IciciLombardTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 60887,
+                        "Plan_Code": 60887,
+                        "Plan_Name": "PLATINUM W-50",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60888,
+                        "Plan_Code": 60888,
+                        "Plan_Name": "PLATINUM W-100",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60890,
+                        "Plan_Code": 60890,
+                        "Plan_Name": "PLATINUM W-250",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60891,
+                        "Plan_Code": 60891,
+                        "Plan_Name": "PLATINUM W-500",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60892,
+                        "Plan_Code": 60892,
+                        "Plan_Name": "GOLD W-50",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60894,
+                        "Plan_Code": 60894,
+                        "Plan_Name": "GOLD W-250",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60895,
+                        "Plan_Code": 60895,
+                        "Plan_Name": "GOLD W-500",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60896,
+                        "Plan_Code": 60896,
+                        "Plan_Name": "ASIA 25",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60899,
+                        "Plan_Code": 60899,
+                        "Plan_Name": "PLATINUM X-250",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60900,
+                        "Plan_Code": 60900,
+                        "Plan_Name": "PLATINUM X-100",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60901,
+                        "Plan_Code": 60901,
+                        "Plan_Name": "GOLD X-50",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60902,
+                        "Plan_Code": 60902,
+                        "Plan_Name": "GOLD X-100",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60903,
+                        "Plan_Code": 60903,
+                        "Plan_Name": "GOLD X-250",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60904,
+                        "Plan_Code": 60904,
+                        "Plan_Name": "GOLD X-500",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 60913,
+                        "Plan_Code": 60913,
+                        "Plan_Name": "GOLD MULTI100",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61422,
+                        "Plan_Code": 61422,
+                        "Plan_Name": "Gold W 50 RE",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61423,
+                        "Plan_Code": 61423,
+                        "Plan_Name": "Gold W 100 RE",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61425,
+                        "Plan_Code": 61425,
+                        "Plan_Name": "Gold W 500 RE",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61909,
+                        "Plan_Code": 61909,
+                        "Plan_Name": "GoldMultiW500F",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61520,
+                        "Plan_Code": 61520,
+                        "Plan_Name": "GOLD W 250",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61521,
+                        "Plan_Code": 61521,
+                        "Plan_Name": "GOLD W 50",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61907,
+                        "Plan_Code": 61907,
+                        "Plan_Name": "GoldMultiW100F",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 61908,
+                        "Plan_Code": 61908,
+                        "Plan_Name": "GoldMultiW250F",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "IciciLombard_Travel_Premium",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/IciciLombard_Travel_Premium.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL_Old": "https://ilesb.southindia.cloudapp.azure.com/ILservices/Travel/v1/InternationalTravel/CalculatePremium/",
+                        "Service_URL": "https://ilesb01.insurancearticlez.com/ILservices/Travel/v1/InternationalTravel/CalculatePremium/",
+                        "Service_URL_Live": "https://app9.icicilombard.com/ILservices/Travel/v1/InternationalTravel/CalculatePremium/",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 6
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "IciciLombard_Travel_Customer",
+                        "Method_Type_ID": 2,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/IciciLombard_Travel_Customer.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL_Old": "https://ilesb.southindia.cloudapp.azure.com/ILservices/Travel/v1/InternationalTravel/CreateProposal/",
+                        "Service_URL": "https://ilesb01.insurancearticlez.com/ILservices/Travel/v1/InternationalTravel/CreateProposal/",
+                        "Service_URL_Live": "https://app9.icicilombard.com/ILservices/Travel/v1/InternationalTravel/CreateProposal/",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "Is_Active": true,
+                        "Method_Type": "Customer",
+                        "Product_Id": 4,
+                        "Insurer_Id": 6
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "IciciLombard_Travel_Proposal",
+                        "Method_Type_ID": 3,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/IciciLombard_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL_Old": "https://ilesb.southindia.cloudapp.azure.com/pgi/api/transaction/CreateBaseTransaction",
+                        "Service_URL": "https://ilesb01.insurancearticlez.com/pgi/api/transaction/CreateBaseTransaction",
+                        "Service_URL_Live": "https://paygate.icicilombard.com/pgi/api/transaction/createbasetransaction",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 6
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "IciciLombard_Health_Verification",
+                        "Method_Type_ID": 4,
+                        "Method_Action": "",
+                        "Method_Request_File": "Health/IciciLombard_Health_Verification.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL_Old": "https://ilesb.southindia.cloudapp.azure.com/ILServices/Payment/v1/Payment",
+                        "Service_URL": "https://ilesb01.insurancearticlez.com/ILServices/Payment/v1/Payment",
+                        "Service_URL_Live": "https://app9.icicilombard.com/ILServices/Payment/v1/Payment",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "IsActive": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 6
+                    },
+                    {
+                        "Method_Id": 5,
+                        "Method_Name": "IciciLombard_Travel_Pdf",
+                        "Method_Type_ID": 5,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/IciciLombard_Travel_Pdf.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://ilesb.southindia.cloudapp.azure.com/ILServices/Misc/v1/Generic/PolicyCertificate",
+                        "Service_URL_Live": "https://app9.icicilombard.com/ILservices/Misc/v2/Generic/PolicyCertificate",
+                        "Service_File": null,
+                        "Checkpoint_URL": null,
+                        "Service_User": "",
+                        "Service_Password": "",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 6
+                    }
+                ]
+            },
+            {
+                "Insurer_ID": 44,
+                "Is_Active": 0,
+                "Agent_Code": "",
+                "Location_Code": "",
+                "Service_User": "QJ3SEI9GRQMZHZZWS6WEYMXIPOF93813",
+                "Service_User_Live": "OICEKSDPUZ4KTGCVA3NENXOH5PUGYYCJ",
+                "Service_Password": "",
+                "Service_Password_Live": "",
+                "Payment_Gateway_URL": "",
+                "Payment_Gateway_URL_Live": "",
+                "Pdf_URL": "",
+                "Pdf_URL_Live": "",
+                "Name": "GoDigit::Travel",
+                "Lib_Class": "GoDigitTravel",
+                "Plan_List": [
+                    {
+                        "Plan_Id": 4401,
+                        "Plan_Name": "WorldWide Excluding Asia (50 K) Plan",
+                        "Plan_Code": "R3",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 4402,
+                        "Plan_Name": "WorldWide Excluding Asia (1 lk) Plan",
+                        "Plan_Code": "R4",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 4403,
+                        "Plan_Name": "WorldWide Excluding Asia (2.5 lk) Plan",
+                        "Plan_Code": "R5",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 4404,
+                        "Plan_Name": "WorldWide Excluding Asia (5 lk) Plan",
+                        "Plan_Code": "R6",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 4405,
+                        "Plan_Name": "Asia (25 K) Plan",
+                        "Plan_Code": "R7",
+                        "Is_Active": true
+                    },
+                    {
+                        "Plan_Id": 4406,
+                        "Plan_Name": "Asia (50 K) Plan",
+                        "Plan_Code": "R8",
+                        "Is_Active": true
+                    }
+                ],
+                "Method_List": [
+                    {
+                        "Method_Id": 1,
+                        "Method_Name": "GoDigit_Travel_Premium",
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "Database",
+                        "WSDL_URL": null,
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "IsActive": true,
+                        "Method_Type": "Premium",
+                        "Product_Id": 4,
+                        "Insurer_Id": 44
+                    },
+                    {
+                        "Method_Id": 2,
+                        "Method_Name": "GoDigit_Travel_Proposal",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "Travel/GoDigit_Travel_Proposal.json",
+                        "Method_Calling_Type": "POST",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://preprod-digitpolicyissuance.godigit.com/policyservice/v1/createQuote",
+                        "Service_URL_Live": "https://prod-digitpolicyissuaance.godigit.com/policyservice/v1/travel",
+                        "IsActive": true,
+                        "Method_Type": "Proposal",
+                        "Product_Id": 4,
+                        "Insurer_Id": 44
+                    },
+                    {
+                        "Method_Id": 3,
+                        "Method_Name": "GoDigit_Travel_Verification",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "GET",
+                        "WSDL_URL": null,
+                        "Service_URL": "https://preprod-digitpolicyissuaance.godigit.com/policyservice/v1/travel/policyDocument/",
+                        "Service_URL_Live": "https://prod-digitpolicyissuaance.godigit.com/policyservice/v1/travel/policyDocument/",
+                        "Is_Active": true,
+                        "Method_Type": "Verification",
+                        "Product_Id": 4,
+                        "Insurer_Id": 44
+                    },
+                    {
+                        "Method_Id": 4,
+                        "Method_Name": "GoDigit_Travel_Pdf",
+                        "Method_Type_ID": 1,
+                        "Method_Action": "",
+                        "Method_Request_File": "",
+                        "Method_Calling_Type": "GET",
+                        "WSDL_URL": null,
+                        "Service_URL": "",
+                        "Service_URL_Live": "",
+                        "IsActive": true,
+                        "Method_Type": "Pdf",
+                        "Product_Id": 4,
+                        "Insurer_Id": 44
+                    }
+                ]
+            }
+        ],
+        "Product_Fields": [
+            {
+                "Field_Name": "travel_insurance_si",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "Policy",
+                "Field_Category": "input"
+            },
+            {
+                "Field_Name": "travel_insurance_type",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "Policy",
+                "Field_Category": "input"
+            },
+            {
+                "Field_Name": "policy_end_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "Policy",
+                "Field_Category": "input"
+            },
+            {
+                "Field_Name": "policy_start_date",
+                "Field_Type": "date",
+                "Field_Value": "",
+                "Field_Group": "Policy",
+                "Field_Category": "derived"
+            },
+            {
+                "Field_Name": "city_id",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_birth_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_gender",
+                "Field_Type": "text",
+                "Field_Value": "{\"M\":\"Male\",\"F\":\"Female\"}",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_relation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "derived"
+            },
+            {
+                "Field_Name": "member_array_ped",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_occupation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_passport",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_first_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_middle_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_last_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "member_array_salutation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "visiting_countries",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "kyc_no",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "kyc_ref_no",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            }
+        ],
+        "Product_Class": "Travel",
+        "Product_Code": "Travel",
+        "IsActive": 1,
+        "Product_Name": "Travel Insurance",
+        "Product_Id": 4,
+        "_id": "58be945f5f761783caf94078"
+    },
+    {
+        "Product_Fields": [
+            {
+                "Field_Name": "product_id",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "insurer_id",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "policy_tenure",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "method_type",
+                "Field_Type": "text",
+                "Field_Value": "{\"idv\":\"IDV\",\"premium\":\"Premium\",\"customer\":\"Customer\",\"proposal\":\"Proposal\",\"verification\":\"Verification\",\"pdf\":\"Pdf\"}",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "company_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "first_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "middle_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "last_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "salutation_1",
+                "Field_Type": "list_key",
+                "Field_Value": "{\"Mr\":\"Mr\",\"Mrs\":\"Mrs\",\"Miss\":\"Miss\"}",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "salutation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "gender",
+                "Field_Type": "list_key",
+                "Field_Value": "{\"M\":\"Male\",\"F\":\"Female\"}",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "marital",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "email",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "mobile",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "occupation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "pan",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "aadhar",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "gst_no",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "gst_state",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "birth_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "current_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "current_time",
+                "Field_Type": "date",
+                "Field_Value": "hh:mm:ss",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "communication_address_1",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "is_reg_addr_comm_addr_same",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_address_2",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_address_3",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_city",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_state",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_city_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_locality_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_district_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_state_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "communication_pincode",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_address_1",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_address_2",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_address_3",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_city",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_state",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_city_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_locality_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_district_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_state_code",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "permanent_pincode",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_address",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_pincode",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_city_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_first_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_middle_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_last_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_birth_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_age",
+                "Field_Type": "custom",
+                "Field_Value": "nominee_age",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "nominee_relation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_first_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_middle_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_last_name",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_birth_date",
+                "Field_Type": "date",
+                "Field_Value": "yyyy-MM-dd",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_age",
+                "Field_Type": "custom",
+                "Field_Value": "appointee_age",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "appointee_relation",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "proposal_create_flag",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "final_premium",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "tax",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "net_premium",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "pg_reference_number_1",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "PG"
+            },
+            {
+                "Field_Name": "pg_reference_number_2",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "PG"
+            },
+            {
+                "Field_Name": "policy_number",
+                "Field_Type": "text",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "PG"
+            },
+            {
+                "Field_Name": "is_posp",
+                "Field_Type": "boolean",
+                "Field_Value": "",
+                "Field_Group": "input",
+                "Field_Category": "System"
+            },
+            {
+                "Field_Name": "insured_age",
+                "Field_Type": "custom",
+                "Field_Value": "insured_age",
+                "Field_Group": "input",
+                "Field_Category": "Customer"
+            },
+            {
+                "Field_Name": "recon_reference_number",
+                "Field_Type": "text",
+                "Field_Value": "recon_reference_number",
+                "Field_Group": "input",
+                "Field_Category": "Status"
+            }
+        ],
+        "Product_Code": "GLOBAL",
+        "IsActive": 1,
+        "Product_Name": "Global Fields",
+        "Product_Id": 101,
+        "_id": "58c22dbd32c6f8233854844d"
+    }
+]

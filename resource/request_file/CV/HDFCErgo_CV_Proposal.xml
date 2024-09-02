@@ -1,0 +1,87 @@
+<xmlmotorpolicy>
+    <AgentCode>___insurer_integration_agent_code___</AgentCode>
+    <Type_of_Business>___vehicle_insurance_type___</Type_of_Business>
+    <Policy_Startdate>___policy_start_date___</Policy_Startdate>
+    <Policy_Enddate>___policy_end_date___</Policy_Enddate>
+    <Policy_Type>C</Policy_Type>
+    <Year_of_Manufacture>___vehicle_manf_date___</Year_of_Manufacture>
+    <Registration_Citycode>___dbmaster_insurer_rto_city_code___</Registration_Citycode>
+    <Registration_City>___dbmaster_insurer_rto_city_name___</Registration_City>
+    <Manufacturer_Code>___dbmaster_insurer_vehicle_make_code___</Manufacturer_Code>
+    <Manufacture_Name>___dbmaster_insurer_vehicle_make_name___</Manufacture_Name>
+    <Vehicle_Modelcode>___dbmaster_insurer_vehicle_model_code___</Vehicle_Modelcode>
+    <Vehicle_Model>___dbmaster_insurer_vehicle_model_name___</Vehicle_Model>
+    <Purchase_Regndate>___vehicle_registration_date___</Purchase_Regndate>
+    <Vehicle_Regno>___registration_no___</Vehicle_Regno>
+    <Engine_No>___engine_number___</Engine_No><!--3-->
+    <Chassis_No>___chassis_number___</Chassis_No>
+    <Fuel_Type>___dbmaster_pb_fuel_name___</Fuel_Type>
+    <Vehicle_Ownedby>___vehicle_registration_type___</Vehicle_Ownedby>
+    <Name_Financial_Institution>___financial_institute_name___</Name_Financial_Institution>
+    <Ex-showroom_Price>___dbmaster_insurer_vehicle_exshowroom___</Ex-showroom_Price>
+    <Sum_Insured>___vehicle_expected_idv___</Sum_Insured>
+    <Electical_Acc>___electrical_accessory___</Electical_Acc>
+    <NonElectical_Acc>___non_electrical_accessory___</NonElectical_Acc>
+    <LPG-CNG_Kit>___external_bifuel_value___</LPG-CNG_Kit>
+    <No_of_LLdrivers>___is_llpd___</No_of_LLdrivers>
+    <Paiddriver_Si>___pa_paid_driver_si___</Paiddriver_Si>
+    <No_of_Employees>___emp_pa___</No_of_Employees>
+    <limitedownpremises>___own_premises___</limitedownpremises>
+    <privateuse>___other_use___</privateuse>
+    <InclusionIMT23>___imt23___</InclusionIMT23>
+    <NoOfFPP>___fairing_paying_passenger___</NoOfFPP>
+    <NoOfNFPP>___non_fairing_paying_passenger___</NoOfNFPP>
+    <Bustype>___dbmaster_insurer_vehicle_model_name___</Bustype>
+    <NCB_ExpiringPolicy>___vehicle_ncb_current___</NCB_ExpiringPolicy>
+    <NCB_RenewalPolicy>___vehicle_ncb_next___</NCB_RenewalPolicy>
+    <Total_Premium>___net_premium___</Total_Premium>
+    <Service_Tax>___tax___</Service_Tax>
+    <Total_Amoutpayable>___final_premium___</Total_Amoutpayable>
+    <PrePolicy_Startdate>___pre_policy_start_date___</PrePolicy_Startdate>
+    <PrePolicy_Enddate>___policy_expiry_date___</PrePolicy_Enddate>
+    <PreInsurerCode>BAJAJALLIANZ</PreInsurerCode>
+    <PrePolicy_Number>___previous_policy_number___</PrePolicy_Number>
+    <IsPrevious_Claim>___is_claim_exists___</IsPrevious_Claim>
+    <First_Name>___first_name___</First_Name>
+    <Last_Name>___last_name___</Last_Name>
+    <Date_of_Birth>___birth_date___</Date_of_Birth>
+    <Gender>___gender_2___</Gender>
+    <Email_Id>___email___</Email_Id>
+    <Contactno_Office></Contactno_Office>
+    <Contactno_Home></Contactno_Home>
+    <Contactno_Mobile>___mobile___</Contactno_Mobile>
+    <Car_Address1>___permanent_address_1___ </Car_Address1>
+    <Car_Address2>___permanent_address_2___</Car_Address2>
+    <Car_Address3>___permanent_address_3___</Car_Address3>
+    <Car_Citycode>___permanent_city_code___</Car_Citycode>
+    <Car_City>___permanent_city___</Car_City>
+    <Car_Statecode>___permanent_state_code___</Car_Statecode>
+    <Car_State>___permanent_state___</Car_State>
+    <Car_Pin>___permanent_pincode___</Car_Pin>
+    <Corres_Address1>___communication_address_1___</Corres_Address1>
+    <Corres_Address2>___communication_address_2___</Corres_Address2>
+    <Corres_Address3>___communication_address_3___</Corres_Address3>
+    <Corres_Citycode>___communication_city_code___</Corres_Citycode>
+    <Corres_City>___communication_city___</Corres_City>
+    <Corres_Statecode>___communication_state_code___</Corres_Statecode>
+    <Corres_State>___communication_state___</Corres_State>
+    <Corres_Pin>___communication_pincode___</Corres_Pin>
+    <Data1>CC</Data1>
+    <Data2 />
+    <Data3 />
+    <Data4 />
+    <Data5 />
+    <Owner_Driver_Nominee_Name>___nominee_name___</Owner_Driver_Nominee_Name>
+    <Owner_Driver_Nominee_Age>___nominee_age___</Owner_Driver_Nominee_Age>
+    <Owner_Driver_Nominee_Relationship>___nominee_relation_text___</Owner_Driver_Nominee_Relationship>
+    <Owner_Driver_Appointee_Name></Owner_Driver_Appointee_Name>
+    <Owner_Driver_Appointee_Relationship></Owner_Driver_Appointee_Relationship>
+    <PAN_Card>___pan___</PAN_Card>
+    <is_pa_cover_owner_driver>___vehicle_registration_type_2___</is_pa_cover_owner_driver>
+    <BiFuelType></BiFuelType>
+    <LocationCode>0</LocationCode>
+    <IsCustomerAuthenticationDone>1</IsCustomerAuthenticationDone>
+    <AuthenticationType>OTP</AuthenticationType>
+    <UIDNo>03685</UIDNo>
+    <GSTIN>___gst_no___</GSTIN>
+</xmlmotorpolicy>

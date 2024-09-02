@@ -1,0 +1,295 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:saveProposalRequest xmlns:ns2="http://stub.unotechsoft.com/wsdl/MotorService/">
+            <ProductCode>___product_id___</ProductCode>
+            <AuthenticationToken></AuthenticationToken>
+            <CIAName></CIAName>
+            <Campaign>0</Campaign>
+            <HashKey></HashKey>
+            <HostAddress></HostAddress>
+            <Medium>0</Medium>
+            <Source>0</Source>
+            <InputXML><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MotorTwoWheelerPolicy>
+ <PropProductDetails_ProductCode>___product_id___</PropProductDetails_ProductCode>
+ <PropGeneralNodes_ApplicationDate>___current_date___</PropGeneralNodes_ApplicationDate>
+ <PropEndorsementDtls_IsSellerInsured>false</PropEndorsementDtls_IsSellerInsured>
+ <PropGeneralProposalInformation_covernoteissuedate />
+ <PropPolicyEffectivedate_Fromdate_Mandatary>___policy_start_date___</PropPolicyEffectivedate_Fromdate_Mandatary>
+ <PropPolicyEffectivedate_Todate_Mandatary>___policy_end_date___</PropPolicyEffectivedate_Todate_Mandatary>
+ <PropGeneralProposalInformation_ProposalDate_Mandatary>___current_date___</PropGeneralProposalInformation_ProposalDate_Mandatary>
+ <PropPreviousPolicyDetails_PreviousPolicyType>PackageComprehensive</PropPreviousPolicyDetails_PreviousPolicyType>
+ <PropGeneralProposalInformation_BranchOfficeCode>90500</PropGeneralProposalInformation_BranchOfficeCode>
+ <PropGeneralProposalInformation_BusinessType_Mandatary>___vehicle_insurance_type_2___</PropGeneralProposalInformation_BusinessType_Mandatary>
+ <PropGeneralProposalInformation_ManualCovernoteNo />
+ <PropGeneralProposalInformation_DisplayOfficeCode>0500</PropGeneralProposalInformation_DisplayOfficeCode>
+ <PropGeneralProposalInformation_IsNCBApplicable>true</PropGeneralProposalInformation_IsNCBApplicable>
+ <PropGeneralProposalInformation_MethodOfCalculation>0026820000</PropGeneralProposalInformation_MethodOfCalculation>
+ <PropGeneralProposalInformation_OfficeCode>0500</PropGeneralProposalInformation_OfficeCode>
+ <PropGeneralProposalInformation_OfficeName>BANGALORE</PropGeneralProposalInformation_OfficeName>
+ <PropGeneralProposalInformation_OptionForCalculation>Yearly</PropGeneralProposalInformation_OptionForCalculation>
+ <PropPolicyEffectivedate_Fromhour_Mandatary>___current_time___</PropPolicyEffectivedate_Fromhour_Mandatary>
+ <PropPolicyEffectivedate_Tohour_Mandatary>23:59</PropPolicyEffectivedate_Tohour_Mandatary>
+ <PropGeneralProposalInformation_QuoteNumber>___dbmaster_insurer_transaction_identifier___</PropGeneralProposalInformation_QuoteNumber>
+ <PropGeneralProposalInformation_PolicySchedule_Mandatary>Yes</PropGeneralProposalInformation_PolicySchedule_Mandatary>
+ <PropGeneralProposalInformation_RelationshipType />
+ <PropGeneralProposalInformation_Remarks />
+ <PropGeneralProposalInformation_ServiceTaxExemptionCategory_Mandatary>No Exemption</PropGeneralProposalInformation_ServiceTaxExemptionCategory_Mandatary>
+ <PropPreviousPolicyDetails_NCBPercentage>___vehicle_ncb_current___</PropPreviousPolicyDetails_NCBPercentage>
+ <PropMODetails_TertiaryMOCode>WEBSERVICE</PropMODetails_TertiaryMOCode>
+ <PropSerIntermediaryDetails_SerIntermediaryCode />
+ <PropRisks_PolicyTerm>1</PropRisks_PolicyTerm>
+ <PropRisks_EmerMediExpSI>0</PropRisks_EmerMediExpSI>
+ <PropRisks_AdditionalTPDamageSI>0</PropRisks_AdditionalTPDamageSI>
+ <PropRisks_AdditionalPAOwnerSI>0</PropRisks_AdditionalPAOwnerSI>
+ <PropRisks_AdditionalPAUnnamedSI>0</PropRisks_AdditionalPAUnnamedSI>
+ <PropRisks_EmerMediExp>false</PropRisks_EmerMediExp>
+ <PropRisks_ConsumableExpenses>false</PropRisks_ConsumableExpenses>
+ <PropRisks_AdditionalTPDamage>false</PropRisks_AdditionalTPDamage>
+ <PropRisks_AdditionalPAOwner>false</PropRisks_AdditionalPAOwner>
+ <PropRisks_AdditionalPAUnnamed>false</PropRisks_AdditionalPAUnnamed>
+ <PropRisks_VariantCode>___dbmaster_insurer_vehicle_variant_code___</PropRisks_VariantCode>
+ <PropRisks_ABS />
+ <PropRisks_Age>41</PropRisks_Age>
+ <PropRisks_AgeDriver>41</PropRisks_AgeDriver>
+ <PropRisks_Airbag />
+ <PropRisks_AutoTransmission />
+ <PropRisks_AutomobAssociationMembrshp>false</PropRisks_AutomobAssociationMembrshp>
+ <PropRisks_AutomobAssociationMembrshpNo />
+ <PropRisks_AutomobAssociationName />
+ <PropRisks_Bangladesh />
+ <PropRisks_BasisOfRating>Tariff</PropRisks_BasisOfRating>
+ <PropRisks_Bhutan />
+ <PropRisks_CNGLPGKitValue>0</PropRisks_CNGLPGKitValue>
+ <PropRisks_CapitalSIPerPersonUnnamed>0</PropRisks_CapitalSIPerPersonUnnamed>
+ <PropRisks_CityWherePrimarilyUsed>___dbmaster_insurer_rto_city_name___</PropRisks_CityWherePrimarilyUsed>
+ <PropRisks_ComplsryPAWidOwnDvrValDrivLic>true</PropRisks_ComplsryPAWidOwnDvrValDrivLic>
+ <PropRisks_CubicCapacity>___dbmaster_insurer_vehicle_cubiccapacity___</PropRisks_CubicCapacity>
+ <PropRisks_DateOfPurchase>___vehicle_registration_date___</PropRisks_DateOfPurchase>
+ <PropRisks_DateOfRegistration>___vehicle_registration_date___</PropRisks_DateOfRegistration>
+ <PropRisks_DepreciationReimbursement>___addon_zero_dep_cover___</PropRisks_DepreciationReimbursement>
+ <PropRisks_Discount>0</PropRisks_Discount>
+ <PropRisks_DrivingExperience>5</PropRisks_DrivingExperience>
+ <PropRisks_NameOfNominee>___nominee_name___</PropRisks_NameOfNominee>
+ <PropRisks_AgeCoverageDetails>___nominee_age___</PropRisks_AgeCoverageDetails>
+ <PropRisks_ElectricalAccessories />
+ <PropRisks_EntitledforNCB>___is_claim_exists___</PropRisks_EntitledforNCB>
+ <PropRisks_FuelType>___dbmaster_insurer_vehicle_fueltype___</PropRisks_FuelType>
+ <PropRisks_GeographicalAreaExtension />
+ <PropRisks_IDVOfTheVehicle_Mandatary />
+ <PropRisks_ImportdVehWtoutPaymntCustmDuty />
+ <PropRisks_IsCNGLPGKitInsuredInPIP />
+ <PropRisks_IsDVehFittedWidAntiTheftDevice />
+ <PropRisks_IsDVehUsdFrBlindHandicapdRTA />
+ <PropRisks_IsDVehUsdLimitedOwnPremises />
+ <PropRisks_LLEmpDrivTravlngInsurdVehIMT29 />
+ <PropRisks_LifeMember />
+ <PropRisks_MainDriver>Self - owner driver</PropRisks_MainDriver>
+ <PropRisks_Maldives />
+ <PropRisks_Manufacturer>___dbmaster_insurer_vehicle_make_name___</PropRisks_Manufacturer>
+ <PropRisks_ManufacturerCode>___dbmaster_insurer_vehicle_make_code___</PropRisks_ManufacturerCode>
+ <PropRisks_MaritalStatus />
+ <PropRisks_Model>___dbmaster_insurer_vehicle_model_name___</PropRisks_Model>
+ <PropRisks_ModelCode>___dbmaster_insurer_vehicle_model_code___</PropRisks_ModelCode>
+ <PropRisks_MonthAndYearOfManufactureYear_Mandatary>___vehicle_manf_year___</PropRisks_MonthAndYearOfManufactureYear_Mandatary>
+ <PropRisks_NCBconfirmation>NCB reserving</PropRisks_NCBconfirmation>
+ <PropRisks_Nepal>false</PropRisks_Nepal>
+ <PropRisks_NoClaimBonusDiscount>___vehicle_ncb_next___</PropRisks_NoClaimBonusDiscount>
+ <PropRisks_NonElectricalAccessories />
+ <PropRisks_NumberOfPersonsPaidDriver>0</PropRisks_NumberOfPersonsPaidDriver>
+ <PropRisks_NumberOfPersonsUnnamed>0</PropRisks_NumberOfPersonsUnnamed>
+ <PropRisks_OpenCoverNote>false</PropRisks_OpenCoverNote>
+ <PropRisks_OriginalNCB />
+ <PropRisks_PACoverForNamedPerson>false</PropRisks_PACoverForNamedPerson>
+ <PropRisks_PACoverForPaidDriver>false</PropRisks_PACoverForPaidDriver>
+ <PropRisks_PACoverForUnnamedPersons>false</PropRisks_PACoverForUnnamedPersons>
+ <PropRisks_Pakistan />
+ <PropRisks_PeriodFromGeo />
+ <PropRisks_PeriodToGeo />
+ <PropRisks_ProposalType_Mandatary>Rollover</PropRisks_ProposalType_Mandatary>
+ <PropRisks_RTOCode>___registration_no_1___-___registration_no_2___</PropRisks_RTOCode>
+ <PropRisks_RatingZone>Zone-___dbmaster_insurer_rto_zone_code___</PropRisks_RatingZone>
+ <PropRisks_RegAddSameAsCommAdd_Mandatary>true</PropRisks_RegAddSameAsCommAdd_Mandatary>
+ <PropRisks_RegistrationAddLine1 />
+ <PropRisks_RegistrationAddLine2 />
+ <PropRisks_RegistrationAddLine3 />
+ <PropRisks_RegistrationAuthLocation>___dbmaster_insurer_rto_district_name___</PropRisks_RegistrationAuthLocation>
+ <PropRisks_RegistrationNoNotReq>false</PropRisks_RegistrationNoNotReq>
+ <PropRisks_RegistrationNumberSection1>___registration_no_1___</PropRisks_RegistrationNumberSection1>
+ <PropRisks_RegistrationNumberSection2>___registration_no_2___</PropRisks_RegistrationNumberSection2>
+ <PropRisks_RegistrationNumberSection3>___registration_no_3___</PropRisks_RegistrationNumberSection3>
+ <PropRisks_RegistrationNumberSection4>___registration_no_4___</PropRisks_RegistrationNumberSection4>
+ <PropRisks_RegistrdSeatCapIncludngDriver>2</PropRisks_RegistrdSeatCapIncludngDriver>
+ <PropRisks_ReturnToInvoice />
+ <PropRisks_RiskVariant>PackageComprehensive</PropRisks_RiskVariant>
+ <PropRisks_SIForPaidDriver />
+ <PropRisks_SideCarValue />
+ <PropRisks_SriLanka />
+ <PropRisks_TPPDRestricted />
+ <PropRisks_TheftTarget />
+ <PropRisks_Typeofbody>MOTOR CYCLE</PropRisks_Typeofbody>
+ <PropRisks_Variant>___dbmaster_insurer_vehicle_variant_name___</PropRisks_Variant>
+ <PropRisks_VehFitWithFibreGlassFuelTank />
+ <PropRisks_VehicleAge>___vehicle_age_year___</PropRisks_VehicleAge>
+ <PropRisks_VehiclePurchageAs />
+ <PropRisks_VehicleSegment>MOTOR CYCLE</PropRisks_VehicleSegment>
+ <PropRisks_VehicleType />
+ <PropRisks_VehicleTypeCode />
+ <PropRisks_VoluntaryDeductibleAmount />
+ <PropDistributionChannel_BusineeChanneltype>DIRECT SALES</PropDistributionChannel_BusineeChanneltype>
+ <PropDistributionChannel_BusinessSource_Mandatary>INTERMEDIARY</PropDistributionChannel_BusinessSource_Mandatary>
+ <PropIntermediaryDetails_IntermediaryCode>0026602017</PropIntermediaryDetails_IntermediaryCode>
+ <PropIntermediaryDetails_IntermediaryName>LANDMARK INSURANCE BROKERS PVT LTD</PropIntermediaryDetails_IntermediaryName>
+ <PropIntermediaryDetails_IntermediaryType />
+ <PropMODetails_SecondaryMOCode />
+ <PropMODetails_SecondaryMOName />
+ <PropMODetails_TertiaryMOName />
+ <PropRisks_RTOGroupCode>___dbmaster_insurer_rto_district_code___</PropRisks_RTOGroupCode>
+ <OtherDetailsGrid>
+ <!--Non_ElectricalAccessiories_Start-->
+ <NonElectricalAccessiories Name='NonElectricalAccessiories' Value='GRP288'>
+ <NonElectricalAccessiories Type='GroupData'>
+ <Make Name='Make' Value='N/A' Type='String'/>
+ <Model Name='Model' Value='N/A' Type='String'/>
+ <Year Name='Year' Value='2017' Type='String'/>
+ <IDV Name='IDV' Value='___non_electrical_accessory___' Type='Double'/>
+ <TypeofAccessories Name='TypeofAccessories' Value='Other' Type='String'/>
+ <Description Name='Description' Value='N/A' Type='String'/>
+ <SerialNo Name='SerialNo' Value='' Type='String'/>
+ <Remarks Name='SerialNo' Value='' Type='String'/>
+ </NonElectricalAccessiories>
+ </NonElectricalAccessiories>
+ <!--Non_ElectricalAccessiories_End-->
+ <!--ElectricalAccessiories_Start-->
+ <ElectricalAccessiories Name='ElectricalAccessiories' Value='GRP289'>
+ <ElectricalAccessiories Type='GroupData'>
+ <Make Name='Make' Value='N/A' Type='String'/>
+ <Model Name='Model' Value='N/A' Type='String'/>
+ <Year Name='Year' Value='2017' Type='String'/>
+ <IDV Name='IDV' Value='___electrical_accessory___' Type='Double'/>
+ <TypeofAccessories Name='TypeofAccessories' Value='Other' Type='String'/>
+ <Description Name='Description' Value='N/A' Type='String'/>
+ <SerialNo Name='SerialNo' Value='' Type='String'/>
+ <Remarks Name='SerialNo' Value='' Type='String'/>
+ </ElectricalAccessiories>
+ </ElectricalAccessiories>
+ <!--ElectricalAccessiories_End-->
+ <OwnerDriverNomineeDetails Name="OwnerDriverNomineeDetails" Value="GRP292">
+ <OwnerDriverNomineeDetails Type="GroupData">
+ <Nominee Name="Nominee" Value="___nominee_name___" Type="String" />
+ <Age Name="Age" Value="___nominee_age___" Type="Double" />
+ <Relationship Name="Relationship" Value="___nominee_relation___" Type="String" />
+ <Nameoftheappointee Name="Nameoftheappointee" Value="___appointee_name___" Type="String" />
+ <Relationshiptothenominee Name="Relationshiptothenominee" Value="___appointee_relation___" Type="String" />
+ </OwnerDriverNomineeDetails>
+ </OwnerDriverNomineeDetails>
+ </OtherDetailsGrid>
+ <PropRisks_NameOfNominee>___nominee_name___</PropRisks_NameOfNominee>
+ <PropRisks_AgeCoverageDetails>___nominee_age___</PropRisks_AgeCoverageDetails>
+ <PropRisks_Relationship>___nominee_relation___</PropRisks_Relationship>
+ <PropPreviousPolicyDetails_ClaimLodgedInPast>___is_claim_exists_2___</PropPreviousPolicyDetails_ClaimLodgedInPast>
+ <PropPreviousPolicyDetails_ClaimAmount>0</PropPreviousPolicyDetails_ClaimAmount>
+ <PropPreviousPolicyDetails_NoOfClaims>0</PropPreviousPolicyDetails_NoOfClaims>
+ <PropPreviousPolicyDetails_CorporateCustomerId_Mandatary>10</PropPreviousPolicyDetails_CorporateCustomerId_Mandatary>
+ <PropPreviousPolicyDetails_PreviousInsPincode>110002</PropPreviousPolicyDetails_PreviousInsPincode>
+ <PropPreviousPolicyDetails_OfficeCode>9000003</PropPreviousPolicyDetails_OfficeCode>
+ <PropPreviousPolicyDetails_PolicyEffectiveFrom>___pre_policy_start_date___</PropPreviousPolicyDetails_PolicyEffectiveFrom>
+ <PropPreviousPolicyDetails_PolicyEffectiveTo>___policy_expiry_date___</PropPreviousPolicyDetails_PolicyEffectiveTo>
+ <PropPreviousPolicyDetails_PolicyNo>___previous_policy_number___</PropPreviousPolicyDetails_PolicyNo>
+ <PropPreviousPolicyDetails_AddressLine2>New Delhi 110 002.</PropPreviousPolicyDetails_AddressLine2>
+ <PropPreviousPolicyDetails_AddressLine3 />
+ <PropPreviousPolicyDetails_OfficeAddress>A-25/27, Asaf Ali Road</PropPreviousPolicyDetails_OfficeAddress>
+ <PropPreviousPolicyDetails_City>22004</PropPreviousPolicyDetails_City>
+ <PropPreviousPolicyDetails_State>8</PropPreviousPolicyDetails_State>
+ <PropFinancierDetails_FinancierName />
+ <PropFinancierDetails_AgreementType />
+ <PropFinancierDetails_LoanAccountNo />
+ <PropRisks_InsuredHasDrivingLicense>true</PropRisks_InsuredHasDrivingLicense>
+ <PropRisks_ChassisNumber>___chassis_number___</PropRisks_ChassisNumber>
+ <PropRisks_City>JANJGIR</PropRisks_City>
+ <PropRisks_CityCode>21017</PropRisks_CityCode>
+ <PropRisks_District>BASTAR</PropRisks_District>
+ <PropRisks_DistrictCode>10604</PropRisks_DistrictCode>
+ <PropRisks_EngineNumber>___engine_number___</PropRisks_EngineNumber>
+ <PropRisks_MembershipExpiryDate />
+ <PropRisks_PinCode />
+ <PropRisks_PincodeLocality />
+ <PropRisks_State>CHHATTISGARH</PropRisks_State>
+ <PropRisks_StateCode>7</PropRisks_StateCode>
+ <PropRisks_Taluk>Taluk</PropRisks_Taluk>
+ <PropRisks_LandMark />
+ <PropPreviousPolicyDetails_IssuingOfficeCode />
+<CustomerType>I</CustomerType>
+<Salutation>___salutation___</Salutation>
+<FirstName>___first_name___</FirstName>
+<MiddleName>___middle_name___</MiddleName>
+<LastName>___last_name___</LastName>
+<Name>___first_name___ ___middle_name___ ___last_name___</Name>
+<DOB>___birth_date___</DOB>
+<Gender>___gender_2___</Gender>
+<Occupation>23</Occupation>
+<EmailId>___email___</EmailId>
+<SourceOfFund>SALARY</SourceOfFund>
+<PanNo>___pan___</PanNo>
+<MobileNo>___mobile___</MobileNo>
+<LandLineNo>123456</LandLineNo>
+<AlternateMobileNo>1234567890</AlternateMobileNo>
+<IsThinCustomer>false</IsThinCustomer>
+<IDProofDetails>CQDPK2699K</IDProofDetails>
+<MaritalStatus>___marital___</MaritalStatus>
+<idproof>1</idproof>
+<PermanentLocationSameAsMailLocation>true</PermanentLocationSameAsMailLocation>
+<mailLocation>
+<AddressLine1>___communication_address_1___</AddressLine1>
+<AddressLine2>___communication_address_2___</AddressLine2>
+<AddressLine3>___communication_address_3___</AddressLine3>
+<Landmark>___communication_city_code___</Landmark>
+<CountryID>64</CountryID>
+<CountryName>INDIA</CountryName>
+<StateCode>___communication_state_code___</StateCode>
+<StateName>___communication_state___</StateName>
+<CityDistrictCode>___communication_district_code___</CityDistrictCode>
+<CityDistrictName>___communication_city___</CityDistrictName>
+<CityId>___communication_city_code___</CityId>
+<CityName>___communication_city___</CityName>
+<PinCodeLocality>___communication_city___</PinCodeLocality>
+<PinCode>___communication_pincode___</PinCode>
+<POBox />
+<AreaVillageCode />
+<AreaVillageName />
+<MailingLocationCode></MailingLocationCode>
+</mailLocation>
+<permanentLocation>
+<AddressLine1>___permanent_address_1___</AddressLine1>
+<AddressLine2>___permanent_address_2___</AddressLine2>
+<AddressLine3>___permanent_address_3___</AddressLine3>
+<Landmark>___permanent_city_code___</Landmark>
+<CountryID>64</CountryID>
+<CountryName>INDIA</CountryName>
+<StateCode>___permanent_state_code___</StateCode>
+<StateName>___permanent_state___</StateName>
+<CityDistrictCode>___permanent_district_code___</CityDistrictCode>
+<CityDistrictName>___permanent_city___</CityDistrictName>
+<CityId>___permanent_city_code___</CityId>
+<CityName>___permanent_city___</CityName>
+<PinCodeLocality>___permanent_city___</PinCodeLocality>
+<PinCode>___permanent_pincode___</PinCode>
+<AreaVillageCode />
+<AreaVillageName />
+<POBox />
+<MailingLocationCode></MailingLocationCode>
+</permanentLocation>
+ <PropRisks_YearLicensed_Mandatary>2006</PropRisks_YearLicensed_Mandatary>
+ </MotorTwoWheelerPolicy>
+ ]]></InputXML>
+            <IsBankDataRequired>false</IsBankDataRequired>
+            <IsCutomerAddressRequired>false</IsCutomerAddressRequired>
+            <IsFinanciarDataRequired>false</IsFinanciarDataRequired>
+            <IsManufacturerMappingRequired>false</IsManufacturerMappingRequired>
+            <IsRTOMappingRequired>false</IsRTOMappingRequired>
+            <ModeOfOperation>NEWPOLICY</ModeOfOperation>
+            <UserId>jkadam</UserId>
+            <UserRole>ADMIN</UserRole>
+        </ns2:saveProposalRequest>
+    </soap:Body>
+</soap:Envelope>

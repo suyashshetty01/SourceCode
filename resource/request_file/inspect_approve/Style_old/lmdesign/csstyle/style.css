@@ -1,0 +1,577 @@
+
+/**
+ *
+ * Float label Style
+ *
+ */
+
+
+.float-label-control {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+ .float-label-control ::-webkit-input-placeholder {
+color: transparent;
+}
+ .float-label-control :-moz-placeholder {
+color: transparent;
+}
+ .float-label-control ::-moz-placeholder {
+color: transparent;
+}
+ .float-label-control :-ms-input-placeholder {
+color: transparent;
+}
+ .float-label-control input:-webkit-autofill,  .float-label-control textarea:-webkit-autofill {
+background-color: transparent !important;
+-webkit-box-shadow: 0 0 0 1000px white inset !important;
+-moz-box-shadow: 0 0 0 1000px white inset !important;
+box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.float-label-control input, .float-label-control textarea, .float-label-control label {
+  font-size: 1em;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.float-label-control input:focus,  .float-label-control textarea:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-bottom-width: 2px;
+  padding-bottom: 0;
+}
+
+.float-label-control textarea:focus { padding-bottom: 4px; }
+
+.float-label-control input, .float-label-control textarea {
+  display: block;
+  width: 100%;
+  padding: 0.1em 0em 1px 0em;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  margin: 0px;
+  background: none;
+}
+
+.float-label-control textarea { padding: 0.1em 0em 5px 0em; }
+
+.float-label-control label {
+  position: absolute;
+  font-weight: normal;
+  top: -1.2em; /*left: 0.08em;*/
+  color: #aaaaaa;
+  z-index: -1;
+  font-size: 0.85em;
+  -moz-animation: float-labels 200ms none ease-out;
+  -webkit-animation: float-labels 200ms none ease-out;
+  -o-animation: float-labels 200ms none ease-out;
+  -ms-animation: float-labels 200ms none ease-out;
+  -khtml-animation: float-labels 200ms none ease-out;
+  animation: float-labels 200ms none ease-out; /* There is a bug sometimes pausing the animation. This avoids that.*/
+  animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+}
+
+.float-label-control input.empty + label,  .float-label-control textarea.empty + label {
+  top: 0.1em;
+  font-size: 1.1em;
+  animation: none;
+  -webkit-animation: none;
+}
+
+.float-label-control input:not(.empty) + label,  .float-label-control textarea:not(.empty) + label { z-index: 1; }
+
+.float-label-control input:not(.empty):focus + label,  .float-label-control textarea:not(.empty):focus + label { color: #66afe9; }
+
+.float-label-control.label-bottom label {
+  -moz-animation: float-labels-bottom 300ms none ease-out;
+  -webkit-animation: float-labels-bottom 300ms none ease-out;
+  -o-animation: float-labels-bottom 300ms none ease-out;
+  -ms-animation: float-labels-bottom 300ms none ease-out;
+  -khtml-animation: float-labels-bottom 300ms none ease-out;
+  animation: float-labels-bottom 300ms none ease-out;
+}
+
+.float-label-control.label-bottom input:not(.empty) + label,  .float-label-control.label-bottom textarea:not(.empty) + label { top: 3em; }
+
+.float-label-control ul.select-dropdown {
+  width: 100% !important;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.float-label-control ul.select-dropdown.show { display: block !important; }
+
+.float-label-control ul.select-dropdown li a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #d3d3d3
+}
+
+.float-label-control ul.select-dropdown li a:hover { font-weight: bolder; }
+
+.float-label-control ul.select-dropdown li a.hide { display: none; }
+ @keyframes 
+float-labels {  0% {
+color: #aaa;
+top: 0.1em;
+font-size: 1.5em;
+}
+    /*10% {  top: -0.1em; font-size: 1.43em; }*/
+    20% {
+top: -0.3em;
+font-size: 1.37em;
+}
+    /*30% { top: -0.3em; font-size: 1.30em;}*/
+    /*40% { top: -0.4em; font-size: 1.23em;}*/
+    50% {
+top: -0.6em;
+font-size: 1.16em;
+}
+    /*60% { top: -0.6em; font-size: 1.09em;}*/
+    /*70% { top: -0.7em; font-size: 1.02em;}*/
+    80% {
+top: -1.0em;
+font-size: 0.95em;
+}
+    /*90% { top: -0.9em; font-size: 0.88em;}*/
+    100% {
+top: -1.2em;
+font-size: 0.85em;
+}
+}
+ @-webkit-keyframes 
+float-labels {  0% {
+opacity: 1;
+color: #aaa;
+top: 0.1em;
+font-size: 1.5em;
+}
+ 20% {
+font-size: 2.5em;
+opacity: 1;
+}
+ 30% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 40% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 50% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 60% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 70% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 80% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 90% {
+top: 0.1em;
+font-size: 2.5em;
+opacity: 1;
+}
+ 100% {
+top: -1em;
+opacity: 1;
+}
+}
+ @keyframes 
+float-labels-bottom {  0% {
+opacity: 1;
+color: #aaa;
+top: 0.1em;
+font-size: 1.5em;
+}
+ 20% {
+font-size: 2.5em;
+opacity: 1;
+}
+ 30% {
+top: 0.1em;
+}
+ 50% {
+opacity: 0;
+font-size: 0.85em;
+}
+ 100% {
+top: 3em;
+opacity: 1;
+}
+}
+ @-webkit-keyframes 
+float-labels-bottom {  0% {
+opacity: 1;
+color: #aaa;
+top: 0.1em;
+font-size: 1.5em;
+}
+ 20% {
+font-size: 2.5em;
+opacity: 1;
+}
+ 30% {
+top: 0.1em;
+}
+ 50% {
+opacity: 0;
+font-size: 0.85em;
+}
+ 100% {
+top: 3em;
+opacity: 1;
+}
+}
+
+
+      .form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+    body{
+      background-color: #1c2956;
+    }
+        .ibox{background: #fff;border-radius:5px;}
+
+        .leftBox{padding:10px;}
+        .leftBox img{border:solid #c0c0c0 1px;padding:2px;background:#fff;border-radius: 5px;}
+
+        .probarbox{background: #47a4e9; height: 450px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
+        .inputbox{background-color: #fff; border-top-right-radius: 5px; border-bottom-right-radius: 5px; width: 85; height: 450px;padding-left: 0px !important; padding-right: 0px !important; border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
+        .inputbox .page-slider{
+          
+        }
+
+        .centerBox{text-align: center;}
+        .centerBox h3{font-size: 18pt; font-weight: bold;}
+        .centerBox p{font-size: 12pt;}
+
+        .rightBox{background: #47a4e9; border-top-right-radius:5px;height: 100%; text-align: center; padding:15px;}
+        .rightBox p{ color:#1c2855; font-size:12pt; line-height: 18pt; margin:0px;}
+        .rightBox h3{color:#fff; font-size:24pt; font-weight: bold; line-height: 28pt; margin:0px;}
+
+        .headerBox{
+            background: #eaeaea;
+            border-top-right-radius:5px;
+            border-top-left-radius:5px;
+        }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .page-slider {
+      position: relative;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100%;
+      max-height: 100%;
+      background: deepskyblue;
+      overflow: hidden;
+    }
+
+    .panel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .panel._active { z-index: 10; }
+
+    .trans-layer, .section {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .trans-layer {
+      background: #fff;
+      transform: translateY(-100%) skew(0) rotate(0) scale(2);
+      border-radius: 50%;
+      transition: all 500ms ease-in-out;
+      transition-delay: 500ms;
+    }
+
+    ._active .trans-layer {
+      transform: translateY(0) skew(0) rotate(0) scale(2);
+      transition-delay: 0ms;
+    }
+
+    .section {
+      transform: translateY(100%);
+      transition: all 500ms ease-in-out;
+      transition-delay: 0ms;
+      background: #fff;
+    }
+
+    ._active .section {
+      transform: translateY(0);
+      transition-delay: 500ms;
+    }
+
+    .section-content {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      height: 100%;
+    
+      color: #000;
+      font-family: arial;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 500ms ease;
+      transition-delay: 0s;
+      margin-top: 30px;
+    }
+
+    ._active .section-content {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 1000ms;
+    }
+
+    .nav-dots {
+      position: absolute;
+      top: 60%;
+      left: 10px;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 40px;
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      margin: 20px auto;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      transition: all 300ms ease-out;
+      background-color: #1e2a59;
+    }
+
+    .nav-dot.active { background: #fff; }
+
+    .next-btn, .prev-btn {
+      position: absolute;
+      z-index: 20;
+    }
+
+    .next-btn {
+      bottom: 10px;
+      right: 14px;
+    }
+
+    .prev-btn {
+      bottom: 10px;
+      left: 14px;
+    }
+
+    .big{
+      width:200px;
+    }
+    .section-content h4{
+      margin-left: 10px;
+      font-weight: 200;
+      color: #1e2a59;
+    }
+    .section-content h5{
+      
+      font-weight: 200;
+      color: #1e2a59;
+    }
+
+    /*FLOTING LABEL */
+    $color: #54a4ed
+    
+    .field{
+          position: relative;
+           height: 72px;
+           padding: 16px 0 8px 0;
+}
+    .field-label{
+   position: relative;
+   margin: 0;
+   display: block;
+   line-height: 16px;
+   font-size: 16px;
+   font-weight: 400;
+
+   transform: translateY(24px);
+   transition: transform 0.3s;
+   transform-origin: 0 50%;
+   color: #54a4ed;
+}
+    .field-input{
+   position: relative;
+   display: block;
+   width: 100%;
+   height: 32px;
+   padding: 8px 0;
+
+   line-height: 16px;
+   font-family: Roboto;
+   font-size: 16px;
+
+   background: transparent;
+   border: none;
+   -webkit-appearance: none;
+   outline: none;
+}
+    ..field::after, .field::before{
+   content:'';
+   height: 2px;
+   width: 100%;
+   position: absolute;
+   bottom: 6px;
+   left: 0;
+
+   background-color: #e7e7e7;
+}
+
+.field::after{
+  content: '';
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  background-color: #54a4ed;
+   }
+
+.has-label .field-label{
+   transform: translateY(0) scale(0.75);
+}
+
+.is-focused .field-label{
+   color: #4ba6a3;
+}
+.field.is-focused::after{
+   transform: scaleX(1);
+}
+.space{
+  margin-right: 15px !important;
+  margin-left: 15px !important;
+}
+
+
+/*Cgeck box css*/
+.label-cbx
+  user-select: none
+  cursor: pointer
+  margin-bottom: 0
+  input:checked
+    & + .checkbox
+      border-color: #20C2E0
+      svg
+        path
+          fill: #20C2E0
+        polyline
+          stroke-dashoffset: 0
+  &:hover
+    .checkbox
+      svg
+        path
+          stroke-dashoffset: 0
+
+  .checkbox
+    position: relative
+    top: 2px
+    float: left
+    margin-right: 8px
+    width: 20px
+    height: 20px
+    border: 2px solid #C8CCD4
+    border-radius: 3px
+    svg
+      position: absolute
+      top: -2px
+      left: -2px
+      path
+        fill: none
+        stroke: #20C2E0
+        stroke-width: 2
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-dasharray: 71px
+        stroke-dashoffset: 71px
+        transition: all .6s ease
+      polyline
+        fill: none
+        stroke: #FFF
+        stroke-width: 2
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-dasharray: 18px
+        stroke-dashoffset: 18px
+        transition: all .3s ease
+
+  > span
+    pointer-events: none
+    vertical-align: middle
+
+.cntr
+  position: absolute
+  top: 45%
+  left: 0
+  width: 100%
+  text-align: center
+
+.invisible
+  position: absolute
+  z-index: -1
+  width: 0
+  height: 0
+  opacity: 0

@@ -1,0 +1,723 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>quotepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/genricvehicle.css">
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- <script src="./js/jquery.min.js"></script> -->
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/pb-sorting.js"></script>
+    <script src="./js/swal.js"></script>
+
+</head>
+
+
+<body>
+    <div class="loader" style="display: none" id="QuoteLoader">
+        <img src="images/quote-page.gif" style="height: 100px;">
+    </div>
+	
+    <div id="main_div">
+        <div class="popup_overlay">
+
+            <div class="structure_info">
+                <div class="header">
+                    info
+                 <span class="cls">&times;</span>
+                </div>
+                <div class="popup_content">
+
+                    <div class="content_wrap">
+
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                            <h3 style="padding-bottom: 0px !important;">Vehicle Name : <span style="color: #c78217;" id="VehicleNameDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                            <h3 style="padding-bottom: 0px !important;">Fuel Name : <span style="color: #c78217;" id="FuelNameDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divExternalBifuelVal">
+                            <h3 style="padding-bottom: 0px !important;">Bi-fuel CNG/LPG Kit Value : <span style="color: #c78217;" id="ExternalBifuelVal"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                            <h3 style="padding-bottom: 0px !important;">RTO : <span style="color: #c78217;" id="RTODetails"></span></h3>
+                        </div>
+
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divMobileDetails">
+                            <h3 style="padding-bottom: 0px !important;">Mobile : <span style="color: #c78217;" id="MobileDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divEmailDetails">
+                            <h3 style="padding-bottom: 0px !important;">Email : <span style="color: #c78217;" id="EmailDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divRegistrationNoDetails">
+                            <h3 style="padding-bottom: 0px !important;">Registration Number : <span style="color: #c78217;" id="RegistrationNoDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                            <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Type : <span style="color: #c78217;" id="RegistrationTypeDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                            <h3 style="padding-bottom: 0px !important;">Vehicle Insurance Sub-Type : <span style="color: #c78217;" id="RegistrationSubTypeDetails"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divRegistrationDate">
+                            <h3 style="padding-bottom: 0px !important;">Registration Date : <span style="color: #c78217;" id="RegistrationDate"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divManufactureDate">
+                            <h3 style="padding-bottom: 0px !important;">Manufacturing Date : <span style="color: #c78217;" id="ManufactureDate"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divPolicyExpiryDate">
+                            <h3 style="padding-bottom: 0px !important;">Previous Policy Expiry Date : <span style="color: #c78217;" id="PolicyExpiryDate"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divClaimYesNo">
+                            <h3 style="padding-bottom: 0px !important;">Claimed In The Past Year : <span style="color: #c78217;" id="ClaimYesNo"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divPrevNCB">
+                            <h3 style="padding-bottom: 0px !important;">Previous No Claim Bonus (NCB) : <span style="color: #c78217;" id="PrevNCB"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divVehicleInsType">
+                            <h3 style="padding-bottom: 0px !important;">Vehicle Registration Type : <span style="color: #c78217;" id="VehicleInsType"></span></h3>
+                        </div>
+                        <div class="nooutline list-tilel-box" style="border-bottom: none !important;" id="divPrevInsurer">
+                            <h3 style="padding-bottom: 0px !important;">Previous Insurer Name : <span style="color: #c78217;" id="PrevInsurer"></span></h3>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="structure_addon">
+                <div class="header">
+                    Addons
+                 <span class="cls">&times;</span>
+                </div>
+                <div class="popup_content adons_wrap">
+
+                    <div class="wrap">
+
+                        <div class="container-fluid box">
+
+                            <div class="tab_wrapper">
+
+                                <div class="standalone active">STANDALONE </div>
+                                <div class="bundle">BUNDLE</div>
+
+                            </div>
+
+                            <div class="data_container">
+
+
+                                <!--Standalone -->
+
+                                <div class="item stad " id="st_alone">
+                                    <div class="container-fluid">
+                                        <div class="modal-body">
+                                            <div id="selectall" class="chkAddons select_all addon_row">
+                                                <input type="checkbox" id="SelectAllAddons" class="chk-col-indigo checkedInsurerFilter selection_box" />
+                                                <label style="font-size: 14px" for="SelectAllAddons">Select All</label><br>
+                                            </div>
+                                            <div id="Addons">
+                                                <div class="addon_row">
+
+                                                    <div class="type">
+                                                        <div class="selection_box" id="std_addon">
+                                                            <input type="checkbox" class="chk-col-indigo" id="___Common_Addon___">
+                                                        </div>
+                                                        <div class="name_addons">___Common_Addon_Name___ ( ___addon_range___ )</div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!--Bundle Package-->
+                                <div class="bundle_addons" id="bundle">
+                                    <div id="BundleEdit">
+                                        <div class="pack" id="pack_____Insurer_Id___">
+
+                                            <div class="insurer_name">___Insurer_Name___</div>
+                                            <div class="addons addons____Insurer_Id___ addonsblock">
+                                                <div class="name_addons ___Insurer_Id____addons BundlePlanBlock">
+                                                    <input type="radio" class="___Baseclass___" name="pack____Insurer_Id___" plan="___Insurer_Id_______BundleName1___" id="___Insurer_Id_______BundleName___" onclick="PackageSelect('___Insurer_Id___', '___BundleName1___')">
+                                                    ___BundleName1___ (<span id="Premium____Insurer_Id_______BundleName___"></span>)
+                                        <div class="detail_heading more_detail ___Baseclass___MD">More Details</div>
+                                                    <div class="more_details" style="">
+                                                        <span id="___Insurer_Id______BundleName___" class="AddonDisplay____Insurer_Id_______BundleName___">
+                                                            <span class="bundleAddons" name="___BundleName____AddonName">
+                                                                <span class="addMark"><span class="glyphicon glyphicon-ok"></span></span>___AddonDetails___ 
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btnPanel" onclick="addon_filter();">Submit</div>
+            </div>
+            <div class="structure_cov_more">
+                <div class="header">
+                    Cover More
+                   <span class="cls">&times;</span>
+                </div>
+                <div class="popup_content">
+                    <div class="content_wrap">
+                        <div class="cov_wrap">
+                            <div class="cov_row IDVcov_row">
+
+                                <div class="two_col">
+                                    <div class="lab">IDV</div>
+                                    <div class="">
+                                        <input type="number" id="ExpectedIDV">
+                                        <input id="expected_idv" type="hidden">
+                                        <br>
+                                        <div class="infotxt spnExpectedIDV">Min : <span id="ExpectedIDVMin"></span>To Max:<span id="ExpectedIDVMax"></span></div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="cov_row Accessoriescov_row">
+                                <div class="lab"> </div>
+                                <div class="two_col">
+                                    <div class="lab">Electrical</div>
+                                    <div class="">
+                                        <input id="ElectricalAccessories" type="text" class="form-control Accessories" placeholder="Electrical Accessories" maxlength="5" />
+                                        <div class="infotxt SpanDetail" id="spnElectricalAccessories">Min: 10,000 To Max: 50,000</div>
+                                    </div>
+                                </div>
+
+                                <div class="two_col">
+                                    <div class="lab">Non-Electrical</div>
+                                    <div class="">
+                                        <input id="NonElectricalAccessories" type="text" class="form-control Accessories" placeholder="Non-Electrical Accessories" maxlength="5" />
+                                        <div class="infotxt SpanDetail" id="spnNonElectricalAccessories">Min: 10,000 To Max: 50,000</div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="cov_row" >
+                                <div class="lab">Secure More</div>
+								<div class="nooutline list-tilel-box">
+                                    <h3 style="padding-bottom: 0px !important;">Personal Accident Cover For Owner Driver: <span id="OwnerDriverPersonalAccidentCover" style="color: #45c5bb">Yes</span><div id="ODPAC" style=display:none></div></h3>
+                                    <div class="demo-radio-button radioGroup">									
+									<label for="ODPAC1" ><input onclick="CheckOwnerDriverPersonalAccidentCover('No');"  name="ODPAC" type="radio" id="ODPAC1" >No</label>
+									<label for="ODPAC2" ><input onclick="CheckOwnerDriverPersonalAccidentCover('Yes');" name="ODPAC" type="radio" id="ODPAC2" checked >Yes</label>                                       
+                                    </div>
+
+                                </div>
+								
+								<div class="nooutline list-tilel-box " id="divIsHavingValidDL" style="display:none">
+                                    <h3 style="padding-bottom: 0px !important;">Do You Have Valid Driving License: <span id="IsHavingValidDL" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">									
+									<label for="IsHavingValidDL1" ><input onclick="CheckIsHavingValidDL('No');"  name="IsHavingValidDL" type="radio" id="IsHavingValidDL1" checked>No</label>
+									<label for="IsHavingValidDL2" ><input onclick="CheckIsHavingValidDL('Yes');" name="IsHavingValidDL" type="radio" id="IsHavingValidDL2" >Yes</label>                                       
+                                    </div>
+                                </div>
+								
+								<div class="nooutline list-tilel-box " id="divIsHavingSCPA" style="display:none">
+                                    <h3 style="padding-bottom: 0px !important;">Do You Have Available Standalone PA Cover: <span id="IsHavingSCPA" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">									
+									<label for="IsHavingSCPA1" ><input onclick="CheckIsHavingSCPA('No');"  name="IsHavingSCPA" type="radio" id="IsHavingSCPA1" checked>No</label>
+									<label for="IsHavingSCPA2" ><input onclick="CheckIsHavingSCPA('Yes');" name="IsHavingSCPA" type="radio" id="IsHavingSCPA2" >Yes</label>                                       
+                                    </div>
+                                </div>
+								
+                                <div class="nooutline list-tilel-box car_cover" style="display:none">
+                                    <h3 style="padding-bottom: 0px !important;">Legal Liability to Paid Driver: <span id="PeronalAccidentCoverforDriver" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">
+									<label for="PD1" ><input onclick="CheckPeronalAccidentCoverforDriver('No');"  name="group2" type="radio" id="PD1" checked>No</label>
+									<label for="PD2" ><input onclick="CheckPeronalAccidentCoverforDriver('Yes');" name="group2" type="radio" id="PD2" >Yes</label>       
+                                    </div>
+
+                                </div>
+                                
+                                <div class="nooutline list-tilel-box car_cover" style="display:none">
+                                    <h3 style="padding-bottom: 0px !important;">Personal Accident for Paid Driver: <span id="PaidDriverPersonalAccidentCover" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">
+									<label for="PDPersonal1" ><input onclick="CheckPaidDriverPersonalAccidentCover('No');"  name="group3" type="radio" id="PDPersonal1" checked>No</label>
+									<label for="PDPersonal2" ><input onclick="CheckPaidDriverPersonalAccidentCover('Yes');" name="group3" type="radio" id="PDPersonal2" >Yes</label>                                           
+                                    </div>
+
+                                </div>
+                                <div class="nooutline list-tilel-box car_cover" style="display:none">
+                                    <h3 style="padding-bottom: 0px !important;">Un-Named Passenger: <span id="PersonalCoverPassenger" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">
+									
+										<label for="Un-Named1" ><input onclick="CheckUnnamedPassenger(0)" type="radio" name="Un-Named1" id="Un-Named1" checked>No</label>
+										<label for="Un-Named2" ><input onclick="CheckUnnamedPassenger(50000)" type="radio" name="Un-Named1"  id="Un-Named2">&#x20b9 50000</label>
+										<label for="Un-Named3" ><input onclick="CheckUnnamedPassenger(100000)" type="radio" name="Un-Named1" id="Un-Named3">&#x20b9 100000</label>
+										<label for="Un-Named4" ><input onclick="CheckUnnamedPassenger(150000)" type="radio" name="Un-Named1" id="Un-Named4">&#x20b9 150000</label>
+										<label for="Un-Named5" ><input onclick="CheckUnnamedPassenger(200000)" type="radio" name="Un-Named1" id="Un-Named5">&#x20b9 200000</label>
+										
+										
+                                        <!-- <input name="group3" type="radio" class="with-gap" id="Un-Named1" checked /> -->
+                                        <!-- <label for="Un-Named1" onclick="CheckUnnamedPassenger(0);">NO</label> -->
+                                        <!-- <input name="group3" type="radio" class="with-gap" id="Un-Named2" /> -->
+                                        <!-- <label for="Un-Named2" onclick="CheckUnnamedPassenger(50000);">&#x20b9 50000 </label> -->
+                                        <!-- <input name="group3" type="radio" class="with-gap" id="Un-Named3" /> -->
+                                        <!-- <label for="Un-Named3" onclick="CheckUnnamedPassenger(100000);">&#x20b9 100000</label> -->
+                                        <!-- <input name="group3" type="radio" class="with-gap" id="Un-Named4" /> -->
+                                        <!-- <label for="Un-Named4" onclick="CheckUnnamedPassenger(150000);">&#x20b9 150000</label> -->
+                                        <!-- <input name="group3" type="radio" class="with-gap" id="Un-Named5" /> -->
+                                        <!-- <label for="Un-Named5" onclick="CheckUnnamedPassenger(200000);">&#x20b9 200000 </label> -->
+                                    </div>
+                                </div>
+                                <div class="nooutline list-tilel-box car_cover" style="display: none;">
+                                    <h3 style="padding-bottom: 0px !important;">Named Passenger: <span id="NamedPersonalAccidentCover" style="color: #45c5bb">No</span></h3>
+                                    <div class="demo-radio-button radioGroup">
+										
+										<label for="Named1" ><input onclick="CheckNamedPassenger(0)" type="radio" name="Named1" checked>&nbsp;No</label>
+										<label for="Named2" ><input onclick="CheckNamedPassenger(50000)" type="radio" name="Named1">&#x20b9 50000</label>
+										<label for="Named3" ><input onclick="CheckNamedPassenger(100000)" type="radio" name="Named1">&#x20b9 100000</label>
+										<label for="Named4" ><input onclick="CheckNamedPassenger(150000)" type="radio" name="Named1">&#x20b9 150000</label>
+										<label for="Named5" ><input onclick="CheckNamedPassenger(200000)" type="radio" name="Named1">&#x20b9 200000</label>
+										
+										
+                                        <!-- <input name="group4" type="radio" class="with-gap" id="Named1" checked /> -->
+                                        <!-- <label for="Named1" onclick="CheckNamedPassenger(0)">NO</label> -->
+                                        <!-- <input name="group4" type="radio" class="with-gap" id="Named2" /> -->
+                                        <!-- <label for="Named2" onclick="CheckNamedPassenger(50000)">&#x20b9 50000 </label> -->
+                                        <!-- <input name="group4" type="radio" class="with-gap" id="Named3" /> -->
+                                        <!-- <label for="Named3" onclick="CheckNamedPassenger(100000)">&#x20b9 100000</label> -->
+                                        <!-- <input name="group4" type="radio" class="with-gap" id="Named4" /> -->
+                                        <!-- <label for="Named4" onclick="CheckNamedPassenger(150000)">&#x20b9 150000 </label> -->
+                                        <!-- <input name="group4" type="radio" class="with-gap" id="Named5" /> -->
+                                        <!-- <label for="Named5" onclick="CheckNamedPassenger(200000)">&#x20b9 200000</label> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                           
+
+                            <div class="cov_row Save_Morecov_row">
+
+                                <div class="lab ">Save More</div>
+
+                                <!-- Discount -->
+                                <div class="item" id="discountedit">
+                                    <div class="container-fluid">
+                                        <div class="nooutline list-tilel-box">
+                                            <h3 style="padding-bottom: 0px !important;">Anti Theft Device: <span id="IsAntiTheftDevice" style="color: #45c5bb">No</span></h3>
+                                            <div class="demo-radio-button radioGroup">
+											<label for="AntiTD1" ><input onclick="CheckAntitheft(0);"  name="group5" type="radio" id="AntiTD1" checked>No</label>
+											<label for="AntiTD2" ><input onclick="CheckAntitheft('Yes');" name="group5" type="radio" id="AntiTD2" >Yes</label>  
+									
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="nooutline list-tilel-box">
+                                            <h3 style="padding-bottom: 0px !important;">Voluntry Excess: <span id="VoluntaryDeduction" style="color: #45c5bb">No</span></h3>
+                                            <!-- <div class="demo-radio-button car_cover radioGroup"> -->
+                                               
+												
+												<!-- <label for="rad" ><input  id="Voluntry1" onclick="CheckVoluntary(0)" type="radio" name="group7" checked>&nbsp;No</label> -->
+												<!-- <label for="rad" ><input  id="Voluntry2" onclick="CheckVoluntary(2500)" type="radio" name="group7">&nbsp;2500</label> -->
+												<!-- <label for="rad" ><input  id="Voluntry3" onclick="CheckVoluntary(5000)" type="radio" name="group7">&nbsp;5000</label> -->
+												<!-- <label for="rad" ><input  id="Voluntry4" onclick="CheckVoluntary(7500)" type="radio" name="group7">&nbsp;7500</label> -->
+												<!-- <label for="rad" ><input  id="Voluntry5" onclick="CheckVoluntary(15000)" type="radio" name="group7">&nbsp;15000</label>  -->
+                                            <!-- </div> -->
+											<div class="demo-radio-button bike_cover radioGroup">
+                                                <!--<input name="group7"  onclick="CheckVoluntary(0)" type="radio" class="with-gap" id="Voluntry1" checked />
+                                                <label for="Voluntry1" onclick="CheckVoluntary(0)">NO</label>
+                                                <input name="group7" type="radio" class="with-gap" id="Voluntry2" />
+                                                <label for="Voluntry2" onclick="CheckVoluntary(500)">&#x20b9 500</label>
+                                                <input name="group7" type="radio" class="with-gap" id="Voluntry3" />
+                                                <label for="Voluntry3" onclick="CheckVoluntary(750)">&#x20b9 750</label>
+                                                <input name="group7" type="radio" class="with-gap" id="Voluntry4" />
+                                                <label for="Voluntry4" onclick="CheckVoluntary(1000)">&#x20b9 1000</label>
+                                                <input name="group7" type="radio" class="with-gap" id="Voluntry5" />
+                                                <label for="Voluntry5" onclick="CheckVoluntary(1500)">&#x20b9 1500</label>
+                                                <input name="group7" type="radio" class="with-gap" id="Voluntry6" />
+                                                <label for="Voluntry6" onclick="CheckVoluntary(3000)">&#x20b9 3000</label>-->
+												<label for="Voluntry1" ><input id="Voluntry1" onclick="CheckVoluntary(0)" type="radio" checked name="group8">No</label>
+												<label for="Voluntry2" ><input id="Voluntry2" onclick="CheckVoluntary(500)" type="radio" name="group8">500</label>
+												<label for="Voluntry3" ><input id="Voluntry3" onclick="CheckVoluntary(750)" type="radio" name="group8">750</label>
+												<label for="Voluntry4" ><input id="Voluntry4"  onclick="CheckVoluntary(1000)" type="radio" name="group8">1000</label>
+												<label for="Voluntry5" ><input id="Voluntry5" onclick="CheckVoluntary(1500)" type="radio" name="group8">1500</label>
+												<label for="Voluntry6" ><input id="Voluntry6" onclick="CheckVoluntary(3000)" type="radio" name="group8">3000</label>  
+                                            </div>
+                                        </div>
+										
+										
+										  <div class="nooutline list-tilel-box car_cover">
+                                            <h3 style="padding-bottom: 0px !important;">Auto Mobile Association: <span id="MemberofAA" style="color: #45c5bb">No</span></h3>
+                                            <div class="demo-radio-button radioGroup">
+											<label for="Association1" ><input onclick="CheckMobileAssociation(0);"  name="group6" type="radio" id="Association1" checked>No</label>
+											<label for="Association2" ><input onclick="CheckMobileAssociation('Yes');" name="group6" type="radio" id="Association2" >Yes</label>  
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- End Discount -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="btnPanel" onclick="cover_filter();">Submit</div>
+            </div>
+            <div class="structure_prem_break">
+                <div class="header">
+                    Premium Details
+                    <span class="cls">&times;</span>
+                </div>
+                <div class="popup_content">
+
+                    <div class="content_wrap">
+
+                        <div class="row" style="margin-right: 0px !important; margin-left: 0px !important;">
+                            <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Plan Name : <span style="color: #c78217;" id="InsurerNameTitle"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Service Log Id : <span style="color: #c78217;" id="ServiceLogId"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                                <h3 style="padding-bottom: 0px !important;">Car Model : <span style="color: #c78217;" id="Variant1"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box IDVDisplay" style="border-bottom: none !important;">
+                                <h3 style="padding-bottom: 0px !important;">IDV : <span style="color: #c78217;" id="IDV"></span></h3>
+                            </div>
+                            <div class="nooutline list-tilel-box" style="border-bottom: none !important;">
+                                <h3 style="padding-bottom: 0px !important;">CRN :<span class="CRN" id="CRN"></span></h3>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e2d9d9; margin-bottom: 5px; margin-top: 10px;"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item pdhead "><b>Own damage premium (A)</b><b class="pull-right TotalODPremiumDisplay" style="color: #646464;"><i class="fa fa-inr"></i> <span id="TotalODPremium"></span></b></li>
+                                    <li class="list-group-item formatDouble">
+                                        <span id="lblBasicOwnDamage">Basic Own Damage</span>
+                                        <span class="pull-right" id="sBasicOwnDamage"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble" id="odDiscount">
+                                        <span>Own Damage Discount</span>
+                                        <span id="ODDiscount" class="pull-right"></span>
+                                    </li>
+
+                                    <li class="list-group-item formatDouble" id="NEAPremium">
+                                        <span>Non Electrical Accessories</span>
+                                        <span id="NonElectricalAccessoriesPremiumNEA" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble" id="EAPremium">
+                                        <span>Electrical Acessories</span>
+                                        <span id="ElectricalAcessoriesPremium" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble">
+                                        <span>Bi Fuel Kit</span>
+                                        <span id="BiFuelKitPremium" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble">
+                                        <span>Anti Theft Discount</span>
+                                        <span id="AntiTheftDiscount" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble">
+                                        <span>Voluntary Discount</span>
+                                        <span id="VoluntaryDeductions" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble">
+                                        <span>Automobile Association Membership</span>
+                                        <span id="AutomobileAssociationMembershipPremium" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item formatDouble">No Claim Bonus
+                                <span id="NoClaimBonus" class="pull-right"></span>
+                                    </li>
+
+                                    <li class="list-group-item formatDouble">
+                                        <span>Underwriter Loading</span>
+                                        <span id="UnderwriterLoading" class="pull-right"></span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item pdhead"><b>Third Party Premium (B)</b><b class="pull-right" style="color: #646464;"><i class="fa fa-inr"></i> <span id="TotalLiabilityPremium"></span></b></li>
+                                    <li class="list-group-item">
+                                        <span>Basic 3rd Party Premium</span>
+                                        <span id="ThirdPartyLiablityPremium" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>PA Owner Driver</span>
+                                        <span id="PersonalAccidentCoverForOwnerDriver" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>PA for Unnamed Passenger</span>
+                                        <span id="PersonalAccidentCoverForUnammedPassenger" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Named Personal Accident Cover for Passenger</span>
+                                        <span id="PersonalAccidentCoverForNamedPassenger" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>PA Cover For Paid Driver</span>
+                                        <span id="PersonalAccidentCoverForPaidDriver" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Legal Liability To Paid Driver</span>
+                                        <span id="LegalLiabilityPremiumForPaidDriver" class="pull-right"></span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span>Bi Fuel Kit Liability</span>
+                                        <span id="BiFuelKitLiabilityPremium" class="pull-right"></span>
+                                    </li>
+
+                                </ul>
+                                <div id="divAddOnPremium" style="display: none;">
+                                    <ul class="list-group">
+                                        <li class="list-group-item pdhead "><b>Addon Details (C)</b><b class="pull-right" style="color: #646464; display: none;"><i class="fa fa-inr"></i> <span id="AddOnPremium"></span></b></li>
+                                        <div id="divAddonLI"></div>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="tleft" style="font-size: 13px; font-weight: 600; color: #646464;">Net Premium :<b class="pull-right" style="color: #646464;"><i class="fa fa-inr"></i> <span id="TotalPremium"></span></b></p>
+                                    <p class="tleft" style="font-size: 13px; font-weight: 600; color: #646464;">Service Tax / GST (D) :<b class="pull-right" style="color: #646464;"><i class="fa fa-inr"></i> <span id="ServiceTax"></span></b></p>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div style="border-top: 1px solid #e2d9d9;"></div>
+                                <p class="tleft txtblue" style="line-height: 30px;"><strong>Total Premium:</strong><b class="pull-right" style="color: #646464;"><i class="fa fa-inr"></i> <span id="NetPayablePayablePremium" class="txt24black txtblue"></span></b></p>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <!-- <div id="SendPolicyDetails" style="display:none;"> -->
+                            <!-- <div class="row"> -->
+                            <!-- <div class="col-md-12"> -->
+                            <!-- <div class="col-md-6 center-align"> -->
+                            <!-- <input type="email" id="EmailID" class="form-control" /> -->
+                            <!-- <div id="ErEmailID" class="ErrorMsg1" style="display:none;">Please Enter Proper Email-Id.</div> -->
+                            <!-- <div id="MsgEmailID" class="ErrorMsg1" style="display:none;">Email Send Successfully.</div> -->
+                            <!-- </div> -->
+                            <!-- <div class="col-md-6 center-align" style="text-align: right;"> -->
+                            <!-- <div> -->
+                            <!-- <a id="btnSendPolicyDetails" class="btn-buy" style="color: #fff; background-color: #337ab7; border-color: #2e6da4; width:100px; font-weight: bold !important;" title="Share Quote Details">Share Quote </a> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="structure_filter">
+                <div class="header">
+                    Filters
+                 <span class="cls">&times;</span>
+                </div>
+                <div class="popup_content">
+
+                    <div class="content_wrap">
+
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('low-high','3')">
+                                <input type="radio" id="Sort1" name="radio-group4" checked>
+                                <label for="Sort1">Fair Price- Low to High</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('high-low','3')">
+                                <input type="radio" id="Sort2" name="radio-group4">
+                                <label for="Sort2">Fair Price- High to Low</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('low-high','1')">
+                                <input type="radio" id="Sort3" name="radio-group4">
+                                <label for="Sort3">Premium- Low to High</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('high-low','1')">
+                                <input type="radio" id="Sort4" name="radio-group4">
+                                <label for="Sort4">Premium- High to Low</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('low-high','2')">
+                                <input type="radio" id="Sort5" name="radio-group4">
+                                <label for="Sort5">IDV- Low to High</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-12">
+                            <div class="radio" onclick="CheckSort('high-low','2')">
+                                <input type="radio" id="Sort6" name="radio-group4">
+                                <label for="Sort6">IDV- High to Low</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="shareCode">
+            <span class="cls">&times;</span>
+            <div class="qr_wrap">
+                <img src="images/QR_code_for_mobile_English_Wikipedia.svg.png">
+            </div>
+
+        </div>
+        <div class="quotepage">
+            <div class="summary_wrap p-2 m-1">
+                <div class="text-black p-1">
+                    <div class="d-flex sum_top p-1">
+                        <div class="flex-fill">
+                            <img id="vehicle_img" src="./images/sample-car.jpg" width="120px" height="70px;">
+                        </div>
+                        <div class="flex-fill">
+                            <div>
+                                <div class="makemodelname"></div>
+                                <div class="crn_num">CRN:<span id="CRN" class="CRN"></span></div>
+                            </div>
+                            <div class="d-flex filter">
+                                <div class="flex-fill"><i class="fa fa-info-circle" id="info"></i></div>
+                                <!-- <div class="flex-fill"><i class="fa fa-share-alt" id="share"></i></div> -->
+                                <div class="flex-fill"><i class="fa fa-filter" id="filter"></i></div>
+                                <div class="flex-fill"><i class="fa fa-pencil" id="edit" onclick="OnEdit();"></i></div>
+								<div class="flex-fill"><i class="fa fa-refresh" onclick="Reload();" aria-hidden="true"></i></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex text-black p-1 sum_detail">
+                    <div class="flex-fill ">
+                        <div class="title">INSURERS</div>
+                        <div><span id="insurer_count"></span></div>
+                    </div>
+                    <div class="flex-fill">
+                        <div class="title">IDV</div>
+                        <div>
+                            <div id="IDVSection"><span class="idv_min">0</span> - <span class="idv_max">0</span></div>
+                        </div>
+                    </div>
+                    <div class="flex-fill">
+                        <div class="title">PREMIUM</div>
+                        <div>
+                            <div id="PREMIUM"><span class="premium_min">0</span> - <span class="premium_max">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="quote-wrapper quoteboxparent">
+                <div class="quote_panel m-1 quoteboxmain" href="/___proposal_url___/___client_id___/___Service_Log_Unique_Id___/AgentType/IsCustomer" id="divQuitList___Insurer_ID___" insurerid="___Insurer_ID___" premium="___Premium_Breakup_final_premium___" idv="___LM_Custom_Request_vehicle_expected_idv___" fair_price="___fair_price___">
+                    <div class=" d-flex p-2 quotechild">
+                        <div class="flex-fill ins_img">
+                            <img src="https://d31mtwejsmvzyu.cloudfront.net/Images/insurer_logo/___Insurer_Insurer_Logo_Name___">
+                        </div>
+                        <div class="flex-fill idv">
+                            <div><span class="IDVDisplay">IDV:&#8377;<span >___LM_Custom_Request_vehicle_expected_idv___</span></span></div>
+                            <div class="instruction IDVRange">varies from ___LM_Custom_Request_vehicle_min_idv___ to ___LM_Custom_Request_vehicle_max_idv___</div>
+                        </div>
+                        <div class="flex-fill premium_div dynamic">
+                            <div class="premium_btn Premium quote-buynow" href="/___proposal_url___/___client_id___/___Service_Log_Unique_Id___/AgentType/IsCustomer" onclick="return redirect(this)">___Premium_Breakup_final_premium___</div>
+                            <div class="PremiumBreakup">
+                                <a href="#" class="PremiumBreakup PB____Insurer_ID___"
+                                    basicowndamage="___Premium_Breakup_own_damage_od_basic___"
+                                    premium="___Premium_Breakup_own_damage_od_final_premium___" nonelectricalaccessoriespremium="___Premium_Breakup_own_damage_od_non_elect_access___" electricalacessoriespremium="___Premium_Breakup_own_damage_od_elect_access___"
+                                    oddiscount="___Premium_Breakup_own_damage_od_disc___" oddiscountper="___Premium_Rate_own_damage_od_disc___" bifuelkitpremium="___Premium_Breakup_own_damage_od_cng_lpg___" antitheftdiscount="___Premium_Breakup_own_damage_od_disc_anti_theft___"
+                                    voluntarydeductions="___Premium_Breakup_own_damage_od_disc_vol_deduct___" automobileassociationmembershippremium="___Premium_Breakup_own_damage_od_disc_aai___"
+                                    agediscount="0.0" professiondiscount="0.0" underwriterloading="___Premium_Breakup_own_damage_od_loading___" totalodpremium="___Premium_Breakup_own_damage_od_final_premium___"
+                                    thirdpartyliablitypremium="___Premium_Breakup_liability_tp_basic___" personalaccidentcoverforunammedpassenger="___Premium_Breakup_liability_tp_cover_unnamed_passenger_pa___" personalaccidentcoverfornamedpassenger="___Premium_Breakup_liability_tp_cover_named_passenger_pa___"
+                                    personalaccidentcoverforownerdriver="___Premium_Breakup_liability_tp_cover_owner_driver_pa___" personalaccidentcoverforpaiddriver="___Premium_Breakup_liability_tp_cover_paid_driver_pa___" legalliabilitypremiumforpaiddriver="___Premium_Breakup_liability_tp_cover_paid_driver_ll___"
+                                    bifuelkitliabilitypremium="___Premium_Breakup_liability_tp_cng_lpg___" totalliabilitypremium="___Premium_Breakup_liability_tp_final_premium___" totalpremium="___Premium_Breakup_net_premium___"
+                                    servicetax="___Premium_Breakup_service_tax___" netpayablepayablepremium="___Premium_Breakup_final_premium___" insurername="___Insurer_Insurer_Name___" quoteid="___mi_quote_id___"
+                                    noclaimbonus="___Premium_Breakup_own_damage_od_disc_ncb___" noclaimbonuspercentage="___Premium_Rate_own_damage_od_disc_ncb___" servicelogid="___Plan_List_0_Service_Log_Id___" fair_price="___fair_price___"
+                                    idv="___LM_Custom_Request_vehicle_expected_idv___" addonpremium="___Premium_Breakup_addon_addon_final_premium___" addonname="___Premium_Breakup_addon_AddonName___" insurerid="___Insurer_Id___"></a>
+
+                                More Details
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quotebox clearfix addon-selectedMobile addon_pane  text-left m-1">
+                    </div>
+
+                </div>
+
+
+            </div>
+            <input id="VehicleInsuranceSubtype" name="VehicleInsuranceSubtype" type="hidden" value="">
+            <div class="footer_btn d-flex">
+                <div class="flex-fill" id="cov_more">COVER MORE</div>
+                <div class="flex-fill" id="addons">ADDONS</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        //Code For Addon Implementation Starts
+        $(".more_details").hide();
+
+        $(".bundle").click(function (e) {
+            $(".tab_wrapper div").removeClass("active");
+            $(this).addClass("active");
+            $("#bundle").css("display", "block");
+            $("#st_alone").css("display", "none");
+        })
+
+        $(".standalone").click(function (e) {
+            $(".tab_wrapper div").removeClass("active");
+            $(this).addClass("active");
+
+            $("#bundle").css("display", "none");
+            $("#st_alone").css("display", "block")
+        })
+
+        $window = $(window);
+        $window.scroll(function () {
+            $scroll_position = $window.scrollTop();
+            if ($scroll_position > 1) { // if body is scrolled down by 300 pixels
+                $('.tab_wrapper').addClass('sticky');
+                header_height = $('.tab_wrapper').innerHeight();
+                $('body').css('padding-top', header_height);
+            } else {
+                $('body').css('padding-top', '0');
+                $('.tab_wrapper').removeClass('sticky');
+            }
+        });
+
+        $(document).on("click", ".detail_heading", function () {
+            if ($(this).prev().prev().hasClass('Basic')) { return false; }
+            var current = $(this).parent([0]).find(".more_details");
+            $(".more_details").not(current).slideUp();
+            current.slideToggle();
+            //$(".more_details").not(current).slideUp();
+        })
+        //Code For Addon Implementation Ends
+    </script>
+    <script src="./js/quote_page_validation.js"></script>
+</body>
+</html>

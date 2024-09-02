@@ -1,0 +1,2300 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+	font-family: 'Lato', sans-serif;
+	font-size:1em;
+	color:#3e4750;
+	
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('../fonts/Lato-Regular.ttf'); 
+}
+
+p{
+	margin:0px!important;
+}
+
+.col-sm-3{
+	padding-right:5px;
+	padding-left:5px;
+}
+
+.col-xs-3{
+	padding-right:5px;
+	padding-left:5px;
+}
+
+/*--header --*/
+.header-main{
+    position: relative;
+	
+}
+.header-outs {
+    position: absolute;
+    z-index: 99;
+	background-color:gray;
+    top: 33px;
+
+}
+.header-bar h1 a{
+    color: #fff;
+    font-size: 45px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+	font-weight: 400;
+	text-decoration:none;
+	
+	
+}
+/*-- menu-navigation --*/
+nav {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	position: fixed;
+	right: -220px;
+	top: 0;
+	-moz-transition: right 0.2s linear;
+	-o-transition: right 0.2s linear;
+	-webkit-transition: right 0.2s linear;
+	transition: right 0.2s linear;
+	width: 220px;
+	z-index: 9001;/* IT'S OVER 9000! */
+	padding-top: 4em;
+	   
+}
+#menuToggle {
+	left:50%;
+    height: 20px;
+    top: 20px;
+    width: 46px;
+    z-index:9999;
+	border-radius: 5px;
+}
+#menuToggle span {
+    background: white;
+    display: block;
+    height:8%;
+    right: 10%;
+    position: absolute;
+    top: 45%;
+    width: 3%;
+}
+
+#menuToggle span:before,
+#menuToggle span:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: -250%;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  width: 100%;
+}
+
+#menuToggle span:after { top: 250%; }
+
+nav a {
+    color: #fff;
+    display: block;
+    font-size: 1.3em;
+    margin: 30px 0 30px 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+nav a:after {
+	background: #009fe3;
+	content: '';
+	display: block;
+	height: 2px;
+	-moz-transition: width 0.5s;
+	-o-transition: width 0.5s;
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
+	width: 0;
+	margin-top: 0.2em;
+}
+nav a:hover:after { width: 100%; }
+.menu nav a:hover,.menu nav a:focus {
+    color: #009fe3;
+}
+.open nav {
+    right: 0;
+} 
+.open #menuToggle span {
+    background: transparent;
+    right: 10%;
+    top: 45%;
+} 
+.open #menuToggle span:before,
+.open #menuToggle span:after {
+	background: white;
+	top: 0;
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+} 
+.open #menuToggle span:after {
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+} 
+#menuToggle .navClosed {
+	-moz-transition: background 0.1s linear;
+	-o-transition: background 0.1s linear;
+	-webkit-transition: background 0.1s linear;
+	transition: background 0.1s linear;
+} 
+#menuToggle .navClosed:before,
+#menuToggle .navClosed:after {
+	-moz-transition: top 0.2s linear 0.1s, -moz-transform 0.2s linear 0.1s;
+	-o-transition: top 0.2s linear 0.1s, -o-transform 0.2s linear 0.1s;
+	-webkit-transition: top 0.2s linear, -webkit-transform 0.2s linear;
+	-webkit-transition-delay: 0.1s, 0.1s;
+	transition: top 0.2s linear 0.1s, transform 0.2s linear 0.1s;
+} 
+#menuToggle .navOpen {
+	-moz-transition: background 0.1s linear 0.2s;
+	-o-transition: background 0.1s linear 0.2s;
+	-webkit-transition: background 0.1s linear;
+	-webkit-transition-delay: 0.2s;
+	transition: background 0.1s linear 0.2s;
+}
+
+#menuToggle .navOpen:before,
+#menuToggle .navOpen:after {
+	-moz-transition: top 0.2s linear, -moz-transform 0.2s linear;
+	-o-transition: top 0.2s linear, -o-transform 0.2s linear;
+	-webkit-transition: top 0.2s linear, -webkit-transform 0.2s linear;
+	transition: top 0.2s linear, transform 0.2s linear;
+}
+/*-- //menu-navigation --*/
+/*-- //header --*/
+.main{
+	width:1000px;
+}
+.header h1{
+	background-color:#009fe3;
+	padding:20px;
+}
+
+h1 a{
+	color:#fff;
+}
+
+h1 a:hover{
+	text-decoration:none;
+	color:#fff;
+}
+
+.headertitle h3{
+	background-color:#696969;
+	color:#fff;
+	padding:10px 20px;
+	margin:0px;
+}
+
+.headertitle ul{
+	background-color:#00476d;
+	padding:10px 20px;
+	margin:0px;
+}
+.headertitle ul li a{
+	color:#fff;
+	text-decoration:none;
+	margin-right:50px;	
+}
+
+.headertitle ul li a:hover{
+	border-bottom:2px solid #fff;
+}
+
+.type{
+	background-color:#e0e0e0;
+	height:auto;
+}
+.type1{
+	background-color:#fff;
+	width:98%;
+	height:auto;
+	margin:0 auto;
+	text-align:center;
+	padding:10px;
+	
+}
+
+.option{
+	border:2px solid #e0e0e0;
+	margin:10px 0px;
+}
+
+.type_product{
+	color:#3e4750;
+	border:2px solid #d8d7d7;
+	margin:5px 0px;
+	padding:10px;
+	background-color:#fff;
+}
+
+.type_product ul{
+	padding-left:0px !important;
+	margin:0px;
+}
+
+.type_product ul li{
+	list-style-type:none;
+	font-size:1em;
+	padding:10px;
+	vertical-align:middle;
+}
+
+.col-xs-12 {
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.type ul {
+	padding:0px !important;
+}
+
+/*motor_01*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 134px;
+  height: 34px;
+  vertical-align:middle;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00476d;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #009fe3;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00476d;
+  
+}
+
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch-agileits {
+	vertical-align:middle;
+	color:#c5c5c5;
+	line-height:50px;
+	border:2px solid #e0e0e0;
+	padding:10px 0px;
+	margin:10px 0px;
+}
+.option ul li{
+	margin:20px;
+	vertical-align:middle;
+	color:#00476d;
+}
+.registration p{
+	padding:10px;
+}
+.registration span{
+	color:#00476d; 
+	font-weight:bold;
+}
+.registration a{
+	color:#009fe3; 
+	font-weight:bold; 
+	cursor:pointer;
+}
+
+.type1 ul{
+	list-style-type:none;	
+}
+
+.vehicle{
+   text-align:center;
+ 
+}
+.vehicle input{
+	display:inline-block;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #e0e0e0;
+    width: 80px;
+    text-align:center;
+    padding : 5px;
+    margin-left:10px;
+	text-transform:uppercase
+}
+
+.vehicle button{
+  border:0px !important;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background-color:#009fe3;
+  padding:10px 20px;
+}
+
+.form-control{
+	border-radius:0px;
+	box-shadow:none;
+}
+
+/*motor_01*/
+
+
+/*motor_03*/
+
+.text{
+	color:#009fe3;
+	font-weight:bold;
+	padding:10px;
+}
+
+.motor_idv{
+	color:#3e4750;
+	border:2px solid #d8d7d7;
+	margin:5px 0px;
+	padding:10px;
+	background-color:#fff;
+}
+
+.motor_idv p{
+	line-height:40px
+}
+
+.motor_idv button{
+	background-color:#f38d1e;
+	padding:8px 20px;
+	border:0px!important;
+	color:#fff;
+	margin-top:39px;
+}
+
+.premium{
+	color:#ff5c61;
+}
+.premium_amt{
+	background-color:#ff5c61;
+	color:#fff;
+	text-align:center;
+}
+
+/*motor_03*/
+
+/*motor_04*/
+
+.add{
+	background-color:#00476d;
+	text-align:center;
+	padding:10px;
+	margin:0 auto;
+	color:#fff;
+}
+
+/* Form*/
+.form-control{
+	border-radius:0px;
+	box-shadow:none;
+}
+
+.switche-btn{
+	width:80%;
+	margin:0 auto;
+}
+
+.agile-heading h1 {
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 0.5em 0 0.3em;
+}
+.agile-form {
+	width: 98%;
+	background-color:#fff;
+    padding: 2em;
+    box-sizing: border-box;
+	margin:0 auto;
+}
+.agile-form p {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 1px;
+    margin: 5px 0;
+    padding: 0;
+    color: #009fe3;
+	text-transform:uppercase;
+}
+input[type="email"],input[type="password"],input[type="text"],input[type="number"]{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: capitalize;
+    padding: 0.5em 0.5em;
+    width: 100%;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    color: #242424;
+}
+
+input[type="date"]{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5em 0.5em;
+    width: 200%;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    color: #3e4750;
+}
+input[type="radio"]{
+	font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    display: inline-block;
+    margin: 0.5em auto 0.5em;
+    background: #df4444;
+	box-sizing: border-box;
+    color: #fff;
+	width: 20px;
+    height: 20px;
+    border-radius: 50%;
+	vertical-align: middle;
+}
+.agile-gender span {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+	vertical-align: middle;
+}
+
+select{
+	font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    background: none;
+    color: #242424;
+	box-sizing: border-box;
+}
+option {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: .5em 0;
+    display: block;
+    color: #f9f4f4;
+    border: none;
+    outline: none;
+	box-sizing: border-box;
+}
+.agile-mgender {
+    width: 50%;
+    float: left;
+}
+.agile-fgender {
+    width: 50%;
+    float: left;
+}
+
+.agile-year {
+    width: 33%;
+    float: left;
+	margin-right: 2px;
+}
+
+.mfg{
+	width: 49%;
+    float: left;
+	margin-left:1%;
+}
+
+.mfg div{
+	width: 49%;
+    float: left;
+	margin-left:1%;
+}
+.agile-fname {
+    width: 50%;
+    float: left;
+	
+}
+.agile-lname {
+    width: 49%;
+    float: left;
+	margin-left:1%;
+}
+.agile-religion {
+    width: 49%;
+    float: left;
+	margin-bottom:10px;
+}
+.agile-tongue {
+    width: 49%;
+    float: left;
+    margin-left: 1%;
+}
+input[type="submit"] {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 0.4em 0.4em;
+    width: 100%;
+    margin: 0.5em auto 0;
+    display: block;
+    border:2px solid #ff5c61;
+	background:#fff;
+    outline: none;
+    color: #ff5c61;
+	cursor:pointer;
+	box-sizing: border-box;
+}
+::-webkit-input-placeholder{
+	color:rgba(255, 255, 255, 0.71);
+}
+.image img {
+    width: 4%;
+    margin-right: 0.5%;
+	vertical-align:baseline;
+}
+label {
+    color: #f9c13f;
+    text-transform: uppercase;
+}
+input[type="submit"] :hover{
+    background: ;
+    color: #fff;
+    transition: 0.5s cubic-bezier(0.42, 0, 0.4, 1.02);
+}
+.disable-field{
+	color:#c1c0c0;
+}
+/*--button--*/
+.clm-btn{
+    float: left;
+}
+.clm-btn-active{
+    float: left;
+	padding-top:30px;
+}
+input[type="button"]{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px;
+    width:45%;
+    border:2px solid #e0e0e0;
+    outline: none;
+    color: #e0e0e0;
+	cursor:pointer;
+	box-sizing: border-box;
+	margin:10px 10px 10px 0px;
+}
+
+.btn-primary{
+	background-color:#fff!important;
+}
+.btn-primary:hover{
+	color: #009fe3;
+	border:2px solid #009fe3;	
+}
+
+.btn-primary:active{
+	color: #009fe3;
+	border:2px solid #009fe3;	
+}
+
+.btn-primary:focus,
+.btn-primary.focus{
+	color: #009fe3;
+	border:2px solid #009fe3;	
+}
+
+.price-slider {
+	margin-bottom: 3em;
+    text-align: center;
+}
+
+.price-slider span {
+    display: inline-block;
+    color: #212121;
+    font-size: 14px;
+}
+#slider12a .slider-track-high, #slider12c .slider-track-high {
+	background: green;
+}
+/*motor_04*/
+
+/*motor_04_A*/
+
+.addon{
+	text-align:center;
+	background-color:#eaeef7;
+	color:#3e4750;
+	border:1px solid #a0daff;
+	padding:10px;
+}
+.addon1{
+	text-align:center;
+	color:#3e4750;
+	border-top:0px;
+	margin-bottom:10px;
+	border:1px solid #a0daff;
+	font-size:12px;
+	padding:10px;
+	background-color:#fff;
+}
+
+.panel {
+    padding:10px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+	border-radius:0px!important;
+	border:1px solid #a0daff;
+	margin-bottom:0px;
+}
+
+.panel-title{
+	font-size:14px;
+	color:#3e4750;
+}
+
+.panel-default>.panel-heading{
+	background-color:#eaeef7;
+}
+.view_details{
+	margin-bottom:5px;
+}
+
+.view_details p{
+	background-color:#efefef;
+	text-align:left;
+	padding:10px;
+	border:1px solid #e0e0e0;
+	border-radius:8px;
+}
+
+.accordion {
+    background-color: #eaeef7;
+    color: #444;
+	border:1px solid #a0daff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+
+}
+
+.active:after {
+    content: "\2212";
+}
+
+/*motor_04_A*/
+
+/*motor_05*/
+.search{
+	padding:10px;
+	vertical-align:middle;
+}
+.search-container {
+  width:50%;
+}
+
+.search input[type=text] {
+  padding: 10px;
+  margin:0px!important;
+  font-size: 17px;
+  border: none;
+  width:80%;
+}
+::-webkit-input-placeholder{
+	color:#d6d3d3!important;
+	}
+.search-container button {
+ 
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+/*motor_05*/
+
+
+/*motor_06*/
+.type_product p{
+	line-height:30px;
+}
+
+
+/*motor_06*/
+
+
+/*health_1_1*/
+.cover p{
+	border:2px solid #e0e0e0;
+	background-color:#fff;
+	padding:10px;
+	color:#3e4750;
+}
+
+.cover div{
+	margin:5px 0px;
+}
+
+.type1 li{
+	margin-bottom:10px;
+}
+
+/*health_1_1*/
+
+/*health_1_2*/
+
+.health_care{
+	color:#3e4750;
+	border:2px solid #d8d7d7;
+	margin:5px 0px;
+	padding:5px;
+	background-color:#fff;
+	text-align:left;
+}
+
+.health_care p{
+	line-height:40px
+}
+
+.health_care button{
+	background-color:#f38d1e;
+	border:0px!important;
+	color:#fff;
+	margin-top:38px;
+
+}
+
+.sum_more{
+	color:#ff5c61;
+	padding:20px;
+	text-align:center;
+}
+
+.quotes{
+	background-color:#00476d;
+	color:#fff;
+	padding:10px 20px;
+	text-align:center;
+	font-weight:bold;
+}
+.quotes a{
+	color:#fff;
+}
+
+/*health_1_2*/
+
+/*health_1_4*/
+.type h4{
+	background-color:#009fe3;
+	text-align:center;
+	padding:10px;
+	margin:0 auto;
+	color:#fff;
+}
+
+.health_premium div{
+	border:1px solid #e0e0e0;
+	padding:10px;
+	text-align:left;
+}
+
+.health_premium img{
+	padding:6.5px;
+}
+
+ .health_button button{
+	padding:5px 20px;
+	background-color:#009fe3;
+	border-radius:5px;
+	margin:10px;
+	color:#fff;
+	border:0px;
+	
+ }
+
+/*health_1_4*/
+
+/*health_1_5*/
+
+.emp_details{
+	border:2px solid #e0e0e0;
+	text-align:left;
+	color:#c5c5c5;
+	border-radius:5px;
+	padding:10px;
+	margin:10px 0px;
+}
+
+/*health_1_5*/
+
+
+/*life_02_1*/
+
+.life-lname{
+	width: 50%;
+    float: left;
+
+}
+
+.life-lname input[type="text"]{
+	font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5em 0.5em;
+    width: 200%;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    color: #3e4750;
+}
+
+.life-lname  input[type="date"]{
+	font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5em 0.5em;
+    width: 100%;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    color: #3e4750;
+}
+
+.agile-number{
+	width: 50%;
+    float: left;
+
+}
+
+.agile-number input[type="text"]{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+	float:left;
+    text-transform: capitalize;
+    padding: 0.5em 0.5em;
+    width: 98%;
+    margin: 0 auto 10px;
+    box-sizing: border-box;
+    border: none;
+	border-bottom: 2px solid #009fe3;
+    outline: none;
+    color: #242424;
+}
+
+/*life_02_1*/
+
+/*life_02_2*/
+.life_protect div{
+	border:1px solid #e0e0e0;
+	height:80px;
+}
+.life_protect{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.life_protect p{
+	padding:5px;
+}
+
+.life_protect img{
+	padding:20px;
+	display:inline;
+}
+
+.life_premium{
+	padding:14px;
+	border:1px solid #e0e0e0;
+	height:160px;
+}
+
+.life_premium p{
+	padding:5px;
+	background-color:#ff5c61;
+	color:#fff;
+}
+/*life_02_2*/
+
+
+.annual{
+	border:2px solid #e0e0e0;
+	padding:10px;
+	width:60%;
+	margin:0 auto;
+	border-radius:10px;
+	box-shadow:0px 5px 6px 0px #c3c2c2;
+
+}
+
+.annual span{
+	font-size:25px;
+	color:red;
+	font-weight:bold;
+}
+
+.info{
+	background-color:#ededed;
+	padding:10px;
+	font-weight:bold;
+	margin-bottom:10px;	
+}
+
+.payment_link button{
+	background-color:#347ab6;
+	padding:10px;
+	border:0px;
+	color:#fff;
+	border-radius:5px;
+}
+
+/*life_02_4*/
+
+.application{
+	width:80%;
+	border:1px solid #347ab6;
+	padding:10px;
+	text-align:left;
+	margin:20px auto;
+}
+.application span{
+	font-weight:bold;
+}
+
+/*life_02_4*/
+
+/*life_02_6*/
+.payout{
+	background-color:#9b9b9b;
+	padding:10px;
+	margin-bottom:10px;
+	color:#fff;	
+}
+
+.income p{
+	border:2px solid #e0e0e0;
+	background-color:#fff;
+	padding:10px;
+	color:#3e4750;
+	font-size:13px;
+}
+
+.income div{
+	margin:5px 0px;
+}
+
+/*life_02_6*/
+/*--responsive--*/
+
+@media(max-width:1080px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:991px;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+
+}
+
+@media(max-width:1024px){
+.container{
+		padding-right:0px;
+		padding-left:0px;
+		
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+
+}
+
+@media(max-width:991px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.motor_idv button{
+		margin-top:39px;
+		padding:8px 15px;
+	}
+
+	
+
+}
+@media(max-width:900px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.motor_idv button{
+		margin-top:39px;
+		padding:8px 15px;
+	}
+	
+	.search{
+		padding:5px;
+		font-size:14px;
+	}
+	
+	.type input[type=text]{
+		width:80%;
+		font-size:14px;
+		padding:5px 10px;
+	}
+	
+	.search-container {
+		width:40%;
+	}
+	
+	.search-container button{
+		font-size:15px;
+	}
+	.agile-number input[type="text"]{
+		width:98%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.life-lname input[type="text"]{
+		width:200%;
+	}
+
+	.life-lname input[type="date"]{
+		padding:2px 10px;
+	}
+	
+	select{
+		width:90%;
+		margin:0px;
+		float:left;
+	}
+	
+	#motor input[type=text]{
+		float:left;
+		width:100%;
+	}
+
+
+}
+@media(max-width:800px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	input[type="button"]{
+		width:35%;
+		font-size:12px;
+	}
+	.motor_idv button{
+		margin-top:39px;
+		padding:8px 15px;
+	}
+	.col-xs-2{
+		padding-right:5px;
+		padding-left:5px;
+	}
+	.type_product p{
+		line-height:20px;
+		font-size:12px;
+	}
+	
+	#health_details input[type="button"]{
+		width:43%;
+		font-size:12px;
+		margin:2px;
+	}
+	
+		.agile-number input[type="text"]{
+		width:98%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.life-lname input[type="text"]{
+		width:200%;
+	}
+	
+
+	.life-lname input[type="date"]{
+		padding:2px 10px;
+	}
+	
+	select{
+		width:90%;
+		margin:0px;
+		float:left;
+	}
+	
+	#motor input[type=text]{
+		float:left;
+		width:100%;
+	}
+	
+}
+@media(max-width:768px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	
+	.vehicle input{
+		width:40px;
+	}
+	
+	input[type="button"]{
+		width:35%;
+		font-size:12px;
+	}
+	.motor_idv button{
+		margin-top:39px;
+		padding:8px 15px;
+	}
+	.panel{
+		padding:5px;
+	}
+	.accordion{
+		font-size:14px;
+		padding:10px;
+	}
+	
+	.view_details p{
+		padding:5px;
+		font-size:12px;
+	}
+	
+	.search{
+		padding:5px;
+		font-size:14px;
+	}
+	
+	.type input[type=text]{
+		width:60%;
+		font-size:14px;
+		padding:5px 10px;
+	}
+	
+	select{
+		width:90%;
+		margin:0px;
+		float:left;
+	}
+	
+	#motor input[type=text]{
+		float:left;
+		width:100%;
+	}
+	
+	.search-container {
+		width:40%;
+	}
+	
+	.search-container button{
+		font-size:15px;
+	}
+	
+	.type_product p{
+		line-height:20px;
+		font-size:12px;
+	}
+	
+	#health input[type="text"]{
+		width:98%;
+	}
+	
+	#health_details input[type="text"]{
+		width:98%;
+	}
+	
+	.agile-number input[type="text"]{
+		width:98%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.life-lname input[type="text"]{
+		width:200%;
+	}
+	
+	.agile-form{
+		padding:1em;
+	}
+	
+	.agile-form p{
+		font-size:12px;
+	}
+	
+	#health_details .life-lname input[type="text"]{
+		width:200%;
+		padding:2px 10px;
+	}
+	
+	.life_protect{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	.life_protect p{
+		font-size:12px;
+		padding:10px 0px;
+		line-height:15px;
+	}
+	
+	.life_protect img{
+		padding:5px 0px;
+	}
+	
+	.life_premium{
+		padding:15px;
+	}
+	.income p{
+		padding:5px;
+		font-size:10px;
+	}
+	
+}
+
+@media(max-width:480px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	#menuToggle span{
+		width:5%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.type_product ul li span{
+		font-size:13px;
+	}
+	
+	.type1{
+		width:100%;
+	}
+	.switch-agileits{
+		line-height:20px;
+	}
+	.col-xs-4{
+		padding-left:5px;
+		padding-right:5px;
+	}
+	.switch{
+		height:15px;
+		width:80px;
+	}
+	
+	.slider:before {
+	  left: 0px;
+	  bottom: -5px;
+	}
+	
+	input:checked + .slider:before {
+	  -webkit-transform: translateX(55px);
+	  -ms-transform: translateX(55px);
+	  transform: translateX(55px);
+	}
+	
+	.option ul li{
+		margin:10px;
+	}
+	
+	.vehicle input{
+		width:37px;
+	}
+	
+	.cover p{
+		padding:5px;
+	}
+	
+	#health input[type="text"]{
+		width:98%;
+	}
+	.type_product button{
+		margin-top:40px;
+		padding:8px 10px;
+	}
+	.panel{
+		padding:5px;
+	}
+	.accordion{
+		font-size:14px;
+		padding:10px;
+	}
+	
+	.view_details p{
+		padding:5px;
+		font-size:12px;
+	}
+	.type_product p{
+		line-height:20px;
+		font-size:12px;
+	}
+	
+	.motor_idv button{
+		margin-top:40px;
+		padding:7px;
+	
+	}
+	
+	.health_care p{
+		line-height:30px;
+		font-size:12px;
+	}
+	.health_care button{
+		margin-top:25%;
+		font-size:12px;
+		padding:0px 2px;
+	}
+	.agile-form{
+		padding:1em;
+	}
+	.agile-form p{
+		font-size:12px;
+	}
+	
+	.life-lname input[type="date"]{
+		padding:2px 10px;
+	}
+
+	.life_protect{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	.life_protect p{
+		font-size:12px;
+		padding:10px 0px;
+		line-height:15px;
+	}
+	
+	.life_protect img{
+		padding:5px 0px;
+	}
+	
+	.life_premium{
+		padding:15px;
+	}
+	
+	.annual span{
+		font-size:20px;
+		padding:5px;
+	}
+	
+	.income p{
+		padding:5px;
+		font-size:10px;
+	}
+}
+
+@media(max-width:414px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	
+	#menuToggle span{
+		width:5%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.type_product ul li{
+		padding:4px;
+	}
+	.type_product ul li span{
+		font-size:12px;
+	}
+	.type1{
+		width:100%;
+		padding:5px;
+		font-size:12px;
+	}
+	.switch-agileits{
+		line-height:20px;
+	}
+	.col-xs-4{
+		padding-left:5px;
+		padding-right:5px;
+	}
+	.switch{
+		height:15px;
+		width:80px;
+	}
+	
+	.slider:before {
+	  left: 0px;
+	  bottom: -5px;
+	}
+	
+	input:checked + .slider:before {
+	  -webkit-transform: translateX(55px);
+	  -ms-transform: translateX(55px);
+	  transform: translateX(55px);
+	}
+	.headertitle ul li a{
+		margin-right:40px;
+	}
+	.option ul li{
+		margin:10px;
+	}
+	
+	.vehicle input{
+		width:40px;
+	}
+	.registration p{
+		padding:5px;
+	}
+	
+	.motor_idv p{
+		line-height:30px
+	}
+	
+	.motor_idv button{
+		padding:3px 10px;
+		margin-top:30px;
+	}
+	
+	.agile-form{
+		padding:10px;
+		width:100%;
+	}
+	
+	.agile-form p{
+		font-size:12px;
+		letter-spacing:0px;
+	}
+	
+	#health input[type="text"]{
+		width:98%;
+	}
+	
+	#health_details input[type="text"]{
+		width:98%;
+	}
+	
+	input[type="button"]{
+		width:35%;
+		font-size:12px;
+	}
+	
+	select{
+		width:90%;
+		margin:0px;
+		float:left;
+	}
+	
+	#motor input[type=text]{
+		float:left;
+		width:100%;
+	}
+	
+	input[type="email"], input[type="password"], input[type="text"], input[type="number"]{
+		width:90%;
+	}
+	
+	input[type="submit"]{
+		font-size:15px;
+	}
+	
+	.panel{
+		padding:5px;
+	}
+	.accordion{
+		font-size:12px;
+		padding:10px;
+	}
+	
+	.view_details p{
+		padding:5px;
+		font-size:10px;
+	}
+	
+	.search{
+		padding:5px;
+		font-size:12px;
+	}
+	
+	.type input[type=text]{
+		width:60%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.search-container {
+		width:40%;
+	}
+	
+	.search-container button{
+		font-size:15px;
+	}
+	
+	.type_product p{
+		font-size:10px;
+		line-height:20px;
+	
+	}
+	.health_premium p{
+		padding:5px;
+	}
+
+	.health_premium img{
+		padding:11.5px 0px;
+	}
+
+	.type_product ul li{
+	font-size:11px;
+	}
+	
+	#health_details .life-lname input[type="text"]{
+		width:200%;
+	}
+	
+	.life-lname input[type="date"]{
+		padding:2px 10px;
+	}
+	
+	.agile-number input[type="text"]{
+		width:98%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	.life_protect{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	.life_protect{
+		font-size:10px;
+	}
+	.life_protect p{
+		padding:10px 0px;
+	}
+	
+	.life_premium{
+		padding:15px;
+	}
+	
+	.life_protect img{
+		padding:8px;
+	}
+	
+	.income p{
+		padding:5px;
+		font-size:9px;
+	}
+	
+	
+}
+
+@media(max-width:375px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+	}
+	#menuToggle{
+		right:10%;
+	}
+	
+	#menuToggle span{
+		width:7%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.type_product ul li span{
+	font-size:11px;
+	}
+	
+	.type_product ul li{
+	font-size:11px;
+	}
+	
+	.type1{
+		width:100%;
+		font-size:12px;
+	}
+	.switch-agileits{
+		line-height:20px;
+	}
+	.col-xs-4{
+		padding-left:5px;
+		padding-right:5px;
+	}
+	.switch{
+		height:15px;
+		width:80px;
+	}
+	
+	.slider:before {
+	  left: 0px;
+	  bottom: -5px;
+	}
+	
+	input:checked + .slider:before {
+	  -webkit-transform: translateX(55px);
+	  -ms-transform: translateX(55px);
+	  transform: translateX(55px);
+	}
+	
+	.option ul li{
+		margin:10px;
+	}
+	
+	.vehicle input{
+		width:30px;
+	}
+	
+	.motor_idv p{
+		line-height:30px;
+	}
+	
+	.motor_idv button{
+		padding:3px 5px;
+		margin-top:30px;
+	}
+	
+	.agile-form{
+		padding:10px;
+		width:100%;
+	}
+	
+	.agile-form p{
+		font-size:11px;
+		letter-spacing:0px;
+	}
+	
+	input[type="button"]{
+		width:35%;
+		font-size:12px;
+	}
+	
+	select{
+		width:90%;
+		float:left;
+		margin:0px;
+	}
+	
+	input[type="email"], input[type="password"], input[type="text"], input[type="number"]{
+		width:90%;
+	}
+	
+	input[type="submit"]{
+		font-size:15px;
+	}
+	
+	.panel{
+		padding:5px;
+	}
+	.accordion{
+		font-size:12px;
+		padding:10px;
+	}
+	
+	.view_details p{
+		padding:5px;
+		font-size:10px;
+	}
+	
+	.search{
+		padding:5px;
+		font-size:12px;
+	}
+	
+	.type input[type=text]{
+		width:60%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.search-container {
+		width:40%;
+	}
+	
+	.search-container button{
+		font-size:15px;
+	}
+	.type_product p{
+		font-size:10px;
+		line-height:15px;
+	}
+	
+	.agile-form input[type=text], input[type=number] {
+		width:90%;
+		padding:5px 10px;
+		text-align:left;
+		float:left;
+	}
+	
+	.health_care p{
+		line-height:30px;
+		font-size:11px;
+	}
+	.health_care button{
+		margin-top:26%;
+	}
+	.health_premium p{
+		padding:5px;
+	}
+
+	.health_premium img{
+		padding:11.5px 0px;
+	}
+	
+	.life-lname input[type="text"]{
+		width: 200%;
+	}
+	
+	.life-lname input[type="date"]{
+		padding:2px 10px;
+	}
+	
+	.agile-number input[type="text"]{
+		width:98%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.life_protect{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	.life_protect{
+		font-size:10px;
+	}
+	.life_protect p{
+		padding:2px 0px;
+		line-height:20px;
+	}
+	
+	.life_premium{
+		padding:9px;
+	}
+	
+	.annual span{
+		font-size:20px;
+	}
+	
+	.income p{
+		padding:5px;
+		font-size:9px;
+	}
+	
+	#health_details .life-lname input[type="text"]{
+		width:200%;
+	}
+}
+
+
+
+
+
+@media(max-width:360px){
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	#menuToggle span{
+		width:7%;
+	}
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.type_product ul li{
+		padding:3px;
+	}
+	.type_product ul li span{
+		font-size:10.5px;
+	}
+	
+	.headertitle ul li a{
+		margin-right:30px;
+	}
+	
+	.motor_idv button{
+		margin-top:30px;
+		padding:3px;
+	}
+	.vehicle input{
+		width:27px;
+	}
+	
+	.cover p{
+		padding:5px 2px;
+	}
+	
+	.vehicle button{
+		padding:5px 10px;
+	}
+	.panel{
+		padding:5px;
+	}
+	.accordion{
+		font-size:12px;
+		padding:10px;
+	}
+	
+	.view_details p{
+		padding:5px;
+		font-size:10px;
+	}
+	.search{
+		padding:5px;
+		font-size:12px;
+	}
+	
+	.type input[type=text]{
+		width:60%;
+		font-size:12px;
+		padding:5px 10px;
+	}
+	
+	.search-container {
+		width:40%;
+	}
+	
+	.search-container button{
+		font-size:15px;
+	}
+	
+	.agile-form input[type=text], input[type=number] {
+		width:100%;
+		padding:5px 10px;
+	}
+	
+	.health_care p{
+		line-height:30px;
+		font-size:10px;
+	}
+	.health_care button{
+		margin-top:30%;
+		font-size:10px;
+		padding:2px;
+	}
+	
+	.health_premium div{
+		padding:0px;
+	}
+	
+	.health_premium img{
+		padding:11.5px 0px;
+	}
+	
+	.life-lname input[type="text"]{
+		width: 200%;
+	}
+	
+	.agile-number input[type="text"]{
+		width:90%;
+	}
+
+}	
+@media(max-width:320px){
+	body{
+		font-size:13px;
+	}
+	
+	.container{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.main{
+		width:100%;
+	}
+	
+	.header h1{
+		font-size:1em;
+		padding:10px;
+	}
+	#menuToggle{
+		right:10%;
+		top:1%;
+	}
+	#menuToggle span{
+		width:7%;
+	}
+	
+	.headertitle h3{
+		padding:10px;
+		font-size:1em;
+	}
+	.type_product ul li span{
+		font-size:10px;
+	}
+	.type_product ul li{
+		padding:1px;
+		font-size:10px;
+	}
+	
+	.headertitle ul li a{
+		margin-right:30px;
+	}
+	.switch-agileits{
+		line-height:12px;
+	}
+	
+	.vehicle input{
+		width:40px;
+	}
+	
+	.vehicle input:nth-child(4){
+		
+		width:45px;
+		
+	}
+	
+	.vehicle button{
+		padding:5px 10px;
+	}
+	
+	.registration p{
+		padding:5px;
+	}
+	
+	.motor_idv p{
+	line-height:25px;
+	font-size:10px;
+	}
+	
+	.motor_idv button{
+		margin-top:22px;
+		padding:2px 3px;
+		font-size:10px;
+	}
+	
+	.agile-form{
+		padding:5px;
+		width:100%;
+	}
+	
+	.view_details p{
+		font-size:9px;
+	}
+	
+	.search{
+		padding:5px;
+		font-size:10px;
+	}
+	
+	.search-container button{
+		font-size:12px;
+	}
+	
+	.cover p{
+		padding:5px 0px;
+	}
+	
+	.health_care p{
+		line-height:30px;
+		font-size:10px;
+	}
+	.health_care button{
+		margin-top:35%;
+		font-size:10px;
+		padding:0px;
+	}
+	
+	.col-sm-6{
+		padding-right:5px;
+		padding-left:5px;
+	}
+
+	.health_premium div{
+		padding:0px;
+	}
+	
+	.health_premium img{
+		padding:11.5px 0px;
+	}
+	
+	.life_protect{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	
+	.life_protect p{
+		font-size:8.5px;
+		padding:5px 0px;
+		line-height:15px;
+	}
+	
+	.life_protect img{
+		padding:5px 0px;
+	}
+	
+	.life_premium{
+		padding:9px;
+	}
+	
+	.annual span{
+		font-size:15px;
+	}
+
+	.income p{
+		padding:2px;
+		font-size:8px;
+	}
+	
+
+}
+/*--//responsive--*/
+
+
+

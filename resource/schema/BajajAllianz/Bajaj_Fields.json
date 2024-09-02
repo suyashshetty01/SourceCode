@@ -1,0 +1,93 @@
+[
+    {
+        "Field_Name": "product_id",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"22\",\"10\":\"21\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "product_id_2",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"1801\",\"10\":\"1802\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "product_id_3",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"1\":\"Private car\",\"10\":\"Two Wheeler\"}",
+        "Field_Group": "Vehicle",
+        "Field_Category": "input",
+        "Field_Parent": "product_id"
+    },
+    {
+        "Field_Name": "vehicle_insurance_type",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"1\",\"renew\":\"3\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+     {
+        "Field_Name": "vehicle_insurance_type_2",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"new\":\"\",\"renew\":\"ABCD1234\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_insurance_type"
+    },
+    {
+        "Field_Name": "vehicle_registration_type",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"individual\":\"P\",\"corporate\":\"I\"}",
+        "Field_Group": "Registration",
+        "Field_Category": "input",
+        "Field_Parent": "vehicle_registration_type"
+    },
+    {
+        "Field_Name": "is_claim_exists",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group": "Policy",
+        "Field_Category": "input",
+        "Field_Parent": "is_claim_exists"
+    },
+   
+    {
+        "Field_Name": "is_llpd_2",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type": "list_val",
+        "Field_Value": "{\"yes\":\"1\",\"no\":\"0\"}",
+        "Field_Group": "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "is_llpd"
+    },
+    {
+        "Field_Name": "pa_unnamed_passenger_si",
+        "Insurer_ID": "1",
+        "Product_Id": "1",
+        "Field_Type" : "list_key",
+        "Field_Value": "{\"10000\":\"INR 10,000\",\"20000\":\"INR 20,000\",\"30000\":\"INR 30,000\",\"40000\":\"INR 40,000\",\"50000\":\"INR 50,000\",\"60000\":\"INR 60,000\",\"70000\":\"INR 70,000\",\"80000\":\"INR 80,000\",\"90000\":\"INR 90,000\",\"100000\":\"INR 1,00,000\",\"110000\":\"INR 1,10,000\",\"120000\":\"INR 1,20,000\",\"130000\":\"INR 1,30,000\",\"140000\":\"INR 1,40,000\",\"150000\":\"INR 1,50,000\",\"160000\":\"INR 1,60,000\",\"170000\":\"INR 1,70,000\",\"180000\":\"INR 1,80,000\",\"190000\":\"INR 1,90,000\",\"200000\":\"INR 2,00,000\"}",
+        "Field_Group" : "Additional_Coverage",
+        "Field_Category": "input",
+        "Field_Parent": "pa_unnamed_passenger_si"
+    }
+]

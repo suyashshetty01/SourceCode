@@ -1,0 +1,74 @@
+{
+    <!--POS_CONFIG_START-->
+            "pos_name": "___posp_first_name___ ___posp_last_name___",
+            "pos_contact": "___posp_mobile_no___",
+            "pos_aadhar": "___posp_aadhar___",
+            <!--POS_CONFIG_FINISH-->
+            "is_new" : ___vehicle_insurance_type_2___,
+            "is_policy_holder_individual" : ___vehicle_registration_type_2___,
+            "rto_code": "___registration_no_1___-___registration_no_2___",
+            "partner_id": "___insurer_integration_agent_code___",
+            "registration_year": ___vehicle_registration_date_2___,
+            "variant_id": ___dbmaster_insurer_vehicle_variant_code___,
+            "product": "___product_id_2___",
+            <!--external_bio_fuel_kit_price_start-->"external_bio_fuel_kit_price":'___external_bifuel_value___', <!--external_bio_fuel_kit_price_end-->
+            "idv": ___vehicle_expected_idv___,
+            "manufacturing_year": ___vehicle_manf_year___,
+            "plan_selected": "___product_id_2_______vehicle_insurance_subtype_2___",
+            "policy_start_date": "___policy_start_date___T00:00:00+05:30",
+            "previous_policy_type": "___product_id_2____zerodep",
+            "is_claim_previous_policy":___is_claim_exists___,
+            "previous_ncb": ___vehicle_ncb_current___,
+            "previous_policy_expiry_date":"___policy_expiry_date___T23:59:59+05:30",
+            "registration_number": "___registration_no___",
+            "invoice_date": "___vehicle_registration_date___T09:00:00+05:30",
+            "tenure" : ___policy_od_tenure___,
+            "pa_cover_required" : ___is_pa_od___,
+            "tppd":___is_tppd___,
+            "addons_selected": [<!--electrical_accessory_start-->
+            {
+            "addon_id": 1000002,
+                    "sum_assured_value": ___electrical_accessory___
+            }, <!--electrical_accessory_end-->
+                    <!--non_electrical_accessory_start-->
+            {
+            "addon_id": 1000004,
+                    "sum_assured_value": ___non_electrical_accessory___
+            }, <!--non_electrical_accessory_end-->
+                    <!--pa_named_passenger_si_start-->
+            {
+            "addon_id": 1000012,
+                    "sum_assured_value": ___pa_named_passenger_si___
+            }, <!--pa_named_passenger_si_end-->
+                    <!--pa_paid_driver_si_start-->
+            {
+            "addon_id": 1000011,
+                    "sum_assured_value": ___pa_paid_driver_si___
+            }, <!--pa_paid_driver_si_end-->
+                    <!--pa_unnamed_passenger_si_start-->
+            {
+            "addon_id": 1000013,
+                    "sum_assured_value": ___pa_unnamed_passenger_si___
+            }, <!--pa_unnamed_passenger_si_end-->
+                    <!--is_llpd_start-->
+            {
+            "addon_id": 1000008,
+                    "addon_name": "Legal liability"
+            }, <!--is_llpd__end-->
+                    <!--is_Zero_Start-->
+            {
+            "addon_id": 1000136,
+                    "addon_name": "Zero Depreciation"
+            }, <!--is_Zero_END-->
+                    <!--is_RSA_Start-->
+            {
+            "addon_id": 1000155,
+                    "addon_name": "RSA"
+            }, <!--is_RSA_END-->
+                    <!--is_Consumables_Start-->
+            {
+            "addon_id": 1000156,
+                    "addon_name": "Consumables"
+            }<!--is_Consumables_END-->
+            ]
+}

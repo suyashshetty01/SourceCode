@@ -1,0 +1,1105 @@
+{
+    "enquiryId": "___enquiryId___",
+    "contract": {
+        "insuranceProductCode": "70203",
+        "packageCode": "MASPC",
+        "productUniqueIndentifier": "10345",
+        "startDate": "___policy_start_date___",
+        "endDate": "___policy_end_date___",
+        "policyTerm": ___policyTerm___,
+        "policyNumber": null,
+        "externalPolicyNumber": null,
+        "policyHolderType": "INDIVIDUAL",
+        "coverages": [
+            {
+                "classProductCode": "TL",
+                "selection": true,
+                "productComponents": [
+                    {
+                        "productComponentNumber": "52144",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50729",
+                        "selection": ___Is_ICC_A___,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    },
+                    {
+                        "productComponentNumber": "50730",
+                        "selection": ___Is_ICC_B___,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    },
+                    {
+                        "productComponentNumber": "50731",
+                        "selection": ___Is_ICC_C___,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    },
+                    {
+                        "productComponentNumber": "50732",
+                        "selection": false,
+                        "sumAmount": "___currency___ 0"
+                    },
+                    {
+                        "productComponentNumber": "50733",
+                        "selection": ___Is_ITC_A___,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    },
+                    {
+                        "productComponentNumber": "50734",
+                        "selection": ___Is_ITC_B___,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    },
+                    {
+                        "productComponentNumber": "50888",
+                        "selection": true,
+                        "value": 0
+                    },
+                    {
+                        "productComponentNumber": "51936",
+                        "selection": true,
+                        "subProductComponents": [
+                            {
+                                "productComponentNumber": "51937",
+                                "selection": true
+                            },
+                            {
+                                "productComponentNumber": "51938",
+                                "selection": true,
+                                "value": 10
+                            }
+                        ]
+                    },
+                    {
+                        "productComponentNumber": "52111",
+                        "selection": false,
+                        "value":0
+                    },
+                    {
+                        "productComponentNumber": "51939",
+                        "selection": true,
+                        "subProductComponents": [
+                            {
+                                "productComponentNumber": "51940",
+                                "selection": true
+                            },
+                            {
+                                "productComponentNumber": "51941",
+                                "selection": false
+                            },
+                            {
+                                "productComponentNumber": "51942",
+                                "selection": false
+                            },
+                            {
+                                "productComponentNumber": "51943",
+                                "selection": false
+                            },
+                            {
+                                "productComponentNumber": "51944",
+                                "selection": false
+                            },
+                            {
+                                "productComponentNumber": "51945",
+                                "selection": false
+                            }
+                        ]
+                    },
+                    {
+                        "productComponentNumber": "52168",
+                        "selection": true,
+                        "value": ___sum_insured___
+                    },
+                    {
+                        "productComponentNumber": "50711",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50712",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50713",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50735",
+                        "selection": false
+                    },
+                    {
+                        "productComponentNumber": "50736",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50737",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50738",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50739",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50740",
+                        "selection": false
+                    },
+                    {
+                        "productComponentNumber": "50741",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50742",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50743",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50744",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50745",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50746",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50747",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50748",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50749",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50750",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50751",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50767",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50770",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50771",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50772",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50773",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50774",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50775",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50776",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50777",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50778",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50779",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50780",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50781",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50782",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50783",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50784",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50785",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50786",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50787",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50788",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50789",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50790",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50791",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50792",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50793",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50794",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50795",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50796",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50797",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50798",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50799",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50800",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50801",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50802",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50803",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50804",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50805",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50806",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50807",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50808",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50809",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50810",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50811",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50812",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50813",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50814",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50815",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50816",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50817",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50818",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50819",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50820",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50821",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50822",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50823",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50824",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50825",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50826",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50827",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50828",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50829",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50830",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50831",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50832",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50833",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50834",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50835",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50836",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50837",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50838",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50855",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50856",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50857",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50858",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50859",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50860",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50861",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50862",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50863",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50864",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50865",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50866",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50867",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50868",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50869",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50870",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50871",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50872",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50873",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50874",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50875",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50876",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50877",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50878",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50879",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50880",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50881",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50882",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50883",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50884",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50885",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51956",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51957",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51958",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51959",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51960",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51961",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51962",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51963",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51964",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51965",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51969",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51970",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51971",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51972",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51973",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51974",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51975",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51976",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51977",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51978",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51979",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51980",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51981",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51982",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51983",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51984",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51985",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51986",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51987",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51988",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51989",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51990",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51991",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51992",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51993",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51994",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51995",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51996",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51997",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51998",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "51999",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52000",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52001",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52003",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52004",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52005",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52006",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52008",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52009",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52010",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52011",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52012",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52013",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52014",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52015",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52016",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52017",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52018",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52019",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52020",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52021",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52022",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52023",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52024",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52025",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52026",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52027",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52028",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52029",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52030",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52031",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52032",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52033",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52034",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52035",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52036",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52037",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52038",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52039",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52040",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52041",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52042",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52043",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52044",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52045",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52046",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52047",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52048",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52049",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52050",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52051",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52114",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52115",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52116",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52126",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "52164",
+                        "selection": true
+                    },
+                    {
+                        "productComponentNumber": "50677",
+                        "selection": true,
+                        "sumAmount": "___currency___ ___sum_insured___"
+                    }
+                ]
+            }
+        ]
+    },
+    "documents": null,
+    "primaryPolicyHolder": {
+        "personType": "NATURALPERSON",
+        "address": {
+            "city": "___city_name___",
+            "state": "___state_code___",
+            "country": "IN",
+            "street": "",
+            "pin": "___permanent_pincode___"
+        },
+        "firstName": "___first_name___",
+        "lastName": "___last_name___",
+        "dateOfBirth": "___birth_date___",
+        "gender": "",
+        "communication": {
+            "mobile": "___mobile___",
+            "email": "___email___"
+        }
+    },
+    "propertyDetails": [
+        {
+            "propertyType": "CARGO",
+            "propertyId": "12345",
+            "coverages": [
+                {
+                    "classProductCode": "TL",
+                    "selection": true,
+                    "productComponents": [
+                        {
+                            "productComponentNumber": "50678",
+                            "selection": true,
+                            "sumAmount": "___currency___ ___sum_insured___"
+                        }
+                    ]
+                }
+            ],
+            "courierType": "1",
+            "numberCourier": 10,
+            "isOverseasTravel": true,
+            "hasTransportCase": true,
+            "maximumAmount": "___currency___ ___sum_insured___",
+            "cargoDetail": {
+                "cargoType": "___cargo_type___",
+                "currency": "___currency___",
+                "basisOfValuation": "___basis_of_valuation___",
+                "dutyValue": "___currency___ 0",
+                "vesselName": "",
+                "letterCreditNumber": "",
+                "invoiceDetail": {
+                    "invoiceNumber": "8888",
+                    "invoiceValue": "___currency___ ___sum_insured___",
+                    "invoiceDate": "___invoice_date___",
+                    "billOrReceiptDetails": "",
+                    "rateOfExchange": "0"
+                },
+                "surveyCountry": "___transit_to_countryName___",
+                "surveyAgent": "",
+                "surveyorAddress": {
+                    "city": null,
+                    "state": null,
+                    "country": null,
+                    "street": null,
+                    "pinCode": null
+                },
+                "bankDetail": {
+                    "bankName": ""
+                },
+                "shippingDetail": {
+                    "consignee": "___contact_name___",
+                    "additionalDetails": "",
+                    "shipingOrSailingDate": "___transit_Start_Date___",
+                    "transitFromPort": "___transit_from_cityName___",
+                    "transitToPort": "___transit_to_cityName___",
+                    "fromCountry": "___transit_from_countryName___",
+                    "toCountry": "___transit_to_countryName___",
+                    "conveyanceType": "___mode_of_transit___"
+                }
+            },
+            "commodityDetails": [
+                {
+                    "commodityDetailId": "",
+                    "commodityType": "___cargo_type___",
+                    "packingType": "BAG",
+                    "specificPackingDetails": "",
+                    "additionalInformation": ""
+                }
+            ]
+        }
+    ],
+    "propertyQuestionList": [
+        {
+            "questionCode": "COMTRAN",
+            "answerType": "BOOLEAN",
+            "isApplicable": null,
+            "answerDate": null,
+            "detailAnswer": "Y",
+            "subQuestions": [
+                {
+                    "questionCode": "CARGO",
+                    "answerType": "DOMAIN",
+                    "isApplicable": null,
+                    "answerDate": null,
+                    "detailAnswer": "NO",
+                    "subQuestions": []
+                },
+                {
+                    "questionCode": "ODCCAR",
+                    "answerType": "DOMAIN",
+                    "isApplicable": null,
+                    "answerDate": null,
+                    "detailAnswer": "NODC",
+                    "subQuestions": []
+                }
+            ]
+        }
+    ]
+}

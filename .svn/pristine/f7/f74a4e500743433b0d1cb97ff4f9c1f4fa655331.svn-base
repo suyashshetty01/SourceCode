@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q0="http://premiumws.premiumwrapper.motor.itgi.com" xmlns:q1="http://premiumwrapper.motor.itgi.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <q0:getMotorPremium>
+            <q0:policyHeader>
+                <q1:messageId>1234</q1:messageId>
+            </q0:policyHeader>
+            <q0:policy>
+                <q1:contractType>PCP</q1:contractType>
+                <q1:expiryDate>04/02/2018 00:00:00</q1:expiryDate>
+                <q1:inceptionDate>04/03/2017 00:00:00</q1:inceptionDate>
+                <q1:previousPolicyEndDate />
+                <q1:vehicle>
+                    <q1:aaiExpiryDate />
+                    <q1:aaiNo />
+                    <q1:capacity>5</q1:capacity>
+                    <q1:engineCpacity>1197</q1:engineCpacity>
+                    <q1:grossVehicleWt />
+                    <q1:itgiRiskOccupationCode />
+                    <q1:itgiZone />
+                    <q1:make>SWLKM</q1:make>
+                    <q1:regictrationCity>MAHMUMBAI</q1:regictrationCity>
+                    <q1:registrationDate>04/03/2017</q1:registrationDate>
+                    <q1:seatingCapacity>5</q1:seatingCapacity>
+                    <q1:type />
+                    <q1:vehicleBody />
+                    <q1:vehicleClass>PCP</q1:vehicleClass>
+                    <q1:vehicleCoverage>
+                        <q0:item>
+                            <q1:coverageId>IDV Basic</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>388874</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>PA Owner / Driver</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>Y</q1:sumInsured>
+                        </q0:item>
+                        <q0:item>
+                            <q1:coverageId>TPPD</q1:coverageId>
+                            <q1:number />
+                            <q1:sumInsured>750000</q1:sumInsured>
+                        </q0:item>
+                    </q1:vehicleCoverage>
+                    <q1:vehicleSubclass>PCP</q1:vehicleSubclass>
+                    <q1:yearOfManufacture>2017</q1:yearOfManufacture>
+                    <q1:zcover>CO</q1:zcover>
+                </q1:vehicle>
+            </q0:policy>
+            <q0:partner>
+                <q1:partnerBranch>POLICY_BOSS</q1:partnerBranch>
+                <q1:partnerCode>ITGIMOT024</q1:partnerCode>
+                <q1:partnerSubBranch>POLICY_BOSS</q1:partnerSubBranch>
+            </q0:partner>
+        </q0:getMotorPremium>
+    </soapenv:Body>
+</soapenv:Envelope>

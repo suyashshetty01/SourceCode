@@ -1,0 +1,1471 @@
+
+<style>
+    .ticketIcondropdown {
+        position: fixed;
+        background: rgb(255, 255, 255);
+        border-top: 3px solid rgb(0, 0, 0);
+        left: 10px;
+        padding: 10px;
+        top: 50px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.20);
+    }
+
+    .ticketdropdownMenu { 
+        display: block;
+        position: fixed;
+        background: #fff;
+        right: 10%;
+        border-top: 3px solid #000000;
+        padding: 10px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.20);       
+    }
+
+    .ticketIcondropdown ul,.ticketdropdownMenu ul{
+        color: #333;
+        text-align: left;
+        list-style: square;
+        margin: 15px;
+        margin-left: 0px;
+        padding: 0px 20px;}
+    .ticketIcondropdown li ,.ticketdropdownMenu li{line-height: 25px;cursor:pointer}
+
+    .TicketPopup{
+        position: fixed;
+        box-shadow: 0 0 1px 1px #e5e5e5;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        background:rgba(0,0,0,0.7);
+        z-index: 2;
+        cursor: pointer;
+        display:none;
+        color:#000000;
+    }
+    .TicketScreen{
+        margin: 20px auto;
+        background: #ffffff;   
+        width: 30%;
+        border-radius: 10px;
+    }
+
+    .maincontainer{margin:0px auto;}
+    .contenTitle{background:gray;text-align:center;color:#fff;border-top-left-radius:9px;border-top-right-radius:9px;}
+    .tickitingForm{text-align:center;margin:3px;padding:10px;}
+    .selectbx{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:90%;padding: 5px;margin:5px;outline:none;background: #ffffff;}
+    .margin.checkregion .crnbtn{width:17px !important;height:17px !important;vertical-align:middle !important;margin: 0px !important;cursor:pointer}
+    .margin,.filecls{margin:5px;}
+    .tickitingForm .inputbox{border-width: 0px;border-bottom: 1px solid #c1c1c1 !important;width:90%;padding: 5px;margin:15px auto;outline:none;display:block;background: #ffffff;}
+    #IhaveCRNdiv,#DonthaveCRNdiv,#uploadFile,#ticketicondropdwn,#ticketmenudropdwn{display:none}
+    .submitbtn{text-align:center;padding:10px 28px 10px 28px;margin:0px auto;color:#fff;background:#ca0b0b;font-size:18px;cursor: pointer;}
+    .FileUpload{width:18px;height:18px;vertical-align:middle;margin: 0px !important;cursor:pointer}
+    .remark{width:90%;border:1px solid #c1c1c1;background: #ffffff;margin:2px;}
+    .checkregion{width:90%;margin:10px auto;text-align: left;}
+    .headertitle{display: inline-block;font-size: 23px;font-weight: bold;}
+    .closepopup{float: right;margin: 8px;}
+    .checkregion label {font-weight:normal;color:#333;}
+    #myticket{cursor:pointer}
+    .TicketScreen::placeholder{color:#333;}
+    .filecls {display:block;width:45%}
+
+    .Popup{
+        position: fixed; /* Sit on top of the page content */
+        box-shadow: 0 0 1px 1px #e5e5e5;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        cursor: pointer;
+        color : #333 !important;
+        text-align :left !important;
+        display:none;
+    }
+    .popupScreen{
+        width:30%;
+        background: #fff;
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        display: block;
+        box-sizing: border-box;
+        border: 1px solid #c1c1c1;
+        box-shadow: 1px 10px 10px 10px #797474c9;
+        color : #333 !important;
+        text-align :left !important;
+        position: sticky;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+    .mainpopupcont{
+        padding:30px;
+    }
+
+
+
+    @media screen and (max-width:768px) {
+        .TicketScreen{margin:10px auto;
+                      background: #ffffff;   
+                      width: 98%;
+                      border-radius: 10px;
+        }
+        .ticket_wrap .tik_container .wrapelm_box {padding: 1px; text-align: left;}
+        .ticket_wrap .tik_container input[type="text"], .ticket_wrap .tik_container input[type="number"] {   padding: 5px;}
+        .inputbox{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:94%;padding: 5px;margin:16px auto;outline:none;display:block;background: #ffffff;}
+        #selectbx{border-width: 0px;border-bottom: 1px solid #c1c1c1;width:90%;padding: 5px;margin:5px;outline:none;background: #ffffff;}
+        .remark{width:95%;border: 1px solid #c1c1c1;background: #ffffff;margin:2px;}
+        .checkregion{width: 93%;margin: 17px auto;text-align: left;}
+        .submitbtn{padding:7px 28px 7px 28px;margin:15px auto;color:#fff;background:#ca0b0b;font-size:18px;cursor: pointer;bottom: 0px;left: 0px;position: fixed;width: 100%;}
+        .ticketdropdownMenu {
+            margin:10px;
+            border: 1px solid #d2cece;
+            border-top:3px solid #000000;
+            box-shadow: 0px 0px 6px 2px #c1c1c1c1;
+            display:none;
+        }
+        .head .dropdown-menu::after {
+            content: "";
+            position: absolute;
+            bottom: 90%;
+            left: 24%;
+            margin-left: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+        <!--.popupScreen{
+            width:95%;
+            margin: 0px auto;
+            background: #fff;
+            animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+            display: block;
+            box-sizing: border-box;
+            border: 1px solid #c1c1c1;
+            box-shadow: 1px 10px 10px 10px #797474c9;
+            margin-top:20%;
+            color : #333 !important;
+            text-align :left !important;
+        }-->
+        }
+
+    .Popup1{
+        position: fixed; /* Sit on top of the page content */
+        box-shadow: 0 0 1px 1px #e5e5e5;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        cursor: pointer;
+        color: #000000;
+
+    }
+    .popupScreen1{
+        max-width:80%;
+        margin: 0px auto;
+        background: #fff;
+        animation: scalein .3s cubic-bezier(0.25, 0.25, 0.25,1);
+        display: block;
+        box-sizing: border-box;
+        border: 1px solid #c1c1c1;
+        box-shadow: 1px 10px 10px 10px #797474c9;
+        margin-top:20%;
+    }
+    .mainpopupcont1{
+        padding:30px;
+        color: #000000;
+    }
+
+    .ticketdropdownMenu::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 47%;
+        margin-left: -5px;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+    }
+
+</style> 
+<style>
+    .ovl {
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.80);
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+        color: #333 !important;
+        display: none;
+        z-index: 999;
+    }
+
+    .ticket_wrap {
+        background: #fff;
+        width: 40%;
+        margin: 16px auto;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .ticket_wrap .heading {
+        background: grey;
+        border-bottom: 2px solid #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+    }
+
+    .ticket_wrap .tik_container {
+        padding: 20px;
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    .ticket_wrap .tik_container .wrapelm_box {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .ticket_wrap .tik_container .wrapelm_box input[type="radio"] {
+        width: 17px;
+        height: 17px;
+        vertical-align: sub;
+        margin-right: 5px;
+        opacity: 1 !important;
+        position: relative !important;
+        left: 0 !important;
+    }
+
+    .ticket_wrap .tik_container input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+        vertical-align: sub;
+        margin-right: 5px;
+        opacity: 1 !important;
+        position: relative !important;
+        left: 0 !important;
+    }
+
+    .ticket_wrap .tik_container .wrapelm_box label {
+        margin-right: 10px;
+        color: #333 !important;
+    }
+
+    .ticket_wrap .tik_container select {
+        width: 100%;
+        font-size: 14px;
+        padding: 6px 0px;
+        border: none;
+        border-bottom: 2px solid #c9c9c9;
+        margin-bottom: 1px;
+    }
+
+    .ticket_wrap .tik_container option {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .ticket_wrap .tik_container input[type="text"], .ticket_wrap .tik_container input[type="number"] {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        box-sizing: border-box;
+        border-bottom: 2px solid #c9c9c9;
+        margin-bottom: 5px;
+    }
+
+    .ticket_wrap .tik_container textarea {
+        width: 100%;
+        font-size: 14px;
+        resize: none;
+        border: 2px solid #c9c9c9;
+        box-sizing: border-box;
+        text-align: left;
+        align-content: left;
+    }
+
+    .ticket_wrap .ErrorMsg{
+        color:red;
+    }
+
+    .ticket_wrap .tik_container .wrapelm_box button {
+        padding: 10px 28px;
+        color: #fff;
+        background: #ca0b0b;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .textCenter {
+        text-align: center !important;
+    }
+
+    .dynamic_fileup {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+    }
+
+    .dynamic_fileup input[type='file'] {
+        width: 46%;
+        box-sizing: border-box;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        .ticket_wrap {
+            width: 100%;
+            border-radius:0px;
+            margin-top:0px;
+            height: 100%;
+            top:0px;
+        }
+
+        .ticket_wrap .tik_container {
+            padding: 0;
+            font-size: 13px;
+        }
+        .ticketdropdownMenu {
+            margin:10px;
+            border: 1px solid #d2cece;
+            border-top:3px solid #000000;
+            box-shadow: 0px 0px 6px 2px #c1c1c1c1;
+            display:none;
+        }
+        .ticket_wrap .tik_container .wrapelm_box {padding: 1px; text-align: left;}
+        .ticket_wrap .tik_container input[type="text"], .ticket_wrap .tik_container input[type="number"] {   padding: 5px;}
+        .ticket_wrap .heading{padding: 2px;border-radius: 0px;}
+        .ticket_wrap .tik_container .wrapelm_box label {margin-right: 10px;color: #333 !important;font-size: 13px;}
+    }
+
+    .crossSell_popup{ width: 100%;height: 100%;position: fixed;background: rgb(0,0,0,0.5);z-index: 9999;left:0px;right:0px;top:0px;bottom:0px; display: none; }   
+    .CrossSell_container { width:31%;
+                           border-radius:0px;
+                           left: 50%;
+                           top: 50%;
+                           background: rgb(255, 255, 255);
+                           transform: translate(-50%,-50%);
+                           position: absolute;
+                           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    .CSell_Content { margin:4px;padding:4px; }
+    .crossSell button{float:right; background:red;color:#fff;border:1px solid red;border-radius:5px;padding:0px 7px;height:30px;line-height:19px;}
+    .crossSell {margin:auto 0px;}
+    .CSell_Content h3{text-align:center;font-weight:bold;font-size:19px;}
+    .boldFont{font-weight:bold}
+    .center_align{text-align:center}
+    .ticket_msg h4{color: rgb(87, 87, 87);margin:18px;font-size:14px;}
+    .cat_table{margin:0px;border:1px solid #c9c9c9;}
+    /*    .sidemargin{margin:20px;}*/
+    @media screen and (max-width:768px) {
+        .CrossSell_container { width:96%;border-radius:0px;left: 50%;top: 50%;background: rgb(255, 255, 255);transform: translate(-50%,-50%);position: absolute;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    }
+</style>
+
+
+<!--<form id="openCrtTkctForm"  name="openCrtTkctForm" enctype="multipart/form-data" action="http://horizon.policyboss.com:5000/raise_ticket" method="post" >-->
+<div class="ovl">
+
+    <div class="ticket_wrap">
+        <div class="heading">Welcome <span class="closebtn" style="float: right;cursor: pointer">&times;</span></div>
+        <div class="tik_container">
+            <select onchange="MainCategory();" id="Category" ></select>
+            <div id="ErCategory" class="ErrorMsg" style="display:none;"></div>
+            <select id="SubCategory" onchange="SubCategoryChange();">
+                <option value="0">--Select SubCategory--</option>
+            </select>
+            <div id="ErSubCategory" class="ErrorMsg" style="display:none;"></div> <a href="/Home" title="Click here" class="0CRN" style="display:none;"><span style="color: black;text-decoration: underline;">Click here</span></a>
+            <div class="wrapelm_box">
+
+                <label class="ihavecrn"><input type="radio" name="crn" onclick="HAVECRN();" id="ihavecrn"> I Have CRN</label>
+                <label class="donthavrcrn"><input type="radio" name="crn" onclick="DONTHAVECRN();" id="donthavrcrn"> I Don't Have  CRN</label>
+
+            </div>
+
+            <div class="dynamicwrap">
+
+            </div>
+            <div class="dynamicwrap" id="IhaveCRNdiv">
+                <input type="text" onkeyup="GetCRN();" id="txt_CRN" onkeypress="return CheckCRN(event);" onblur="return CheckCRN(event);" class="inputbox" placeholder="Enter Your CRN">
+                <input type="hidden" id="CRN_owner" />
+                <input type="hidden" id="CRN_fba_id" />
+                <input type="hidden" id="channel" />
+                <input type="hidden" id="subchannel" />
+                <input type="hidden" id="Transaction_On" />
+                <input type="hidden" id="rm_email_id" />
+				<input type="hidden" id="rm_agent_name" />
+				<input type="hidden" id="insurer_id"  />
+                <div id="ErCRN" class="ErrorMsg" style="display:none;"></div>
+            </div>
+            <div class="dynamicwrap" id="DonthaveCRNdiv">
+                <select class="selectbx disablefield" onchange="productChange();" id="Product">
+                    <option value="0">Product Type</option>
+                    <option value="1">CAR</option>
+                    <option value="10">BIKE</option>
+                    <option value="2">HEALTH</option>
+                    <option value="12">CV</option>
+                </select>
+                <div id="ErProduct" class="ErrorMsg" style="display:none;"></div>
+                <input type="text" id="Vehicle_No" onkeypress="return CheckVehicle(event);" class="inputbox disablefield" placeholder="Enter Vehicle Number" name="Vehicle_No">
+                <div id="ErVehicle_No" class="ErrorMsg" style="display:none;"></div>
+                <input type="number" id="Mobile_No" class="disablefield" onkeypress="if (this.value.length == 10)
+                            return false;" placeholder="Enter Mobile Number">
+                <div id="ErMobile_No" class="ErrorMsg" style="display:none;"></div>			
+            </div>
+
+            <div id="ErradioSelect" class="ErrorMsg" style="display:none;"></div>
+            <textarea rows="5" cols="33" id="txt_remark" placeholder="Remark"></textarea>
+            <div id="Ertxt_remark" class="ErrorMsg" style="display:none;"></div>
+            <div class="wrapelm_box">
+                <label><input type="checkbox" name="upload" id="chk_UploadFile" class="chkfileupload" onclick="FileUpload();">Want to Upload file?</label>
+                <div id="ErCheckfile" class="ErrorMsg" style="display:none;"></div>
+            </div>
+            <div class="dynamic_fileup" id="uploadFile">
+                <input type="hidden" id="doc_prefix" name="doc_prefix" value=""/>
+
+                <input type="file" id="filePicker_1" name="filePicker_1" class="filecls">
+                <label   id="document_type" style="display:none;padding-top: 8px;color:red"></label>
+                <input type="file" id="filePicker_2" name="filePicker_2" class="filecls">
+
+                <input type="file" id="filePicker_3" name="filePicker_3" class="filecls">
+                <input type="file" id="filePicker_4" name="filePicker_4" class="filecls">
+                <input type="hidden" id="hdfilePicker_1" />
+                <input type="hidden" id="hdfilePicker_2" />
+                <input type="hidden" id="hdfilePicker_3" />
+                <input type="hidden" id="hdfilePicker_4" />
+                <input type="hidden" id="hdfile_ext_1" />
+                <input type="hidden" id="hdfile_ext_2" />
+                <input type="hidden" id="hdfile_ext_3" />
+                <input type="hidden" id="hdfile_ext_4" />
+
+                <div id="EruploadFile" class="ErrorMsg" style="display:none;"></div>
+            </div>
+            <div class="wrapelm_box textCenter">
+
+                <div class="submitbtn" id="btn_Submit" onclick="btn_Submit();" value="Submit">Submit</div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--</form>-->
+
+
+<div class="Popup" id="err_msg_div">
+    <div class="popupScreen">
+        <div class="mainpopupcont">
+            <h3 style="margin: 14px;text-align: center;">STATUS</h3>
+            <span id="txt_err_msg"></span>
+            <div class="submitbtn" onclick="location.reload();" id="okbtn1" style="margin-top: 20px;">OK</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="Popup" id="mypopup">
+    <div class="popupScreen">
+        <div class="mainpopupcont">
+            <h3 style="margin: 14px;">STATUS</h3>
+            <span  style="margin: 14px;" id="txt_ticketmsg"></span>
+            <div class="clearfix sidemargin">
+                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="boldFont">Ticket Id :</span> <span id="spn_ticket_id"></span></div>
+                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cls_CRN"><span class="boldFont">CRN :</span> <span id="spn_CRN"></span></div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clsInsurerName"> <span class="boldFont">Insurer Name :</span>
+					<span id="insurer_name"></span></div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clsProductName"> <span class="boldFont">Product Name :</span>
+					<span id="product_name"></span></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <span class="boldFont">Category : </span>
+                    <span id="spn_Category"></span>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <span class="boldFont">Sub Category :</span>
+                    <span id="spn_SubCategory"></span>
+                </div>
+                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cls_CRN"><span class="boldFont">Transaction On :</span> <span id="spn_transaction_on"></span></div>
+                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="boldFont">Created On :</span> <span id="spn_created_on"></span></div>
+                <div id="endNote" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; font-size: large;"><span class="boldFont">Note : </span><span id="endrsmtNote"></span></div>
+            </div>
+            <div>
+            </div>
+            <div class="submitbtn" onclick="location.reload();" id="okbtn">OK</div>
+        </div>
+    </div>
+</div>
+<div class="Popup1" id="mypopup_ticketlist" style="display:none">
+    <div class="title">
+        <div class="headertitle">Welcome</div>
+        <span class="closepopup" onclick="closepopup();">&#x2716;</span>
+    </div>
+    <div class="popupScreen1">
+        <div class="mainpopupticketlist1">
+
+        </div>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script  type="text/javascript">
+
+
+            var is_CRN = false;
+            var Is_NoCRN = false;
+            var filePicker_1 = "";
+            var filePicker_2 = "";
+            var filePicker_3 = "";
+            var filePicker_4 = "";
+            var extension_1 = "";
+            var extension_2 = "";
+            var extension_3 = "";
+            var extension_4 = "";
+            var radiobtnchked = false;
+            var CRN_chk = true;
+            var categoryproduct = [];
+            var siteURL = "";
+            var url = window.location.href;
+            var category_id = "";
+            var subcategory_id = "";
+            var extension = ["png", "img", "pdf", "jpg", "xlsx", "csv", "xls", "txt", "doc", "jpeg"];
+
+            $(document).ready(function (e) {
+                siteURL = window.location.href;
+                $(".fa-ticket").click(function (e) {
+                    $(".linkbox").toggle(100);
+                    console.log(e.target);
+                    e.stopPropagation();
+                    $('#ticketicondropdwn').hide();
+                });
+                $(".linkbox").click(function (e) {
+                    e.stopPropagation();
+                });
+
+
+                $(document).click(function (e) {
+                    $(".linkbox").hide();
+                });
+
+                $(".Iconlinkbox").click(function (e) {
+                    e.stopPropagation();
+                });
+
+
+                $(document).click(function (e) {
+                    $(".Iconlinkbox").hide();
+                });
+            });
+
+            function urlCheck() {
+                var url = window.location.href;
+                if (url.includes('quotes')) {
+                    $('.ihavecrn').hide();
+                    $('.donthavrcrn').hide();
+                    $('#IhaveCRNdiv').show();
+                    $('#DonthaveCRNdiv').show();
+                    $("#Category option").each(function () {
+                        if ($(this)[0].value != "0" || $(this)[0].value != "") {
+                            var catid = $(this)[0].value.split(':')[0];
+                            if (catid == "2") {
+                                $(this).attr('selected', 'selected');
+                            }
+                        }
+                    });
+
+                    GetSubCategory(2);
+                    $('#Category').prop('disabled', true);
+                    $('.disablefield').prop('disabled', true);
+                    radiobtnchked = true;
+                } else if (url.includes('buynow')) {
+                    $('.ihavecrn').hide();
+                    $('.donthavrcrn').hide();
+                    $('#IhaveCRNdiv').show();
+                    $('#DonthaveCRNdiv').show();
+                    //$('#Category').val('3');
+                    $("#Category option").each(function () {
+                        if ($(this)[0].value != "0" || $(this)[0].value != "") {
+                            var catid = $(this)[0].value.split(':')[0];
+                            if (catid == "3") {
+                                $(this).attr('selected', 'selected');
+                            }
+                        }
+                    });
+                    GetSubCategory(3);
+                    $('#Category').prop('disabled', true);
+                    $('.disablefield').prop('disabled', true);
+                    radiobtnchked = true;
+                } else {
+                    radiobtnchked = false;
+                }
+            }
+
+
+
+
+
+
+            function ticketdashboard1() {
+                window.location.href = '/Home/MyDashboard?role=tickets';
+            }
+
+            function closepopup() {
+
+                $('.ovl').hide();
+                $('body').css('overflow', 'auto');
+                location.reload();
+            }
+            //function ticketIcon() {
+            //$('#ticketicondropdwn').toggle();
+            // $('#ticketmenudropdwn').hide();
+            // }
+
+            function HAVECRN() {
+                radiobtnchked = true;
+                $('#ErradioSelect').hide();
+                $('#ErradioSelect').text("");
+                $("#IhaveCRNdiv").show();
+                $("#DonthaveCRNdiv").show();
+                $('#Vehicle_No').val();
+                $('#Mobile_No').val();
+                $('#Vehicle_No').attr('readonly', true);
+                $('#Mobile_No').attr('readonly', true);
+                is_CRN = true;
+                Is_NoCRN = false;
+                $('#txt_CRN').val('');
+                $('#Product').attr("disabled", true);
+                $('#Product').val(0);
+
+            }
+            function DONTHAVECRN() {
+                radiobtnchked = true;
+                $('#ErradioSelect').hide();
+                $('#ErradioSelect').text("");
+                $('#IhaveCRNdiv').hide();
+                $("#DonthaveCRNdiv").show();
+                $('#txt_CRN').val('');
+                $('#CRN_owner').val('');
+                $('#CRN_fba_id').val('');
+                $('#channel').val('');
+                $('#subchannel').val('');
+                $('#Vehicle_No').val('');
+                $('#Mobile_No').val('');
+                $('#Vehicle_No').attr('readonly', false);
+                $('#Mobile_No').attr('readonly', false);
+                Is_NoCRN = true;
+                is_CRN = false;
+                $('#Product').attr("disabled", false);
+                $('#Product').val(0);
+            }
+            function FileUpload() {
+                if ($('input.chkfileupload').is(':checked')) {
+                    $("dynamic_fileup").css('display', 'flex');
+                    $('#uploadFile').css('display', 'flex');
+                    $('#uploadFile').css({'width': '100%', 'margin': '0px auto'});
+
+                } else {
+                    $('#uploadFile').hide();
+                }
+            }
+
+            function okbtn() {
+                location.reload();
+            }
+            //$('#formSubmit').click(function () {
+            //    $('#mypopup').show();
+            //});
+            //$('#okbtn').click(function () {
+            //    $('.Popup').hide();
+            //});
+
+
+            $(document).ready(function () {
+                GetCategory();
+
+                if (UDID !== 0) {
+                    UserTicketCategory();
+                }
+
+
+                $("#SubCategory").change(function () {
+
+                    //var subcategory = document.getElementById("SubCategory").innerHTML;
+                    var e = document.getElementById("SubCategory");
+                    var subcategory = e.options[e.selectedIndex].outerText;
+
+                    if (url.includes('quotes')) {
+                        if (subcategory === "0 CRN" && $('#Category').val().split(':')[0] === "2") {
+                            $('#ErSubCategory').show();
+                            $('#ErSubCategory').text("For 0 CRN if you want to raised ticket go to home page. ");
+                            $('.0CRN').show();
+                            is_CRN = true;
+                            //Is_NoCRN =true;
+                            $('#IhaveCRNdiv').hide();
+                            $('#DonthaveCRNdiv').hide();
+                        } else {
+                            is_CRN = true;
+                            $('#IhaveCRNdiv').show();
+                            $('#DonthaveCRNdiv').show();
+                            $('#ErSubCategory').hide();
+                            $('#ErSubCategory').text("");
+                            $('.0CRN').hide();
+                        }
+                    }
+                    if (url.includes('buynow')) {
+                        is_CRN = true;
+                    }
+                });
+            });
+
+            function productChange() {
+                var Product = $('#Product').val();
+                if (Product !== "0") {
+                    $('#ErProduct').hide();
+                    $('#ErProduct').text("");
+                }
+                if (Product === "2") {
+                    $('#ErVehicle_No').hide();
+                    $('#ErVehicle_No').text("");
+                    $('#Vehicle_No').hide();
+                } else {
+                    $('#Vehicle_No').show();
+                }
+                documentuploading(subcategory_id, $("#Product").val());
+            }
+//        window.onload = function () {
+//            GetCategory();
+//            if (UDID != 0) {
+//                UserTicketCategory();
+//            }
+//        };
+            function Horizon_Method_Convert_old(method_action,data,type){
+                        data['secret_key'] = "SECRET-HZ07QRWY-JIBT-XRMQ-ZP95-J0RWP3DYRACW";
+			data['client_key']= "CLIENT-CNTP6NYE-CU9N-DUZW-CSPI-SH1IS4DOVHB9";
+                var obj_horizon_method = {
+                                        "url": "https://horizon.policyboss.com:5443"+ method_action,
+                                        "data": data
+                };
+                return obj_horizon_method;
+            }
+
+            function Horizon_Method_Convert_1(method_action, data, type) {
+                var calling_action = "";
+                var method_type = "";
+                method_type = (type == "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get";
+                calling_action = window.location.href.indexOf('https') == 0 ? "/horizon-method.php" : method_type;
+                var obj_horizon_method = {
+                    "url": (type == "POST") ? calling_action : calling_action + "?method_name=" + method_action,
+                    "data": {
+                        request_json: JSON.stringify(data),
+                        method_name: method_action,
+                        client_id: "2"
+                    }
+                };
+                return obj_horizon_method;
+            }
+            
+            function Horizon_Method_Convert(method_action, data, type) {
+                var obj_horizon_method = {
+                    'url': (type === "POST") ? "/TwoWheelerInsurance/call_horizon_post" : "/TwoWheelerInsurance/call_horizon_get?method_name=" + method_action,
+                    "data": {
+                        request_json: JSON.stringify(data),
+                        method_name: method_action,
+                        client_id: "2"
+            }
+        };
+        return obj_horizon_method;
+    }
+
+            function GetCategory() {
+
+                var obj_horizon_data = Horizon_Method_Convert("/tickets/getticketing_category/" + productid + "/policyboss", '', "GET");
+                $.ajax({
+                    type: "GET",
+                    url: obj_horizon_data['url'],
+                    dataType: "json",
+                    success: function (data) {
+
+                        $("#Category").empty();
+                        console.log(data);
+                        var optionhtml1 = '<option value="' + 0 + '">' + "--Select Category--" + '</option>';
+                        $("#Category").append(optionhtml1);
+
+                        $.each(data, function (i) {
+                            //var optionhtml = '<option value="' + data[i].split(':')[0] + '">' + data[i].split(':')[1] + '</option>';
+                            var optionhtml = '<option value="' + data[i]["key"] + '">' + data[i]["value"] + '</option>';
+                            $("#Category").append(optionhtml);
+                        });
+                        $("#Category option[value='9:1,2,10,12']").remove();
+                        $("#Category option[value='10:1,2,10,12']").remove();
+                        urlCheck();
+                        //application_cnt <20?  $('#next_page').hide():  $('#next_page').show();
+                    },
+                    error: function (result) {
+                        console.log(result);
+                    }
+                });
+            }
+
+            function MainCategory() {
+
+                var category = $('#Category').val();
+                resetFields();
+                if (category !== "0") {
+                    category_id = $('#Category').val().split(':')[0];
+                    categoryproduct = $('#Category').val().split(':')[1];
+                    GetSubCategory(category_id);
+
+                    category_id === "6" ? $('#filePicker_3, #filePicker_4').hide() : $('#filePicker_3, #filePicker_4').show();
+                    if (category_id !== "6") {
+                        $('#document_type').text("").hide();
+                    }
+                    if (category === "1") {
+                        radiobtnchked = true;
+                        $('.ihavecrn').hide();
+                        //$("#donthavrcrn").prop("checked", true);
+                        document.getElementById("donthavrcrn").checked = true;
+                        $("#DonthaveCRNdiv").show();
+                        Is_NoCRN = true;
+                        is_CRN = false;
+                        CRN_chk = false;
+
+                    } else {
+
+                        $('.ihavecrn').show();
+                        //$("#donthavrcrn").prop("checked", false);
+                        document.getElementById("donthavrcrn").checked = false;
+                        $("#DonthaveCRNdiv").hide();
+                    }
+                }
+
+                var drpProduct = document.getElementById("Product");
+                $(drpProduct.options).each(function (index, value) {
+                    if (categoryproduct.includes(value.value) && value.value !== 0) {
+                        drpProduct.options[index].style.display = "block";
+                    } else {
+                        drpProduct.options[index].style.display = "none";
+                    }
+                });
+
+            }
+            function SubCategoryChange() {
+                resetFields();
+                var SubCategory = $('#SubCategory').val();
+                if (SubCategory !== "0") {
+                    categoryproduct = $('#SubCategory').val().split(':')[1];
+                    $("#ErSubCategory").hide().html("");
+                }
+                var drpProduct = document.getElementById("Product");
+                $(drpProduct.options).each(function (index, value) {
+                    if (categoryproduct.includes(value.value) && value.value !== 0) {
+                        drpProduct.options[index].style.display = "block";
+                    } else {
+                        drpProduct.options[index].style.display = "none";
+                    }
+                });
+                subcategory_id = $("#SubCategory").val().split("_")[0] - 0;
+                var Productlist = SubCategory.split(":")[1];
+                if (!((Productlist.split(",")[0] === "2") || (Productlist.split(",")[1] === "2") || (Productlist.split(",")[2] === "2") || (Productlist.split(",")[3] === "2"))) {
+                    $(".selectbx option[value='2']").remove();
+                    $('#Vehicle_No').show();
+                } else {
+                    $(".selectbx option[value='2']").remove();
+                    $(".selectbx").append('<option value="2">HEALTH</option>');
+                }
+                documentuploading(subcategory_id, categoryproduct);
+            }
+            function GetSubCategory(Category_id) {
+                var obj_horizon_data = Horizon_Method_Convert("/tickets/getticketingSubCategory/" + Category_id + "/" + productid, '', "GET");
+                $.ajax({
+                    type: "GET",
+                    url: obj_horizon_data['url'],
+                    dataType: "json",
+                    success: function (data) {
+                        $("#SubCategory").empty();
+                        console.log(data);
+                        if (data.length > 1) {
+                            var optionhtml1 = '<option value="' + 0 + '">' + "--Select SubCategory--" + '</option>';
+                            $("#SubCategory").append(optionhtml1);
+                        }
+                        $.each(data, function (i) {
+                            var optionhtml = '<option value="' + data[i].subcategory_id + "_" + data[i].key + '">' + data[i].value + '</option>';
+                            //var subcategory = data[i].error_code !== "" ? data[i].value + " (" + data[i].error_code + ") " : data[i].value;
+
+                            //var optionhtml = '<option value="' + data[i]["key"] + '">' + subcategory + '</option>';
+                            $("#SubCategory").append(optionhtml);
+                        });
+
+                    },
+                    error: function (result) {
+                        console.log(result);
+                    }
+                });
+            }
+
+            function GetCRN() {
+                var CRN = $('#txt_CRN').val();
+                var Reg = /^[0-9]+$/;
+                if (Reg.test(CRN)) {//&& CRN.length == 7
+
+                    $("#ErProduct").hide().html("");
+                    $("#ErMobile_No").hide().html("");
+                    $("#ErVehicle_No").hide().html("");
+                    $('#ErCRN').hide().html("");
+
+                    var obj_horizon_data = Horizon_Method_Convert("/tickets/getCRNdetails/" + CRN, '', "GET");
+                    $.ajax({
+                        type: "GET",
+                        //url: obj_horizon_data['url'], // live
+						url: GetUrl() + "/tickets/getCRNdetails/" + CRN, // Qa/local
+                        dataType: "json",
+                        success: function (data) {
+
+                            console.log(data);
+
+                            if (data !== "") {
+                                if (subcategory_id === 24 && (data[0]['Last_Status'] === "TRANS_SUCCESS_WO_POLICY" || data[0]['Last_Status'] === "TRANS_SUCCESS_WITH_POLICY")) {
+                                    $('#ErCRN').show().html("PG Drop off ticket will not be allowed to create as CRN is marked as sale.");
+
+                                } else if (subcategory_id === 74 && data[0]['Last_Status'] !== "TRANS_SUCCESS_WO_POLICY" ) {
+                                    $('#ErCRN').show().html("Success category ticket will only be allowed to create  if transaction without policy or Policy doesn't exist.");
+                                } else {
+                                    CRN_chk = true;
+                                    is_CRN = true;
+                                    $('#Product').val(data[0]['Product']);
+                                    if (data[0]['Product'] === 2) {
+                                        $('#Vehicle_No').val("");
+                                        $('#Vehicle_No').hide();
+                                    } else {
+                                        $('#Vehicle_No').val(data[0]["Vehicle_No"]);
+                                        $('#Vehicle_No').show();
+                                    }
+                                    $('#CRN_owner').val(data[0]['ss_id']);
+                                    $('#CRN_fba_id').val(data[0]['fba_id']);
+                                    $('#channel').val(data[0]['channel']);
+                                    $('#subchannel').val(data[0]['subchannel']);
+                                    $('#Mobile_No').val(data[0]["Mobile_No"]);
+                                    $('#rm_email_id').val(data[0]["rm_email_id"]);
+									$('#rm_agent_name').val(data[0]["rm_agent_name"]);
+                                    $('#Transaction_On').val(data[0]["transaction_on"]);
+									$('#insurer_id').val(data[0]["Insurer_Id"]);
+                                }
+                            } else {
+                                CRN_chk = false;
+                                //is_CRN = false;
+                                $('#ErCRN').show().html("No details.");
+                                $('#Vehicle_No').val("");
+                                $('#Product').val("");
+                                $('#Mobile_No').val("");
+                            }
+                            documentuploading(subcategory_id, data[0]['Product'].toString());
+                        },
+                        error: function (result) {
+                            console.log(result);
+                        }
+                    });
+                } else {
+                    $('#ErCRN').show().html("Enter valid CRN.");
+                    $('#Vehicle_No').val("");
+                    $('#Product').val("");
+                    $('#Mobile_No').val("");
+                }
+
+            }
+
+
+
+            function btn_Submit() {
+
+                var Error_count = 0;
+                if ($("#Category").val() === null || $("#Category").val() === "" || $("#Category").val() === "0") {
+                    Error_count++;
+                    $('#ErCategory').show();
+                    $('#ErCategory').text("Please select Category.");
+                }
+
+                if ($("#SubCategory").val() === null || $("#SubCategory").val() === "" || $("#SubCategory").val() === "0") {
+                    Error_count++;
+                    $('#ErSubCategory').show();
+                    $('#ErSubCategory').text("Please select SubCategory.");
+                } else {
+                    $("#ErSubCategory").hide().html("");
+                }
+
+                //if ($("input:radio[name='crn']").is(":checked")) {
+                if (url.includes('quotes') || url.includes('buynow')) {
+                    radiobtnchked = true;
+                }
+                if (radiobtnchked) {
+                    if (is_CRN) {
+                        var regex2 = /^[0-9]+$/;
+                        if (($("#txt_CRN").val() === null || $("#txt_CRN").val() === "" || $("#txt_CRN").val() === "0" || !regex2.test($("#txt_CRN").val()) || !CRN_chk)) {
+                            Error_count++;
+                            $('#ErCRN').show();
+                            $('#ErCRN').text("Please valid enter CRN.");
+
+                        } else {
+                            $("#ErCRN").hide().html("");
+                        }
+                    }
+//                else{
+//                        Error_count++;
+//                        $('#ErCRN').show();
+//                        $('#ErCRN').text("Please valid enter CRN.");
+//                }
+
+                    if (Is_NoCRN) {
+                        if ($("#Product").val() === null || $("#Product").val() === "" || $("#Product").val() === "0") {
+                            Error_count++;
+                            $('#ErProduct').show();
+                            $('#ErProduct').text("Please select product.");
+                        } else {
+                            $("#ErProduct").hide().html("");
+                        }
+                        if ($("#Mobile_No").val() === null || $("#Mobile_No").val() === "" || $("#Mobile_No").val() === "0") {
+                            Error_count++;
+                            $('#ErMobile_No').show();
+                            $('#ErMobile_No').text("Please enter mobile no.");
+                        } else {
+                            var pattern = new RegExp('^([6-9]{1}[0-9]{9})$');
+                            if ($("#Mobile_No").val() !== null || $("#Mobile_No").val() !== "") {
+                                if (pattern.test($("#Mobile_No").val()) === false) {
+                                    Error_count++;
+                                    $('#ErMobile_No').show();
+                                    $('#ErMobile_No').text("Please enter valid mobile no.");
+                                } else {
+                                    $("#ErMobile_No").hide().html("");
+                                }
+                            } else {
+                                $("#ErMobile_No").hide().html("");
+                            }
+                        }
+                        if ($("#Product").val() !== "2") {
+                            if ($("#Vehicle_No").val() === null || $("#Vehicle_No").val() === "" || $("#Vehicle_No").val() === "0") {
+                                Error_count++;
+                                $('#ErVehicle_No').show();
+                                $('#ErVehicle_No').text("Please enter vehicle no.");
+                            } else {
+                                var regex1 = /^[A-Za-z]+$/;
+                                var regex2 = /^[0-9]+$/;
+                                if ($("#Vehicle_No").val() !== null || $("#Vehicle_No").val() !== "") {
+                                    if (regex1.test($("#Vehicle_No").val()) || regex2.test($("#Vehicle_No").val())) {
+                                        Error_count++;
+                                        $('#ErVehicle_No').show();
+                                        $('#ErVehicle_No').text("Please enter valid vehicle no.");
+                                    } else {
+                                        $("#ErVehicle_No").hide().html("");
+                                    }
+                                } else {
+                                    $("#ErVehicle_No").hide().html("");
+                                }
+                            }
+                        } else {
+                            $("#Vehicle_No").hide();
+                            $('#ErVehicle_No').hide();
+                            $('#ErVehicle_No').text("");
+                        }
+                    }
+
+                } else {
+                    Error_count++;
+                    $('#ErradioSelect').show();
+                    $('#ErradioSelect').text("Please select option.");
+
+                }
+
+                if (document.getElementById('chk_UploadFile').checked) {
+                    if ($('#filePicker_1').val() === "" && $('#filePicker_2').val() === "" && $('#filePicker_3').val() === "" && $('#filePicker_4').val() === "") {
+                        Error_count++;
+                        $('#EruploadFile').show();
+                        $('#EruploadFile').text("Please select atleast one file.");
+                    } else {
+                        if ($('#filePicker_1').val() !== "" && extension.indexOf(($('#filePicker_1').val().split('.').pop()).toLowerCase()) === -1) {
+                            Error_count++;
+                            $('#EruploadFile').show();
+                            $('#EruploadFile').text("Only file type allowed to be uploaded are(Image,Docs,PDF,Excel & Text.)");
+                        } else if ($('#filePicker_2').val() !== "" && extension.indexOf(($('#filePicker_2').val().split('.').pop()).toLowerCase()) === -1) {
+                            Error_count++;
+                            $('#EruploadFile').show();
+                            $('#EruploadFile').text("Only file type allowed to be uploaded are(Image,Docs,PDF,Excel & Text.)");
+                        } else if ($('#filePicker_3').val() !== "" && extension.indexOf(($('#filePicker_3').val().split('.').pop()).toLowerCase()) === -1) {
+                            Error_count++;
+                            $('#EruploadFile').show();
+                            $('#EruploadFile').text("Only file type allowed to be uploaded are(Image,Docs,PDF,Excel & Text.)");
+                        } else if ($('#filePicker_4').val() !== "" && extension.indexOf(($('#filePicker_4').val().split('.').pop()).toLowerCase()) === -1) {
+                            Error_count++;
+                            $('#EruploadFile').show();
+                            $('#EruploadFile').text("Only file type allowed to be uploaded are(Image,Docs,PDF,Excel & Text.)");
+                        } else {
+                            $("#EruploadFile").hide().html("");
+                        }
+                    }
+                }
+
+                if ($("#txt_remark").val() === null || $("#txt_remark").val() === "" || $("#txt_remark").val() === "0") {
+                    Error_count++;
+                    $('#Ertxt_remark').show();
+                    $('#Ertxt_remark').text("Please Enter Remark.");
+                } else {
+                    $("#Ertxt_remark").hide().html("");
+                }
+
+                if ($("#Category").val().split(':')[0] === "6" && (!(subcategory_id === 50 || subcategory_id === 40))) {
+                    if (document.getElementById('chk_UploadFile').checked) {
+                        if ($('#filePicker_1').val() === "") {
+                            Error_count++;
+                            $('#EruploadFile').show();
+                            $('#EruploadFile').text($("#document_type").text() + " required.");
+                        } else {
+                            if (($('#filePicker_1').val() !== "" && extension.indexOf(($('#filePicker_1').val().split('.').pop()).toLowerCase()) === -1)) {
+                                Error_count++;
+                                $('#EruploadFile').show();
+                                $('#EruploadFile').text("Only file type allowed to be uploaded are (Jpg, Docs, PDF, Excel and Text.)");
+                            } else {
+                                $('#EruploadFile').show().html("");
+                            }
+                        }
+                    } else {
+                        document.getElementById('chk_UploadFile').checked = true;
+                        Error_count++;
+                        $('#EruploadFile').show().html("Please select document to upload");
+                        $("dynamic_fileup").css('display', 'flex');
+                        $('#uploadFile').css('display', 'flex');
+                        $('#uploadFile').css({'width': '100%', 'margin': '0px auto'});
+                    }
+                } else {
+                    $('#EruploadFile').show().html("");
+                }
+
+                if (Error_count === 0) {
+                    RaiseTicket();
+                } else {
+                    return false;
+                }
+            }
+
+            function RaiseTicket() {
+                var e = document.getElementById("SubCategory");
+                var subcategory = e.options[e.selectedIndex].outerText;
+                var objdata = {
+                    "Ticket_Id": "",
+                    "Product": $("#Product option:selected").text(),
+                    "Category": $("#Category option:selected").text(),
+                    "SubCategory": subcategory,
+                    "SubCategory_level2": "",
+                    "From": Name + "(" + UDID + ")",
+                    "To": Name + "(" + UDID + ")",
+                    "Status": "Open",
+                    "Created_By": Name + "(" + UDID + ")",
+                    "Created_On": "",
+                    "file_1": $('#hdfilePicker_1').val(),
+                    "file_2": $('#hdfilePicker_2').val(),
+                    "file_3": $('#hdfilePicker_3').val(),
+                    "file_4": $('#hdfilePicker_4').val(),
+                    "file_ext_1": file_extention[$('#hdfile_ext_1').val()],
+                    "file_ext_2": file_extention[$('#hdfile_ext_2').val()],
+                    "file_ext_3": file_extention[$('#hdfile_ext_3').val()],
+                    "file_ext_4": file_extention[$('#hdfile_ext_4').val()],
+                    "CRN": $("#txt_CRN").val(),
+                    "Mobile_No": $('#Mobile_No').val(),
+                    "Vehicle_No": $('#Vehicle_No').val(),
+                    "Remark": $('#txt_remark').val(),
+                    "ss_id": ss_id === undefined ? supportagentid : ss_id,
+                    "CRN_owner": $("#CRN_owner").val(),
+                    "Agent_Email": agent_email,
+                    "fba_id": fba_id,
+                    "CRN_fba_id": $("#CRN_fba_id").val(),
+                    "channel": $("#channel").val(),
+                    "subchannel": $("#subchannel").val(),
+                    "Source": "policyboss",
+                    "Transaction_On": $("#Transaction_On").val(),
+                    "rm_email_id": $("#rm_email_id").val(),
+                    "doc_prefix": $("#doc_prefix").val(),
+					"Insurer_Id" :$('#insurer_id').val(),
+					"rm_agent_name" : $("#rm_agent_name").val()
+                };
+                //console.log('Limit file size: '+limit);
+                console.log(JSON.stringify(objdata));
+
+                /*$('#openCrtTkctForm').ajaxSubmit({
+                 data: objdata,*/
+                var obj_horizon_data = Horizon_Method_Convert("/tickets/raiseticket", objdata, "POST");
+                $.ajax({
+                    type: "POST",
+                    data: siteURL.indexOf('https') === 0 ? JSON.stringify(obj_horizon_data['data']) : JSON.stringify(objdata),
+                    url: siteURL.indexOf('https') === 0 ? obj_horizon_data['url'] : GetUrl() + "/postservicecall/raiseticket",
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    error: function (err) {
+                        console.log('Error: ' + err.statusText);
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        if (response["Status"] === "Success") {
+                            $('.ovl').hide();
+                            if (response.CRN === "") {
+                                $("#spn_CRN").hide();
+                                $("#spn_transaction_on").hide();
+                                $(".cls_CRN").hide();
+                            } else {
+                                $("#spn_CRN").show();
+                                $("#spn_transaction_on").show();
+                                $(".cls_CRN").show();
+                            }
+							if (response["Insurer_Name"] !== undefined && response["Insurer_Name"] !== "") {
+								$('#insurer_name').text(response["Insurer_Name"]);
+								$('.clsInsurerName').show();
+							} else {
+								$('.clsInsurerName').hide();
+							}
+							if (response["Product_Name"] !== undefined && response["Product_Name"] !== "") {
+								$('#product_name').text(response["Product_Name"]);
+								$('.clsProductName').show();
+							} else {
+								$('.clsProductName').hide();
+							}
+							
+                            $("#spn_ticket_id").text(response.Ticket_Id);
+                            $("#spn_CRN").text(response.CRN);
+                            $("#spn_Category").text(response.Category);
+                            $("#spn_SubCategory").text(response.SubCategory);
+                            $("#spn_transaction_on").text(response.Transaction_On);
+                            $("#spn_created_on").text(response.Created_On);
+
+                            if (response.Category === "Endorsement") {
+                                $("#endNote").show();
+                                $("#endrsmtNote").text("Endorsement TAT - 7 - 10 Working Days");
+							} else {
+                                $("#endNote").hide();
+                            }
+                            $('#mypopup').show();
+                        } else {
+							$('.ovl').hide();
+							$('#mypopup').hide();
+							$("#txt_err_msg").text(response["Msg"]);
+							$("#err_msg_div").show();
+                            //$('.mainpopupcont').text(response["Msg"]);
+                        }
+                    }
+                });
+
+            }
+            var userticket_category = "";
+            function UserTicketCategory() {
+
+                var obj_horizon_data = Horizon_Method_Convert("/tickets/CheckTickitingCategory/" + UDID, '', "GET");
+                $.ajax({
+                    type: "GET",
+                    url: obj_horizon_data['url'],
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        if (response.length > 0) {
+                            userticket_category = response.join();
+                        }
+                    }
+                });
+            }
+            var file_extention = {
+                "application/pdf": "pdf",
+                "text/plain": "txt",
+                "image/png": "png",
+                "image/jpeg": "jpg"
+            };
+            var handleFileSelect = function (evt) {
+
+                var files = evt.target.files;
+                var file = files[0];
+
+                var file_id = evt.target.id;
+                var i = evt.target.id.split('_')[1];
+                $('#hdfile_ext_' + i).val(files[0]["type"]);
+
+                if (files && file) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (readerEvt) {
+                        var binaryString = readerEvt.target.result;
+                        $('#hd' + file_id).val(encodeURIComponent(btoa(binaryString)));
+                    };
+
+                    reader.readAsBinaryString(file);
+                }
+            };
+
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                document.getElementById('filePicker_1').addEventListener('change', handleFileSelect, false);
+                document.getElementById('filePicker_2').addEventListener('change', handleFileSelect, false);
+                document.getElementById('filePicker_3').addEventListener('change', handleFileSelect, false);
+                document.getElementById('filePicker_4').addEventListener('change', handleFileSelect, false);
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+            function CheckVehicle(e) {
+                var keyCode = e.keyCode || e.which;
+                var ret = true;
+                //Regex for Valid Characters i.e. Alphabets and Numbers.
+                var regex = /^[A-Za-z0-9]+$/;
+                //Validate TextBox value against the Regex.
+                var isValid = regex.test(String.fromCharCode(keyCode));
+                if (!isValid || e.target.value.length === 11) {
+                    ret = false;
+                }
+                return ret;
+            }
+            function CheckCRN(e) {
+
+                var keyCode = e.keyCode || e.which;
+                var ret = true;
+                //Regex for Valid Characters i.e. Alphabets and Numbers.
+                var regex = /^[0-9]+$/;
+                //Validate TextBox value against the Regex.
+                var isValid = regex.test(String.fromCharCode(keyCode));
+                if (!isValid || e.target.value.length === 11) {
+                    ret = false;
+                }
+                return ret;
+            }
+            function onblurCheckCRN() {
+                //var value =
+            }
+
+            $(".closebtn").click(function (e) {
+                $(".ovl").hide(500);
+            });
+
+            function GetUrl() {
+                var url = window.location.href;
+                var newurl;
+                if (url.includes("request_file")) {
+                    newurl = "http://localhost:3000";
+                } else if (url.includes("qa")) {
+                    newurl = "http://qa-horizon.policyboss.com:3000";
+                } else if (url.includes("www") || url.includes("origin-cdnh") || url.includes("cloudfront")) {
+                    newurl = "http://horizon.policyboss.com:5000";
+                }
+                return newurl;
+            }
+            var Endrosement = {
+                "1": {
+                    arr_RC: {
+                        "arr": [53, 41, 47, 43, 34, 45, 38, 33, 52, 36, 53, 35],
+                        "msg": "RC Copy",
+                        "doc_prefix": "RC"
+                    },
+                    arr_PYP: {
+                        "arr": [44, 71, 72, 73, 48, 37],
+                        "msg": "Previous Year Policy Copy",
+                        "doc_prefix": "PYP"
+                    },
+                    arr_GST: {
+                        "arr": [42],
+                        "msg": "GST Certificate",
+                        "doc_prefix": "GST"
+                    }
+                },
+                "2": {
+                    arr_GvtID: {
+                        "arr": [47, 49],
+                        "msg": "Government Id proof",
+                        "doc_prefix": "GvtID"
+                    },
+                    arr_GvtID1: {
+                        "arr": [39],
+                        "msg": "Government Id proof wherein DOB is mentioned in DD-MM-YYYY format",
+                        "doc_prefix": "GvtID"
+                    },
+                    arr_GST: {
+                        "arr": [42],
+                        "msg": "GST Certificate",
+                        "doc_prefix": "GST"
+                    }
+                },
+                "10": {
+                    arr_RC: {
+                        "arr": [53, 41, 47, 43, 34, 45, 38, 33, 52, 36, 53, 35],
+                        "msg": "RC Copy",
+                        "doc_prefix": "RC"
+                    },
+                    arr_PYP: {
+                        "arr": [44, 71, 72, 73, 48, 37],
+                        "msg": "Previous Year Policy Copy",
+                        "doc_prefix": "PYP"
+                    },
+                    arr_GST: {
+                        "arr": [42],
+                        "msg": "GST Certificate",
+                        "doc_prefix": "GST"
+                    }
+                },
+                "12": {
+                    arr_RC: {
+                        "arr": [53, 41, 47, 43, 34, 45, 38, 33, 52, 36, 53, 35],
+                        "msg": "RC Copy",
+                        "doc_prefix": "RC"
+                    },
+                    arr_PYP: {
+                        "arr": [44, 71, 72, 73, 48, 37],
+                        "msg": "Previous Year Policy Copy",
+                        "doc_prefix": "PYP"
+                    },
+                    arr_GST: {
+                        "arr": [42],
+                        "msg": "GST Certificate",
+                        "doc_prefix": "GST"
+                    }
+                }
+            };
+
+            function documentuploading(subCategory, product) {
+                for (var i in Endrosement) {
+                    if ((product === i || product.indexOf(i) >= 0) && (!(subCategory === 50 || subCategory === 40))) {
+                        for (var j in Endrosement[i]) {
+                            var type = Endrosement[i][j].arr.indexOf(subCategory) >= 0 ? j : "";
+                            if (type !== "") {
+                                var msg1 = Endrosement[i][type].msg;
+                                $('#document_type').text(msg1).show();
+                                $("#doc_prefix").val(Endrosement[i][type].doc_prefix);
+                                $('#EruploadFile').hide().html("");
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (subCategory === 50 || subCategory === 40) {
+                    $('#document_type').text("").hide();
+                    $('#EruploadFile').hide().html("");
+                }
+            }
+
+            function resetFields() {
+                radiobtnchked = false;
+                document.getElementById("donthavrcrn").checked = false;
+                document.getElementById('ihavecrn').checked = false;
+                $("#DonthaveCRNdiv,#IhaveCRNdiv,#uploadFile").hide();
+                $(".selectbx option[value='0']").attr("selected", "selected");
+                $('#Vehicle_No,#Mobile_No,#txt_remark').val("");
+                document.getElementById('chk_UploadFile').checked = false;
+                $('#filePicker_1,#filePicker_2,#filePicker_3,#filePicker_4').val("");
+                $('#hdfilePicker_1,#hdfilePicker_2,#hdfilePicker_3,#hdfilePicker_4').val("");
+            }
+
+</script> 
+
+

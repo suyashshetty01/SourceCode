@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>
+    <soapenv:Body xmlns:ns1='http://iims.services/types/'>
+        <ns1:fetchDocumentNameElement>
+            <ns1:userCode>___insurer_integration_agent_code___</ns1:userCode>
+            <ns1:docs>
+                <ns1:value/>
+                <ns1:name/>
+            </ns1:docs>
+            <ns1:indexType>
+                <ns1:index/>
+                <ns1:type/>
+            </ns1:indexType>
+            <ns1:policyId>___pg_reference_number_2___</ns1:policyId><!--Received in Issue Policy Request-->
+        </ns1:fetchDocumentNameElement>
+    </soapenv:Body>
+</soapenv:Envelope>

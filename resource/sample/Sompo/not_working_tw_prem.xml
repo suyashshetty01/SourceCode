@@ -1,0 +1,273 @@
+<Root>
+    <Authentication>
+        <WACode>20000040</WACode>
+        <WAAppCode>30000042</WAAppCode>
+        <WAUserID>USER01</WAUserID>
+        <WAUserPwd>pass@123</WAUserPwd>
+        <WAType>0</WAType>
+        <DocumentType>Quotation</DocumentType> 
+        <Versionid>1.1</Versionid> 
+        <GUID /> 
+    </Authentication>
+    <Customer>
+        <CustomerType>Individual</CustomerType>
+        <CustomerName>PULKIT GUPTA </CustomerName>
+        <DOB>15/04/1978</DOB>
+        <Gender>M</Gender>
+        <CanBeParent>0</CanBeParent>
+        <ContactTelephoneSTD />
+        <MobileNo>9672026554</MobileNo>
+        <Emailid>pkgz2003@yahoo.com</Emailid>
+        <PresentAddressLine1>KC-66</PresentAddressLine1>
+        <PresentAddressLine2>KAVI NAGAR</PresentAddressLine2>
+        <PresentStateCode>65</PresentStateCode>
+        <PresentCityDistCode>1861</PresentCityDistCode>
+        <PresentPinCode>201002</PresentPinCode>
+        <PermanentAddressLine1>KC-66</PermanentAddressLine1>
+        <PermanentAddressLine2>KAVI NAGAR</PermanentAddressLine2>
+        <PermanentStateCode>65</PermanentStateCode>
+        <PermanentCityDistCode>1861</PermanentCityDistCode>
+        <PermanentPinCode>201002</PermanentPinCode>
+        <ProductName>Two Wheeler Package Policy</ProductName>
+        <InstrumentNo>NULL</InstrumentNo>
+        <InstrumentDate>NULL</InstrumentDate>
+        <BankID>NULL</BankID>
+        <PosPolicyNo>50081622</PosPolicyNo>
+        <ProductCode>2312</ProductCode>
+        <WAURN>3241072435</WAURN>
+        <CustGSTNo></CustGSTNo>
+    </Customer>
+    <Product Name="Two Wheeler Package Policy">
+        <GeneralProposal Name="General Proposal">
+            <GeneralProposalGroup Name="General Proposal Group">
+                <DistributionChannel Name="Distribution Channel">
+                    <BranchDetails Name="Branch Details">
+                        <IMDBranchName Name="IMDBranchName" Value="" />
+                        <IMDBranchCode Name="IMDBranch Code" Value="" />
+                    </BranchDetails>
+                    <SPDetails Name="SP Details">
+                        <SPName Name="SP Name" Value="" />
+                        <SPCode Name="SP Code" Value="" />
+                    </SPDetails>
+                </DistributionChannel>
+                <GeneralProposalInformation Name="General Proposal Information">
+                    <TypeOfBusiness Name="Type Of Business" Value="FROM INTERMEDIARY" />
+                    <ServiceTaxExemptionCategory Name="Service Tax Exemption Category" Value="No Exemption" />
+                    <BusinessType Name="Transaction Type" Value="RollOver" />
+                    <Sector Name="Sector" Value="Others" />
+                    <ProposalDate Name="Proposal Date" Value="11/05/2016" />
+                    <DealId Name="Deal Id" Value="" />
+                    <PolicyNumberChar Name="PolicyNumberChar" Value="" />
+                    <VehicleLaidUpFrom Name="VehicleLaidUpFrom" Value="" />
+                    <VehicleLaidUpTo Name="VehicleLaidUpTo" Value="" />
+                    <PolicyEffectiveDate Name="Policy Effective Date">
+                        <Fromdate Name="From Date" Value="22/05/2016" />
+                        <Todate Name="To Date" Value="21/05/2017" />
+                        <Fromhour Name="From Hour" Value="00:00" />
+                        <Tohour Name="To Hour" Value="23:59" />
+                    </PolicyEffectiveDate>
+                </GeneralProposalInformation>
+            </GeneralProposalGroup>
+            <PreviousPolicyDetails Name="Previous Policy Details">
+                <PreviousPolDtlGroup Type="Group" Name="Previous Pol Dtl Group">
+                    <PreviousPolDtlGroupData Type="GroupData">
+                        <ProductCode Name="Product Code" Value="2312" />
+                        <ClaimSettled Name="Claim Settled" Value="" />
+                        <ClaimPremium Name="Claim Premium" Value="" />
+                        <ClaimAmount Name="Claim Amount" Value="" />
+                        <DateofLoss Name="Date Of Loss" Value="" />
+                        <NatureofLoss Name="Nature Of Loss" Value="" />
+                        <ClaimNo Name="Claim No" Value="" />
+                        <InsurerName Name="InsurerName" Value="ICICI Lombard General Insurance Co. Ltd." />
+                        <InsurerAddress Name="InsurerAddress" Value="" />
+                        <PolicyEffectiveTo Name="Policy Effective To" Value="21/05/2016" />
+                        <PolicyEffectiveFrom Name="Policy Effective From" Value="22/05/2015" />
+                        <DateOfInspection Name="DateOfInspection" Value="10/05/2016" />
+                        <PolicyPremium Name="PolicyPremium" Value="" />
+                        <PolicyNo Name="Policy No" Value="3005/W-35578020/00/000" />
+                        <PolicyYear Name="Policy Year" Value="" />
+                        <OfficeCode Name="Office Name" Value="ICICI Lombard General Insurance Co. Ltd." />
+                        <PolicyStatus Name="Policy Status" Value="Unexpired" />
+                        <CorporateCustomerId Name="Corporate Customer Id" Value="" />
+                    </PreviousPolDtlGroupData>
+                </PreviousPolDtlGroup>
+                <PreviousPolicyType Name="Previous Policy Type" Value="" />
+                <OfficeAddress Name="Office Address" Value="" />
+            </PreviousPolicyDetails>
+        </GeneralProposal>
+        <PremiumCalculation Name='Premium Calculation'>
+            <NetPremium Name='Net Premium' Value=''/> 
+            <ServiceTax Name='Service Tax' Value=''/> 
+            <StampDuty2 Name='Stamp Duty' Value=''/> 
+            <CGST Name='CGST' Value='0'/>
+            <SGST Name='SGST' Value='0'/>
+            <UGST Name='UGST' Value='0'/>
+            <IGST Name='IGST' Value='0'/>
+            <TotalPremium Name='Total Premium' Value=''/> 
+        </PremiumCalculation>
+        <Risks Name="Risks">
+            <Risk Type="Group" Name="Risks">
+                <RisksData Type="GroupData">
+                    <De-tariffDiscounts Name="De-tariffDiscounts">
+                        <De-tariffDiscountGroup Type="Group" Name="De-tariff Discount Group">
+                            <De-tariffDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="143.75" />
+                                <DiscountRate Name="Discount Rate" Value="0.25" />
+                                <SumInsured Name="SumInsured" Value="575" />
+                                <Rate Name="Rate" Value="0" />
+                                <Premium Name="Premium" Value="0" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="De-tariff Discount" />
+                            </De-tariffDiscountGroupData>
+                        </De-tariffDiscountGroup>
+                    </De-tariffDiscounts>
+                    <CoverDetails Name="CoverDetails">
+                        <Covers Type="Group" Name="Covers">
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="575" />
+                                <Rate Name="Rate" Value="0.01802" />
+                                <SumInsured Name="SumInsured" Value="31915" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Basic OD" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="619" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="619" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="Basic TP" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="70" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="100000" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="UNNAMED PA COVER TO PASSENGERS" />
+                            </CoversData>
+                            <CoversData Type="GroupData">
+                                <Premium Name="Premium" Value="50" />
+                                <Rate Name="Rate" Value="0" />
+                                <SumInsured Name="SumInsured" Value="100000" />
+                                <NomineeName Name="NomineeName" Value="NISHA KUMARI" /> 
+                                <NomineeRelation Name="NomineeRelation" Value="SPOUSE" /> 
+                                <NomineeAge Name="NomineeAge" Value="23" /> 
+                                <Applicable Name="Applicable" Value="True" />
+                                <CoverGroups Name="CoverGroups" Value="PA COVER TO OWNER DRIVER" />
+                            </CoversData>
+                        </Covers>
+                    </CoverDetails>
+                    <AddonCoverDetails Name="AddonCoverDetails">
+                        <AddonCovers Type="Group" Name="AddonCovers" />
+                    </AddonCoverDetails>
+                    <OtherLoadings Name="OtherLoadings">
+                        <OtherLoadingGroup Type="Group" Name="Other Loading Group" />
+                    </OtherLoadings>
+                    <OtherDiscounts Name="OtherDiscounts">
+                        <OtherDiscountGroup Type="Group" Name="Other Discount Group">
+                            <OtherDiscountGroupData Type="GroupData">
+                                <DiscountAmount Name="Discount Amount" Value="216" />
+                                <DiscountRate Name="Discount Rate" Value="0.5" />
+                                <SumInsured Name="SumInsured" Value="431.25" />
+                                <Rate Name="Rate" Value="0" />
+                                <Premium Name="Premium" Value="0" />
+                                <Applicable Name="Applicable" Value="True" />
+                                <Description Name="Description" Value="No claim bonus" />
+                            </OtherDiscountGroupData>
+                        </OtherDiscountGroup>
+                    </OtherDiscounts>
+                </RisksData>
+            </Risk>
+            <VehicleClassCode Name="VehicleClassCode" Value="37" />
+            <VehicleMakeCode Name="VehicleMakeCode" Value="105" />
+            <VehicleModelCode Name="VehicleModelCode" Value="3816" />
+            <RTOLocationCode Name="RTOLocationCode" Value="UP14" />
+            <NoOfClaimsOnPreviousPolicy Name="No Of Claims On Previous Policy" Value="0" />
+            <RegistrationNumber Name="Registration Number" Value="UP14AD2153" />
+            <BodyTypeCode Name="BodyTypeCode" Value="6" />
+            <ModelStatus Name="ModelStatus" Value="Active" />
+            <GrossVehicleWeight Name="GrossVehicleWeight" Value="0" />
+            <CarryingCapacity Name="CarryingCapacity" Value="2" />
+            <VehicleType Name="VehicleType" Value="Rollover" />
+            <PlaceOfRegistration Name="Place Of Registration" Value="GHAZIABAD" />
+            <VehicleModel Name="VehicleModel" Value="STAR CITY" />
+            <VehicleExShowroomPrice Name="VehicleExShowroomPrice" Value="33595" />
+            <DateOfDeliveryOrRegistration Name="DateOfDeliveryOrRegistration" Value="01/05/2006" />
+            <YearOfManufacture Name="Year Of Manufacture" Value="2006" />
+            <DateOfFirstRegistration Name="DateOfFirstRegistration" Value="01/05/2006" />
+            <RegistrationNumberSection1 Name="Regn No. Section 1" Value="UP" />
+            <RegistrationNumberSection2 Name="Regn No. Section 2" Value="14" />
+            <RegistrationNumberSection3 Name="Regn No. Section 3" Value="AD" />
+            <RegistrationNumberSection4 Name="Regn No. Section 4" Value="2153" />
+            <EngineNumber Name="Engine Number" Value="AF5D61368976" />
+            <ChassisNumber Name="Chassis Number" Value="MD625KF5261D39494" />
+            <BodyColour Name="Body Colour" Value="" />
+            <FuelType Name="Fuel Type" Value="Petrol" />
+            <ExtensionCountryName Name="Extension Country Name" Value="" />
+            <RegistrationAuthorityName Name="Registration Authority Name" Value="GHAZIABAD-UP14" />
+            <AutomobileAssocnFlag Name="AutomobileAssocnFlag" Value="false" />
+            <AutomobileAssociationNumber Name="Automobile Association Number" Value="" />
+            <VoluntaryExcess Name="Voluntary Access" Value="" />
+            <TPPDLimit Name="TPPDLimit" Value="" />
+            <AntiTheftDiscFlag Name="AntiTheftDiscFlag" Value="false" />
+            <HandicapDiscFlag Name="HandicapDiscFlag" Value="False" />
+            <NumberOfDrivers Name="NumberOfDrivers" Value="0" />
+            <NumberOfEmployees Name="NumberOfEmployees" Value="" />
+            <TransferOfNCB Name="TransferOfNCB" Value="False" />
+            <TransferOfNCBPercent Name="TransferOfNCBPercent" Value="0" />
+            <NCBDeclaration Name="NCBDeclaration" Value="True" />
+            <PreviousVehicleSaleDate Name="PreviousVehicleSaleDate" Value="" />
+            <BonusOnPreviousPolicy Name="BonusOnPreviousPolicy" Value="50" />
+            <VehicleClass Name="VehicleClass" Value="TWo Wheeler" />
+            <VehicleMake Name="VehicleMake" Value="TVS" />
+            <BodyTypeDescription Name="BodyTypeDescription" Value="" />
+            <NumberOfWheels Name="NumberOfWheels" Value="2" />
+            <CubicCapacity Name="CubicCapacity" Value="100" />
+            <SeatingCapacity Name="SeatingCapacity" Value="100" />
+            <RegistrationZone Name="RegistrationZone" Value="B" />
+            <VehiclesDrivenBy Name="Vehicles Driven By" Value="" />
+            <DriversAge Name="Drivers Age" Value="" />
+            <DriversExperience Name="Drivers Experience" Value="" />
+            <DriversQualification Name="Drivers Qualification" Value="" />
+            <VehicleModelCluster Name="VehicleModelCluster" Value="" />
+            <OpenCoverNoteFlag Name="OpenCoverNote" Value="" />
+            <LegalLiability Name="LegalLiability" Value="false" />
+            <PaidDriver Name="PaidDriver" Value="false" />
+            <NCBConfirmation Name="NCBConfirmation" Value="true" />
+            <RegistrationDate Name="RegistrationDate" Value="01/05/2006" />
+            <TPLoadingRate Name="TPLoadingRate" Value="" />
+            <ExtensionCountry Name="ExtensionCountry" Value="" />
+            <VehicleAge Name="VehicleAge" Value="127" />
+            <LocationCode Name="LocationCode" Value="GHAZIABAD" />
+            <RegistrationZoneDescription Name="RegistrationZoneDescription" Value="B" />
+            <NumberOfWorkmen Name="NumberOfWorkmen" Value="" />
+            <VehicCd Name="VehicCd" Value="" />
+            <SalesTax Name="Sales Tax" Value="0" />
+            <ModelOfVehicle Name="Model Of Vehicle" Value="STAR CITY" />
+            <PopulateDetails Name="Populate details" Value="" />
+            <VehicleIDV Name="VehicleInsuredDeclaredValue" Value="31915" />
+            <ShowroomPriceDeviation Name="ShowroomPriceDeviation" Value="0" />
+            <NewVehicle Name="New Vehicle" Value="Rollover" />
+        </Risks>
+    </Product>
+    <PaymentDetails>
+        <PaymentEntry>
+            <PaymentId />
+            <MICRCheque />
+            <InstrumentDate />
+            <DraweeBankName />
+            <HOUSEBANKNAME />
+            <AmountPaid />
+            <PaymentType />
+            <PaymentMode>O</PaymentMode>
+            <PaymentDate>23/01/2015</PaymentDate>
+            <InstrumentNo />
+            <Status />
+            <DepositSlipNo />
+            <PayerType />
+        </PaymentEntry>
+    </PaymentDetails>
+    <Errors>
+        <ErrorCode />
+        <ErrDescription />
+    </Errors>
+</Root>

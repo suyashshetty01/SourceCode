@@ -1,0 +1,74 @@
+{
+    "username": "webservice@probusinsurance.in",
+    "password": "newpas12",
+    "mrnPolicyDetails": {
+        "scrLocationCode": 9906,
+        "productCode": "1001",
+        "deptCode": "10",
+        "businessType": "NB",
+        "termStartDate": "21-Nov-2022",
+        "termEndDate": "15-Feb-2023",
+        "partnerType": "I",
+        "paymentMode": "CC"
+    },
+    "mrnContainerFlag": "N",
+    "mrnRiskObj": {
+        "riskCategory": "ALL_RISK",
+        "marineRate": "0.075",
+        "insuredCargoDtls": "Hygiene Kits consisting of soap, toothpaste,toothbrush,razor,sanitary pads, oil including cartons packing",
+        "packingName": "PCK02",
+        "commodityCode": "COM06",
+        "commodityName": "All types of FMCG commodities",
+        "w2wFlag": "N",
+        "w2wRate": ""
+    },
+    "mrnInvoiceObj": {
+        "invoiceNo": "RS/08279",
+        "invoiceDate": "11-Nov-2022",
+        "invoiceAmtFc": null,
+        "invoiceAmt": "1000000",
+        "currency": "INR",
+        "rateOfExchange": "1",
+        "basisOfValuation": "CI",
+        "bovExtra": "0",
+        "sumInsured": "1000000"
+    },
+    "mrnTransitObj": {
+        "transitType": "IMPORT",
+        "termsOfSale": "CI",
+        "modeOfTransit": "SEA",
+        "coverageType": "BASIC_RISK",
+        "coverageWar": "+WSRCC",
+        "fromCountry": "TURKEY",
+        "startingPlace": "Sonipat,Haryana",
+        "loadPort": "Sonipat,Haryana",
+        "toCountry": "INDIA",
+        "destinationPlace": "by truck to Kolkata, West Bengal",
+        "surveyorCountry": "INDIA",
+        "surveyorCity": "Pune",
+        "surveyorAgent": "Bajaj Allianz General Insurance Co. Ltd.",
+        "surveyorAddress": "Bajaj Finserv Building, 1st Floor, Behind Weikfield IT Park, Viman Nagar, Pune - 411014, India",
+        "shipmentDate": "23-Nov-2022"
+    },
+    "cPObj": {
+        "partnerTye": "I",
+        "dateOfBirth": "",
+        "sex": "M",
+        "telephone": "9871540056",
+        "email": "info@reliefsupplier.com",
+        "firstName": "Ak",
+        "surname": "Jain",
+        "institutionName": "Relief Supplier",
+        "pan": "",
+        "addressee": "1722 HSIIDC,Rai Industrial Area, Sonipat, Haryana-131001",
+        "extField1": "1722",
+        "extField2": "HSIIDC,Rai Industrial Area",
+        "extField3": "Sonipat",
+        "extField4": "131001",
+        "extField5": "06ADXPJ6435E1ZA"
+    },
+    "mrnConsolidatedPremDtls": {
+        "finalPremium": "886",
+        "netPremium": "750"
+    }
+}
